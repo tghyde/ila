@@ -55,8 +55,9 @@ marked ™ involve someone else's branding and should not ship.
 - [x] **Remove `static/google9ccfcae89045309c.html`** — the original
       author's Google Search Console verification file (also drop it from
       the copy list in `SConstruct`). Harmless but not ours.
-- [ ] **Check `static/images/qrcode.png`** — likely encodes the original
-      gatech URL; replace or remove wherever it's used.
+- [x] **Check `static/images/qrcode.png`** — encoded the original gatech
+      URL; replaced with theme-matched day/night codes pointing at this
+      edition (still 29×29, keeping Section 1.1's text accurate).
 - [ ] **README.md** — rewrite for the fork: what this is, link to the
       original, build instructions → DOCKER.md, license note.
 
