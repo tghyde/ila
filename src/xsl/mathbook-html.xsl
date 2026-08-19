@@ -586,14 +586,17 @@
     </xsl:if>
     <xsl:apply-templates select="personname" />
     <xsl:if test="../credit/author/personname">
-        <xsl:text> (edited by </xsl:text>
-        <xsl:for-each select="../credit/author/personname">
-            <xsl:if test="position() &gt; 1">
-                <xsl:text>, </xsl:text>
-            </xsl:if>
-            <xsl:apply-templates select="." />
-        </xsl:for-each>
-        <xsl:text>)</xsl:text>
+        <!-- span so the parenthetical can wrap to its own line on mobile -->
+        <span class="edited-by">
+            <xsl:text> (edited by </xsl:text>
+            <xsl:for-each select="../credit/author/personname">
+                <xsl:if test="position() &gt; 1">
+                    <xsl:text>, </xsl:text>
+                </xsl:if>
+                <xsl:apply-templates select="." />
+            </xsl:for-each>
+            <xsl:text>)</xsl:text>
+        </span>
     </xsl:if>
 </xsl:template>
 

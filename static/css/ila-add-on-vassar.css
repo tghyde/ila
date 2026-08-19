@@ -83,7 +83,7 @@ html[data-theme="dark"] #masthead #byline a, html[data-theme="dark"] #masthead .
 }
 
 /* Day/night toggle button (inserted by Mathbook.js) */
-#theme-toggle {
+.theme-toggle {
     display: inline-block;
     vertical-align: top;
     height: 36px;
@@ -96,7 +96,7 @@ html[data-theme="dark"] #masthead #byline a, html[data-theme="dark"] #masthead .
     font-size: 16px;
     cursor: pointer;
 }
-#theme-toggle:hover {
+.theme-toggle:hover {
     background: #e2e8f3;
 }
 
@@ -209,11 +209,11 @@ html[data-theme="dark"] #gt-navbar a {
 html[data-theme="dark"] #gt-navbar a:hover {
     background: #2b3242;
 }
-html[data-theme="dark"] #theme-toggle {
+html[data-theme="dark"] .theme-toggle {
     color: #e7e5e0;
     border-left-color: #33363e;
 }
-html[data-theme="dark"] #theme-toggle:hover {
+html[data-theme="dark"] .theme-toggle:hover {
     background: #2b3242;
 }
 html[data-theme="dark"] #toc,
@@ -468,4 +468,40 @@ article.remark-like:after {
 
 .mathbook-content .bluebox {
   border: 3px solid #8db1ea;
+}
+
+/* ============================================================
+   Mobile (<= 800px, the navbar's own breakpoint): the theme
+   toggle moves to the masthead card corner, an abbreviated
+   course button joins the bottom bar, and the editor credit
+   in the byline wraps to its own line.
+   ============================================================ */
+
+.theme-toggle--masthead {
+    display: none;
+}
+@media screen and (max-width: 800px) {
+    .theme-toggle--nav {
+        display: none;
+    }
+    #masthead .banner .container {
+        position: relative;
+    }
+    .theme-toggle--masthead {
+        display: block;
+        position: absolute;
+        top: 2px;
+        right: 2px;
+        height: 32px;
+        width: 36px;
+        border: none;
+    }
+    /* five buttons across the bottom bar */
+    #gt-navbar .navbar-bottom-buttons .toolbar-item {
+        width: 20%;
+    }
+    /* the editor credit gets its own line */
+    #masthead .byline .edited-by {
+        display: block;
+    }
 }
