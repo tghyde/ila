@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Rank Theorem</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: XlQMdkFpk_6KsoYFhF2- */
+
+@font-face {
+  font-family: "feu3euj_kFRZOLIEmSGo8";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATYAAoAAAAABwAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAToAAAFDqiNOLkZGVE0AAASwAAAAGgAAAByjRDPvT1MvMgAAAVAAAABMAAAAYFZigUxjbWFwAAADHAAAADwAAAFKQ2DiU2hlYWQAAAD0AAAAMQAAADYvTTFbaGhlYQAAASgAAAAgAAAAJAUXA29obXR4AAAEzAAAAAoAAAAKBi0AGG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAF/AAACuIqzXfNwb3N0AAADWAAAABkAAAAg/5EAN3icY2BkYGAAYo+eh+7x/DZfGbiZXwBFGJ6tLpeG0xIMhkwHmPiBXA4GJpAoADXVCgAAAAB4nGNgZGBg4mcwZIhiusEABEwHGFL+v2VABkwAWZAEjAAAUAAAAwAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTAQaAfAYHGCcgzTUFSF1XEmJW+G/BEMXE//88kM8IV60AhIwAMwMOenicfZHPSsNAEMa/ta0i/jmKeJqjgimbWErrxUNL8SIUDz0b0yUJhKSkCfQ9fAeP+gTiE3gUH8DnEPyyLgpSDWz2N5mZb2YyAPbxAIWvR+PWscIeHh1vYAsvjlvoqQvHbRyqe8cd7Kg3x5vYVR+MVO1tWjc2q2GFI9w53mDdJ8ctJHh13IZWleMODtSz403WescxIpxAELBTjR5pihA1MkspvYm1Sxh7n/J7jRxz2iW5ot/wjrGwOZnNMYxo3l3gODqRQOueTMM6k2kaJWFdmrA+lTqfm1KqxEi8yCRLI5NHhhlXLNTIjimwpFxMMQ8jXNIVVsnYLNM490Y0rxkR22ZDNoNrE9dZSJigYE5l75IRxg7Y5YCCc551FcRWkF+aAv87y8eQfQx4mp8VoM9CRV5NijI2EnS1nMtPfzK6FNeP+I3LH3oDL9BBf/2A/5XHX7LAzK6hESmsiG+nxMyUy7TIxe/SWNjlVTwru2SNM07h01Gayqy01mcDH5+a5Hc1AHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBiuKwn9/w/kg+n/2nffQ9UDASMbA4IzQgEAv6UJ0nicY2BmYGDgZmD438xgBmQxMqABACnSAcgAAAB4nEWLPUvDQByH/9ektbbX+IIRxSiHky2+JNbBoVst1EEoIkIW4YhHWwilxAadHY2TaBFEUFtEN5ds3uDUb+HXuAttwVYHf8/y8MAPgaoCQijT9FiLXZimmd+1AMUAQV4uIWnE5LIiF9RrjNo4lsXKF1Y7n9GR7MQN+JgyAKYNCGcMyBlocRaU8dGCfThec7Jk2zR3SIX6LqnUnRr1PUb9deI3TplHWjVGqk2XuHWHNRy2eUBbtT12Vq82SLFMDlnVd6lHLPO/bxTLMNorvIGC0Kp1EnBZ4ohz2eUKn4+S8n2YTPDBuS5LsjsoTWii3UMd0dajQm9YSGgSxJUu7L4dhn1b/EJHNmZkVNh/HtLnp7gWuXOBfnkr/TtRfkispND9Fp68wakAp8NU+Ijxd7r3gjMB1n4ABhtz8QAAeJxjYGBgZACCq29dd4DoZ6vLpWE0AFHeBwcAAALYAAAC2AAYAH0AAA==) format('woff');
+}
+
+@font-face {
+  font-family: "faQyG6yDhs0GHtMN7Dxqr";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAA/EAAoAAAAAE/gAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAEGAAACwgAAAz3hsPRQUZGVE0AAA8gAAAAGgAAAByjRDPvT1MvMgAAAVAAAABLAAAAYFkWYUNjbWFwAAADVAAAAK8AAAGintqRfGhlYWQAAAD0AAAAMwAAADYvqzEpaGhlYQAAASgAAAAgAAAAJAZ5AllobXR4AAAPPAAAAIUAAACMRIQE4W1heHAAAAFIAAAABgAAAAYAI1AAbmFtZQAAAZwAAAG1AAADJB6pZKBwb3N0AAAEBAAAABMAAAAg/3gAPXicY2BkYGBgYmDQOtEwO57f5isDN/MLoAjDs9Xl0jD6/+//asyWTCBxDpBaBgYAa3ANOwB4nGNgZGBgevFfjSGK2fv/7/9HmC0ZgCIoQBkAqQwG1gAAUAAAIwAAeJxjYGb8yjiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKklBkqmRX+WzBEMb1guAVTw/iQaT6DAhAyAgB4SA0IAHicnVLBahsxFBxtHENDKPWthx5E72vkDQ12DoVkISWX9NQcQi/rrGIvWUtGkpP4p3oqpV/U7+hIFoSS5NJdVm/03rzRSCsAb/EDArvnGr8yFhiJTxkXGIpvGe+hFL8zHmBUHGS8j3fF54yHOCw6MsXgDWc/U1fEAh/FKOMCh+JLxnu4Ft8zHpDzJ+N9yOJDxkO8L76ihsUaWzh0WGCJAIkJZnwVUQOfRsNxw3HNcY6eXE+uRsv8AxUc7ojm1JE4YzWwHpjV7F0xd8HeG4yJTtndMz6t59NMM2rG+6QamdGZwS15LXOGzI5qPWuo7XrrusUyyMlspmTjZWPkxqw3877zS93KB+vu5Hwrz7rgg9PNSl6Ym7E87XuZ+rx02mt3r9uxrK257VptQtf01H7Jfk2jDechWcSTar1sXNBMXaZDWCWDuLRu1TCepx2EFB13qylV0X882ZNXTurfpXa8+D9KTPlV7K1wTGlrwrl1Cy2rsZIn8pkl5iazclpWqjr+301dpYpnr003YOe9pJ/dHnClne+siR7KCX2AFyQuECUfSYnvEY0rFpwO+lEpdTRV+AuN/JNTAAAAeJxjYGBgZoBgGQZGBhCYA+QxgvksDA1gWgAowsOgzKDJoMOgx2DCYMXgzODHkMaQyVDAUM5Q+f8/UJUygwZY1gAqm8iQwZDNUASS/X/v/63/N/5f/3/t/8X/J//v/7/2/5r/q/+v+r8SaiNOwMjGQEgJWBmIYAL6gYWBlYGNnYOTCyzMDZPnQSjlxdTNxy8gKCTMICLKICYuISklzSAjKyevoMigRNhiegAArrsmagB4nGNgZgCD/6UMtgxYAAAn6QG1AHicbVZrVBPXFp4xTOaAGErCYKtIoqjVoojaen2gbVFQ1CK+RaiKyhuChiACpSgiarfrioJoAUXwAQiS+AC5CIoPahVptS/RuuLzaqlatXfpHtZJ23sC6nWt3vxIZmWd/e1vf9/e+wzP2dlxPM/3WGEIN4av9vb2Hjnam+O7cTw3Qu7NyW683Keb7K6QtXaUd1R87WiXTfUdrR2fCW7cAyc3jnvLjR/i7Ma95+bYquYEWxzhlnKJXBb3xQgv76HDvbwnJqxIMURHRhl1w8eM8daFJerC9Lok/YqkpXHRiVHhy3XJCYZY3dIUnW+0MdFoCA+L1wXol3npPo6L03XGJeoM4YnhhlXhy710ExP0EdHLw/XG6LA4r/8FTIwKMxjDDX/7IzDBEB8Wx7GPHWfPOXA9OCfOmVNzGs6Fk7jeXH9uGOfLTeQmcX6cPzeZC+CmctO5T7hAbgYXxM3kZnNzuLncPG4+t4BbyHnYyvPgcrlLvMiP5oP5Yv7bbp7dDnf7VeGh2Ky4bjfdrsJOFiKEM0pJmaa8KA4UZ4mPSSDZak/sF9vfcHBzSHY47PBX9/mHoVH2a+QbG7GpUdHoKveXK6z9lY3WZEn2wyarn6hCk7EY0+txYD0advEtslUhKzsWSqNpFvUFCMUREEIH0pG2x/4whq6tT7PgVhwK42yPN3GrgJPr6T+UDTgQhwHUUy1cQ0No0Ti6jnrBdTQIQ2mJhJ6wgKEMBkG1iPar6Siq4Z/fUsiuHUsl6p80gHoC3Qk07zn1RN9kUiPSXqWBqAbMAMxqRhfss5e8DsRVtxQHWWCYiH0Sm6kL0CygGYFUTXsZCfvTt/g5S4d5gDsHoCf1LyEqOp2OxzL+MmoVR+h46Wn+t9fgNmmJNwVHG5Ji3CElJz0/g7SsUYJvxCLfdFtAJmr4n1CjQC06SFH6hMjI8hXV1WVl1aaEsiitKuOE/KieP9aOh39V4MGODyXqMZQxWElXtlMNeqBHO2pwJa4cimrqoQ21e9A4gC6kC4MHDBu24CkuxJCTzx5oVVDTwazFLXcV2GLDiJ8KYTi8DKzVGalUXA9L8C5ADeVyMgqggxdUcF1uPKmWXR8Z6zS3sO91iaWYhD1QAFQTFHyuUom+NXKSX/SepGr3QijI+XI7eSFWFJVvqwALNM6GIUB7UmfK0wTqT6aLmhx5GY5epEwZJajW1Mu/MOzu9wMeaJbgFXwuPS47eQ7ayNMJ31BH6vzBlIDYkqRKBrtzy4480i6WFx/MqwbS1rjAZ+zckIHaLMjanAUkSNz9z12bC4Foch6e+tRnRIC/tzYeEnJXFJK4W8KaLWs3ZwKJTUzSL7gehN3R67f7aKeF+9MuUEUuUUUUY+QluR8T5VmbQrbrGCPRdusomIo/AdC0NgBMY9XCJcq+5FHCBMpL9AIFUUU9mGO4hrn20ObaSDlJikpYERlVpq+uLi+vNukPRGnpX3ZRCczJMuZkOXNSb3MSJ2Q0ybeb+NrfZdezCvlWqYQjZotJVJGWJsRn6jckAKGjBqEdzsLJj5DDwdojYMo0p5KdKQXeZxkhL8G3NCA/COhyoFrW/rbfnq2UvAj818rm9Fb4Bi7vaC0lKtwCx+Q7R3nkTst9TivKXTHymHJGbspukDfKztZLrayip7t2nc+DozQCYNn5zF0pYI2h7XKesI8GLRNb1u9KB+vRlNWB6wRVXdbpUBN+Vo39j6tr7uISi+YzvNMs7ZyJfQFM83JSCgFrhaeLa/tR9YfzAxNzs0rdL99UHsjfm7MPyPfFMT7aWJGGhgyLBw+iqfqoYd519xPQVHKxlhyyC9YvTYuBYIivggb44eIB7HuEqNqgTu7ThP4HC4v52xbc9G8F9uwwStQpEuKuAfwxHF1AwNnMz4/QbdwD6qBdDIsyQowEq8Q//O1kR7Fqe8VWlvzJOX/Wg+4zAqmrNhtWQ9xmokrL+kr2OMqb7yvk8TXSKTEsYWn6YiAeAT+gE6q/brutLYLC7IJMMkYsWFuQXQDkUMmeyua5Rz2p7j22WOige++im/Y0nC46U0lUv2denGuSvY+jH2OrNt3FHRZNrazpGC7RIDFuW/wWm6tD+uro+1R3cyjy2jNwovjkMaJZOB8HmcSQnNRC6BgXDlTFihM0tW3WNinCGJkRCWT4jO/QHp2v3Hiq3QsV6w+tJaryzHMYW4N963jzbVxzTyHPeS7NCg9ODoaBMOUqoAvJxzZxcz5sh+0EnSb9yAaw13v9qSd99/4gfNv9IlwqPn+UjMBtEk1Tbr117mwL6xrzYhjLNlFfMMlSPabU808stqZJNyk/sdGTOdR17Vv4QYCbJadqi8n9GcL+bQW7YS+pjN33KXUYNYiOdYc10z6D2BYAK5eSNi9bUD1jiO+0dhn50ILRFgX2tRlpq5VNmFVOTZubDZGYwBoptLOR7gq1Jeb8SiA/Hoj3ZR2+KzUt1HZC/7rVqoUnoafed18C841TIgg2s4GcytJoWI4XKKofItFZNG+jV8cCKXalISZ2v6Gycv++Sm3lyv2x7pp7G6hBoiLLf4WN+Z+pjCZDT2Loc23o8seC6gxDG2LGoC7Sin2umGBSdrGb0AzYm86DGPQGODwth07CzdgHB7TkgpnOAogQ6jZsS6dD6Yer2YglvXT1daWCik4BU0cPG/J/LIoyV/zcpJxlQ37dAS/PBrGzsnNnWYZW9VMLLrLgYoumQV4o+0jG4+GlCyEM5q8KWE7OhIuay5Sw0O+6CnotaGdrMUE1DceZpFVAzpfF+HVJGmI7E/2m6HsO72CiX3h5IuVN0VM7Rf8tuMnHfRnMMn60mKiev8Es2qKpq+jU6FXCvzkY8orS3JdgT0I6HVxgc/D/FCCo2jJr5RG1vLkdK9oVWCJnSLR31/A9HoC9sNdvz3AQDhr8jPbWLrG70Tye3UauMyeMHTfzGkroeq7thlZ1j+pNOLlO7nEw6aK63cKuPs2NUqqXMMOknNbJY5xgXn9wI1sTOOjxMxyBujHttJs2FEKT5y3rpFX+ipa1rZOW5gZ6YZaE98TDJVU7DgG585U/FanTZJ/B2kRIyInJJ6pxTJq3DsVdYdJoLjNd1puUfp3ZjgjHTlTvq4I9ULRuZxqpvK1clbd6SzK7vczrIBPWbYrUR8ZGRZL2l3oIGnPcd/RPsWuSPsmskUfWqmtOLPsZPa9Na9DMwUdytBRdsHzbYqBKmD4fRsKU47G3wommvDXelALzITQyeibo2YWYUEgyboUwdV2F6s+PrzsJ6ACXz8EvYE6vSNwdcyD8y6giopkz+4B+D9RCXcWBJtgLe7P2p5PcSQ3sRYq6bDwp29ffLubvWhR3ZXZTXhUn7Ym3uB+Bum31BcQsGrONG41A/D6vuqrFIhxST4c8jxCXeAXo2VJTvVjbwnZkz4NFxepHnQ3TgP1slpKILtOrhHdPzLvt3gBNpedricY427YZO1tT9mdz8erYA9bKS5PD10YAmRJ/6Hst3hRVlVAs+5j5bDlPkc0uYoj4ej1+YJ16FnCiPOUr21j6sbE8vSE3jbrQn6k9/ryjsGmLYGZvoxe6Qjd1fKnY9Cr0HevUC2zEZSfsYXViTx7ylLNvggyg1wTqIKsDgfayqr3xmg0NzIKqiuq/l++Y+S/k7YovXqH5WP0FwyR98Ao98TwspKZlpkAyxBww1sAlOHGmHgWCoXJqsy2B/yuWzrSFOmLLK1y5yUVeKqUVykn5OHlXfa6S6kF0d1DkD/jL0X6bo8Nmx+61Dpbu4Kj6L7fsZep4nGNgYGBkAIKrb113gOhnq8ulYTQAUd4HBwAAeJxj/MLAwPSSwYFxIUMWEMszijGoA7E3kw6DJhDHAbEWlC3NaM+QwFTBoM10kkGK8TdQXJqBg3EfgyqTKYMK42sGVUZHBlkmEwZhRgkGZSZWIC3FIM3szSDHZAHE0kB16gzijHUMcowTGLQY/RgkmSyB5rz7/5uZ+f8/xvf//wMAuJEYlwAAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "fb8mqra67Cw0oTyL6Ohtt";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "feggcnisgPp3jeiCsV8bw";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVgAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADhAAAAasAAAHJY1585kZGVE0AAAUwAAAAGgAAAByjRDPvT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADJAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMQAAADYvhjFbaGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFTAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGKAAAC0JMBRC5wb3N0AAADcAAAABMAAAAg/4YANnicY2BkYGAAYvs1WzPj+W2+MnAzvwCKMDxbXS4Npy3+uzDdYPoD5HIwMIFEAVaRDEQAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr/tH0X8c1NEPMzRgi2bRKT1Wqm9SIuIZ2Nc0kBISpqAR9/B99C74CN4FB/DB/Dil3VREBEDm/lNZuabmSyADdxD4fPRuHKssI4Hxw0s49lxE3114riFXfXouI1V9eZ4CWuNTWaq1gq9S1tVs8IO7hw32PfJcRNzvDhuUf/WcRtb6tXxErbVO/YQoQOBz0k1DkhThKiQWkoYnVm/gLF2n98rZLimX5BLxg1tzI51TWprDDPqdw/Yizria30g07BKZZpEs7AqTFjtS5Vdm0LKmZF4nkqaRCaLDCtO2aiWPabAgnIxxboYYsxQWM6OzSKJs+6Q7hkzYjtsyGFwZuIqDQkj5KwprS2YYeyCPS4oOOL5rYPYDvJDUzDBOTxa76vaw4Dz9Hnqn+bjkA3zrBzlRWzE72k5ku85ZTgWN5dMzj3x6rA36Pa7vvYPf1/2P6PgrxbAhb2eWjC3gp7dHhemWCR5Jl6PztxeaslzYy9fI+BWAQOFKc2N1jroB/gAKdJ6qgAAeJxjYGBgZoBgGQZGBhDwAfIYwXwWBgMgzQGETEBak0Gbwfb/fyBLA8L6f/P/jf/HobrAgJGNAZmLFzAygW1FBSxEah7EAACriAt7AHicY2BmAIP/zQxmDFgAACiYAbwAeJxFi09rE1EUxd/LTGfS9HX8gyOCz/KELGzVOLFZ1HRZA9mUBHEluBjikASGUGKGce12FhXRIogd6KK0s3FjwSxGarKYD1Eo0k/gyvuGG8EXRLwcLodzzo8SXSeU0uWdoTfyXjmOs76xTmiBUFKRN6nkBXlLkzf0VaZ9Z/oU27mfv1ng5PMlTshlTr5e4eQup/tXiTZnqmSbPLvTWRUPHacm2m7gi3a/03ODoecG90QweOENxajnie6OL/x+xxt0vMq2O+o99l72uwOx1RRPvG7gu0PReloVVed/d3+rSdQtkhJhZIUsUFp248k5NqJUNlKapnCaaul1WZbHs7KRzkJbNuB01jAtbI/zn2M6/aHBbfhiR3B4BhzMuDg2sR6igZUIJ0qgHNTDeWzGm8DVsPgPhl1F785pPNxEjmZYfG5CPQYDKhFMlFA5rMfz2AzPkKth0foGexmFi0yDC9izMckggSRD9VqYYNI6Nq1fsJaBk9GpLNh5LftdM/BI/2ssya/lj+zX72TwHpofjZUS/fCALb5lpYgtnZROPjF2vpQdsOWIWX8A736/mgB4nGNgYGBkAIKrb113gOhnq8ulYTQAUd4HBwAAAfQAAAGIADgBiAA4AtgAOAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "faqYjaQQ1kS-jpNhqrW1l";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHAyuGiXUZGVE0AAAVgAAAAGgAAAByjRDPvT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvSjGzaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG+AAADPHDE/uBwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmDYpfC+KZ7f5isDN/MLoAjDs9Xl0nBa/v9Ppi1M84FcDpBaBgYAZYoMogB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1P20AUnDUBFamqyqXqBemp5zpyTIsSbsQSFUcuOfTm4CWxMOtodwPk2D/UU9UT/6l/obObVaGCSrXlt7PvY9689QJ4g+9Q2D5f8TNhhQP1OeEMA3WR8A5K9ZDwAO+yw4R38TabJbyH19k3ZqrBPnc/YlXACh/UQcIZXqkvCe+gUbOEB/iofiW8C8k+JbyH99kCFXqssIFFiwWW8BCMMOFbENVw0RraNe2Kdo6OuY65Gg39d2SwuCaak0cwZdQz7unVrL2h75y1lxgSnbK64/rYz8Wd5qq53kbWkBmUGVwxr6HPMLMlW8cYqn61se1i6WU0mRRSO6mNrM1qPe9at9SN3PX2WuYbmbbeeavrGzk3l0M57TqJdU6sdtre6mYoVW+u2kYb39YduV+SX1Fozb2PEvHIWi1r63VwUWxHoZj2He1Z1O7jajmnJklJ5eFMT/5xRn83kT+U24rwT3KM+ZVkKXHMJr3xZ71daCmHhZzIM1kSxDAwmuTjvCzK4/+ZTp7M8iIhMIuJjlR9vBnbyXJq3E6Imbau7U3QlY+oDbw4oV/ocM+U8B5xmJIBq72+L4riaFziN2yemJkAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwtjBiYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A8+6uJwB4nGNgYGBkAIKrb113gOhnq8ulYTQAUd4HBwAAAp8AAAKfAB8=) format('woff');
+}
+
+@font-face {
+  font-family: "fHKP61lNPA3hEhXaM7DPW";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.a { font-size:11.47700024px;font-family:faQyG6yDhs0GHtMN7Dxqr }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.b { font-size:11.47700024px;font-family:feu3euj_kFRZOLIEmSGo8 }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.c { font-size:11.47700024px;font-family:faqYjaQQ1kS-jpNhqrW1l }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.d { font-size:7.65140009px;font-family:faQyG6yDhs0GHtMN7Dxqr }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.e { font-size:11.47700024px;font-family:feggcnisgPp3jeiCsV8bw }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.f { font-size:11.47700024px;font-family:fHKP61lNPA3hEhXaM7DPW }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.g { font-size:11.47700024px;font-family:fb8mqra67Cw0oTyL6Ohtt }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex tspan.h { font-size:7.65140009px;font-family:feu3euj_kFRZOLIEmSGo8 }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex path.a { stroke-width:0.19925px }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex path.b { stroke-width:0.3985px }
+.CXlQMdkFpk_6KsoYFhF2- svg.pretex path.c { stroke-width:1px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CXlQMdkFpk_6KsoYFhF2-" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CXlQMdkFpk_6KsoYFhF2-"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link active"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm" class="active">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="bases-as-coord-systems.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="chap-geometry.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="chap-matrices.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="bases-as-coord-systems.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="chap-geometry.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="chap-matrices.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CXlQMdkFpk_6KsoYFhF2-"><main class="main"><div id="content" class="mathbook-content">
+<section class="section" id="rank-thm"><header title="Section 2.9 The Rank Theorem"><h1 class="heading hide-type" alt="Section 2.9 The Rank Theorem">
+<span class="type">Section</span><span class="codenumber">2.9</span><span class="title">The Rank Theorem</span><a href="rank-thm.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-12"><h5 class="heading"><span class="type">Objectives</span></h5>
+<ol id="ol-45" style="list-style-type: decimal;">
+<li id="li-220">Learn to understand and use the rank theorem.</li>
+<li id="li-221">
+<em>Picture:</em> the rank theorem.</li>
+<li id="li-222">
+<em>Theorem:</em> rank theorem.</li>
+<li id="li-223">
+<em>Vocabulary words:</em> <em class="terminology">rank</em>, <em class="terminology">nullity</em>.</li>
+</ol></article><p id="p-437">In this section we present the rank theorem, which is the culmination of all of the work we have done so far.</p>
+<p id="p-438">The reader may have observed a relationship between the column space and the null space of a matrix.  In this <a knowl="./knowl/subspaces-col-nul-1.html?vers=dd743d" knowl-id="xref-subspaces-col-nul-1" alt="Example 2.6.17 " title="Example 2.6.17 ">example in Section 2.6</a>, the column space and the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="a">2</tspan></text>
+</svg></span></span> matrix are both lines, in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.36307em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> respectively: </p>
+<div class="pretex-display"><svg height="12.19827em" version="1.1" class="pretex" viewbox="0 20 396 140"><defs><clippath id="clipPath36242" clippathunits="userSpaceOnUse"><path id="path36240" d="M 68.03267,-90.71013 V 90.71013 H 340.16309 V -90.71013 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,68.231,90.709)"><g><g><g><g><path style="stroke:#b3b3b3" d="M -68.0326,-68.0326 H 68.0326 M -68.0326,-45.35506 H 68.0326 M -68.0326,-22.67752 H 68.0326 M -68.0326,0 H 68.0326 M -68.0326,22.67752 H 68.0326 M -68.0326,45.35506 H 68.0326 M -68.0326,68.02461 H 68.0326 M -68.0326,-68.0326 V 68.0326 M -45.35506,-68.0326 V 68.0326 M -22.67752,-68.0326 V 68.0326 M 0,-68.0326 V 68.0326 M 22.67752,-68.0326 V 68.0326 M 45.35506,-68.0326 V 68.0326 M 68.02461,-68.0326 V 68.0326" class="a"></path></g><g><path style="stroke:#984ea3" d="M -68.0326,68.0326 68.0326,-68.0326" class="b"></path></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="M -33.54677,38.87268 H 1.7984 V 51.8374 h -35.34517 z" class="c"></path></g><g transform="translate(-32.55 42.038)"><g><g transform="translate(-35.681 -743.329)"><text transform="matrix(1,0,0,-1,35.681,743.329)"><tspan y="0" x="0 8.1831007 14.713514" style="fill:#984ea3" class="a">Nul</tspan></text>
+<text transform="matrix(1,0,0,-1,53.631,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,58.141,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,64.523,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g></g><g><g clip-path="url(#clipPath36242)"><g><path style="stroke:#984ea3" d="M 204.09789,0 176.88382,-68.03613" class="b"></path></g><path d="M 204.09789,-68.0326 V 0" class="b"></path><g><g><path style="fill:#ffffff;fill-opacity:0.75;stroke:none" d="M 190.4911,34.01434 H 326.55629 L 217.70465,-34.01434 H 81.63947 Z" class="c"></path></g><g><path style="stroke:#b3b3b3" d="M 190.4911,34.01434 81.63947,-34.01434 M 213.16864,34.01434 104.317,-34.01434 M 235.84618,34.01434 126.99454,-34.01434 M 258.5237,34.01434 149.67206,-34.01434 M 281.20122,34.01434 172.34958,-34.01434 M 303.87875,34.01434 195.02711,-34.01434 M 326.54832,34.01434 217.69669,-34.01434 M 190.4911,34.01434 H 326.55629 M 172.34915,22.67622 H 308.41434 M 154.20721,11.3381 H 290.2724 M 136.06528,0 h 136.0652 M 117.92336,-11.3381 H 253.98854 M 99.78142,-22.67622 H 235.8466 M 81.64583,-34.01036 h 136.06518" class="a"></path></g><path d="M 258.5237,34.01434 150.01074,-33.80269" class="b"></path><g transform="matrix(-0.8499,-0.53116,0.53116,-0.8499,149.84142,-33.90851)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M 136.06528,0 H 271.73196" class="b"></path><g transform="translate(271.93121)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><path style="stroke:#984ea3" d="m 204.09789,0 27.21405,68.03613" class="b"></path><g><g transform="translate(227.169 44.308)"><g><g transform="translate(-295.4 -745.599)"><text transform="matrix(1,0,0,-1,295.4,745.599)"><tspan y="0" x="0 7.2534642 13.439567" style="fill:#984ea3" class="a">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,312.076,745.599)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,316.587,745.599)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,322.968,745.599)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g></g><path d="M 204.09789,0 V 67.63408" class="b"></path><g transform="matrix(0,1,-1,0,204.09789,67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 206.22388,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17419,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95182,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 77.83347,20.60791 h 71.10837 V 70.10217 H 77.83347 Z" class="c"></path></g><g transform="translate(81.658 42.038)"><g><g transform="translate(-149.889 -743.329)"><text transform="matrix(1,0,0,-1,149.889,743.329)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,158.938,743.329)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="matrix(1,0,0,-1,170.639,765.146)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="matrix(1,0,0,-1,180.63,757.804)"><tspan y="0" x="0 16.343248" class="a">11</tspan><tspan y="13.948" x="0 16.343248" class="a">11</tspan><tspan y="27.896" x="0 16.343248" class="a">11</tspan></text>
+<text transform="matrix(1,0,0,-1,204.956,765.146)"><tspan y="0" x="0" class="g">D</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-eg-plane2.html?vers=dd743d" knowl-id="xref-solnsets-eg-plane2" alt="Example 2.4.17 The solution set is a plane" title="Example 2.4.17 The solution set is a plane">example in Section 2.4</a>, the null space of the <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">2</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="a">3</tspan></text>
+</svg></span></span> matrix <span class="pretex-inline" style="width:4.28037em"><span style="height:1.331em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(9.402 -4.345)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(19.639 -4.345)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(25.233 -4.345)"><tspan y="0" x="0 10.237574" class="d">12</tspan></text>
+<text transform="translate(6.605 2.681)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(12.198 2.681)"><tspan y="0" x="0 10.237574" class="d">22</tspan></text>
+<text transform="translate(32.674 2.681)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(38.267 2.681)"><tspan y="0" x="0" class="d">4</tspan></text>
+<text transform="translate(44.122 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+</svg></span></span> is a plane in <span class="pretex-inline" style="width:1.36307em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> and the column space the line in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span> spanned by <span class="pretex-inline" style="width:2.049em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(7.801 -5.899)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(5.004 3.81)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(10.597 3.81)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(14.851 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(19.855)"><tspan y="0" x="0" class="a">:</tspan></text>
+</svg></span></span> </p>
+<div class="pretex-display"><svg height="15.85775em" version="1.1" class="pretex" viewbox="13 0 396 182"><defs><clippath id="clipPath36590" clippathunits="userSpaceOnUse"><path id="path36588" d="M -136.0652,-90.71013 V 90.71013 H 136.0652 V -90.71013 Z"></path></clippath><clippath id="clipPath36604" clippathunits="userSpaceOnUse"><path id="path36602" d="m -22.67795,56.69707 -181.42807,-226.78615 45.35593,-113.39414 181.42804,226.78615 z"></path></clippath><clippath id="clipPath36646" clippathunits="userSpaceOnUse"><path id="path36644" d="M -22.67795,56.69707 158.75009,283.48322 204.10602,170.08908 22.67795,-56.69707 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,136.063,90.709)"><g><g><g><g><path style="stroke:#b3b3b3" d="m 136.06528,-68.0326 h 136.0652 m -136.0652,22.67754 h 136.0652 m -136.0652,22.67754 h 136.0652 M 136.06528,0 h 136.0652 m -136.0652,22.67752 h 136.0652 m -136.0652,22.67754 h 136.0652 m -136.0652,22.66955 h 136.0652 M 136.06528,-68.0326 V 68.0326 M 158.74283,-68.0326 V 68.0326 M 181.42036,-68.0326 V 68.0326 M 204.09789,-68.0326 V 68.0326 M 226.7754,-68.0326 V 68.0326 M 249.45294,-68.0326 V 68.0326 M 272.1225,-68.0326 V 68.0326" class="a"></path></g><g><path style="stroke:#984ea3" d="M 170.0816,68.0326 238.11417,-68.0326" class="b"></path></g><g><g><path style="fill:#000;stroke:none" d="m 206.22388,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17419,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95182,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 171.1881,38.87268 h 34.07118 V 51.8374 H 171.1881 Z" class="c"></path></g><g transform="translate(172.183 42.038)"><g><g transform="translate(-308.246 -743.329)"><text transform="matrix(1,0,0,-1,308.246,743.329)"><tspan y="0" x="0 7.2534642 13.439567" style="fill:#984ea3" class="a">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,324.922,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,329.432,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,335.813,743.329)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g></g><g><g clip-path="url(#clipPath36590)"><path d="M 0,-68.0326 V 0" class="b"></path><g><g clip-path="url(#clipPath36604)"><g><path style="fill:#e0cae3;fill-opacity:0.75;stroke:none" d="M -86.17798,-56.69621 58.96443,124.7327 86.17798,56.69621 -58.96443,-124.7327 Z" class="c"></path></g><g><path style="stroke:#984ea3" d="m -86.17798,-56.69621 27.21355,-68.03649 m 9.07207,113.39373 27.21354,-68.0365 m 9.07205,113.3937 27.21354,-68.03646 m 9.07205,113.3937 27.21354,-68.0365 m 9.05933,113.3778 27.21355,-68.03649 M -86.17798,-56.69621 58.96443,124.7327 M -81.64238,-68.03563 63.50005,113.39328 M -77.1068,-79.37505 68.03563,102.05386 M -72.57121,-90.71445 72.57121,90.71445 M -68.03563,-102.05386 77.1068,79.37505 M -63.50005,-113.39328 81.64238,68.03563 M -58.96603,-124.72871 86.17639,56.7002" class="a"></path></g></g></g><g><g><path style="fill:#ffffff;fill-opacity:0.75;stroke:none" d="M -13.60677,34.01434 H 122.4584 L 13.60677,-34.01434 H -122.4584 Z" class="c"></path></g><g><path style="stroke:#b3b3b3" d="M -13.60677,34.01434 -122.4584,-34.01434 M 9.07076,34.01434 -99.78087,-34.01434 M 31.74829,34.01434 -77.10333,-34.01434 M 54.42581,34.01434 -54.42581,-34.01434 M 77.10333,34.01434 -31.74829,-34.01434 M 99.78087,34.01434 -9.07076,-34.01434 M 122.45044,34.01434 13.5988,-34.01434 M -13.60677,34.01434 H 122.4584 M -31.74872,22.67622 H 104.31645 M -49.89066,11.3381 H 86.17451 M -68.0326,0 H 68.0326 M -86.17451,-11.3381 H 49.89066 M -104.31645,-22.67622 H 31.74872 M -122.45204,-34.01036 H 13.61313" class="a"></path></g><path d="M 54.42581,34.01434 -54.08713,-33.80269" class="b"></path><g transform="matrix(-0.8499,-0.53116,0.53116,-0.8499,-54.25645,-33.90851)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M -68.0326,0 H 67.63408" class="b"></path><g transform="translate(67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><g clip-path="url(#clipPath36646)"><g><path style="fill:#e0cae3;fill-opacity:0.75;stroke:none" d="M -86.17798,-56.69621 58.96443,124.7327 86.17798,56.69621 -58.96443,-124.7327 Z" class="c"></path></g><g><path style="stroke:#984ea3" d="m -86.17798,-56.69621 27.21355,-68.03649 m 9.07207,113.39373 27.21354,-68.0365 m 9.07205,113.3937 27.21354,-68.03646 m 9.07205,113.3937 27.21354,-68.0365 m 9.05933,113.3778 27.21355,-68.03649 M -86.17798,-56.69621 58.96443,124.7327 M -81.64238,-68.03563 63.50005,113.39328 M -77.1068,-79.37505 68.03563,102.05386 M -72.57121,-90.71445 72.57121,90.71445 M -68.03563,-102.05386 77.1068,79.37505 M -63.50005,-113.39328 81.64238,68.03563 M -58.96603,-124.72871 86.17639,56.7002" class="a"></path></g></g></g><path d="M 0,0 V 67.63408" class="b"></path><g transform="matrix(0,1,-1,0,0,67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(-39.644 51.548)"><g><g transform="translate(-96.419 -752.839)"><text transform="matrix(1,0,0,-1,96.419,752.839)"><tspan y="0" x="0 8.1831007 14.713514" style="fill:#984ea3" class="a">Nul</tspan></text>
+<text transform="matrix(1,0,0,-1,114.369,752.839)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,118.88,752.839)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,125.261,752.839)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 58.29329,-63.12825 h 110.18874 v 35.54639 H 58.29329 Z" class="c"></path></g><g transform="translate(62.118 -48.671)"><g><g transform="translate(-198.181 -652.62)"><text transform="matrix(1,0,0,-1,198.181,652.62)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,207.231,652.62)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="matrix(1,0,0,-1,218.932,668.487)"><tspan y="0" x="0" class="g">E</tspan></text>
+<text transform="matrix(1,0,0,-1,231.901,660.121)"><tspan y="0" x="0" class="a">1</tspan></text>
+<text transform="matrix(1,0,0,-1,252.439,660.121)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="matrix(1,0,0,-1,260.829,660.121)"><tspan y="0" x="0 20.543831" class="a">12</tspan></text>
+<text transform="matrix(1,0,0,-1,227.706,646.173)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="matrix(1,0,0,-1,236.096,646.173)"><tspan y="0" x="0 20.543831" class="a">22</tspan></text>
+<text transform="matrix(1,0,0,-1,277.173,646.173)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="matrix(1,0,0,-1,285.563,646.173)"><tspan y="0" x="0" class="a">4</tspan></text>
+<text transform="matrix(1,0,0,-1,293.545,668.487)"><tspan y="0" x="0" class="g">F</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-line-plane.html?vers=dd743d" knowl-id="xref-solnsets-line-plane" alt="Example 2.4.28 Interactive: Solution set and span of the columns (3)" title="Example 2.4.28 Interactive: Solution set and span of the columns (3)">example in Section 2.4</a>, the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="a">3</tspan></text>
+</svg></span></span> matrix is a line in <span class="pretex-inline" style="width:1.36307em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> and the column space is a plane in <span class="pretex-inline" style="width:1.40407em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="a">:</tspan></text>
+</svg></span></span> </p>
+<div class="pretex-display"><svg height="12.11114em" version="1.1" class="pretex" viewbox="13 22 450 139"><defs><clippath id="clipPath36854" clippathunits="userSpaceOnUse"><path id="path36852" d="M 68.03267,-90.71013 V 90.71013 H 340.16309 V -90.71013 Z"></path></clippath><clippath id="clipPath36868" clippathunits="userSpaceOnUse"><path id="path36866" d="m 408.20496,56.69492 45.35702,-28.34855 -317.50017,-170.08689 -136.071,85.0456 z"></path></clippath><clippath id="clipPath36910" clippathunits="userSpaceOnUse"><path id="path36908" d="M 408.20496,56.69492 272.13394,141.74052 -45.36621,-28.34637 -0.00919,-56.69492 Z"></path></clippath><clippath id="clipPath36976" clippathunits="userSpaceOnUse"><path id="path36974" d="M -136.0652,-90.71013 V 90.71013 H 136.0652 V -90.71013 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,136.063,90.709)"><g><g><g><g clip-path="url(#clipPath36854)"><path d="M 204.09789,-68.0326 V 0" class="b"></path><g><g clip-path="url(#clipPath36868)"><g><path style="fill:#e0cae3;fill-opacity:0.75;stroke:none" d="M 176.88345,-56.6962 303.88351,11.33855 231.3123,56.6962 104.31224,-11.33855 Z" class="c"></path></g><g><path style="stroke:#984ea3" d="m 176.88345,-56.6962 -72.57121,45.35765 M 208.63347,-39.68752 136.06226,5.67014 M 240.38348,-22.67882 167.81227,22.67882 M 272.1335,-5.67014 199.56229,39.68752 M 303.87236,11.33257 231.30115,56.69022 M 176.88345,-56.6962 303.88351,11.33855 M 158.74065,-45.35678 285.7407,22.67795 M 140.59784,-34.01736 267.59792,34.01736 M 122.45505,-22.67795 249.45511,45.35678 M 104.31862,-11.34253 231.31868,56.69221" class="a"></path></g></g></g><g><g><path style="fill:#ffffff;fill-opacity:0.75;stroke:none" d="M 190.4911,34.01434 H 326.55629 L 217.70465,-34.01434 H 81.63947 Z" class="c"></path></g><g><path style="stroke:#b3b3b3" d="M 190.4911,34.01434 81.63947,-34.01434 M 213.16864,34.01434 104.317,-34.01434 M 235.84618,34.01434 126.99454,-34.01434 M 258.5237,34.01434 149.67206,-34.01434 M 281.20122,34.01434 172.34958,-34.01434 M 303.87875,34.01434 195.02711,-34.01434 M 326.54832,34.01434 217.69669,-34.01434 M 190.4911,34.01434 H 326.55629 M 172.34915,22.67622 H 308.41434 M 154.20721,11.3381 H 290.2724 M 136.06528,0 h 136.0652 M 117.92336,-11.3381 H 253.98854 M 99.78142,-22.67622 H 235.8466 M 81.64583,-34.01036 h 136.06518" class="a"></path></g><path d="M 258.5237,34.01434 150.01074,-33.80269" class="b"></path><g transform="matrix(-0.8499,-0.53116,0.53116,-0.8499,149.84142,-33.90851)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M 136.06528,0 H 271.73196" class="b"></path><g transform="translate(271.93121)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><g clip-path="url(#clipPath36910)"><g><path style="fill:#e0cae3;fill-opacity:0.75;stroke:none" d="M 176.88345,-56.6962 303.88351,11.33855 231.3123,56.6962 104.31224,-11.33855 Z" class="c"></path></g><g><path style="stroke:#984ea3" d="m 176.88345,-56.6962 -72.57121,45.35765 M 208.63347,-39.68752 136.06226,5.67014 M 240.38348,-22.67882 167.81227,22.67882 M 272.1335,-5.67014 199.56229,39.68752 M 303.87236,11.33257 231.30115,56.69022 M 176.88345,-56.6962 303.88351,11.33855 M 158.74065,-45.35678 285.7407,22.67795 M 140.59784,-34.01736 267.59792,34.01736 M 122.45505,-22.67795 249.45511,45.35678 M 104.31862,-11.34253 231.31868,56.69221" class="a"></path></g></g></g><path d="M 204.09789,0 V 67.63408" class="b"></path><g transform="matrix(0,1,-1,0,204.09789,67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(165.725 40.21)"><g><g transform="translate(-301.788 -741.501)"><text transform="matrix(1,0,0,-1,301.788,741.501)"><tspan y="0" x="0 7.2534642 13.439567" style="fill:#984ea3" class="a">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,318.465,741.501)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,322.975,741.501)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,329.356,741.501)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 206.22388,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17419,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95182,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g></g></g><g><g clip-path="url(#clipPath36976)"><g><path style="stroke:#984ea3" d="M 0,0 122.46526,-34.01805" class="b"></path></g><path d="M 0,-68.0326 V 0" class="b"></path><g><g><path style="fill:#ffffff;fill-opacity:0.75;stroke:none" d="M -13.60677,34.01434 H 122.4584 L 13.60677,-34.01434 H -122.4584 Z" class="c"></path></g><g><path style="stroke:#b3b3b3" d="M -13.60677,34.01434 -122.4584,-34.01434 M 9.07076,34.01434 -99.78087,-34.01434 M 31.74829,34.01434 -77.10333,-34.01434 M 54.42581,34.01434 -54.42581,-34.01434 M 77.10333,34.01434 -31.74829,-34.01434 M 99.78087,34.01434 -9.07076,-34.01434 M 122.45044,34.01434 13.5988,-34.01434 M -13.60677,34.01434 H 122.4584 M -31.74872,22.67622 H 104.31645 M -49.89066,11.3381 H 86.17451 M -68.0326,0 H 68.0326 M -86.17451,-11.3381 H 49.89066 M -104.31645,-22.67622 H 31.74872 M -122.45204,-34.01036 H 13.61313" class="a"></path></g><path d="M 54.42581,34.01434 -54.08713,-33.80269" class="b"></path><g transform="matrix(-0.8499,-0.53116,0.53116,-0.8499,-54.25645,-33.90851)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M -68.0326,0 H 67.63408" class="b"></path><g transform="translate(67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><path style="stroke:#984ea3" d="M 0,0 -122.46526,34.01805" class="b"></path><g><g transform="translate(-77.908 23.203)"><g><g transform="translate(-58.155 -724.494)"><text transform="matrix(1,0,0,-1,58.155,724.494)"><tspan y="0" x="0 8.1831007 14.713514" style="fill:#984ea3" class="a">Nul</tspan></text>
+<text transform="matrix(1,0,0,-1,76.106,724.494)"><tspan y="0" x="0" style="fill:#984ea3" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,80.616,724.494)"><tspan y="0" x="0" style="fill:#984ea3" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,86.997,724.494)"><tspan y="0" x="0" style="fill:#984ea3" class="e">)</tspan></text>
+</g></g></g></g></g><path d="M 0,0 V 67.63408" class="b"></path><g transform="matrix(0,1,-1,0,0,67.83333)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 20.11145,-70.10219 h 95.84227 v 49.49426 H 20.11145 Z" class="c"></path></g><g transform="translate(23.937 -48.671)"><g><g transform="translate(-160 -652.62)"><text transform="matrix(1,0,0,-1,160,652.62)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,169.049,652.62)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="matrix(1,0,0,-1,180.75,674.438)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="matrix(1,0,0,-1,190.741,667.095)"><tspan y="0" x="0 16.343248" class="a">10</tspan></text>
+<text transform="matrix(1,0,0,-1,223.429,667.095)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="matrix(1,0,0,-1,231.818,667.095)"><tspan y="0" x="0" class="a">1</tspan><tspan y="13.948" x="-41.077 -24.733751 -4.1899219" class="a">011</tspan><tspan y="27.896" x="-41.077 -24.733751 -4.1899219" class="a">110</tspan></text>
+<text transform="matrix(1,0,0,-1,239.801,674.438)"><tspan y="0" x="0" class="g">D</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> In all examples, the dimension of the column space plus the dimension of the null space is equal to the number of <em>columns</em> of the matrix.  This is the content of the rank theorem.</p>
+<article class="definition-like" id="definition-25"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-439">The <em class="terminology">rank</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> written <span class="pretex-inline" style="width:3.59399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
+<text transform="translate(22.656)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(27.166)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(33.547)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(38.058)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> is the dimension of the column space <span class="pretex-inline" style="width:3.07299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="a">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(32.078)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></span></span></p>
+<p id="p-440">The <em class="terminology">nullity</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> written <span class="pretex-inline" style="width:4.42999em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.5189362 13.049349 16.285864 19.522377 22.735937 26.569256" class="a">nullity</tspan></text>
+<text transform="translate(32.25)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(36.761)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(43.142)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(47.653)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> is the dimension of the null space <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="a">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></span></span></p></article><p id="p-441">The rank of a matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> gives us important information about the solutions to <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></span></span>  Recall from this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note in Section 2.3</a> that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> is consistent exactly when <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> is in the span of the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="a">,</tspan></text>
+</svg></span></span> in other words when <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> is in the column space of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></span></span>  Thus, <span class="pretex-inline" style="width:3.31599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
+<text transform="translate(22.656)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(27.166)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(33.547)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> is the dimension of the set of <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> with the property that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> is consistent.</p>
+<p id="p-442">We know that the rank of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> is equal to the number of <a knowl="./knowl/defn-pivot-pos.html?vers=dd743d" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot columns</a> (see this <a knowl="./knowl/dimension-basis-colspace.html?vers=dd743d" knowl-id="xref-dimension-basis-colspace" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">theorem in Section 2.7</a>), and the nullity of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> is equal to the number of free variables (see this <a knowl="./knowl/dimension-basis-nulspace.html?vers=dd743d" knowl-id="xref-dimension-basis-nulspace" alt="Theorem 2.7.17 " title="Theorem 2.7.17 ">theorem in Section 2.7</a>), which is the number of columns without pivots.  To summarize:</p>
+<div class="pretex-display"><svg height="4.26939em" version="1.1" class="pretex" viewbox="90 9 324 49"><text transform="translate(101.838 18.829)"><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
+<text transform="translate(124.493 18.829)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(129.004 18.829)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(135.385 18.829)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(154.265 18.829)"><tspan y="0" x="0 6.4845052 9.6980648 20.968479 28.221943 34.408047" class="a">dimCol</tspan></text>
+<text transform="translate(191.915 18.829)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(196.425 18.829)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(202.807 18.829)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(221.686 18.829)"><tspan y="0" x="0 3.833318 10.306346 19.143637 25.662573 32.192986 41.868095 48.054199 53.689407 61.275703 67.461807 74.348007 79.466751 85.652847 88.889366 95.419777 105.09489 111.61382 119.40671 128.25548 131.46904 135.30235 144.97746 151.30128 154.51485 160.18449 166.37059 170.2039" class="a">thenumberofcolumnswithpivots</tspan><tspan y="17.969" x="-130.717 -124.19807 -117.66765 -114.43114 -111.19463 -107.98106 -104.14774" class="a">nullity</tspan></text>
+<text transform="translate(123.219 36.798)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(127.73 36.798)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(134.111 36.798)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(152.991 36.798)"><tspan y="0" x="0 6.4845052 9.6980648 20.968479 29.151581 35.681992" class="a">dimNul</tspan></text>
+<text transform="translate(191.915 36.798)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(196.425 36.798)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(202.807 36.798)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(221.686 36.798)"><tspan y="0" x="0 3.833318 10.306346 19.143637 25.662573 32.192986 41.868095 48.054199 53.689407 61.275703 67.461807 74.348007 78.03212 82.416336 88.051544 96.888832 102.55847 108.37731 112.76153 115.97508 121.79392 127.98003 131.21654 136.85175" class="a">thenumberoffreevariables</tspan></text>
+<text transform="translate(209.985 54.583)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(221.686 54.583)"><tspan y="0" x="0 3.833318 10.306346 19.143637 25.662573 32.192986 41.868095 48.054199 53.689407 61.275703 67.461807 74.348007 79.466751 85.652847 88.889366 95.419777 105.09489 111.61382 119.40671 128.25548 131.46904 135.30235 141.77538 147.96149 154.4919 161.5273 167.85112 171.06468 176.73433 182.92043 186.75374" class="a">thenumberofcolumnswithoutpivots</tspan></text>
+</svg></div>
+<p>Clearly</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="80 4 344 13"><text transform="translate(80.057 13.948)"><tspan y="0" x="0 8.5503654 13.336274 18.455015 24.641119 27.877632 34.408047 44.083157 50.602093 58.394978 67.243744 70.457306 74.290619 83.965729 90.289558 93.50312 99.17276 105.35886 109.19218 113.78297" class="a">#(columnswithpivots)</tspan></text>
+<text transform="translate(200.761 13.948)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(211.285 13.948)"><tspan y="0" x="0 8.5503654 13.336274 18.455015 24.641119 27.877632 34.408047 44.083157 50.602093 58.394978 67.243744 70.457306 74.290619 80.763649 86.949753 93.480164 100.51556 106.83939 110.05296 115.72259 121.90869 125.74201 130.33281" class="a">#(columnswithoutpivots)</tspan></text>
+<text transform="translate(349.073 13.948)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(360.773 13.948)"><tspan y="0" x="0 8.5503654 13.336274 18.455015 24.641119 27.877632 34.408047 44.083157 50.602093 55.192894 59.978802" class="a">#(columns),</tspan></text>
+</svg></div>
+<p>so we have proved the following theorem.</p>
+<article class="theorem-like" id="rank-theorem"><h5 class="heading"><span class="type">Rank Theorem</span></h5>
+<p id="p-443">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> is a matrix with <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="f">n</tspan></text>
+</svg></span></span> columns, then</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="190 4 124 13"><text transform="translate(190.701 13.948)"><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
+<text transform="translate(213.357 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(217.867 13.948)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(224.249 13.948)"><tspan y="0" x="0 6.6394444" class="e">)+</tspan></text>
+<text transform="translate(241.418 13.948)"><tspan y="0" x="0 6.5189362 13.049349 16.285864 19.522377 22.735937 26.569256" class="a">nullity</tspan></text>
+<text transform="translate(273.669 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(278.179 13.948)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(284.56 13.948)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(303.727 13.948)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(310.108 13.948)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></div>
+</article><p id="p-444">In other words, for any consistent system of linear equations,</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="77 4 351 13"><text transform="translate(76.367 13.948)"><tspan y="0" x="0 4.7859092 11.270414 14.483974 27.361168 33.547272 40.433472 45.552212 51.738316 54.974831 61.505241 71.180351 80.901375 85.492172 91.816002 97.634842 104.15378" class="a">(dimofcolumnspan)</tspan></text>
+<text transform="translate(187.442 13.948)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(197.966 13.948)"><tspan y="0" x="0 4.7859092 11.270414 14.483974 27.361168 33.547272 40.433472 45.024269 51.210373 54.446888 60.977303 64.810616 68.024178 74.210281 83.931297 88.522102 94.15731 97.990623" class="a">(dimofsolutionset)</tspan></text>
+<text transform="translate(303.411 13.948)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(315.112 13.948)"><tspan y="0" x="0 4.7859092 11.304845 17.835258 27.510368 33.696472 39.33168 46.917976 53.10408 59.99028 65.65992 71.47876 75.862968 79.07653 84.89537 91.081474 94.317986 99.953194 104.54399 109.3299" class="a">(numberofvariables).</tspan></text>
+</svg></div>
+<p id="p-445">The rank theorem theorem is really the culmination of this chapter, as it gives a strong relationship between the null space of a matrix (the solution set of <span class="pretex-bind"><span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="a">0</tspan></text>
+</svg></span></span>)</span> with the column space (the set of vectors <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> making <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> consistent), our two primary objects of interest.  The more freedom we have in choosing <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">x</tspan></text>
+</svg></span></span> the less freedom we have in choosing <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
+</svg></span></span> and vice versa.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-75-hidden.html?vers=dd743d" knowl-id="hidden-example-75" alt="Example 2.9.3 Rank and nullity" title="Example 2.9.3 Rank and nullity"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Rank and nullity)</span>
+</h5></article></a></div>
+<p id="p-449">The rank theorem is a prime example of how we use the theory of linear algebra to say something qualitative about a system of equations without ever solving it.  This is, in essence, the power of the subject.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-76-hidden.html?vers=dd743d" knowl-id="hidden-example-76" alt="Example 2.9.4 The rank is 2 and the nullity is 2" title="Example 2.9.4 The rank is 2 and the nullity is 2"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(The rank is 2 and the nullity is 2)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-77-hidden.html?vers=dd743d" knowl-id="hidden-example-77" alt="Example 2.9.5 Interactive: Rank is 1, nullity is 2" title="Example 2.9.5 Interactive: Rank is 1, nullity is 2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 1, nullity is 2</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-78-hidden.html?vers=dd743d" knowl-id="hidden-example-78" alt="Example 2.9.7 Interactive: Rank is 2, nullity is 1" title="Example 2.9.7 Interactive: Rank is 2, nullity is 1"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 2, nullity is 1</span></h5></article></a></div></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20rank-thm&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CXlQMdkFpk_6KsoYFhF2-"></script>
+</body>
+</html>

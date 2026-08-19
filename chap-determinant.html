@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Determinants</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: DcmENcckFNNbecU9n51h */
+
+@font-face {
+  font-family: "fhhxX6Ci4-JUlAyJ3Tgii";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fCXViSh8T4OwM4pDN5KiI";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU0AAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAZAAAAGRw49UPUZGVE0AAAUQAAAAGgAAAByjRDQNT1MvMgAAAVAAAABJAAAAYFm+Y3FjbWFwAAADMAAAADQAAAFCAA0GYWhlYWQAAAD0AAAAMQAAADYu/zIRaGhlYQAAASgAAAAgAAAAJAWUAuVobXR4AAAFLAAAAAgAAAAIBRAAIG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGRAAADJBS34K5wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4ubq/bHx/DZfGbiZXwBFGJ6tLteC0wr/vzNlMj0EcjkYmECiAF6rDIQAAAB4nGNgZGBgevj/O0MUUwcDEDBlMqT8f8eADJgAmRgGfQAAUAAAAgAAeJxjYGbqYJzAwMrAwNTFtOf/C4YeEM0QzPiAwZCRCSjKwMrJAAMNDEggIM01hYGBeTcQKvy3YIhiesgAUskIV6AAhIwAHMIN4AAAAHicpZLNSsNAFIVPYq2IP0sRV3dZtS2ToKW6TSm6EItI145xSAMhKWkCfQh3voULfQIfwaXv48k4KIoLwcBkvpu5P+feDIBtPMHDx6Nw69jDFp4d+1jDq+MVjL3YcQsHPhyvYsOPHLex6af09FrrtG5sVMMe9vDg2GfdF8cruMeb4xauvUfHq9jxDx23setfooMY+xCEVKpwRJpAo0ZmKeXpzNoljN27/F4jxx3tklzx3HBPMLcxmY0x9GjefaAT70uo1JFMdJ3JJI1nui6NrrtS53emlGpmJJlnkqWxyWPDiAsWatKOmGDBdAmT9RDhjEe6mo3MIk3yXkTzih6JFaspBlcmqTNNGKNgTGX3kh7GNthng4JTrt8qiK0gP3IKzumpXVtfkd+/Bp+ZA5xQ65CrGWiIAcUUeTUuysRI2FdyKl89SHQmTrOcV5oTsIcOg8Y5OOkNe6EKB7+P5b+i8XcxwNT+8qZ0YUsHdqKYmnKRFrkEfRpze1EqrqW9UIoTOOY8MC9NZZZKqcHxEO9Wwo7wAAAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEQD7z7v//IeQfN6hKBkY2BhhzxAIABz0HcHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAztWBgZGJgZDD+IcP4Q5bphxzzDwmWHh7GqTxMmjzMB3lYVjf9+PuzlFWG4RS/DAODgAzDWUEZBi0ZxnQhBhaQRnYGc4ZEhrycxNyklESNZE0FIwMDE4WAxNIchYDM5IzE0qLUxFIdhdK8lNQihZKMVIX0ghyFnMzk1LzkVD3fxJIMl9TizPQ8BWcPhaDU9NKcxCIFz5JEoAIFkCSUaWiAUKnr7MHAwMDYzsDEyKg0tXvvD9e9jHv3/gjZy7xX7MeOHyv/7GDb+6dc9Ifrj5A/rux83WXTr/94ek3ou+b6HwrrhS2+a/54I7qebebKJUtX9U/omdA9ofta9wKzSUYcwjt+v/xT/ab7e//3X6zCFVN+uyz4HXyn+1T33nMzLnKks9Xm5BVmt3N0sAV0N36vbvlu3fZdtPa78m/G7lYgbOni8GoK86vz5OD7KSPSLdo05UdZ/3ff6WxyXIwz9Hk4J/FwdfNwb+XaOpeH5wH38SU8vN08fADVGZd1eJxjYGBgZACCq29dd4DoZ6vLtWA0AFJ0ByUAAAKIAAACiAAg) format('woff');
+}
+
+@font-face {
+  font-family: "fzT8FjOaugu9aE73B8ZK4";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU4AAoAAAAAB3wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAYoAAAGja7KVukZGVE0AAAUMAAAAGgAAAByjRDQLT1MvMgAAAVAAAABFAAAAYFZeX09jbWFwAAADJAAAAEYAAAFKAGUD0mhlYWQAAAD0AAAAMQAAADYvhjF3aGhlYQAAASgAAAAeAAAAJAYwAllobXR4AAAFKAAAABAAAAAQCBQAqG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGKAAAC0Jv+RC5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYqWq1rnx/DZfGbiZXwBFGJ6tLteE0xb/XZhuMP0BcjkYmECiAEuRDBUAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAIWAGBCA48AAAAAUAAABAAAeJxjYGbiYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAQJApaAAAAeJyNkc9Kw0AQxr9ta0X8c1NEPMxRwZZN0NL22lJ7kRYRz8a4pIGQlDSBHn0H30Pvgo/gUXwMH8CLX9ZFQUQMbOY3mZlvZrIAtnAPhc9H49qxwiYeHNewimfHdXTVqeMG9tWj4xWsqzfHTWzUtpmpGmv0rmxVxQp7uHNcY98nx3XM8eK4Qf1bxyvYUa+Om9hV7zhAiEMIfE6qcUyaIkCJxFLM6Mz6OYy1R/xeIsUN/ZxcMG5oI3asahJbY5hRvdvAQXgovtbHMg3KRKZxOAvK3ATlkZTpjcmlmBmJ5okkcWjS0LDijI0q2SEFFpSLKNbCAGOGgmI2NIs4SlsDuufMiOywAYfBuYnKJCCMkLGmsDZnhrELtrmgoM/zWwexHeSHpmCCC3i03le1hx7n6fJUP81Hhw2ztBhleWTEb2vpy/ecMhiLm0smF554VdjrtbotX/ud35f9zyj4qwVwaa+nEsysoGe3x6XJF3GWitemM7eXWvAs7eVrbnJSbTPPTWGWWuvOSQcfKhF6sAAAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGDQZbP//B/I1QPT/m/+PQdUDASMbA4JDADAyYRFkJlLzIAYACG4JNAAAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLQUsbURSF78tMZ2J8piqmFHzKE7JQq3EiUWhcaiAbaRBXgoshPpLAECRmGNduZ6FIC4LIgAuxq25qIZQBNYv8CEH8Ca563/BScIKIl7P4OPd8BHQdCCEj+y3RFoeWZa2urAJJAIGcnCSSJeSUJj/rc1S7o3pXVSInOvnA4NdHBjDK4M8Ygy+MHI6DNnDysAk7s9U5vmxZBV6xXYdXGtW67baE7S5wt7knWrxdF7y273CnURXNqsht2u36hjho1Jp8vcy3RM117Bb/tp3neev9t7hehviGIAXToBOStYO/quSHshSSMMTbUAs/yaz82c8aYd/LyBLe9ktmWlU60XOHdJ80nMHfGR+vHpChGSQ7pip6ylA5X93HwZiw6A1qM1hDFg+TbzIex/bxwFZXa4op00vumlgM0MCcj/dxVEyqGAxq03tQLB4m0/9wvodWj3RlIhMVev8LhrrWXyEt2UT0NXP0Xbo/sHxuTKfI2RIdOqUpnw7fpG4uKH0c7l3SEZ+mXwAdoKbxAAB4nGNgYGBkAIKrb113gOhnq8s1YTQAUmoHIwAAAfQAAAGIADgBiAA4AxAAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fMgO9OyWVSCutIVPDbX0w";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fcLWm3jFUpCxH60oiDczP";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASsAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAARMAAAETQku2LkZGVE0AAASIAAAAGgAAAByjRDQNT1MvMgAAAVQAAABJAAAAYFmEXZljbWFwAAADIAAAADcAAAFCAA0C6GhlYWQAAAD0AAAAMQAAADYvTjF5aGhlYQAAASgAAAAhAAAAJAXI/SlobXR4AAAEpAAAAAgAAAAIAAIAXW1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAaAAAAGAAAACuJiwYvNwb3N0AAADWAAAABkAAAAg/5EAN3icY2BkYGAA4vYZksfj+W2+MnAzvwCKMDxbXa4Fp2P/2zBVM7MAuRwMTCBRAEpRCyEAAAB4nGNgZGBgZvlvwxDFAGT9bWOqZkj5/5YBGTABAH3mBfEAAAAAAFAAAAIAAHicY2BmYGScwMDKwMDUxbTn/zOGHhDNEM34gMGQkQkoysDKyQADjAxIICDNNQVIOTI4Miv8t2CIYmZhOIJQA+QpACEjALH9C8oAAAB4nH2Rz0rDQBDGv9VaEf8cRTzNUcGUTajF9uKhpfQilB56NqZLEghJSRPwPXwHj/oE4hN4FB/A5xD8si4KUg1s9jeZmW9mMgAO8ACFr0fjxrHCPh4db2AbL4430VWXjls4UveOt7Cr3hy3sac+GKlaO7SubVbDCse4c7zBuk+ON5Hg1XELWlWOt3Conh23WesdJ4hwCkHATjW6pClC1MgspfQm1i5h7H3G7zVyLGiX5Ip+wzvG0uZkNscwonl3gJPoVAKtuzIN60ymaZSEdWnC+kzqfGFKqRIj8TKTLI1MHhlmXLFQIzuiwIpyMcU8DDGhK6ySkVmlce4Nac4YEdtmQzaDmYnrLCSMUTCnsnfJCGMH7HBAwYBnXQWxFeSXpsD/zvLRZx8XPM3PCtBjoSKvxkUZGwk6Wgby058MJ+L6Eb9x+X3vwgt00Fs/4H/l8ZcsMLdraEQKK+LbKTE35SotcvE7NJZ2eRXPrV2yZufnnAXL0lTmVmvdO+/jE5t9d0V4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvuP//xDy/wGoSgZGNgYYk3xAsQEDCwB9uwb0AHicY2BmYGDgZmD438xgBmQxMqABACnSAcgAAAABAAQEAAEBAQ1wcmV0ZXgwMDA2NTkAAQIAAQA0+BsB+BwC+B0D+BgEjAwBlgwCKQwDwQwE6PtY+Q/5mAUcALEPHAAAEBwAtBEcACkcAOoSAAMCAAEAMQBJAFYoYykgMjAwNCBQYXVsIFBpY2hhdXJlYXUsIHVuZGVyIHRoZSBncGwgbGljZW5jZS5NYXRoRGVzaWduIENIIFJlZ3VsYXIgMTBNYXRoRGVzaWduLUNIAAAAACIAAgEBIDGLvfhFvQG9vftbvQO9Fij4qe4Gvfx3FfhF+1v8RQcO+Mz5mBX8b/5czov4b/pcBQ6MFIsVgpT4dZX3SJsGHgoBmC8MCZIMCosMC7UKtZ0MDN4Lx6IMDYsMDgB4nGNgYGBkAIKrb113gOhnq8u1YDQAUnQHJQAAAAEAAAABAF0=) format('woff');
+}
+
+.CDcmENcckFNNbecU9n51h svg.pretex tspan.a { font-size:11.47700024px;font-family:fMgO9OyWVSCutIVPDbX0w }
+.CDcmENcckFNNbecU9n51h svg.pretex tspan.b { font-size:11.47700024px;font-family:fzT8FjOaugu9aE73B8ZK4 }
+.CDcmENcckFNNbecU9n51h svg.pretex tspan.c { font-size:11.47700024px;font-family:fhhxX6Ci4-JUlAyJ3Tgii }
+.CDcmENcckFNNbecU9n51h svg.pretex tspan.d { font-size:11.47700024px;font-family:fCXViSh8T4OwM4pDN5KiI }
+.CDcmENcckFNNbecU9n51h svg.pretex tspan.e { font-size:11.47700024px;font-family:fcLWm3jFUpCxH60oiDczP }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CDcmENcckFNNbecU9n51h" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CDcmENcckFNNbecU9n51h"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link active"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="invertible-matrix-thm.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="determinants-definitions-properties.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="invertible-matrix-thm.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="determinants-definitions-properties.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CDcmENcckFNNbecU9n51h"><main class="main"><div id="content" class="mathbook-content">
+<section class="chapter" id="chap-determinant"><header title="Chapter 4 Determinants"><h1 class="heading" alt="Chapter 4 Determinants">
+<span class="type">Chapter</span><span class="codenumber">4</span><span class="title">Determinants</span><a href="chap-determinant.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-14"><p id="p-789">We begin by recalling the overall structure of this book: </p>
+<ol id="ol-69" style="list-style-type: decimal;">
+<li id="li-350">Solve the matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-351">Solve the matrix equation <span class="pretex-inline" style="width:4.02499em"><span style="height:0.909em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="d">λ</tspan></text>
+<text transform="translate(36.474)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(43.004)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> where <span class="pretex-inline" style="width:0.651em"><span style="height:0.739em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">λ</tspan></text>
+</svg></span></span> is a number.</li>
+<li id="li-352">Approximately solve the matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+</ol>
+<p> At this point we have said all that we will say about the first part.  This chapter belongs to the second.</p>
+<article class="remark-like" id="note-19"><h5 class="heading"><span class="type">Primary Goal</span></h5>
+<p id="p-790">Learn about determinants: their computation and their properties.</p></article><p id="p-791">The <em>determinant</em> of a square matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is a number <span class="pretex-inline" style="width:3.00999em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(15.953)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(20.464)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(26.845)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(31.355)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  This incredible quantity is one of the most important invariants of a matrix; as such, it forms the basis of most advanced computations involving matrices.</p>
+<p id="p-792">In <a href="determinants-definitions-properties.html" alt="Section 4.1 Determinants: Definition" title="Section 4.1 Determinants: Definition">Section 4.1</a>, we will define the determinant in terms of its behavior with respect to row operations.  The determinant satisfies many wonderful properties: for instance, <span class="pretex-inline" style="width:4.53998em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(15.953)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(20.464)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(26.845)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(34.024)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(34.024)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(45.724)"><tspan y="0" x="0" class="c">0</tspan></text>
+</svg></span></span> if and only if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is invertible.  We will discuss some of these properties in <a href="determinants-definitions-properties.html" alt="Section 4.1 Determinants: Definition" title="Section 4.1 Determinants: Definition">Section 4.1</a> as well. In <a href="determinants-cofactors.html" alt="Section 4.2 Cofactor Expansions" title="Section 4.2 Cofactor Expansions">Section 4.2</a>, we will give a recursive formula for the determinant of a matrix.  This formula is very useful, for instance, when taking the determinant of a matrix with unknown entries; this will be important in <a href="chap-eigenvalues.html" alt="Chapter 5 Eigenvalues and Eigenvectors" title="Chapter 5 Eigenvalues and Eigenvectors">Chapter 5</a>. Finally, in <a href="determinants-volumes.html" alt="Section 4.3 Determinants and Volumes" title="Section 4.3 Determinants and Volumes">Section 4.3</a>, we will relate determinants to volumes.  This gives a geometric interpretation for determinants, and explains why the determinant is defined the way it is.  This interpretation of determinants is a crucial ingredient in the change-of-variables formula in multivariable calculus.</p></section><nav class="summary-links"><a href="determinants-definitions-properties.html"><span class="codenumber">4.1</span><span class="title">Determinants: Definition</span></a><a href="determinants-cofactors.html"><span class="codenumber">4.2</span><span class="title">Cofactor Expansions</span></a><a href="determinants-volumes.html"><span class="codenumber">4.3</span><span class="title">Determinants and Volumes</span></a></nav></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20chap-determinant&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CDcmENcckFNNbecU9n51h"></script>
+</body>
+</html>

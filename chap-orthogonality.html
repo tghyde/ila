@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Orthogonality</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: PO2QtGNt6UmEqrV52WOb */
+
+@font-face {
+  font-family: "fwwLbx3pHFjx1jDltBABT";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR4AAAEhzUECPkZGVE0AAASUAAAAGgAAAByjRDPbT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvhTFHaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGKAAAC0JX9PS5wb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAA4lLZvWvj+W2+MnAzvwCKMDxbXS4Ipy0YpjHdYFwF5HIwMIFEAUNuCyMAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr9ta0X8c1NEPMyxBVs2oZS214r2Ii0iPRvjkgZCUtIEPPoOvofeBR/Bo/gYPoAXv6yLgogY2MxvMjPfzGQB7OAeCp+PxpVjhW08OK5hHc+O6xioU8cNHKpHx2vYVG+Om9iq7TJTNTboXdqqihUOcOe4xr5PjutY4sVxg/q3jtewp14dN7Gv3tFCiDYEPifV6JFmCFAisRQzurB+DmPtEb+XSHFNPycXjBvaiB2rmsTWGGZU7y7QCtvia92TWVAmMovDRVDmJiiPpEyvTS7Fwki0TCSJQ5OGhhVnbFTJHlNgRbmIYh2MMWEoKBbHZhVHaWdM95wZkR024DA4N1GZBIQTZKwprM2ZYeyCXS4oGPH81kFsB/mhKZjiAh6t91XtYch5BjzVT/PRZ8MsLU6yPDLid7WM5HtOGU/EzSXTC0+8KuwNO4OOr/3+78v+ZxT81QKY2+upBDMr6NntMTf5Ks5S8bp0lvZSC54be/mam/SqrGVuCnOjte73ND4AKZB6ogAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWLO0vDUBhAvy+JFdPb+sCKYCwXJxt83EpwUwq1kKVYxMktxEtaCKHEBJ1d4yQKgriIg65CxjtIh/yJ4t/IDbag6OCZDhwOgqYBIlaGIY/4FWNs32KACiA05RpKQ5HrqlzVbgg2iPpBtFFuFr48nDHgfd4AWDAgXTTANCBfAvV3gy6cbboNuseYRXtO7NPewO07ccideIvGwTkPadTn1Bv61B+4PHD5TteJ+kf8YuAFtG3TE+7FvhPS49MmbbL/tt224Yc6KIgbB4mQHYFCyLFQxUrRkm/TVklMLmuyI8eTzmw1N7OcZTiSSq2wsqlV+nrV/qRavCwntes7Gd/n9mOpruPDLpm7JXpCyqmePhHyWc6eSSUh1W8oJmAIAAB4nGNgYGBkAIKrb113gOhnq8sFYTQAUXoG8wAAAxAAAAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "f9dQSYMqhTjd4s8GtLfFk";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fDUNYwdyz7mY6lyFCXdFm";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU0AAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAZAAAAGRvY9UPEZGVE0AAAUQAAAAGgAAAByjRDPbT1MvMgAAAVAAAABJAAAAYFm+Y3FjbWFwAAADMAAAADQAAAFCAA0GYWhlYWQAAAD0AAAAMQAAADYu/zHfaGhlYQAAASgAAAAgAAAAJAWUAuVobXR4AAAFLAAAAAgAAAAIBRAAIG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGRAAADJA622a5wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4tm159Tj+W2+MnAzvwCKMDxbXS4IpxX+f2fKZHoI5HIwMIFEAVhZDEUAAAB4nGNgZGBgevj/O0MUUwcDEDBlMqT8f8eADJgAmRgGfQAAUAAAAgAAeJxjYGbqYJzAwMrAwNTFtOf/C4YeEM0QzPiAwZCRCSjKwMrJAAMNDEggIM01hYGBeTcQKvy3YIhiesgAUskIV6AAhIwAHMIN4AAAAHicpZLLSsNAFIb/pBcRL0sRV2dZLy2TUIrttlLsQixFXDvGIQ2EpKQJ+BDufAsX+gQ+gkvfxz/jYFFcCAYm853MufznZADs4hkePh+FW8cedvDi2McG3hw3MPEix00c+XDcwpY/dtzGtp/Q02tu0rqxUTV7OMCjY591Xx038IB3x01ceU+OW9jzjx23se9fooMIhxCEVKrQJ82gUSG1lPB0Ye0Cxu4n/F4hwx3tglzy3HCPsbQxqY0x9KjfPaATHUqoVF9mukpllkQLXRVGVydSZXemkHJhJF6mkiaRySLDiAsWqtOeMcGK6WIm62KMcx7pcnFmVkmcdcc05/SIrVhNMZibuEo1YYKcMaXdC3oY22CPDQpGXL9VEFtBfuQUTOmpXVvryO9fg6/MAYbUespVDzTEgGLyrJzkRWwk7CkZyboHGZ+L0yzTUnMC9tBhUDsHw+5pN1Th4Pex/Fc0/i4GuLa/vC6d29KBnSiuTbFK8kyCHo2lvSgl1729UIoT6HMOWBamNPdKqUE/xAdWQY7iAAAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEQD7z7v//IeQfN6hKBkY2BhhzxAIABz0HcHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAzMWJgZGJgZDD+IcP4Q5bphxzzDwmWHh7GqTxMmjzMB3lYVjf9+PuzlFWG4RS/DAODgAzDWUEZBi0ZxnQhBhaQRnYGc4ZEhrycxNyklESNZE0FIwMDE4WAxNIchYDM5IzE0qLUxFIdhdK8lNQihZKMVIX0ghyFnMzk1LzkVD3fxJIMl9TizPQ8BWcPhaDU9NKcxCIFz5JEoAIFkCSUaWiAUKnr7MHAwMDYzsDEyKg0tXvvD9e9jHv3/gjZy7xX7MeOHyv/7GDb+6dc9Ifrj5A/rux83WXTr/94ek3ou+b6HwrrhS2+a/54I7qebebKJUtX9U/omdA9ofta9wKzSUYcwjt+v/xT/ab7e//3X6zCFVN+uyz4HXyn+1T33nMzLnKks9Xm5BVmt3N0sAV0N36vbvlu3fZdtPa78m/G7lYgbOni8GoK86vz5OD7KSPSLdo05UdZ/3ff6WxyXIwz9Hk4J/FwdfNwb+XaOpeH5wH38SU8vN08fADKrZdueJxjYGBgZACCq29dd4DoZ6vLBWE0AFF6BvMAAAKIAAACiAAg) format('woff');
+}
+
+@font-face {
+  font-family: "f-s_qmoiEhA3CSYnpuMO7";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CPO2QtGNt6UmEqrV52WOb svg.pretex tspan.a { font-size:11.47700024px;font-family:f9dQSYMqhTjd4s8GtLfFk }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex tspan.b { font-size:11.47700024px;font-family:fwwLbx3pHFjx1jDltBABT }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex tspan.c { font-size:11.47700024px;font-family:f-s_qmoiEhA3CSYnpuMO7 }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex tspan.d { font-size:11.47700024px;font-family:fDUNYwdyz7mY6lyFCXdFm }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex path.a { stroke-width:1px }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex path.b { stroke-width:0.19925px }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex path.c { stroke-width:0.3985px }
+.CPO2QtGNt6UmEqrV52WOb svg.pretex path.d { stroke-width:0.79701px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CPO2QtGNt6UmEqrV52WOb" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CPO2QtGNt6UmEqrV52WOb"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link active"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="stochastic-matrices.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="dot-product.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="stochastic-matrices.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="dot-product.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CPO2QtGNt6UmEqrV52WOb"><main class="main"><div id="content" class="mathbook-content">
+<section class="chapter" id="chap-orthogonality"><header title="Chapter 6 Orthogonality"><h1 class="heading" alt="Chapter 6 Orthogonality">
+<span class="type">Chapter</span><span class="codenumber">6</span><span class="title">Orthogonality</span><a href="chap-orthogonality.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-24"><p id="p-1384">Let us recall one last time the structure of this book: </p>
+<ol id="ol-121" style="list-style-type: decimal;">
+<li id="li-594">Solve the matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-595">Solve the matrix equation <span class="pretex-inline" style="width:4.02499em"><span style="height:0.909em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="d">λ</tspan></text>
+<text transform="translate(36.474)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(43.004)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> where <span class="pretex-inline" style="width:0.651em"><span style="height:0.739em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">λ</tspan></text>
+</svg></span></span> is a number.</li>
+<li id="li-596">Approximately solve the matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+</ol>
+<p> We have now come to the third part.</p>
+<article class="remark-like" id="note-28"><h5 class="heading"><span class="type">Primary Goal</span></h5>
+<p id="p-1385">Approximately solve the matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article><p id="p-1386">Finding approximate solutions of equations generally requires computing the closest vector on a subspace to a given vector.  This becomes an <em>orthogonality</em> problem: one needs to know which vectors are perpendicular to the subspace. </p>
+<div class="pretex-display"><svg height="7.49322em" version="1.1" class="pretex" viewbox="0 0 214 86"><g transform="matrix(1,0,0,-1,106.683,42.618)"><g><g><g><g><path style="fill:#e0cae3;stroke:none" d="m -6.80295,42.51933 -99.78132,-85.03866 H 6.80295 l 99.78132,85.03866 z" class="a"></path></g><g><path style="stroke:#808080" d="M -6.80295,42.51933 H 106.58427 M -31.74829,21.25966 H 81.63893 M -56.69362,0 H 56.69362 M -81.63893,-21.25966 H 31.74829 M -106.5755,-42.51187 H 6.81172 m -13.61467,85.0312 -99.78132,-85.03866 M 21.54384,42.51933 -78.23746,-42.51933 M 49.89066,42.51933 -49.89066,-42.51933 M 78.23746,42.51933 -21.54384,-42.51933 M 106.57431,42.51933 6.793,-42.51933" class="b"></path></g></g><g><g><path style="fill:#377eb8;stroke:none" d="m -54.00108,-21.26009 c 0,1.17419 -0.95183,2.12601 -2.126,2.12601 -1.17417,0 -2.126,-0.95182 -2.126,-2.12601 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(-87.362 -32.669)"><g><g transform="translate(-19.321 -716.713)"><text transform="matrix(1,0,0,-1,19.321,716.713)"><tspan y="0" x="0 5.118742 8.3552561 14.541359 19.132158 24.767366 29.358166 36.393566 42.717396 48.903496 52.117058 58.635994" style="fill:#377eb8" class="c">closestpoint</tspan></text>
+</g></g></g></g><g><g><g><path d="m -57.47256,-12.85013 h 8.50402 l 1.34549,-8.40996" class="b"></path></g></g></g><g><g><g><path d="m -57.47256,-12.85013 -6.4795,-5.52264 1.34549,-8.40994" class="b"></path></g></g></g><g><g><path style="fill:#e41a1c;stroke:none" d="m -60.80423,21.26047 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95181,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g transform="translate(-66.626 24.468)"><g><g transform="translate(-40.057 -773.85)"><text transform="matrix(1,0,0,-1,40.918,773.85)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">x</tspan></text>
+</g></g></g></g><g><path d="m -56.46344,-19.15762 -5.24818,32.8011" class="c"></path><g transform="matrix(-0.15822,0.98894,-0.98894,-0.15822,-61.24838,10.74805)"><g><path style="fill:#000" d="M 7.93657,0 0.64343,2.74144 3.02744,0 0.64343,-2.74144 Z" class="c"></path></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g></g></g></g></svg></div><p id="p-1387">First we will define orthogonality and learn to find orthogonal complements of subspaces in <a href="dot-product.html" alt="Section 6.1 Dot Products and Orthogonality" title="Section 6.1 Dot Products and Orthogonality">Section 6.1</a> and <a href="orthogonal-complements.html" alt="Section 6.2 Orthogonal Complements" title="Section 6.2 Orthogonal Complements">Section 6.2</a>.  The core of this chapter is <a href="projections.html" alt="Section 6.3 Orthogonal Projection" title="Section 6.3 Orthogonal Projection">Section 6.3</a>, in which we discuss <em>the orthogonal projection</em> of a vector onto a subspace; this is a method of calculating the closest vector on a subspace to a given vector. These calculations become easier in the presence of an orthogonal set, as we will see in <a href="orthogonal-sets.html" alt="Section 6.4 Orthogonal Sets" title="Section 6.4 Orthogonal Sets">Section 6.4</a>. In <a href="least-squares.html" alt="Section 6.5 The Method of Least Squares" title="Section 6.5 The Method of Least Squares">Section 6.5</a> we will present the least-squares method of approximately solving systems of equations, and we will give applications to data modeling.</p>
+<article class="example-like" id="specialcase-48"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-1388">In data modeling, one often asks: “what line is my data supposed to lie on?”  This can be solved using a simple application of the least-squares method. </p>
+<div class="pretex-display"><svg height="17.42609em" version="1.1" class="pretex" viewbox="0 0 228 200"><defs><clippath id="clipPath64426" clippathunits="userSpaceOnUse"><path id="path64424" d="M 0,141.73187 V 340.15651 H 226.77101 V 141.73187 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,0.199,340.351)"><g><g><path d="M 0,141.73187 V 340.15651 H 226.77101 V 141.73187 Z" class="c"></path><g><path style="stroke:#808080" d="M 0,141.73187 H 226.77101 M 0,170.07825 H 226.77101 M 0,198.42462 H 226.77101 M 0,226.77101 H 226.77101 M 0,255.11737 H 226.77101 M 0,283.46376 H 226.77101 M 0,311.81015 H 226.77101 M 0,340.15453 H 226.77101 M 0,141.73187 V 340.15651 M 28.34636,141.73187 V 340.15651 M 56.69275,141.73187 V 340.15651 M 85.03911,141.73187 V 340.15651 M 113.3855,141.73187 v 198.42464 m 28.34637,-198.42464 v 198.42464 m 28.34638,-198.42464 v 198.42464 m 28.34637,-198.42464 v 198.42464 m 28.34439,-198.42464 v 198.42464" class="b"></path></g><g clip-path="url(#clipPath64426)"><g><g><path style="fill:#000;stroke:none" d="m 53.14946,147.40114 c 0,1.17418 -0.95183,2.12601 -2.12601,2.12601 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12601 0,-1.17417 0.95183,-2.12599 2.12599,-2.12599 1.17418,0 2.12601,0.95182 2.12601,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 75.82657,181.4168 c 0,1.17417 -0.95183,2.126 -2.12601,2.126 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17418,0 2.12601,0.95183 2.12601,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 121.18077,238.10956 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17418 0.95183,-2.12601 2.12601,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 172.20425,300.47157 c 0,1.17418 -0.95182,2.12601 -2.126,2.12601 -1.17417,0 -2.12599,-0.95183 -2.12599,-2.12601 0,-1.17416 0.95182,-2.12599 2.12599,-2.12599 1.17418,0 2.126,0.95183 2.126,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 177.87352,317.47942 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17417 0.95181,-2.126 2.12599,-2.126 1.17416,0 2.12599,0.95183 2.12599,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 177.87352,311.81015 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95181,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 194.88135,334.48724 c 0,1.17416 -0.95183,2.126 -2.12601,2.126 -1.17416,0 -2.12599,-0.95184 -2.12599,-2.126 0,-1.17418 0.95183,-2.126 2.12599,-2.126 1.17418,0 2.12601,0.95182 2.12601,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 143.85786,283.46376 c 0,1.17416 -0.95182,2.12599 -2.12599,2.12599 -1.17417,0 -2.126,-0.95183 -2.126,-2.12599 0,-1.17418 0.95183,-2.12599 2.126,-2.12599 1.17417,0 2.12599,0.95181 2.12599,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 160.8657,317.47942 c 0,1.17416 -0.95182,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17418,0 2.126,0.95183 2.126,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 115.51149,249.4481 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17417,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17417 0.95183,-2.126 2.126,-2.126 1.17416,0 2.12599,0.95183 2.12599,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.47235,170.07825 c 0,1.17418 -0.95181,2.126 -2.12599,2.126 -1.17416,0 -2.12599,-0.95182 -2.12599,-2.126 0,-1.17417 0.95183,-2.12599 2.12599,-2.12599 1.17418,0 2.12599,0.95182 2.12599,2.12599 z" class="a"></path></g></g><g><path style="stroke:#ff0000" d="m 0,109.92723 226.77101,266.0024" class="d"></path></g></g></g></g></g></svg></div></article><article class="example-like" id="specialcase-49"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-1389">Gauss invented the method of least squares to find a best-fit ellipse: he correctly predicted the (elliptical) orbit of the asteroid Ceres as it passed behind the sun in 1801. </p>
+<div class="pretex-display"><svg height="14.89931em" version="1.1" class="pretex" viewbox="0 0 228 171"><g transform="matrix(1,0,0,-1,113.585,85.239)"><g><g><g><path style="stroke:#b3b3b3" d="m -113.38724,-85.04042 h 226.77448 m -226.77448,28.3468 H 113.38724 M -113.38724,-28.3468 H 113.38724 M -113.38724,0 H 113.38724 M -113.38724,28.3468 H 113.38724 M -113.38724,56.69362 H 113.38724 M -113.38724,85.03047 H 113.38724 M -113.38724,-85.04042 V 85.04042 M -85.04042,-85.04042 V 85.04042 m 28.3468,-170.08084 V 85.04042 M -28.3468,-85.04042 V 85.04042 M 0,-85.04042 V 85.04042 M 28.3468,-85.04042 V 85.04042 M 56.69362,-85.04042 V 85.04042 M 85.04042,-85.04042 V 85.04042 M 113.37727,-85.04042 V 85.04042" class="b"></path></g><path d="M -113.38724,0 H 112.98872" class="c"></path><g transform="translate(113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-85.04042 V 84.64192" class="c"></path><g transform="matrix(0,1,-1,0,0,84.84117)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,56.69362 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.126 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,-28.3468 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,-56.69362 c 0,1.17418 -0.95183,2.12601 -2.12599,2.12601 -1.17417,0 -2.126,-0.95183 -2.126,-2.12601 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m -82.91443,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17416 0.95181,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17417,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><path style="stroke:#e41a1c" d="M 45.14006,32.10886 C 32.47708,58.06454 -7.65259,64.53517 -44.49352,46.56163 -81.33443,28.58809 -100.93398,-7.02257 -88.271,-32.97826 c 12.66298,-25.95568 52.79268,-32.42631 89.63358,-14.45277 36.84091,17.97354 56.44046,53.5842 43.77748,79.53989 z" class="d"></path></g></g></g></g></svg></div></article></section><nav class="summary-links"><a href="dot-product.html"><span class="codenumber">6.1</span><span class="title">Dot Products and Orthogonality</span></a><a href="orthogonal-complements.html"><span class="codenumber">6.2</span><span class="title">Orthogonal Complements</span></a><a href="projections.html"><span class="codenumber">6.3</span><span class="title">Orthogonal Projection</span></a><a href="orthogonal-sets.html"><span class="codenumber">6.4</span><span class="title">Orthogonal Sets</span></a><a href="least-squares.html"><span class="codenumber">6.5</span><span class="title">The Method of Least Squares</span></a></nav></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20chap-orthogonality&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CPO2QtGNt6UmEqrV52WOb"></script>
+</body>
+</html>

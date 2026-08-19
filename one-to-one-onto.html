@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>One-to-one and Onto Transformations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: pUMzHT1DG_S1bp7M1ANZ */
+
+@font-face {
+  font-family: "fYn8R92ckVabJxEUHjZMq";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAV4AAoAAAAAB6gAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADkAAAAbMAAAHICo3ycUZGVE0AAAVEAAAAGgAAAByjRDPxT1MvMgAAAVQAAABNAAAAYFnmgj5jbWFwAAADJAAAAFIAAAFiJgtHLmhlYWQAAAD0AAAAMgAAADYwRjFdaGhlYQAAASgAAAAiAAAAJAcGARxobXR4AAAFYAAAABgAAAAYDqUBfm1heHAAAAFMAAAABgAAAAYABlAAbmFtZQAAAaQAAAF/AAACuI20XfNwb3N0AAADeAAAABcAAAAg/5EANnicY2BkYGAA4nmTzryI57f5ysDN/AIowvBsdbkMnJb4b8O8g5kFyOVgYAKJAgBtwgvjAAB4nGNgZGBgZvlvwxDF/IGB4W8b8w6GlP9vGZABGwCaKgclAAAAAFAAAAYAAHicY2Bm6mScwMDKwMDUxbTn/zOGHhDNEM34gMGQkQkoysDKzAADIFYCjBOQ5poCpByVUpgV/lswRDGzMBwB8hmhSlkYFICQEQD8rAz1AAAAeJx9kc9Kw0AQxr+1f0T8cxTxNEcLtmxCW2wvHlpKL0LpwbMxXZJASEqagO/hO3jUJxCfwKP4AD6H4Jd1URA1sNnfZGa+mckAOMA9FD4fjWvHCvt4cLyFbTw7bqCvzh03caTuHLewq14dt7Gn3hmpmju0rmxWzQrHuHW8xbqPjhuI8eK4Ca1Kxy0cqifHbdZ6wwlCdCDw2alGn7RAgAqppYTe2NoFjL1P+b1ChhXtglzSb3hHWNuc1OYYRtTvHnASdsTXui+LoEplkYRxUBUmqE6lylamkDI2Eq1TSZPQZKFhxgUL1bJTCmwoF1GsiwnmdAVlPDWbJMq6E5pLRkS22YDNYGmiKg0IM+TMKe1dMMLYAXscUDDm+a2C2AryQ1PgfWV5GLGPM576Z/kYslCelbO8iIz4PS1j+e5PJnNx/YhXu7xR96zra3/4+4D/lcdfssClXUMtklsRz06JS1NskjwTr0djbZdX8tzYJWsMOEntKExpbrTWg5HGB5sXdzkAeJxjYGBgZoBgGQZGBhCIAfIYwXwWBgcgzcPAwcAEZDsyXFecpCSklPL/P1AUiff/yH/te0V339+dDzUBDhjZGNCFSAeslBpAKmCmqmkAGn4RmgAAeJxjYGZgYOBmYPjfzGDGgAUAACnBAccAeJxFjc1rE1EUxe9LMiOmL6MtHXEx1qdmYaXq1I+F0F0bCPhBUReGZpHH+EgGhiROMtS1CBafG0VD0FrUiuhaZjlQkTIbFf8C/433ZuZFnOjCe7iXHwfuOQhKJUAIVfo+G7L7tm1fvmIDKgCCZXkMyYWCPF6UR0sjXFjExS+4tJvdSa8lY82C/UMWwGELfs5acMZCO3OgTd/KMA9r0ATXY4MBuxdQj/p+b9N3253haWeRXLDtS2SdBh5Zd50ODXxGgyUSdO8ynww7jLT7HvFch3Uddu46HXbW2MBtd8lqndxk7SAPI8v2f//sah3y+QAf0SO0BSdBR6h6scU/78stHslahKJI7EXF6Iisyk+qqkdq05Q1sadqBwwxitGuGJnJSjxZ0Q0J4rEpGlkjDLOG+Cua01Q5UdH4xyF9+0YzkvdXY5TcSE6ZKs12uCOn97t6KvoyX02lkxOmVLFSupE+nBZ9nRZt86ySzYUtsSFu85fZhrhFWyJ3JttcM57Ib8nYVL3fzR9c9tJmXuLNc/PBcxm8EPVX+kIZjc/jg89wmeOZsBy+xvjXTPwOVzg2/gBbEcBnAHicY2BgYGQAgqtvXXeA6Gery2VgNABR6AcJAAAB9AAAAtgAGALYAH0DEABUA/AAOAABAF0=) format('woff');
+}
+
+@font-face {
+  font-family: "fcQzK6idVzWUJxTJfXFY1";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fmjcAzmNh0F42t--hdqsn";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fCr3ny_iQLxxpeSuwTT3I";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "f-gr77iHT6PE4Ceed8ZxY";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fB5TleHE7SWaTGja8UV5c";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU4AAoAAAAAB3wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAYwAAAGjZrKUvkZGVE0AAAUMAAAAGgAAAByjRDPxT1MvMgAAAVAAAABFAAAAYFZeX09jbWFwAAADJAAAAEYAAAFKAGUD0mhlYWQAAAD0AAAAMQAAADYvhjFdaGhlYQAAASgAAAAeAAAAJAYwAllobXR4AAAFKAAAABAAAAAQCBQAqG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGJAAAC0JUCQy5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYquizr/x/DZfGbiZXwBFGJ6tLpeB0xb/XZhuMP0BcjkYmECiAFzzDG8AAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAIWAGBCA48AAAAAUAAABAAAeJxjYGbiYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAQJApaAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuao0JbdoNL2WlEvYhHxbEyXNBCSkibg0XfwPfQu+AgexcfwAbz4ZV0UpIiBzfwmM/PNTBbAOh6g8PVo3HhWWMOj5waW8OJ5AT114rmJHfXkuYUV9e55EauNDWaq5jK9a1dVs8I27j032PfZ8wKmePXcpP6d5xY21ZvnRWypD+wiwh4EASfV2CeNEKJC6ihhdOL8AtbZNr9XyDCmX5BLxi1tzI51TepqLDPqdxfYjfYk0HpfRmGVyiiJJmFV2LBqS5WNbSHlxEo8TSVNIptFlhVnbFTLHlFgRrmYYh0MccpQWE6O7CyJs86Q7gUzYjdsyGFwYeMqDQnHyFlTOlsww7oFu1xQMOCZ10FcB/mlKTjHJQyt+a426HOeHk/90wIcsmGelcd5EVsJuloG8jOnDE/FzyXnl0ZMHTb9Tq8T6OBw/rL/GQV/tQCu3PXUgrkTNG57XNliluSZmC6dqbvUkufWXb7GATczDBS2tLda64O+wScp83qsAAAAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGDQZbP//B/I1QPT/m/+PQdUDASMbA4JDADAyYRFkJlLzIAYACG4JNAAAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLTUsbURSGz81MZ/JxTa0YEXort5BFrTadSFwkLjWQTWgoXRW6GNJLEhiCxAzjuttZpBQFoZQBF0FXblQIMqDJIj8iUPoTuuq5w02hE0rp4V08vOd9COg6EEKWDnuiL44ty9otF4EkgEBBPiWSJeQzTa7rm1R7oPpENSIn+vyIwdVjBrDM4PYJgy1GjldAWzhFqMP7F81NvmNZJd6wXYc3Os227faE7W5zt/tR9Hi/LXjr0OFOpym6TVGo2/32gTjqtLp8v8bfipbr2D3+5l2RF63/v1f7NYgvBWnYAJ2QvB3cqaofympIwhDvQy1ck3l5Oc8b4dzLySrez6tmVjVG0c8RmfzQ8Dle53wczpChGSRHpqp4ylAFX43jYExY8Ra1Gewhi4fJfzIOYnuwsNVwTzFleskPJlYCNLDg4ziOiklVgkVtejPF4mEy+wtfTtGakolM5KLS9HfJUBf6X8hKthqVc59OpHuKta/GRpqcvaapLzTt08xN+uYbpd8z03O65NPsHxqEpu94nGNgYGBkAIKrb113gOhnq8tlYDQAUegHCQAAAfQAAAGIADgBiAA4AxAAOA==) format('woff');
+}
+
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.a { font-size:11.47700024px;font-family:f-gr77iHT6PE4Ceed8ZxY }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.b { font-size:11.47700024px;font-family:fCr3ny_iQLxxpeSuwTT3I }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.c { font-size:11.47700024px;font-family:fcQzK6idVzWUJxTJfXFY1 }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.d { font-size:7.65140009px;font-family:f-gr77iHT6PE4Ceed8ZxY }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.e { font-size:11.47700024px;font-family:fYn8R92ckVabJxEUHjZMq }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.f { font-size:11.47700024px;font-family:fB5TleHE7SWaTGja8UV5c }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.g { font-size:10.47280025px;font-family:f-gr77iHT6PE4Ceed8ZxY }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.h { font-size:10.47280025px;font-family:fB5TleHE7SWaTGja8UV5c }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.i { font-size:7.65140009px;font-family:fCr3ny_iQLxxpeSuwTT3I }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex tspan.j { font-size:11.47700024px;font-family:fmjcAzmNh0F42t--hdqsn }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex path.a { stroke-width:0.19925px }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex path.b { stroke-width:0.3985px }
+.CpUMzHT1DG_S1bp7M1ANZ svg.pretex path.c { stroke-width:1px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CpUMzHT1DG_S1bp7M1ANZ" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CpUMzHT1DG_S1bp7M1ANZ"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link active"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto" class="active">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="matrix-transformations.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="chap-matrices.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="linear-transformations.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="matrix-transformations.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="chap-matrices.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="linear-transformations.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CpUMzHT1DG_S1bp7M1ANZ"><main class="main"><div id="content" class="mathbook-content">
+<section class="section" id="one-to-one-onto"><header title="Section 3.2 One-to-one and Onto Transformations"><h1 class="heading hide-type" alt="Section 3.2 One-to-one and Onto Transformations">
+<span class="type">Section</span><span class="codenumber">3.2</span><span class="title">One-to-one and Onto Transformations</span><a href="one-to-one-onto.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-14"><h5 class="heading"><span class="type">Objectives</span></h5>
+<ol id="ol-51" style="list-style-type: decimal;">
+<li id="li-255">Understand the definitions of one-to-one and onto transformations.</li>
+<li id="li-256">
+<em>Recipes:</em> verify whether a matrix transformation is one-to-one and/or onto.</li>
+<li id="li-257">
+<em>Pictures:</em> examples of matrix transformations that are/are not one-to-one and/or onto.</li>
+<li id="li-258">
+<em>Vocabulary words:</em> <em class="terminology">one-to-one</em>, <em class="terminology">onto</em>.</li>
+</ol></article><section class="introduction" id="introduction-10"><p id="p-507">In this section, we discuss two of the most basic questions one can ask about a transformation: whether it is <em>one-to-one</em> and/or <em>onto.</em>  For a matrix transformation, we translate these questions into the language of matrices.</p></section><section class="subsection" id="subsection-31"><header title="Subsection 3.2.1 One-to-one Transformations"><h1 class="heading hide-type" alt="Subsection 3.2.1 One-to-one Transformations">
+<span class="type">Subsection</span><span class="codenumber">3.2.1</span><span class="title">One-to-one Transformations</span>
+</h1></header><article class="definition-like" id="definition-29"><h5 class="heading">
+<span class="type">Definition</span><span class="title">(One-to-one transformations)</span>
+</h5>
+<p id="p-508">A transformation <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> is <em class="terminology">one-to-one</em> if, for every vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has <em>at most one</em> solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-13" id="remark-13"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
+<div id="hk-remark-13" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-509">Another word for <em>one-to-one</em> is <em>injective</em>.</p></article></div>
+<p id="p-510"> Here are some equivalent ways of saying that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is one-to-one: </p>
+<ul id="ul-29" style="list-style-type: disc;">
+<li id="li-259">For every vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has <em>zero or one</em> solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-260">Different inputs of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> have different outputs.</li>
+<li id="li-261">If <span class="pretex-inline" style="width:5.40098em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(12.946)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(19.293)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(38.746)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(46.608)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(51.692)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(57.477)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:2.63699em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(9.015)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.29)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(27.074)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+</ul>
+<p> </p>
+<div class="pretex-display"><svg height="12.72105em" version="1.1" class="pretex" viewbox="0 0 383 146"><defs><clippath id="clipPath67914" clippathunits="userSpaceOnUse"><path id="path67912" d="M 191.34106,-63.7803 V 63.7803 H 318.90169 V -63.7803 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,63.879,63.879)"><g><g><g><path style="stroke:#b3b3b3" d="M -63.7803,-63.7803 H 63.7803 M -63.7803,-42.5202 H 63.7803 M -63.7803,-21.2601 H 63.7803 M -63.7803,0 H 63.7803 M -63.7803,21.2601 H 63.7803 M -63.7803,42.5202 H 63.7803 M -63.7803,63.77284 H 63.7803 M -63.7803,-63.7803 V 63.7803 M -42.5202,-63.7803 V 63.7803 M -21.2601,-63.7803 V 63.7803 M 0,-63.7803 V 63.7803 M 21.2601,-63.7803 V 63.7803 M 42.5202,-63.7803 V 63.7803 M 63.77284,-63.7803 V 63.7803" class="a"></path></g><g><g transform="translate(-6.322 -80.635)"><g><g transform="translate(-57.557 -647.486)"><text transform="matrix(1,0,0,-1,57.557,647.486)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,65.449,652.065)"><tspan y="0" x="0" class="d">n</tspan></text>
+</g></g></g></g><g><g transform="translate(247.805 -80.635)"><g><g transform="translate(-311.684 -647.486)"><text transform="matrix(1,0,0,-1,311.684,647.486)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,319.576,652.065)"><tspan y="0" x="0" class="d">m</tspan></text>
+</g></g></g></g><path d="M 7.3189,-76.53882 H 246.42076" class="b"></path><g transform="translate(246.62001 -76.53882)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(122.85 -74.545)"><g><g transform="translate(-186.729 -653.576)"><text transform="matrix(1,0,0,-1,187.303,653.576)"><tspan y="0" x="0" class="a">T</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 23.3861,31.89014 c 0,1.17418 -0.95183,2.126 -2.126,2.126 -1.17418,0 -2.126,-0.95182 -2.126,-2.126 0,-1.17417 0.95182,-2.126 2.126,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="c"></path></g></g><g><g transform="translate(10.747 29.15)"><g><g transform="translate(-74.626 -757.271)"><text transform="matrix(1,0,0,-1,75.487,757.271)"><tspan y="0" x="0" class="a">x</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -19.1341,0 c 0,1.17416 -0.95182,2.12599 -2.126,2.12599 -1.17417,0 -2.126,-0.95183 -2.126,-2.12599 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17418,0 2.126,0.95183 2.126,2.12599 z" class="c"></path></g></g><g><g transform="translate(-32.233 -1.535)"><g><g transform="translate(-31.646 -726.586)"><text transform="matrix(1,0,0,-1,33.081,726.586)"><tspan y="0" x="0" class="a">y</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,-42.5202 c 0,1.17418 -0.95183,2.126 -2.12599,2.126 -1.17416,0 -2.12599,-0.95182 -2.12599,-2.126 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17416,0 2.12599,0.95183 2.12599,2.126 z" class="c"></path></g></g><g><g transform="translate(-8.746 -45.264)"><g><g transform="translate(-55.133 -682.857)"><text transform="matrix(1,0,0,-1,55.133,682.857)"><tspan y="0" x="0" class="a">z</tspan></text>
+</g></g></g></g><g><g clip-path="url(#clipPath67914)"><g><path d="M 289.13766,21.26009 255.12137,0" class="a"></path></g><g><path d="m 212.60117,0 h 42.5202" class="a"></path></g><g><path d="M 255.12137,-42.5202 V 0" class="a"></path></g><g><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="m 174.33109,-10.63048 42.52105,-42.52106 119.05953,63.78202 -42.52106,42.52106 z" class="c"></path></g><g><path style="stroke:#e0cae3" d="M 174.3311,-10.6305 293.39063,53.15152 M 184.96135,-21.26074 304.02087,42.52127 M 195.59161,-31.891 314.65114,31.891 M 206.22186,-42.52127 325.28139,21.26074 M 216.85213,-53.15152 335.91165,10.6305 m -161.58053,-21.26096 42.52105,-42.52106 m -12.75619,58.46655 42.52105,-42.52104 m -12.75619,58.46654 42.52106,-42.52106 m -12.7562,58.46654 42.52107,-42.52104 m -12.75619,58.46655 42.52106,-42.52106" class="a"></path></g><g><g><path style="fill:#000;stroke:none" d="m 276.38197,26.57574 c 0,1.17417 -0.95182,2.126 -2.12599,2.126 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17417,0 2.12599,0.95183 2.12599,2.126 z" class="c"></path></g></g><g><g transform="translate(262.918 31.184)"><g><g transform="translate(-326.797 -759.305)"><text transform="matrix(1,0,0,-1,327.321,759.305)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,334.495,759.305)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,339.396,759.305)"><tspan y="0" x="0" class="g">x</tspan></text>
+<text transform="matrix(1,0,0,-1,345.355,759.305)"><tspan y="0" x="0" class="h">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 297.64249,5.31523 c 0,1.17417 -0.95183,2.12599 -2.12599,2.12599 -1.17417,0 -2.126,-0.95182 -2.126,-2.12599 0,-1.17418 0.95183,-2.12601 2.126,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="c"></path></g></g><g><g transform="translate(283.973 10.218)"><g><g transform="translate(-347.852 -738.339)"><text transform="matrix(1,0,0,-1,348.376,738.339)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,355.55,738.339)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,360.975,738.339)"><tspan y="0" x="0" class="g">y</tspan></text>
+<text transform="matrix(1,0,0,-1,366.829,738.339)"><tspan y="0" x="0" class="h">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 243.4279,-31.89088 c 0,1.17416 -0.95183,2.12598 -2.12599,2.12598 -1.17418,0 -2.12601,-0.95182 -2.12601,-2.12598 0,-1.17417 0.95183,-2.126 2.12601,-2.126 1.17416,0 2.12599,0.95183 2.12599,2.126 z" class="c"></path></g></g><g><g transform="translate(230.767 -27.292)"><g><g transform="translate(-294.646 -700.829)"><text transform="matrix(1,0,0,-1,295.169,700.829)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,302.343,700.829)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,306.459,700.829)"><tspan y="0" x="0" class="g">z</tspan></text>
+<text transform="matrix(1,0,0,-1,311.591,700.829)"><tspan y="0" x="0" class="h">)</tspan></text>
+</g></g></g></g><g><g transform="translate(271.065 -32.726)"><g><g transform="translate(-334.944 -695.395)"><text transform="matrix(1,0,0,-1,334.944,695.395)"><tspan y="0" x="0 4.3842139 10.203053 16.721989 22.724461" style="fill:#984ea3" class="b">range</tspan></text>
+</g></g></g></g><g><g><path d="m 282.34021,-18.0747 1.77771,-7.99612" class="a"></path></g></g></g><g><path d="M 255.12137,0 221.2744,-21.15427" class="a"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,221.18974,-21.20717)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="m 255.12137,0 h 42.32097" class="a"></path><g transform="translate(297.54196)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M 255.12137,0 V 42.32097" class="a"></path><g transform="matrix(0,1,-1,0,255.12138,42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><path d="M 191.34106,-63.7803 V 63.7803 H 318.90169 V -63.7803 Z" class="b"></path></g></g><g><path d="m 24.67781,31.8911 c 96.09383,0 150.07561,-5.31456 246.06981,-5.31456" class="b"></path><g transform="matrix(-1,0,0,-1,24.57819,31.8911)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(270.94687 26.57654)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M -17.84366,0 C 103.22073,0 171.04402,5.31538 292.00879,5.31538" class="b"></path><g transform="matrix(-1,0,0,-1,-17.94328,0)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(292.20804 5.31538)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="m 3.41707,-42.52148 c 91.51558,0 142.95952,10.62962 234.37547,10.62962" class="b"></path><g transform="matrix(-1,0,0,-1,3.31744,-42.52148)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(237.99179 -31.89186)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><g transform="translate(100.548 49.976)"><g><g transform="translate(-164.427 -778.097)"><text transform="matrix(1,0,0,-1,164.427,778.097)"><tspan y="0" x="0 6.1861029 12.705039 18.340246 22.00141 25.834726 32.020828 35.681992 41.868095 48.387032" style="fill:#377eb8" class="b">one-to-one</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p id="p-511"> Here are some equivalent ways of saying that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is <em>not</em> one-to-one: </p>
+<ul id="ul-30" style="list-style-type: disc;">
+<li id="li-262">There exists some vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> such that the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has <em>more than one</em> solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-263">There are two different inputs of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> with the same output.</li>
+<li id="li-264">There exist vectors <span class="pretex-inline" style="width:1.5245em"><span style="height:0.654em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(6.347)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(11.712)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> such that <span class="pretex-inline" style="width:2.35899em"><span style="height:0.9em;vertical-align:-0.161em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(9.015)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(9.015)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.29)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> but <span class="pretex-inline" style="width:5.67898em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(12.946)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(19.293)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(38.746)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(46.608)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(51.692)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(57.477)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(61.987)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+</ul>
+<p> </p>
+<div class="pretex-display"><svg height="12.72105em" version="1.1" class="pretex" viewbox="0 0 383 146"><defs><clippath id="clipPath68576" clippathunits="userSpaceOnUse"><path id="path68574" d="M 191.34106,-63.7803 V 63.7803 H 318.90169 V -63.7803 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,63.879,63.879)"><g><g><g><path style="stroke:#b3b3b3" d="M -63.7803,-63.7803 H 63.7803 M -63.7803,-42.5202 H 63.7803 M -63.7803,-21.2601 H 63.7803 M -63.7803,0 H 63.7803 M -63.7803,21.2601 H 63.7803 M -63.7803,42.5202 H 63.7803 M -63.7803,63.77284 H 63.7803 M -63.7803,-63.7803 V 63.7803 M -42.5202,-63.7803 V 63.7803 M -21.2601,-63.7803 V 63.7803 M 0,-63.7803 V 63.7803 M 21.2601,-63.7803 V 63.7803 M 42.5202,-63.7803 V 63.7803 M 63.77284,-63.7803 V 63.7803" class="a"></path></g><g><g transform="translate(-6.322 -80.635)"><g><g transform="translate(-57.557 -647.486)"><text transform="matrix(1,0,0,-1,57.557,647.486)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,65.449,652.065)"><tspan y="0" x="0" class="d">n</tspan></text>
+</g></g></g></g><g><g transform="translate(247.805 -80.635)"><g><g transform="translate(-311.684 -647.486)"><text transform="matrix(1,0,0,-1,311.684,647.486)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,319.576,652.065)"><tspan y="0" x="0" class="d">m</tspan></text>
+</g></g></g></g><path d="M 7.3189,-76.53882 H 246.42076" class="b"></path><g transform="translate(246.62001 -76.53882)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(122.85 -74.545)"><g><g transform="translate(-186.729 -653.576)"><text transform="matrix(1,0,0,-1,187.303,653.576)"><tspan y="0" x="0" class="a">T</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 23.3861,31.89014 c 0,1.17418 -0.95183,2.126 -2.126,2.126 -1.17418,0 -2.126,-0.95182 -2.126,-2.126 0,-1.17417 0.95182,-2.126 2.126,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="c"></path></g></g><g><g transform="translate(10.747 29.15)"><g><g transform="translate(-74.626 -757.271)"><text transform="matrix(1,0,0,-1,75.487,757.271)"><tspan y="0" x="0" class="a">x</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -19.1341,0 c 0,1.17416 -0.95182,2.12599 -2.126,2.12599 -1.17417,0 -2.126,-0.95183 -2.126,-2.12599 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17418,0 2.126,0.95183 2.126,2.12599 z" class="c"></path></g></g><g><g transform="translate(-32.233 -1.535)"><g><g transform="translate(-31.646 -726.586)"><text transform="matrix(1,0,0,-1,33.081,726.586)"><tspan y="0" x="0" class="a">y</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,-42.5202 c 0,1.17418 -0.95183,2.126 -2.12599,2.126 -1.17416,0 -2.12599,-0.95182 -2.12599,-2.126 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17416,0 2.12599,0.95183 2.12599,2.126 z" class="c"></path></g></g><g><g transform="translate(-8.746 -45.264)"><g><g transform="translate(-55.133 -682.857)"><text transform="matrix(1,0,0,-1,55.133,682.857)"><tspan y="0" x="0" class="a">z</tspan></text>
+</g></g></g></g><g><g clip-path="url(#clipPath68576)"><g><path d="M 289.13766,21.26009 255.12137,0" class="a"></path></g><g><path d="m 212.60117,0 h 42.5202" class="a"></path></g><g><path d="M 255.12137,-42.5202 V 0" class="a"></path></g><g><path style="stroke:#984ea3" d="M 102.04364,-212.60747 408.19911,212.60747" class="b"></path></g><g><g><path style="fill:#000;stroke:none" d="m 276.38206,26.57593 c 0,1.17416 -0.95182,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17417,0 2.12599,0.95183 2.12599,2.12601 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 251.40593,28.70279 h 59.87483 v 11.30685 h -59.87483 z" class="c"></path></g><g transform="translate(251.901 31.478)"><g><g transform="translate(-315.78 -759.599)"><text transform="matrix(1,0,0,-1,316.304,759.599)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,323.477,759.599)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,328.379,759.599)"><tspan y="0" x="0" class="g">x</tspan></text>
+<text transform="matrix(1,0,0,-1,334.338,759.599)"><tspan y="0" x="0 6.5507364" class="h">)=</tspan></text>
+<text transform="matrix(1,0,0,-1,352.089,759.599)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,359.263,759.599)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,364.688,759.599)"><tspan y="0" x="0" class="g">y</tspan></text>
+<text transform="matrix(1,0,0,-1,370.542,759.599)"><tspan y="0" x="0" class="h">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 218.97794,-53.15186 c 0,1.17417 -0.95183,2.126 -2.126,2.126 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17416 0.95181,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="c"></path></g></g><g><g transform="translate(219.472 -56.179)"><g><g transform="translate(-283.351 -671.942)"><text transform="matrix(1,0,0,-1,283.875,671.942)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="matrix(1,0,0,-1,291.049,671.942)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="matrix(1,0,0,-1,295.165,671.942)"><tspan y="0" x="0" class="g">z</tspan></text>
+<text transform="matrix(1,0,0,-1,300.296,671.942)"><tspan y="0" x="0" class="h">)</tspan></text>
+</g></g></g></g><g><g transform="translate(252.923 -28.629)"><g><g transform="translate(-316.802 -699.492)"><text transform="matrix(1,0,0,-1,316.802,699.492)"><tspan y="0" x="0 4.3842139 10.203053 16.721989 22.724461" style="fill:#984ea3" class="b">range</tspan></text>
+</g></g></g></g><g><g><path d="m 247.46739,-10.63051 13.52703,-11.33937" class="a"></path></g></g><g><path d="M 255.12137,0 221.2744,-21.15427" class="a"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,221.18974,-21.20717)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="m 255.12137,0 h 42.32097" class="a"></path><g transform="translate(297.54196)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M 255.12137,0 V 42.32097" class="a"></path><g transform="matrix(0,1,-1,0,255.12138,42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><path d="M 191.34106,-63.7803 V 63.7803 H 318.90169 V -63.7803 Z" class="b"></path></g></g><g><path d="m 24.67781,31.8911 c 96.0939,0 150.07564,-5.31438 246.0699,-5.31438" class="b"></path><g transform="matrix(-1,0,0,-1,24.57819,31.8911)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(270.94696 26.57672)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M -17.84366,0 C 95.34431,0 157.65935,26.57672 271.14622,26.57672" class="b"></path><g transform="matrix(-1,0,0,-1,-17.94328,0)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><path d="m 3.41707,-42.52148 c 81.94322,0 128.08118,-10.63199 209.92477,-10.63199" class="b"></path><g transform="matrix(-1,0,0,-1,3.31744,-42.52148)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(213.54109 -53.15347)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g></g><g><g transform="translate(90.678 49.976)"><g><g transform="translate(-154.557 -778.097)"><text transform="matrix(1,0,0,-1,154.557,778.097)"><tspan y="0" x="0 6.5189362 12.705039 19.74044 25.926542 32.44548 38.080685 41.741848 45.575169 51.761269 55.422432 61.608536 68.127472" style="fill:#377eb8" class="b">notone-to-one</tspan></text>
+</g></g></g></g></g></g></g></svg></div><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-96-hidden.html?vers=dd743d" knowl-id="hidden-example-96" alt="Example 3.2.3 Functions of one variable" title="Example 3.2.3 Functions of one variable"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Functions of one variable)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-eg-robot-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-eg-robot" alt="Example 3.2.4 A real-word transformation: robotics" title="Example 3.2.4 A real-word transformation: robotics"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A real-word transformation: robotics)</span>
+</h5></article></a></div>
+<article class="theorem-like" id="matrix-trans-one-to-one"><h5 class="heading">
+<span class="type">Theorem</span><span class="title">(One-to-one matrix transformations)</span>
+</h5>
+<p id="p-518">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix, and let <span class="pretex-inline" style="width:4.61699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> be the associated matrix transformation.  The following statements are equivalent: </p>
+<ol id="ol-52" style="list-style-type: decimal;">
+<li id="li-265">
+<span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is one-to-one.</li>
+<li id="li-266">For every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has at most one solution.</li>
+<li id="li-267">For every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> the equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has a unique solution or is inconsistent.</li>
+<li id="li-268">
+<span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="b">0</tspan></text>
+</svg></span></span> has <em>only</em> the trivial solution.</li>
+<li id="li-269">The columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> are linearly independent.</li>
+<li id="li-270">
+<span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> has a pivot in every column.</li>
+<li id="li-271">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> has dimension <span class="pretex-inline" style="width:0.859em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(6.668)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-11" id="proof-11"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-11" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-519">Statements 1, 2, and 3 are translations of each other.  The equivalence of 3 and 4 follows from this <a knowl="./knowl/solnsets-translate-span.html?vers=dd743d" knowl-id="xref-solnsets-translate-span" alt="Key Observation 2.4.19 Key Observation" title="Key Observation 2.4.19 Key Observation">key observation in Section 2.4</a>: if <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="b">0</tspan></text>
+</svg></span></span> has only one solution, then <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has only one solution as well, or it is inconsistent.  The equivalence of 4, 5, and 6 is a consequence of this <a knowl="./knowl/linindep-matrix-cols.html?vers=dd743d" knowl-id="xref-linindep-matrix-cols" alt="Important Note 2.5.9 Recipe: Checking linear independence" title="Important Note 2.5.9 Recipe: Checking linear independence">important note in Section 2.5</a>, and the equivalence of 6 and 7 follows from the fact that the rank of a matrix is equal to the number of columns with pivots.</p></article></span>
+</div>
+<p id="p-520">Recall that <em>equivalent</em> means that, for a given matrix, either all of the statements are true simultaneously, or they are all false.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/matrix-trans-11-notonto1-hidden.html?vers=dd743d" knowl-id="hidden-matrix-trans-11-notonto1" alt="Example 3.2.6 A matrix transformation that is one-to-one" title="Example 3.2.6 A matrix transformation that is one-to-one"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is one-to-one)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-99-hidden.html?vers=dd743d" knowl-id="hidden-example-99" alt="Example 3.2.8 A matrix transformation that is not one-to-one" title="Example 3.2.8 A matrix transformation that is not one-to-one"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is not one-to-one)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-not11-onto1-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-not11-onto1" alt="Example 3.2.10 A matrix transformation that is not one-to-one" title="Example 3.2.10 A matrix transformation that is not one-to-one"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is not one-to-one)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-eg-neither1-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-eg-neither1" alt="Example 3.2.12 A matrix transformation that is not one-to-one" title="Example 3.2.12 A matrix transformation that is not one-to-one"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is not one-to-one)</span>
+</h5></article></a></div>
+<p id="p-530"> The previous three examples can be summarized as follows.  Suppose that <span class="pretex-inline" style="width:4.61699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> is a matrix transformation that is <em>not</em> one-to-one.  By the <a knowl="./knowl/matrix-trans-one-to-one.html?vers=dd743d" knowl-id="xref-matrix-trans-one-to-one" alt="Theorem 3.2.5 One-to-one matrix transformations" title="Theorem 3.2.5 One-to-one matrix transformations">theorem</a>, there is a nontrivial solution of <span class="pretex-inline" style="width:3.28599em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="b">0.</tspan></text>
+</svg></span></span>  This means that the null space of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is not the zero space.  All of the vectors in the null space are solutions to <span class="pretex-inline" style="width:4.25099em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 6.3812122" class="b">0.</tspan></text>
+</svg></span></span>  If you compute a nonzero vector <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> in the null space (by row reducing and finding the parametric form of the solution set of <span class="pretex-inline" style="width:3.28599em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="b">0,</tspan></text>
+</svg></span></span> for instance), then <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">0</tspan></text>
+</svg></span></span> both have the same output: <span class="pretex-inline" style="width:9.81996em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.52)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(19.304)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(38.184)"><tspan y="0" x="0 6.5877981" class="a">Av</tspan></text>
+<text transform="translate(53.225)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(64.925)"><tspan y="0" x="0" class="b">0</tspan></text>
+<text transform="translate(73.975)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(86.25)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(94.111)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(98.622)"><tspan y="0" x="0" class="b">0</tspan></text>
+<text transform="translate(105.003)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(109.514)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p>
+<article class="remark-like" id="one-to-one-wide-matrices"><h5 class="heading"><span class="title">Wide matrices do not have one-to-one transformations</span></h5>
+<p id="p-531">If <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> is a one-to-one matrix transformation, what can we say about the relative sizes of <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.326em"><span style="height:0.696em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(9.641)"><tspan y="0" x="0" class="b">?</tspan></text>
+</svg></span></span></p>
+<p id="p-532">The matrix associated to <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> has <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> columns and <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+</svg></span></span> rows.  Each row and each column can only contain one pivot, so in order for <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> to have a pivot in every column, it must have <em>at least as many rows</em> as columns: <span class="pretex-inline" style="width:2.95099em"><span style="height:0.706em;vertical-align:-0.064em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(9.337)"><tspan y="0" x="0" class="e">≤</tspan></text>
+<text transform="translate(21.324)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(30.678)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p>
+<p id="p-533">This says that, for instance, <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
+</svg></span></span> is “too big” to admit a one-to-one linear transformation into <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">2</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p>
+<p id="p-534">Note that there exist tall matrices that are not one-to-one: for example,</p>
+<div class="pretex-display"><svg height="4.87931em" version="1.1" class="pretex" viewbox="222 1 60 56"><text transform="translate(221.511 2.265)"><tspan y="0" x="0" class="j">A</tspan><tspan y="22.885" x="0" class="j">E</tspan><tspan y="31.056999" x="0" class="j">C</tspan></text>
+<text transform="translate(232.466 10.76)"><tspan y="0" x="0 16.343248 32.686497" class="b">100</tspan><tspan y="13.947" x="0 16.343248 32.686497" class="b">010</tspan><tspan y="27.895" x="0 16.343248 32.686497" class="b">000</tspan><tspan y="41.842999" x="0 16.343248 32.686497" class="b">000</tspan></text>
+<text transform="translate(273.136 2.265)"><tspan y="0" x="0" class="j">B</tspan><tspan y="22.885" x="0" class="j">F</tspan><tspan y="31.056999" x="0" class="j">D</tspan></text>
+</svg></div>
+<p>does not have a pivot in every column.</p></article></section><section class="subsection" id="subsection-32"><header title="Subsection 3.2.2 Onto Transformations"><h1 class="heading hide-type" alt="Subsection 3.2.2 Onto Transformations">
+<span class="type">Subsection</span><span class="codenumber">3.2.2</span><span class="title">Onto Transformations</span>
+</h1></header><article class="definition-like" id="definition-30"><h5 class="heading">
+<span class="type">Definition</span><span class="title">(Onto transformations)</span>
+</h5>
+<p id="p-535">A transformation <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> is <em class="terminology">onto</em> if, for every vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has <em>at least one</em> solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-14" id="remark-14"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
+<div id="hk-remark-14" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-536">Another word for <em>onto</em> is <em>surjective</em>.</p></article></div>
+<p id="p-537"> Here are some equivalent ways of saying that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is onto: </p>
+<ul id="ul-31" style="list-style-type: disc;">
+<li id="li-272">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is equal to the codomain of <span class="pretex-inline" style="width:1.013em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-273">Every vector in the codomain is the output of some input vector.</li>
+</ul>
+<p> </p>
+<div class="pretex-display"><svg height="12.72105em" version="1.1" class="pretex" viewbox="0 0 384 146"><g transform="matrix(1,0,0,-1,63.979,63.979)"><g><g><path d="M -63.7803,-63.7803 V 63.7803 H 63.7803 V -63.7803 Z" class="b"></path><g><path d="M 34.0163,21.26009 -33.84697,-21.15427" class="a"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,-33.93163,-21.20717)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M -42.5202,0 H 42.32097" class="a"></path><g transform="translate(42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M 0,-42.5202 V 42.32097" class="a"></path><g transform="matrix(0,1,-1,0,0,42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><g transform="translate(-6.323 -80.634)"><g><g transform="translate(-57.656 -647.387)"><text transform="matrix(1,0,0,-1,57.656,647.387)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,65.549,651.966)"><tspan y="0" x="0" class="d">n</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 23.3861,42.5202 c 0,1.17417 -0.95183,2.126 -2.126,2.126 -1.17418,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17418 0.95182,-2.126 2.126,-2.126 1.17417,0 2.126,0.95182 2.126,2.126 z" class="c"></path></g></g><g><g transform="translate(11.369 45.107)"><g><g transform="translate(-75.348 -773.128)"><text transform="matrix(1,0,0,-1,76.209,773.128)"><tspan y="0" x="0" class="a">x</tspan></text>
+</g></g></g></g><g><g><path style="fill:#f5edf6;stroke:none" d="M 191.34106,-63.7803 V 63.7803 H 318.90169 V -63.7803 Z" class="c"></path></g><g><path style="stroke:#b3b3b3" d="M 191.34106,-63.7803 H 318.90169 M 191.34106,-42.5202 H 318.90169 M 191.34106,-21.2601 H 318.90169 M 191.34106,0 H 318.90169 M 191.34106,21.2601 H 318.90169 M 191.34106,42.5202 H 318.90169 M 191.34106,63.77284 H 318.90169 M 191.34106,-63.7803 V 63.7803 M 212.60117,-63.7803 V 63.7803 m 21.2601,-127.5606 V 63.7803 m 21.2601,-127.5606 V 63.7803 m 21.2601,-127.5606 V 63.7803 M 297.64159,-63.7803 V 63.7803 M 318.89423,-63.7803 V 63.7803" class="a"></path></g><g><g><path style="fill:#000;stroke:none" d="m 278.50748,-21.2601 c 0,1.17418 -0.95183,2.126 -2.12601,2.126 -1.17417,0 -2.12599,-0.95182 -2.12599,-2.126 0,-1.17417 0.95182,-2.126 2.12599,-2.126 1.17418,0 2.12601,0.95183 2.12601,2.126 z" class="c"></path></g></g><g><g><path style="fill:#f5edf6;stroke:none" d="m 277.8856,-19.7574 h 26.8406 v 12.96472 h -26.8406 z" class="c"></path></g><g transform="translate(278.878 -16.591)"><g><g transform="translate(-342.857 -711.43)"><text transform="matrix(1,0,0,-1,343.431,711.43)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="matrix(1,0,0,-1,351.293,711.43)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="matrix(1,0,0,-1,356.664,711.43)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,363.194,711.43)"><tspan y="0" x="0" class="f">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#f5edf6;stroke:none" d="m 231.21667,35.8255 h 47.80939 v 13.38937 h -47.80939 z" class="c"></path></g><g transform="translate(232.21 39.415)"><g><g transform="translate(-296.189 -767.436)"><text transform="matrix(1,0,0,-1,296.189,767.436)"><tspan y="0" x="0 4.3842139 10.203053 16.721989 22.724461" style="fill:#984ea3" class="b">range</tspan></text>
+<text transform="matrix(1,0,0,-1,324.548,767.436)"><tspan y="0" x="0" style="fill:#984ea3" class="f">(</tspan></text>
+<text transform="matrix(1,0,0,-1,329.633,767.436)"><tspan y="0" x="0" style="fill:#984ea3" class="a">T</tspan></text>
+<text transform="matrix(1,0,0,-1,337.495,767.436)"><tspan y="0" x="0" style="fill:#984ea3" class="f">)</tspan></text>
+</g></g></g></g><g><g transform="translate(215.752 -80.6)"><g><g transform="translate(-279.731 -647.421)"><text transform="matrix(1,0,0,-1,279.731,647.421)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,287.624,652)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="matrix(1,0,0,-1,297.026,647.421)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="matrix(1,0,0,-1,309.26,647.421)"><tspan y="0" x="0 5.118742 11.304845 17.789351 23.975452 33.650562 39.469402 42.682964" class="b">codomain</tspan></text>
+</g></g></g></g></g><path d="M 7.3189,-76.53882 H 214.367" class="b"></path><g transform="translate(214.56627 -76.53882)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(106.823 -74.545)"><g><g transform="translate(-170.802 -653.476)"><text transform="matrix(1,0,0,-1,171.376,653.476)"><tspan y="0" x="0" class="a">T</tspan></text>
+</g></g></g></g><path d="m 24.67781,42.52148 c 99.68707,0 148.60794,-63.78221 248.19539,-63.78221" class="b"></path><g transform="matrix(-1,0,0,-1,24.57819,42.52148)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="translate(273.07245 -21.26073)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(116.197 49.976)"><g><g transform="translate(-180.176 -777.997)"><text transform="matrix(1,0,0,-1,180.176,777.997)"><tspan y="0" x="0 6.1861029 12.705039 16.538357" style="fill:#377eb8" class="b">onto</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p id="p-538"> Here are some equivalent ways of saying that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is <em>not</em> onto: </p>
+<ul id="ul-32" style="list-style-type: disc;">
+<li id="li-274">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is smaller than the codomain of <span class="pretex-inline" style="width:1.013em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-275">There exists a vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> such that the equation <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> does not have a solution.</li>
+<li id="li-276">There is a vector in the codomain that is not the output of any input vector.</li>
+</ul>
+<p> </p>
+<div class="pretex-display"><svg height="12.72105em" version="1.1" class="pretex" viewbox="0 0 384 146"><g transform="matrix(1,0,0,-1,63.979,63.979)"><g><g><path d="M -63.7803,-63.7803 V 63.7803 H 63.7803 V -63.7803 Z" class="b"></path><g><path d="M 34.0163,21.26009 -33.84697,-21.15427" class="a"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,-33.93163,-21.20717)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M -42.5202,0 H 42.32097" class="a"></path><g transform="translate(42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><path d="M 0,-42.5202 V 42.32097" class="a"></path><g transform="matrix(0,1,-1,0,0,42.42058)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -1.83315,2.0311 C -1.49823,0.81242 -0.7519,0.23694 0,0 -0.7519,-0.23694 -1.49823,-0.81242 -1.83315,-2.0311" class="a"></path></g></g></g><g><g transform="translate(-6.323 -80.634)"><g><g transform="translate(-57.656 -647.387)"><text transform="matrix(1,0,0,-1,57.656,647.387)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,65.549,651.966)"><tspan y="0" x="0" class="d">n</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 23.3861,-42.5202 c 0,1.17418 -0.95183,2.126 -2.126,2.126 -1.17418,0 -2.126,-0.95182 -2.126,-2.126 0,-1.17417 0.95182,-2.126 2.126,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="c"></path></g></g><g><g transform="translate(11.369 -39.935)"><g><g transform="translate(-75.348 -688.086)"><text transform="matrix(1,0,0,-1,76.209,688.086)"><tspan y="0" x="0" class="a">x</tspan></text>
+</g></g></g></g><g><g><path style="stroke:#b3b3b3" d="M 191.34106,-63.7803 H 318.90169 M 191.34106,-42.5202 H 318.90169 M 191.34106,-21.2601 H 318.90169 M 191.34106,0 H 318.90169 M 191.34106,21.2601 H 318.90169 M 191.34106,42.5202 H 318.90169 M 191.34106,63.77284 H 318.90169 M 191.34106,-63.7803 V 63.7803 M 212.60117,-63.7803 V 63.7803 m 21.2601,-127.5606 V 63.7803 m 21.2601,-127.5606 V 63.7803 m 21.2601,-127.5606 V 63.7803 M 297.64159,-63.7803 V 63.7803 M 318.89423,-63.7803 V 63.7803" class="a"></path></g><g><path style="stroke:#984ea3" d="M 191.34106,-31.89014 318.90169,31.89014" class="b"></path></g><g><g><path style="fill:#000;stroke:none" d="m 278.50748,10.63004 c 0,1.17417 -0.95183,2.12599 -2.12601,2.12599 -1.17417,0 -2.12599,-0.95182 -2.12599,-2.12599 0,-1.17417 0.95182,-2.126 2.12599,-2.126 1.17418,0 2.12601,0.95183 2.12601,2.126 z" class="c"></path></g></g><g><g transform="translate(278.878 -0.672)"><g><g transform="translate(-342.857 -727.349)"><text transform="matrix(1,0,0,-1,343.431,727.349)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="matrix(1,0,0,-1,351.293,727.349)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="matrix(1,0,0,-1,356.664,727.349)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,363.194,727.349)"><tspan y="0" x="0" class="f">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 209.95657,-44.96294 h 47.80939 v 13.38937 h -47.80939 z" class="c"></path></g><g transform="translate(210.95 -41.372)"><g><g transform="translate(-274.929 -686.649)"><text transform="matrix(1,0,0,-1,274.929,686.649)"><tspan y="0" x="0 4.3842139 10.203053 16.721989 22.724461" style="fill:#984ea3" class="b">range</tspan></text>
+<text transform="matrix(1,0,0,-1,303.289,686.649)"><tspan y="0" x="0" style="fill:#984ea3" class="f">(</tspan></text>
+<text transform="matrix(1,0,0,-1,308.373,686.649)"><tspan y="0" x="0" style="fill:#984ea3" class="a">T</tspan></text>
+<text transform="matrix(1,0,0,-1,316.235,686.649)"><tspan y="0" x="0" style="fill:#984ea3" class="f">)</tspan></text>
+</g></g></g></g><g><g transform="translate(215.752 -80.6)"><g><g transform="translate(-279.731 -647.421)"><text transform="matrix(1,0,0,-1,279.731,647.421)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="matrix(1,0,0,-1,287.624,652)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="matrix(1,0,0,-1,297.026,647.421)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="matrix(1,0,0,-1,309.26,647.421)"><tspan y="0" x="0 5.118742 11.304845 17.789351 23.975452 33.650562 39.469402 42.682964" class="b">codomain</tspan></text>
+</g></g></g></g></g><path d="M 7.3189,-76.53882 H 214.367" class="b"></path><g transform="translate(214.56627 -76.53882)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(106.823 -74.545)"><g><g transform="translate(-170.802 -653.476)"><text transform="matrix(1,0,0,-1,171.376,653.476)"><tspan y="0" x="0" class="a">T</tspan></text>
+</g></g></g></g><path d="m 24.67781,-42.52148 c 98.99389,0 163.0155,104.36071 248.65689,54.91575" class="b"></path><g transform="matrix(-1,0,0,-1,24.57819,-42.52148)"><g><path d="M 0,2.29141 V -2.29141" class="b"></path></g></g><g transform="matrix(0.86877,-0.50157,0.50157,0.86877,273.5078,12.29434)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g transform="translate(106.326 49.976)"><g><g transform="translate(-170.305 -777.997)"><text transform="matrix(1,0,0,-1,170.305,777.997)"><tspan y="0" x="0 6.5189362 12.705039 19.74044 25.926542 32.44548 36.278797" style="fill:#377eb8" class="b">notonto</tspan></text>
+</g></g></g></g></g></g></g></svg></div><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-102-hidden.html?vers=dd743d" knowl-id="hidden-example-102" alt="Example 3.2.17 Functions of one variable" title="Example 3.2.17 Functions of one variable"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Functions of one variable)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-103-hidden.html?vers=dd743d" knowl-id="hidden-example-103" alt="Example 3.2.18 A real-word transformation: robotics" title="Example 3.2.18 A real-word transformation: robotics"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A real-word transformation: robotics)</span>
+</h5></article></a></div>
+<article class="theorem-like" id="matrix-trans-onto"><h5 class="heading">
+<span class="type">Theorem</span><span class="title">(Onto matrix transformations)</span>
+</h5>
+<p id="p-544">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix, and let <span class="pretex-inline" style="width:4.61699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> be the associated matrix transformation.  The following statements are equivalent: </p>
+<ol id="ol-53" style="list-style-type: decimal;">
+<li id="li-277">
+<span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is onto.</li>
+<li id="li-278">
+<span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has at least one solution for every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-279">
+<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent for every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-280">The columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> span <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-281">
+<span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> has a pivot in every row.</li>
+<li id="li-282">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> has dimension <span class="pretex-inline" style="width:1.118em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(9.641)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+</ol></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-12" id="proof-12"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-12" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-545">Statements 1, 2, and 3 are translations of each other.  The equivalence of 3, 4, 5, and 6 follows from this <a knowl="./knowl/matrixeq-thm-full-span.html?vers=dd743d" knowl-id="xref-matrixeq-thm-full-span" alt="Theorem 2.3.20 " title="Theorem 2.3.20 ">theorem in Section 2.3</a>.</p></article></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-not11-onto2-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-not11-onto2" alt="Example 3.2.20 A matrix transformation that is onto" title="Example 3.2.20 A matrix transformation that is onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is onto)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/matrix-trans-11-notonto2-hidden.html?vers=dd743d" knowl-id="hidden-matrix-trans-11-notonto2" alt="Example 3.2.22 A matrix transformation that is not onto" title="Example 3.2.22 A matrix transformation that is not onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is not onto)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-eg-neither2-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-eg-neither2" alt="Example 3.2.24 A matrix transformation that is not onto" title="Example 3.2.24 A matrix transformation that is not onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is not onto)</span>
+</h5></article></a></div>
+<p id="p-552"> The previous two examples illustrate the following observation.  Suppose that <span class="pretex-inline" style="width:4.61699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> is a matrix transformation that is <em>not</em> onto.  This means that <span class="pretex-inline" style="width:8.03898em"><span style="height:0.993em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.203053 16.721989 22.724461" class="b">range</tspan></text>
+<text transform="translate(28.36)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(33.444)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(41.306)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(60.185)"><tspan y="0" x="0 7.2534642 13.439567" class="b">Col</tspan></text>
+<text transform="translate(76.862)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(81.372)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(87.753)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> is a subspace of <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> of dimension less than <span class="pretex-inline" style="width:1.159em"><span style="height:0.5075em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(9.641)"><tspan y="0" x="0" class="b">:</tspan></text>
+</svg></span></span> perhaps it is a line in the plane, or a line in <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">3</tspan></text>
+</svg></span></span>-space,</span> or a plane in <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">3</tspan></text>
+</svg></span></span>-space,</span> etc.  Whatever the case, the range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is <em>very small</em> compared to the codomain.  To find a vector not in the range of <span class="pretex-inline" style="width:1.013em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> choose a random nonzero vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5934em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">;</tspan></text>
+</svg></span></span> you have to be extremely unlucky to choose a vector that is in the range of <span class="pretex-inline" style="width:1.013em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>  Of course, to check whether a given vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is in the range of <span class="pretex-inline" style="width:1.013em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> you have to solve the matrix equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> to see whether it is consistent.</p>
+<article class="remark-like" id="one-to-one-tall-matrices"><h5 class="heading"><span class="title">Tall matrices do not have onto transformations</span></h5>
+<p id="p-553">If <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> is an onto matrix transformation, what can we say about the relative sizes of <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.326em"><span style="height:0.696em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(9.641)"><tspan y="0" x="0" class="b">?</tspan></text>
+</svg></span></span></p>
+<p id="p-554">The matrix associated to <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> has <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> columns and <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+</svg></span></span> rows.  Each row and each column can only contain one pivot, so in order for <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> to have a pivot in every row, it must have <em>at least as many columns</em> as rows: <span class="pretex-inline" style="width:2.95099em"><span style="height:0.706em;vertical-align:-0.064em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(12.309)"><tspan y="0" x="0" class="e">≤</tspan></text>
+<text transform="translate(24.297)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(30.678)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p>
+<p id="p-555">This says that, for instance, <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">2</tspan></text>
+</svg></span></span> is “too small” to admit an onto linear transformation to <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p>
+<p id="p-556">Note that there exist wide matrices that are not onto: for example,</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="212 1 81 28"><text transform="translate(211.107 2.394)"><tspan y="0" x="0" class="j">G</tspan></text>
+<text transform="translate(224.076 10.76)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(244.615 10.76)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(253.004 10.76)"><tspan y="0" x="0 20.543831" class="b">12</tspan></text>
+<text transform="translate(219.881 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(228.271 24.707)"><tspan y="0" x="0 20.543831" class="b">22</tspan></text>
+<text transform="translate(269.348 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(277.738 24.707)"><tspan y="0" x="0" class="b">4</tspan></text>
+<text transform="translate(285.72 2.394)"><tspan y="0" x="0" class="j">H</tspan></text>
+</svg></div>
+<p>does not have a pivot in every row.</p></article></section><section class="subsection" id="subsection-33"><header title="Subsection 3.2.3 Comparison"><h1 class="heading hide-type" alt="Subsection 3.2.3 Comparison">
+<span class="type">Subsection</span><span class="codenumber">3.2.3</span><span class="title">Comparison</span>
+</h1></header><p id="p-557">  The above expositions of one-to-one and onto transformations were written to mirror each other.  However, “one-to-one” and “onto” are complementary notions: neither one implies the other.  Below we have provided a chart for comparing the two.  In the chart, <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix, and <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+</svg></span></span> is the matrix transformation <span class="pretex-inline" style="width:4.89499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(52.989)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span> </p>
+<div class="pretex-display"><svg height="11.23983em" version="1.1" class="pretex" viewbox="6 0 371 129"><text transform="translate(50.003 8.269)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(61.216 8.269)"><tspan y="0" x="0 3.5004849 11.981988 18.604218 25.547802 31.56175 35.303253 39.412018 46.034248 49.775749 56.39798 63.341564" class="c">isone-to-one</tspan></text>
+<text transform="translate(6.631 30.721)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(14.493 30.721)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(19.864 30.721)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(26.394 30.721)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(46.135 30.721)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(55.443 30.721)"><tspan y="0" x="0 6.4730282 12.291867" class="b">has</tspan></text>
+<text transform="translate(75.528 30.721)"><tspan y="0" x="0 6.025425 13.049349 22.403105 28.164558 32.411049 39.434971 45.196426 51.577637 59.645969 63.89246 69.653915 72.810089 79.156868 82.978706 86.272606 92.034065" class="a">atmostonesolution</tspan></text>
+<text transform="translate(61.089 44.669)"><tspan y="0" x="0 3.6841171 9.8702202 17.456516 23.091724 28.761362 34.396568 38.780785" class="b">forevery</tspan></text>
+<text transform="translate(109.614 44.669)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(115.72 44.669)"><tspan y="0" x="0" class="b">.</tspan><tspan y="22.451" x="-99.041 -92.189232 -85.716202 -76.878914 -71.76017 -65.574066 -62.337555 -55.80714 -46.13203 -39.613094 -31.820211 -25.634108" class="b">Thecolumnsof</tspan></text>
+<text transform="translate(96.972 67.12)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(106.556 67.12)"><tspan y="0" x="0 5.8188391 10.203053 19.040342 22.276857 25.490417 32.009354 37.644562 43.463398 47.847614 51.084126" class="b">arelinearly</tspan><tspan y="13.948" x="-49.551998 -46.33844 -39.819504 -33.334999 -27.699793 -21.375965 -15.740758 -9.2218218 -2.7373171 2.8978901 9.4168262 13.250144" class="b">independent.</tspan></text>
+<text transform="translate(14.642 103.519)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(24.225 103.519)"><tspan y="0" x="0 6.4730282 12.291867 20.084749 29.105673 35.429501 38.643059 44.312698 50.498798 57.534203 60.747761 70.468781 76.103989 81.773628 87.408829 91.793045 100.67625 105.79498 111.98109 115.21761 121.74802 131.42313 137.94206" class="b">hasapivotineverycolumn.</tspan><tspan y="22.452" x="-16.033001 -9.1812305 -2.7082031 6.129087 10.513301 16.33214 22.851076 28.853546 37.690838 43.876942" class="b">Therangeof</tspan></text>
+<text transform="translate(75.562 125.971)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(86.626 125.971)"><tspan y="0" x="0 6.4730282 12.291867 20.084749 26.569256 29.782816 39.457928 45.093132 51.612068 56.202869 59.416428 65.602531" class="b">hasdimension</tspan></text>
+<text transform="translate(162.236 125.971)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(168.618 125.971)"><tspan y="0" x="0" class="b">.</tspan></text>
+<text transform="translate(269.495 8.269)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(280.708 8.269)"><tspan y="0" x="0 3.5004849 11.981988 18.604218 25.547802 29.656569" class="c">isonto</tspan></text>
+<text transform="translate(210.119 30.721)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(217.981 30.721)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(223.352 30.721)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(229.882 30.721)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(249.623 30.721)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(258.93 30.721)"><tspan y="0" x="0 6.4730282 12.291867" class="b">has</tspan></text>
+<text transform="translate(279.015 30.721)"><tspan y="0" x="0 6.025425 13.049349 16.205524 21.071772 27.097197 31.343687 38.367611 44.129066 50.510277 58.578609 62.825096 68.586555 71.742729 78.089508 81.911346 85.205246 90.966705" class="a">atleastonesolution</tspan></text>
+<text transform="translate(264.044 44.669)"><tspan y="0" x="0 3.6841171 9.8702202 17.456516 23.091724 28.761362 34.396568 38.780785" class="b">forevery</tspan></text>
+<text transform="translate(312.568 44.669)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(318.674 44.669)"><tspan y="0" x="0" class="b">.</tspan><tspan y="22.451" x="-92.793999 -85.94223 -79.4692 -70.631912 -65.513168 -59.327068 -56.090553 -49.560143 -39.885029 -33.366093 -25.573212 -19.387108" class="b">Thecolumnsof</tspan></text>
+<text transform="translate(306.173 67.12)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(315.757 67.12)"><tspan y="0" x="0 4.5907998 10.914627 16.733465" class="b">span</tspan></text>
+<text transform="translate(342.211 67.12)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(350.104 62.541)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(356.838 67.12)"><tspan y="0" x="0" class="b">.</tspan></text>
+<text transform="translate(227.208 103.519)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(236.791 103.519)"><tspan y="0" x="0 6.4730282 12.291867 20.084749 29.105673 35.429501 38.643059 44.312698 50.498798 57.534203 60.747761 70.468781 76.103989 81.773628 87.408829 91.793045 100.67625 105.06046 111.24656 118.71809" class="b">hasapivotineveryrow.</tspan><tspan y="22.452" x="-27.131001 -20.27923 -13.806203 -4.9689131 -0.58469898 5.2341399 11.753076 17.755547 26.592836 32.778938" class="b">Therangeof</tspan></text>
+<text transform="translate(277.03 125.971)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(288.094 125.971)"><tspan y="0" x="0 6.4730282 12.291867 20.084749 26.569256 29.782816 39.457928 45.093132 51.612068 56.202869 59.416428 65.602531" class="b">hasdimension</tspan></text>
+<text transform="translate(363.704 125.971)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(373.058 125.971)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></div><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-107-hidden.html?vers=dd743d" knowl-id="hidden-example-107" alt="Example 3.2.27 Functions of one variable" title="Example 3.2.27 Functions of one variable"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Functions of one variable)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-108-hidden.html?vers=dd743d" knowl-id="hidden-example-108" alt="Example 3.2.28 A matrix transformation that is neither one-to-one nor onto" title="Example 3.2.28 A matrix transformation that is neither one-to-one nor onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is neither one-to-one nor onto)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-109-hidden.html?vers=dd743d" knowl-id="hidden-example-109" alt="Example 3.2.30 A matrix transformation that is one-to-one but not onto" title="Example 3.2.30 A matrix transformation that is one-to-one but not onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is one-to-one but not onto)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-110-hidden.html?vers=dd743d" knowl-id="hidden-example-110" alt="Example 3.2.32 A matrix transformation that is onto but not one-to-one" title="Example 3.2.32 A matrix transformation that is onto but not one-to-one"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A matrix transformation that is onto but not one-to-one)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/one-to-one-both-11-onto-hidden.html?vers=dd743d" knowl-id="hidden-one-to-one-both-11-onto" alt="Example 3.2.34 Matrix transformations that are both one-to-one and onto" title="Example 3.2.34 Matrix transformations that are both one-to-one and onto"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Matrix transformations that are both one-to-one and onto)</span>
+</h5></article></a></div>
+<article class="remark-like" id="note-13"><h5 class="heading"><span class="title">One-to-one is the same as onto for square matrices</span></h5>
+<p id="p-566">We observed in the previous <a knowl="./knowl/one-to-one-both-11-onto.html?vers=dd743d" knowl-id="xref-one-to-one-both-11-onto" alt="Example 3.2.34 Matrix transformations that are both one-to-one and onto" title="Example 3.2.34 Matrix transformations that are both one-to-one and onto">example</a> that a square matrix has a pivot in every row if and only if it has a pivot in every column.  Therefore, a matrix transformation <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> from <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> to itself is one-to-one if and only if it is onto: in this case, the two notions are equivalent.</p>
+<p id="p-567">Conversely, by this <a knowl="./knowl/one-to-one-wide-matrices.html?vers=dd743d" knowl-id="xref-one-to-one-wide-matrices" alt="Note 3.2.14 Wide matrices do not have one-to-one transformations" title="Note 3.2.14 Wide matrices do not have one-to-one transformations">note</a> and this <a knowl="./knowl/one-to-one-tall-matrices.html?vers=dd743d" knowl-id="xref-one-to-one-tall-matrices" alt="Note 3.2.26 Tall matrices do not have onto transformations" title="Note 3.2.26 Tall matrices do not have onto transformations">note</a>, if a matrix transformation <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(33.661)"><tspan y="0" x="0" class="e">→</tspan></text>
+<text transform="translate(47.944)"><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(55.836 -4.579)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> is both one-to-one and onto, then <span class="pretex-inline" style="width:2.95099em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(12.309)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(24.297)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(30.678)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p></article><p id="p-568">Note that in general, a transformation <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> is both one-to-one and onto if and only if <span class="pretex-inline" style="width:4.02399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(40.078)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has <em>exactly one</em> solution for all <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span></p></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20one-to-one-onto&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CpUMzHT1DG_S1bp7M1ANZ"></script>
+</body>
+</html>

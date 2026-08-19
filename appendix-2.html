@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Notation</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: cApqDWirYcC6xUeuKYzP */
+
+@font-face {
+  font-family: "fZUhJODpnh1YATN93RZrw";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "ftnkCzqPCPwhNrlqMKigJ";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fgVEVGuaD9PNn6IHVkqdk";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fQspPDO2yFx9DiyZeDwN6";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fom8cqrPyjv_HX3i_h75C";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUUAAoAAAAAB1AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAW0AAAGEeiLewUZGVE0AAATsAAAAGgAAAByjRDQJT1MvMgAAAVAAAABFAAAAYFZeXr9jbWFwAAADJAAAAD0AAAFCAA0D0WhlYWQAAAD0AAAAMQAAADYt/jF1aGhlYQAAASgAAAAeAAAAJASoAM9obXR4AAAFCAAAAAoAAAAKA0gAOG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGKAAAC0J0BSi5wb3N0AAADZAAAABYAAAAg/4YAN3icY2BkYGAAYuG/by3i+W2+MnAzvwCKMDxbXa4Bpy3+uzAGMP0BcjkYmECiAFmrDAEAAAB4nGNgZGBg+vPfhSGKsYMBCBgDGBgZUAETAGGYA3oAAAAAUAAAAwAAeJxjYGbsYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSGgyazAr/LRiimP4w7EFRowCEjAA8tgrJAAAAeJyNkc9Kw0AQxr9tqyL+uSkiHuZYwYRNUGl7rWgv0iLi2RiXNBCSkibg0XfwPfQu+AgexcfwAbz4ZV0URMTAZn6TmflmJgtgHfdQ+Hw0rhwrrOHBcQtLeHbcRk+dOO5gRz06XsCKenO8iNXWBjNVZ5nepa1qWGEbd45b7PvkuI0ZXhx3qH/reAGb6tXxIrbUO7qIsQtByEk19kkTRKiRWUoZnVq/hLF2j99r5LimX5Irxg1two5NTWZrDDOatw90410Jtd6XSVRnMknjaVSXJqr3pM6vTSnV1EgyyyRLY5PHhhWnbNTIHlFgTrmEYh6GGDEUVdMjM0+T3BvSPWNGYoeNOAzOTFJnEeEYBWsqa0tmGLugzwUFA57fOojtID80BWOcI6ANvqoD9DlPj6f5aSEO2bDIq+OiTIyEvpaBfM8pw5G4uWR8HkjQhIO+1/NCHR7+vux/RsFfLYALez2NYGEFA7s9Lkw5T4tcAp/OzF5qxXNjL1/jgFv1GShNZW601ge9Pj4AKm56ugAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7m//9AUuP///83oSoZGNkYYEyCgJGJSIVDDAAAZPYG3gAAAHicY2BmAIP/zQxmQIqRAQ0AACipAb0AAHicRYu/S8NAHMXvmtj0x7X+wIrgKaeTitZUFLSOtdBFLNJJEAnxaAuhSGyIs2uEiigIUgoOBVdRbIcM6uAfIYiDf4Db98o5mAri4w2P994HI1VFGOPEoc3r/FjX9dW1dYRDCKOMmMCChsSkIsbVU4LniPJE1BdZhM/e2QBFd4MUoSGKHocpmqd4dwQpvxjaQruz5hxb1vUVVjQcixWrZsVwbG44C8ypHXCb1SuclQ8tZlVNXjN5esuoVzb5UbVcY7kC2+FlxzJstl3KsIz+vy3mCihQFMWQgvHMftPzRd7Hvg8lX/HHoCNuZSfsf7spkYfSd15LymK399XFLx8KTMN9yoP2G1DQWpGuJrOuDMu0J58DQ5Ag6/ZrrbUBNDhG/mBoBHSjT8v2hqRScyN7GmRbEIa0B8+BZZBkttWvNfdN0uAYSQo66qVOLoRzCYXr8FQMXy2R6DmJeST+EHtoEvIef70hCY8kfwAcEJbKAAAAeJxjYGBgZACCq29dd4DoZ6vLNWA0AFJgByEAAAGIAAABiAA4ADgAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "fPKEiy5lIDeyKkaMs6aFy";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUYAAoAAAAAB4AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXAAAAGOMpqFwUZGVE0AAATwAAAAGgAAAByjRDQJT1MvMgAAAVAAAABHAAAAYFrHXEJjbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYuKCqhaGhlYQAAASgAAAAeAAAAJAIR/OVobXR4AAAFDAAAAAoAAAAKA5wARm1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGQAAAC9EMueMZwb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAAYj+hWIt4fpuvDNzML4AiDM9Wl2vAaYvfBoxVDDZALgcDE0gUABqUChEAAAB4nGNgZGBgsPltwBDFuAnIYmCsYgCJIAMmAE6UAvQAAAAAUAAAAwAAeJxjYGbcxDiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWDlZIABRgYkEJDmmgKkHBmcmBX+WzBEMdiwXEBSY8OgAISMAEVYCrcAeJyVks1Kw0AUhU9iq4g/G0HEjRdXFWyZhta2Lty0ihuhKLg2xiENhKSkCXThU+h76BP4CC4F38WNZ8ZBRQQxMJnv5p77NxMA63iAh49H4dqxhzU8OvaxhGfHCzjyLhzXsOu9Oq5jxd9wvIhVf0ClV1umdWWjDHvYxr1jn3WfHC/gFi+Oaxh5d47r2PTeHC9iy99BAxH2IAjYqUKHNEaICqmlhN6JtQtou+/ze4UMN7QLckm/5h5jamNSG6OpMO8W0Ij2JFCqI+OwSmWcRJOwKnRY7UuV3ehCyomWeJpKmkQ6izQjzljIpB0xwYzpYiZrYohTusJyMtKzJM6aQ5rnVMS22ZDN4FzHVRoSTpAzprR7QYW2A7Y4oOCQ67cKYivIj5yCY8ypNQMZZW6V7c9MbQzYW5/LHGCAAxbPs/IkL2ItQUvJoXz1LMNTcT3K8bzU2SzJM2kbUXvQ7DcDFRz8Pv5/m8PfRYFLe4XfA80J4VIXH5IWjam9eFNibn8QhS6n7dFR6FLPlVLdfg/v+ZuFTHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOT0sCQRjGZ9wtTUcryQzaYrBLG/3ZjaLutiFCIHUKLy3roIJsorvkyUPX7RQFQXTQU34AocscooPnvoAHwc8wA7OHxi6+PIeHh98PXghUFUAIk80W8UjHMIzT8zMAIwACk29CrkX4lsI31CcEdaR8I/VHEwZPjRY08LWsAbCiAbqqgT0NVtJA+dfADbjbdXR8bBgnuGT7DVyqOzXbbxHb38e+WyEt7NUIrjYbuFF3iOuQwyvbq12Qdr3q4nwBX5Oq37Bb2Op4xG3X711sGnPiIF8A8nJgBygQ5uxeQLlFIaWsSxW6ziZ8ICaLNHzIcIt1Qyuaki9TTf2k8HeiMDMcZwKemLIyy/ZiNCqKnkgLNwh1GSYbK3qzOdszWVmCsbnOBtIfzPwwYYqyyPqx2ygr9lmauQHXZYRsotifzVl/KsoSjKX45VqQeXzh/isrvC9ux+HbEVp6RvEAJYbx4QdC48Soj5IBSv0BNVWVoHicY2BgYGQAgqtvXXeA6GeryzVgNABSYAchAAABsgAAAbIARgA4AAA=) format('woff');
+}
+
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.a { font-size:11.47700024px;font-family:fgVEVGuaD9PNn6IHVkqdk }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.b { font-size:11.47700024px;font-family:fZUhJODpnh1YATN93RZrw }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.c { font-size:7.65140009px;font-family:ftnkCzqPCPwhNrlqMKigJ }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.d { font-size:11.47700024px;font-family:ftnkCzqPCPwhNrlqMKigJ }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.e { font-size:11.47700024px;font-family:fPKEiy5lIDeyKkaMs6aFy }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.f { font-size:7.65140009px;font-family:fgVEVGuaD9PNn6IHVkqdk }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.g { font-size:11.47700024px;font-family:fQspPDO2yFx9DiyZeDwN6 }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.h { font-size:11.47700024px;font-family:fom8cqrPyjv_HX3i_h75C }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.i { font-size:7.65140009px;font-family:fZUhJODpnh1YATN93RZrw }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.j { font-size:5.73850012px;font-family:ftnkCzqPCPwhNrlqMKigJ }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.k { font-size:7.65140009px;font-family:fQspPDO2yFx9DiyZeDwN6 }
+.CcApqDWirYcC6xUeuKYzP svg.pretex tspan.l { font-size:5.73850012px;font-family:fQspPDO2yFx9DiyZeDwN6 }
+.CcApqDWirYcC6xUeuKYzP svg.pretex path.a { stroke-width:0.68900001px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CcApqDWirYcC6xUeuKYzP" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CcApqDWirYcC6xUeuKYzP"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link active"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2" class="active">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="complex-numbers.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="backmatter.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="appendix-3.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="complex-numbers.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="backmatter.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="appendix-3.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CcApqDWirYcC6xUeuKYzP"><main class="main"><div id="content" class="mathbook-content">
+<section class="appendix" id="appendix-2"><header title="Appendix B Notation"><h1 class="heading hide-type" alt="Appendix B Notation">
+<span class="type">Appendix</span><span class="codenumber">B</span><span class="title">Notation</span>
+</h1></header><p id="p-1656">The following table defines the notation used in this book. Page numbers or references refer to the first appearance of each symbol.</p>
+<table>
+<tr>
+<th style="text-align:left;">Symbol</th>
+<th style="text-align:left;">Description</th>
+<th style="text-align:left;">Location</th>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">0</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The number zero</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-40.html?vers=dd743d" knowl-id="xref-p-40" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.671em"><span style="height:0.685em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The real numbers</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-40.html?vers=dd743d" knowl-id="xref-p-40" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Real <span class="pretex-bind"><span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span>-space</span></td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-4.html?vers=dd743d" knowl-id="xref-definition-4" alt="Definition 1.1.4 " title="Definition 1.1.4 ">Definition 1.1.4</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.91173em"><span style="height:0.905em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
+<text transform="translate(7.387 2.594)"><tspan y="0" x="0" class="c">i</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Row <span class="pretex-inline" style="width:0.362em"><span style="height:0.71em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">i</tspan></text>
+</svg></span></span> of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/li-45.html?vers=dd743d" knowl-id="xref-li-45" alt="Item  " title="Item  ">Item</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.24266em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(5.004 -5.899)"><tspan y="0" x="0" class="f">1</tspan><tspan y="9.7089996" x="0" class="f">2</tspan></text>
+<text transform="translate(9.258 -10.266)"><tspan y="0" x="0" class="e">B</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">A vector</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-146.html?vers=dd743d" knowl-id="xref-p-146" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">0</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The zero vector</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-146.html?vers=dd743d" knowl-id="xref-p-146" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="a">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="g">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="d">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="f">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="a">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="d">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="f">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="a">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="d">v</tspan></text>
+<text transform="translate(85.146 2.594)"><tspan y="0" x="0" class="c">k</tspan></text>
+<text transform="translate(89.768)"><tspan y="0" x="0" class="g">}</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Span of vectors</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/vectors-defn-span.html?vers=dd743d" knowl-id="xref-vectors-defn-span" alt="Definition 2.2.7 " title="Definition 2.2.7 ">Definition 2.2.7</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:6.40898em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="g">{</tspan></text>
+<text transform="translate(6.025)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(15.224)"><tspan y="0" x="0" class="g">|</tspan></text>
+<text transform="translate(21.118)"><tspan y="0" x="0 5.118742 11.304845 17.82378 24.308287 27.521847 31.355164 34.568726 40.754826" class="a">condition</tspan></text>
+<text transform="translate(68.391)"><tspan y="0" x="0" class="g">}</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Set builder notation</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/set-builder-notation.html?vers=dd743d" knowl-id="xref-set-builder-notation" alt="Note 2.2.8 Set Builder Notation" title="Note 2.2.8 Set Builder Notation">Note 2.2.8</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:5.65199em"><span style="height:0.736em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="g">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(32.17)"><tspan y="0" x="0 9.6751108 15.49395 19.327269 23.711481 26.925041" class="a">matrix</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Size of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/bluebox-12.html?vers=dd743d" knowl-id="xref-bluebox-12" alt="Important Note 2.3.1 " title="Important Note 2.3.1 ">Important Note 2.3.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.79499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="a">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Column space</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-23.html?vers=dd743d" knowl-id="xref-definition-23" alt="Definition 2.6.16 " title="Definition 2.6.16 ">Definition 2.6.16</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.90599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="a">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Null space</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-23.html?vers=dd743d" knowl-id="xref-definition-23" alt="Definition 2.6.16 " title="Definition 2.6.16 ">Definition 2.6.16</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.5765em"><span style="height:0.747em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 9.6980648" class="a">dim</tspan></text>
+<text transform="translate(21.261)"><tspan y="0" x="0" class="d">V</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Dimension of a subspace</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/dimension-defn-dimension.html?vers=dd743d" knowl-id="xref-dimension-defn-dimension" alt="Definition 2.7.3 " title="Definition 2.7.3 ">Definition 2.7.3</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:3.31599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
+<text transform="translate(22.656)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(27.166)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(33.547)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The rank of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-25.html?vers=dd743d" knowl-id="xref-definition-25" alt="Definition 2.9.1 " title="Definition 2.9.1 ">Definition 2.9.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:4.15199em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.5189362 13.049349 16.285864 19.522377 22.735937 26.569256" class="a">nullity</tspan></text>
+<text transform="translate(32.25)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(36.761)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(43.142)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The nullity of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-25.html?vers=dd743d" knowl-id="xref-definition-25" alt="Definition 2.9.1 " title="Definition 2.9.1 ">Definition 2.9.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="d">T</tspan></text>
+<text transform="translate(9.503)"><tspan y="0" x="0" class="a">:</tspan></text>
+<text transform="translate(16.366)"><tspan y="0" x="0" class="b">R</tspan></text>
+<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(31.679)"><tspan y="0" x="0" class="g">→</tspan></text>
+<text transform="translate(45.962)"><tspan y="0" x="0" class="b">R</tspan></text>
+<text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="c">m</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">transformation with domain <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> and codomain <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">m</tspan></text>
+</svg></span></span>
+</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-26.html?vers=dd743d" knowl-id="xref-definition-26" alt="Definition 3.1.17 " title="Definition 3.1.17 ">Definition 3.1.17</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.71363em"><span style="height:0.97133em;vertical-align:-0.23133em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 3.7185481" class="a">Id</tspan></text>
+<text transform="translate(10.203 2.594)"><tspan y="0" x="0" class="i">R</tspan></text>
+<text transform="translate(15.481 0.513)"><tspan y="0" x="0" class="j">n</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Identity transformation</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/matrix-trans-identity.html?vers=dd743d" knowl-id="xref-matrix-trans-identity" alt="Definition 3.1.20 " title="Definition 3.1.20 ">Definition 3.1.20</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:3.67412em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">e</tspan></text>
+<text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="f">1</tspan></text>
+<text transform="translate(9.905)"><tspan y="0" x="0" class="a">,</tspan></text>
+<text transform="translate(14.984)"><tspan y="0" x="0" class="d">e</tspan></text>
+<text transform="translate(19.85 2.594)"><tspan y="0" x="0" class="f">2</tspan></text>
+<text transform="translate(24.603)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204" class="a">,...</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Standard coordinate vectors</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/defn-standard-coord-vectors.html?vers=dd743d" knowl-id="xref-defn-standard-coord-vectors" alt="Notation 3.3.11 Standard coordinate vectors" title="Notation 3.3.11 Standard coordinate vectors">Notation 3.3.11</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.81774em"><span style="height:0.905em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="d">I</tspan></text>
+<text transform="translate(4.633 2.594)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">
+<span class="pretex-inline" style="width:2.26499em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(8.803)"><tspan y="0" x="0" class="g">×</tspan></text>
+<text transform="translate(19.614)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> identity matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/linear-trans-identity-mat.html?vers=dd743d" knowl-id="xref-linear-trans-identity-mat" alt="Definition 3.3.13 " title="Definition 3.3.13 ">Definition 3.3.13</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.13073em"><span style="height:0.856em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">a</tspan></text>
+<text transform="translate(6.504 2.594)"><tspan y="0" x="0 3.5349469" class="c">ij</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The <span class="pretex-inline" style="width:1.22349em"><span style="height:0.92em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">i</tspan></text>
+<text transform="translate(4.155)"><tspan y="0" x="0" class="a">,</tspan></text>
+<text transform="translate(10.381)"><tspan y="0" x="0" class="d">j</tspan></text>
+</svg></span></span> entry of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-34.html?vers=dd743d" knowl-id="xref-definition-34" alt="Notation 3.4.16 " title="Notation 3.4.16 ">Notation 3.4.16</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">0</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The zero transformation</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-681.html?vers=dd743d" knowl-id="xref-p-681" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">0</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The zero matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-687.html?vers=dd743d" knowl-id="xref-p-687" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.4574em"><span style="height:0.85667em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="k">−</tspan></text>
+<text transform="translate(11.974 -4.579)"><tspan y="0" x="0" class="f">1</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Inverse of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-38.html?vers=dd743d" knowl-id="xref-definition-38" alt="Definition 3.5.1 " title="Definition 3.5.1 ">Definition 3.5.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.6364em"><span style="height:0.85667em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="d">T</tspan></text>
+<text transform="translate(8.436 -4.579)"><tspan y="0" x="0" class="k">−</tspan></text>
+<text transform="translate(14.029 -4.579)"><tspan y="0" x="0" class="f">1</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Inverse of a transformation</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/matrix-inv-trans-inv-def.html?vers=dd743d" knowl-id="xref-matrix-inv-trans-inv-def" alt="Definition 3.5.14 " title="Definition 3.5.14 ">Definition 3.5.14</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.73199em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 12.119712" class="a">det</tspan></text>
+<text transform="translate(15.953)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(20.464)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(26.845)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The determinant of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/det-defn-the-defn.html?vers=dd743d" knowl-id="xref-det-defn-the-defn" alt="Definition 4.1.1 " title="Definition 4.1.1 ">Definition 4.1.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.0894em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Transpose of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-42.html?vers=dd743d" knowl-id="xref-definition-42" alt="Definition 4.1.23 " title="Definition 4.1.23 ">Definition 4.1.23</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.18673em"><span style="height:1.045em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(7.146 2.594)"><tspan y="0" x="0 3.5349469" class="c">ij</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Minor of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/det-cofact-defn-minor.html?vers=dd743d" knowl-id="xref-det-cofact-defn-minor" alt="Definition 4.2.1 " title="Definition 4.2.1 ">Definition 4.2.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.20973em"><span style="height:1.0545em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">C</tspan></text>
+<text transform="translate(7.41 2.594)"><tspan y="0" x="0 3.5349469" class="c">ij</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Cofactor of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/det-cofact-defn-minor.html?vers=dd743d" knowl-id="xref-det-cofact-defn-minor" alt="Definition 4.2.1 " title="Definition 4.2.1 ">Definition 4.2.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.67999em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 5.8188391 12.303344" class="a">adj</tspan></text>
+<text transform="translate(15.356)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(19.867)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(26.248)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Adjugate matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-934.html?vers=dd743d" knowl-id="xref-p-934" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.76899em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 5.6696382 11.855741" class="a">vol</tspan></text>
+<text transform="translate(15.092)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(20.177)"><tspan y="0" x="0" class="d">P</tspan></text>
+<text transform="translate(27.269)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Volume of a region</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/det-is-volume.html?vers=dd743d" knowl-id="xref-det-is-volume" alt="Theorem 4.3.6 Determinants and volumes" title="Theorem 4.3.6 Determinants and volumes">Theorem 4.3.6</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.65699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 5.6696382 11.855741" class="a">vol</tspan></text>
+<text transform="translate(15.092)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(19.603)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(25.984)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Volume of the parallelepiped of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/det-is-volume.html?vers=dd743d" knowl-id="xref-det-is-volume" alt="Theorem 4.3.6 Determinants and volumes" title="Theorem 4.3.6 Determinants and volumes">Theorem 4.3.6</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.108em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="d">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(12.946)"><tspan y="0" x="0" class="d">S</tspan></text>
+<text transform="translate(19.683)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The image of a region under a transformation</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-977.html?vers=dd743d" knowl-id="xref-p-977" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.24699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.002471" class="a">Tr</tspan></text>
+<text transform="translate(10.387)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(14.897)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(21.278)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Trace of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-47.html?vers=dd743d" knowl-id="xref-definition-47" alt="Definition 5.2.9 " title="Definition 5.2.9 ">Definition 5.2.9</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.43999em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.9894929" class="a">Re</tspan></text>
+<text transform="translate(12.625)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(17.709)"><tspan y="0" x="0" class="d">v</tspan></text>
+<text transform="translate(23.493)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Real part of a complex vector</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-1286.html?vers=dd743d" knowl-id="xref-p-1286" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.50699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 3.7185481" class="a">Im</tspan></text>
+<text transform="translate(13.394)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(18.478)"><tspan y="0" x="0" class="d">v</tspan></text>
+<text transform="translate(24.262)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Imaginary part of a complex vector</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-1286.html?vers=dd743d" knowl-id="xref-p-1286" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.98099em"><span style="height:0.708em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="g">·</tspan></text>
+<text transform="translate(16.32)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Dot product of two vectors</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-58.html?vers=dd743d" knowl-id="xref-definition-58" alt="Definition 6.1.1 " title="Definition 6.1.1 ">Definition 6.1.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.57999em"><span style="height:0.9565em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(10.06)"><tspan y="0" x="0" class="g">⊥</tspan></text>
+<text transform="translate(23.195)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">
+<span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span> is orthogonal to <span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span>
+</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/p-1417.html?vers=dd743d" knowl-id="xref-p-1417" alt="Paragraph  " title="Paragraph  ">Paragraph</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.59407em"><span style="height:0.89167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">W</tspan></text>
+<text transform="translate(11.775 -4.579)"><tspan y="0" x="0" class="k">⊥</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Orthogonal complement of a subspace</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-62.html?vers=dd743d" knowl-id="xref-definition-62" alt="Definition 6.2.1 " title="Definition 6.2.1 ">Definition 6.2.1</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:3.26099em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.9894929 13.175596" class="a">Row</tspan></text>
+<text transform="translate(22.024)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(26.535)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(32.916)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Row space of a matrix</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-63.html?vers=dd743d" knowl-id="xref-definition-63" alt="Definition 6.2.17 " title="Definition 6.2.17 ">Definition 6.2.17</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Orthogonal projection of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span> onto <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">W</tspan></text>
+</svg></span></span>
+</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/projections-defn-of.html?vers=dd743d" knowl-id="xref-projections-defn-of" alt="Definition 6.3.3 " title="Definition 6.3.3 ">Definition 6.3.3</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:1.7663em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
+<text transform="translate(14.759 0.513)"><tspan y="0" x="0" class="l">⊥</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Orthogonal part of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span> with respect to <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">W</tspan></text>
+</svg></span></span>
+</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/projections-defn-of.html?vers=dd743d" knowl-id="xref-projections-defn-of" alt="Definition 6.3.3 " title="Definition 6.3.3 ">Definition 6.3.3</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.638em"><span style="height:0.685em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">C</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">The complex numbers</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/definition-68.html?vers=dd743d" knowl-id="xref-definition-68" alt="Definition A.0.28 " title="Definition A.0.28 ">Definition A.0.28</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:0.49em"><span style="height:0.801em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><g transform="matrix(1,0,0,-1,0,-8.028)"><path d="M 0,0 H 5.624" class="a"></path></g><text><tspan y="0" x="0" class="d">z</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Complex conjugate</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/li-671.html?vers=dd743d" knowl-id="xref-li-671" alt="Item  " title="Item  ">Item</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.37599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.9894929" class="a">Re</tspan></text>
+<text transform="translate(12.625)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(17.135)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(22.759)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Real part of a complex number</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/li-675.html?vers=dd743d" knowl-id="xref-li-675" alt="Item  " title="Item  ">Item</a></td>
+</tr>
+<tr>
+<td style="text-align:left; vertical-align:top;"><span class="pretex-inline" style="width:2.443em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 3.7185481" class="a">Im</tspan></text>
+<text transform="translate(13.394)"><tspan y="0" x="0" class="h">(</tspan></text>
+<text transform="translate(17.904)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(23.528)"><tspan y="0" x="0" class="h">)</tspan></text>
+</svg></span></span></td>
+<td style="text-align:left; vertical-align:top;">Imaginary part of a complex number</td>
+<td style="text-align:left; vertical-align:top;"><a knowl="./knowl/li-675.html?vers=dd743d" knowl-id="xref-li-675" alt="Item  " title="Item  ">Item</a></td>
+</tr>
+</table></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20appendix-2&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CcApqDWirYcC6xUeuKYzP"></script>
+</body>
+</html>

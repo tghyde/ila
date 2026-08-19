@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>The Method of Least Squares</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: 0_imCMJA4xpJahfqr5mJ */
+
+@font-face {
+  font-family: "fiUBcOjALXPuCha35ZM4e";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fALD_-r46a2UulEBWFBLg";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATMAAoAAAAAB0wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAASUAAAEtVKiMOkZGVE0AAASoAAAAGgAAAByjRDPhT1MvMgAAAVQAAABIAAAAYFZmX3BjbWFwAAADLAAAADcAAAFCAA4C1WhlYWQAAAD0AAAAMQAAADYubjFNaGhlYQAAASgAAAAhAAAAJAUGAaJobXR4AAAExAAAAAgAAAAIA/AAOG1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGQAAADJAuz3a5wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4rrazPvx/DZfGbiZXwBFGJ6tLheB0xb/XRgPMP0BcjkYmECiAF3aDFcAAAB4nGNgZGBg+vPfhSGK8QcDEDAeYEj5/44BGTABAJlNBqoAAAAAAFAAAAIAAHicY2Bm/ME4gYGVgYGpi2nP/xcMPSCaIZjxAYMhIxNQlIGVkwEGGBmQQECaawqQ0mfQZ1b4b8EQxfSHYQ+KGgUgZAQAGb0NgHicpZLLSsNAFIb/pBcRL0sRV2fppS2TINK6rRS7EEuRrh3TIQ2EpKQJ9CHc+RYu9Al8BJe+j3/GQVFcCAYm853MufznZADs4gkePh6FO8cedvDs2McGXh03MPIix00c+3DcwpY/dNzGtp/Q02tu0rq1UTV7OMCDY591Xxw3cI83x03ceI+OW9jzTxy3se9f4xARjiAIqVThlDSBRoXUUsLThbULGLt3+L1Chjntglzy3HCPsbQxqY0x9KjfPeAwOpJQqVOZ6CqVSRItdFUYXXWkyuamkHJhJF6mkiaRySLDiCsWqtNeMMGK6WIm62KISx7pcnFhVkmcdYc0p/SIrVhNMZiauEo1YYScMaXdC3oY22CPDQrOuX6rILaC/MgpGNNTu7a+Ir9/DT4zBxhQa5+rHmiIM4rJs3KUF7GRsKfkXL56kOGlOM0yLjUnYA8dBrVzMOj2u6EKz34fy39F4+9igJn95XXp3JYO7EQxM8UqyTMJejSW9qKUXGt7oRS96plgWZjSrJVSQTDAO1YIjuB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvv7//xDy/yWoSgZGNgYYk1hAovLBDwBp5wbiAHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDA0tGRgZGJgZDD5Ic34Q4bphyzzDwmWHh7GqTxMmjzMB3lYDv8O+BHycwKrDMNhfhkGBgEZhmOCMgxaMozMQgzMIJ2GDNEMGRrJmgpGBgYmCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQqeJYlABQogSSjT0AChUtfZgwEIBBiYGBmVLLr3/nDdy7h37/cje5n3iv3Q+LHyjwbb3j/loj9cvx/548rO9zug7FdiOSPI8aI+3b/v/vM51c3K96NHpFu0acqPsv7vvtPZ5LgYZ+jzcE7i4erm4d7KtXUuD88D7uNLeHi7efgA081jewAAAHicY2BgYGQAgqtvXXeA6Gery0VgNABRmAb5AAAB+AAAAfgAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fLrDRWcuUCwYjs-19A_6m";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAxsAAoAAAAAD3QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAECAAACAQAAAi2Sn15H0ZGVE0AAAwMAAAAGgAAAByjRDPfT1MvMgAAAVQAAABNAAAAYFk1YaFjbWFwAAADbAAAAIEAAAF6KAoXumhlYWQAAAD0AAAANAAAADYvQzERaGhlYQAAASgAAAAiAAAAJAX2AnNobXR4AAAMKAAAAEQAAABEI5X+7m1heHAAAAFMAAAABgAAAAYAEVAAbmFtZQAAAaQAAAHGAAADTtP5mk1wb3N0AAAD8AAAABcAAAAg/4MAPXicY2BkYGBgYmDIvH5RKp7f5isDN/MLoAjDs9XlwjD6f+Z/NeZkpgdALgdILQMDAGhODNl4nGNgZGBgevBfjSGK2f1/5v+JzMkMKf/fMiADQQC91QhsAAAAAFAAABEAAHicY2BmkmScwMDKwMDUxbTn/zOGHhDNEM34gMGQkQkoysDKzAADjAxIICDNNQVIOTJUMiv8t2CIYnrAcAumhvER03wGBSBkBADgJA6EAAAAeJyNUrtu2zAUPVQcAwWCotkyEt1lSEIbxNkSAS68ZGuGootsMRYRmTJIOom/I//Rqcgn9Ke69JAmEARpgIgQ7+F9nHsuJQAf8QsC++cHnhIWOBZfE84wFt8TPsAX8SfhEU6yPOFDfMq6hMc4yh6ZKUYfePodqwIW+CyOE85wJL4lfIBO/Ex4hEL8TfgQMpslPGavHWoM2GAHC40VOnhIlJhyFUQNXNwN9y33DfcFeuY65iq09N+TweKWaEEeiUtGPeOeXsXaNX1z1i4xIbpgdU/73M/Fk6JVtHeRNWQGZQY3zGvpM8zUZOsZQz1sdlavOi/L6bSQjZONkVuz2S567TrVyvvB3srFTl5q77xVzVrOzXIiL/pexjonrXLK3ql2IuvB3OhWGa+bntz/k19TaMOzjxLxzFp3jfWKrqt4CesoEFeDXTe0sziBj9ZyWkWqivrDzZ6/cVMvW4Wb85FU8/72VeHr5DjjW5GpwikbDcbPBrtSspoU8ly+Eijnvun1kqFymp/lVVGdvmfSl+1fz51ogeuY7pg2xH9lP2VOrftpca2s04MJ+vKSGsFfKXQNfR6YElbJVTFglVcPRVGUZYV/C3ieNQAAeJxjYGBgZoBgGQZGBhAoAfIYwXwWhgggLcQgABRhYnBi8GUIYUhmSGfIZMhjqPz/HyjnCBZLYkgDiuUylP7////A/23/N/xf/H/h/wX/5/6fDjUTDTCyMWCXIAUwMiHYzBCKBUUBK9AWdg4GTiCTixsixMPLxy9AqcXUAQA75xjwAAAAeJxjYGZgYOBmYPhfymDLgAUAACkSAcAAeJxllGtUU1cWx+8lHjgqzSiZOGtGBiI+RtQyoG1Hq7ZMqQ9EMBaKT8QAUQJJgDwgPAIijygbFBSRVwhIiDzVqIUiD4GiCD6WrdVWW9CxTrHtckaZNZ5LT1ydS12z5sOcD+fDPmv/9++/z9mHZaZNY1iWfSNRI9fJDb6+vn5+yxnWiWGZd7i5DOfOcn904jwEnOe0MlcnyroKrrlOo0upepJM6pA7M/Ebd4aZ5c6KZrszS9xxoRuDpnIxE8WkMcCULPfxfdPPxzcgITFVo9gfq5P4rVrlK5FpJTK1RK9O1EcpFdpYeYwkJUETL4lKlXyg0Gl1GrlMJQlUR/tI/qpUSn7N00o0cq1ckyyP8ZEEJKj3KWLkap1CpvT5X0JArEyjk2skgTqZUhH9f/GQBI1KpmT45cXMZ3yYt5kA5kNmA7OR2cSEMFuYcGYbs53ZwexkZk85mM+oGcpGsGan2U67nYYF2YLxaVXIA51AE86Rzo9dQmugh1vXw/b0kL4eQc8cbgHX5Fjg3ONIEXPrSJ9jnYsQ7GRfO+dkYddMLhWQZ5OrxA706o2wPJCTnQD2kOKcipcklJigmYbmGqX5fDyBj6OdxWlmCedAgd7iTnqRygEJX8JFcv48qTnvxr33bPU/RM8fTq4Qg/x6/omMeY7LacbNU6JHAJE9//ySLPGE0Y875xdjUSzBjdduwo/48UY7nesh4qgXHRB3kXJUX2QuLAf8U6cqcGHABir0zIT0Qn0RFj0PpvfF/aQZtR5pKDIDftkbt5Zifyld7JkM+kJdERaSn8HOjdvZxJ/dBK85RvLLpjjSX3PE8CakJRkV/+IGCONwdAB5xv2CJI4r2caAqfNs/jyoJLvi39zlqsqRYrBTPkNJWx1FyJcrARsSPuQLPLnItnPXBXf4AmrqPQAtT6sryTyQOG6nG4OmZA7xMptKMiuIE3ebeAEqyzD59EMT8UbChoMXubnXyA7rCQvLOY8KSPSkTkyXqUDzOJ1OfzUDdal6jX3wFXze2jvcO2z7Bv4GE2G3/CEadmqkO3A7yUIlbcebSk9jOufVMvEg6UVdrWctZ6Eb2vbAe7Be6x+/S7E9JkkGcaAuT7Rh4VvZQ9ycbrbygYAMEYfYXmg9Bc1gl7eEQTAEKreHhm9VrYHlQNHQ+u/gKtxsGb6BO10+DgtNiAAcLO9+TLxvP//Ws9hZSLdS5U1u8FNi7GDpUq5XQF5OsuLmErMFGqAptnEX+MBffOKoP35fWRB365iMXkAG+vs039078XwbMmbnGCEd4uuSW6ALBux99zqGzffKx/EFco54A3xK5wGqI3Oa7tutWAhU/Ql50kaS2rPOuSnvFz0gQQ82fC3yIn/n9ohFo8oqVWk8UBbefmdqD2+JHNImKjJVvO88yC/M84vdGw1BePWdcDKdeEzcu+sB7Ukt2+oxXXEHShDUHK0urS4vOA5FgEVeE08eECdPqDXVHTyFJ9qdReF07QKxr3TdR1FJTf0/DN694tFujZd6ikapP70rJiIpsqeZkyEJ7wmXvbU67NJ1D+htaRuqwEIantvLzWo4aSHOhGG7xyoJIyARk2FilVarUtbrmhqt9U2NGqvaM4VqxHRxPCR9myGlvcikP5wKWRBZq28HO3SdHDiFm12U2dp8AyghrZxvcUnh8aIyfIebgYTkcV73Xgu3sDHpihvn+oAEj4lKSSCXLBYpeUkkkkLSaPpKx7KHMELGkUg5MthnbYAzYNHDPjAe0uXF4y20cwxukKeos/+yzQ6tUKUHGRgPJ+eq8V4ajPJ1hwyQhUWlUacMPR42uFDWZ8E2F12e4ZAR4sFghhaoKq4rseE28md0vO3oaaiDPkXLLtgFwaoPQgquqlp2wG4IUq4NwuYfkfDer8gLhrda3bjZj0SNr3n5CY4DzWjGSsebj2CYfI9Ejdc+62to43tQZYBIyDys/y+QngfKhOj6lG44DRdOXLbg0zxOKo8TB4ZqHqeSx2l8jXO25DRYoTu+eRuEQ3Dcms3Y/BMS3skZ5GY2HLGwl/jh28KliKlfHCSNZWylVVN+UyANpOdih6Afhmy3PivI5d9SHkTWpFzkR+aTsoGpgtpcgymT959ihlqoLa4rtuIvyIN3wZ++QqGR2w2xsB/0Fr7VlUetx9rwCOlAwkSwcFILm8OFCJ5yBvEi3vDXeaj6wPGE4ghspZmoMKswi797rUmfbcBdziSE7PuOLIbbcNZQq+Ch0nLTM3ENFaKk9dvffX8JTiI2lPPNgTMfAf/tZUAd511fUcPC5IcC4sKliqmLArR3D9ockhz9DUAvSMAImd4wiOvpiyv8Z7yKqMbJXLg3pR4Hybx6Zjq20OlIty50xUoqMJK1B8nvTON4Sy4Kp7M2UWEgnY31nAcSmvK6OfwFu5uzC4iYr7QoFrRjB5BNc2prg2/U4vCgPVoc0Y6UeampkAjx9Xo73IShWzeIeyv1Kpd+Djawn7hUw79sbW6q6QBsAeNIDJnb8aJjsPMkbo9BLeXVNVAPzRprPGyG4I2B9A+xxD3rphRMcKjAxPvNo6ph7qthliLuB8EYz+AdD/pHucisLVeURuBh2n+kCEkpCpOGmLD0KorLT9bxLPvPqLphDL5/OE5Wj5ElF4jnl6O4twlq1zQYAG2mf9pG3WQSHEfWIjVZlHs7iC+YD6YCLOQmfsvpxWnVXHIx2VzeddSZqsHFY4agbOEvrtOPuc4odJ15fsboTHAV/gd0NjhteJxjYGBgZACCq29dd4DoZ6vLhWE0AFGOBvcAAAH0AAACXv+xAkz/5ANH/+UCNQArAfsAGQGKAA8BJP9pAeH/4QEfACEDLwAgAiwAIAIpAB4Bxv/4AskAAAHd/9EB2/+P) format('woff');
+}
+
+@font-face {
+  font-family: "fBRlT1QTAR8Fu9Nz-tsb9";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "ft3hLGWaQyF3IN9_1sktw";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVgAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADhAAAAakAAAHJY15630ZGVE0AAAUwAAAAGgAAAByjRDPfT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADJAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMgAAADYvhjFLaGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFTAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGJAAAC0I76PS5wb3N0AAADcAAAABMAAAAg/4YANnicY2BkYGAAYvddx7fH89t8ZeBmfgEUYXi2ulwYTlv8d2G6wfQHyOVgYAKJAgBpOQyqAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr9tqyL+uSkiHuZowZbdVKR6rWgvYpHSszEuaSAkJU3Ao+/ge+hd8BE8io/hA3jxy7ooiIiBzfwmM/PNTBbAOu6h8PloXHlWWMOD5waW8Oy5ib469dzCjnr0vIAV9eZ5EauNDWaq1jK9S1dVs8I27jw32PfJcxMzvHhuUf/W8wI21avnRWypd+wiQhuCgJNq7JNGCFEhdZQwOnV+AevsHr9XyHBNvyCXjFvamB3rmtTVWGbU7y6wG7Ul0HpfRmGVyiiJpmFV2LDakyq7toWUUyvxLJU0iWwWWVacsVEte0yBOeViinUwwJChsJwe23kSZ50B3QtmxG7YkMPgwsZVGhJOkLOmdLZghnULdrmg4Ijntw7iOsgPTcE5xjC05qva4JDz9HnqnxbggA3zrDzJi9hK0NVyJN9zymAofi45HxsxddgcdvqdQAcHvy/7n1HwVwtg4q6nFsydoHHbY2KLeZJnYrp0Zu5SS54bd/maWQY9Bgpb2huttTE9fAApD3qYAAAAeJxjYGBgZoBgGQZGBhDwAfIYwXwWBgMgzQGETEBak0Gbwfb/fyBLA8L6f/P/jf/HobrAgJGNAZmLFzAygW1FBSxEah7EAACriAt7AHicY2BmAIP/zQxmDFgAACiYAbwAeJxFi81rE1EUxd/LTGfS9HX8wBHBZ3lCFvbDOKPZmC5rIJuSIK4EF0McksAQSswwrt3OoiJaBNEBF8XOxo0FsxipyWL+iEKR/gWuvG+4EXxBxMvhcjjn/CjRdUIpXd0b+WP/ueM4rnuP0BKhpCavU8lL8oYmr+nrTPvO9Bl2iqB4ucTJ5wuckIucfL3EySanHy4TbcG4ZJc8vtVdF3cdpy46XhiIzqDb98KR74VbIhw+9Udi3PdFby8QwaDrD7t+bdcb9x/4zwa9odhpiYd+Lwy8kWg/coXr/O9u77SIumVSIYyskSVKq14yPcNmnMlmRrMMTjItuyqr8mheNbJ5ZMsmnMybpoWdSfFzQmc/NLgJX+wYDk+Bg5mUJyY2IjSwFuNUCZSDRrSIzWQbuBqW/8Gwr+j9BY2H28jRjMpPTGgkYEAthqkSKoeNZBGb0SlyNSxb3+Agp3Cea3AOBzamOaSQ5qheG1NM20em9Qs2cnByOpMlu6jnv+sGftL/GkvyK8V9+8VrGb6B1jtjrULf3mHLr1glZivHleP3jJ2t5B/ZasysP+AWv5EAAAB4nGNgYGBkAIKrb113gOhnq8uFYTQAUY4G9wAAAfQAAAGIADgBiAA4AtgAOAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fIo1dFoFHxy9H-uERO88w";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "f_oqLu9d9lWiQbCV51PyM";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHAzuGgVkZGVE0AAAVgAAAAGgAAAByjRDPhT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvSjGlaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG9AAADPHC9++Bwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmDYpPfzRDy/zVcGbuYXQBGGZ6vLReC0/P+fTFuY5gO5HCC1DAwAcsgM6gB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUsFu1DAQfU63FUgI0QvigjTiTFZJBKtub91IRT1y2QO3bOPuRk2dyPa23SM/xAlx4p/4BZ69FgVRJGJl5nk88+aNEwDP8QUK++cTviWscKzeJ5xhoj4mfIBKfU94gpfZ64QP8SJbJnyEZ9lnZqrJU+6+xqqAFd6o44QzPFEfEj5Aq5YJT/BW/Uj4EJK9S/gIr7I1agwYsYNFhzU28BCUmHMVRA1ctIZ2SzvSrtAz1zFXo2X8jgwW10Qr8ggWPPU894xq1t4wdsHaS0yJzljd0z/0c3Gn6TX9bWQNmUGZwRXzWsYMMzuy9TxDPYw72603Xsr5vJDGSWNka8btqu/cRrdyN9hrWe1k0XnnrW5u5MJcTuWs7yXWObHaaXur26nUg7nqWm181/Tkfkx+TaEN9z5KxANrvWms1yFEsT2FYjH0tOdRu4/eck5NkorKw52e/uOO/mwivyj3FeGb5DjhW5GlwoxNBuPPB7vWUk0LOZW/ZEkQw4Nynp/kVVHN/mc6+W2WRwmBZUx0pBrin7GfLKfG/YRYauu6wQRdeUlt4I8T+oUO90wJq+SioNFqr++LoijLGX4CbCOYjwAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwNDRjYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A64euIgB4nGNgYGBkAIKrb113gOhnq8tFYDQAUZgG+QAAAp8AAAKfAB8=) format('woff');
+}
+
+@font-face {
+  font-family: "fgwEOQbp3v6H0NgODdjlL";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.a { font-size:11.47700024px;font-family:fLrDRWcuUCwYjs-19A_6m }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.b { font-size:11.47700024px;font-family:ft3hLGWaQyF3IN9_1sktw }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.c { font-size:11.47700024px;font-family:fIo1dFoFHxy9H-uERO88w }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.d { font-size:11.47700024px;font-family:fiUBcOjALXPuCha35ZM4e }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.e { font-size:11.47700024px;font-family:f_oqLu9d9lWiQbCV51PyM }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.f { font-size:7.65140009px;font-family:fLrDRWcuUCwYjs-19A_6m }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.g { font-size:11.47700024px;font-family:fgwEOQbp3v6H0NgODdjlL }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.h { font-size:7.65140009px;font-family:fIo1dFoFHxy9H-uERO88w }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.i { font-size:7.65140009px;font-family:ft3hLGWaQyF3IN9_1sktw }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.j { font-size:5.73850012px;font-family:fiUBcOjALXPuCha35ZM4e }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.k { font-size:11.27359962px;font-family:fBRlT1QTAR8Fu9Nz-tsb9 }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.l { font-size:7.65140009px;font-family:fiUBcOjALXPuCha35ZM4e }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex tspan.m { font-size:11.47700024px;font-family:fALD_-r46a2UulEBWFBLg }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.a { stroke-width:1px }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.b { stroke-width:0.19925px }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.c { stroke-width:1.19553006px }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.d { stroke-width:0.79701px }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.e { stroke-width:0.68900001px }
+.C0_imCMJA4xpJahfqr5mJ svg.pretex path.f { stroke-width:0.3985px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive C0_imCMJA4xpJahfqr5mJ" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons C0_imCMJA4xpJahfqr5mJ"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link active"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares" class="active">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="orthogonal-sets.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="chap-orthogonality.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="backmatter.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="orthogonal-sets.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="chap-orthogonality.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="backmatter.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page C0_imCMJA4xpJahfqr5mJ"><main class="main"><div id="content" class="mathbook-content">
+<section class="section" id="least-squares"><header title="Section 6.5 The Method of Least Squares"><h1 class="heading hide-type" alt="Section 6.5 The Method of Least Squares">
+<span class="type">Section</span><span class="codenumber">6.5</span><span class="title">The Method of Least Squares</span><a href="least-squares.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-32"><h5 class="heading"><span class="type">Objectives</span></h5>
+<ol id="ol-135" style="list-style-type: decimal;">
+<li id="li-656">Learn examples of best-fit problems.</li>
+<li id="li-657">Learn to turn a best-fit problem into a least-squares problem.</li>
+<li id="li-658">
+<em>Recipe:</em> find a least-squares solution (two ways).</li>
+<li id="li-659">
+<em>Picture:</em> geometry of a least-squares solution.</li>
+<li id="li-660">
+<em>Vocabulary words:</em> <em class="terminology">least-squares solution</em>.</li>
+</ol></article><section class="introduction" id="introduction-29"><p id="p-1587">In this section, we answer the following important question:</p>
+<blockquote class="blockquote" id="blockquote-3"><p id="p-1588">Suppose that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> does not have a solution.  What is the best approximate solution?</p></blockquote>
+<p id="p-1589">For our purposes, the best approximate solution is called the <em>least-squares solution</em>.  We will present two methods for finding least-squares solutions, and we will give several applications to best-fit problems.</p></section><section class="subsection" id="subsection-78"><header title="Subsection 6.5.1 Least-Squares Solutions"><h1 class="heading hide-type" alt="Subsection 6.5.1 Least-Squares Solutions">
+<span class="type">Subsection</span><span class="codenumber">6.5.1</span><span class="title">Least-Squares Solutions</span>
+</h1></header><p id="p-1590">We begin by clarifying exactly what we will mean by a “best approximate solution” to an inconsistent matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<article class="definition-like" id="definition-67"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-1591">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix and let <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> be a vector in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  A <em class="terminology">least-squares solution</em> of the matrix equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is a vector <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+</svg></span></span> such that</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="190 4 123 13"><text transform="translate(190.541 13.948)"><tspan y="0" x="0 6.4845052 9.6980648 14.288865" class="c">dist</tspan></text>
+<text transform="translate(208.663 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(214.034 13.948)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(220.14 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(226.533 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(233.671 13.925)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(233.775 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(240.305 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(247.484 13.948)"><tspan y="0" x="0" class="d">≤</tspan></text>
+<text transform="translate(259.185 13.948)"><tspan y="0" x="0 6.4845052 9.6980648 14.288865" class="c">dist</tspan></text>
+<text transform="translate(277.307 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(282.678 13.948)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(288.784 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(295.177 13.948)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(308.949 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></div>
+<p>for all other vectors <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article><p id="p-1592">Recall that <span class="pretex-inline" style="width:8.68747em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 9.6980648 14.288865" class="c">dist</tspan></text>
+<text transform="translate(18.122)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(23.207)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(28.463)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(33.542)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(41.725)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(60.604)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(66.986)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(74.905)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(85.716)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(93.899)"><tspan y="0" x="0" class="d">A</tspan></text>
+</svg></span></span> is the <a knowl="./knowl/innerprod-distance-defn.html?vers=dd743d" knowl-id="xref-innerprod-distance-defn" alt="Definition 6.1.6 " title="Definition 6.1.6 ">distance</a> between the vectors <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.016em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(8.47)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  The term “least squares” comes from the fact that <span class="pretex-inline" style="width:9.76347em"><span style="height:0.958em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.4845052 9.6980648 14.288865" class="c">dist</tspan></text>
+<text transform="translate(18.122)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(23.493)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(29.599)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(34.391)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(48.163)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(67.043)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(73.711)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(81.951)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(92.476)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(99.615 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(99.718)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(106.248)"><tspan y="0" x="0" class="d">A</tspan></text>
+</svg></span></span> is the square root of the sum of the squares of the entries of the vector <span class="pretex-inline" style="width:3.18799em"><span style="height:0.783em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.101)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(19.626)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(26.764 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(26.868)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(33.398)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  So a least-squares solution minimizes the sum of the squares of the differences between the entries of <span class="pretex-inline" style="width:1.2em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(7.139 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(7.242)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.885em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.967)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  In other words, a least-squares solution solves the equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> as closely as possible, in the sense that the sum of the squares of the difference <span class="pretex-inline" style="width:2.90999em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.101)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(19.626)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> is minimized.</p>
+<article class="paragraphs" id="paragraphs-25"><h5 class="heading"><span class="title">Least Squares: Picture</span></h5>
+<p id="p-1593">Suppose that the equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is inconsistent.  Recall from this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note in Section 2.3</a> that the column space of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is the set of all other vectors <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
+</svg></span></span> such that <span class="pretex-inline" style="width:2.92099em"><span style="height:0.6855em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(28.429)"><tspan y="0" x="0" class="a">c</tspan></text>
+</svg></span></span> is consistent.  In other words, <span class="pretex-inline" style="width:2.79499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="c">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></span></span> is the set of all vectors of the form <span class="pretex-inline" style="width:1.478em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(13.772)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Hence, the <a knowl="./knowl/projections-closest-vector.html?vers=dd743d" knowl-id="xref-projections-closest-vector" alt="Important Note 6.3.4 Closest vector and distance" title="Important Note 6.3.4 Closest vector and distance">closest vector</a> of the form <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> to <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the orthogonal projection of <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> onto <span class="pretex-inline" style="width:3.07299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="c">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(32.078)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  This is denoted <span class="pretex-inline" style="width:2.76673em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(28.563)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> following this <a knowl="./knowl/projections-closest-notn.html?vers=dd743d" knowl-id="xref-projections-closest-notn" alt="Notation 6.3.1 " title="Notation 6.3.1 ">notation in Section 6.3</a>. </p>
+<div class="pretex-display"><svg height="11.23983em" version="1.1" class="pretex" viewbox="1 0 333 129"><g transform="matrix(1,0,0,-1,173.611,63.887)"><g><g><g><g><path style="fill:#e0cae3;stroke:none" d="M -10.20616,63.78809 -159.89542,-63.78809 H 10.20616 L 159.89542,63.78809 Z" class="a"></path></g><g><path style="stroke:#808080" d="M -10.20616,63.78809 H 159.89542 M -47.62848,31.89403 H 122.4731 M -85.0508,0 H 85.0508 M -122.4731,-31.89403 H 47.62848 M -159.88228,-63.77689 H 10.2193 M -10.20616,63.78809 -159.89542,-63.78809 M 32.31923,63.78809 -117.37001,-63.78809 M 74.84462,63.78809 -74.84462,-63.78809 M 117.37001,63.78809 -32.31923,-63.78809 M 159.8805,63.78809 10.19124,-63.78809" class="b"></path></g><g><g transform="translate(69.319 -36.1)"><g><g transform="translate(-242.93 -692.013)"><text transform="matrix(1,0,0,-1,242.93,692.013)"><tspan y="0" x="0 7.2534642 13.439567" style="fill:#984ea3" class="c">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,261.207,692.013)"><tspan y="0" x="0" style="fill:#984ea3" class="a">A</tspan></text>
+</g></g></g></g><g><g><path style="fill:#808080;stroke:none" d="m 82.0737,31.89403 c 0,1.17417 -0.95183,2.126 -2.126,2.126 -1.17417,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17417 0.95183,-2.12599 2.126,-2.12599 1.17417,0 2.126,0.95182 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(73.071 35.107)"><g><g transform="translate(-246.682 -763.22)"><text transform="matrix(1,0,0,-1,246.682,763.22)"><tspan y="0" x="0 7.2419872" style="fill:#808080" class="a">Ax</tspan></text>
+</g></g></g></g><g><g><path style="fill:#808080;stroke:none" d="m -40.39938,0 c 0,1.17416 -0.95183,2.12599 -2.12601,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17418,0 2.12601,0.95183 2.12601,2.12599 z" class="a"></path></g></g><g><g transform="translate(-49.416 3.209)"><g><g transform="translate(-124.195 -731.322)"><text transform="matrix(1,0,0,-1,124.195,731.322)"><tspan y="0" x="0 7.2419872" style="fill:#808080" class="a">Ax</tspan></text>
+</g></g></g></g><g><g><path style="fill:#808080;stroke:none" d="m 7.22906,-31.89403 c 0,1.17417 -0.95182,2.12599 -2.12599,2.12599 -1.17417,0 -2.126,-0.95182 -2.126,-2.12599 0,-1.17417 0.95183,-2.126 2.126,-2.126 1.17417,0 2.12599,0.95183 2.12599,2.126 z" class="a"></path></g></g><g><g transform="translate(-1.783 -28.689)"><g><g transform="translate(-171.828 -699.424)"><text transform="matrix(1,0,0,-1,171.828,699.424)"><tspan y="0" x="0 7.2419872" style="fill:#808080" class="a">Ax</tspan></text>
+</g></g></g></g></g><g><g><path style="fill:#377eb8;stroke:none" d="m -82.07483,-31.894 c 0,1.17417 -0.95183,2.126 -2.12601,2.126 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17418 0.95183,-2.126 2.12599,-2.126 1.17418,0 2.12601,0.95182 2.12601,2.126 z" class="a"></path></g></g><g><g transform="translate(-112.562 -43.846)"><g><g transform="translate(-61.049 -684.267)"><text transform="matrix(1,0,0,-1,61.049,684.267)"><tspan y="0" x="0" style="fill:#377eb8" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,68.188,684.29)"><tspan y="0" x="0" style="fill:#377eb8" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,68.291,684.267)"><tspan y="0" x="0" style="fill:#377eb8" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,77.49,684.267)"><tspan y="0" x="0" style="fill:#377eb8" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,90.051,684.267)"><tspan y="0" x="0" style="fill:#377eb8" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,95.87,681.673)"><tspan y="0" x="0 4.8356848 8.9597893" style="fill:#377eb8" class="h">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,106.988,681.673)"><tspan y="0" x="0" style="fill:#377eb8" class="i">(</tspan></text>
+<text transform="matrix(1,0,0,-1,109.994,681.673)"><tspan y="0" x="0" style="fill:#377eb8" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,114.249,681.673)"><tspan y="0" x="0" style="fill:#377eb8" class="i">)</tspan></text>
+</g></g></g></g><g><g><g><path d="m -85.54631,-23.48405 8.50403,-6.5e-4 1.34548,-8.40994" class="b"></path></g></g></g><g><g><g><path d="m -85.54631,-23.48405 -6.47949,-5.52173 1.34547,-8.40995" class="b"></path></g></g></g><g><g><path style="fill:#e41a1c;stroke:none" d="m -92.2923,31.89844 c 0,1.17418 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12601,-0.95182 -2.12601,-2.126 0,-1.17417 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95182 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(-97.912 35.111)"><g><g transform="translate(-75.699 -763.224)"><text transform="matrix(1,0,0,-1,76.56,763.224)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">b</tspan></text>
+</g></g></g></g><g><path d="m -84.5477,-29.79834 -8.71567,54.41573" class="c"></path><g transform="matrix(-0.15816,0.98744,-0.98744,-0.15816,-92.74843,21.40236)"><g><path style="fill:#000" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-172.615 -3.861)"><g><g transform="translate(-0.996 -724.252)"><text transform="matrix(1,0,0,-1,1.857,724.252)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,10.097,724.252)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,20.622,724.252)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,27.761,724.275)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,27.864,724.252)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,37.063,724.252)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,49.624,724.252)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,55.443,721.658)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,66.56,721.658)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="matrix(1,0,0,-1,69.567,721.658)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,73.822,721.658)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="matrix(1,0,0,-1,76.829,723.739)"><tspan y="0" x="0" class="j">⊥</tspan></text>
+</g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(-3.19 3.203)"><g><g transform="translate(-170.421 -731.316)"><text transform="matrix(1,0,0,-1,170.421,731.316)"><tspan y="0" x="0" class="c">0</tspan></text>
+</g></g></g></g></g></g></g></svg></div><article class="bluebox" id="bluebox-96"><p id="p-1594">A least-squares solution of <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is a solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> of the consistent equation <span class="pretex-inline" style="width:4.94072em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(34.821 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(45.939 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(48.946 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(53.2 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+</svg></span></span></p></article><article class="remark-like" id="note-31"><h5 class="heading"><span class="type">Note</span></h5>
+<p id="p-1595">If <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent, then <span class="pretex-inline" style="width:4.62572em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(31.232)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(43.793)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(49.899)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> so that a least-squares solution is the same as a usual solution.</p></article><p id="p-1596">Where is <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> in this picture?  If <span class="pretex-inline" style="width:5.20085em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(49.823)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="f">n</tspan></text>
+</svg></span></span> are the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then</p>
+<div class="pretex-display"><svg height="5.57635em" version="1.1" class="pretex" viewbox="150 0 203 64"><text transform="translate(151.393 35.37)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(158.531 35.347)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(158.635 35.37)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(167.833 35.37)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(179.534 35.37)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(187.516 1.685)"><tspan y="0" x="0" class="g">E</tspan><tspan y="22.885" x="0" class="g">I</tspan><tspan y="30.368" x="0" class="g">I</tspan><tspan y="38.540001" x="0" class="g">G</tspan><tspan y="9.4779997" x="10.207" class="g">K</tspan></text>
+<text transform="translate(197.827 11.186)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(203.875 13.78)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(197.723 25.111)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(197.827 25.134)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(203.875 27.728)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(201.201 36.581)"><tspan y="0" x="0" class="c">.</tspan><tspan y="3.9849999" x="0" class="c">.</tspan><tspan y="7.9699998" x="0" class="c">.</tspan></text>
+<text transform="translate(197.628 58.476)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(197.731 58.499)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(203.971 61.093)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(208.723 1.685)"><tspan y="0" x="0" class="g">F</tspan><tspan y="22.885" x="0" class="g">J</tspan><tspan y="30.368" x="0" class="g">J</tspan><tspan y="38.540001" x="0" class="g">H</tspan></text>
+<text transform="translate(220.745 35.37)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(233.203 35.347)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(233.307 35.37)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(239.355 37.964)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(244.681 35.37)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(249.605 37.964)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(256.492 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(267.774 35.347)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(267.877 35.37)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(273.925 37.964)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(279.252 35.37)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(284.175 37.964)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(291.062 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(301.587 35.37)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+<text transform="translate(316.598 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(327.88 35.347)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(327.984 35.37)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(334.223 37.964)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(339.549 35.37)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(344.664 37.964)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(349.417 35.37)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>Hence the entries of <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> are the “coordinates” of <span class="pretex-inline" style="width:2.48873em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+</svg></span></span> with respect to the spanning set <span class="pretex-inline" style="width:6.27352em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(20.78)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(25.704 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(30.456)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(54.988)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(60.103 2.594)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(66.837)"><tspan y="0" x="0" class="d">}</tspan></text>
+</svg></span></span> of <span class="pretex-inline" style="width:3.07299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="c">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(32.078)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span> (They are honest <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="k">B</tspan></text>
+</svg></span></span>-coordinates</span> if the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> are linearly independent.) </p>
+<div class="pretex-display"><svg height="12.2854em" version="1.1" class="pretex" viewbox="0 0 377 141"><g transform="matrix(1,0,0,-1,213.265,55.149)"><g><g><g><g><path style="fill:#e0cae3;stroke:none" d="M -63.49657,42.51933 -213.16855,-85.0387 H 13.60591 L 163.2779,42.51933 Z" class="a"></path></g><g><path style="stroke:#808080" d="M -63.49657,42.51933 H 163.2779 M -113.38724,0 H 113.38724 M -163.2779,-42.51933 H 63.49657 M -213.15102,-85.02374 H 13.62344 M -63.49657,42.51933 -213.16855,-85.0387 M -6.80295,42.51933 -156.47493,-85.0387 M 49.89066,42.51933 -99.78131,-85.0387 M 106.58427,42.51933 -43.08769,-85.0387 M 163.25798,42.51933 13.586,-85.0387" class="b"></path></g><g><g transform="translate(96.521 -46.725)"><g><g transform="translate(-309.786 -690.126)"><text transform="matrix(1,0,0,-1,309.786,690.126)"><tspan y="0" x="0 7.2534642 13.439567" style="fill:#984ea3" class="c">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,328.064,690.126)"><tspan y="0" x="0" style="fill:#984ea3" class="a">A</tspan></text>
+</g></g></g></g><g><path style="stroke:#ff7f00" d="M 0,0 H 51.45067" class="c"></path><g transform="translate(48.19475)"><g><path style="fill:#ff7f00;stroke:#ff7f00" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(23.225 3.644)"><g><g transform="translate(-236.49 -740.495)"><text transform="matrix(1,0,0,-1,237.063,740.495)"><tspan y="0" x="0" style="fill:#ff7f00" class="a">v</tspan></text>
+<text transform="matrix(1,0,0,-1,241.987,737.901)"><tspan y="0" x="0" style="fill:#ff7f00" class="h">1</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#ff7f00" d="M 0,0 -45.89761,-39.11642" class="c"></path><g transform="matrix(-0.76193,-0.64938,0.64938,-0.76193,-43.41681,-37.00209)"><g><path style="fill:#ff7f00;stroke:#ff7f00" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-23.951 -27.825)"><g><g transform="translate(-189.314 -709.026)"><text transform="matrix(1,0,0,-1,189.888,709.026)"><tspan y="0" x="0" style="fill:#ff7f00" class="a">v</tspan></text>
+<text transform="matrix(1,0,0,-1,194.811,706.433)"><tspan y="0" x="0" style="fill:#ff7f00" class="h">2</tspan></text>
+</g></g></g></g></g><g><path style="stroke-dasharray:2.98883,2.98883;stroke-dashoffset:0" d="m 0,0 h -62.36867 l -49.89667,-42.52448" class="d"></path><g><g transform="translate(-42.139 3.644)"><g><g transform="translate(-171.126 -740.495)"><text transform="matrix(1,0,0,-1,171.883,740.518)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,171.987,740.495)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,178.035,737.901)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="matrix(1,0,0,-1,183.361,740.495)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="matrix(1,0,0,-1,188.285,737.901)"><tspan y="0" x="0" class="h">1</tspan></text>
+</g></g></g></g><g><g transform="translate(-105.233 -13.419)"><g><g transform="translate(-108.032 -723.432)"><text transform="matrix(1,0,0,-1,108.789,723.455)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,108.893,723.432)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,114.941,720.838)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="matrix(1,0,0,-1,120.267,723.432)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="matrix(1,0,0,-1,125.191,720.838)"><tspan y="0" x="0" class="h">2</tspan></text>
+</g></g></g></g></g></g><g><g><path style="fill:#377eb8;stroke:none" d="m -110.12817,-42.52017 c 0,1.17417 -0.95183,2.126 -2.126,2.126 -1.17417,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17417 0.95182,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95182 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(-140.605 -54.468)"><g><g transform="translate(-72.66 -682.383)"><text transform="matrix(1,0,0,-1,72.66,682.383)"><tspan y="0" x="0" style="fill:#377eb8" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,79.799,682.406)"><tspan y="0" x="0" style="fill:#377eb8" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,79.902,682.383)"><tspan y="0" x="0" style="fill:#377eb8" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,89.101,682.383)"><tspan y="0" x="0" style="fill:#377eb8" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,101.663,682.383)"><tspan y="0" x="0" style="fill:#377eb8" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,107.481,679.789)"><tspan y="0" x="0 4.8356848 8.9597893" style="fill:#377eb8" class="h">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,118.599,679.789)"><tspan y="0" x="0" style="fill:#377eb8" class="i">(</tspan></text>
+<text transform="matrix(1,0,0,-1,121.606,679.789)"><tspan y="0" x="0" style="fill:#377eb8" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,125.86,679.789)"><tspan y="0" x="0" style="fill:#377eb8" class="i">)</tspan></text>
+</g></g></g></g><g><g><g><path d="m -113.59966,-34.11023 h 8.50405 l 1.34547,-8.40994" class="b"></path></g></g></g><g><g><g><path d="m -113.59966,-34.11023 -6.47949,-5.52263 1.34549,-8.40994" class="b"></path></g></g></g><g><g><path style="fill:#e41a1c;stroke:none" d="m -123.73445,42.52094 c 0,1.17416 -0.95183,2.12599 -2.12601,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17418,0 2.12601,0.95183 2.12601,2.12601 z" class="a"></path></g></g><g><g transform="translate(-129.342 45.729)"><g><g transform="translate(-83.923 -782.58)"><text transform="matrix(1,0,0,-1,84.784,782.58)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">b</tspan></text>
+</g></g></g></g><g><path d="m -112.25417,-42.52017 -12.43959,77.74859" class="c"></path><g transform="matrix(-0.15822,0.98894,-0.98894,-0.15822,-124.17862,32.00851)"><g><path style="fill:#000" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-202.555 -2.579)"><g><g transform="translate(-10.71 -734.272)"><text transform="matrix(1,0,0,-1,11.57,734.272)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,19.811,734.272)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,30.335,734.272)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,37.474,734.295)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,37.577,734.272)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,46.776,734.272)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,59.338,734.272)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,65.157,731.678)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="matrix(1,0,0,-1,76.274,731.678)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="matrix(1,0,0,-1,79.281,731.678)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="matrix(1,0,0,-1,83.535,731.678)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="matrix(1,0,0,-1,86.542,733.76)"><tspan y="0" x="0" class="j">⊥</tspan></text>
+</g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(-3.19 3.202)"><g><g transform="translate(-210.075 -740.053)"><text transform="matrix(1,0,0,-1,210.075,740.053)"><tspan y="0" x="0" class="c">0</tspan></text>
+</g></g></g></g></g></g></g></svg></div><figure class="figure-like" id="figure-153"><div id="mathbox-148" class="mathbox" style="height:500px;">
+<iframe src="demos/leastsquares.html?v1=0,1,0&amp;v2=1.1,0,-.2&amp;range=2&amp;vec=1.4,-1.1,1.45&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">4</span>The violet plane is <span class="pretex-inline" style="width:3.07299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="c">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(32.078)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  The closest that <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> can get to <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the closest vector on <span class="pretex-inline" style="width:2.79499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="c">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></span></span> to <span class="pretex-inline" style="width:0.885em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.967)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> which is the orthogonal projection <span class="pretex-inline" style="width:2.48873em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+</svg></span></span> (in blue).  The vectors <span class="pretex-inline" style="width:2.20363em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+</svg></span></span> are the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and the coefficients of <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> are the lengths of the green lines.  Click and drag <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> to move it.</figcaption></figure></article><div class="posterior"><article class="remark-like" id="note-31"><h5 class="heading"><span class="type">Note</span></h5>
+<p id="p-1595">If <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent, then <span class="pretex-inline" style="width:4.62572em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(31.232)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(43.793)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(49.899)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> so that a least-squares solution is the same as a usual solution.</p></article></div>
+<p id="p-1597">We learned to solve this kind of orthogonal projection problem in <a href="projections.html" alt="Section 6.3 Orthogonal Projection" title="Section 6.3 Orthogonal Projection">Section 6.3</a>.</p>
+<article class="theorem-like" id="leastsquares-ATA-method"><h5 class="heading"><span class="type">Theorem</span></h5>
+<p id="p-1598">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix and let <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> be a vector in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  The least-squares solutions of <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> are the solutions of the matrix equation</p>
+<div class="pretex-display"><svg height="1.04557em" version="1.1" class="pretex" viewbox="220 3 62 12"><text transform="translate(221.943 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(228.707 9.07)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(234.446 13.948)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(250.887 13.948)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(262.588 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(269.351 9.07)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(275.951 13.948)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></div>
+</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-66" id="proof-66"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-66" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1599">By this <a knowl="./knowl/projections-ATA-formula.html?vers=dd743d" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem in Section 6.3</a>, if <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is a solution of the matrix equation <span class="pretex-inline" style="width:5.51578em"><span style="height:1.01833em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(28.944)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(40.645)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(47.408 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(54.009)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(60.114)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:1.2em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(7.139 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(7.242)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is equal to <span class="pretex-inline" style="width:2.76673em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(28.563)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  We argued above that a least-squares solution of <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is a solution of <span class="pretex-inline" style="width:5.21872em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(34.821 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(45.939 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(48.946 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(53.2 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(56.705)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article></span>
+</div>
+<p id="p-1600">In particular, finding a least-squares solution means solving a consistent system of linear equations.  We can translate the above theorem into a recipe:</p>
+<article class="bluebox" id="bluebox-97"><h5 class="heading"><span class="title">Recipe 1: Compute a least-squares solution</span></h5>
+<p id="p-1601">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix and let <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> be a vector in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Here is a method for computing a least-squares solution of <span class="pretex-inline" style="width:3.37799em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">:</tspan></text>
+</svg></span></span> </p>
+<ol id="ol-136" style="list-style-type: decimal;">
+<li id="li-661">Compute the matrix <span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> and the vector <span class="pretex-inline" style="width:1.9744em"><span style="height:0.86233em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(13.364)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(19.47)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-662">Form the augmented matrix for the matrix equation <span class="pretex-inline" style="width:5.51578em"><span style="height:1.01833em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(28.944)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(40.645)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(47.408 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(54.009)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(60.114)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and row reduce.</li>
+<li id="li-663">This equation is always consistent, and any solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is a least-squares solution.</li>
+</ol></article><p id="p-1602">To reiterate: once you have found a least-squares solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> of <span class="pretex-inline" style="width:3.33699em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:2.48873em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.68 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(17.797 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(20.804 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(25.058 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+</svg></span></span> is equal to <span class="pretex-inline" style="width:1.478em"><span style="height:0.783em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(7.139 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(7.242)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(13.772)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/leastsquares-eg-bestfit-line-a-hidden.html?vers=dd743d" knowl-id="hidden-leastsquares-eg-bestfit-line-a" alt="Example 6.5.7 " title="Example 6.5.7 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-285-hidden.html?vers=dd743d" knowl-id="hidden-example-285" alt="Example 6.5.9 " title="Example 6.5.9 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<p id="p-1609">The reader may have noticed that we have been careful to say “the least-squares solutions” in the plural, and “a least-squares solution” using the indefinite article.  This is because a least-squares solution need not be unique: indeed, if the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> are linearly dependent, then <span class="pretex-inline" style="width:4.94072em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(34.821 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(45.939 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(48.946 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(53.2 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+</svg></span></span> has infinitely many solutions.  The following theorem, which gives equivalent criteria for uniqueness, is an analogue of this <a knowl="./knowl/projections-ATA-formula2.html?vers=dd743d" knowl-id="xref-projections-ATA-formula2" alt="Corollary 6.3.30 " title="Corollary 6.3.30 ">corollary in Section 6.3</a>.</p>
+<article class="theorem-like" id="theorem-44"><h5 class="heading"><span class="type">Theorem</span></h5>
+<p id="p-1610">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix and let <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> be a vector in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  The following are equivalent: </p>
+<ol id="ol-137" style="list-style-type: decimal;">
+<li id="li-664">
+<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> has a unique least-squares solution.</li>
+<li id="li-665">The columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> are linearly independent.</li>
+<li id="li-666">
+<span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is invertible.</li>
+</ol>
+<p> In this case, the least-squares solution is</p>
+<div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="210 3 84 14"><text transform="translate(211.422 13.925)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(211.525 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(220.724 13.948)"><tspan y="0" x="0 11.705392" class="b">=(</tspan></text>
+<text transform="translate(236.935 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(243.699 9.07)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(249.438 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(255.819 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(260.33 9.07)"><tspan y="0" x="0" class="l">−</tspan></text>
+<text transform="translate(265.923 9.07)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(270.675 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(277.439 9.07)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(284.039 13.948)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(290.145 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+</article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-67" id="proof-67"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-67" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1611">The set of least-squares solutions of <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the solution set of the consistent equation <span class="pretex-inline" style="width:5.51578em"><span style="height:1.01833em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(28.944)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(40.645)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(47.408 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(54.009)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(60.114)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> which is a translate of the solution set of the homogeneous equation <span class="pretex-inline" style="width:4.37539em"><span style="height:0.86233em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(28.944)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(40.645)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
+</svg></span></span>  Since <span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="f">T</tspan></text>
+<text transform="translate(12.503)"><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is a square matrix, the equivalence of 1 and 3 follows from the <a knowl="./knowl/imt-2.html?vers=dd743d" knowl-id="xref-imt-2" alt="Invertible Matrix Theorem 5.1.31 " title="Invertible Matrix Theorem 5.1.31 ">invertible matrix theorem in Section 5.1</a>.  The set of least squares-solutions is also the solution set of the consistent equation <span class="pretex-inline" style="width:5.21872em"><span style="height:1.086em;vertical-align:-0.352em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(34.821 2.594)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(45.939 2.594)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(48.946 2.594)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(53.2 2.594)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(56.705)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> which has a unique solution if and only if the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> are linearly independent by this <a knowl="./knowl/linindep-matrix-cols.html?vers=dd743d" knowl-id="xref-linindep-matrix-cols" alt="Important Note 2.5.9 Recipe: Checking linear independence" title="Important Note 2.5.9 Recipe: Checking linear independence">important note in Section 2.5</a>.</p></article></span>
+</div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-286-hidden.html?vers=dd743d" knowl-id="hidden-example-286" alt="Example 6.5.12 Infinitely many least-squares solutions" title="Example 6.5.12 Infinitely many least-squares solutions"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Infinitely many least-squares solutions)</span>
+</h5></article></a></div>
+<p id="p-1615">As usual, calculations involving projections become easier in the presence of an orthogonal set.  Indeed, if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix with <em>orthogonal</em> columns <span class="pretex-inline" style="width:5.87352em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(6.347 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.099)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(15.891)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(22.238 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(26.99)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(50.948)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(57.486 2.594)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(64.22)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then we can use the <a knowl="./knowl/projection-formula.html?vers=dd743d" knowl-id="xref-projection-formula" alt="Projection Formula 6.4.8 " title="Projection Formula 6.4.8 ">projection formula in Section 6.4</a> to write</p>
+<div class="pretex-display"><svg height="5.57635em" version="1.1" class="pretex" viewbox="69 0 366 64"><text transform="translate(69.797 35.37)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(75.615 37.964)"><tspan y="0" x="0 4.8356848 8.9597893" class="h">Col</tspan></text>
+<text transform="translate(86.733 37.964)"><tspan y="0" x="0" class="i">(</tspan></text>
+<text transform="translate(89.74 37.964)"><tspan y="0" x="0" class="f">A</tspan></text>
+<text transform="translate(93.994 37.964)"><tspan y="0" x="0" class="i">)</tspan></text>
+<text transform="translate(100.167 35.37)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(115.991 26.996)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(124.231 26.996)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(129.591 26.996)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(135.938 29.589)"><tspan y="0" x="0" class="h">1</tspan></text>
+<g transform="matrix(1,0,0,-1,113.064,32.053)"><path d="M 0,0 H 29.693" class="e"></path></g><text transform="translate(113.064 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(119.411 46.457)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(126.298 43.863)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(131.657 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(138.004 46.457)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(145.553 35.37)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(151.9 37.964)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(158.787 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(173.434 27.049)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(181.674 27.049)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(187.034 27.049)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(193.381 29.643)"><tspan y="0" x="0" class="h">2</tspan></text>
+<g transform="matrix(1,0,0,-1,170.507,32.053)"><path d="M 0,0 H 29.693" class="e"></path></g><text transform="translate(170.507 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(176.853 46.457)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(183.74 43.863)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(189.1 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(195.447 46.457)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(202.996 35.37)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(209.342 37.964)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(216.229 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(226.754 35.37)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+<text transform="translate(241.766 35.37)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(257.499 26.992)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(265.74 26.992)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(271.099 26.992)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(277.637 29.586)"><tspan y="0" x="0" class="f">m</tspan></text>
+<g transform="matrix(1,0,0,-1,253.486,32.053)"><path d="M 0,0 H 34.039" class="e"></path></g><text transform="translate(253.486 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(260.024 46.457)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(268.892 43.863)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(274.252 43.863)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(280.79 46.457)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(290.321 35.37)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(296.859 37.964)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(306.261 35.37)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(317.962 35.37)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(325.944 1.685)"><tspan y="0" x="0" class="g">E</tspan><tspan y="22.885" x="0" class="g">I</tspan><tspan y="30.368" x="0" class="g">I</tspan><tspan y="38.540001" x="0" class="g">G</tspan></text>
+<text transform="translate(338.557 11.186)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(343.929 11.186)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(352.169 11.186)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(357.529 11.186)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(363.876 13.78)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(368.628 11.186)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(373.138 11.186)"><tspan y="0" x="0" class="m">/</tspan></text>
+<text transform="translate(378.946 11.186)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(383.456 11.186)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(389.803 13.78)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(396.69 11.186)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(402.05 11.186)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(408.397 13.78)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(413.149 11.186)"><tspan y="0" x="0" class="b">)</tspan><tspan y="13.948" x="-74.592003" class="b">(</tspan></text>
+<text transform="translate(343.929 25.134)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(352.169 25.134)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(357.529 25.134)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(363.876 27.728)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(368.628 25.134)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(373.138 25.134)"><tspan y="0" x="0" class="m">/</tspan></text>
+<text transform="translate(378.946 25.134)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(383.456 25.134)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(389.803 27.728)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(396.69 25.134)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(402.05 25.134)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(408.397 27.728)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(413.149 25.134)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(376.513 36.581)"><tspan y="0" x="0" class="c">.</tspan><tspan y="3.9849999" x="0" class="c">.</tspan><tspan y="7.9699998" x="0" class="c">.</tspan></text>
+<text transform="translate(335.298 58.499)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(340.669 58.499)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(348.91 58.499)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(354.269 58.499)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(360.808 61.093)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(367.542 58.499)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(372.052 58.499)"><tspan y="0" x="0" class="m">/</tspan></text>
+<text transform="translate(377.859 58.499)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(382.37 58.499)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(388.908 61.093)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(397.777 58.499)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(403.136 58.499)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(409.674 61.093)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(416.408 58.499)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(420.919 1.685)"><tspan y="0" x="0" class="g">F</tspan><tspan y="22.885" x="0" class="g">J</tspan><tspan y="30.368" x="0" class="g">J</tspan><tspan y="38.540001" x="0" class="g">H</tspan></text>
+<text transform="translate(431.874 35.37)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>Note that the least-squares solution is unique in this case, since <a knowl="./knowl/orthosets-is-li.html?vers=dd743d" knowl-id="xref-orthosets-is-li" alt="Fact 6.4.7 " title="Fact 6.4.7 ">an orthogonal set is linearly independent</a>.</p>
+<article class="bluebox" id="leastsquares-recipe2"><h5 class="heading"><span class="title">Recipe 2: Compute a least-squares solution</span></h5>
+<p id="p-1616">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix with <em>orthogonal</em> columns <span class="pretex-inline" style="width:5.87352em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(6.347 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.099)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(15.891)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(22.238 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(26.99)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(50.948)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(57.486 2.594)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(64.22)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and let <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> be a vector in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Then the least-squares solution of <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the vector</p>
+<div class="pretex-display"><svg height="2.61391em" version="1.1" class="pretex" viewbox="162 0 179 30"><text transform="translate(163.632 17.776)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(163.736 17.799)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(172.935 17.799)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(184.635 1.932)"><tspan y="0" x="0" class="g">L</tspan></text>
+<text transform="translate(195.931 9.424)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(204.172 9.424)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(209.531 9.424)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(215.878 12.018)"><tspan y="0" x="0" class="h">1</tspan></text>
+<g transform="matrix(1,0,0,-1,193.004,14.482)"><path d="M 0,0 H 29.693" class="e"></path></g><text transform="translate(193.004 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(199.351 28.885)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(206.238 26.292)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(211.598 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(217.944 28.885)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(223.892 17.799)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(235.475 9.478)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(243.715 9.478)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(249.075 9.478)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(255.422 12.072)"><tspan y="0" x="0" class="h">2</tspan></text>
+<g transform="matrix(1,0,0,-1,232.548,14.482)"><path d="M 0,0 H 29.693" class="e"></path></g><text transform="translate(232.548 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(238.894 28.885)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(245.781 26.292)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(251.141 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(257.488 28.885)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(263.436 17.799)"><tspan y="0" x="0 7.4600501 12.245959 17.043344 21.829254" class="c">,...,</tspan></text>
+<text transform="translate(297.94 9.42)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(306.18 9.42)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(311.54 9.42)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(318.078 12.014)"><tspan y="0" x="0" class="f">m</tspan></text>
+<g transform="matrix(1,0,0,-1,293.926,14.482)"><path d="M 0,0 H 34.039" class="e"></path></g><text transform="translate(293.926 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(300.464 28.885)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(309.333 26.292)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(314.693 26.292)"><tspan y="0" x="0" class="a">u</tspan></text>
+<text transform="translate(321.231 28.885)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(329.16 1.932)"><tspan y="0" x="0" class="g">M</tspan></text>
+<text transform="translate(337.934 17.799)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+</article><p id="p-1617">This formula is particularly useful in the sciences, as matrices with orthogonal columns often arise in nature.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-287-hidden.html?vers=dd743d" knowl-id="hidden-example-287" alt="Example 6.5.15 " title="Example 6.5.15 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div></section><section class="subsection" id="subsection-79"><header title="Subsection 6.5.2 Best-Fit Problems"><h1 class="heading hide-type" alt="Subsection 6.5.2 Best-Fit Problems">
+<span class="type">Subsection</span><span class="codenumber">6.5.2</span><span class="title">Best-Fit Problems</span>
+</h1></header><p id="p-1620">In this subsection we give an application of the method of least squares to data modeling.  We begin with a basic example.</p>
+<article class="example-like" id="specialcase-54"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Best-fit line)</span>
+</h5>
+<p id="p-1621">Suppose that we have measured three data points</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="194 4 116 13"><text transform="translate(194.274 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(198.784 13.948)"><tspan y="0" x="0 6.3812122 11.167121" class="c">0,6</tspan></text>
+<text transform="translate(216.338 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(220.849 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(237.117 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(241.628 13.948)"><tspan y="0" x="0 6.3812122 11.167121" class="c">1,0</tspan></text>
+<text transform="translate(259.182 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(263.692 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(279.961 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(284.471 13.948)"><tspan y="0" x="0 6.3812122 11.178598" class="c">2,0</tspan></text>
+<text transform="translate(302.025 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(306.536 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></div>
+<p>and that our model for these data asserts that the points should lie on a line.  Of course, these three points do not actually lie on a single line, but this could be due to errors in our measurement.  How do we predict which line they are supposed to lie on? </p>
+<div class="pretex-display"><svg height="22.3054em" version="1.1" class="pretex" viewbox="0 0 171 256"><g transform="matrix(1,0,0,-1,56.892,198.624)"><g><g><g><path style="stroke:#b3b3b3" d="M -56.69362,-56.69362 H 113.38724 M -56.69362,-28.3468 H 113.38724 M -56.69362,0 H 113.38724 M -56.69362,28.3468 H 113.38724 M -56.69362,56.69362 h 170.08086 m -170.08086,28.3468 h 170.08086 m -170.08086,28.34682 h 170.08086 m -170.08086,28.3468 H 113.38724 M -56.69362,170.08086 H 113.38724 M -56.69362,198.41771 H 113.38724 M -56.69362,-56.69362 V 198.42766 M -28.3468,-56.69362 V 198.42766 M 0,-56.69362 V 198.42766 M 28.3468,-56.69362 V 198.42766 M 56.69362,-56.69362 v 255.12128 m 28.3468,-255.12128 v 255.12128 m 28.33685,-255.12128 v 255.12128" class="b"></path></g><path d="M -56.69362,0 H 112.98872" class="f"></path><g transform="translate(113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><path d="M 0,-56.69362 V 198.02916" class="f"></path><g transform="matrix(0,1,-1,0,0,198.22841)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,170.08086 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g transform="translate(2.5 174.747)"><g><g transform="translate(-59.392 -768.123)"><text transform="matrix(1,0,0,-1,59.392,768.123)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,63.902,768.123)"><tspan y="0" x="0 6.3812122 11.178598" class="c">0,6</tspan></text>
+<text transform="matrix(1,0,0,-1,81.456,768.123)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,0 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(15.059 -11.925)"><g><g transform="translate(-71.951 -581.451)"><text transform="matrix(1,0,0,-1,71.951,581.451)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,76.462,581.451)"><tspan y="0" x="0 6.3812122 11.167121" class="c">1,0</tspan></text>
+<text transform="matrix(1,0,0,-1,94.016,581.451)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(48.845 5.291)"><g><g transform="translate(-105.737 -598.667)"><text transform="matrix(1,0,0,-1,105.737,598.667)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,110.248,598.667)"><tspan y="0" x="0 6.3812122 11.167121" class="c">2,0</tspan></text>
+<text transform="matrix(1,0,0,-1,127.802,598.667)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p id="p-1622">The general equation for a (non-vertical) line is</p>
+<div class="pretex-display"><svg height="1.04557em" version="1.1" class="pretex" viewbox="219 5 65 12"><text transform="translate(221.265 13.948)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(230.349 13.948)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(242.623 13.948)"><tspan y="0" x="0 11.672109" class="a">Mx</tspan></text>
+<text transform="translate(262.961 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(273.772 13.948)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(280.979 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>If our three data points were to lie on this line, then the following equations would be satisfied:</p>
+<div class="pretex-display"><svg height="4.008em" version="1.1" class="pretex" viewbox="217 5 70 46"><text transform="translate(217.322 14.147)"><tspan y="0" x="0" class="c">6</tspan></text>
+<text transform="translate(226.372 14.147)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(238.647 14.147)"><tspan y="0" x="0" class="a">M</tspan></text>
+<text transform="translate(251.593 14.147)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(256.952 14.147)"><tspan y="0" x="0" class="c">0</tspan></text>
+<text transform="translate(265.468 14.147)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(276.28 14.147)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(217.322 31.582)"><tspan y="0" x="0" class="c">0</tspan></text>
+<text transform="translate(226.372 31.582)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(238.647 31.582)"><tspan y="0" x="0" class="a">M</tspan></text>
+<text transform="translate(251.593 31.582)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(256.952 31.582)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(265.468 31.582)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(276.28 31.582)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(217.322 49.016)"><tspan y="0" x="0" class="c">0</tspan></text>
+<text transform="translate(226.372 49.016)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(238.647 49.016)"><tspan y="0" x="0" class="a">M</tspan></text>
+<text transform="translate(251.593 49.016)"><tspan y="0" x="0" class="d">·</tspan></text>
+<text transform="translate(256.952 49.016)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(265.468 49.016)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(276.28 49.016)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(283.487 49.016)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg><span class="tag">(6.5.1)<span style="height:2.44881em"></span></span></div>
+<p>In order to find the best-fit line, we try to solve the above equations in the unknowns <span class="pretex-inline" style="width:0.992em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">M</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.931em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  As the three points do not actually lie on a line, there is no actual solution, so instead we compute a least-squares solution.</p>
+<p id="p-1623">Putting our linear equations into matrix form, we are trying to solve <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> for</p>
+<div class="pretex-display"><svg height="3.57235em" version="1.1" class="pretex" viewbox="146 1 211 41"><text transform="translate(147.327 25.235)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(156.376 25.235)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(168.077 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(178.068 10.76)"><tspan y="0" x="0 16.343248" class="c">01</tspan><tspan y="13.947" x="0 16.343248" class="c">11</tspan><tspan y="27.895" x="0 16.343248" class="c">21</tspan></text>
+<text transform="translate(202.394 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
+<text transform="translate(236.199 25.235)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(245.398 25.235)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(257.099 9.368)"><tspan y="0" x="0" class="g">L</tspan></text>
+<text transform="translate(264.846 17.734)"><tspan y="0" x="0" class="a">M</tspan><tspan y="13.947" x="1.658" class="a">B</tspan></text>
+<text transform="translate(275.657 9.368)"><tspan y="0" x="0" class="g">M</tspan></text>
+<text transform="translate(308.246 25.235)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(317.02 25.235)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(328.721 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(337.111 10.76)"><tspan y="0" x="0" class="c">6</tspan><tspan y="13.947" x="0" class="c">0</tspan><tspan y="27.895" x="0" class="c">0</tspan></text>
+<text transform="translate(343.492 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
+<text transform="translate(353.483 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>We solved this least-squares problem in this <a knowl="./knowl/leastsquares-eg-bestfit-line-a.html?vers=dd743d" knowl-id="xref-leastsquares-eg-bestfit-line-a" alt="Example 6.5.7 " title="Example 6.5.7 ">example</a>: the only least-squares solution to <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is <span class="pretex-inline" style="width:6.68931em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(10.06)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(21.76 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(27.147 -5.899)"><tspan y="0" x="0" class="f">M</tspan><tspan y="9.7089996" x="1.1059999" class="f">B</tspan></text>
+<text transform="translate(34.355 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(42.027)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(53.728 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(58.732 -5.899)"><tspan y="0" x="0" class="l">−</tspan></text>
+<text transform="translate(64.325 -5.899)"><tspan y="0" x="0" class="h">3</tspan><tspan y="9.7089996" x="-2.7969999" class="h">5</tspan></text>
+<text transform="translate(68.579 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(73.583)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> so the best-fit line is</p>
+<div class="pretex-display"><svg height="1.04557em" version="1.1" class="pretex" viewbox="218 5 68 12"><text transform="translate(220.128 13.948)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(229.212 13.948)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(240.913 13.948)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(249.303 13.948)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(256.545 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(265.21 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(275.734 13.948)"><tspan y="0" x="0 6.3812122" class="c">5.</tspan></text>
+</svg></div>
+<div class="pretex-display"><svg height="22.39253em" version="1.1" class="pretex" viewbox="0 0 171 257"><g transform="matrix(1,0,0,-1,56.892,198.824)"><g><g><g><path style="stroke:#b3b3b3" d="M -56.69362,-56.69362 H 113.38724 M -56.69362,-28.3468 H 113.38724 M -56.69362,0 H 113.38724 M -56.69362,28.3468 H 113.38724 M -56.69362,56.69362 h 170.08086 m -170.08086,28.3468 h 170.08086 m -170.08086,28.34682 h 170.08086 m -170.08086,28.3468 H 113.38724 M -56.69362,170.08086 H 113.38724 M -56.69362,198.41771 H 113.38724 M -56.69362,-56.69362 V 198.42766 M -28.3468,-56.69362 V 198.42766 M 0,-56.69362 V 198.42766 M 28.3468,-56.69362 V 198.42766 M 56.69362,-56.69362 v 255.12128 m 28.3468,-255.12128 v 255.12128 m 28.33685,-255.12128 v 255.12128" class="b"></path></g><path d="M -56.69362,0 H 112.98872" class="f"></path><g transform="translate(113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><path d="M 0,-56.69362 V 198.02916" class="f"></path><g transform="matrix(0,1,-1,0,0,198.22841)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,170.08086 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g transform="translate(2.5 174.748)"><g><g transform="translate(-59.392 -767.924)"><text transform="matrix(1,0,0,-1,59.392,767.924)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,63.902,767.924)"><tspan y="0" x="0 6.3812122 11.178598" class="c">0,6</tspan></text>
+<text transform="matrix(1,0,0,-1,81.456,767.924)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,0 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(15.059 -11.925)"><g><g transform="translate(-71.951 -581.251)"><text transform="matrix(1,0,0,-1,71.951,581.251)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,76.462,581.251)"><tspan y="0" x="0 6.3812122 11.167121" class="c">1,0</tspan></text>
+<text transform="matrix(1,0,0,-1,94.016,581.251)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(48.845 5.292)"><g><g transform="translate(-105.737 -598.468)"><text transform="matrix(1,0,0,-1,105.737,598.468)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,110.248,598.468)"><tspan y="0" x="0 6.3812122 11.167121" class="c">2,0</tspan></text>
+<text transform="matrix(1,0,0,-1,127.802,598.468)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><path style="stroke:#e41a1c" d="M -18.89757,198.42766 66.1424,-56.69362" class="d"></path><g><g transform="matrix(0.31653,-0.94962,0.94962,0.31653,17.847,102.401)"><g><g transform="translate(-74.739 -695.577)"><text transform="matrix(1,0,0,-1,76.174,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">y</tspan></text>
+<text transform="matrix(1,0,0,-1,85.258,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,96.959,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,105.349,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">3</tspan></text>
+<text transform="matrix(1,0,0,-1,112.591,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,121.256,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">+</tspan></text>
+<text transform="matrix(1,0,0,-1,131.78,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">5</tspan></text>
+</g></g></g></g></g></g></g></g></svg></div><p id="p-1624">What exactly is the line <span class="pretex-inline" style="width:8.86097em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(10.519)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(23.654)"><tspan y="0" x="0" class="a">f</tspan></text>
+<text transform="translate(29.714)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(35.085)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(41.616)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(60.495)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(68.885)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(76.127)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(84.792)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(95.317)"><tspan y="0" x="0" class="c">5</tspan></text>
+</svg></span></span> minimizing?  The least-squares solution <span class="pretex-inline" style="width:0.644em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.757 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> minimizes the sum of the squares of the entries of the vector <span class="pretex-inline" style="width:3.18799em"><span style="height:0.783em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.101)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(19.626)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(26.764 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(26.868)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(33.398)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span> The vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the left-hand side of <a knowl="./knowl/leastsquares-line-eq.html?vers=dd743d" knowl-id="xref-leastsquares-line-eq" alt="Equation 6.5.1 " title="Equation 6.5.1 ">(6.5.1)</a>, and</p>
+<div class="pretex-display"><svg height="3.57235em" version="1.1" class="pretex" viewbox="162 1 178 41"><text transform="translate(163.851 25.235)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(171.833 9.368)"><tspan y="0" x="0" class="g">L</tspan></text>
+<text transform="translate(179.006 17.733)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(187.396 17.733)"><tspan y="0" x="0" class="c">3</tspan><tspan y="13.948" x="-4.1950002" class="c">5</tspan></text>
+<text transform="translate(193.777 9.368)"><tspan y="0" x="0" class="g">M</tspan></text>
+<text transform="translate(203.619 25.235)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(215.319 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(223.709 10.76)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(232.099 10.76)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(238.48 10.76)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(242.991 10.76)"><tspan y="0" x="0" class="c">0</tspan></text>
+<text transform="translate(249.372 10.76)"><tspan y="0" x="0 6.6394444" class="b">)+</tspan></text>
+<text transform="translate(266.541 10.76)"><tspan y="0" x="0" class="c">5</tspan></text>
+<text transform="translate(223.709 24.707)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(232.099 24.707)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(238.48 24.707)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(242.991 24.707)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(249.372 24.707)"><tspan y="0" x="0 6.6394444" class="b">)+</tspan></text>
+<text transform="translate(266.541 24.707)"><tspan y="0" x="0" class="c">5</tspan></text>
+<text transform="translate(223.709 38.655)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(232.099 38.655)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(238.48 38.655)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(242.991 38.655)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(249.372 38.655)"><tspan y="0" x="0 6.6394444" class="b">)+</tspan></text>
+<text transform="translate(266.541 38.655)"><tspan y="0" x="0" class="c">5</tspan></text>
+<text transform="translate(272.923 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
+<text transform="translate(283.981 25.235)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(295.681 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(305.506 10.76)"><tspan y="0" x="0" class="a">f</tspan></text>
+<text transform="translate(311.566 10.76)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(316.076 10.76)"><tspan y="0" x="0" class="c">0</tspan></text>
+<text transform="translate(322.457 10.76)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(305.506 24.707)"><tspan y="0" x="0" class="a">f</tspan></text>
+<text transform="translate(311.566 24.707)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(316.076 24.707)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(322.457 24.707)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(305.506 38.655)"><tspan y="0" x="0" class="a">f</tspan></text>
+<text transform="translate(311.566 38.655)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(316.076 38.655)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(322.457 38.655)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(326.968 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
+<text transform="translate(336.959 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>In other words, <span class="pretex-inline" style="width:1.2em"><span style="height:0.7765em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(7.139 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(7.242)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is the vector whose entries are the <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+</svg></span></span>-coordinates</span> of the graph of the line at the values of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> we specified in our data points, and <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is the vector whose entries are the <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+</svg></span></span>-coordinates</span> of those data points.  The difference <span class="pretex-inline" style="width:2.90999em"><span style="height:0.783em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.101)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(19.626)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(26.764 -0.023)"><tspan y="0" x="0" class="g">K</tspan></text>
+<text transform="translate(26.868)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is the vertical distance of the graph from the data points: </p>
+<div class="pretex-display"><svg height="27.01045em" version="1.1" class="pretex" viewbox="0 0 171 310"><g transform="matrix(1,0,0,-1,56.892,198.824)"><g><g><g><path style="stroke:#b3b3b3" d="M -56.69362,-56.69362 H 113.38724 M -56.69362,-28.3468 H 113.38724 M -56.69362,0 H 113.38724 M -56.69362,28.3468 H 113.38724 M -56.69362,56.69362 h 170.08086 m -170.08086,28.3468 h 170.08086 m -170.08086,28.34682 h 170.08086 m -170.08086,28.3468 H 113.38724 M -56.69362,170.08086 H 113.38724 M -56.69362,198.41771 H 113.38724 M -56.69362,-56.69362 V 198.42766 M -28.3468,-56.69362 V 198.42766 M 0,-56.69362 V 198.42766 M 28.3468,-56.69362 V 198.42766 M 56.69362,-56.69362 v 255.12128 m 28.3468,-255.12128 v 255.12128 m 28.33685,-255.12128 v 255.12128" class="b"></path></g><path d="M -56.69362,0 H 112.98872" class="f"></path><g transform="translate(113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><path d="M 0,-56.69362 V 198.02916" class="f"></path><g transform="matrix(0,1,-1,0,0,198.22841)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="f"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,170.08086 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="a"></path></g></g><g><g transform="translate(2.5 174.748)"><g><g transform="translate(-59.392 -767.924)"><text transform="matrix(1,0,0,-1,59.392,767.924)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,63.902,767.924)"><tspan y="0" x="0 6.3812122 11.178598" class="c">0,6</tspan></text>
+<text transform="matrix(1,0,0,-1,81.456,767.924)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,0 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="a"></path></g></g><g><g transform="translate(15.059 -11.925)"><g><g transform="translate(-71.951 -581.251)"><text transform="matrix(1,0,0,-1,71.951,581.251)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,76.462,581.251)"><tspan y="0" x="0 6.3812122 11.167121" class="c">1,0</tspan></text>
+<text transform="matrix(1,0,0,-1,94.016,581.251)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g><g><g transform="translate(48.845 5.292)"><g><g transform="translate(-105.737 -598.468)"><text transform="matrix(1,0,0,-1,105.737,598.468)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="matrix(1,0,0,-1,110.248,598.468)"><tspan y="0" x="0 6.3812122 11.167121" class="c">2,0</tspan></text>
+<text transform="matrix(1,0,0,-1,127.802,598.468)"><tspan y="0" x="0" class="b">)</tspan></text>
+</g></g></g></g><g><path style="stroke:#377eb8" d="m 2.83466,141.73404 c 0.7472,0.3736 1.24534,1.24535 1.24534,2.49069 v 9.19202 c 0,1.24535 0.49813,2.11709 1.24535,2.49069 C 4.57813,156.28102 4.08,157.15279 4.08,158.39813 v 9.19203 c 0,1.24535 -0.49814,2.1171 -1.24534,2.4907" class="d"></path><g><g transform="translate(6.666 152.047)"><g><g transform="translate(-63.558 -745.223)"><text transform="matrix(1,0,0,-1,63.558,745.223)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,71.947,745.223)"><tspan y="0" x="0" style="fill:#377eb8" class="c">1</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#377eb8" d="m 25.51213,0 c -0.74721,0.37358 -1.24535,1.24535 -1.24535,2.49069 v 23.36542 c 0,1.24535 -0.49812,2.11711 -1.24534,2.49069 0.74722,0.3736 1.24534,1.24535 1.24534,2.4907 v 23.36543 c 0,1.24534 0.49814,2.11709 1.24535,2.49069" class="d"></path><g><g transform="translate(15.3 25.902)"><g><g transform="translate(-72.192 -619.078)"><text transform="matrix(1,0,0,-1,72.192,619.078)"><tspan y="0" x="0" style="fill:#377eb8" class="c">2</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#377eb8" d="m 59.52827,0 c 0.74721,-0.37358 1.24535,-1.24535 1.24535,-2.49069 v -9.19201 c 0,-1.24534 0.49812,-2.1171 1.24535,-2.49069 -0.74723,-0.37359 -1.24535,-1.24534 -1.24535,-2.49069 v -9.19203 c 0,-1.24535 -0.49814,-2.11711 -1.24535,-2.49069" class="d"></path><g><g transform="translate(63.359 -18.032)"><g><g transform="translate(-120.251 -575.144)"><text transform="matrix(1,0,0,-1,120.251,575.144)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,128.64,575.144)"><tspan y="0" x="0" style="fill:#377eb8" class="c">1</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#e41a1c" d="M -18.89757,198.42766 66.1424,-56.69362" class="d"></path><g><g transform="matrix(0.31653,-0.94962,0.94962,0.31653,17.847,102.401)"><g><g transform="translate(-74.739 -695.577)"><text transform="matrix(1,0,0,-1,76.174,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">y</tspan></text>
+<text transform="matrix(1,0,0,-1,85.258,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,96.959,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,105.349,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">3</tspan></text>
+<text transform="matrix(1,0,0,-1,112.591,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,121.256,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">+</tspan></text>
+<text transform="matrix(1,0,0,-1,131.78,695.577)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">5</tspan></text>
+</g></g></g></g></g><g><g transform="translate(-54.956 -94.025)"><g><g transform="translate(-1.936 -499.151)"><text transform="matrix(1,0,0,-1,2.796,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="a">b</tspan></text>
+<text transform="matrix(1,0,0,-1,11.037,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,21.561,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,28.7,499.174)"><tspan y="0" x="0" style="fill:#377eb8" class="g">K</tspan></text>
+<text transform="matrix(1,0,0,-1,28.803,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,38.002,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,49.703,520.969)"><tspan y="0" x="0" style="fill:#377eb8" class="g">C</tspan></text>
+<text transform="matrix(1,0,0,-1,58.093,513.626)"><tspan y="0" x="0" style="fill:#377eb8" class="c">6</tspan><tspan y="13.948" x="0" style="fill:#377eb8" class="c">0</tspan><tspan y="27.895" x="0" style="fill:#377eb8" class="c">0</tspan></text>
+<text transform="matrix(1,0,0,-1,64.474,520.969)"><tspan y="0" x="0" style="fill:#377eb8" class="g">D</tspan></text>
+<text transform="matrix(1,0,0,-1,74.998,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,85.523,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,93.505,515.018)"><tspan y="0" x="0" style="fill:#377eb8" class="g">L</tspan></text>
+<text transform="matrix(1,0,0,-1,100.678,506.652)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,109.068,506.652)"><tspan y="0" x="0" style="fill:#377eb8" class="c">3</tspan><tspan y="13.947" x="-4.1950002" style="fill:#377eb8" class="c">5</tspan></text>
+<text transform="matrix(1,0,0,-1,115.449,515.018)"><tspan y="0" x="0" style="fill:#377eb8" class="g">M</tspan></text>
+<text transform="matrix(1,0,0,-1,125.29,499.151)"><tspan y="0" x="0" style="fill:#377eb8" class="b">=</tspan></text>
+<text transform="matrix(1,0,0,-1,136.991,520.969)"><tspan y="0" x="0" style="fill:#377eb8" class="g">C</tspan></text>
+<text transform="matrix(1,0,0,-1,145.381,513.626)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,153.771,513.626)"><tspan y="0" x="0" style="fill:#377eb8" class="c">1</tspan><tspan y="13.948" x="-4.1950002" style="fill:#377eb8" class="c">2</tspan></text>
+<text transform="matrix(1,0,0,-1,145.381,485.731)"><tspan y="0" x="0" style="fill:#377eb8" class="d">−</tspan></text>
+<text transform="matrix(1,0,0,-1,153.771,485.731)"><tspan y="0" x="0" style="fill:#377eb8" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,160.152,520.969)"><tspan y="0" x="0" style="fill:#377eb8" class="g">D</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> The best-fit line minimizes the sum of the squares of these vertical distances.</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-288-hidden.html?vers=dd743d" knowl-id="hidden-example-288" alt="Example 6.5.17 Interactive: Best-fit line" title="Example 6.5.17 Interactive: Best-fit line"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Best-fit line</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-289-hidden.html?vers=dd743d" knowl-id="hidden-example-289" alt="Example 6.5.19 Best-fit parabola" title="Example 6.5.19 Best-fit parabola"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Best-fit parabola)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/leastsquares-linear-eg-hidden.html?vers=dd743d" knowl-id="hidden-leastsquares-linear-eg" alt="Example 6.5.21 Best-fit linear function" title="Example 6.5.21 Best-fit linear function"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Best-fit linear function)</span>
+</h5></article></a></div>
+<p id="p-1631"> All of the above examples have the following form: some number of data points <span class="pretex-inline" style="width:2.53149em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(24.544)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></span></span> are specified, and we want to find a function</p>
+<div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="153 4 197 14"><text transform="translate(155.294 13.948)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(164.378 13.948)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(176.366 13.948)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(183.115 16.542)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(188.728 13.948)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(194.535 16.542)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(199.287 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(204.658 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(211.189 13.948)"><tspan y="0" x="0 6.6394444" class="b">)+</tspan></text>
+<text transform="translate(228.645 13.948)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(235.394 16.542)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(241.007 13.948)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(246.814 16.542)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(251.567 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(256.938 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(263.468 13.948)"><tspan y="0" x="0 6.6509213" class="b">)+</tspan></text>
+<text transform="translate(280.638 13.948)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+<text transform="translate(295.65 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(306.461 13.948)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(313.401 16.542)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(320.996 13.948)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(326.994 16.542)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(333.728 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(339.099 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(345.63 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></div>
+<p>that best approximates these points, where <span class="pretex-inline" style="width:5.67952em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(17.073)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(22.88 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(27.632)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(52.451)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(58.45 2.594)"><tspan y="0" x="0" class="f">m</tspan></text>
+</svg></span></span> are fixed functions of <span class="pretex-inline" style="width:0.922em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Indeed, in the best-fit line example we had <span class="pretex-inline" style="width:4.32106em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(23.322)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(43.063)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.55205em"><span style="height:0.993em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(23.322)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(42.202)"><tspan y="0" x="0 6.3812122" class="c">1;</tspan></text>
+</svg></span></span> in the best-fit parabola example we had <span class="pretex-inline" style="width:5.01312em"><span style="height:1.08733em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(23.322)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(43.063)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(49.593 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(54.345)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> <span class="pretex-inline" style="width:4.59906em"><span style="height:0.993em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(23.322)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(43.063)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(49.593)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.55205em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(23.322)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(42.202)"><tspan y="0" x="0 6.3812122" class="c">1;</tspan></text>
+</svg></span></span> and in the best-fit linear function example we had <span class="pretex-inline" style="width:6.77676em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(22.84 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(27.592)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(33.245)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(39.293 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(44.045)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(63.786)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(69.834 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(74.586)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> <span class="pretex-inline" style="width:6.77676em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(22.84 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(27.592)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(33.245)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(39.293 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(44.045)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(63.786)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(69.834 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(74.586)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:6.03869em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.668 2.594)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(11.42)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(16.792)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(22.84 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(27.592)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(33.245)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(39.293 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(44.045)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(62.925)"><tspan y="0" x="0" class="c">1</tspan></text>
+</svg></span></span> (in this example we take <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> to be a vector with two entries).  We evaluate the above equation on the given data points to obtain a system of linear equations in the unknowns <span class="pretex-bind"><span class="pretex-inline" style="width:5.77552em"><span style="height:0.905em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.035 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(11.788)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(16.866)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(23.615 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(28.367)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(52.612)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(59.552 2.594)"><tspan y="0" x="0" class="f">m</tspan></text>
+</svg></span></span>—once</span> we evaluate the <span class="pretex-inline" style="width:1.14373em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.859 2.594)"><tspan y="0" x="0" class="f">i</tspan></text>
+<text transform="translate(9.936)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> they just become numbers, so it does not matter what they are—and we find the least-squares solution.  The resulting best-fit function minimizes the sum of the squares of the vertical distances from the graph of <span class="pretex-inline" style="width:4.01899em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(10.519)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(23.654)"><tspan y="0" x="0" class="a">f</tspan></text>
+<text transform="translate(29.714)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(35.085)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(41.616)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></span></span> to our original data points.</p>
+<p id="p-1632">To emphasize that the nature of the functions <span class="pretex-inline" style="width:0.86573em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">g</tspan></text>
+<text transform="translate(6.859 2.594)"><tspan y="0" x="0" class="f">i</tspan></text>
+</svg></span></span> really is irrelevant, consider the following example.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-291-hidden.html?vers=dd743d" knowl-id="hidden-example-291" alt="Example 6.5.23 Best-fit trigonometric function" title="Example 6.5.23 Best-fit trigonometric function"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Best-fit trigonometric function)</span>
+</h5></article></a></div>
+<p id="p-1635">The next example has a somewhat different flavor from the previous ones.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-292-hidden.html?vers=dd743d" knowl-id="hidden-example-292" alt="Example 6.5.25 Best-fit ellipse" title="Example 6.5.25 Best-fit ellipse"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Best-fit ellipse)</span>
+</h5></article></a></div>
+<article class="remark-like" id="note-32"><h5 class="heading"><span class="type">Note</span></h5>
+<p id="p-1640">Gauss invented the method of least squares to find a best-fit ellipse: he correctly predicted the (elliptical) orbit of the asteroid Ceres as it passed behind the sun in 1801.</p></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20least-squares&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="C0_imCMJA4xpJahfqr5mJ"></script>
+</body>
+</html>

@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Linear Transformations and Matrix Algebra</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: mbDxb81jgzt282OgpJ2B */
+
+@font-face {
+  font-family: "fSfl6StxAK_bLCi6YqSTI";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fEATt4YgPapdOF7fnPcfk";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUgAAoAAAAAB4QAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXcAAAGSno1ifUZGVE0AAAT4AAAAGgAAAByjRDVDT1MvMgAAAVAAAABHAAAAYF7DXP9jbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYu5SffaGhlYQAAASgAAAAeAAAAJALO+aZobXR4AAAFFAAAAAoAAAAKBRYAW21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGOAAAC9DkscsZwb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAA4pqA7fPi+W2+MnAzvwCKMDxbXX4UTlt8N2EyZ7ABcjkYmECiAGcxDDUAAAB4nGNgZGBgsPluwhDFlA9kMTCZM4BEkAETAEM6AnAAAAAAUAAAAwAAeJxjYGbKZ5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSjgxOzAr/LRiiGGw4ziCpsWFQAEJGAC1jCnUAeJyVks1Kw0AUhU9iWxF/NoKIGy+uFGxJ01LaLty0lm6EouDamA5pICQlTaALn0LfQ5/AR3Ap+C5uPDMdVEQQA5P5bu65fzMBsINHOFg9Hm4tO9jGk2UX63ixvIYz58pyBUfOm+UqNt1dyzVsuT0qncoGrRsTpdnBAR4su6z7bHkNd3i1XMHQubdcxZ7zbrmGffcQxwhxAoHPTj20SRMEKJEYiumdGTuHMvspv5dIMaWdkwv6FfcIcxOTmBhFhX43gOPwRHzPa8skKBOZxOEsKHMVlKdSplOVSzFTEs0TSeJQpaFixAUL6bRDJlgwXcRkdQwwpisoZkO1iKO0PqB5SUVkmg3YDC5VVCYBYYSMMYXZcyqUGbDBAQV9rt8qiKkgP3IKzrGkVg+klZlRNj8zNdFjb10ufYA+OiyepcUoyyMlfsOTvnz1LIOx2B7lfFmodBFnqTS1qNmrd+u+53d+H/+/zeHvosC1ucLvgfqEcK3ylaRBY24uXpdYmh9kNWOLjlwVaul5bLmFD/jhhToAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOz0sCQRzFZ1zTTUf7QUbQFoOBZPRjNeniUQXBAinw3LIOriCbqMt67rqdpCCIEIIOXfYgCF32EIEe+heiY/gfzMiu0dilL+/weHy+jweB3w8ghJFmi3RIV5bl9MkxgD4AQYptQib52JbANvw3CCaR8Ib87xLNsI/xggRelyQAliXgrEhgT4LaKhD+3sAFuNxVkzgtyxlcVowGLtdVTTFaRDH2saFXSQt3NIJrzQZu1FWiq+TwTOloedKu13ScK+JzUjMaSgsXuh2it+tXOk7J/8RBrgj4xcEOECCMq8+WwwoOdByWdQRnnfXZi9cPOJ4ZYwWW9QrBKJ88ksTeCH5PBHr68xmzpnkqswA1B+Io6NqaW/ES1kzlotxRW5vH5sDlDEfF/wJWmgisNG+Y5V3ZC7hmVSwHqW3TCktYU5XL5c617XlsVilnOCpGp8KaFbu+ZcYdLT4EtkPw/ggt9lDIQuFhaPiI0Fd4/IQiFor+AlhSmpYAeJxjYGBgZACCq29dd4DoZ6vLj8JoAFiCCFsAAAJvAAACbwBbADgAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "fmr8WiAGdqeDYhmzR9MUW";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUcAAoAAAAAB4gAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADnAAAAVkAAAFpmTbAFEZGVE0AAAT4AAAAGgAAAByjRDVFT1MvMgAAAVAAAABFAAAAYFZPW75jbWFwAAADTAAAADcAAAFCAA0D0mhlYWQAAAD0AAAAMwAAADYtbjAyaGhlYQAAASgAAAAdAAAAJAGWAHBobXR4AAAFFAAAAAgAAAAIAiwAJ21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGzAAADJCOnaaBwb3N0AAADhAAAABYAAAAg/3gAPnicY2BkYGBgYmC45PjhcTy/zVcGbuYXQBGGZ6vLj8Fp9f/hDBcYsoBcDpBaBgYAlNMN3AB4nGNgZGBgyPofzhDFKMYAAhcYGBlQARMAUBsDBgAAAAAAUAAAAgAAeJxjYGYUY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSOgw6zAr/LRiiGLIYVqKoUQBCRgAGkAm3AAAAeJydUsFO3DAUHIdlpVao6t566OGp96yykQosh0oQCcSFnsoBcckSsxuRtVe2F9if6qmq+kV8RydeS6iCXkgUv/F788ZjxwA+4CcUts8VfiesMFJfE84wVD8S3kGu/iQ8wCh7n/AuPmbfEh5iL2vJVIN3nP2KXT1W+KJGCWfYU2cJ7+BKXSc8IOcp4V1I9jnhIT5l31HBYoUNHFrMsUCAYIIp34Koho+j4bjmuOI4Q0euJ1ejYf6BCg53RDPqCE5YDawHZjV7l8yds/cGY6JjdneMz+v5ONOMmvE+qvbM3pnBLXkNc4bMlmoda6jsauPa+SLIZDotpPZSG1mb1XrWtX6hG3mw7k5mGzlpgw9O10s5NzdjOe46iX1enPba3etmLJU1t22jTWjrjtqv2a9otOY8RIt4Vq0WtQuaqYt4CMtoEBfWLWvG07iDEKPjbjWlSvrvT/boPyf171JbXv8/chzyK9lbYp/S1oRT6+ZaynEhR/LCEnOTaX6Yl0W5/9ZNXcaKZ6+NN2DrPaef7R5wqZ1vrek95BP6AC9Iv0Av+UhKkewesOB00I9FQTsH+AuOOJNbAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+zv//EPL/VahKBkY2BhiTKECK2qECAGaZBt8AeJxjYGYAg/+lDLZAipEBDQAAJ/oBtgAAeJxjZGBhYWBkZOQtKEotSa0wMDAwMjNnYGRiYGQw+SHN8EOG8Ycs0w855h/yLD08jL8ZeZhP8LBs+m37PeUrqwzDS34ZBgYBGYY3gjIMmjKMDkIMrCCdHAxJDMUMLQxdRnoGuoZ6Bs75BZVFmekZJQqGlpYGConFCol5CqV5BaVJOZnFGakpCuX5RdkKSZUKTpklxSVFqYm5Cp55yXoKjjk5CmB9xQpFqcWpRWWpKXoKzvl5aZkpqXklmYk5eggNzhmJRSWpRRgCfvlFuYk5DEDAy8DEyKjg3733h+texr17b+5l3iv23e3Hyt9ubHv/lIv+cL35x5WdD+i15YwXvsszAz0p+mHa+ZvdDzlO566PzCwqzZLrrpxQO62e43QDW7dTWpxTLQff91Ui3aLVs3+UTvvuPnfXZLbfed3sclzM01T/83BO4uHq4eHexnWPu5uHDwBSbX5EAAAAeJxjYGBgZACCq29dd4DoZ6vLj8FoAFiMCF0AAAEWAAABFgAn) format('woff');
+}
+
+@font-face {
+  font-family: "f__Q9-ZsazNwqa0079X1U";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU0AAoAAAAAB3wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAYoAAAGjarKRu0ZGVE0AAAUIAAAAGgAAAByjRDVFT1MvMgAAAVAAAABFAAAAYFZeX09jbWFwAAADIAAAAEYAAAFKAGUD0mhlYWQAAAD0AAAAMQAAADYvhjKxaGhlYQAAASgAAAAeAAAAJAYwAllobXR4AAAFJAAAABAAAAAQCBQAqG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGHAAAC0JL/RC5wb3N0AAADaAAAABMAAAAg/4YANnicY2BkYGAAYrOKjs3x/DZfGbiZXwBFGJ6tLj8Gpy3+uzDdYPoD5HIwMIFEAW87DXoAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAIWAGBCA48AAAAAUAAABAAAeJxjYGbiYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAQJApaAAAAeJyNkc1Kw0AUhc/UtiL+7BQRF3dpoS1JUGm7bandiKVI18Z0SAMhKWkCLn0H30P3go/gUnwMH8CNJ9NBQYoYmNzv5v6dmwGwh0corB4Ht5YVdvFkuYJNvFreQEddWK7iWD1brmFbfViuY6eyz0xV3aJ3Y6pKVjjCg+UK575Y3sACb5ar7H9vuYYD9W65jkP1iRMEaEDgUamDU9IYPgrEhiJG58bPoI1t8nuBBDP6GTlnXNOGnFjWxKZGM6N8t4GToCGe45zK2C9iGUfB3C8y7RdNKZKZziSfawkXscRRoJNAs+KSg8q2AzZYsl3IZi30MWLIz+cDvYzCpNWnO2FGaMT6FIOJDovYJwyRsiY3NmOGNgu2uaCgx7NugpgJ8qun4ArXcGnd72oXXerp8JQ/zcM5B6ZJPkyzUIvXdqQnPzqlPxKrS66uXXHLsNttdVqe452vX/Y/UvDXCGBqrqdsmJqGrtkeU50tozQRt01nYS4157kzl7/a5YyBTOf6znEo8AxfKbR6qAB4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZgYNBls//8H8jVA9P+b/49B1QMBIxsDgkMAMDJhEWQmUvMgBgAIbgk0AAB4nGNgZgCD/80MZgxYAAAomAG8AHicRYtBSxtRFIXvy4wzMT5TFVMKPuUJWajVOJFYaFzaQDbSIK4EF0N8JIEhSMwwrt3OQpEWBJEBF6KrbmohlAFrFvkRgvgTXPW+4UVwgoiXs/g493wEdB0IIaN7LdEWB5ZlrXxZBZIAAjk5RSRLyGlNftLnqfaP6l1ViZzoeIjBrw8MYIzBn3EGnxk5mABt4ORhA7bnqvN8xbIKvGK7Dq80qnXbbQnbXeRuc1e0eLsueG3P4U6jKppVkduw2/VvYr9Ra/L1Mt8UNdexW/z7Vp7nrfff0noZ4huGFMyATkjWDv6qkh/KUkjCEG9DLfwos/K6nzXCvpeRJbztl8y0qnSipw7pPmo4i78zPl7eI0MzSHZMVfSUoXK+uouDMWHRG9RmsIYsHibfZDyK7aOBrS7XFFOml9wxsRiggTkf7+KomFQxGNSmd69YPEym/+NCD60e6cpEJir0nguGutJfIS3ZZPQ1c/hDuj+xfGbMpMjpMh0+oSmfjtykbs4pfRjpXdBRn6ZfABddpu0AAHicY2BgYGQAgqtvXXeA6Gery4/BaABYjAhdAAAB9AAAAYgAOAGIADgDEAA4) format('woff');
+}
+
+@font-face {
+  font-family: "feo7o5L04Irnfae17UCGp";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CmbDxb81jgzt282OgpJ2B svg.pretex tspan.a { font-size:11.47700024px;font-family:fEATt4YgPapdOF7fnPcfk }
+.CmbDxb81jgzt282OgpJ2B svg.pretex tspan.b { font-size:11.47700024px;font-family:fSfl6StxAK_bLCi6YqSTI }
+.CmbDxb81jgzt282OgpJ2B svg.pretex tspan.c { font-size:11.47700024px;font-family:f__Q9-ZsazNwqa0079X1U }
+.CmbDxb81jgzt282OgpJ2B svg.pretex tspan.d { font-size:11.47700024px;font-family:feo7o5L04Irnfae17UCGp }
+.CmbDxb81jgzt282OgpJ2B svg.pretex tspan.e { font-size:11.47700024px;font-family:fmr8WiAGdqeDYhmzR9MUW }
+.CmbDxb81jgzt282OgpJ2B svg.pretex path.a { stroke-width:0.3985px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CmbDxb81jgzt282OgpJ2B" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CmbDxb81jgzt282OgpJ2B"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link active"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="rank-thm.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="matrix-transformations.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="rank-thm.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="matrix-transformations.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CmbDxb81jgzt282OgpJ2B"><main class="main"><div id="content" class="mathbook-content">
+<section class="chapter" id="chap-matrices"><header title="Chapter 3 Linear Transformations and Matrix Algebra"><h1 class="heading" alt="Chapter 3 Linear Transformations and Matrix Algebra">
+<span class="type">Chapter</span><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span><a href="chap-matrices.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-8"><article class="remark-like" id="note-10"><h5 class="heading"><span class="type">Primary Goal</span></h5>
+<p id="p-453">Learn about linear transformations and their relationship to matrices.</p></article><p id="p-454">In practice, one is often lead to ask questions about the geometry of a <em>transformation</em>: a function that takes an input and produces an output.  This kind of question can be answered by linear algebra if the transformation can be expressed by a matrix.</p>
+<article class="example-like" id="specialcase-26"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-455">Suppose you are building a robot arm with three joints that can move its hand around a plane, as in the following picture. </p>
+<div class="pretex-display"><svg height="13.24383em" version="1.1" class="pretex" viewbox="0 0 328 152"><g transform="matrix(1,0,0,-1,-61.4,504.228)"><g><g><g><path style="fill:#cccccc;fill-rule:evenodd;stroke-linejoin:round" d="m 69.99977,369.59886 67.1998,89.59974 h 16.79994 l -67.1998,-89.59974 z" class="a"></path></g><g><path style="fill:#cccccc;fill-rule:evenodd;stroke-linejoin:round" d="m 145.59953,464.79858 78.39977,33.5999 v -11.19996 l -78.39977,-33.5999 z" class="a"></path></g><g><g><path style="fill:#e6e6e6;fill-rule:evenodd;stroke-linejoin:round" d="m 225.3363,501.09135 34.50644,2.94342 31.83202,-13.64117 -0.44574,-2.7641 -52.51795,8.46906 -1.78295,-11.05642 52.51794,-8.46905 -0.44574,-2.7641 -34.50644,-2.94342 -31.83201,13.64117 z" class="a"></path></g><g><path style="fill:#ff0000;fill-rule:evenodd;stroke-linejoin:round" d="m 292.29637,481.78545 c 0.17444,1.08183 -0.56113,2.10023 -1.64296,2.27467 -1.08183,0.17445 -2.10025,-0.56111 -2.27469,-1.64294 -0.17444,-1.08184 0.56113,-2.10025 1.64296,-2.27469 1.08184,-0.17444 2.10024,0.56111 2.27469,1.64296 z" class="a"></path><g><g transform="translate(300.028 478.779)"><g><g transform="translate(-238.628 -766.551)"><text transform="matrix(1,0,0,-1,238.628,782.418)"><tspan y="0" x="0" style="fill:#ff0000" class="a">A</tspan></text>
+<text transform="matrix(1,0,0,-1,246.891,774.052)"><tspan y="0" x="0" style="fill:#ff0000" class="b">x</tspan><tspan y="13.948" x="0.345" style="fill:#ff0000" class="b">y</tspan></text>
+<text transform="matrix(1,0,0,-1,253.651,782.418)"><tspan y="0" x="0" style="fill:#ff0000" class="a">B</tspan></text>
+<text transform="matrix(1,0,0,-1,263.493,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="c">=</tspan></text>
+<text transform="matrix(1,0,0,-1,276.628,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="b">f</tspan></text>
+<text transform="matrix(1,0,0,-1,282.688,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,287.199,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="d">θ</tspan></text>
+<text transform="matrix(1,0,0,-1,295.014,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="e">,</tspan></text>
+<text transform="matrix(1,0,0,-1,299.806,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="d">φ</tspan></text>
+<text transform="matrix(1,0,0,-1,308.999,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="e">,</tspan></text>
+<text transform="matrix(1,0,0,-1,313.791,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="d">ψ</tspan></text>
+<text transform="matrix(1,0,0,-1,323.397,766.551)"><tspan y="0" x="0" style="fill:#ff0000" class="c">)</tspan></text>
+</g></g></g></g></g></g><g><path style="fill:#ffffff;fill-rule:evenodd;stroke-linejoin:round" d="m 156.79948,459.1986 c 0,6.18563 -5.01429,11.19994 -11.19995,11.19994 -6.18563,0 -11.19995,-5.01431 -11.19995,-11.19994 0,-6.18565 5.01432,-11.19996 11.19995,-11.19996 6.18566,0 11.19995,5.01431 11.19995,11.19996 z" class="a"></path></g><g><path style="fill:#ffffff;fill-rule:evenodd;stroke-linejoin:round" d="m 235.19925,492.7985 c 0,6.18563 -5.01431,11.19994 -11.19995,11.19994 -6.18564,0 -11.19995,-5.01431 -11.19995,-11.19994 0,-6.18565 5.01431,-11.19996 11.19995,-11.19996 6.18564,0 11.19995,5.01431 11.19995,11.19996 z" class="a"></path></g><g><path style="fill:#ffffff;fill-rule:evenodd;stroke-linejoin:round" d="m 95.19968,369.59886 c 0,9.27847 -7.52148,16.79994 -16.79995,16.79994 -9.27845,0 -16.79992,-7.52147 -16.79992,-16.79994 0,-9.27846 7.52147,-16.79993 16.79992,-16.79993 9.27847,0 16.79995,7.52147 16.79995,16.79993 z" class="a"></path></g><g><path style="fill:#333333;fill-rule:evenodd;stroke:#333333;stroke-linejoin:round" d="m 81.19972,369.59886 c 0,1.5464 -1.25358,2.79999 -2.79999,2.79999 -1.54638,0 -2.79997,-1.25359 -2.79997,-2.79999 0,-1.54639 1.25359,-2.79997 2.79997,-2.79997 1.54641,0 2.79999,1.25358 2.79999,2.79997 z m 67.1998,89.59974 c 0,1.5464 -1.25358,2.79998 -2.79999,2.79998 -1.54638,0 -2.79997,-1.25358 -2.79997,-2.79998 0,-1.5464 1.25359,-2.79998 2.79997,-2.79998 1.54641,0 2.79999,1.25358 2.79999,2.79998 z m 78.39977,33.5999 c 0,1.5464 -1.25359,2.79998 -2.79999,2.79998 -1.54639,0 -2.79997,-1.25358 -2.79997,-2.79998 0,-1.5464 1.25358,-2.79998 2.79997,-2.79998 1.5464,0 2.79999,1.25358 2.79999,2.79998 z" class="a"></path></g><path style="stroke-linejoin:round" d="m 78.40118,369.60571 39.68755,0.007" class="a"></path><path style="stroke-linejoin:round" d="m 78.40118,369.60571 23.81267,31.7484" class="a"></path><g><g><path style="stroke-linejoin:round" d="m 106.74611,369.6036 c -0.002,8.91837 -4.204,17.32091 -11.33855,22.67193" class="a"></path><g><g transform="translate(94.772 375.496)"><g><g transform="translate(-33.372 -663.268)"><text transform="matrix(1,0,0,-1,33.372,663.268)"><tspan y="0" x="0" class="d">θ</tspan></text>
+</g></g></g></g></g></g><path style="stroke-linejoin:round" d="M 145.60223,459.20709 121.78957,427.45868" class="a"></path><path style="stroke-linejoin:round" d="m 145.60223,459.20709 36.58919,15.68134" class="a"></path><g><g><path style="stroke-linejoin:round" d="m 128.59172,436.52194 c 12.52414,-9.39326 30.2912,-6.8553 39.68448,5.66884 6.08258,8.10997 7.37045,18.85556 3.37727,28.17336" class="a"></path><g><g transform="translate(155.013 438.371)"><g><g transform="translate(-93.613 -726.143)"><text transform="matrix(1,0,0,-1,93.613,726.143)"><tspan y="0" x="0" class="d">φ</tspan></text>
+</g></g></g></g></g></g><path style="stroke-linejoin:round" d="M 224.00343,492.80762 187.41426,477.1263" class="a"></path><path style="stroke-linejoin:round" d="m 224.00343,492.80762 39.19187,-6.30085" class="a"></path><g><g><path style="stroke-linejoin:round" d="m 197.94537,481.63297 c 6.16663,-14.38937 22.83011,-21.05501 37.21947,-14.8884 8.9294,3.82673 15.2791,11.96338 16.82096,21.55511" class="a"></path><g><g transform="translate(221.97 467.294)"><g><g transform="translate(-160.57 -755.066)"><text transform="matrix(1,0,0,-1,160.57,755.066)"><tspan y="0" x="0" class="d">ψ</tspan></text>
+</g></g></g></g></g></g></g></g></g></svg></div><p> Define a transformation <span class="pretex-inline" style="width:0.653em"><span style="height:0.9515em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="b">f</tspan></text>
+</svg></span></span> as follows: <span class="pretex-inline" style="width:4.59299em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="b">f</tspan></text>
+<text transform="translate(7.495)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(12.005)"><tspan y="0" x="0" class="d">θ</tspan></text>
+<text transform="translate(19.821)"><tspan y="0" x="0" class="e">,</tspan></text>
+<text transform="translate(24.612)"><tspan y="0" x="0" class="d">φ</tspan></text>
+<text transform="translate(33.806)"><tspan y="0" x="0" class="e">,</tspan></text>
+<text transform="translate(38.597)"><tspan y="0" x="0" class="d">ψ</tspan></text>
+<text transform="translate(48.203)"><tspan y="0" x="0" class="c">)</tspan></text>
+</svg></span></span> is the <span class="pretex-inline" style="width:2.53149em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="e">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="b">y</tspan></text>
+<text transform="translate(24.544)"><tspan y="0" x="0" class="c">)</tspan></text>
+</svg></span></span> position of the hand when the joints are rotated by angles <span class="pretex-inline" style="width:3.43199em"><span style="height:0.9565em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">θ</tspan></text>
+<text transform="translate(7.816)"><tspan y="0" x="0" class="e">,</tspan></text>
+<text transform="translate(12.607)"><tspan y="0" x="0" class="d">φ</tspan></text>
+<text transform="translate(21.801)"><tspan y="0" x="0" class="e">,</tspan></text>
+<text transform="translate(26.592)"><tspan y="0" x="0" class="d">ψ</tspan></text>
+<text transform="translate(36.198)"><tspan y="0" x="0" class="e">,</tspan></text>
+</svg></span></span> respectively.  The output of <span class="pretex-inline" style="width:0.653em"><span style="height:0.9515em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="b">f</tspan></text>
+</svg></span></span> tells you where the hand will be on the plane when the joints are set at the given input angles.</p>
+<p id="p-456">Unfortunately, this kind of function does not come from a matrix, so one cannot use linear algebra to answer questions about this function.  In fact, these functions are rather complicated; their study is the subject of <a class="external-url" href="https://en.wikipedia.org/wiki/Inverse_kinematics" target="_blank" rel="noopener">inverse kinematics</a>.</p></article><p id="p-457">In this chapter, we will be concerned with the relationship between matrices and transformations.  In <a href="matrix-transformations.html" alt="Section 3.1 Matrix Transformations" title="Section 3.1 Matrix Transformations">Section 3.1</a>, we will consider the equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="translate(9.635)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(21.336)"><tspan y="0" x="0 7.2419872" class="b">Ax</tspan></text>
+</svg></span></span> as a function with independent variable <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="b">x</tspan></text>
+</svg></span></span> and dependent variable <span class="pretex-inline" style="width:0.885em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="translate(6.967)"><tspan y="0" x="0" class="e">,</tspan></text>
+</svg></span></span> and we draw pictures accordingly.  We spend some time studying transformations in the abstract, and asking questions about a transformation, like whether it is one-to-one and/or onto (<a href="one-to-one-onto.html" alt="Section 3.2 One-to-one and Onto Transformations" title="Section 3.2 One-to-one and Onto Transformations">Section 3.2</a>).  In <a href="linear-transformations.html" alt="Section 3.3 Linear Transformations" title="Section 3.3 Linear Transformations">Section 3.3</a> we will answer the question: “when exactly can a transformation be expressed by a matrix?”  We then present matrix multiplication as a special case of composition of transformations (<a href="matrix-multiplication.html" alt="Section 3.4 Matrix Multiplication" title="Section 3.4 Matrix Multiplication">Section 3.4</a>).  This leads to the study of <em>matrix algebra</em>: that is, to what extent one can do arithmetic with matrices in the place of numbers.  With this in place, we learn to solve matrix equations by <em>dividing</em> by a matrix in <a href="matrix-inverses.html" alt="Section 3.5 Matrix Inverses" title="Section 3.5 Matrix Inverses">Section 3.5</a>.</p></section><nav class="summary-links"><a href="matrix-transformations.html"><span class="codenumber">3.1</span><span class="title">Matrix Transformations</span></a><a href="one-to-one-onto.html"><span class="codenumber">3.2</span><span class="title">One-to-one and Onto Transformations</span></a><a href="linear-transformations.html"><span class="codenumber">3.3</span><span class="title">Linear Transformations</span></a><a href="matrix-multiplication.html"><span class="codenumber">3.4</span><span class="title">Matrix Multiplication</span></a><a href="matrix-inverses.html"><span class="codenumber">3.5</span><span class="title">Matrix Inverses</span></a><a href="invertible-matrix-thm.html"><span class="codenumber">3.6</span><span class="title">The Invertible Matrix Theorem</span></a></nav></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20chap-matrices&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CmbDxb81jgzt282OgpJ2B"></script>
+</body>
+</html>

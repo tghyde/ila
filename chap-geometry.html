@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Systems of Linear Equations: Geometry</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: GNA09Z6tE475PomV4ISU */
+
+@font-face {
+  font-family: "fsf-z1VhdHCnC0nSZxvAc";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHA0OGiVUZGVE0AAAVgAAAAGgAAAByjRDPXT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvSjGbaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG+AAADPHa8/OBwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmBYZPD5Uzy/zVcGbuYXQBGGZ6vL+eG0/P+fTFuY5gO5HCC1DAwAdWIM9gB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1P20AUnDUBFamqyqXqBemp5zpyTIsSbsQSFUcuOfTm4CWxMOtodwPk2D/UU9UT/6l/obObVaGCSvVq386+j3nzbAN4g+9Q2D5f8TNhhQP1OeEMA3WR8A5K9ZDwAO+yw4R38TabJbyH19k3ZqrBPm8/YlXACh/UQcIZXqkvCe+gUbOEB/iofiW8C8k+JbyH99kCFXqssIFFiwWW8BCMMOEqiGq4aA3tmnZFO0fHXMdcjYb+OzJYXBPNySOYMuoZ9/Rq1t7Qd87aSwyJTlnd8Xzs5+JN89Q8byNryAzKDK6Y19BnmNmSrWMMVb/a2Hax9DKaTAqpndRG1ma1nnetW+pG7np7LfONTFvvvNX1jZyby6Gcdp3EOidWO21vdTOUqjdXbaONb+uO3C/Jryi05t1HiXhkrZa19Tq4KLajUEz7jvYsavfxtJxTk6Sk8vBOT/7xjv5uIn8otxXhm+QYc5dkKXHMJr3xZ71daCmHhZzIM1kSxDAwmuTjvCzK4/+ZTp7M8iIhMIuJjlR9/DO2k+XUuJ0QM21d25ugKx9RG/jjhH6hwz1TwjriHjNgtdf3RVEcFWP8BmximJUAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwNrBgYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A8I6uJQB4nGNgYGBkAIKrb113gOhnq8v5YTQAUWYG7wAAAp8AAAKfAB8=) format('woff');
+}
+
+@font-face {
+  font-family: "f7XMqOwh1AQXk-XY2Ltnc";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "f-8LkIHuJuStt3JVuxnQw";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fwOFGLku5EKUNisX2lTaP";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR4AAAEh0kD/OkZGVE0AAASUAAAAGgAAAByjRDPXT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvhTFDaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGKAAAC0JT5Pi5wb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAA4lzVg0fj+W2+MnAzvwCKMDxbXc4Ppy0YpjHdYFwF5HIwMIFEAUfCCzsAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuZowZZNqqX1WlEvYinFszFd0kBISppAj76D76F3wUfwKD6GD+DFL+uiICIGJvObzMw3s1kAm7iHwuejceNYYQMPjmtYwbPjJfTUmeM69tSj4wbW1JvjZazXtlip6quMrm1XxQq7uHNc49wnx0uY4cVxnfq3jhvYVq+Ol7Gj3rGPEE0IfG6qcUgaIkCJxFLM7NTGOYz1B/xeIsWEcU4umDf0ESdWPYntMayo3m1gP2yKr/WhDIMykWEcToMyN0F5IGU6MbkUUyPRLJEkDk0aGnZccFAle0KBOeUiirUwwDlTQTE9MfM4SlsDhiNWRHbZgMtgZKIyCQinyNhTWJ+zwtgDtnlAwTHttwliJ8gPTcElxvDova9uD33u06NVP81HlwOztDjN8siI39ZyLN97yuBc3F5yOfbEq9Jev9Vr+drv/n7Y/6yCv0YAV/Z6KsHMCnr29Lgy+TzOUvHaDGb2Ugvawl6+Rod2xERuCrPQWnf0ET4AKU56ngAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWLP0vDQBxAf78kVkyv9Q9GBGM5nGypetE6KoUayFIs4uQW4tEUQimxQWfXOImCIC7ioKuQ8QbpkC9R/Bq5YAuKDr7pweMhaBogYmkQ8iG/YoztsX1ABRAsuYbSVOS6Kle1G4JVon4QbZTV8kAezpjwPm8CLJiQLJpQMyFbAvV3gzacbXpVustYg3bcKKCdnue7UcjdqE6j/jkP6dDntDsIaNDzeN/j22136B/xi163T1sOPeHdKHBDenxqUYv9t62WAz9UQEHcOIiFtAUKIcdCFSt5U75NmwUxuTSkLccTe7ac1dKMpTiSipE30mmj8PWq/Uk5f1mOjes7Gd1nzmOhouPDDpm7JXpMiomePBHyWUyfSSkm5W8mAmAGAAB4nGNgYGBkAIKrb113gOhnq8v5YTQAUWYG7wAAAxAAAAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fHt4QnGV4CJnbG4Yrislp";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATUAAoAAAAABwAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADcAAAATkAAAFDsCNOJkZGVE0AAASsAAAAGgAAAByjRDPXT1MvMgAAAUwAAABMAAAAYFZigUxjbWFwAAADGAAAADwAAAFKQ2DiU2hlYWQAAAD0AAAAMAAAADYvTTFDaGhlYQAAASQAAAAgAAAAJAUXA29obXR4AAAEyAAAAAoAAAAKBi0AGG1heHAAAAFEAAAABgAAAAYAA1AAbmFtZQAAAZgAAAF/AAACuJCrW/Nwb3N0AAADVAAAABkAAAAg/5EAN3icY2BkYGAAYoM5T7fH89t8ZeBmfgEUYXi2upwfTkswGDIdYALxORiYQKIARa0KVHicY2BkYGDiZzBkiGK6wQAETAcYUv6/ZUAGTABZkASMAABQAAADAAB4nGNgZrrBOIGBlYGBqYtpz/9nDD0gmiGa8QGDISMTUJSBlZMBBoB8BgcYJyDNNQVIXVcSYlb4b8EQxcT//zyQzwhXrQCEjAAzAw56eJx9kc9Kw0AQxr+1VRH/HEU8zbGFtmxi0dqLh5bSi1A89GxMlyQQkpIm4Hv4Dh71CcQn8Cg+gM8h+GVdFKQamOxvMjPfzGQBHOABCl+Pxo1jhX08Ot7ANl4cN9BXF46bOFL3jjexq94cb2FPfTBTNXfoXduqmhWOced4g32fHDcQ49VxE1qVjjdxqJ4db7HXO1oI0YbA56QafdIMASqklhJGY+sXMPbs8HuFDAv6Bblk3PCMsLQ1qa0xzKjfPaAVtsXXui+zoEplloRxUBUmqDpSZQtTSBkbiZappElostCw4pKNatkxBVaUiyjWxQhThoIyHptVEmXdEd0rZkR22IDD4MpEVRoQJshZU9qzYIaxC/a4oGBIW9dBbAf5pSnwvqs8nHOOAa3+WT5O2SjPykleREb8npah/Mwno6m4ecSrQ955d9D1tX+6fsH/2uMvWWBur6EWya2IZ7fE3BSrJM/E69FZ2ssrabf2kjVOaGcMFKY0t1rrE32GT5qodzEAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGK4rCf3/D+SD6f/ad99D1QMBIxsDgjNCAQC/pQnSeJxjYGZgYOBmYPjfzGAGZDEyoAEAKdIByAAAAHicRYtNSwJBHIf/425mOm4vtFG0xdApo5cxgy7eTLBDIBHBXoJhG1RYRDaXOndsO0VJEEGlRN267K05dPJb9DVmFhXSOvR7Lg8P/BDoOiCE0g2PN/kFpTRHdwHFAEFOLSJlxdSSpub1a4xaOJbB2hfW25/RkWqPWfAxaQFMWRBOW7BmoYUZ0EbHLOzD8aqTIduU7pAy811SrjlV5nuc+evEr59yjzSrnFQaLnFrDq87fPOANat7/KxWqZNCiRzyiu8yj2Tpf98olGC4V3gDDaGV7EkgVFEgIVRHaGIuSqj3QSIu+uemKqpOvzhuyFYXtWXLjPLdQT5uKJBXprR7dhj2bPkLG9qIoTFp/3nInp/GjMidDczLW+XfydJDfDmJ7rfwxA1OBjgVJsNHjL9T3RecDrDxAwO1c+8AAAB4nGNgYGBkAIKrb113gOhnq8v5YTQAUWYG7wAAAtgAAALYABgAfQAA) format('woff');
+}
+
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.a { font-size:11.47700024px;font-family:f-8LkIHuJuStt3JVuxnQw }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.b { font-size:11.47700024px;font-family:fwOFGLku5EKUNisX2lTaP }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.c { font-size:11.47700024px;font-family:f7XMqOwh1AQXk-XY2Ltnc }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.d { font-size:11.47700024px;font-family:fHt4QnGV4CJnbG4Yrislp }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.e { font-size:11.47700024px;font-family:fsf-z1VhdHCnC0nSZxvAc }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.f { font-size:7.65140009px;font-family:f-8LkIHuJuStt3JVuxnQw }
+.CGNA09Z6tE475PomV4ISU svg.pretex tspan.g { font-size:7.65140009px;font-family:f7XMqOwh1AQXk-XY2Ltnc }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CGNA09Z6tE475PomV4ISU" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CGNA09Z6tE475PomV4ISU"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link active"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="parametric-form.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="vectors.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="parametric-form.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="vectors.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CGNA09Z6tE475PomV4ISU"><main class="main"><div id="content" class="mathbook-content">
+<section class="chapter" id="chap-geometry"><header title="Chapter 2 Systems of Linear Equations: Geometry"><h1 class="heading" alt="Chapter 2 Systems of Linear Equations: Geometry">
+<span class="type">Chapter</span><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span><a href="chap-geometry.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-4"><article class="remark-like" id="note-3"><h5 class="heading"><span class="type">Primary Goals</span></h5>
+<p id="p-139">We have already discussed systems of linear equations and how this is related to matrices.  In this chapter we will learn how to write a system of linear equations succinctly as a matrix equation, which looks like <span class="pretex-inline" style="width:3.33699em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> where <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix, <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is a vector in <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> is a variable vector in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  As we will see, this is a powerful perspective.  We will study two related questions: </p>
+<ol id="ol-11" style="list-style-type: decimal;">
+<li id="li-75">What is the set of solutions to <span class="pretex-inline" style="width:3.54499em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">?</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-76">What is the set of <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> so that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent?</li>
+</ol>
+<p> The first question is the kind you are used to from your first algebra class: what is the set of solutions to <span class="pretex-inline" style="width:4.80305em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391 -4.579)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(14.278)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(24.803)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(33.852)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(45.553)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
+</svg></span></span>  The second is also something you could have studied in your previous algebra classes: for which <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> does <span class="pretex-inline" style="width:2.91706em"><span style="height:0.86417em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391 -4.579)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(14.812)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(27.373)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> have a solution?  This question is more subtle at first glance, but you can solve it in the same way as the first question, with the quadratic formula.</p></article><p id="p-140">In order to answer the two questions listed above, we will use geometry.  This will be analogous to how you used parabolas in order to understand the solutions to a quadratic equation in one variable.  Specifically, this chapter is devoted to the geometric study of two objects: </p>
+<ol id="ol-12" style="list-style-type: decimal;">
+<li id="li-77">the solution set of a matrix equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and</li>
+<li id="li-78">the set of all <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> that makes a particular system consistent.</li>
+</ol>
+<p> The second object will be called the column space of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  The two objects are related in a beautiful way by the rank theorem in <a href="rank-thm.html" alt="Section 2.9 The Rank Theorem" title="Section 2.9 The Rank Theorem">Section 2.9</a>.</p>
+<p id="p-141">Instead of parabolas and hyperbolas, our geometric objects are subspaces, such as lines and planes.  Our geometric objects will be something like 13-dimensional planes in <span class="pretex-inline" style="width:1.73373em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0 4.2541785" class="g">27</tspan></text>
+<text transform="translate(16.707)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> etc.  It is amazing that we can say anything substantive about objects that we cannot directly visualize.</p>
+<p id="p-142">We will develop a large amount of vocabulary that we will use to describe the above objects: vectors (<a href="vectors.html" alt="Section 2.1 Vectors" title="Section 2.1 Vectors">Section 2.1</a>), spans (<a href="spans.html" alt="Section 2.2 Vector Equations and Spans" title="Section 2.2 Vector Equations and Spans">Section 2.2</a>), linear independence (<a href="linear-independence.html" alt="Section 2.5 Linear Independence" title="Section 2.5 Linear Independence">Section 2.5</a>), subspaces (<a href="subspaces.html" alt="Section 2.6 Subspaces" title="Section 2.6 Subspaces">Section 2.6</a>), dimension (<a href="dimension.html" alt="Section 2.7 Basis and Dimension" title="Section 2.7 Basis and Dimension">Section 2.7</a>), coordinate systems (<a href="bases-as-coord-systems.html" alt="Section 2.8 Bases as Coordinate Systems" title="Section 2.8 Bases as Coordinate Systems">Section 2.8</a>), etc.  We will use these concepts to give a precise geometric description of the solution set of any system of equations (<a href="solution-sets.html" alt="Section 2.4 Solution Sets" title="Section 2.4 Solution Sets">Section 2.4</a>).  We will also learn how to express systems of equations more simply using matrix equations (<a href="matrix-equations.html" alt="Section 2.3 Matrix Equations" title="Section 2.3 Matrix Equations">Section 2.3</a>).</p></section><nav class="summary-links"><a href="vectors.html"><span class="codenumber">2.1</span><span class="title">Vectors</span></a><a href="spans.html"><span class="codenumber">2.2</span><span class="title">Vector Equations and Spans</span></a><a href="matrix-equations.html"><span class="codenumber">2.3</span><span class="title">Matrix Equations</span></a><a href="solution-sets.html"><span class="codenumber">2.4</span><span class="title">Solution Sets</span></a><a href="linear-independence.html"><span class="codenumber">2.5</span><span class="title">Linear Independence</span></a><a href="subspaces.html"><span class="codenumber">2.6</span><span class="title">Subspaces</span></a><a href="dimension.html"><span class="codenumber">2.7</span><span class="title">Basis and Dimension</span></a><a href="bases-as-coord-systems.html"><span class="codenumber">2.8</span><span class="title">Bases as Coordinate Systems</span></a><a href="rank-thm.html"><span class="codenumber">2.9</span><span class="title">The Rank Theorem</span></a></nav></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20chap-geometry&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CGNA09Z6tE475PomV4ISU"></script>
+</body>
+</html>

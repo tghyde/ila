@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Subspaces</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: Rx_oIjhlz6asngXnvjrX */
+
+@font-face {
+  font-family: "fOZrFu-EjzWjoOiU1Nd-K";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVcAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAaoAAAHJYF575kZGVE0AAAUsAAAAGgAAAByjRDPhT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADIAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMgAAADYvhjFNaGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFSAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGIAAAC0I4BQS5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYv81exfG89t8ZeBmfgEUYXi2ulwETlv8d2G6wfQHyOVgYAKJAgBi9wyGAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuao0JZNEIm9VtSLWIp4NqZLGghJSRPw6Dv4HnoXfASP4mP4AF78dl0URMTAZn6TmflmJgtgHfdQ+Hw0rj0rrOHBcwtLePa8gEideG5jRz167mBFvXlexGprg5mqvUzvylVZVtjGnecW+z55XsAML57b1L/13MGmevW8iC31jl0k2IMg5KQa+6QRYjTIHWWMTp1fwTjb5fcGBSb0K3LNuKFN2dHW5K7GMMO++8Busieh1vsyiptcRlkyjZvKxE1XmmJiKqmnRtJZLnmWmCIxrDhjIyt7RIE55VKK9TDEKUNxPT0y8ywtekO6Y2akbtiYw2Bs0iaPCccoWVM7WzHDuAX7XFAw4Pmtg7gO8kNTcI4LBLTBV3WAQ84T8difFuKADcuiPi6r1EjY1zKQ7zlleCp+Ljm/CCSw4eCwF/VCHR78vux/RsFfLYBLdz1WsHSCgdsel6aaZ2UhQZ/OzF1qzXPjLt/uEtmsWWVqc6O1DiONDymEeqJ4nGNgYGBmgGAZBkYGEPAB8hjBfBYGAyDNAYRMQFqTQZvB9v9/IEsDwvp/8/+N/8ehusCAkY0BmYsXMDKBbUUFLERqHsQAAKuIC3sAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLT2sTURTF78tMZ9L0dfyDI4LP8oQsrNo4KVlouqyBbEqCuBJcDHFIAkMoMcN07XYWlVKLIDrgotjZuLFgFiM1WcyHKBTpJ+iq9w0vgi+IeDlcDuecHwFdB0LI8vbQG3k7juOsP3aAFIBARdwmghXEHU3c0lep9pPqU9nO/fztAoOvVxjAVQbfrzF4wMin66DNmSpswYt7nVW+7jg13nYDn7f7nZ4bDD03eMiDwStvyEc9j3e3fe73O96g41W23FHvqfe63x3wzSZ/5nUD3x3y1vMqrzr/u7XNJqhbhBJQWIEFQspuPDmTjSgVjZSkKZ6kWnpTlMXRrGyks9AWDTyZNUxLtsf5xZhMf2l4F7/ZER6eIkMzLo5NWQ+lISuRnCihclgP57EZbyBTw+I/GHcVvTun5eGGZNIMiy9NrMdoYCXCiZJUTtbjeWyGp5KpYdH6gQcZwfNMw3M8sGWSYYJJJtVryUQmrSPTusT7GToZmYqCndey3zVDftH/GkuwG/kT+82+CN5h84OxUiLvH9HFPVqK6NJx6fgjpWdL2We6HFHrD+iov5YAAHicY2BgYGQAgqtvXXeA6Gery0VgNABRmAb5AAAB9AAAAYgAOAGIADgC2AA4AxAAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fzI0llOeCCg03kB-aMxos";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAtAAAoAAAAADjQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAEBAAABtIAAAdu6gLl50ZGVE0AAArYAAAAGgAAAByjRDPhT1MvMgAAAVAAAABLAAAAYFkfYTtjbWFwAAADVAAAAJsAAAGiLXoyGmhlYWQAAAD0AAAAMwAAADYvPTETaGhlYQAAASgAAAAeAAAAJAXrAgRobXR4AAAK9AAAAEoAAABQJrQDa21heHAAAAFIAAAABgAAAAYAFFAAbmFtZQAAAZwAAAG1AAADJCSoa6Bwb3N0AAAD8AAAABMAAAAg/3gAPXicY2BkYGBgYmCo2ChzLZ7f5isDN/MLoAjDs9XlInBa/L8a03qmB0AuB0gtAwMAUWYLxQB4nGNgZGBgevBfjSGK6SQDEDCtZ2BkQAUiAGh0A/QAAAAAUAAAFAAAeJxjYGZ8zziBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKkdBhKmRX+WzBEMT1guAVTw/iaaT6DAhAyAgB2bw0JAHicnVKxbtswFDwqjoEWQVFvHTo8dJchC2hiZyiQCEiRJZ2aIegiR4xNRKYEkk7in+pUFP2ifkdPNIGgaLtUgt47Pt47HikCeIWvUNg/N/iesMJEvU84w1h9TvgAufqR8AiT7GXCh3idfUh4jKPMkKlGLzj6FrsGrPBOTRLOcKQ+JnyAG/Ul4RE5PxM+hGRvEx7jTfYJFTr02MHBYIU1AgQzLPgWRDV8jJZxy9gzLtGS68nVaFh/pILDPdGSOoJzzgbOB1Y1ezesXbL3FlOiM3a3zM/r+TjSzJr5IaoOzMGZxR15DWuWTEO1lnOoun7nzGodZLZYFFJ7qa1sbb9dtsavdSOPnbuX5U7OTfDB6Xojl/Z2KmdtK7HPi9NeuwfdTKXq7J1ptA2mbqn9N/sVjdYch2gRz6rVunZBs3QVD2ETDeKqc5ua+SLuIMTsuFtNqZL+h5M9/cdJ/b7Unjf8jxxzfiV7SxxTurPhonMrLeW0kFP5wxJrs0U+z8uiPP7fTV3HGc/eLt6AvfecfvZ7wLV23nR28JDP6AO8IMMCg+QTKUW0e0Lr6J0O+qkoivJkjl+OX5NfAAAAeJxjYGBgZoBgGQZGBhCYA+QxgvksDA1gWgAowsOgw6DHYMJgzmDF4MzgxxDMkMiQyZDDUMBQ+v8/UBVI1gBDNg8k+//q/yv/L/+/+P/8/+P/9/7f+X/N/6X/F/9f9H8e1EacgJGNgZASVPUMTAzMLKxs7AwMHAwMnDBhLoQKbhDBg6KJF0rzMTDwMwgICoHYwiRYSmMAANs8JNgAeJxjYGYAg/+lDLYMWAAAJ+kBtQB4nGVVf1AU5xn+lru93SKc4dbFVAl3CqboREC0VCOaBkXEtAajUBBi+eHB8esODq4EkKAUY6avU5lA0IBIoCgH6B0RJQY4xSaEKJIaTSNhGII/RkL9UUgnvHvzXZvukcn0j+4fuzO73/M+z/M+7/ctQ5RKwjCMd75ZX6R/IzQ0NOxX6wnjQRgSJi0lkh8jPech+SskrZIyXorPvJQt1Ojc4ixi/cjUQj9CnvFj1D5+ZJUft1VDWDeOJ2mkkFSRP4UFh65eExy6xZRfYs7KNBTp1mzYEKpLLdSlGnUWY74lLTer0KDfrys2mXN0aSW6yKyiwiKzPjVPF2NMD9a9nJurm8cV6sz6Qr35D/r9wbotJmNG1n69sSgrNTf4f4AthlRzkd78fy92msx5qblEvrzJQuJDNEQgi4hIniVLSSAJIetIJNlBfkteJbFkF4kni9wGAsgeYiF95BETzYx4qDzCPUwedxSBijblz5UGZa3ye3Y9a1d5LgOHFOVgHA4ccCgcvlKg1O4KVDlcxaIUhQOuKE5Nx+kmbGNuolZxnm4SZ+r+9jXc5Yfz7IlZZku2P5RUl9dV8MMHVRCZsS+ynJcBlSgwX6GgQC16igajKTPTmm+ztbXZ7KY2g1Zd0Sc97mUuTOMH/1Bgh/MlkQasphpaQAumqYABGDCNAhZgwWrU0ABtsnLKsYLupXsTV4SEJMzgXky6PDulVcNFJ9PE4LH7Chx218jbAam4pg1ctopSyh2GFLwPcJGS6op6cDKsGsYkx2WN5Pu46JIwicvGRJliK3ojC6jhkY24Q0X6zNqtUVnvW2z+DVBf/d67/BzXftL6TjtMgGM3vAB0MfWhDDXRbfxvOKFaSsf1+1Ql4az6YK/0rVx7wcOYKSEFv8DvxSdtlz+BUX5m8+fUi/r8cntMTrOlUy574tjxWn6aszZ11NqAH3UkRLwYl/S8tgqqjlYBH8ud+nPj0QbghepHV16PCIvZFqrNA1NNfgOfO8kePHboaCXwOYUWY8JYLC7A4KcPUamFh69co4oaXp3RhJk3pOVyU2ZHFZLSuUGk065w2IFfAdCyUQAsk93CDSrfpHB2M2VEeo0Cp85olubuaG71JkspQuwt51qRbuSEyV5oeIifAR37t9cEQDMrxOKkcwl0s2raLSeMB+WUH7lTXitZRIMpP9PQZrTZrFab3XjGoKU/KA0mOfk2OXmrnLzRnfzpigHp7gDT853k+7FCmmwRMWw3Z6GKsjI2r9J4xAQ8DQ9CJb6G0Y+R4ErtebBXdpXyJ0rqQz+W9QezkS0xdbFA9wPVUu38c/EI5ed2flQwWD4Cn8PN4yMtvHoOLkj3uhkkV6Xnriqsvph5QfVqTckpkN6WfFw3RmT/M42NQ7XQTTMA0ocqG0vAlU2npVq2lcamc8OHG8vB1V3yxs4/smpZ8wOHZujTpG/xyFTEFcE61CR+VHyt4jbgOng6AegJHx7oMlpfvxTXkPA+L+wJOZ/UKkv58nLfJNigvaq1nK8vrX/himwghI09tbt2D9DlEBYBchCrBjNQkcQLVmSSB0tgPUTFJa6CfaCvMdbzb56sQC4WWHVQ1dVkOx6wYeCHmov3MWVCOID3BsUTu3AZgD2+uqQBsIed+X3Pcqp56Xc7C2uqWvxvfqM6U/eX6lbgbzdlR2hzOJqcFJIHAbxw9tf98WP+fTDQfL2HP6dMNKaVZUMi5J2Ffvjy+hlcdl7exGNgl4SOhqY55DSPkNdNCM9isDNBzCkwZ+ecNnd2nm7t1HYWnM7xFx4coWaRcpmQ+4U8aP8pLYt/CzLRIiuLcyuTXpYnZhTsTm+5HPOvCUWbL75pV73m/ubcqAeqlpHydLqk0rLYt1i1fp7ZPKKZmcCsCeFSuy+a7Kqk6lLZ5H22p7mrrhP4v5/Ji5TzbywtS3KTmebJ3Cts7D+TrqzzT4GEou0Z/F/1nHCT8jLBrR+lxckE2yt7pLAepmsa26cV2CxViHTpqufpShr0ZAUuwSVPZzEIg1bO0qXaFOX44Cb5YPDdtfnFjbu+RhF9Pxkd16r3UKMdoy9J3h2W65rpCfkUEsblf4qIFXbVK/M6NrJdhzvelruPQU9mMQx1G6aphzYZkovj0+dlWX+S5RqdlyWMYzBWifiA+6D57PFzwN/7dBvl6MLoiJXaQjBVZ9fJO/zQcJxdWtxxsknzeL45/bjcLZ/P+NHgWfYXffF3/fthoGWohxeKdmOQnUueD2Gb3Oiflk2xQn9asf5QBvDb887d1uI3nFoaWCR9J5Y1SJY6jG7srVFRI3D+noq6FT94/ewdL8+jXgt6PCcWgJf6v8HgjDoAAHicY2BgYGQAgqtvXXeA6Gery0VgNABRmAb5AAB4nGP8wsDAKMagDsTeTDoMmkAcB8RaULY0ELsz2jMkMFUwaDOdZJAC8m0YfzNoMUowKDNKAeUtGOSYpBlUmdQZxJksGaQAiiIJQQAA) format('woff');
+}
+
+@font-face {
+  font-family: "fjMBfEbJX_AjpOC3s5KOo";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHAz+GhXEZGVE0AAAVgAAAAGgAAAByjRDPhT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvSjGlaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG+AAADPHPEAuBwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmBYpfRyTzy/zVcGbuYXQBGGZ6vLReC0/P+fTFuY5gO5HCC1DAwAangMugB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUsFu1DAQfU63FUgI0QviUmnEmayyEXS7vXUjFfXIZQ/cso27GzV1Itvbdo/8ECfEqf/EL/DstSiIIpEoM8/jmTdvHAN4ia9Q2D2f8T1hhUP1IeEMI/Up4T2U6iHhEV5nRwnv41W2SPgAL7IvzFSj51x9i1UBK7xVhwlneKY+JryHRi0SHuGd+pHwPiR7n/AB3mQrVOgxYAuLFius4SGYYMa3IKrhojW0G9qBdomOuY65Gg3jd2SwuCZakkcw567nvmdUs/aGsQvWXmJMdMbqjv6xn4srTa/pbyNryAzKDK6Y1zBmmNmSreMeqn7Y2na19jKZzQqpndRGNmbYLLvWrXUjd729luVW5q133ur6Ri7M5VjOuk5inROrnba3uhlL1ZurttHGt3VH7qfkVxRac+2jRDyyVuvaeh1CFNtRKOZ9R3setfvoLefUJCmpPJzp6T/O6M8m8otyVxH+SY4TfiVZShyzSW/8eW9XWspxIafylywJYrgxmeUneVmUx/8znfw2y5OEwCImOlL18WbsJsupcTchFtq6tjdBVz6hNvDihH6hwz1TijjClC8Gq72+L4qinE7xE2zLmJ8AAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwMjdnYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A+O+uKgB4nGNgYGBkAIKrb113gOhnq8tFYDQAUZgG+QAAAp8AAAKfAB8=) format('woff');
+}
+
+@font-face {
+  font-family: "fS8VXzFmCIIQy_bRKjJlv";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fsKNsyJFsmeiVYBPZ6OVo";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAwIAAoAAAAADvwAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAEBAAAB6YAAAhDWsv30UZGVE0AAAusAAAAGgAAAByjRDPhT1MvMgAAAVQAAABNAAAAYFk1YaBjbWFwAAADbAAAAH4AAAF6LeQiz2hlYWQAAAD0AAAANAAAADYvCzETaGhlYQAAASgAAAAiAAAAJAW+Ao5obXR4AAALyAAAAEAAAABAIVz/qm1heHAAAAFMAAAABgAAAAYAEFAAbmFtZQAAAaQAAAHIAAADTuD5o1Nwb3N0AAAD7AAAABcAAAAg/4MAPXicY2BkYGBgYmDQuLVaO57f5isDN/MLoAjDs9XlIjD6f/9/NWZWpgdALgdILQMDAFdoDFB4nGNgZGBgevBfjSGKWf9///+jzKwMKf/fMiADAQC8MAhPAAAAAFAAABAAAHicY2BmEmecwMDKwMDUxbTn/zOGHhDNEM34gMGQkQkoysDKzAADjAxIICDNNQVIOTJUMSv8t2CIYnrAcAumhvER03wGBSBkBADfhw6DAAAAeJyNUsFO3DAQfQ7LSkgIlRtHq/esshEFwg0ibbUXbuWAesluzMYi60S2F9jv4D96Qv2E/lQvffFaQohWaqJ4nsczb95MDOAIPyCwe+7wM2KBY/El4gRj8S3iPZyKXxGPcJKkEe/jU9JEPMZh8sJIMTrg7jVkDVjgsziOOMGh+BrxHhrxPeIRMvE74n3IZBbxmLW2KNGhxxYWGis08JCYouCbEVVwYTVcN1x7rgu0jHWMVajpfyKDxQPRgjwS1zz1PPf0Kuau6Zszd4kJ0RWzW9q3ei7sFK2ifQysQ+SgzOCecTV9hpGabC3PUHb91upV4+W0KDJZOVkZuTH9ZtFq16haPnX2QS628lp7562q1nJulhN51bYy5DlplVP2UdUTWXbmXtfKeF215P6b/JJCK+59kIg31rKprFd03YQhrINA3HR2XdHOQgc+WMtuFaly6h8me/mPSb0vNUzOB1LN+e2yhr+T4oJfTqYcZyzUGT/r7ErJfJLJS/lBoJz7qtVLHk2L9CLNs/zsfzp9X/5j35EWuA3hjmFduCu7LlNq3XWLW2Wd7sygL51SI3iVhqpDnWeGZKGVc7aG3iqvnrMsy88L/AEMjJ5ReJxjYGBgZoBgGQZGBhAoAfIYwXwWhgggLcQgABRhYnBkcGYIY0hhyGMoYChjqPr/HygHEUtkyAWKlTJU/P///8D//f/X/l/8f/b/Wf+n/Z8KNRMNMLIxYJcgBTAC3YQBmBFMFlY2dhibg5OBC0Rz8zDw8vFTajNVAABG8BjwAAB4nGNgZmBg4GZg+F/KYMuABQAAKRIBwAB4nGWUeVDURxbHfz+GhlZxNsKOya4Epoy6apSgVsULV1cXN6jAIKiAyiWDDHPBHDCgXMKA+oxyXwLDjVwiXoTTUYgwRI1SbrnRSIzuJm7UPdwqu6kes/sjqa39Y7v/e1Wv3+d937cfzzk6cjzPz03UyQ1yk7e39+q16znegeO5j+kCjrrz9H0H6iGino5lLg6MdxGNuzgyxDTTldMG5M69/oU7x73jzs+b584td8e/cuXQTC7mYrg0DrjC1V7eK1d5eW/TJqbqFIfjDdJV69d7S6P10miN1KhJNMaoFPp4eaw0RatTSmNSpVsVBr1BJ49WS/00h7ykv1OppD/l6aU6uV6uS5bHekm3aTVxili5xqCIVnn9L2FbfLTOINdJ/QzRKsWh/4sHaHXqaBUnnIXcIm4tt5Xbxv2e8+UCuEAuiNvL7ePCuHBuP/fODP8HnIZ7wLvyBQ6ODoEOU6IiR4ljGZqLEtArpwinP5+GIeo7xA8NEeuQaGg+XUTb7IuchuwpEupLrHZfZzH0kLir1MHC+0x/KCKvptdL7Ojt3BAzyEk4QE9AQU7lGxJM8qGdBeemy/KEuFaIo/CCtBoptSO/ZZI+dpnJAYnfZPbTV/385R9E0w7T70t2NASWBcNHsFa9PXjZht1sLrD5wDb9i3FkPdjgy/K7DbiFrI6CSOZsSkOaY5o8LbD3YPMjIB5A3u0nTl/dG+y1Nd6GC3A+pysVF5vgwytCoed5FvpjD99OfxS1T6+RgLw/72zqSzuzAXkx7WIthB4mA5B/nld8lDXaa3xoTVEVGikQqMWtx8bpgot89ZSIetFkSYoRqapURVpYChsOhK5VBKf6wyfAHKw7nsAADLRaR3COc2it7opHC1wuv9GA25wTzan5WRAHaZXQAZWnG4o6cTfxRVV/rBgorcNscazkUsA+Vo1iImONcsBBmkuPyJpviSOZ5SkuPXaZLhgnYU2lFp46PRaRQ9MGCVuhBt3TI2zW29loQD2cboUHcK9z2DZsa3kE38LrkDtb4BCE62Rh+CrJRIVdxW0lrZjNf7tCMkqG0UBnt6UbBqErAn4L2/VblPsVobFJ0ZAAmorEFixelD1G5w/yVQ9FZIzYJT2nmhqgHXrkHSHgD36q0OC9QWofWA0MjW1/BjfhdoftFu5z3hMSrD0I2F8++JQsu/uPrz0LnMTNx0bpBxfJntYSC1/3tYhqZ+hXakD7LDueHUCJ5UkFibAO1oTt+VgZmuYPfwDmNLzjEVjhevug7WQu5IIZh9cZ+zya4UrJDYugpjrXmJ8BakivhFao+LT2TD1+Q18gJmOfSQZ2R7AiFLH7oDYO8D5F70Oy8SXh/+JZBMUnSk5iMZk0D0ZZ6OJzSZ+7UpeHxH/KrYT4CVN1U7GlSuQmg6THR9bZV3wDE+R75KaaGLU2NcN5sBiF8aUfN5iVOJD1TcEt8hz1Xb/W0gOdcNYI0ZB+IjlXg6OYP8ozHDdBJnYriWkwDQkeuFRmteAWZ4PZdDwdlGCqETxwtqC+sAV3kY9QcdeZVqgHq6JjP+wHf/XWgJM31R1hcAB2qjbtxDU/IPHNn5AX2YKaXOm8J27nfuaVsaUJoHt8dJ195ROwke+Q27nxEWtzF/TAWRNEQsYJ43+BjAJQBhxqTBkUBLtUes2CWwWcVAEnAUzVAk6VgHPuZ5zuwlZogkFl+z7YC/4JPrtwzQskrmWaNrKrl77bZLzmSsVTbqFk0wzEc7ZQMOJX2QvtD7OzZJmgJrkAbSuqO0kAaspszm2GL2Gyc3hkdKL1PjzFQhraP+7jEQVhKUExuHwcbbavERw5gT47f6GmDa5DdwT4wEbthoRIVUxcSiRoQVuirsHikZxROqf5tIXvF35AIE2RsFUJkDR1NIidnRE8BdJAdiF+THhhrOXOiGAbs3Aja1MuC769UnZjpmN9rkmwjRJSaqAO6grqC5rwJHm4Abawtyg4MtQUD4fBaBFmXXWmqagLT5BeJI4CC5VZ+BwaIHpOTZIlguJ/MqPqrGJtwUHcxDLQqcxTmZAJ+nxjtgkPOJEAEveMLIW70G2qUwhQablHMnAtE6Ok7aEbNi/HSaQF5TzKOr8bsDjFPEjxJH+A9oiIhKZKlsSDfioLtegagpq9Y5bu3RmhxwevIpU5NRUSQdlo7IHbMHbnFnHvZAsrZPegBXpK+2txu9DazH4JhPSJWLKg95+9o33l+Gos6qioroVGaNc1KWEX+H/ix34dT9wzb8sgH46fzBcQjExtow9sPEP0r6IpgWGZEoxPclGNvkJRchDb2PXTnyIZQyGygHwsu4kS8pINAsvh8+pBmILvvvmebJwiyy8Rz/uP8XAb1Pk0mwDtYr/Zx1yjpTiBbEIasiT37k6hYB7kC/9v94k75O+TfDoNEdFZNENiCkdZednHj0EyJJcmVSRW6irUgLf7+frG1RpbPS1QVVZeh/d+garq6suahcG1ZV8w4b/Vs5f2+TfUjVdRWWHp6TJh7w5HjQK+f3vybndyo9ZTED4zXY9vBKAj+uRMHZhAURZej5fryCsqQWL6+pfULEmrpskFZFfFwBknpgFnj9missX/dplV5DL7lMuci7MfzwEX8X8AIA7xJQAAeJxjYGBgZACCq29dd4DoZ6vLRWA0AFGYBvkAAAH0AAACXv+xAlwAKQJOAB8CDQARAfsAGQGKAA8CCwAVAy8AIAIsACACBP+7AikAHgHG//gB3f/RAdv/jwG4//I=) format('woff');
+}
+
+@font-face {
+  font-family: "fCL3UNKOWD6vB63f2dXwN";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATMAAoAAAAAB0wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAASUAAAEtTqiNQUZGVE0AAASoAAAAGgAAAByjRDPjT1MvMgAAAVQAAABIAAAAYFZmX3BjbWFwAAADLAAAADcAAAFCAA4C1WhlYWQAAAD0AAAAMQAAADYubjFPaGhlYQAAASgAAAAhAAAAJAUGAaJobXR4AAAExAAAAAgAAAAIA/AAOG1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGQAAADJAe63q5wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4kn5qSfj+W2+MnAzvwCKMDxbXS4Kpy3+uzAeYPoD5HIwMIFEAVrIDEUAAAB4nGNgZGBg+vPfhSGK8QcDEDAeYEj5/44BGTABAJlNBqoAAAAAAFAAAAIAAHicY2Bm/ME4gYGVgYGpi2nP/xcMPSCaIZjxAYMhIxNQlIGVkwEGGBmQQECaawqQ0mfQZ1b4b8EQxfSHYQ+KGgUgZAQAGb0NgHicpZLLSsNAFIb/pLUiXpYirs6yXlomUaR1Gyl1IRYR145xSAMhKWkCfQh3voULfQIfwaXv459xsCguBAOT+U7O7Z+TAbCFZ3j4fBTuHHvYxItjH6t4c9zCyIsdt7Hvw/EK1v3IcQcbfspIr71G69ZmNexhF4+OffZ9ddzCA94dt3HtPTlewbZ/4LiDHf8SXcTYgyCkUoVj0gQaNTJLKb1Ta5cwdj/k9xo57mmX5Ip+wz3BzOZkNscwonn3gW68J6FSxzLRdSaTNJ7qujS6PpQ6vzelVFMjySyTLI1NHhtmXLBRU/aMBeYsl7BYDxHGdOlqembmaZL3IppXjEisWE0xuDJJnWnCCAVzKruXjDD2gH0eUHDK9VsHsR3kR03BOSO1O9Yy8/vX4KtygCG1DriagYY4oZgir0ZFmRgJ+0pOZXkGicbiNMt5pTkB63QYNMHBsDfohSo8+X0s/xWNv4sBbuwvb1oXtnVgJ4obU87TIpegT2NmL0rFtbAXqpnBAEd0lKYyC6VUODjCB1ZHjuR4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvv7//xDy/yWoSgZGNgYYk1hAovLBDwBp5wbiAHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDCyMGZgZGJgZDD5Ic34Q4bphyzzDwmWHh7GqTxMmjzMB3lYDv8O+BHycwKrDMNhfhkGBgEZhmOCMgxaMozMQgzMIJ2GDNEMGRrJmgpGBgYmCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQqeJYlABQogSSjT0AChUtfZgwEIBBiYGBmVLLr3/nDdy7h37/cje5n3iv3Q+LHyjwbb3j/loj9cvx/548rO9zug7FdiOSPI8aI+3b/v/vM51c3K96NHpFu0acqPsv7vvtPZ5LgYZ+jzcE7i4erm4d7KtXUuD88D7uNLeHi7efgA1ghjfQAAAHicY2BgYGQAgqtvXXeA6Gery0VhNABRogb7AAAB+AAAAfgAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fNymqG37xDWDZ4IeJ3F9Z";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.a { font-size:11.47700024px;font-family:fjMBfEbJX_AjpOC3s5KOo }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.b { font-size:7.65140009px;font-family:fzI0llOeCCg03kB-aMxos }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.c { font-size:7.65140009px;font-family:fsKNsyJFsmeiVYBPZ6OVo }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.d { font-size:11.47700024px;font-family:fzI0llOeCCg03kB-aMxos }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.e { font-size:11.47700024px;font-family:fsKNsyJFsmeiVYBPZ6OVo }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.f { font-size:11.47700024px;font-family:fOZrFu-EjzWjoOiU1Nd-K }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.g { font-size:11.47700024px;font-family:fNymqG37xDWDZ4IeJ3F9Z }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.h { font-size:11.47700024px;font-family:fS8VXzFmCIIQy_bRKjJlv }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.i { font-size:11.47700024px;font-family:fCL3UNKOWD6vB63f2dXwN }
+.CRx_oIjhlz6asngXnvjrX svg.pretex tspan.j { font-size:7.65140009px;font-family:fCL3UNKOWD6vB63f2dXwN }
+.CRx_oIjhlz6asngXnvjrX svg.pretex path.a { stroke-width:1px }
+.CRx_oIjhlz6asngXnvjrX svg.pretex path.b { stroke-width:0.19925px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CRx_oIjhlz6asngXnvjrX" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CRx_oIjhlz6asngXnvjrX"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link active"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces" class="active">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="linear-independence.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="chap-geometry.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="dimension.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="linear-independence.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="chap-geometry.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="dimension.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CRx_oIjhlz6asngXnvjrX"><main class="main"><div id="content" class="mathbook-content">
+<section class="section" id="subspaces"><header title="Section 2.6 Subspaces"><h1 class="heading hide-type" alt="Section 2.6 Subspaces">
+<span class="type">Section</span><span class="codenumber">2.6</span><span class="title">Subspaces</span><a href="subspaces.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-9"><h5 class="heading"><span class="type">Objectives</span></h5>
+<ol id="ol-26" style="list-style-type: decimal;">
+<li id="li-155">Learn the definition of a subspace.</li>
+<li id="li-156">Learn to determine whether or not a subset is a subspace.</li>
+<li id="li-157">Learn the most important examples of subspaces.</li>
+<li id="li-158">Learn to write a given subspace as a column space or null space.</li>
+<li id="li-159">
+<em>Recipe:</em> compute a spanning set for a null space.</li>
+<li id="li-160">
+<em>Picture:</em> whether a subset of <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+</svg></span></span> or <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
+</svg></span></span> is a subspace or not.</li>
+<li id="li-161">
+<em>Vocabulary words:</em> <em class="terminology">subspace</em>, <em class="terminology">column space</em>, <em class="terminology">null space</em>.</li>
+</ol></article><section class="introduction" id="introduction-7"><p id="p-318">In this section we discuss <em>subspaces</em> of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  A subspace turns out to be exactly the same thing as a span, except we don’t have a particular set of spanning vectors in mind.  This change in perspective is quite useful, as it is easy to produce subspaces that are not obviously spans.  For example, the solution set of the equation <span class="pretex-inline" style="width:6.38797em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(20.05)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(27.866)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(36.417)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(46.941)"><tspan y="0" x="0" class="e">z</tspan></text>
+<text transform="translate(55.233)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(66.934)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></span></span> is a span because the equation is homogeneous, but we would have to compute the parametric vector form in order to write it as a span. </p>
+<div class="pretex-display"><svg height="8.10313em" version="1.1" class="pretex" viewbox="0 0 233 93"><g transform="matrix(1,0,0,-1,80.889,45.809)"><g><g><g><g><path style="fill:#e0cae3;fill-opacity:0.75;stroke:none" d="m 80.79028,45.70995 -51.02473,-82.9162 -110.55583,-8.5037 51.02473,82.9162 z" class="a"></path></g><g><path style="stroke:#cca7d1" d="M 80.79028,45.70993 -29.76555,37.20624 M 72.28616,31.89055 -38.26967,23.38687 M 63.78204,18.0712 -46.77379,9.5675 M 55.27791,4.25183 -55.27791,-4.25183 M 46.77379,-9.5675 -63.78204,-18.0712 M 38.26967,-23.38687 -72.28616,-31.89055 M 29.76555,-37.20624 -80.79028,-45.70993 M 80.79025,45.70995 29.76552,-37.20625 M 53.1513,43.58401 2.12657,-39.33218 M 25.51236,41.4581 -25.51236,-41.4581 M -2.12657,39.33218 -53.1513,-43.58401 m 23.38578,80.79026 -51.02473,-82.9162" class="b"></path></g></g><g><g transform="translate(78.434 -2.691)"><g><g transform="translate(-159.323 -743.5)"><text transform="matrix(1,0,0,-1,160.184,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="e">x</tspan></text>
+<text transform="matrix(1,0,0,-1,168.849,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="f">+</tspan></text>
+<text transform="matrix(1,0,0,-1,179.373,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="d">3</tspan></text>
+<text transform="matrix(1,0,0,-1,187.189,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="e">y</tspan></text>
+<text transform="matrix(1,0,0,-1,195.739,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="f">+</tspan></text>
+<text transform="matrix(1,0,0,-1,206.264,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="e">z</tspan></text>
+<text transform="matrix(1,0,0,-1,214.556,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="f">=</tspan></text>
+<text transform="matrix(1,0,0,-1,226.257,743.5)"><tspan y="0" x="0" style="fill:#984ea3" class="d">0</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="a"></path></g></g></g></g></g></svg></div><p> (A subspace also turns out to be the same thing as the solution set of a homogeneous system of equations.)</p></section><section class="subsection" id="subsection-23"><header title="Subsection 2.6.1 Subspaces: Definition and Examples"><h1 class="heading hide-type" alt="Subsection 2.6.1 Subspaces: Definition and Examples">
+<span class="type">Subsection</span><span class="codenumber">2.6.1</span><span class="title">Subspaces: Definition and Examples</span>
+</h1></header><article class="definition-like" id="definition-21"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-319">A <em class="terminology">subset</em> of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> is any collection of points of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p></article><p id="p-320">For instance, the unit circle</p>
+<div class="pretex-display"><svg height="1.56835em" version="1.1" class="pretex" viewbox="172 2 159 18"><text transform="translate(172.328 13.948)"><tspan y="0" x="0" class="e">C</tspan></text>
+<text transform="translate(182.996 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(194.697 3.682)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(200.826 13.948)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(206.197 13.948)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(212.727 13.948)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(218.954 13.948)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(225.369 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(233.082 13.948)"><tspan y="0" x="0 3.2135601" class="d">in</tspan></text>
+<text transform="translate(246.016 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(253.718 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(261.138 3.148)"><tspan y="0" x="0" class="g">E</tspan><tspan y="7.4829998" x="0" class="g">E</tspan></text>
+<text transform="translate(268.535 13.948)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(275.066 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(281.953 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(293.912 13.948)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(300.327 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(307.748 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(319.449 13.948)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(325.83 3.682)"><tspan y="0" x="0" class="g">D</tspan></text>
+</svg></div>
+<p>is a subset of <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p>
+<p id="p-321">Above we expressed <span class="pretex-inline" style="width:0.722em"><span style="height:0.695em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">C</tspan></text>
+</svg></span></span> in <a knowl="./knowl/set-builder-notation.html?vers=dd743d" knowl-id="xref-set-builder-notation" alt="Note 2.2.8 Set Builder Notation" title="Note 2.2.8 Set Builder Notation">set builder notation</a>: in English, it reads <span class="pretex-bind">“<span class="pretex-inline" style="width:0.722em"><span style="height:0.695em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">C</tspan></text>
+</svg></span></span></span> is the set of all ordered pairs <span class="pretex-inline" style="width:2.53149em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(24.544)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+</svg></span></span> such that <span class="pretex-bind"><span class="pretex-inline" style="width:5.34512em"><span style="height:1.07416em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(7.391 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(14.278)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(26.237)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(32.653 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(40.074)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(51.774)"><tspan y="0" x="0 6.3812122" class="d">1.</tspan></text>
+</svg></span></span>”</span></p>
+<article class="definition-like" id="subspaces-defn-of"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-322">A <em class="terminology">subspace</em> of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> is a subset <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> satisfying: </p>
+<ol id="ol-27" style="list-style-type: decimal;">
+<li id="li-162">
+<b><i>Non-emptiness:</i></b> The zero vector is in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-163">
+<b><i>Closure under addition:</i></b> If <span class="pretex-inline" style="width:0.553em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> are in <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:2.20999em"><span style="height:0.6175em;vertical-align:-0.0195em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(8.482)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(19.58)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is also in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-164">
+<b><i>Closure under scalar multiplication:</i></b> If <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">c</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:0.949em"><span style="height:0.847em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:1.023em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.6696382" class="e">cv</tspan></text>
+</svg></span></span> is also in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+</ol></article><p id="p-323">As a consequence of these properties, we see: </p>
+<ul id="ul-23" style="list-style-type: disc;">
+<li id="li-165">If <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is a vector in <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then all scalar multiples of <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> are in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> by the third property.  In other words the line through any nonzero vector in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is also contained in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-166">If <span class="pretex-inline" style="width:1.5245em"><span style="height:0.654em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(6.347)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(11.712)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> are vectors in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.5095em"><span style="height:0.903em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">c</tspan></text>
+<text transform="translate(5.383)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(10.461)"><tspan y="0" x="0" class="e">d</tspan></text>
+</svg></span></span> are scalars, then <span class="pretex-inline" style="width:2.61649em"><span style="height:0.903em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.095788" class="e">cu</tspan></text>
+<text transform="translate(11.73)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(16.808)"><tspan y="0" x="0 7.4370961" class="e">dv</tspan></text>
+</svg></span></span> are also in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> by the third property, so <span class="pretex-inline" style="width:3.30199em"><span style="height:0.7535em;vertical-align:-0.0195em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.095788" class="e">cu</tspan></text>
+<text transform="translate(13.864)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(24.676)"><tspan y="0" x="0 7.4370961" class="e">dv</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> by the second property.  Therefore, all of <span class="pretex-inline" style="width:4.60649em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.208)"><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(36.554)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(41.92)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(47.704)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is contained in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-167">Similarly, if <span class="pretex-inline" style="width:5.20085em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(15.615)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(49.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> are all in <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:8.28285em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.146 2.594)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(89.898)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is contained in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  In other words, <em>a subspace contains the span of any vectors in it.</em>
+</li>
+</ul>
+<p> If you choose enough vectors, then eventually their span will fill up <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> so we already see that a <em>subspace is a span</em>.  See this <a knowl="./knowl/subspaces-spans-are-subspaces.html?vers=dd743d" knowl-id="xref-subspaces-spans-are-subspaces" alt="Theorem 2.6.15 Spans are Subspaces and Subspaces are Spans" title="Theorem 2.6.15 Spans are Subspaces and Subspaces are Spans">theorem</a> below for a precise statement.</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-11" id="remark-11"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
+<div id="hk-remark-11" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-324">Suppose that <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is a non-empty subset of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> that satisfies properties 2 and 3.  Let <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> be any vector in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  Then <span class="pretex-inline" style="width:2.91799em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(6.955)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(15.408)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(27.109)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> by the third property, so <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> automatically satisfies property 1.  It follows that the only subset of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> that satisfies properties 2 and 3 but <em>not</em> property 1 is the empty subset <span class="pretex-inline" style="width:1.178em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 5.1612067" class="h">{}</tspan></text>
+<text transform="translate(10.329)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  This is why we call the first property “non-emptiness”.</p></article></div>
+<article class="example-like" id="specialcase-19"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-325">The set <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> is a subspace of itself: indeed, it contains zero, and is closed under addition and scalar multiplication.</p></article><article class="example-like" id="specialcase-20"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-326">The set <span class="pretex-inline" style="width:1.456em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(5.165)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(11.546)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> containing only the zero vector is a subspace of <span class="pretex-inline" style="width:1.42073em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">:</tspan></text>
+</svg></span></span> it contains zero, and if you add zero to itself or multiply it by a scalar, you always get zero.</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-51-hidden.html?vers=dd743d" knowl-id="hidden-example-51" alt="Example 2.6.6 A line through the origin" title="Example 2.6.6 A line through the origin"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A line through the origin)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-52-hidden.html?vers=dd743d" knowl-id="hidden-example-52" alt="Example 2.6.7 A plane through the origin" title="Example 2.6.7 A plane through the origin"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(A plane through the origin)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-53-hidden.html?vers=dd743d" knowl-id="hidden-example-53" alt="Example 2.6.8 Non-example (A line not containing the origin)" title="Example 2.6.8 Non-example (A line not containing the origin)"><article class="example-like"><h5 class="heading"><span class="title">Non-example (A line not containing the origin)</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-54-hidden.html?vers=dd743d" knowl-id="hidden-example-54" alt="Example 2.6.9 Non-example (A circle)" title="Example 2.6.9 Non-example (A circle)"><article class="example-like"><h5 class="heading"><span class="title">Non-example (A circle)</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-55-hidden.html?vers=dd743d" knowl-id="hidden-example-55" alt="Example 2.6.10 Non-example (The first quadrant)" title="Example 2.6.10 Non-example (The first quadrant)"><article class="example-like"><h5 class="heading"><span class="title">Non-example (The first quadrant)</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-56-hidden.html?vers=dd743d" knowl-id="hidden-example-56" alt="Example 2.6.11 Non-example (A line union a plane)" title="Example 2.6.11 Non-example (A line union a plane)"><article class="example-like"><h5 class="heading"><span class="title">Non-example (A line union a plane)</span></h5></article></a></div>
+<article class="bluebox" id="bluebox-32"><h5 class="heading"><span class="title">Subsets versus Subspaces</span></h5>
+<p id="p-333">A sub<em>set</em> of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> is any collection of vectors whatsoever.  For instance, the unit circle</p>
+<div class="pretex-display"><svg height="1.56835em" version="1.1" class="pretex" viewbox="172 2 159 18"><text transform="translate(172.328 13.948)"><tspan y="0" x="0" class="e">C</tspan></text>
+<text transform="translate(182.996 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(194.697 3.682)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(200.826 13.948)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(206.197 13.948)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(212.727 13.948)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(218.954 13.948)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(225.369 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(233.082 13.948)"><tspan y="0" x="0 3.2135601" class="d">in</tspan></text>
+<text transform="translate(246.016 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(253.718 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(261.138 3.148)"><tspan y="0" x="0" class="g">E</tspan><tspan y="7.4829998" x="0" class="g">E</tspan></text>
+<text transform="translate(268.535 13.948)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(275.066 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(281.953 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(293.912 13.948)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(300.327 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(307.748 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(319.449 13.948)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(325.83 3.682)"><tspan y="0" x="0" class="g">D</tspan></text>
+</svg></div>
+<p>is a subset of <span class="pretex-inline" style="width:1.36307em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> but it is not a subspace.  In fact, all of the non-examples above are still subsets of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  A subspace is a subset that happens to satisfy the three additional defining properties.</p></article><p id="p-334">In order to verify that a subset of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> is in fact a subspace, one has to check the three defining properties.  That is, unless the subset has already been verified to be a subspace: see this <a knowl="./knowl/subspace-is-col-or-nul.html?vers=dd743d" knowl-id="xref-subspace-is-col-or-nul" alt="Important Note 2.6.22 " title="Important Note 2.6.22 ">important note</a> below.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/subspaces-eg-byhand-hidden.html?vers=dd743d" knowl-id="hidden-subspaces-eg-byhand" alt="Example 2.6.13 Verifying that a subset is a subspace" title="Example 2.6.13 Verifying that a subset is a subspace"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Verifying that a subset is a subspace)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-58-hidden.html?vers=dd743d" knowl-id="hidden-example-58" alt="Example 2.6.14 Showing that a subset is not a subspace" title="Example 2.6.14 Showing that a subset is not a subspace"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Showing that a subset is not a subspace)</span>
+</h5></article></a></div></section><section class="subsection" id="subsection-24"><header title="Subsection 2.6.2 Common Types of Subspaces"><h1 class="heading hide-type" alt="Subsection 2.6.2 Common Types of Subspaces">
+<span class="type">Subsection</span><span class="codenumber">2.6.2</span><span class="title">Common Types of Subspaces</span>
+</h1></header><article class="theorem-like" id="subspaces-spans-are-subspaces"><h5 class="heading">
+<span class="type">Theorem</span><span class="title">(Spans are Subspaces and Subspaces are Spans)</span>
+</h5>
+<p id="p-349">If <span class="pretex-inline" style="width:5.20752em"><span style="height:0.856em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(15.615)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(49.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(55.129 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></span></span> are any vectors in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:8.28951em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is a subspace of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  Moreover, any subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> can be written as a span of a set of <span class="pretex-inline" style="width:0.591em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">p</tspan></text>
+</svg></span></span> linearly independent vectors in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> for <span class="pretex-inline" style="width:2.70199em"><span style="height:0.8595em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">p</tspan></text>
+<text transform="translate(9.451)"><tspan y="0" x="0" class="h">≤</tspan></text>
+<text transform="translate(21.439)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(27.82)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-6" id="proof-6"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-6" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-350">To show that <span class="pretex-inline" style="width:8.28951em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is a subspace, we have to verify the three defining properties. </p>
+<ol id="ol-28" style="list-style-type: decimal;">
+<li id="li-168">The zero vector <span class="pretex-inline" style="width:10.6095em"><span style="height:1.0575em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(9.05)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(20.75)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(27.705)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(32.629 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(39.516)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(50.04)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(56.996)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(61.919 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(68.806)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(79.331)"><tspan y="0" x="0 4.8203402 9.6521568" class="h">···</tspan></text>
+<text transform="translate(94.342)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(104.867)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(111.822)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(117.128 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></span></span> is in the span.</li>
+<li id="li-169">If <span class="pretex-inline" style="width:11.85404em"><span style="height:0.969em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(9.015)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.003)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(27.028 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(32.354)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(37.278 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(44.165)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(54.976)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(61.002 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(66.328)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(71.252 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.139)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(88.663)"><tspan y="0" x="0 4.8203402 9.6521568" class="h">···</tspan></text>
+<text transform="translate(103.675)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(114.486)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(120.894 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(126.106)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(131.412 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:11.95104em"><span style="height:1.105em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(9.027)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.588)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(27.407 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(32.733)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(37.657 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(44.544)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(55.929)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(61.748 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(67.074)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(71.998 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.885)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(89.409)"><tspan y="0" x="0 4.8318172 9.6521568" class="h">···</tspan></text>
+<text transform="translate(104.421)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(115.806)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(122.008 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(127.219)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(132.525 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></span></span> are in <span class="pretex-inline" style="width:8.56751em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(95.139)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then
+<div class="pretex-display"><svg height="1.30696em" version="1.1" class="pretex" viewbox="124 4 255 15"><text transform="translate(124.665 13.948)"><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(133.146 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(144.245 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(152.697 13.948)"><tspan y="0" x="0 11.705392" class="f">=(</tspan></text>
+<text transform="translate(169.196 13.948)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(175.221 16.542)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(182.108 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(193.493 13.948)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(199.312 16.542)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(204.064 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(209.149 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(214.072 16.542)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(220.959 13.948)"><tspan y="0" x="0 10.520966" class="f">+(</tspan></text>
+<text transform="translate(236.281 13.948)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(242.306 16.542)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(249.193 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(260.579 13.948)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(266.397 16.542)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(271.15 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(276.234 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(281.158 16.542)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(288.045 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(298.569 13.948)"><tspan y="0" x="0 4.8318172 9.6521568" class="h">···</tspan></text>
+<text transform="translate(313.581 13.948)"><tspan y="0" x="0 10.520966" class="f">+(</tspan></text>
+<text transform="translate(328.903 13.948)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(335.311 16.542)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(342.083 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(353.468 13.948)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(359.67 16.542)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(364.307 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(369.391 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(374.698 16.542)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></div>
+is also in <span class="pretex-inline" style="width:8.56751em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(95.139)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-170">If <span class="pretex-inline" style="width:11.85504em"><span style="height:0.969em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(9.027)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.014)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(27.04 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(32.366)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(37.29 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(44.177)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(54.988)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(61.013 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(66.34)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(71.263 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.15)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(88.675)"><tspan y="0" x="0 4.8203402 9.6521568" class="h">···</tspan></text>
+<text transform="translate(103.686)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(114.498)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(120.906 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(126.117)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(131.423 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:8.28951em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">c</tspan></text>
+</svg></span></span> is a scalar, then
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="173 6 158 13"><text transform="translate(173.491 13.948)"><tspan y="0" x="0 5.6696382" class="e">cv</tspan></text>
+<text transform="translate(187.614 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(199.601 13.948)"><tspan y="0" x="0 5.3827128" class="e">ca</tspan></text>
+<text transform="translate(211.009 16.542)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(216.336 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(221.259 16.542)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(228.146 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(238.957 13.948)"><tspan y="0" x="0 5.3827128" class="e">ca</tspan></text>
+<text transform="translate(250.366 16.542)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(255.692 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(260.615 16.542)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(267.502 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(278.027 13.948)"><tspan y="0" x="0 4.8203402 9.6521568" class="h">···</tspan></text>
+<text transform="translate(293.039 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(303.85 13.948)"><tspan y="0" x="0 5.3827128" class="e">ca</tspan></text>
+<text transform="translate(315.641 16.542)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(320.852 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(326.158 16.542)"><tspan y="0" x="0" class="c">p</tspan></text>
+</svg></div>
+is also in <span class="pretex-inline" style="width:8.56751em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(95.139)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+</ol>
+<p> Since <span class="pretex-inline" style="width:8.28951em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(80.031)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(85.337 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(89.974)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> satisfies the three defining properties of a subspace, it is a subspace.</p>
+<p id="p-351">Now let <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  If <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is the zero subspace, then it is the span of the empty set, so we may assume <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is nonzero. Choose a nonzero vector <span class="pretex-inline" style="width:0.89307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+</svg></span></span> in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  If <span class="pretex-inline" style="width:6.25405em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(11.265)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(22.965)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(48.008)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(53.747)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(58.67 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(63.423)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(68.587)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> then we are done.  Otherwise, there exists a vector <span class="pretex-inline" style="width:0.89307em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+</svg></span></span> that is in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> but not in <span class="pretex-inline" style="width:4.25306em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(45.622)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  Then <span class="pretex-inline" style="width:5.28562em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(45.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(50.746 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(55.499)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is contained in <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> and by the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion in Section 2.5</a>, the set <span class="pretex-inline" style="width:3.10363em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(15.414)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(20.78)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(25.704 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(30.456)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> is linearly independent.  If <span class="pretex-inline" style="width:7.28662em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(11.265)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(22.965)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(48.008)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(53.747)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(58.67 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(63.423)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(68.788)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(73.712 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.464)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> then we are done.  Otherwise, we continue in this fashion until we have written <span class="pretex-inline" style="width:10.2905em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(11.265)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(22.965)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(48.008)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(53.747)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(58.67 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(63.423)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(68.788)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(73.712 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.464)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(102.996)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(108.302 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(112.94)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> for some linearly independent set <span class="pretex-inline" style="width:6.38552em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(15.414)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(20.78)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(25.704 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(30.456)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(54.988)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(60.294 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(64.932)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(70.096)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  This process terminates after at most <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></span></span> steps by this <a knowl="./knowl/linindep-wide-matrix.html?vers=dd743d" knowl-id="xref-linindep-wide-matrix" alt="Important Note 2.5.10 " title="Important Note 2.5.10 ">important note in Section 2.5</a>.</p></article></span>
+</div>
+<p id="p-352">If <span class="pretex-inline" style="width:10.5685em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(11.265)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(22.965)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
+<text transform="translate(48.008)"><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(53.747)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(58.67 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(63.423)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(68.788)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(73.712 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(78.464)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(102.996)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(108.302 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(112.94)"><tspan y="0" x="0" class="h">}</tspan></text>
+<text transform="translate(118.105)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> we say that <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is the subspace <em class="terminology">spanned by</em> or <em class="terminology">generated by</em> the vectors <span class="pretex-inline" style="width:5.48552em"><span style="height:0.856em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(15.615)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(49.823)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(55.129 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(59.767)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  We call <span class="pretex-inline" style="width:6.10752em"><span style="height:1.138em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(15.414)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(20.78)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(25.704 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(30.456)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="d">,...,</tspan></text>
+<text transform="translate(54.988)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(60.294 2.594)"><tspan y="0" x="0" class="c">p</tspan></text>
+<text transform="translate(64.932)"><tspan y="0" x="0" class="h">}</tspan></text>
+</svg></span></span> a <em class="terminology">spanning set</em> for <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p>
+<p id="p-353">Any matrix naturally gives rise to <em>two</em> subspaces.</p>
+<article class="definition-like" id="definition-23"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-354">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="h">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></span></span> matrix. </p>
+<ul id="ul-24" style="list-style-type: disc;">
+<li id="li-171">The <em class="terminology">column space</em> of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> is the subspace of <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">m</tspan></text>
+</svg></span></span> spanned by the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  It is written <span class="pretex-inline" style="width:3.07299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="d">Col</tspan></text>
+<text transform="translate(16.676)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(21.187)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(27.568)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(32.078)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-172">The <em class="terminology">null space</em> of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> is the subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
+</svg></span></span> consisting of all solutions of the homogeneous equation <span class="pretex-inline" style="width:3.32699em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="d">0:</tspan></text>
+</svg></span></span>
+<div class="pretex-display"><svg height="1.56835em" version="1.1" class="pretex" viewbox="180 2 144 18"><text transform="translate(180.465 13.948)"><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(198.415 13.948)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(202.926 13.948)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(209.307 13.948)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(228.187 3.682)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(235.176 13.948)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(244.909 13.948)"><tspan y="0" x="0 3.2135601" class="d">in</tspan></text>
+<text transform="translate(257.843 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(265.736 9.07)"><tspan y="0" x="0" class="c">n</tspan></text>
+<text transform="translate(273.156 3.148)"><tspan y="0" x="0" class="g">E</tspan><tspan y="7.4829998" x="0" class="g">E</tspan></text>
+<text transform="translate(279.692 13.948)"><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(296.133 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(307.834 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(314.215 3.682)"><tspan y="0" x="0" class="g">D</tspan></text>
+<text transform="translate(320.344 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></div>
+</li>
+</ul></article><p id="p-355"> The column space is defined to be a span, so it is a subspace by the above <a knowl="./knowl/subspaces-spans-are-subspaces.html?vers=dd743d" knowl-id="xref-subspaces-spans-are-subspaces" alt="Theorem 2.6.15 Spans are Subspaces and Subspaces are Spans" title="Theorem 2.6.15 Spans are Subspaces and Subspaces are Spans">theorem</a>.  We need to verify that the null space is really a subspace.  In <a href="solution-sets.html" alt="Section 2.4 Solution Sets" title="Section 2.4 Solution Sets">Section 2.4</a> we already saw that the set of solutions of <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></span></span> is always a span, so the fact that the null spaces is a subspace should not come as a surprise.</p>
+<div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-7" id="proof-7"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
+<div id="hk-proof-7" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-356">We have to verify the three defining properties.  To say that a vector <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:2.90599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> <em>means</em> that <span class="pretex-inline" style="width:3.16399em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.5877981" class="e">Av</tspan></text>
+<text transform="translate(15.041)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(26.741)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></span></span> </p>
+<ol id="ol-29" style="list-style-type: decimal;">
+<li id="li-173">The zero vector is in <span class="pretex-inline" style="width:2.90599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> because <span class="pretex-inline" style="width:3.19799em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(15.431)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(27.132)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-174">Suppose that <span class="pretex-inline" style="width:1.5245em"><span style="height:0.654em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(6.347)"><tspan y="0" x="0" class="d">,</tspan></text>
+<text transform="translate(11.712)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> are in <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  This means that <span class="pretex-inline" style="width:2.91699em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122" class="e">Au</tspan></text>
+<text transform="translate(15.396)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(27.097)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:3.16399em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.5877981" class="e">Av</tspan></text>
+<text transform="translate(15.041)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(26.741)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></span></span>  Hence
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="174 4 155 13"><text transform="translate(175.282 13.948)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(181.663 13.948)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(186.174 13.948)"><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(194.655 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(205.753 13.948)"><tspan y="0" x="0" class="e">v</tspan></text>
+<text transform="translate(211.538 13.948)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(230.418 13.948)"><tspan y="0" x="0 6.3812122" class="e">Au</tspan></text>
+<text transform="translate(245.28 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(255.805 13.948)"><tspan y="0" x="0 6.5877981" class="e">Av</tspan></text>
+<text transform="translate(270.845 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(282.546 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(291.062 13.948)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(301.586 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(310.636 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(322.337 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></div>
+by the <a knowl="./knowl/matrix-linearity.html?vers=dd743d" knowl-id="xref-matrix-linearity" alt="Proposition 2.3.6 Properties of the Matrix-Vector Product" title="Proposition 2.3.6 Properties of the Matrix-Vector Product">linearity of the matrix-vector product in Section 2.3</a>.  Therefore, <span class="pretex-inline" style="width:2.20999em"><span style="height:0.6175em;vertical-align:-0.0195em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+<text transform="translate(8.482)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(19.58)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+<li id="li-175">Suppose that <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:2.90599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">c</tspan></text>
+</svg></span></span> is a scalar.  Then
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="194 4 115 13"><text transform="translate(195.177 13.948)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(201.559 13.948)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(206.356 13.948)"><tspan y="0" x="0 5.6696382" class="e">cv</tspan></text>
+<text transform="translate(217.81 13.948)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
+<text transform="translate(236.977 13.948)"><tspan y="0" x="0 5.095788 11.683586" class="e">cAv</tspan></text>
+<text transform="translate(257.113 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(269.101 13.948)"><tspan y="0" x="0" class="e">c</tspan></text>
+<text transform="translate(276.331 13.948)"><tspan y="0" x="0" class="h">·</tspan></text>
+<text transform="translate(281.691 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(290.741 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(302.441 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></div>
+by the <a knowl="./knowl/matrix-linearity.html?vers=dd743d" knowl-id="xref-matrix-linearity" alt="Proposition 2.3.6 Properties of the Matrix-Vector Product" title="Proposition 2.3.6 Properties of the Matrix-Vector Product">linearity of the matrix-vector product in Section 2.3</a>, so <span class="pretex-inline" style="width:1.023em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.6696382" class="e">cv</tspan></text>
+</svg></span></span> is also in <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>
+</li>
+</ol>
+<p> Since <span class="pretex-inline" style="width:2.90599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+</svg></span></span> satisfies the three defining properties of a subspace, it is a subspace.</p></article></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/subspaces-col-nul-1-hidden.html?vers=dd743d" knowl-id="hidden-subspaces-col-nul-1" alt="Example 2.6.17 " title="Example 2.6.17 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<p id="p-361">The column space and the null space of a matrix are both subspaces, so they are both spans.  The column space of a matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> is defined to be the span of the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  The null space is defined to be the solution set of <span class="pretex-inline" style="width:3.28599em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="d">0,</tspan></text>
+</svg></span></span> so this is a good example of a kind of subspace that we can define <em>without any spanning set in mind.</em>  In other words, it is easier to show that the null space is a subspace than to show it is a span—see the proof above.  In order to do computations, however, it is usually necessary to find a spanning set.</p>
+<article class="example-like" id="specialcase-21"><h5 class="heading"><span class="title">Null Spaces are Solution Sets</span></h5>
+<p id="p-362">  The null space of a matrix is the solution set of a homogeneous system of equations.  For example, the null space of the matrix</p>
+<div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="198 2 107 40"><text transform="translate(199.515 25.235)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(208.565 25.235)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(220.265 3.417)"><tspan y="0" x="0" class="g">F</tspan></text>
+<text transform="translate(234.451 10.76)"><tspan y="0" x="0 24.732935 49.46587" class="d">172</tspan></text>
+<text transform="translate(230.256 24.707)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(238.646 24.707)"><tspan y="0" x="0 20.543831 45.276764" class="d">213</tspan><tspan y="13.948" x="-4.1950002" class="d">4</tspan></text>
+<text transform="translate(254.99 38.655)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(263.379 38.655)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(279.723 38.655)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(288.113 38.655)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(296.095 3.417)"><tspan y="0" x="0" class="g">G</tspan></text>
+</svg></div>
+<p>is the solution set of <span class="pretex-inline" style="width:3.28599em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="d">0,</tspan></text>
+</svg></span></span> i.e., the solution set of the system of equations</p>
+<div class="pretex-display"><svg height="3.65948em" version="1.1" class="pretex" viewbox="196 0 114 42"><text transform="translate(195.063 2.627)"><tspan y="0" x="0" class="g">H</tspan></text>
+<text transform="translate(221.328 8.875)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(230.989 8.875)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(242.51 8.875)"><tspan y="0" x="0" class="d">7</tspan></text>
+<text transform="translate(250.326 8.875)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(259.872 8.875)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(271.393 8.875)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(277.774 8.875)"><tspan y="0" x="0" class="e">z</tspan></text>
+<text transform="translate(287.063 8.875)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(299.76 8.875)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(205.696 23.819)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(214.086 23.819)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(221.328 23.819)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(230.989 23.819)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(250.326 23.819)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(259.872 23.819)"><tspan y="0" x="0" class="f">+</tspan></text>
+<text transform="translate(271.393 23.819)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(277.774 23.819)"><tspan y="0" x="0" class="e">z</tspan></text>
+<text transform="translate(287.063 23.819)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(299.76 23.819)"><tspan y="0" x="0" class="d">0</tspan><tspan y="14.944" x="-85.674004" class="d">4</tspan></text>
+<text transform="translate(221.328 38.763)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(230.989 38.763)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(242.51 38.763)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(250.326 38.763)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(259.872 38.763)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(271.393 38.763)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(277.774 38.763)"><tspan y="0" x="0" class="e">z</tspan></text>
+<text transform="translate(287.063 38.763)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(299.76 38.763)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></div>
+<p>Conversely, the solution set of any homogeneous system of equations is precisely the null space of the corresponding coefficient matrix.</p></article><p id="p-363">To find a spanning set for the null space, one has to solve a system of homogeneous equations.</p>
+<article class="bluebox" id="subspaces-span-nullspace"><h5 class="heading"><span class="title">Recipe: Compute a spanning set for a null space</span></h5>
+<p id="p-364">To find a spanning set for <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> compute the parametric vector form of the solutions to the homogeneous equation <span class="pretex-inline" style="width:3.28599em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></span></span>  The vectors attached to the free variables form a spanning set for <span class="pretex-inline" style="width:3.18399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(17.95)"><tspan y="0" x="0" class="f">(</tspan></text>
+<text transform="translate(22.461)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(28.842)"><tspan y="0" x="0" class="f">)</tspan></text>
+<text transform="translate(33.352)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-60-hidden.html?vers=dd743d" knowl-id="hidden-example-60" alt="Example 2.6.20 Two free variables" title="Example 2.6.20 Two free variables"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Two free variables)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-61-hidden.html?vers=dd743d" knowl-id="hidden-example-61" alt="Example 2.6.21 No free variables" title="Example 2.6.21 No free variables"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(No free variables)</span>
+</h5></article></a></div>
+<article class="paragraphs" id="paragraphs-12"><h5 class="heading"><span class="title">Writing a subspace as a column space or a null space</span></h5>
+<p id="p-369">A subspace can be given to you in many different forms.  In practice, computations involving subspaces are much easier if your subspace is the column space or null space of a matrix.  The simplest example of such a computation is finding a spanning set: a column space is by definition the span of the columns of a matrix, and we showed above how to compute a spanning set for a null space using parametric vector form.  For this reason, it is useful to rewrite a subspace as a column space or a null space before trying to answer questions about it.</p>
+<article class="bluebox" id="subspace-is-col-or-nul"><p id="p-370">When asking questions about a subspace, it is usually best to rewrite the subspace as a column space or a null space.</p></article><p id="p-371">This also applies to the question “is my subset a subspace?”  If your subset is a column space or null space of a matrix, then the answer is yes.</p>
+<article class="example-like" id="specialcase-22"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-372">Let</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="182 1 140 28"><text transform="translate(182.526 18.261)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(193.504 18.261)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(205.205 2.394)"><tspan y="0" x="0 7.5690813" class="g">KI</tspan></text>
+<text transform="translate(220.423 10.76)"><tspan y="0" x="0" class="e">a</tspan><tspan y="13.947" x="0.391" class="e">b</tspan></text>
+<text transform="translate(226.919 2.394)"><tspan y="0" x="0" class="g">J</tspan></text>
+<text transform="translate(238.896 18.261)"><tspan y="0" x="0 3.2135601" class="d">in</tspan></text>
+<text transform="translate(251.83 18.261)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(259.531 13.383)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(266.952 7.461)"><tspan y="0" x="0" class="g">E</tspan><tspan y="7.4829998" x="0" class="g">E</tspan></text>
+<text transform="translate(273.488 18.261)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(280.156 18.261)"><tspan y="0" x="0" class="e">a</tspan></text>
+<text transform="translate(289.137 18.261)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(300.838 18.261)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(308.08 18.261)"><tspan y="0" x="0" class="e">b</tspan></text>
+<text transform="translate(314.186 2.394)"><tspan y="0" x="0" class="g">L</tspan></text>
+</svg></div>
+<p>be the subset of a previous <a knowl="./knowl/subspaces-eg-byhand.html?vers=dd743d" knowl-id="xref-subspaces-eg-byhand" alt="Example 2.6.13 Verifying that a subset is a subspace" title="Example 2.6.13 Verifying that a subset is a subspace">example</a>.  The subset <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is exactly the solution set of the homogeneous equation <span class="pretex-inline" style="width:5.62898em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(7.242)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(15.907)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(26.432)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(34.247)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(43.331)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(55.032)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></span></span> Therefore,</p>
+<div class="pretex-display"><svg height="1.48122em" version="1.1" class="pretex" viewbox="206 2 92 17"><text transform="translate(206.47 13.948)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(217.448 13.948)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(229.149 13.948)"><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<text transform="translate(248.7 3.682)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(255.305 13.42)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(271.649 13.42)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(280.039 13.42)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(288.021 3.682)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(294.626 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></div>
+<p>In particular, it is a subspace.  The reduced row echelon form of <span class="pretex-inline" style="width:3.86204em"><span style="height:1.331em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(6.605 -0.527)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(22.949 -0.527)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(31.339 -0.527)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(39.321 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+</svg></span></span> is <span class="pretex-inline" style="width:5.34154em"><span style="height:1.331em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(6.605 -0.527)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(22.949 -0.527)"><tspan y="0" x="0" class="h">−</tspan></text>
+<text transform="translate(31.339 -0.527)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(37.72 -0.527)"><tspan y="0" x="0" class="i">/</tspan></text>
+<text transform="translate(43.527 -0.527)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(51.509 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(58.114)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> so the parametric form of <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+</svg></span></span> is <span class="pretex-inline" style="width:4.47599em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="e">x</tspan></text>
+<text transform="translate(10.06)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(21.76)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="i">/</tspan></text>
+<text transform="translate(33.949)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(41.765)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(48.181)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> so the parametric vector form is <span class="pretex-inline" style="width:5.49265em"><span style="height:1.50233em;vertical-align:-0.477em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(5.731 -5.899)"><tspan y="0" x="0" class="c">x</tspan><tspan y="9.7089996" x="0.229" class="c">y</tspan></text>
+<text transform="translate(10.237 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(17.91)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(31.045)"><tspan y="0" x="0" class="e">y</tspan></text>
+<text transform="translate(37.461 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(42.465 -5.899)"><tspan y="0" x="0" class="b">3</tspan></text>
+<text transform="translate(46.719 -5.899)"><tspan y="0" x="0" class="j">/</tspan></text>
+<text transform="translate(50.591 -5.899)"><tspan y="0" x="0" class="b">2</tspan><tspan y="9.7089996" x="-4.0630002" class="b">1</tspan></text>
+<text transform="translate(54.845 -10.266)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(59.849)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> and hence <span class="pretex-inline" style="width:3.01866em"><span style="height:1.40183em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0 6.1287179" class="g">CA</tspan></text>
+<text transform="translate(11.133 -5.899)"><tspan y="0" x="0" class="b">3</tspan></text>
+<text transform="translate(15.387 -5.899)"><tspan y="0" x="0" class="j">/</tspan></text>
+<text transform="translate(19.258 -5.899)"><tspan y="0" x="0" class="b">2</tspan><tspan y="9.7089996" x="-4.0619998" class="b">1</tspan></text>
+<text transform="translate(23.513 -10.266)"><tspan y="0" x="0 4.9993811" class="g">BD</tspan></text>
+</svg></span></span> spans <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">V</tspan></text>
+<text transform="translate(8.596)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-62-hidden.html?vers=dd743d" knowl-id="hidden-example-62" alt="Example 2.6.24 " title="Example 2.6.24 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20subspaces&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CRx_oIjhlz6asngXnvjrX"></script>
+</body>
+</html>

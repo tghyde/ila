@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+
+
+
+
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<style id="pretex-fonts">
+/* pretex cache: rnw-FT8hRvAcO23xl9vt */
+
+@font-face {
+  font-family: "fGfzduAQfhExP2pco4gJE";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU4AAoAAAAAB3wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAYoAAAGjabKQvUZGVE0AAAUMAAAAGgAAAByjRDPfT1MvMgAAAVAAAABFAAAAYFZeX09jbWFwAAADJAAAAEYAAAFKAGUD0mhlYWQAAAD0AAAAMQAAADYvhjFLaGhlYQAAASgAAAAeAAAAJAYwAllobXR4AAAFKAAAABAAAAAQCBQAqG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGKAAAC0JABRS5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYruSPvd4fpuvDNzML4AiDM9WlwvDaYv/Lkw3mP4AuRwMTCBRAD6xC7IAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAIWAGBCA48AAAAAUAAABAAAeJxjYGbiYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAQJApaAAAAeJyNks9Kw0AQxr+tVRH/3BQRD3NswZbdUCR6ragXsRTxbEyXNBCSkibg0XfwPfQu+AgexcfwAbz4ZV0URMTCdn6TmflmJhsAG7iHwudP49qzwjoePLewjGfPCwjViec2dtWj50WsqjfPS1hrbTJTtVfoXbmqhhV2cOe5xb5Pnhcww4vnNvVvPS9iS716XsK2ekcHMboQBJxUY0AaIUKNzFHK6NT5Jayze3xeI8eEfkmuGLe0CTs2NZmrscxo/vtAJ+5KoPVARlGdySiNp1Fd2qjekzqf2FKqqZVklkmWxjaPLSvO2KiRPaLAnHIJxXoY4pShqJoe2Xma5L0h3TEzEjdsxGEwtkmdRYRjFKypnC2ZYd2CfS4oOOT5rYO4DvJDU3COCxha81VtcMB5Qp7mpQXYZ8Mir46LMrES9LUcyvecMjwVP5ecXxgxTdgc9MJeoIP935f9zyj4qwVw6a6nESycoHHb49KW87TIxfTpzNylVjw37vI1s0J+ApiVtrI3WmsTDvABKbR6qAAAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGDQZbP//B/I1QPT/m/+PQdUDASMbA4JDADAyYRFkJlLzIAYACG4JNAAAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLTUsbURSGz82MMzFe4wdNKXiVK2Rh/EgnkkWNSw1kIw3iSnAxxEsSGILEDOPa7SwspYIgMtCFtKtutBDKgJpFfoQg/gRXPXe4EZwg4uFdPLznfQjoOhBCxg/aoiOOLMsqfCkCSQCBvJwhkiXkrCY/6Tmq3VK9p6qRE30bYfBnggFMMvg7xWCJkaNp0IZOAbZgd6GW46uWVeRV23V4tVlr2G5b2O4yd1v7os07DcHrBw53mjXRqon8lt1pbIrDZr3FNyp8W9Rdx27zrzsFXrDefysbFYhvFFIwBzohWTv4p8p+KMshCUO8CbXwo8zK34OsEQ68jCzjzaBsplW1Gz11Se9Rw3m8yvh4eY8MzSDZNVXJU4bK++ouDsaEJW9Ym8E6sniYfJPxJLZPhra6XFdMmV5yz8RSgAbmfbyLo2JSpWBYm969YvEwmf6Pi320+qQnE5mo2H8uGuqX/gppyT5Ea5njH9I9xcq5MZciZ5/p6Hea8unYder6gtKHsf5POu7T9AsXXabtAAB4nGNgYGBkAIKrb113gOhnq8uFYTQAUY4G9wAAAfQAAAGIADgBiAA4AxAAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "f0Sws5gEsJiguqNPunJLH";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fJ2572LvmLAXasE3doWkk";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "flo_ForJyKWoYlf8jqqNX";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWMAAoAAAAACBgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAd4AAAIe/byyPkZGVE0AAAVcAAAAGgAAAByjRDPhT1MvMgAAAVAAAABHAAAAYF7DXJxjbWFwAAADKAAAAD8AAAFCAhAG62hlYWQAAAD0AAAAMQAAADYu5SZ9aGhlYQAAASgAAAAeAAAAJALO+ahobXR4AAAFeAAAABIAAAASB/8A2W1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGQAAAC9Doud8Zwb3N0AAADaAAAABMAAAAg/4YANnicY2BkYGAA4m1CnHvi+W2+MnAzvwCKMDxbXS4Cpy2+mzCZM9gAuRwMTCBRAC4LCj8AAAB4nGNgZGBgsPluwhDFlA9kMTCZM4BEkAELAEM8AnIAAAAAUAAABQAAeJxjYGYSYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSjgwuzAr/LRiiGGw4ziCpsWFQAEJGAAmsChIAeJyVkstKw0AUhv+kFxEvG0HEjQdXLbRlEkpJu3DTC90IpULXxnRIAyEJaQJd+BT6HvoEPoJLwXdx45npoCIFMTA538n85zYTAMd4goXtI3Bn2MIRng3b2MOr4QqurBvDVVxa74ZrOLBPDNdxaPdZaVX32bvVUYotnOPRsM11XwxXcI83w1WMrAfDNZxaH4brOLMv0ECAJggudyrQZZrBR4lYU8S7K+3nkNq2+HuJBEv2c+aC9yXbEJmOiXWMZIV6d4BG0CRXiC7N/DKmWRSs/DKXftmiMlnKnIqVpDCLKY4CmQSSI665kEo74gRrThdysjaGmPKWX6xGch2FSXvI7pwVoW7W52Ywl2EZ+wwTpBxTaJuzQuoBOzwgYcBrVwXSFehXTsIYG9aqgZQy1UrnK5ODPvfm8VIH6KLHxdOkmKR5KMntCBrQd880nJLpkcabQibrKE3IUSKn3/barnB7u8f/b3P4uyiw0Ff4M1CdEBYy30o67GT64lWJjf5BBKs8NWWWy0JuhBCO18Mn+SmFQnicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+y///QNLx////B6AqGRjZGGBM8gEjEzMLpWYMIAAAh6MHAAB4nGNgZgCD/80MZgxYAAAomAG8AHicTZBBaNNgFMfft2RNbLM6i7WCUT5c3SzqTGSI97VSOoWiMJBejGloCiWOLiEDb15zGwoD8bCe7CWHQY+RidAdPHmXHcTJ7oLvG18mfjltj//hz5/f/z14BGQZCCFzG0PHd7YMwzAfPQQyAwSW2TXC9Bl2XWJX5ZomfdHkrzqusG8HszpMLuoA8zp8vqTDHZ38KYGUdUx4Di9v2zX6wDBWaNsKBrTdt10rGDpWcJcGXtcZUt91aG9jQAd92/FsZ/mp5bt1Z7Pf8+hqkz5zesHAGtLGlu94m/3XHjWNM+LeahPE3IQFqMItmM2OLsArGMEvsvQmSlgjIUmC+4mUXGFVNk6ruSQNy6yB+2lDKercSHT5U0K+/5TQTA/LESscYQcru2qi8JbPS9yL0poQCoctP4sruyZ2BKie1XEs+uOsnxZM3uGVQH2hYGuEJfQiVhPiwvHWKIsrwRHvCFAt/hX/m+rq9pT8Ppbwyb8f5eikjgbLYbinThUeu3w9XYxObSEUDmM3i8M9LhiBnt/A1o4ltpatOK1zI83xsKu2FYxjXGeL0YktxIXjcZzFYRcFI1C1yB5fZjvlt+9Y8B6bH3I38mTnvnZhW8tHWmGSn3zUtMPCwUibi7Tifz1i4AYAAHicY2BgYGQAgqtvXXeA6Gery0VgNABRmAb5AAAB9AAAAbIARgGyADgCbwBbADgAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "fqe2hA4hpp164Nn8EG5dj";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATgAAoAAAAABvgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAATsAAAE7OsOqakZGVE0AAAS4AAAAGgAAAByjRDPfT1MvMgAAAVAAAABOAAAAYFgCgL9jbWFwAAADIAAAAEEAAAFKQ/bhKWhlYWQAAAD0AAAAMQAAADYvTTGjaGhlYQAAASgAAAAgAAAAJAVXA4hobXR4AAAE1AAAAAwAAAAMBhcAN21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAaAAAAF/AAACuIizX/Nwb3N0AAADZAAAABcAAAAg/5EANnicY2BkYGAAYrUe9dJ4fpuvDNzML4AiDM9WlwvDaQkGT6YDTP5ALgcDE0gUABozCZoAAAB4nGNgZGBg8mfwZIhiusEABEwHGFL+v2VABswAZAkE5QAAUAAAAwAAeJxjYGYSZJzAwMrAwNTFtOf/M4YeEM0QzfiAwZCRCSjKwMrMAAOMQOwA4wSkuaYAKUclIWaF/xYMUUz+/7dD1QABkz+DAhAyAgDcjw2PAAB4nH2Rz0rDQBDGv9W2Iv45iniaYwtN2aSl1F48VKQXofTg2RiXJBCSkibge/gOHvUJxCfwKD6AzyH4ZV0URA1s9jeZmW9mMgD2cQ+Fz0fjyrHCHh4cb2ALz443MVInjls4VHeO29hRr4472FXvjFStbVqXNqthhSPcOt5g3UfHm0jw4rgFrSrHbRyoJ8cd1npDFxF6EATsVGNEWiBEjcxSSm9i7RLG3n1+r5HjmnZJrug3vGOsbE5mcwwjmvcA6EY9CbQeySKsM1mkURLWpQnrvtT5tSmlSozEq0yyNDJ5ZJhxzkKN7CkF1pSLKeZhhjldYZWcmnUa596M5pIRsW02ZDNYmrjOQsIZCuZU9i4ZYeyAAw4omPL8VkFsBfmhKfC/snwcs48JT/OzAoxZqMirs6KMjQQDLVP57k9mc3H9iN+4/GNv4gU6GP8+4H/l8ZcscGHX0IgUVsS3U+LClOu0yMUf0FjZ5VU8N3bJmlETDOkoTWVutNb+ZIgPmth3NQB4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZgYHJWE/v8H8sH0/4N330PVAwEjGwOCQy5gotSAgQUAFXUJPgAAAHicY2BmYGDgZmD438xgxoAFAAApwQHHAAEABAQAAQEBDXByZXRleDAwMDE4MwABAgABADD4GwH4HAL4HQP4GASWDAIpDAPBDASj1PlU+OMFHACtDxwAABAcALIRHAArHAEQEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmACIAAwEBJDNY96iLvfhFvQG9vffAvQO9Fvgk+Kn8JAa9/HcV+EX3wPxFBw73lscBo/eWFfk8x/08Bg7293P4xBX7VPxhxHH3dPhSBZCTjZOLk4uncJ9xi3qLeoKCdQgO+WwU93QVgpT4dZX3SJsGHgoBmC8MCZIMCosMC7UKtZ0MDN4Lx6IMDYsMDgB4nGNgYGBkAIKrb113gOhnq8uFYTQAUY4G9wAAAfQAAALYABgBSwAf) format('woff');
+}
+
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.a { font-size:11.47700024px;font-family:f0Sws5gEsJiguqNPunJLH }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.b { font-size:7.65140009px;font-family:fqe2hA4hpp164Nn8EG5dj }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.c { font-size:11.47700024px;font-family:fGfzduAQfhExP2pco4gJE }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.d { font-size:11.47700024px;font-family:fJ2572LvmLAXasE3doWkk }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.e { font-size:11.47700024px;font-family:flo_ForJyKWoYlf8jqqNX }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.f { font-size:11.47700024px;font-family:fqe2hA4hpp164Nn8EG5dj }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.g { font-size:7.65140009px;font-family:fJ2572LvmLAXasE3doWkk }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.h { font-size:10.47280025px;font-family:fJ2572LvmLAXasE3doWkk }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex tspan.i { font-size:10.47280025px;font-family:fqe2hA4hpp164Nn8EG5dj }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex path.a { stroke-width:0.68900001px }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex path.b { stroke-width:0.3985px }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex path.c { stroke-width:1px }
+.Crnw-FT8hRvAcO23xl9vt svg.pretex path.d { stroke-width:0.79701px }
+</style>
+</head>
+<body>
+<article class="example-like Crnw-FT8hRvAcO23xl9vt"><h5 class="heading">
+<span class="type">Example</span><span class="codenumber">5.3.28</span><span class="title">(Interactive: Another matrix similar to <span class="pretex-bind"><span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+</svg></span></span>)</span></span>
+</h5>
+<p>Continuing with this <a knowl="./knowl/similarity-another-matrix.html?vers=dd743d" knowl-id="xref-similarity-another-matrix" alt="Example 5.3.14 Interactive: Another matrix similar to B" title="Example 5.3.14 Interactive: Another matrix similar to B">example</a>, let</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="96 1 311 28"><text transform="translate(97.618 18.261)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(103.999 13.383)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(109.706 18.261)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(122.602 10.181)"><tspan y="0" x="0" class="d">1</tspan></text>
+<g transform="matrix(1,0,0,-1,122.602,14.944)"><path d="M 0,0 H 6.381" class="a"></path></g><text transform="translate(122.602 26.754)"><tspan y="0" x="0" class="d">5</tspan></text>
+<text transform="translate(131.78 2.394)"><tspan y="0" x="0" class="e">C</tspan></text>
+<text transform="translate(140.554 10.76)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(148.944 10.76)"><tspan y="0" x="0" class="d">8</tspan></text>
+<text transform="translate(165.288 10.76)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(173.678 10.76)"><tspan y="0" x="0" class="d">9</tspan><tspan y="13.947" x="-28.929001 -7.3866711 -1.005459" class="d">613</tspan></text>
+<text transform="translate(181.66 2.394)"><tspan y="0" x="0" class="e">D</tspan></text>
+<text transform="translate(213.675 18.261)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(223.551 18.261)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(235.252 2.394)"><tspan y="0" x="0" class="e">C</tspan></text>
+<text transform="translate(244.026 10.76)"><tspan y="0" x="0 20.543831" class="d">20</tspan><tspan y="13.947" x="0" class="d">0</tspan></text>
+<text transform="translate(260.37 24.707)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(268.76 24.707)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(276.742 2.394)"><tspan y="0" x="0" class="e">D</tspan></text>
+<text transform="translate(308.757 18.261)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(316.756 13.383)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(322.463 18.261)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(335.36 10.181)"><tspan y="0" x="0" class="d">1</tspan></text>
+<g transform="matrix(1,0,0,-1,335.36,14.944)"><path d="M 0,0 H 6.381" class="a"></path></g><text transform="translate(335.36 26.754)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(344.537 2.394)"><tspan y="0" x="0" class="e">C</tspan></text>
+<text transform="translate(353.311 10.76)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(361.701 10.76)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(378.045 10.76)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(386.435 10.76)"><tspan y="0" x="0" class="d">3</tspan><tspan y="13.947" x="-28.929001 -4.1960649" class="d">21</tspan></text>
+<text transform="translate(394.417 2.394)"><tspan y="0" x="0" class="e">D</tspan></text>
+<text transform="translate(403.191 18.261)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></div>
+<p>so <span class="pretex-inline" style="width:6.66459em"><span style="height:1.04566em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(12.088)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(24.076)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(32.075 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(35.4)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(42.608)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(47.405)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(55.405 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(58.443)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(62.954 -4.579)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="translate(68.547 -4.579)"><tspan y="0" x="0" class="g">1</tspan></text>
+<text transform="translate(73.299)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  Let <span class="pretex-inline" style="width:4.45405em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">1</tspan></text>
+<text transform="translate(12.918)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(25.814 -5.325)"><tspan y="0" x="0" class="g">1</tspan></text>
+<g transform="matrix(1,0,0,-1,25.814,-3.317)"><path d="M 0,0 H 4.254" class="a"></path></g><text transform="translate(25.814 3.81)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(31.264 -10.266)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(36.268 -5.899)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="translate(41.861 -5.899)"><tspan y="0" x="0" class="g">1</tspan><tspan y="9.7089996" x="-2.796" class="g">2</tspan></text>
+<text transform="translate(46.115 -10.266)"><tspan y="0" x="0" class="e">B</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.73205em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(12.918)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(25.814 -5.325)"><tspan y="0" x="0" class="g">1</tspan></text>
+<g transform="matrix(1,0,0,-1,25.814,-3.317)"><path d="M 0,0 H 4.254" class="a"></path></g><text transform="translate(25.814 3.81)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(31.264 -10.266)"><tspan y="0" x="0" class="e">A</tspan></text>
+<text transform="translate(36.268 -5.899)"><tspan y="0" x="0" class="b">−</tspan></text>
+<text transform="translate(41.861 -5.899)"><tspan y="0" x="0" class="g">3</tspan><tspan y="9.7089996" x="-2.796" class="g">1</tspan></text>
+<text transform="translate(46.115 -10.266)"><tspan y="0" x="0" class="e">B</tspan></text>
+<text transform="translate(51.119)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> the columns of <span class="pretex-inline" style="width:1.26473em"><span style="height:0.80967em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(11.325)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  Then: </p>
+<ul style="list-style-type: disc;">
+<li>
+<span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+</svg></span></span> scales the <span class="pretex-bind"><span class="pretex-inline" style="width:0.86307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span>-direction</span> by <span class="pretex-inline" style="width:0.556em"><span style="height:0.6865em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span> and the <span class="pretex-bind"><span class="pretex-inline" style="width:0.86307em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="g">2</tspan></text>
+</svg></span></span>-direction</span> by <span class="pretex-inline" style="width:1.565em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(8.39)"><tspan y="0" x="0 6.3812122" class="d">1.</tspan></text>
+</svg></span></span>
+</li>
+<li>
+<span class="pretex-inline" style="width:0.82073em"><span style="height:0.79567em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> scales the <span class="pretex-bind"><span class="pretex-inline" style="width:0.89307em"><span style="height:1.14733em;vertical-align:-0.35167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span>-direction</span> by <span class="pretex-inline" style="width:0.556em"><span style="height:0.6865em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span> and the <span class="pretex-bind"><span class="pretex-inline" style="width:0.89307em"><span style="height:1.14267em;vertical-align:-0.347em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">2</tspan></text>
+</svg></span></span>-direction</span> by <span class="pretex-inline" style="width:1.565em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(8.39)"><tspan y="0" x="0 6.3812122" class="d">1.</tspan></text>
+</svg></span></span>
+</li>
+</ul>
+<p> As before, the <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span>-axis</span> is the <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6865em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span>-eigenspace</span> of <span class="pretex-inline" style="width:0.931em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> and the <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+</svg></span></span>-axis</span> is the <span class="pretex-bind"><span class="pretex-inline" style="width:1.287em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(8.39)"><tspan y="0" x="0" class="d">1</tspan></text>
+</svg></span></span>-eigenspace</span> of <span class="pretex-inline" style="width:0.972em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="d">;</tspan></text>
+</svg></span></span> likewise, the <span class="pretex-bind">“<span class="pretex-inline" style="width:0.89307em"><span style="height:1.14733em;vertical-align:-0.35167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span>-axis”</span> is the <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6865em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">2</tspan></text>
+</svg></span></span>-eigenspace</span> of <span class="pretex-inline" style="width:1.09873em"><span style="height:0.96566em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(9.42)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></span></span> and the <span class="pretex-bind">“<span class="pretex-inline" style="width:0.89307em"><span style="height:1.14267em;vertical-align:-0.347em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">2</tspan></text>
+</svg></span></span>-axis”</span> is the <span class="pretex-bind"><span class="pretex-inline" style="width:1.287em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(8.39)"><tspan y="0" x="0" class="d">1</tspan></text>
+</svg></span></span>-eigenspace</span> of <span class="pretex-inline" style="width:1.09873em"><span style="height:0.80967em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(9.42)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  This is consistent with the <a knowl="./knowl/similarity-evecs.html?vers=dd743d" knowl-id="xref-similarity-evecs" alt="Fact 5.3.24 " title="Fact 5.3.24 ">fact</a>, as multiplication by <span class="pretex-inline" style="width:0.98673em"><span style="height:0.80716em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> changes <span class="pretex-inline" style="width:0.86307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span> into <span class="pretex-inline" style="width:3.99486em"><span style="height:1.14733em;vertical-align:-0.35167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(11.612)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(16.478 2.594)"><tspan y="0" x="0" class="g">1</tspan></text>
+<text transform="translate(23.899)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(36.173)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(41.958 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(41.097 3.983)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.86307em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="g">2</tspan></text>
+</svg></span></span> into <span class="pretex-inline" style="width:4.27286em"><span style="height:1.14267em;vertical-align:-0.347em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(11.612)"><tspan y="0" x="0" class="a">e</tspan></text>
+<text transform="translate(16.478 2.594)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(23.899)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(36.173)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(41.958 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(41.097 3.983)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(45.849)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span> </p>
+<div class="pretex-display"><svg height="12.02401em" version="1.1" class="pretex" viewbox="0 0 342 138"><defs><clippath id="clipPath12858" clippathunits="userSpaceOnUse"><path id="path12856" d="M 136.06528,-68.0326 V 68.0326 h 136.0652 V -68.0326 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,68.829,68.828)"><g><g><g><g transform="matrix(0.8,0,0,0.8,-68.032,-68.031)"><g><g transform="scale(0.88582)"><g transform="scale(192)"><image width="1" height="1" preserveaspectratio="none" transform="matrix(1,0,0,-1,0,1)" href="figure-images/HH9WKGeoCTeRV_rzF2k4.png"></image></g></g></g></g></g><g><path style="stroke:#984ea3" d="M -68.0326,0 H 68.0326" class="b"></path><g><g transform="translate(4.571 -8.558)"><g><g transform="translate(-73.4 -714.614)"><text transform="matrix(1,0,0,-1,73.4,714.614)"><tspan y="0" x="0 5.8228769 9.1637001 14.305845 17.23823 22.715504 27.857649 33.806198 37.995319 43.765831 49.075542 53.74641" style="fill:#984ea3" class="h">2-eigenspace</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#377eb8" d="M 0,-68.0326 V 68.0326" class="b"></path><g><g transform="matrix(0,1,-1,0,-3.363,-67.288)"><g><g transform="translate(-65.466 -655.884)"><text transform="matrix(1,0,0,-1,65.466,655.884)"><tspan y="0" x="0" style="fill:#377eb8" class="i">−</tspan></text>
+<text transform="matrix(1,0,0,-1,73.121,655.884)"><tspan y="0" x="0 5.8228769 9.1637001 14.305845 17.23823 22.715504 27.857649 33.806198 37.995319 43.765831 49.075542 53.74641" style="fill:#377eb8" class="h">1-eigenspace</tspan></text>
+</g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g clip-path="url(#clipPath12858)"><g><g><g transform="matrix(-0.4,0.8,-1.2,0.4,340.156,-102.047)"><g><g transform="scale(0.88582)"><g transform="scale(192)"><image width="1" height="1" preserveaspectratio="none" transform="matrix(1,0,0,-1,0,1)" href="figure-images/HH9WKGeoCTeRV_rzF2k4.png"></image></g></g></g></g></g><g><path style="stroke:#984ea3" d="M 238.11353,-68.0326 170.08223,68.0326" class="b"></path><g><g transform="matrix(0.44717,-0.89436,0.89436,0.44717,178.969,57.772)"><g><g transform="translate(-247.798 -780.944)"><text transform="matrix(1,0,0,-1,247.798,780.944)"><tspan y="0" x="0 5.8228769 9.1637001 14.305845 17.23823 22.715504 27.857649 33.806198 37.995319 43.765831 49.075542 53.74641" style="fill:#984ea3" class="h">2-eigenspace</tspan></text>
+</g></g></g></g></g><g><path style="stroke:#377eb8" d="M 306.14613,-34.01564 102.04962,34.01564" class="b"></path><g><g transform="matrix(0.94865,-0.31618,0.31618,0.94865,207.583,-10.184)"><g><g transform="translate(-276.412 -712.988)"><text transform="matrix(1,0,0,-1,276.412,712.988)"><tspan y="0" x="0" style="fill:#377eb8" class="i">−</tspan></text>
+<text transform="matrix(1,0,0,-1,284.067,712.988)"><tspan y="0" x="0 5.8228769 9.1637001 14.305845 17.23823 22.715504 27.857649 33.806198 37.995319 43.765831 49.075542 53.74641" style="fill:#377eb8" class="h">1-eigenspace</tspan></text>
+</g></g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 206.22388,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17419,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95182,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g></g></g><path d="M -68.0326,-68.0326 V 68.0326 H 68.0326 V -68.0326 Z" class="b"></path><path d="M 136.06528,-68.0326 V 68.0326 h 136.0652 V -68.0326 Z" class="b"></path><g><path d="m 72.95796,25.52109 c 18.05094,10.42178 40.13092,10.42178 57.48943,0.39976" class="d"></path><g transform="matrix(0.86877,-0.50157,0.50157,0.86877,130.79361,25.72098)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="d"></path></g></g><g><g transform="translate(97.904 35.172)"><g><g transform="translate(-166.733 -758.344)"><text transform="matrix(1,0,0,-1,167.02,758.344)"><tspan y="0" x="0" class="a">C</tspan></text>
+</g></g></g></g></g></g></g></g></svg></div><figure class="figure-like"><div id="mathbox-102" class="mathbox" style="height:600px;">
+<iframe src="demos/eigenspace.html?mat=-8/5,-9/5:6/5,13/5&amp;nomult&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">29</span>The eigenspaces of <span class="pretex-inline" style="width:0.82073em"><span style="height:0.79567em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> are the lines through <span class="pretex-inline" style="width:0.89307em"><span style="height:1.14733em;vertical-align:-0.35167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">1</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.17107em"><span style="height:1.14267em;vertical-align:-0.347em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(6.358 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(5.498 3.983)"><tspan y="0" x="0" class="g">2</tspan></text>
+<text transform="translate(10.25)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span>  These are the images under <span class="pretex-inline" style="width:0.98673em"><span style="height:0.80716em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286 -4.579)"><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> of the coordinate axes, which are the eigenspaces of <span class="pretex-inline" style="width:0.931em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></figcaption></figure></article><span class="incontext Crnw-FT8hRvAcO23xl9vt"><a href="similarity.html#example-203">in-context</a></span>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Eigenvalues and Eigenvectors</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: cUfUZMl56mVHAF8aFsod */
+
+@font-face {
+  font-family: "ftnKwgtClpIVAtyzVPKfS";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR8AAAEhz0EBPkZGVE0AAASUAAAAGgAAAByjRDPvT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvhTFbaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGLAAAC0JX9Py5wb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAA4kLZ3bHx/DZfGbiZXwBFGJ6tLpeG0xYM05huMK4CcjkYmECiADa6CuEAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNks9Kw0AQxr+trSL+uSkiHuZowZRNaEvba4t6EYuIZ2Nc0kBISpqAR9/B99C74CN4FB/DB/Dil3VREBEL2/lNZuabmWwAbOIeCp8/jSvHCht4cNzACp4dL2Ggjhw3saceHbewpt4cL2O9scVM1Vyld2mralbYxZ3jBvs+OV7CHC+Om9S/ddzCtnp1vIwd9Y59RGhDEHBSjS5pihAVUksJozPrFzDWHvB5hQzX9AtyybihjdmxrkltjWFG/d8B9qO2BFp3ZRpWqUyTaBZWhQmrA6mya1NIOTMSz1NJk8hkkWHFCRvVshMKLCgXU8zDGMcMheVsYhZJnHljumfMiO2wIYfBmYmrNCQcImdNaW3BDGMX7HBBwYjntw5iO8gPTcEpzuHT+l/VPoacZ8BTv7QAfTbMs/IwL2IjQUfLSL7nlPGxuLnk9NwXvw77Q2/gBTro/77sf0bBXy2AC3s9tWBuBX27PS5MsUjyTPwOnbm91JLnxl6+Ro8fQMBAYUpzo7XudQN8ACmceqQAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nGNkYGFhYGRk5C0oSi1JrTAwMDA1MWJgZGJgZDD8Ic34Q4bphyzzDwmWHh5GTR7mgzwsh79r/cz5Yccqw7CJX4aBQUCGYaugDIOWDMN3IQZmsDYGX4YojWRNBSMDAxOFgMTSHIWAzOSMxNKi1MRSHYXSvJTUIoWSjFSF9IIchZzM5NS85FQ938SSDJfU4sz0PAVnD4Wg1PTSnMQiBf8QQwVDA4ScrrMHAxDIMTAxMirZdu/94bqXce/eH3f2Mu8V++nwY+VfB7a9f8pFf7j+uPPHlZ3vu9bx7wbHGQ//YBL9aXL8rwnb7xUsEAbfzyUi3aJNU36UTv3uMZtNjotxhj4P5yQerm4e7q1cW+fy8NzjPr6Ih7ebhw8AKTFgCQB4nGNgYGBkAIKrb113gOhnq8ulYTQAUd4HBwAAAxAAAAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fEibNmpbamg43YZQl8KZr";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fI7ELwN8ds4G8nHkrxsqw";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUMAAoAAAAAB3gAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADoAAAAUYAAAFZNhOMN0ZGVE0AAAToAAAAGgAAAByjRDPvT1MvMgAAAVAAAABFAAAAYFWxW8xjbWFwAAADUAAAADcAAAFCAQ0C1GhlYWQAAAD0AAAAMwAAADYtjC+IaGhlYQAAASgAAAAdAAAAJAGcARBobXR4AAAFBAAAAAgAAAAIAiwAS21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG1AAADJCalZKBwb3N0AAADiAAAABYAAAAg/3gAPnicY2BkYGBgYmCY2JCuGs9v85WBm/kFUITh2epyaTjt/f87wymGMiCXA6SWgQEASgIMBwB4nGNgZGBgKPv/nSGKUYwBBE4xMDKgAiYAYz0DrAAAAAAAUAAAAgAAeJxjYGYUY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSegx6zAr/LRiiGMoYOFHUKAAhIwD8FQknAAAAeJydUkFP2zAYfQ6l0hCa1tsOO1i7p0qjFlEOkyASExd2Gge0S0pMa5E6ke0C/VOcpmm/aL9jz64lNA0uxMr3PX9+3/OzEwDv8QSB3XONXwkLjMQs4QxD8T3hPeTid8IDjLKDhPfxIfuS8BCHmSZTDN5x9jN2BSzwWYwSznAovia8h2vxI+EBOX8S3ofMPiU8xMfsGyp06LGFhcYSK3hITDDnKIhquBgN44axZ1ygJdeRq9Cw/kAFizuiBXUkzrjque5ZVexds3bB3huMiU7Z3TI/7+fiTDEr5vuoGpjBmcEteQ1rhkxNtZZrqLp+a/Vy5eVkPi9k7WRt5Mb0m0Wr3Uo18qGzd3KxlWfaO29VvZYX5mYsT9tWxj4nrXLK3qtmLKvO3OpGGa/rltov2a9otObcR4t4Vq1WtfWKpct4CetoEJedXdfM5/EEPmbL0ypKlfQfbvbklZv6d6sdL3yPHMd8S/aWOKJ0Z/x5Z5dKluNCnsj/LLE2mefHeVmUR2891FVccezt4h+w857Tz+4MuFLW6c4ED/mEPsAfJGwQJB9JCWOGKQd6q7x6LIpiNp3iL44gk1cAAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvt7//xDy/2WoSgZGNgYYk0hAmuqhAABozQbhAHicY2BmAIP/pQy2QIqRAQ0AACf6AbYAAHicZcs9T8JAHIDx/9EiWiqoiIsVbnFwsDkMDkxGCRgXP4JJkZM2lra5FpG4ESfLpAmLcUYdcHMw6e4nIGFxN3G/SyDxbXHwGZ/kh0CWASE07zEa0HNCyHaxCCgGCIpiFYSGxFpM5CSRl3sqmiBVelXlUZcfcSWuwXtaA1jQ4GNRgw0NkSWI/8hZqIEPl3C1pZPNgk7KrtdhVsMMcKFUItjwseHgluO1arblm7SO2y47xbUO3rMCP2DUaOID51jHu7aNf52PGfUpO6N1HZdd58SqUyewDFv/A2XTYAFl/8ahy5qGDd+lIYYQ3gkjUYlQFI0jKVrhVfEwqc5E03ZWVMbTSiLV5Rk04hmJ57mSNR230bj3hsPBYPjkDsx8ij8uh9mLW9Hq8/27l5uZiRMmcorUX/9U565Vpacmn5W3ZKimvgBq4nWzAAB4nGNgYGBkAIKrb113gOhnq8ulYTQAUd4HBwAAARYAAAEWAEs=) format('woff');
+}
+
+@font-face {
+  font-family: "f507Q9kFRZy17Q3NZaJ_c";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU0AAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAZAAAAGRvo9TPEZGVE0AAAUQAAAAGgAAAByjRDPvT1MvMgAAAVAAAABJAAAAYFm+Y3FjbWFwAAADMAAAADQAAAFCAA0GYWhlYWQAAAD0AAAAMgAAADYu/zHzaGhlYQAAASgAAAAgAAAAJAWUAuVobXR4AAAFLAAAAAgAAAAIBRAAIG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGRAAADJA222q5wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4tm1Z6/H89t8ZeBmfgEUYXi2ulwaTiv8/86UyfQQyOVgYAKJAgB3iQ0IAAB4nGNgZGBgevj/O0MUUwcDEDBlMqT8f8eADJgAmRgGfQAAUAAAAgAAeJxjYGbqYJzAwMrAwNTFtOf/C4YeEM0QzPiAwZCRCSjKwMrJAAMNDEggIM01hYGBeTcQKvy3YIhiesgAUskIV6AAhIwAHMIN4AAAAHicpZLLSsNAFIb/pK0iXpYirs7SW8skrdK6rZR2IZYirh3jkAZCUtIEfAh3voULfQIfwaXv459xUBQXgoHJfCfn9p/JANjCEzx8PAo3jj1s4tmxj1W8Om5g5EWOmzjw4biFdX/oeAUbfsJIr7lG69pm1exhFw+OffZ9cdzAPd4cN3HpPTpuYds/dLyCHf8Ce4iwD0FIpQo90hQaFVJLCb1zaxcwdj/i9woZbmkX5JJ+wz3GwuakNscwon53gL1oX0KlejLVVSrTJJrrqjC6OpIquzWFlHMj8SKVNIlMFhlmnLNRXfaMBZYsF7NYG0OM6dLl/MwskzhrD2nOGBFbsZpiMDNxlWrCCDlzSrsXjDB2wA4HFJxy/dZBbAf5UVMwYaR2Y31lfv8afFYOMKDWPld9oCFOKCbPylFexEbCjpJT+ZpBhmNxmmVSap6AdToM6uBg0O63QxWe/H4s/xWNv4sBruwvr1vntnVgTxRXplgmeSZBh8bCXpSS685eKIVjXqouHYUpzZ1S6rjXxTtWO47iAAAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEQD7z7v//IeQfN6hKBkY2BhhzxAIABz0HcHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDA1MWZgZGJgZDD+IcP4Q5bphxzzDwmWHh7GqTxMmjzMB3lYVjf9+PuzlFWG4RS/DAODgAzDWUEZBi0ZxnQhBhaQRnYGc4ZEhrycxNyklESNZE0FIwMDE4WAxNIchYDM5IzE0qLUxFIdhdK8lNQihZKMVIX0ghyFnMzk1LzkVD3fxJIMl9TizPQ8BWcPhaDU9NKcxCIFz5JEoAIFkCSUaWiAUKnr7MHAwMDYzsDEyKg0tXvvD9e9jHv3/gjZy7xX7MeOHyv/7GDb+6dc9Ifrj5A/rux83WXTr/94ek3ou+b6HwrrhS2+a/54I7qebebKJUtX9U/omdA9ofta9wKzSUYcwjt+v/xT/ab7e//3X6zCFVN+uyz4HXyn+1T33nMzLnKks9Xm5BVmt3N0sAV0N36vbvlu3fZdtPa78m/G7lYgbOni8GoK86vz5OD7KSPSLdo05UdZ/3ff6WxyXIwz9Hk4J/FwdfNwb+XaOpeH5wH38SU8vN08fADKq5dueJxjYGBgZACCq29dd4DoZ6vLpWE0AFHeBwcAAAKIAAACiAAg) format('woff');
+}
+
+.CcUfUZMl56mVHAF8aFsod svg.pretex tspan.a { font-size:11.47700024px;font-family:fEibNmpbamg43YZQl8KZr }
+.CcUfUZMl56mVHAF8aFsod svg.pretex tspan.b { font-size:11.47700024px;font-family:ftnKwgtClpIVAtyzVPKfS }
+.CcUfUZMl56mVHAF8aFsod svg.pretex tspan.c { font-size:11.47700024px;font-family:f507Q9kFRZy17Q3NZaJ_c }
+.CcUfUZMl56mVHAF8aFsod svg.pretex tspan.d { font-size:11.47700024px;font-family:fI7ELwN8ds4G8nHkrxsqw }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive CcUfUZMl56mVHAF8aFsod" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CcUfUZMl56mVHAF8aFsod"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link active"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="determinants-volumes.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="eigenvectors.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="determinants-volumes.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="index.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="eigenvectors.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page CcUfUZMl56mVHAF8aFsod"><main class="main"><div id="content" class="mathbook-content">
+<section class="chapter" id="chap-eigenvalues"><header title="Chapter 5 Eigenvalues and Eigenvectors"><h1 class="heading" alt="Chapter 5 Eigenvalues and Eigenvectors">
+<span class="type">Chapter</span><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span><a href="chap-eigenvalues.html" class="permalink">¶ permalink</a>
+</h1></header><section class="introduction" id="introduction-18"><article class="remark-like" id="note-21"><h5 class="heading"><span class="type">Primary Goal</span></h5>
+<p id="p-988">Solve the matrix equation <span class="pretex-inline" style="width:4.02499em"><span style="height:0.7465em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(28.142)"><tspan y="0" x="0" class="c">λ</tspan></text>
+<text transform="translate(36.474)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(43.004)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></span></span></p></article><p id="p-989">This chapter constitutes the core of any first course on linear algebra: eigenvalues and eigenvectors play a crucial role in most real-world applications of the subject.</p>
+<article class="example-like" id="specialcase-36"><h5 class="heading"><span class="type">Example</span></h5>
+<p id="p-990">In a population of rabbits, </p>
+<ol id="ol-89" style="list-style-type: decimal;">
+<li id="li-430">half of the newborn rabbits survive their first year;</li>
+<li id="li-431">of those, half survive their second year;</li>
+<li id="li-432">the maximum life span is three years;</li>
+<li id="li-433">rabbits produce 0, 6, 8 baby rabbits in their first, second, and third years, respectively.</li>
+</ol>
+<p> What is the <em>asymptotic</em> behavior of this system?  What will the rabbit population look like in 100 years?</p>
+<figure class="figure-like" id="figure-89"><div id="mathbox-84" class="mathbox" style="height:300px;">
+<iframe src="demos/rabbits.html?vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">3</span>Left: the population of rabbits in a given year.  Right: the proportions of rabbits in that year.  Choose any values you like for the starting population, and click “Advance 1 year” several times.  What do you notice about the long-term behavior of the ratios?  This phenomenon turns out to be due to eigenvectors.</figcaption></figure></article><p id="p-991">In <a href="eigenvectors.html" alt="Section 5.1 Eigenvalues and Eigenvectors" title="Section 5.1 Eigenvalues and Eigenvectors">Section 5.1</a>, we will define eigenvalues and eigenvectors, and show how to compute the latter; in <a href="characteristic-polynomial.html" alt="Section 5.2 The Characteristic Polynomial" title="Section 5.2 The Characteristic Polynomial">Section 5.2</a> we will learn to compute the former. In <a href="similarity.html" alt="Section 5.3 Similarity" title="Section 5.3 Similarity">Section 5.3</a> we introduce the notion of <em>similar</em> matrices, and demonstrate that similar matrices do indeed behave similarly.  In <a href="diagonalization.html" alt="Section 5.4 Diagonalization" title="Section 5.4 Diagonalization">Section 5.4</a> we study matrices that are similar to diagonal matrices and in <a href="complex-eigenvalues.html" alt="Section 5.5 Complex Eigenvalues" title="Section 5.5 Complex Eigenvalues">Section 5.5</a> we study matrices that are similar to rotation-scaling matrices, thus gaining a solid geometric understanding of large classes of matrices. Finally, we spend <a href="stochastic-matrices.html" alt="Section 5.6 Stochastic Matrices" title="Section 5.6 Stochastic Matrices">Section 5.6</a> presenting a common kind of application of eigenvalues and eigenvectors to real-world problems, including searching the Internet using Google’s PageRank algorithm.</p></section><nav class="summary-links"><a href="eigenvectors.html"><span class="codenumber">5.1</span><span class="title">Eigenvalues and Eigenvectors</span></a><a href="characteristic-polynomial.html"><span class="codenumber">5.2</span><span class="title">The Characteristic Polynomial</span></a><a href="similarity.html"><span class="codenumber">5.3</span><span class="title">Similarity</span></a><a href="diagonalization.html"><span class="codenumber">5.4</span><span class="title">Diagonalization</span></a><a href="complex-eigenvalues.html"><span class="codenumber">5.5</span><span class="title">Complex Eigenvalues</span></a><a href="stochastic-matrices.html"><span class="codenumber">5.6</span><span class="title">Stochastic Matrices</span></a></nav></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20chap-eigenvalues&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="CcUfUZMl56mVHAF8aFsod"></script>
+</body>
+</html>

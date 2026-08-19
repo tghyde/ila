@@ -1,0 +1,917 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Systems of Linear Equations</title>
+<meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width,  initial-scale=1.0">
+<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link rel="manifest" href="manifest.json">
+<style id="pretex-style">
+.pretex-bind {
+  display: inline-block;
+}
+.pretex-inline {
+  display: inline-block;
+}
+.pretex-inline span {
+  display: inline-block;
+}
+.pretex-inline span:last-child {
+  position: relative;
+}
+.pretex-inline span:last-child svg.pretex {
+  position: absolute;
+  bottom:   0;
+  height:   1em;
+}
+svg.pretex {
+  display:      inline-block;
+  overflow:     visible;
+  font-variant: normal;
+  font-weight:  normal;
+  font-style:   normal;
+}
+.pretex-display {
+  text-align:  center;
+  margin:      1em 0;
+  padding:     0;
+  text-indent: 0;
+  text-transform: none;
+  position: relative;
+}
+.pretex-display svg.pretex {
+  /* hack to adjust spacing */
+  vertical-align: middle;
+}
+.pretex-display .tag {
+  position:    absolute;
+  right:       0;
+  top:         0;
+}
+.pretex-display .tag > span {
+  display: inline-block;
+}
+
+svg.pretex text {
+  writing-mode:horizontal-tb;fill:#000000;fill-rule:nonzero;fill-opacity:1;stroke:none;font-size:11.477041095890412px
+}
+svg.pretex path {
+  fill:none;fill-rule:nonzero;fill-opacity:1;stroke:#000000;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:10;stroke-dasharray:none;stroke-opacity:1
+}
+</style>
+<style id="pretex-fonts">
+/* pretex cache: 83HrSsP9jhMrNWvXpoRQ */
+
+@font-face {
+  font-family: "fxcSfrwwdBe8oxKRHwx-6";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fi6fDaVb_OZUDiakqGETF";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVgAAoAAAAAB9AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADiAAAAbEAAAGy9HYcO0ZGVE0AAAU8AAAAGQAAAByjRDUpT1MvMgAAAVQAAABNAAAAYFnDZJhjbWFwAAADNAAAADcAAAFCAA0GZ2hlYWQAAAD0AAAAMgAAADYvUDIyaGhlYQAAASgAAAAhAAAAJATAAyBobXR4AAAFWAAAAAgAAAAIBYYASm1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAaQAAAGOAAADJAa11q5wb3N0AAADbAAAABkAAAAg/5AAN3icY2BkYGAAYttDtknx/DZfGbiZXwBFGJ6tLt8Bp73+f2eawPgMyOVgYAKJAgBnhQ15AAB4nGNgZGBgfPb/O0MU02EGIGCawJDy/x0DMmACAKI7BuMAAAAAAFAAAAIAAHicY2BmOsw4gYGVgYGpi2nP/xcMPSCaIZjxAYMhIxNQlIGVkwEGGhiQQECaawoDA/MBIFT4b8EQxfiMAaSSESTH+AhIKAAhIwA7rA8MAAAAeJylkstKw0AUhv+ktSJeliKuzrJeWiapSOs2UupCLCKuHeOQBkJS0gR8CHe+hQt9Ah/Bpe/jn3GwKC4EEybznTn3kwGwhWd4+HwUbh172MSLYx+reHPcwtiLHbex78PxCtb9yHEHG35KS6+9RunGejXsYRePjn3mfXXcwgPeHbdx5T05XsG2f+C4gx3/Al3E2IMgZKUKR6QpNGpkllJqZ1YuYex+yPMaOe4ol+SKesM9wdz6ZNbH0KL59oFuvCehUkcy1XUm0zSe6bo0uj6UOr8zpVQzI8k8kyyNTR4bepwzURP2lAEWDJcwWA8RJlTpanZqFmmS9yKKl7RIbLGaxeDSJHWmCWMU9KnsXtLC2Ab7bFBwwvVbBrEZ5EdMwRkttWtr6fn9NPiKHGDEWodczUBDHLOYIq/GRZkYCftKTmTZg0QTcTXLWaU5Aat0GDTGwag37IUqPP59LP8tGn8vBri2v7xJXdjUgZ0ork25SItcgj6Fub0oFde9vVAKA76NojSVuVdKDQYKH1XAjtYAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEA+84H//yHkH0eoSgZGNgYYc+gBKjkcAA0LB3YAeJxjYGZgYOBiYPjfzGAGZDEyoAEAKbcBxwAAAHicY2RgYWFgZGTkLShKLUmtMDAwMDY2YGBkYmBkMP4hw/hDlumHHPMPCZYeHsapPEyaPMwHeViuNv1U+VHFKsNwjF+GgUFAhuGkoAyDlgxjhxADC0gjM4MxQyxDVkGmRrKmgpGBgYlCQGJpjkJAZnJGYmlRamKpjkJpXkpqkUJJRqpCekGOQk5mcmpecqqeb2JJhktqcWZ6noKzh0JQanppTmKRgmdJIlCBAkgSyjQ0QKjUdfZgYGBgbGdgYmRU2tW994frXsa9e3/072XeK/bj84+Vfz6z7f1TLvrD9Uf/H1d2vqbr319fZ/xeuem78ybm74U/9ETXsrUEN4U0Btf55PrGhTU2tNd313eXzapc0r24e/7CSUvmnJ9zYfZ5jo3frb+bdxf+tmZtjmuN7k7q9pgTcbr7YPfufdOOcqRMZW0rKqgs6E7orlvTvb175cT1k9aAtfB2z7r+x6Kb1ac7TCvBtrO9q6O7o7tpUuuU7ondk/onTF61b8WJA90cfD/DRbpFm6b8KOv/7judTY6LcYY+D+ckHq5uHu6tXFvn8vA84D6+hIe3m4cPANJMqUQAAAB4nGNgYGBkAIKrb113gOhnq8vhNABYAAhBAAAAAsMAAALDAEo=) format('woff');
+}
+
+@font-face {
+  font-family: "f1oTfVFDOGz9SdnG8cBFy";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVgAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADhAAAAaoAAAHJZ1584EZGVE0AAAUwAAAAGQAAAByjRDUpT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADJAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMgAAADYvhjKVaGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFTAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGKAAAC0Jb7Qi5wb3N0AAADcAAAABMAAAAg/4YANnicY2BkYGAAYv0dW3rj+W2+MnAzvwCKMDxbXb4DTlv8d2G6wfQHyOVgYAKJAgB34w2dAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuZowZZNKrb1WlEvYinFszFd0kBISppAj76D76F3wUfwKD6GD+DFL+uiICIGNvObzMw3M1kAm7iHwuejceNYYQMPjmtYwbPjJfTUmeM69tSj4wbW1JvjZazXtpip6qv0rm1VxQq7uHNcY98nx0uY4cVxnfq3jhvYVq+Ol7Gj3rGPEE0IfE6qcUgaIkCJxFLM6NT6OYy1B/xeIsWEfk4uGDe0ETtWNYmtMcyo3m1gP2yKr/WhDIMykWEcToMyN0F5IGU6MbkUUyPRLJEkDk0aGlZcsFEle0KBOeUiirUwwDlDQTE9MfM4SlsDuiNmRHbYgMNgZKIyCQinyFhTWJszw9gF21xQcMzzWwexHeSHpuASY3i03le1hz7n6fFUP83HERtmaXGa5ZERv63lWL7nlMG5uLnkcuyJV4W9fqvX8rV/9Puy/xkFf7UAruz1VIKZFfTs9rgy+TzOUvHadGb2Uguehb18jQ636TKQm8IstNYdv4sPKZx6pgAAeJxjYGBgZoBgGQZGBhDwAfIYwXwWBgMgzQGETEBak0Gbwfb/fyBLA8L6f/P/jf/HobrAgJGNAZmLFzAygW1FBSxEah7EAACriAt7AHicY2BmAIP/zQxmDFgAACiYAbwAeJxFi09rE1EUxd/LTGfS9HX8gyOCz/KELGzVOKmBYrqsgWxKgrgSXAxxSAJDKDHDuHY7i4poEcQOdFHa2bixYBYjNVnMhygU6Sdw5X3DjeALIl4Ol8M550eJrhNK6fLO0Bt5rxzHebi+QWiBUFKRN6nkBXlLkzf0VaZ9Z/oU27mfv1ng5PMlTshlTr5e4eQup/tXiTZnqmSbPLvTWRXrjlMTbTfwRbvf6bnB0HODeyIYvPCGYtTzRHfHF36/4w06XmXbHfUeey/73YHYaoonXjfw3aFoPa2KqvO/u7/VJOoWSYkwskIWKC278eQcG1EqGylNUzhNtfS6LMvjWdlIZ6EtG3A6a5gWtsf5zzGd/tDgNnyxIzg8Aw5mXBybWA/RwEqEEyVQDurhPDbjTeBqWPwHw66id+c0Hm4iRzMsPjehHoMBlQgmSqgc1uN5bIZnyNWwaH2DvYzCRabBBezZmGSQQJKhei1MMGkdm9YvWMvAyehUFuy8lv2uGXik/zWW5NfyR/brdzJ4D82PxkqJfnjAFt+yUsSWTkonnxg7X8oO2HLErD/sDr+YAAB4nGNgYGBkAIKrb113gOhnq8vhNABYAAhBAAAAAfQAAAGIADgBiAA4AtgAOAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fHwInCAFtFeQnodbOiO3t";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fdB6S8lsWwVSmLdGOYwB9";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAT0AAoAAAAAByAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADcAAAAVsAAAFiSTPX50ZGVE0AAATMAAAAGQAAAByjRDUpT1MvMgAAAVAAAABLAAAAYHexgUpjbWFwAAADHAAAADwAAAFKIjAktWhlYWQAAAD0AAAAMQAAADYvTTKVaGhlYQAAASgAAAAgAAAAJAU3A1BobXR4AAAE6AAAAAwAAAAMB2wAUG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAGAAAACuJGtXvNwb3N0AAADWAAAABcAAAAg/5EANnicY2BkYGAA4p+1jnPi+W2+MnAzvwCKMDxbXb4DTkswCDIdYNIHcjkYmECiAGF9C5EAAAB4nGNgZGBg0mcQZIhiusEABEwHGFL+v2VABswAWdEEjQAAUAAAAwAAeJxjYGbawziBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWZARk4wBgBaa4pDAxKHEpCzAr/LRiimPT/vwcKM8JVKgAhIwAXMg3pAHicfZHPSsNAEMa/1bYi/jmKeJpjC03ZpKXUXjxUpBeh9ODZGJckEJKSJuB7+A4e9QnEJ/AoPoDPIfhlXRREDWz2N5mZb2YyAPZxD4XPR+PKscIeHhxvYAvPjjcxUieOWzhUd47b2FGvjjvYVe+MVK1tWpc2q2GFI9w63mDdR8ebSPDiuAWtKsdtHKgnxx3WekMXEXoQBOxUY0RaIESNzFJKb2LtEsbefX6vkeOadkmu6De8Y6xsTmZzDCOa9wDoRj0JtB7JIqwzWaRREtalCeu+1Pm1KaVKjMSrTLI0MnlkmHHOQo3sKQXWlIsp5mGGOV1hlZyadRrn3ozmkhGxbTZkM1iauM5CwhkK5lT2Lhlh7IADDiiY8vxWQWwF+aEp8L+yfByzjwlP87MCjFmoyKuzooyNBAMtU/nuT2Zzcf2I37j8Y2/iBToY/z7gf+XxlyxwYdfQiBRWxLdT4sKU67TIxR/QWNnlVTw3dskaQ3Y/oaM0lbnRWg+DCT4AmuR3N3icY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmJQ4lIT+/2dggNB3f919D1UPBIxsDAjOCAUA+bcJJXicY2BmYGDgZmD438xgxoAFAAApwQHHAHicRYvPS8JQAIDfc2vZfNoPWnSY9iCRpF/LggR/XEywIJDo2mHYQ4U1ZG1W1y4ddouSIL0kBP0BdomB4WF0Dbz2Z/iezKCEoI/v9MEHAc8DCGGwZhCTXCqKsp1IAugDEChMhizsYxGOLfIN5Isj7h3x7ebwmPUmZPA6LQMwI4O3WRmsynB3DvDjyw+SoAhOiEbOiG6ulOI4oSg7uKhaGi5WSxXVMohqrWFLPyUGNisEl2sa1qolopfIxqFqVvbIebWs41wBH5GypakG3lL++3quAH55hjeAg3A5UT+wHZZ3oOPQrsM5CyzKXkZRwRldSCxPu6P8ZIg2XNimDWmYdr/TQmjQdOn+WNhzORqgn1JrQMU+Ddt+arqeKXgpLxPzsl6WZmI0tfQXw7Yn9q8GflZ3hdBQm2cf0vUds+5p4VGIiPBhE03dItFGgY7YaSH0FXCfUNBGoR/RAoPZAHicY2BgYGQAgqtvXXeA6Gery+E0AFgACEEAAAAB9AAAAtgAGAKgADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fWH-OwEQPG46aap9nA5F7";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "frValRMFH4Cu40WP3cmbG";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHAzOGiV0ZGVE0AAAVgAAAAGQAAAByjRDUpT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvSjLtaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG+AAADPHK++uBwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmDYpPNpWTy/zVcGbuYXQBGGZ6vLd8Bp+f8/mbYwzQdyOUBqGRgAiPwOBwB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1P20AUnDUBtVJVlUvVC9JTz3XkmBQRbsQSFcdecujNwUtiYdbR7gbIkT/UU8Wp/6l/obObVQGVSrXlt7PvY9689QJ4i+9Q2D7f8JCwwr76nHCGgfqa8A5K9TPhAd5nBwnv4l02S3gPb7J7ZqrBa+5+xKqAFT6q/YQzvFJfEt5Bo2YJD/BJ/Up4F5KNE97Dh2yBCj1W2MCixQJLeAhGmPAtiGq4aA3tmnZFO0fHXMdcjYb+WzJYXBHNySOYMuoZ9/Rq1l7Td87aCwyJTlndcX3s5+JOc9VcbyJryAzKDC6Z19BnmNmSrWMMVb/a2Hax9DKaTAqpndRG1ma1nnetW+pGbnt7JfONTFvvvNX1tZybi6Gcdp3EOidWO21vdDOUqjeXbaONb+uO3C/Jryi05t5HiXhkrZa19Tq4KLajUEz7jvYsavdxtZxTk6Sk8nCmJ/84o+dN5A/ltiL8kxzH/EqylDhik974s94utJTDQk7kL1kSxDAwmuTHeVmUR/8znTyZ5UVCYBYTHan6eDO2k+XUuJ0QM21d25ugKx9RG3hxQr/Q4Y4p4T1k2ZgBq72+K4risBzjN2xEmJEAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwNjJhYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A7TiuIwB4nGNgYGBkAIKrb113gOhnq8vhNABYAAhBAAAAAp8AAAKfAB8=) format('woff');
+}
+
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.a { font-size:11.47700024px;font-family:frValRMFH4Cu40WP3cmbG }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.b { font-size:7.65140009px;font-family:fHwInCAFtFeQnodbOiO3t }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.c { font-size:11.47700024px;font-family:fxcSfrwwdBe8oxKRHwx-6 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.d { font-size:11.47700024px;font-family:fHwInCAFtFeQnodbOiO3t }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.e { font-size:11.47700024px;font-family:f1oTfVFDOGz9SdnG8cBFy }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.f { font-size:11.47700024px;font-family:fdB6S8lsWwVSmLdGOYwB9 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.g { font-size:11.47700024px;font-family:fWH-OwEQPG46aap9nA5F7 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.h { font-size:7.65140009px;font-family:fxcSfrwwdBe8oxKRHwx-6 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.i { font-size:11.47700024px;font-family:fi6fDaVb_OZUDiakqGETF }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.j { font-size:10.47280025px;font-family:fHwInCAFtFeQnodbOiO3t }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.k { font-size:10.47280025px;font-family:f1oTfVFDOGz9SdnG8cBFy }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.l { font-size:10.47280025px;font-family:fxcSfrwwdBe8oxKRHwx-6 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex tspan.m { font-size:10.47280025px;font-family:fdB6S8lsWwVSmLdGOYwB9 }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.a { stroke-width:0.68900001px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.b { stroke-width:0.79701px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.c { stroke-width:0.3985px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.d { stroke-width:0.19925px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.e { stroke-width:1px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.f { stroke-width:2.59032011px }
+.C83HrSsP9jhMrNWvXpoRQ svg.pretex path.g { stroke-width:0.99628001px }
+</style>
+<link rel="shortcut icon" href="images/logo.gif">
+</head>
+<body class="mathbook-book has-toc has-sidebar-left">
+<a class="assistive C83HrSsP9jhMrNWvXpoRQ" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons C83HrSsP9jhMrNWvXpoRQ"><div class="banner"><div class="container">
+<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
+<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+</div>
+</div></div>
+<nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
+<h2 class="link"><a href="index2.html" data-scroll="index2"><span class="title">Front Matter</span></a></h2>
+<ul>
+<li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
+<li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="overview.html" data-scroll="overview">Overview</a></li>
+</ul>
+<h2 class="link active"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
+<ul>
+<li><a href="systems-of-eqns.html" data-scroll="systems-of-eqns" class="active">Systems of Linear Equations</a></li>
+<li><a href="row-reduction.html" data-scroll="row-reduction">Row Reduction</a></li>
+<li><a href="parametric-form.html" data-scroll="parametric-form">Parametric Form</a></li>
+</ul>
+<h2 class="link"><a href="chap-geometry.html" data-scroll="chap-geometry"><span class="codenumber">2</span><span class="title">Systems of Linear Equations: Geometry</span></a></h2>
+<ul>
+<li><a href="vectors.html" data-scroll="vectors">Vectors</a></li>
+<li><a href="spans.html" data-scroll="spans">Vector Equations and Spans</a></li>
+<li><a href="matrix-equations.html" data-scroll="matrix-equations">Matrix Equations</a></li>
+<li><a href="solution-sets.html" data-scroll="solution-sets">Solution Sets</a></li>
+<li><a href="linear-independence.html" data-scroll="linear-independence">Linear Independence</a></li>
+<li><a href="subspaces.html" data-scroll="subspaces">Subspaces</a></li>
+<li><a href="dimension.html" data-scroll="dimension">Basis and Dimension</a></li>
+<li><a href="bases-as-coord-systems.html" data-scroll="bases-as-coord-systems">Bases as Coordinate Systems</a></li>
+<li><a href="rank-thm.html" data-scroll="rank-thm">The Rank Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-matrices.html" data-scroll="chap-matrices"><span class="codenumber">3</span><span class="title">Linear Transformations and Matrix Algebra</span></a></h2>
+<ul>
+<li><a href="matrix-transformations.html" data-scroll="matrix-transformations">Matrix Transformations</a></li>
+<li><a href="one-to-one-onto.html" data-scroll="one-to-one-onto">One-to-one and Onto Transformations</a></li>
+<li><a href="linear-transformations.html" data-scroll="linear-transformations">Linear Transformations</a></li>
+<li><a href="matrix-multiplication.html" data-scroll="matrix-multiplication">Matrix Multiplication</a></li>
+<li><a href="matrix-inverses.html" data-scroll="matrix-inverses">Matrix Inverses</a></li>
+<li><a href="invertible-matrix-thm.html" data-scroll="invertible-matrix-thm">The Invertible Matrix Theorem</a></li>
+</ul>
+<h2 class="link"><a href="chap-determinant.html" data-scroll="chap-determinant"><span class="codenumber">4</span><span class="title">Determinants</span></a></h2>
+<ul>
+<li><a href="determinants-definitions-properties.html" data-scroll="determinants-definitions-properties">Determinants: Definition</a></li>
+<li><a href="determinants-cofactors.html" data-scroll="determinants-cofactors">Cofactor Expansions</a></li>
+<li><a href="determinants-volumes.html" data-scroll="determinants-volumes">Determinants and Volumes</a></li>
+</ul>
+<h2 class="link"><a href="chap-eigenvalues.html" data-scroll="chap-eigenvalues"><span class="codenumber">5</span><span class="title">Eigenvalues and Eigenvectors</span></a></h2>
+<ul>
+<li><a href="eigenvectors.html" data-scroll="eigenvectors">Eigenvalues and Eigenvectors</a></li>
+<li><a href="characteristic-polynomial.html" data-scroll="characteristic-polynomial">The Characteristic Polynomial</a></li>
+<li><a href="similarity.html" data-scroll="similarity">Similarity</a></li>
+<li><a href="diagonalization.html" data-scroll="diagonalization">Diagonalization</a></li>
+<li><a href="complex-eigenvalues.html" data-scroll="complex-eigenvalues">Complex Eigenvalues</a></li>
+<li><a href="stochastic-matrices.html" data-scroll="stochastic-matrices">Stochastic Matrices</a></li>
+</ul>
+<h2 class="link"><a href="chap-orthogonality.html" data-scroll="chap-orthogonality"><span class="codenumber">6</span><span class="title">Orthogonality</span></a></h2>
+<ul>
+<li><a href="dot-product.html" data-scroll="dot-product">Dot Products and Orthogonality</a></li>
+<li><a href="orthogonal-complements.html" data-scroll="orthogonal-complements">Orthogonal Complements</a></li>
+<li><a href="projections.html" data-scroll="projections">Orthogonal Projection</a></li>
+<li><a href="orthogonal-sets.html" data-scroll="orthogonal-sets">Orthogonal Sets</a></li>
+<li><a href="least-squares.html" data-scroll="least-squares">The Method of Least Squares</a></li>
+</ul>
+<h2 class="link"><a href="backmatter.html" data-scroll="backmatter"><span class="title">Back Matter</span></a></h2>
+<ul>
+<li><a href="complex-numbers.html" data-scroll="complex-numbers">Complex Numbers</a></li>
+<li><a href="appendix-2.html" data-scroll="appendix-2">Notation</a></li>
+<li><a href="appendix-3.html" data-scroll="appendix-3">Hints and Solutions to Selected Exercises</a></li>
+<li><a href="appendix-gfdl.html" data-scroll="appendix-gfdl">GNU Free Documentation License</a></li>
+<li><a href="index-1.html" data-scroll="index-1">Index</a></li>
+<li><a href="colophon-2.html" data-scroll="colophon-2">Colophon</a></li>
+</ul>
+</div></div></div>
+<div class="navbar-top-buttons toolbar">
+<div class="toolbar-buttons-left">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a class="index-button toolbar-item button" href="index-1.html" title="Index" alt="Index">Index</a>
+</div>
+<div class="toolbar-buttons-right">
+<a id="previousbutton-top" class="previous-button toolbar-item button" href="chap-algebra.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-top" class="up-button button toolbar-item" href="chap-algebra.html" title="Up" alt="Up">Up</a><a id="nextbutton-top" class="next-button button toolbar-item" href="row-reduction.html" title="Next" alt="Next">Next</a>
+</div>
+</div>
+<div class="navbar-bottom-buttons toolbar">
+<a class="toggle-button button toolbar-item" title="Toggle Menu" alt="Toggle Menu" href="javascript:void(0)"></a><a id="previousbutton-bot" class="previous-button toolbar-item button" href="chap-algebra.html" title="Previous" alt="Previous">Prev</a><a id="upbutton-bot" class="up-button button toolbar-item" href="chap-algebra.html" title="Up" alt="Up">Up</a><a id="nextbutton-bot" class="next-button button toolbar-item" href="row-reduction.html" title="Next" alt="Next">Next</a>
+</div></nav></header><div class="page C83HrSsP9jhMrNWvXpoRQ"><main class="main"><div id="content" class="mathbook-content">
+<section class="section" id="systems-of-eqns"><header title="Section 1.1 Systems of Linear Equations"><h1 class="heading hide-type" alt="Section 1.1 Systems of Linear Equations">
+<span class="type">Section</span><span class="codenumber">1.1</span><span class="title">Systems of Linear Equations</span><a href="systems-of-eqns.html" class="permalink">¶ permalink</a>
+</h1></header><article class="objectives" id="objectives-1"><h5 class="heading"><span class="type">Objectives</span></h5>
+<ol id="ol-3" style="list-style-type: decimal;">
+<li id="li-30">Understand the definition of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and what it means to use <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+</svg></span></span> to label points on a geometric object.</li>
+<li id="li-31">
+<em>Pictures:</em> solutions of systems of linear equations, parameterized solution sets.</li>
+<li id="li-32">
+<em>Vocabulary words:</em> <em class="terminology">consistent</em>, <em class="terminology">inconsistent</em>, <em class="terminology">solution set</em>.</li>
+</ol></article><section class="introduction" id="introduction-2"><p id="p-31">During the first half of this textbook, we will be primarily concerned with understanding the solutions of systems of linear equations.</p>
+<article class="definition-like" id="definition-1"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-32">An equation in the unknowns <span class="pretex-inline" style="width:4.12348em"><span style="height:0.707em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(13.617)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(19.344)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(24.136)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(29.76)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204" class="c">,...</tspan></text>
+</svg></span></span> is called <em class="terminology">linear</em> if both sides of the equation are a sum of (constant) multiples of <span class="pretex-inline" style="width:4.54098em"><span style="height:0.707em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(13.617)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(19.344)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(24.136)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(29.76)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+</svg></span></span> plus an optional constant.</p></article><p id="p-33">For instance,</p>
+<div class="pretex-display"><svg height="2.35252em" version="1.1" class="pretex" viewbox="214 6 75 27"><text transform="translate(214.912 14.147)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(222.154 14.147)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(230.819 14.147)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(241.344 14.147)"><tspan y="0" x="0" class="c">4</tspan></text>
+<text transform="translate(249.159 14.147)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(258.243 14.147)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(269.944 14.147)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(276.325 14.147)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(221.511 31.582)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(230.762 31.582)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(239.427 31.582)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(249.951 31.582)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(258.243 31.582)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(269.944 31.582)"><tspan y="0" x="0 6.3812122 12.762424" class="c">100</tspan></text>
+</svg></div>
+<p>are linear equations, but</p>
+<div class="pretex-display"><svg height="2.61391em" version="1.1" class="pretex" viewbox="203 6 98 30"><text transform="translate(239.8 14.147)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(247.042 14.147)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(255.707 14.147)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(267.666 14.147)"><tspan y="0" x="0 6.4156432" class="d">yz</tspan></text>
+<text transform="translate(282.374 14.147)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(294.075 14.147)"><tspan y="0" x="0" class="c">3</tspan><tspan y="17.968" x="-90.530998 -85.940201 -82.726639" class="c">sin</tspan></text>
+<text transform="translate(217.867 32.115)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(223.239 32.115)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(229.769 32.115)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(236.414 32.115)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(246.939 32.115)"><tspan y="0" x="0 5.118742 11.304845" class="c">cos</tspan></text>
+<text transform="translate(262.834 32.115)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(268.779 32.115)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(275.195 32.115)"><tspan y="0" x="0 7.1788635" class="e">)=</tspan></text>
+<text transform="translate(294.075 32.115)"><tspan y="0" x="0" class="c">2</tspan></text>
+</svg></div>
+<p>are not.</p>
+<p id="p-34">We will usually move the unknowns to the left side of the equation, and move the constants to the right.</p>
+<p id="p-35">A <em class="terminology">system</em> of linear equations is a collection of several linear equations, like</p>
+<div class="pretex-display"><svg height="3.74661em" version="1.1" class="pretex" viewbox="196 0 114 43"><text transform="translate(195.063 2.782)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(212.938 9.185)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(222.599 9.185)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(234.12 9.185)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(241.936 9.185)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(251.483 9.185)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(263.003 9.185)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(269.384 9.185)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(278.673 9.185)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(299.76 9.185)"><tspan y="0" x="0" class="c">6</tspan><tspan y="14.944" x="-94.064003" class="c">2</tspan></text>
+<text transform="translate(212.938 24.129)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(222.599 24.129)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(234.12 24.129)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(241.936 24.129)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(251.483 24.129)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(263.003 24.129)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(269.384 24.129)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(278.673 24.129)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(293.378 24.129)"><tspan y="0" x="0 6.3812122" class="c">14</tspan><tspan y="14.944" x="-87.681999" class="c">3</tspan></text>
+<text transform="translate(212.938 39.073)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(222.599 39.073)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(241.936 39.073)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(251.483 39.073)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(269.384 39.073)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(278.673 39.073)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(291.37 39.073)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(299.76 39.073)"><tspan y="0" x="0 6.3812122" class="c">2.</tspan></text>
+</svg><span class="tag">(1.1.1)<span style="height:2.14338em"></span></span></div>
+<p> </p>
+<article class="definition-like" id="systems-eqns-soln-sets"><h5 class="heading">
+<span class="type">Definition</span><span class="title">(Solution sets)</span>
+</h5>
+<p id="p-36"></p>
+<ul id="ul-9" style="list-style-type: disc;">
+<li id="li-33">A <em class="terminology">solution</em> of a system of equations is a list of numbers <span class="pretex-inline" style="width:4.12348em"><span style="height:0.707em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(13.617)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(19.344)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(24.136)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(29.76)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204" class="c">,...</tspan></text>
+</svg></span></span> that make all of the equations true simultaneously.</li>
+<li id="li-34">The <em class="terminology">solution set</em> of a system of equations is the collection of all solutions.</li>
+<li id="li-35">
+<em class="terminology">Solving</em> the system means finding all solutions with formulas involving some number of parameters.</li>
+</ul>
+<p>   </p></article><p id="p-37">A system of linear equations need not have a solution.  For example, there do not exist numbers <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span> making the following two equations true simultaneously:</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="213 0 79 28"><text transform="translate(212.31 1.685)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(222.347 9.454)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(232.008 9.454)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(243.529 9.454)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(251.345 9.454)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(261.425 9.454)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(282.512 9.454)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(222.347 24.398)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(232.008 24.398)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(243.529 24.398)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(251.345 24.398)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(261.425 24.398)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(274.122 24.398)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(282.512 24.398)"><tspan y="0" x="0 6.3812122" class="c">3.</tspan></text>
+</svg></div>
+<p>In this case, the solution set is <em>empty</em>.  As this is a rather important property of a system of equations, it has its own name.</p>
+<article class="definition-like" id="definition-3"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-38">A system of equations is called <em class="terminology">inconsistent</em> if it has no solutions.  It is called <em class="terminology">consistent</em> otherwise.</p></article><p id="p-39">A solution of a system of equations in <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> variables is a list of <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> numbers.  For example, <span class="pretex-inline" style="width:8.65097em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(23.855)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(28.647)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(34.27)"><tspan y="0" x="0 7.1788635 18.884256" class="e">)=(</tspan></text>
+<text transform="translate(57.66)"><tspan y="0" x="0 6.3812122" class="c">1,</tspan></text>
+<text transform="translate(68.833)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(77.223)"><tspan y="0" x="0 6.3812122 11.167121" class="c">2,3</tspan></text>
+<text transform="translate(94.777)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> is a solution of <a knowl="./knowl/systems-eqns-example.html?vers=dd743d" knowl-id="xref-systems-eqns-example" alt="Equation 1.1.1 " title="Equation 1.1.1 ">(1.1.1)</a>.  As we will be studying solutions of systems of equations throughout this text, now is a good time to fix our notions regarding lists of numbers.</p></section><section class="subsection" id="subsection-Rn"><header title="Subsection 1.1.1 Line, Plane, Space, Etc."><h1 class="heading hide-type" alt="Subsection 1.1.1 Line, Plane, Space, Etc.">
+<span class="type">Subsection</span><span class="codenumber">1.1.1</span><span class="title">Line, Plane, Space, Etc.</span><a href="systems-of-eqns.html#subsection-Rn" class="permalink">¶ permalink</a>
+</h1></header><p id="p-40"> We use <span class="pretex-inline" style="width:0.671em"><span style="height:0.685em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+</svg></span></span>   to denote the set of all real numbers, i.e., the number line.  This contains numbers like <span class="pretex-inline" style="width:7.02597em"><span style="height:1.25366em;vertical-align:-0.332em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122" class="c">0,</tspan></text>
+<text transform="translate(12.368 -5.325)"><tspan y="0" x="0" class="h">3</tspan></text>
+<g transform="matrix(1,0,0,-1,12.368,-3.317)"><path d="M 0,0 H 4.254" class="a"></path></g><text transform="translate(12.368 3.81)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(17.818)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(22.61)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(30.999)"><tspan y="0" x="0" class="i">π</tspan></text>
+<text transform="translate(39.137)"><tspan y="0" x="0 4.7859092 11.167121 17.548332 23.929544 28.726931 33.51284 38.310226" class="c">,104,...</tspan></text>
+</svg></span></span></p>
+<article class="definition-like" id="definition-4"><h5 class="heading"><span class="type">Definition</span></h5>
+<p id="p-41">Let <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> be a positive whole number.  We define</p>
+<div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="100 4 304 14"><text transform="translate(100.376 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(108.268 9.07)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(115.689 13.948)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(127.39 13.948)"><tspan y="0" x="0 5.8188391 9.0553532 15.49395 21.680054 26.064266 32.548771 38.183979 42.568192 48.2034" class="c">allordered</tspan></text>
+<text transform="translate(185.567 13.948)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(191.948 13.948)"><tspan y="0" x="0 3.6611631 7.4944811 14.024894 20.348721 23.585236 29.220442 37.013325 43.199429 50.085629 54.469841 60.105049 65.923889 72.362488 78.881424 85.411835 95.086945 101.27305 106.90826 111.29247" class="c">-tuplesofrealnumbers</tspan></text>
+<text transform="translate(311.034 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(316.405 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(322.453 16.542)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(327.206 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(332.858 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(338.907 16.542)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(343.659 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(349.311 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(355.36 16.542)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(360.112 13.948)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(384.931 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(391.171 16.542)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(395.923 13.948)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(400.433 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>An <span class="pretex-bind"><span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span>-tuple</span> of real numbers is called a <em class="terminology">point</em> of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article><p id="p-42">In other words, <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+</svg></span></span> is just the set of all (ordered) lists of <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> real numbers.  We will draw pictures of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+</svg></span></span> in a moment, but keep in mind that <em>this is the definition</em>.  For example, <span class="pretex-inline" style="width:4.19599em"><span style="height:1.25366em;vertical-align:-0.332em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122" class="c">0,</tspan></text>
+<text transform="translate(16.879 -5.325)"><tspan y="0" x="0" class="h">3</tspan></text>
+<g transform="matrix(1,0,0,-1,16.879,-3.317)"><path d="M 0,0 H 4.254" class="a"></path></g><text transform="translate(16.879 3.81)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(22.328)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(27.12)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(35.51)"><tspan y="0" x="0" class="i">π</tspan></text>
+<text transform="translate(43.647)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.01999em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122" class="c">1,</tspan></text>
+<text transform="translate(15.683)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(24.073)"><tspan y="0" x="0 6.3812122 11.167121" class="c">2,3</tspan></text>
+<text transform="translate(41.627)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> are points of <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<article class="example-like" id="specialcase-6"><h5 class="heading">
+<span class="type">Example</span><span class="title">(The number line)</span>
+</h5>
+<p id="p-43">When <span class="pretex-inline" style="width:2.66699em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(9.337)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(21.037)"><tspan y="0" x="0 6.3812122" class="c">1,</tspan></text>
+</svg></span></span> we just get <span class="pretex-inline" style="width:0.671em"><span style="height:0.685em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+</svg></span></span> back: <span class="pretex-inline" style="width:3.28606em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(15.122)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(26.823)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(34.524)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Geometrically, this is the number line. </p>
+<div class="pretex-display"><svg height="1.74261em" version="1.1" class="pretex" viewbox="0 3 199 20"><g transform="matrix(1,0,0,-1,99.611,18.724)"><g><g><g><path d="M -98.41681,0 H 98.41681" class="b"></path><g transform="matrix(-1,0,0,-1,-98.8153,0)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g><g transform="translate(98.8153)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><path d="M -85.04042,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(-92.425 7.02)"><g><g transform="translate(-7.186 -780.296)"><text transform="matrix(1,0,0,-1,7.186,780.296)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,15.576,780.296)"><tspan y="0" x="0" class="c">3</tspan></text>
+</g></g></g></g></g><g><path d="M -56.69362,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(-64.078 7.02)"><g><g transform="translate(-35.533 -780.296)"><text transform="matrix(1,0,0,-1,35.533,780.296)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,43.922,780.296)"><tspan y="0" x="0" class="c">2</tspan></text>
+</g></g></g></g></g><g><path d="M -28.3468,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(-35.732 7.02)"><g><g transform="translate(-63.879 -780.296)"><text transform="matrix(1,0,0,-1,63.879,780.296)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,72.269,780.296)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g><path d="M 0,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(-3.191 6.939)"><g><g transform="translate(-96.42 -780.215)"><text transform="matrix(1,0,0,-1,96.42,780.215)"><tspan y="0" x="0" class="c">0</tspan></text>
+</g></g></g></g></g><g><path d="M 28.3468,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(25.156 6.939)"><g><g transform="translate(-124.767 -780.215)"><text transform="matrix(1,0,0,-1,124.767,780.215)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g><path d="M 56.69362,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(53.502 6.859)"><g><g transform="translate(-153.113 -780.135)"><text transform="matrix(1,0,0,-1,153.113,780.135)"><tspan y="0" x="0" class="c">2</tspan></text>
+</g></g></g></g></g><g><path d="M 85.04042,-2.83484 V 2.83484" class="c"></path><g><g transform="translate(81.849 6.939)"><g><g transform="translate(-181.46 -780.215)"><text transform="matrix(1,0,0,-1,181.46,780.215)"><tspan y="0" x="0" class="c">3</tspan></text>
+</g></g></g></g></g></g></g></g></svg></div></article><article class="example-like" id="specialcase-7"><h5 class="heading">
+<span class="type">Example</span><span class="title">(The Euclidean plane)</span>
+</h5>
+<p id="p-44">When <span class="pretex-inline" style="width:2.66699em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(9.337)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(21.037)"><tspan y="0" x="0 6.3812122" class="c">2,</tspan></text>
+</svg></span></span> we can think of <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+</svg></span></span> as the <span class="pretex-bind"><span class="pretex-inline" style="width:1.328em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0 7.9650378" class="d">xy</tspan></text>
+</svg></span></span>-plane.</span>  We can do so because every point on the plane can be represented by an ordered pair of real numbers, namely, its <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span>-</span> and <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span>-coordinates.</span> </p>
+<div class="pretex-display"><svg height="19.86575em" version="1.1" class="pretex" viewbox="0 0 228 228"><g transform="matrix(1,0,0,-1,113.784,113.784)"><g><g><g><path style="stroke:#808080" d="m -113.38724,-113.38724 h 226.77448 m -226.77448,28.34682 h 226.77448 m -226.77448,28.3468 H 113.38724 M -113.38724,-28.3468 H 113.38724 M -113.38724,0 h 226.77448 m -226.77448,28.3468 h 226.77448 m -226.77448,28.34682 h 226.77448 m -226.77448,28.3468 h 226.77448 m -226.77448,28.33685 h 226.77448 m -226.77448,-226.76451 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 V 113.38724 M -28.3468,-113.38724 V 113.38724 M 0,-113.38724 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.33685,-226.77448 v 226.77448" class="d"></path></g><g><path d="M -113.38724,0 H 112.59023" class="b"></path><g transform="translate(112.98872)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><path d="M 0,-113.38724 V 112.59023" class="b"></path><g transform="matrix(0,1,-1,0,0,112.98872)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><g><path style="fill:#377eb8;stroke:none" d="m 30.4728,56.69362 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17417,0 2.126,0.95183 2.126,2.12601 z" class="e"></path></g></g><g><g transform="translate(30.846 61.361)"><g><g transform="translate(-144.63 -739.577)"><text transform="matrix(1,0,0,-1,144.63,739.577)"><tspan y="0" x="0" style="fill:#377eb8" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,149.141,739.577)"><tspan y="0" x="0 6.3812122 11.167121" style="fill:#377eb8" class="c">1,2</tspan></text>
+<text transform="matrix(1,0,0,-1,166.695,739.577)"><tspan y="0" x="0" style="fill:#377eb8" class="e">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#377eb8;stroke:none" d="m 2.12599,-85.04042 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95181 2.12599,2.12599 z" class="e"></path></g></g><g><g transform="translate(2.5 -80.371)"><g><g transform="translate(-116.284 -597.845)"><text transform="matrix(1,0,0,-1,116.284,597.845)"><tspan y="0" x="0" style="fill:#377eb8" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,120.794,597.845)"><tspan y="0" x="0 6.3812122" style="fill:#377eb8" class="c">0,</tspan></text>
+<text transform="matrix(1,0,0,-1,131.967,597.845)"><tspan y="0" x="0" style="fill:#377eb8" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,140.357,597.845)"><tspan y="0" x="0" style="fill:#377eb8" class="c">3</tspan></text>
+<text transform="matrix(1,0,0,-1,146.738,597.845)"><tspan y="0" x="0" style="fill:#377eb8" class="e">)</tspan></text>
+</g></g></g></g></g></g></g></svg></div></article><article class="example-like" id="specialcase-8"><h5 class="heading">
+<span class="type">Example</span><span class="title">(3-Space)</span>
+</h5>
+<p id="p-45">When <span class="pretex-inline" style="width:2.66699em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(9.337)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(21.037)"><tspan y="0" x="0 6.3812122" class="c">3,</tspan></text>
+</svg></span></span> we can think of <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+</svg></span></span> as the <em>space</em> we (appear to) live in.  We can do so because every point in space can be represented by an ordered triple of real numebrs, namely, its <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span>-,</span> <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="d">y</tspan></text>
+</svg></span></span>-,</span> and <span class="pretex-bind"><span class="pretex-inline" style="width:0.49em"><span style="height:0.501em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">z</tspan></text>
+</svg></span></span>-coordinates.</span> </p>
+<div class="pretex-display"><svg height="14.89931em" version="1.1" class="pretex" viewbox="0 0 307 171"><g transform="matrix(1,0,0,-1,153.169,85.438)"><g><g><g><g><path style="stroke:#808080" d="m -17.00912,42.51846 -136.0626,-85.03692 M 4.25098,42.51846 -131.8116,-42.51846 M 25.5111,42.51846 -110.5515,-42.51846 M 46.7712,42.51846 -89.2914,-42.51846 M 68.0313,42.51846 -68.0313,-42.51846 M 89.2914,42.51846 -46.7712,-42.51846 M 110.5515,42.51846 -25.5111,-42.51846 M 131.8116,42.51846 -4.25098,-42.51846 M 153.06424,42.51846 17.00165,-42.51846 M -17.00912,42.51846 H 153.07172 M -34.01695,31.88885 H 136.06389 M -51.02478,21.25923 H 119.05606 M -68.03261,10.62961 H 102.04825 M -85.04042,0 H 85.04042 M -102.04825,-10.62961 H 68.03261 M -119.05606,-21.25923 H 51.02478 M -136.06389,-31.88885 H 34.01695 m -187.0827,-10.62589 H 17.01509" class="d"></path></g></g><g><path d="M 68.03261,42.52019 -67.35522,-42.09682" class="b"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,-67.69391,-42.30852)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><path d="M -85.04042,0 H 84.24341" class="b"></path><g transform="translate(84.64192)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><path d="M 0,0 V 84.24341" class="b"></path><g transform="matrix(0,1,-1,0,0,84.64192)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.55046,3.11095 C -2.0845,1.24435 -1.04614,0.36295 0,0 -1.04614,-0.36295 -2.0845,-1.24435 -2.55046,-3.11095" class="b"></path></g></g></g><g><path d="M 0,-85.04042 V -42.5202" class="b"></path></g><g><path style="stroke:#808080" d="M 0,-42.5202 V 0" class="b"></path></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M -38.26825,53.15025 V -10.63004" class="c"></path></g><g><g><path style="fill:#377eb8;stroke:none" d="m -36.14226,53.15025 c 0,1.17418 -0.95183,2.12601 -2.12599,2.12601 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.12601 0,-1.17416 0.95181,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g transform="translate(-61.337 61.67)"><g><g transform="translate(-91.832 -768.232)"><text transform="matrix(1,0,0,-1,91.832,768.232)"><tspan y="0" x="0" style="fill:#377eb8" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,96.342,768.232)"><tspan y="0" x="0 6.3812122" style="fill:#377eb8" class="c">1,</tspan></text>
+<text transform="matrix(1,0,0,-1,107.515,768.232)"><tspan y="0" x="0" style="fill:#377eb8" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,115.905,768.232)"><tspan y="0" x="0 6.3812122 11.167121" style="fill:#377eb8" class="c">1,3</tspan></text>
+<text transform="matrix(1,0,0,-1,133.459,768.232)"><tspan y="0" x="0" style="fill:#377eb8" class="e">)</tspan></text>
+</g></g></g></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 76.53651,63.7803 V 21.26009" class="c"></path></g><g><g><path style="fill:#377eb8;stroke:none" d="m 78.6625,63.7803 c 0,1.17417 -0.95182,2.126 -2.12599,2.126 -1.17417,0 -2.12601,-0.95183 -2.12601,-2.126 0,-1.17416 0.95184,-2.12599 2.12601,-2.12599 1.17417,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g transform="translate(53.469 72.301)"><g><g transform="translate(-206.638 -778.863)"><text transform="matrix(1,0,0,-1,206.638,778.863)"><tspan y="0" x="0" style="fill:#377eb8" class="e">(</tspan></text>
+<text transform="matrix(1,0,0,-1,211.149,778.863)"><tspan y="0" x="0" style="fill:#377eb8" class="f">−</tspan></text>
+<text transform="matrix(1,0,0,-1,219.539,778.863)"><tspan y="0" x="0 6.3812122 11.167121 17.548332 22.345718" style="fill:#377eb8" class="c">2,2,2</tspan></text>
+<text transform="matrix(1,0,0,-1,248.266,778.863)"><tspan y="0" x="0" style="fill:#377eb8" class="e">)</tspan></text>
+</g></g></g></g></g></g></g></svg></div></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-1-hidden.html?vers=dd743d" knowl-id="hidden-example-1" alt="Example 1.1.8 Interactive: Points in 3-Space" title="Example 1.1.8 Interactive: Points in 3-Space"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Points in 3-Space</span></h5></article></a></div>
+<p id="p-46">So what is <span class="pretex-inline" style="width:1.57107em"><span style="height:0.862em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">4</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">?</tspan></text>
+</svg></span></span>  or <span class="pretex-inline" style="width:1.57107em"><span style="height:0.862em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">5</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">?</tspan></text>
+</svg></span></span>  or <span class="pretex-inline" style="width:1.58773em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">?</tspan></text>
+</svg></span></span> These are harder to visualize, so you have to go back to the definition: <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+</svg></span></span> is the set of all ordered <span class="pretex-bind"><span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span>-tuples</span> of real numbers <span class="pretex-inline" style="width:8.06742em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(11.42 2.594)"><tspan y="0" x="0" class="h">1</tspan></text>
+<text transform="translate(16.172)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(21.824)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(27.873 2.594)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(32.625)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(38.277)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(44.326 2.594)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(49.078)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(73.897)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(80.137 2.594)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(84.889)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(89.399)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<p id="p-47">They are still “geometric” spaces, in the sense that our intuition for <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+</svg></span></span> often extends to <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<p id="p-48">We will make definitions and state theorems that apply to any <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> but we will only draw pictures for <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<p id="p-49">The power of using these spaces is the ability to <em>label</em> various objects of interest, such as geometric objects and solutions of systems of equations, by the points of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-2-hidden.html?vers=dd743d" knowl-id="hidden-example-2" alt="Example 1.1.10 Color Space" title="Example 1.1.10 Color Space"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Color Space)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/systems-eqns-R4-hidden.html?vers=dd743d" knowl-id="hidden-systems-eqns-R4" alt="Example 1.1.11 Traffic Flow" title="Example 1.1.11 Traffic Flow"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(Traffic Flow)</span>
+</h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-4-hidden.html?vers=dd743d" knowl-id="hidden-example-4" alt="Example 1.1.12 QR Codes" title="Example 1.1.12 QR Codes"><article class="example-like"><h5 class="heading">
+<span class="type">Example</span><span class="title">(QR Codes)</span>
+</h5></article></a></div>
+<p id="p-53">In the above examples, it was useful from a psychological perspective to replace a list of four numbers (representing traffic flow) or of 841 numbers (representing a QR code) by a single piece of data: a point in some <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  This is a powerful concept;   starting in <a href="spans.html" alt="Section 2.2 Vector Equations and Spans" title="Section 2.2 Vector Equations and Spans">Section 2.2</a>, we will almost exclusively record solutions of systems of linear equations in this way.</p></section><section class="subsection" id="systems-eqns-pictures"><header title="Subsection 1.1.2 Pictures of Solution Sets"><h1 class="heading hide-type" alt="Subsection 1.1.2 Pictures of Solution Sets">
+<span class="type">Subsection</span><span class="codenumber">1.1.2</span><span class="title">Pictures of Solution Sets</span><a href="systems-of-eqns.html#systems-eqns-pictures" class="permalink">¶ permalink</a>
+</h1></header><p id="p-54">Before discussing how to solve a system of linear equations below, it is helpful to see some pictures of what these solution sets look like geometrically.</p>
+<article class="example-like" id="systems-eqns-picture-line"><h5 class="heading"><span class="title">One Equation in Two Variables</span></h5>
+<p id="p-55">Consider the linear equation <span class="pretex-inline" style="width:4.51698em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.569)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(42.27)"><tspan y="0" x="0 6.3812122" class="c">1.</tspan></text>
+</svg></span></span>  We can rewrite this as <span class="pretex-inline" style="width:4.51698em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(10.519)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(22.219)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(30.735)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(42.121)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(48.651)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> which defines a line in the plane: the slope is <span class="pretex-inline" style="width:1.565em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(8.39)"><tspan y="0" x="0 6.3812122" class="c">1,</tspan></text>
+</svg></span></span> and the <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+</svg></span></span>-intercept</span> is <span class="pretex-inline" style="width:0.834em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122" class="c">1.</tspan></text>
+</svg></span></span> </p>
+<div class="pretex-display"><svg height="10.02em" version="1.1" class="pretex" viewbox="0 0 115 115"><g transform="matrix(1,0,0,-1,56.892,57.091)"><g><g><g><path style="stroke:#b3b3b3" d="M -56.69362,-56.69362 H 56.69362 M -56.69362,-28.3468 H 56.69362 M -56.69362,0 H 56.69362 M -56.69362,28.3468 H 56.69362 M -56.69362,56.68365 H 56.69362 M -56.69362,-56.69362 V 56.69362 M -28.3468,-56.69362 V 56.69362 M 0,-56.69362 V 56.69362 M 28.3468,-56.69362 V 56.69362 M 56.68365,-56.69362 V 56.69362" class="d"></path></g><path d="M -56.69362,0 H 56.2951" class="c"></path><g transform="translate(56.49435)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-56.69362 V 56.2951" class="c"></path><g transform="matrix(0,1,-1,0,0,56.49435)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><path style="stroke:#984ea3" d="M -25.44041,53.78716 53.78702,-25.44035" class="b"></path><g transform="matrix(-0.70709,0.7071,-0.7071,-0.70709,-23.69737,52.04408)"><g><path style="fill:#984ea3;stroke:#984ea3" d="M 5.44046,0 1.28699,1.5706 2.66432,0 1.28699,-1.5706 Z" class="b"></path></g></g><g transform="matrix(0.70714,-0.7071,0.7071,0.70714,52.04387,-23.69728)"><g><path style="fill:#984ea3;stroke:#984ea3" d="M 5.44046,0 1.28699,1.5706 2.66432,0 1.28699,-1.5706 Z" class="b"></path></g></g></g></g></g></g></svg></div></article><article class="definition-like" id="defn-lines"><h5 class="heading">
+<span class="type">Definition</span><span class="title">(Lines)</span>
+</h5>
+<p id="p-56">For our purposes, a <em class="terminology">line</em> is a ray that is <em>straight</em> and <em>infinite</em> in both directions.</p></article><article class="example-like" id="systems-eqns-picture-plane"><h5 class="heading"><span class="title">One Equation in Three Variables</span></h5>
+<p id="p-57">Consider the linear equation <span class="pretex-inline" style="width:6.10997em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(48.852)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(60.553)"><tspan y="0" x="0 6.3812122" class="c">1.</tspan></text>
+</svg></span></span>  This is the <em class="terminology">implicit equation</em> for a plane in space. </p>
+<div class="pretex-display"><svg height="20.91131em" version="1.1" class="pretex" viewbox="0 0 173 240"><g transform="matrix(1,0,0,-1,85.131,127.65)"><g><g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 0,0 -17.00813,-10.63004" class="c"></path></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 0,0 H 21.2601" class="c"></path></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 0,0 V 21.2601" class="c"></path></g><g><g><path style="fill:#cca7d1;fill-opacity:0.7;stroke:none" d="M 10.63069,-111.61444 -85.03975,-15.94398 -8.50456,127.55975 87.1659,31.88928 Z" class="e"></path></g><g><path style="stroke:#cca7d1" d="M 6.4e-4,-100.98439 76.53584,42.51933 M -21.25945,-79.72429 55.27574,63.77943 M -42.51955,-58.46419 34.01564,85.03954 M -63.77965,-37.20409 12.75554,106.29964 M -85.03229,-15.95145 -8.49709,127.55228 M 19.1346,-95.66959 -76.53584,8.5e-4 M 36.14243,-63.77986 -59.52802,31.89058 M 53.15024,-31.89014 -42.5202,63.7803 M 70.15807,-4.1e-4 -25.51237,95.67003 M 87.15991,31.87808 -8.51053,127.54854" class="d"></path></g></g><path d="M -17.00813,-10.63004 -50.68576,-31.67845" class="c"></path><g transform="matrix(-0.8499,-0.53119,0.53119,-0.8499,-50.85509,-31.78427)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><g transform="translate(-62.44 -41.481)"><g><g transform="translate(-22.691 -622.869)"><text transform="matrix(1,0,0,-1,23.552,622.869)"><tspan y="0" x="0" class="d">x</tspan></text>
+</g></g></g></g><path d="M 21.2601,0 H 63.3818" class="c"></path><g transform="translate(63.58105)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><g transform="translate(67.804 -1.535)"><g><g transform="translate(-152.935 -662.815)"><text transform="matrix(1,0,0,-1,154.369,662.815)"><tspan y="0" x="0" class="d">y</tspan></text>
+</g></g></g></g><path d="M 0,21.2601 V 63.3818" class="c"></path><g transform="matrix(0,1,-1,0,0,63.58105)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><g transform="translate(-2.812 67.936)"><g><g transform="translate(-82.319 -732.286)"><text transform="matrix(1,0,0,-1,82.319,732.286)"><tspan y="0" x="0" class="d">z</tspan></text>
+</g></g></g></g></g></g></g></svg></div></article><article class="definition-like" id="definition-6"><h5 class="heading">
+<span class="type">Definition</span><span class="title">(Planes)</span>
+</h5>
+<p id="p-58">A <em class="terminology">plane</em> is a flat sheet that is infinite in all directions.</p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-3" id="remark-3"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
+<div id="hk-remark-3" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-59">The equation <span class="pretex-inline" style="width:7.67297em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(48.318)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(59.129)"><tspan y="0" x="0" class="d">w</tspan></text>
+<text transform="translate(69.981)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(81.682)"><tspan y="0" x="0" class="c">1</tspan></text>
+</svg></span></span> defines a <span class="pretex-bind">“<span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">3</tspan></text>
+</svg></span></span>-plane”</span> in <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.7105em;vertical-align:-0.037em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">4</tspan></text>
+</svg></span></span>-space,</span> and more generally, a single linear equation in <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> variables defines an <span class="pretex-bind">“<span class="pretex-inline" style="width:3.02599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.797)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(13.313)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(23.838)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(30.219)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span>-plane”</span> in <span class="pretex-bind"><span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span>-space.</span>  We will make these statements precise in <a href="dimension.html" alt="Section 2.7 Basis and Dimension" title="Section 2.7 Basis and Dimension">Section 2.7</a>.</p></article></div>
+<article class="example-like" id="systems-eqns-picture-2lines"><h5 class="heading"><span class="title">Two Equations in Two Variables</span></h5>
+<p id="p-60">Now consider the system of two linear equations</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="210 0 86 28"><text transform="translate(209.12 1.685)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(225.538 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(235.199 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(246.72 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan></text>
+<text transform="translate(254.536 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(264.616 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(277.313 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(285.703 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan><tspan y="14.944" x="-67.406998" style="fill:#4daf4a" class="c">2</tspan></text>
+<text transform="translate(225.538 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(235.199 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">+</tspan></text>
+<text transform="translate(254.536 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">y</tspan></text>
+<text transform="translate(264.616 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(285.703 24.398)"><tspan y="0" x="0 6.3812122" style="fill:#4daf4a" class="c">8.</tspan></text>
+</svg></div>
+<p>Each equation individually defines a line in the plane, pictured below. </p>
+<div class="pretex-display"><svg height="19.86575em" version="1.1" class="pretex" viewbox="0 0 228 228"><defs><clippath id="clipPath44372" clippathunits="userSpaceOnUse"><path id="path44370" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z"></path></clippath></defs><g transform="matrix(1,0,0,-1,113.484,113.484)"><g><g><g><path style="stroke:#b3b3b3" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z" class="d"></path></g><g clip-path="url(#clipPath44372)"><path d="M -113.3855,0 H 112.987" class="c"></path><g transform="translate(113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-113.3855 V 112.987" class="c"></path><g transform="matrix(0,1,-1,0,0,113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><path style="stroke:#984ea3" d="m -113.3855,-32.12582 226.771,75.59019" class="b"></path></g><g><path style="stroke:#4daf4a" d="M -113.3855,272.12521 113.3855,-181.4168" class="b"></path></g><g><g><path style="fill:#000;stroke:none" d="m 19.1338,11.33855 c 0,1.17416 -0.95181,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17418,0 2.12599,0.95183 2.12599,2.12601 z" class="e"></path></g></g></g></g></g></g></svg></div><p> A solution to the <em>system</em> of both equations is a pair of numbers <span class="pretex-inline" style="width:2.53149em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(24.544)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> that makes both equations true at once.  In other words, it as a point that lies on both lines simultaneously.  We can see in the picture above that there is only one point where the lines intersect: therefore, this system has exactly one solution.  (This solution is <span class="pretex-inline" style="width:2.59349em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598" class="c">3,2</tspan></text>
+<text transform="translate(22.065)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(26.575)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> as the reader can verify.)</p>
+<p id="p-61">Usually, two lines in the plane will intersect in one point, but of course this is not always the case.  Consider now the system of equations</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="213 0 79 28"><text transform="translate(212.31 1.685)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(222.347 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(232.008 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(243.529 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan></text>
+<text transform="translate(251.345 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(261.425 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(274.122 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(282.512 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan></text>
+<text transform="translate(222.347 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(232.008 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(243.529 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">3</tspan></text>
+<text transform="translate(251.345 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">y</tspan></text>
+<text transform="translate(261.425 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(282.512 24.398)"><tspan y="0" x="0 6.3812122" style="fill:#4daf4a" class="c">3.</tspan></text>
+</svg></div>
+<p>These define <em>parallel</em> lines in the plane. </p>
+<div class="pretex-display"><svg height="19.86575em" version="1.1" class="pretex" viewbox="0 0 228 228"><defs><clippath id="clipPath44558" clippathunits="userSpaceOnUse"><path id="path44556" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z"></path></clippath></defs><g transform="matrix(1,0,0,-1,113.484,113.484)"><g><g><g><path style="stroke:#b3b3b3" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z" class="d"></path></g><g clip-path="url(#clipPath44558)"><path d="M -113.3855,0 H 112.987" class="c"></path><g transform="translate(113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-113.3855 V 112.987" class="c"></path><g transform="matrix(0,1,-1,0,0,113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><path style="stroke:#984ea3" d="m -113.3855,-32.12582 226.771,75.59019" class="b"></path></g><g><path style="stroke:#4daf4a" d="m -113.3855,-43.46437 226.771,75.59019" class="b"></path></g></g></g></g></g></svg></div><p> The fact that that the lines do not intersect means that the system of equations has no solution.  Of course, this is easy to see algebraically: if <span class="pretex-inline" style="width:5.80398em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(20.05)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(27.866)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(36.95)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(48.651)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(57.041)"><tspan y="0" x="0 6.3812122" class="c">3,</tspan></text>
+</svg></span></span> then it is cannot also be the case that <span class="pretex-inline" style="width:5.07298em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(20.05)"><tspan y="0" x="0" class="c">3</tspan></text>
+<text transform="translate(27.866)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(36.95)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(48.651)"><tspan y="0" x="0 6.3812122" class="c">3.</tspan></text>
+</svg></span></span></p>
+<p id="p-62">There is one more possibility.  Consider the system of equations</p>
+<div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="210 0 86 28"><text transform="translate(209.12 1.685)"><tspan y="0" x="0" class="g">C</tspan></text>
+<text transform="translate(225.538 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(235.199 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(246.72 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan></text>
+<text transform="translate(254.536 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(264.616 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(277.313 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="f">−</tspan></text>
+<text transform="translate(285.703 9.454)"><tspan y="0" x="0" style="fill:#984ea3" class="c">3</tspan><tspan y="14.944" x="-67.406998" style="fill:#4daf4a" class="c">2</tspan></text>
+<text transform="translate(225.538 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(235.199 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(246.72 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">6</tspan></text>
+<text transform="translate(254.536 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">y</tspan></text>
+<text transform="translate(264.616 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(277.313 24.398)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(285.703 24.398)"><tspan y="0" x="0 6.3812122" style="fill:#4daf4a" class="c">6.</tspan></text>
+</svg></div>
+<p>The second equation is a multiple of the first, so these equations define the <em>same</em> line in the plane. </p>
+<div class="pretex-display"><svg height="19.86575em" version="1.1" class="pretex" viewbox="0 0 228 228"><defs><clippath id="clipPath44754" clippathunits="userSpaceOnUse"><path id="path44752" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z"></path></clippath></defs><g transform="matrix(1,0,0,-1,113.484,113.484)"><g><g><g><path style="stroke:#b3b3b3" d="m -113.3855,-113.3855 v 226.771 h 226.771 v -226.771 z" class="d"></path></g><g clip-path="url(#clipPath44754)"><path d="M -113.3855,0 H 112.987" class="c"></path><g transform="translate(113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-113.3855 V 112.987" class="c"></path><g transform="matrix(0,1,-1,0,0,113.18625)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><g><path style="stroke:#4daf4a" d="m -113.3855,-32.12582 226.771,75.59019" class="f"></path><g><path style="stroke:#cca7d1" d="m -113.3855,-32.12582 226.771,75.59019" class="g"></path></g></g></g></g></g></g></g></svg></div><p> In this case, there are infinitely many solutions of the system of equations.</p></article><article class="example-like" id="systems-eqns-two-planes"><h5 class="heading"><span class="title">Two Equations in Three Variables</span></h5>
+<p id="p-63">Consider the system of two linear equations</p>
+<div class="pretex-display"><svg height="2.17826em" version="1.1" class="pretex" viewbox="210 0 85 25"><text transform="translate(209.799 2.047)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(219.354 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(229.015 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(241.97 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(251.517 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(263.038 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">z</tspan></text>
+<text transform="translate(272.326 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(285.023 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="c">1</tspan></text>
+<text transform="translate(219.354 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(251.517 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(263.038 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">z</tspan></text>
+<text transform="translate(272.326 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(285.023 23.819)"><tspan y="0" x="0 6.3812122" style="fill:#4daf4a" class="c">0.</tspan></text>
+</svg></div>
+<p>Each equation individually defines a plane in space.  The solutions of the system of both equations are the points that lie on both planes.  We can see in the picture below that the planes intersect in a line.  In particular, this system has infinitely many solutions.</p>
+<figure class="figure-like" id="figure-5"><div id="mathbox-4" class="mathbox" style="height:400px;">
+<iframe src="demos/planes.html?vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">21</span>The planes defined by the equations <span class="pretex-inline" style="width:5.83198em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" style="fill:#984ea3" class="d">z</tspan></text>
+<text transform="translate(48.852)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(60.553)"><tspan y="0" x="0" style="fill:#984ea3" class="c">1</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.04498em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(20.05)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">z</tspan></text>
+<text transform="translate(28.342)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(40.043)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">0</tspan></text>
+</svg></span></span> intersect in the red line, which is the solution set of the system of both equations.</figcaption></figure></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-4" id="remark-4"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
+<div id="hk-remark-4" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-64">In general, the solutions of a system of equations in <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span> variables is the intersection of <span class="pretex-bind">“<span class="pretex-inline" style="width:3.02599em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.797)"><tspan y="0" x="0" class="d">n</tspan></text>
+<text transform="translate(13.313)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(23.838)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(30.219)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span>-planes”</span> in <span class="pretex-bind"><span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">n</tspan></text>
+</svg></span></span>-space.</span>  This is always some kind of linear space, as we will discuss in <a href="solution-sets.html" alt="Section 2.4 Solution Sets" title="Section 2.4 Solution Sets">Section 2.4</a>.</p></article></div></section><section class="subsection" id="subsection-3"><header title="Subsection 1.1.3 Parametric Description of Solution Sets"><h1 class="heading hide-type" alt="Subsection 1.1.3 Parametric Description of Solution Sets">
+<span class="type">Subsection</span><span class="codenumber">1.1.3</span><span class="title">Parametric Description of Solution Sets</span>
+</h1></header><p id="p-65">According to this <a knowl="./knowl/systems-eqns-soln-sets.html?vers=dd743d" knowl-id="xref-systems-eqns-soln-sets" alt="Definition 1.1.2 Solution sets" title="Definition 1.1.2 Solution sets">definition</a>, solving a system of equations means writing down all solutions in terms of some number of parameters.  We will give a systematic way of doing so in <a href="parametric-form.html" alt="Section 1.3 Parametric Form" title="Section 1.3 Parametric Form">Section 1.3</a>; for now we give parametric descriptions in the examples of the previous <a href="systems-of-eqns.html#systems-eqns-pictures" alt="Subsection 1.1.2 Pictures of Solution Sets" title="Subsection 1.1.2 Pictures of Solution Sets">subsection</a>.</p>
+<article class="example-like" id="specialcase-13"><h5 class="heading"><span class="title">Lines</span></h5>
+<p id="p-66">Consider the linear equation <span class="pretex-inline" style="width:4.23898em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.569)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(42.27)"><tspan y="0" x="0" class="c">1</tspan></text>
+</svg></span></span> of this <a knowl="./knowl/systems-eqns-picture-line.html?vers=dd743d" knowl-id="xref-systems-eqns-picture-line" alt="Example 1.1.14 One Equation in Two Variables" title="Example 1.1.14 One Equation in Two Variables">example</a>.  In this context, we call <span class="pretex-inline" style="width:4.23898em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.569)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(42.27)"><tspan y="0" x="0" class="c">1</tspan></text>
+</svg></span></span> an <em class="terminology">implicit equation</em> of the line.  We can write the same line in <em class="terminology">parametric form</em> as follows:</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="160 4 184 13"><text transform="translate(160.548 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(165.92 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(172.45 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(178.676 13.948)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(185.092 13.948)"><tspan y="0" x="0 7.1788635 18.884256" class="e">)=(</tspan></text>
+<text transform="translate(209.171 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(213.888 13.948)"><tspan y="0" x="0 6.3926892" class="c">,1</tspan></text>
+<text transform="translate(228.796 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(240.009 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(244.726 13.948)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(263.916 13.948)"><tspan y="0" x="0 3.6841171 9.8702202 17.456516 23.275356 29.794292" class="c">forany</tspan></text>
+<text transform="translate(314.759 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(322.145 13.948)"><tspan y="0" x="0" class="f">∈</tspan></text>
+<text transform="translate(332.56 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(340.261 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>This means that every point on the line has the form <span class="pretex-inline" style="width:3.94398em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(5.199)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(9.916)"><tspan y="0" x="0 6.3926892" class="c">,1</tspan></text>
+<text transform="translate(24.825)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(36.038)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(40.755)"><tspan y="0" x="0" class="e">)</tspan></text>
+</svg></span></span> for some real number <span class="pretex-inline" style="width:0.749em"><span style="height:0.593em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(5.406)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  In this case, we call <span class="pretex-inline" style="width:0.471em"><span style="height:0.5865em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+</svg></span></span> a <em class="terminology">parameter</em>, as it <em>parameterizes</em> the points on the line. </p>
+<div class="pretex-display"><svg height="14.89931em" version="1.1" class="pretex" viewbox="0 0 171 171"><g transform="matrix(1,0,0,-1,85.239,85.438)"><g><g><g><path style="stroke:#b3b3b3" d="M -85.04042,-85.04042 H 85.04042 m -170.08084,28.3468 H 85.04042 M -85.04042,-28.3468 H 85.04042 M -85.04042,0 H 85.04042 M -85.04042,28.3468 H 85.04042 M -85.04042,56.69362 H 85.04042 M -85.04042,85.03047 H 85.04042 M -85.04042,-85.04042 V 85.04042 m 28.3468,-170.08084 V 85.04042 M -28.3468,-85.04042 V 85.04042 M 0,-85.04042 V 85.04042 M 28.3468,-85.04042 V 85.04042 M 56.69362,-85.04042 V 85.04042 M 85.03047,-85.04042 V 85.04042" class="d"></path></g><path d="M -85.04042,0 H 84.64192" class="c"></path><g transform="translate(84.84117)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><path d="M 0,-85.04042 V 84.64192" class="c"></path><g transform="matrix(0,1,-1,0,0,84.84117)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="c"></path></g></g><g><path style="stroke:#984ea3" d="M -53.7871,82.13397 82.13397,-53.78716" class="b"></path><g transform="matrix(-0.70712,0.7071,-0.7071,-0.70712,-52.04398,80.3909)"><g><path style="fill:#984ea3;stroke:#984ea3" d="M 5.44046,0 1.28699,1.5706 2.66432,0 1.28699,-1.5706 Z" class="b"></path></g></g><g transform="matrix(0.7071,-0.7071,0.7071,0.7071,80.3909,-52.04408)"><g><path style="fill:#984ea3;stroke:#984ea3" d="M 5.44046,0 1.28699,1.5706 2.66432,0 1.28699,-1.5706 Z" class="b"></path></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g transform="translate(2.64 31.066)"><g><g transform="translate(-87.879 -737.628)"><text transform="matrix(1,0,0,-1,88.508,737.628)"><tspan y="0" x="0" class="j">t</tspan></text>
+<text transform="matrix(1,0,0,-1,95.247,737.628)"><tspan y="0" x="0" class="k">=</tspan></text>
+<text transform="matrix(1,0,0,-1,105.924,737.628)"><tspan y="0" x="0" class="l">0</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,0 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="e"></path></g></g><g><g transform="translate(30.987 2.719)"><g><g transform="translate(-116.226 -709.281)"><text transform="matrix(1,0,0,-1,116.854,709.281)"><tspan y="0" x="0" class="j">t</tspan></text>
+<text transform="matrix(1,0,0,-1,123.593,709.281)"><tspan y="0" x="0" class="k">=</tspan></text>
+<text transform="matrix(1,0,0,-1,134.27,709.281)"><tspan y="0" x="0" class="l">1</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,56.69362 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17417,0 -2.126,-0.95183 -2.126,-2.12599 0,-1.17418 0.95183,-2.12601 2.126,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="e"></path></g></g><g><g transform="translate(-62.51 46.863)"><g><g transform="translate(-22.729 -753.425)"><text transform="matrix(1,0,0,-1,23.357,753.425)"><tspan y="0" x="0" class="j">t</tspan></text>
+<text transform="matrix(1,0,0,-1,30.096,753.425)"><tspan y="0" x="0" class="k">=</tspan></text>
+<text transform="matrix(1,0,0,-1,40.773,753.425)"><tspan y="0" x="0" class="m">−</tspan></text>
+<text transform="matrix(1,0,0,-1,48.429,753.425)"><tspan y="0" x="0" class="l">1</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p id="p-67">Now consider the system of two linear equations</p>
+<div class="pretex-display"><svg height="2.17826em" version="1.1" class="pretex" viewbox="210 0 82 25"><text transform="translate(209.799 2.047)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(219.354 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(229.015 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(241.97 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(251.517 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(263.038 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="d">z</tspan></text>
+<text transform="translate(272.326 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(285.023 8.875)"><tspan y="0" x="0" style="fill:#984ea3" class="c">1</tspan></text>
+<text transform="translate(219.354 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(251.517 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(263.038 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">z</tspan></text>
+<text transform="translate(272.326 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(285.023 23.819)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">0</tspan></text>
+</svg></div>
+<p>of this <a knowl="./knowl/systems-eqns-two-planes.html?vers=dd743d" knowl-id="xref-systems-eqns-two-planes" alt="Example 1.1.20 Two Equations in Three Variables" title="Example 1.1.20 Two Equations in Three Variables">example</a>.  These collectively form the <em class="terminology">implicit equations</em> for a line in <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  (At least two equations are needed to define a line in space.)  This line also has a <em class="terminology">parametric form</em> with one <em class="terminology">parameter</em> <span class="pretex-inline" style="width:0.79em"><span style="height:0.593em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(5.406)"><tspan y="0" x="0" class="c">:</tspan></text>
+</svg></span></span></p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="190 4 124 13"><text transform="translate(190.506 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(195.878 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(202.408 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(210.235 13.948)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(215.962 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(222.355 13.948)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(227.979 13.948)"><tspan y="0" x="0 7.1788635 18.884256" class="e">)=(</tspan></text>
+<text transform="translate(252.057 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(256.774 13.948)"><tspan y="0" x="0 6.3926892" class="c">,1</tspan></text>
+<text transform="translate(271.683 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(282.207 13.948)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(289.277 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(293.994 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(301.076 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(305.793 13.948)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(310.303 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<figure class="figure-like" id="figure-6"><div id="mathbox-5" class="mathbox" style="height:400px;">
+<iframe src="demos/parametric2.html?vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">24</span>The planes defined by the equations <span class="pretex-inline" style="width:5.83198em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" style="fill:#984ea3" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" style="fill:#984ea3" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" style="fill:#984ea3" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" style="fill:#984ea3" class="d">z</tspan></text>
+<text transform="translate(48.852)"><tspan y="0" x="0" style="fill:#984ea3" class="e">=</tspan></text>
+<text transform="translate(60.553)"><tspan y="0" x="0" style="fill:#984ea3" class="c">1</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:4.04498em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">−</tspan></text>
+<text transform="translate(20.05)"><tspan y="0" x="0" style="fill:#4daf4a" class="d">z</tspan></text>
+<text transform="translate(28.342)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">=</tspan></text>
+<text transform="translate(40.043)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">0</tspan></text>
+</svg></span></span> intersect in the yellow line, which is parameterized by <span class="pretex-inline" style="width:10.15796em"><span style="height:0.9845em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(5.371)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(11.902)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(18.128)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(23.855)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(28.647)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(34.27)"><tspan y="0" x="0 7.1788635 18.884256" class="e">)=(</tspan></text>
+<text transform="translate(58.349)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(63.066)"><tspan y="0" x="0 4.7973862" class="c">,1</tspan></text>
+<text transform="translate(76.374)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(86.898)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(93.968)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(98.685)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(104.165)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(108.882)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(113.393)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Move the slider to change the parameterized point.</figcaption></figure><p id="p-68">Note that in each case, the parameter <span class="pretex-inline" style="width:0.471em"><span style="height:0.5865em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+</svg></span></span> allows us to use <span class="pretex-inline" style="width:0.671em"><span style="height:0.685em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+</svg></span></span> to <em>label</em> the points on the line.  However, neither line is the same as the number line <span class="pretex-inline" style="width:0.99em"><span style="height:0.691em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701)"><tspan y="0" x="0" class="c">:</tspan></text>
+</svg></span></span> indeed, every point on the first line has two coordinates, like the point <span class="pretex-inline" style="width:2.59349em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598" class="c">0,1</tspan></text>
+<text transform="translate(22.065)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(26.575)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> and every point on the second line has three coordinates, like <span class="pretex-inline" style="width:3.56699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811 22.345718" class="c">0,1,0</tspan></text>
+<text transform="translate(33.237)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(37.748)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article><article class="example-like" id="specialcase-14"><h5 class="heading"><span class="title">Planes</span></h5>
+<p id="p-69">Consider the linear equation <span class="pretex-inline" style="width:5.83198em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(48.852)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(60.553)"><tspan y="0" x="0" class="c">1</tspan></text>
+</svg></span></span> of this <a knowl="./knowl/systems-eqns-picture-plane.html?vers=dd743d" knowl-id="xref-systems-eqns-picture-plane" alt="Example 1.1.16 One Equation in Three Variables" title="Example 1.1.16 One Equation in Three Variables">example</a>.  This is an <em class="terminology">implicit equation</em> of a plane in space.  This plane has an equation in <em class="terminology">parametric form</em>: we can write every point on the plane as</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="129 4 246 13"><text transform="translate(129.779 13.948)"><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(135.15 13.948)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(141.68 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(149.508 13.948)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(155.235 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(161.627 13.948)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(167.251 13.948)"><tspan y="0" x="0 7.1788635 18.884256" class="e">)=(</tspan></text>
+<text transform="translate(190.641 13.948)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(199.157 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(210.37 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(217.222 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(228.033 13.948)"><tspan y="0" x="0" class="d">w</tspan></text>
+<text transform="translate(235.573 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(242.655 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(247.372 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(254.051 13.948)"><tspan y="0" x="0" class="d">w</tspan></text>
+<text transform="translate(262.234 13.948)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(281.424 13.948)"><tspan y="0" x="0 3.6841171 9.8702202 17.456516 23.275356 29.794292" class="c">forany</tspan></text>
+<text transform="translate(332.267 13.948)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(336.984 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(342.063 13.948)"><tspan y="0" x="0" class="d">w</tspan></text>
+<text transform="translate(352.914 13.948)"><tspan y="0" x="0" class="f">∈</tspan></text>
+<text transform="translate(363.33 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(371.031 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>In this case, we need two <em class="terminology">parameters</em> <span class="pretex-inline" style="width:0.471em"><span style="height:0.5865em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="d">w</tspan></text>
+</svg></span></span> to describe all points on the plane.</p>
+<figure class="figure-like" id="figure-7"><div id="mathbox-6" class="mathbox" style="height:400px;">
+<iframe src="demos/plane.html?coeffs=t,w&amp;range=5&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<div class="minimizer"></div>
+</div>
+<figcaption><span class="heading">Figure</span><span class="codenumber">26</span>The plane in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">3</tspan></text>
+</svg></span></span> defined by the equation <span class="pretex-inline" style="width:6.10997em"><span style="height:0.904em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="d">x</tspan></text>
+<text transform="translate(9.526)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(21.485)"><tspan y="0" x="0" class="d">y</tspan></text>
+<text transform="translate(30.035)"><tspan y="0" x="0" class="e">+</tspan></text>
+<text transform="translate(40.56)"><tspan y="0" x="0" class="d">z</tspan></text>
+<text transform="translate(48.852)"><tspan y="0" x="0" class="e">=</tspan></text>
+<text transform="translate(60.553)"><tspan y="0" x="0 6.3812122" class="c">1.</tspan></text>
+</svg></span></span>  This plane is parameterized by two numbers <span class="pretex-inline" style="width:1.94549em"><span style="height:0.749em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(5.406)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(10.484)"><tspan y="0" x="0" class="d">w</tspan></text>
+<text transform="translate(18.667)"><tspan y="0" x="0" class="c">;</tspan></text>
+</svg></span></span> move the sliders to change the parameterized point.</figcaption></figure><p id="p-70">Note that the parameters <span class="pretex-inline" style="width:1.62649em"><span style="height:0.748em;vertical-align:-0.169em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.689)"><tspan y="0" x="0" class="d">t</tspan></text>
+<text transform="translate(5.406)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(10.484)"><tspan y="0" x="0" class="d">w</tspan></text>
+</svg></span></span> allow us to use <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+</svg></span></span> to <em>label</em> the points on the plane.  However, this plane is <em>not</em> the same as the plane <span class="pretex-inline" style="width:1.40407em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="h">2</tspan></text>
+<text transform="translate(12.453)"><tspan y="0" x="0" class="c">:</tspan></text>
+</svg></span></span> indeed, every point on this plane has three coordinates, like the point <span class="pretex-inline" style="width:3.56699em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">(</tspan></text>
+<text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811 22.345718" class="c">0,0,1</tspan></text>
+<text transform="translate(33.237)"><tspan y="0" x="0" class="e">)</tspan></text>
+<text transform="translate(37.748)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p></article><p id="p-71">When there is a unique solution, as in this <a knowl="./knowl/systems-eqns-picture-2lines.html?vers=dd743d" knowl-id="xref-systems-eqns-picture-2lines" alt="Example 1.1.19 Two Equations in Two Variables" title="Example 1.1.19 Two Equations in Two Variables">example</a>, it is not necessary to use parameters to describe the solution set.</p></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20systems-of-eqns&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</div></main></div>
+<script src="js/ila.js?vers=6a8c73" class="C83HrSsP9jhMrNWvXpoRQ"></script>
+</body>
+</html>
