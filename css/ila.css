@@ -7165,15 +7165,20 @@ article.remark-like:after {
     .theme-toggle--masthead {
         display: block;
         position: absolute;
-        top: 2px;
+        bottom: 2px;
         right: 2px;
         height: 32px;
         width: 36px;
         border: none;
     }
-    /* five buttons across the bottom bar */
+    /* bottom bar: buttons share the width evenly however many there
+       are (robust against cached pages missing the M221 button) */
+    #gt-navbar .navbar-bottom-buttons {
+        display: flex;
+    }
     #gt-navbar .navbar-bottom-buttons .toolbar-item {
-        width: 20%;
+        flex: 1 1 0;
+        width: auto;
     }
     /* the editor credit gets its own line */
     #masthead .byline .edited-by {
