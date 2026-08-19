@@ -6,39 +6,39 @@ marked ™ involve someone else's branding and should not ship.
 
 ## 1. Title, attribution, license (do first)
 
-- [ ] ⚖ **Distinct title** — change the book title in `src/ila.xml`
+- [x] ⚖ **Distinct title** — change the book title in `src/ila.xml`
       (the GFDL requires a modified version to use a title distinct from
       the original, e.g. "Interactive Linear Algebra — <Course> Edition").
-- [ ] ⚖ **Title page authors** — in `src/frontmatter.xml` `<titlepage>`:
+- [x] ⚖ **Title page authors** — in `src/frontmatter.xml` `<titlepage>`:
       keep Margalit and Rabinoff as original authors, add the instructor
       as editor/adapter with department + institution.
-- [ ] ⚖ **Colophon** — keep the 2017 Georgia Tech copyright and GFDL
+- [x] ⚖ **Colophon** — keep the 2017 Georgia Tech copyright and GFDL
       notice; add a line noting this is a modified version, who made the
       modifications, and a link to the original book
       (https://textbooks.math.gatech.edu/ila/) and its source repo.
-- [ ] ⚖ **Document changes** — add a short "About this edition" preface
+- [x] ⚖ **Document changes** — add a short "About this edition" preface
       describing the nature of the modifications (git history covers the
       details; the preface satisfies the spirit of GFDL §4).
-- [ ] **Contributors section** — add instructor to "Contributors to this
+- [x] **Contributors section** — add instructor to "Contributors to this
       textbook" in `src/frontmatter.xml`; keep the original list intact.
-- [ ] **"Variants of this textbook" preface** — rewrite or remove: it
+- [x] **"Variants of this textbook" preface** — rewrite or remove: it
       describes Georgia Tech's master/1553 variants with absolute links
       (`/ila`, `/ila/1553`) that don't apply here (the 1553 link 404s on
       our Pages site).
 
 ## 2. De-brand Georgia Tech ™
 
-- [ ] **Logo** — `static/theme-gt/logo.gif` is GT's yellow-jacket mascot
+- [x] **Logo** — `static/theme-gt/logo.gif` is GT's yellow-jacket mascot
       (a registered trademark). Replace with course/institution art, or a
       neutral placeholder.
-- [ ] **Favicon/app icons** — `static/theme-gt/icon-{1x,2x,4x}.png` are
+- [x] **Favicon/app icons** — `static/theme-gt/icon-{1x,2x,4x}.png` are
       GT-branded; replace alongside the logo.
-- [ ] **Sponsor + online-home links** — `src/xsl/theme-gt.xsl` points the
+- [x] **Sponsor + online-home links** — `src/xsl/theme-gt.xsl` points the
       header/footer at `gatech.edu` and `textbooks.math.gatech.edu/ila`.
       Point at the course page and https://tghyde.github.io/ila/.
-- [ ] **manifest.json** — name/short_name say "Interactive Linear
+- [x] **manifest.json** — name/short_name say "Interactive Linear
       Algebra/ILA"; update for this edition.
-- [ ] **Decide: new theme vs. edit gt in place.** A proper new theme
+- [x] **Decide: new theme vs. edit gt in place.** A proper new theme
       (e.g. `--theme myschool`) needs four pieces, cloned from the gt
       ones: `mathbook-assets/scss/mathbook-<name>.scss` (+ its SConstruct
       output line), `static/css/ila-add-on-<name>.css`,
@@ -52,7 +52,7 @@ marked ™ involve someone else's branding and should not ship.
       `ila.pdf`, which we don't build. Either test `./docker.sh build
       --build-pdf` and publish the PDF, or suppress the link (the
       `pdf.online` param in `src/SConscript`).
-- [ ] **Remove `static/google9ccfcae89045309c.html`** — the original
+- [x] **Remove `static/google9ccfcae89045309c.html`** — the original
       author's Google Search Console verification file (also drop it from
       the copy list in `SConstruct`). Harmless but not ours.
 - [ ] **Check `static/images/qrcode.png`** — likely encodes the original

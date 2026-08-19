@@ -26,8 +26,8 @@ AddOption('--delete-cache',
 AddOption('--theme',
           dest='theme',
           type='string', nargs=1, action='store',
-          default='gt',
-          help='Choose the theme to use (gt or duke)')
+          default='vassar',
+          help='Choose the theme to use (vassar, gt, or duke)')
 
 AddOption('--variant',
           dest='variant',
@@ -126,7 +126,7 @@ for font in fonts:
     env.Command('$BUILD_DIR/css/fonts/' + os.path.basename(str(font)), font,
                 Copy('$TARGET', '$SOURCE'))
 
-for fname in ['manifest.json', 'google9ccfcae89045309c.html']:
+for fname in ['manifest.json']:
     env.Command('$BUILD_DIR/' + fname, 'static/' + fname,
                 Copy('$TARGET', '$SOURCE'))
 
