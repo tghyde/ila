@@ -258,5 +258,14 @@
         });
         var group = nav.find(".toolbar-buttons-right");
         if (group.length) { group.prepend(btn); } else { nav.append(btn); }
+        // Link back to the course webpage
+        var course = $("<a>", {
+            "class": "button toolbar-item course-link",
+            href: "https://tghyde.github.io/math221-fall2026/",
+            title: "Math 221 course webpage",
+            text: "Math 221"
+        });
+        var left = nav.find(".toolbar-buttons-left");
+        if (left.length) { left.append(course); } else { nav.append(course); }
     });
 })(jQuery);
