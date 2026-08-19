@@ -5,7 +5,7 @@
 <title>Matrix Equations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -109,14 +109,14 @@ svg.pretex path {
 .CFbdb8d3IhcwQAijh9qhW svg.pretex tspan.i { font-size:11.47700024px;font-family:fT4uHMGGkSNyqKEHxLZvo }
 .CFbdb8d3IhcwQAijh9qhW svg.pretex path.a { stroke-width:0.61000001px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive CFbdb8d3IhcwQAijh9qhW" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CFbdb8d3IhcwQAijh9qhW"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -124,7 +124,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -202,8 +202,8 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">2.3</span><span class="title">Matrix Equations</span><a href="matrix-equations.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-6"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-17" style="list-style-type: decimal;">
-<li id="li-97">Understand the equivalence between a system of linear equations, an augmented matrix, a vector equation, and a matrix equation.</li>
-<li id="li-98">Characterize the vectors <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<li id="li-95">Understand the equivalence between a system of linear equations, an augmented matrix, a vector equation, and a matrix equation.</li>
+<li id="li-96">Characterize the vectors <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> such that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
@@ -211,7 +211,7 @@ svg.pretex path {
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-99">Characterize matrices <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<li id="li-97">Characterize matrices <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> such that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
@@ -219,15 +219,15 @@ svg.pretex path {
 <text transform="translate(6.967)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-100">
+<li id="li-98">
 <em>Recipe:</em> multiply a vector by a matrix (two ways).</li>
-<li id="li-101">
+<li id="li-99">
 <em>Picture:</em> the set of all vectors <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> such that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> is consistent.</li>
-<li id="li-102">
+<li id="li-100">
 <em>Vocabulary word:</em> <em class="terminology">matrix equation</em>.</li>
 </ol></article><section class="subsection" id="subsection-14"><header title="Subsection 2.3.1 The Matrix Equation Ax=b\text{.}"><h1 class="heading hide-type" alt="Subsection 2.3.1 The Matrix Equation Ax=b\text{.}">
 <span class="type">Subsection</span><span class="codenumber">2.3.1</span><span class="title">The Matrix Equation <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
@@ -235,7 +235,7 @@ svg.pretex path {
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></span>
-</h1></header><p id="p-185">In this section we introduce a very concise way of writing a system of linear equations: <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</h1></header><p id="p-186">In this section we introduce a very concise way of writing a system of linear equations: <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
@@ -244,7 +244,7 @@ svg.pretex path {
 <text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(13.044)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> are vectors (generally of different sizes), so first we must explain how to multiply a matrix by a vector.</p>
-<article class="bluebox" id="bluebox-12"><p id="p-186">When we say <span class="pretex-bind">“<span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<article class="bluebox" id="bluebox-12"><p id="p-187">When we say <span class="pretex-bind">“<span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -252,7 +252,7 @@ svg.pretex path {
 </svg></span></span> has <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> rows and <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> columns.  </p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-8" id="remark-8"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
-<div id="hk-remark-8" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-187">In this book, we do <em>not</em> reserve the letters <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<div id="hk-remark-8" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-188">In this book, we do <em>not</em> reserve the letters <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> for the numbers of rows and columns of a matrix.  If we write <span class="pretex-bind">“<span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -263,7 +263,7 @@ svg.pretex path {
 </svg></span></span> and <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> is the number of columns.</p></article></div>
 <article class="definition-like" id="matrixeq-defn-Ax1"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-188">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-189">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -339,8 +339,8 @@ svg.pretex path {
 <p>This is a vector in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
 <text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-27-hidden.html?vers=dd743d" knowl-id="hidden-example-27" alt="Example 2.3.4 " title="Example 2.3.4 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
-<p id="p-190">In order for <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-27-hidden.html?vers=d2e450" knowl-id="hidden-example-27" alt="Example 2.3.4 " title="Example 2.3.4 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<p id="p-191">In order for <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 </svg></span></span> to make sense, the number of entries of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> has to be the same as the number of columns of <span class="pretex-inline" style="width:0.875em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">:</tspan></text>
@@ -350,7 +350,7 @@ svg.pretex path {
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> since each column of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> has that number of entries.</p>
-<article class="bluebox" id="bluebox-13"><p id="p-191">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<article class="bluebox" id="bluebox-13"><p id="p-192">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -362,7 +362,7 @@ svg.pretex path {
 </svg></span></span> entries.  The product <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 </svg></span></span> has <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> entries.</p></article><article class="theorem-like" id="matrix-linearity"><h5 class="heading"><span class="title">Properties of the Matrix-Vector Product</span></h5>
-<p id="p-192">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-193">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -374,8 +374,8 @@ svg.pretex path {
 <text transform="translate(12.645)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 </svg></span></span> be a scalar.  Then: </p>
-<ul id="ul-14" style="list-style-type: disc;">
-<li id="li-103"><span class="pretex-inline" style="width:8.09397em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<ul id="ul-13" style="list-style-type: disc;">
+<li id="li-101"><span class="pretex-inline" style="width:8.09397em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="b">(</tspan></text>
 <text transform="translate(10.892)"><tspan y="0" x="0" class="a">u</tspan></text>
 <text transform="translate(19.373)"><tspan y="0" x="0" class="b">+</tspan></text>
@@ -385,14 +385,14 @@ svg.pretex path {
 <text transform="translate(69.998)"><tspan y="0" x="0" class="b">+</tspan></text>
 <text transform="translate(80.523)"><tspan y="0" x="0 6.5877981" class="a">Av</tspan></text>
 </svg></span></span></li>
-<li id="li-104"><span class="pretex-inline" style="width:5.19398em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<li id="li-102"><span class="pretex-inline" style="width:5.19398em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="b">(</tspan></text>
 <text transform="translate(11.179)"><tspan y="0" x="0 5.095788" class="a">cu</tspan></text>
 <text transform="translate(22.621)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
 <text transform="translate(41.788)"><tspan y="0" x="0 5.095788 11.477" class="a">cAu</tspan></text>
 </svg></span></span></li>
 </ul></article><article class="definition-like" id="definition-18"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-193">A <em class="terminology">matrix equation</em> is an equation of the form <span class="pretex-inline" style="width:3.33699em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<p id="p-194">A <em class="terminology">matrix equation</em> is an equation of the form <span class="pretex-inline" style="width:3.33699em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(35.108)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -413,13 +413,13 @@ svg.pretex path {
 <text transform="translate(28.115)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
 <text transform="translate(52.933)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(59.173 2.594)"><tspan y="0" x="0" class="f">n</tspan></text>
-</svg></span></span> are unknown.</p></article><p id="p-194">In this book we will study two complementary questions about a matrix equation <span class="pretex-inline" style="width:3.37799em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> are unknown.</p></article><p id="p-195">In this book we will study two complementary questions about a matrix equation <span class="pretex-inline" style="width:3.37799em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(35.108)"><tspan y="0" x="0" class="c">:</tspan></text>
 </svg></span></span> </p>
 <ol id="ol-18" style="list-style-type: decimal;">
-<li id="li-105">Given a specific choice of <span class="pretex-inline" style="width:0.885em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<li id="li-103">Given a specific choice of <span class="pretex-inline" style="width:0.885em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(6.967)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> what are all of the solutions to <span class="pretex-inline" style="width:3.54499em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
@@ -427,7 +427,7 @@ svg.pretex path {
 <text transform="translate(35.108)"><tspan y="0" x="0" class="c">?</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-106">What are all of the choices of <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<li id="li-104">What are all of the choices of <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> so that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
@@ -441,9 +441,9 @@ svg.pretex path {
 <text transform="translate(45.553)"><tspan y="0" x="0" class="c">0</tspan></text>
 </svg></span></span> for <span class="pretex-inline" style="width:0.922em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span>  The second question is perhaps a new concept for you.  The <a knowl="./knowl/rank-theorem.html?vers=dd743d" knowl-id="xref-rank-theorem" alt="Rank Theorem 2.9.2 " title="Rank Theorem 2.9.2 ">rank theorem in Section 2.9</a>, which is the culmination of this chapter, tells us that the two questions are intimately related.</p>
+</svg></span></span>  The second question is perhaps a new concept for you.  The <a knowl="./knowl/rank-theorem.html?vers=d2e450" knowl-id="xref-rank-theorem" alt="Rank Theorem 2.9.2 " title="Rank Theorem 2.9.2 ">rank theorem in Section 2.9</a>, which is the culmination of this chapter, tells us that the two questions are intimately related.</p>
 <article class="remark-like" id="note-8"><h5 class="heading"><span class="title">Matrix Equations and Vector Equations</span></h5>
-<p id="p-195">Let <span class="pretex-inline" style="width:5.20085em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<p id="p-196">Let <span class="pretex-inline" style="width:5.20085em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="e">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
@@ -556,11 +556,11 @@ svg.pretex path {
 <text transform="translate(59.173 2.594)"><tspan y="0" x="0" class="f">n</tspan></text>
 </svg></span></span> are the entries of <span class="pretex-inline" style="width:0.922em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-28-hidden.html?vers=dd743d" knowl-id="hidden-example-28" alt="Example 2.3.9 " title="Example 2.3.9 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-28-hidden.html?vers=d2e450" knowl-id="hidden-example-28" alt="Example 2.3.9 " title="Example 2.3.9 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
 <article class="remark-like" id="note-9"><h5 class="heading"><span class="title">Four Ways of Writing a Linear System</span></h5>
-<p id="p-198">We now have <em>four</em> equivalent ways of writing (and thinking about) a system of linear equations:  </p>
+<p id="p-199">We now have <em>four</em> equivalent ways of writing (and thinking about) a system of linear equations:  </p>
 <ol id="ol-19" style="list-style-type: decimal;">
-<li id="li-107">As a system of equations:
+<li id="li-105">As a system of equations:
 <div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="193 0 116 28"><text transform="translate(192.927 1.685)"><tspan y="0" x="0" class="g">M</tspan></text>
 <text transform="translate(202.103 9.379)"><tspan y="0" x="0" class="c">2</tspan></text>
 <text transform="translate(209.345 9.379)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -588,7 +588,7 @@ svg.pretex path {
 <text transform="translate(301.896 24.323)"><tspan y="0" x="0" class="c">5</tspan></text>
 </svg></div>
 </li>
-<li id="li-108">As an augmented matrix:
+<li id="li-106">As an augmented matrix:
 <div class="pretex-display"><svg height="2.52678em" version="1.1" class="pretex" viewbox="208 0 89 29"><text transform="translate(207.13 2.394)"><tspan y="0" x="0" class="g">K</tspan></text>
 <text transform="translate(215.904 10.76)"><tspan y="0" x="0 24.732935" class="c">23</tspan></text>
 <text transform="translate(256.981 10.76)"><tspan y="0" x="0" class="d">−</tspan></text>
@@ -602,7 +602,7 @@ svg.pretex path {
 <text transform="translate(289.697 2.394)"><tspan y="0" x="0" class="g">L</tspan></text>
 </svg></div>
 </li>
-<li id="li-109">As a vector equation <span class="pretex-bind">(<span class="pretex-inline" style="width:12.05071em"><span style="height:0.965em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<li id="li-107">As a vector equation <span class="pretex-bind">(<span class="pretex-inline" style="width:12.05071em"><span style="height:0.965em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="e">1</tspan></text>
 <text transform="translate(12.235)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(17.159 2.594)"><tspan y="0" x="0" class="e">1</tspan></text>
@@ -648,7 +648,7 @@ svg.pretex path {
 <text transform="translate(334.409 2.394)"><tspan y="0" x="0" class="g">L</tspan></text>
 </svg></div>
 </li>
-<li id="li-110">As a matrix equation <span class="pretex-bind">(<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<li id="li-108">As a matrix equation <span class="pretex-bind">(<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span>):</span><div class="pretex-display"><svg height="3.57235em" version="1.1" class="pretex" viewbox="181 2 143 41"><text transform="translate(180.337 9.368)"><tspan y="0" x="0" class="g">K</tspan></text>
@@ -675,11 +675,11 @@ svg.pretex path {
 </svg></div>
 </li>
 </ol>
-<p> In particular, <em>all four have the same solution set</em>.</p></article><article class="bluebox" id="bluebox-14"><p id="p-199">We will move back and forth freely between the four ways of writing a linear system, over and over again, for the rest of the book.</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Another Way to Compute <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<p> In particular, <em>all four have the same solution set</em>.</p></article><article class="bluebox" id="bluebox-14"><p id="p-200">We will move back and forth freely between the four ways of writing a linear system, over and over again, for the rest of the book.</p></article><article class="paragraphs" id="paragraphs-10"><h5 class="heading"><span class="title">Another Way to Compute <span class="pretex-inline" style="width:1.2em"><span style="height:0.6815em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 </svg></span></span></span></h5>
-<p id="p-200">The above <a knowl="./knowl/matrixeq-defn-Ax1.html?vers=dd743d" knowl-id="xref-matrixeq-defn-Ax1" alt="Definition 2.3.3 " title="Definition 2.3.3 ">definition</a> is a useful way of defining the product of a matrix with a vector when it comes to understanding the relationship between matrix equations and vector equations.  Here we give a definition that is better-adapted to computations by hand.</p>
+<p id="p-201">The above <a knowl="./knowl/matrixeq-defn-Ax1.html?vers=d2e450" knowl-id="xref-matrixeq-defn-Ax1" alt="Definition 2.3.3 " title="Definition 2.3.3 ">definition</a> is a useful way of defining the product of a matrix with a vector when it comes to understanding the relationship between matrix equations and vector equations.  Here we give a definition that is better-adapted to computations by hand.</p>
 <article class="definition-like" id="matrixeq-row-column-prod"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-201">A <em class="terminology">row vector</em> is a matrix with one row.  The <em class="terminology">product</em> of a row vector of length <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+<p id="p-202">A <em class="terminology">row vector</em> is a matrix with one row.  The <em class="terminology">product</em> of a row vector of length <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> and a (column) vector of length <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> is</p>
 <div class="pretex-display"><svg height="5.57635em" version="1.1" class="pretex" viewbox="121 0 261 64"><text transform="translate(121.951 25.104)"><tspan y="0" x="0" class="g">A</tspan></text>
@@ -719,7 +719,7 @@ svg.pretex path {
 <text transform="translate(378.858 35.37)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <p>This is a scalar.</p></article><article class="bluebox" id="matrixeq-row-column"><h5 class="heading"><span class="title">Recipe: The row-column rule for matrix-vector multiplication</span></h5>
-<p id="p-202">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-203">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -766,9 +766,9 @@ svg.pretex path {
 <text transform="translate(315.151 1.685)"><tspan y="0" x="0" class="g">F</tspan><tspan y="22.885" x="0" class="g">J</tspan><tspan y="30.368" x="0" class="g">J</tspan><tspan y="38.540001" x="0" class="g">H</tspan></text>
 <text transform="translate(326.106 35.37)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-</article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-29-hidden.html?vers=dd743d" knowl-id="hidden-example-29" alt="Example 2.3.14 " title="Example 2.3.14 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div></article></section><section class="subsection" id="subsection-15"><header title="Subsection 2.3.2 Spans and Consistency"><h1 class="heading hide-type" alt="Subsection 2.3.2 Spans and Consistency">
+</article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-29-hidden.html?vers=d2e450" knowl-id="hidden-example-29" alt="Example 2.3.14 " title="Example 2.3.14 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div></article></section><section class="subsection" id="subsection-15"><header title="Subsection 2.3.2 Spans and Consistency"><h1 class="heading hide-type" alt="Subsection 2.3.2 Spans and Consistency">
 <span class="type">Subsection</span><span class="codenumber">2.3.2</span><span class="title">Spans and Consistency</span>
-</h1></header><p id="p-204">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</h1></header><p id="p-205">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be a matrix with columns <span class="pretex-inline" style="width:5.51985em"><span style="height:0.7245em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="e">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -869,39 +869,39 @@ svg.pretex path {
 <text transform="translate(307.181 134.059)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <article class="bluebox" id="matrixeq-spans-consistency"><h5 class="heading"><span class="title">Spans and Consistency</span></h5>
-<p id="p-205">The matrix equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<p id="p-206">The matrix equation <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> has a solution if and only if <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> is in the span of the columns of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article><p id="p-206">This gives an equivalence between an <em>algebraic</em> statement <span class="pretex-bind">(<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span></p></article><p id="p-207">This gives an equivalence between an <em>algebraic</em> statement <span class="pretex-bind">(<span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span></span> is consistent), and a <em>geometric</em> statement <span class="pretex-bind">(<span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span></span> is in the span of the columns of <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span>).</span></p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-30-hidden.html?vers=dd743d" knowl-id="hidden-example-30" alt="Example 2.3.16 An Inconsistent System" title="Example 2.3.16 An Inconsistent System"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-30-hidden.html?vers=d2e450" knowl-id="hidden-example-30" alt="Example 2.3.16 An Inconsistent System" title="Example 2.3.16 An Inconsistent System"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(An Inconsistent System)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-31-hidden.html?vers=dd743d" knowl-id="hidden-example-31" alt="Example 2.3.18 A Consistent System" title="Example 2.3.18 A Consistent System"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-31-hidden.html?vers=d2e450" knowl-id="hidden-example-31" alt="Example 2.3.18 A Consistent System" title="Example 2.3.18 A Consistent System"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A Consistent System)</span>
 </h5></article></a></div>
 <article class="paragraphs" id="paragraphs-11"><h5 class="heading"><span class="title">When Solutions Always Exist</span></h5>
-<p id="p-213">Building on this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a>, we have the following criterion for when <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<p id="p-214">Building on this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=d2e450" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a>, we have the following criterion for when <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> is consistent for <em>every</em> choice of <span class="pretex-inline" style="width:0.885em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 <text transform="translate(6.967)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
 <article class="theorem-like" id="matrixeq-thm-full-span"><h5 class="heading"><span class="type">Theorem</span></h5>
-<p id="p-214">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-215">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> (non-augmented) matrix.  The following are equivalent: </p>
 <ol id="ol-20" style="list-style-type: decimal;">
-<li id="li-111">
+<li id="li-109">
 <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="b">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
@@ -911,22 +911,22 @@ svg.pretex path {
 <text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-112">The span of the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<li id="li-110">The span of the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> is all of <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
 <text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-113">
+<li id="li-111">
 <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
-</svg></span></span> has a <a knowl="./knowl/defn-pivot-pos.html?vers=dd743d" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot position</a> in every row.</li>
+</svg></span></span> has a <a knowl="./knowl/defn-pivot-pos.html?vers=d2e450" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot position</a> in every row.</li>
 </ol></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-1" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-215">The equivalence of 1 and 2 is established by this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a> as applied to every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-1" id="proof-1"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-1" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-216">The equivalence of 1 and 2 is established by this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=d2e450" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a> as applied to every <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
 <text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
-<p id="p-216">Now we show that 1 and 3 are equivalent.  (Since we know 1 and 2 are equivalent, this implies 2 and 3 are equivalent as well.)  If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-217">Now we show that 1 and 3 are equivalent.  (Since we know 1 and 2 are equivalent, this implies 2 and 3 are equivalent as well.)  If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> has a pivot in every row, then its reduced row echelon form looks like this:</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="205 2 95 40"><text transform="translate(204.022 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
 <text transform="translate(214.013 10.76)"><tspan y="0" x="0 16.343248" class="c">10</tspan></text>
@@ -999,14 +999,14 @@ svg.pretex path {
 </svg></div>
 </article></span>
 </div>
-<p id="p-217">Recall that <em class="terminology">equivalent</em> means that, for any given matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-218">Recall that <em class="terminology">equivalent</em> means that, for any given matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> either <em>all</em> of the conditions of the above <a knowl="./knowl/matrixeq-thm-full-span.html?vers=dd743d" knowl-id="xref-matrixeq-thm-full-span" alt="Theorem 2.3.20 " title="Theorem 2.3.20 ">theorem</a> are true, or they are all false.</p>
-<article class="bluebox" id="bluebox-17"><p id="p-218">Be careful when reading the statement of the above <a knowl="./knowl/matrixeq-thm-full-span.html?vers=dd743d" knowl-id="xref-matrixeq-thm-full-span" alt="Theorem 2.3.20 " title="Theorem 2.3.20 ">theorem</a>.  The first two conditions look very much like this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a>, but they are logically quite different because of the quantifier “<em>for all</em> <span class="pretex-bind"><span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
-</svg></span></span>”.</span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-32-hidden.html?vers=dd743d" knowl-id="hidden-example-32" alt="Example 2.3.22 Interactive: The criteria of the theorem are satisfied" title="Example 2.3.22 Interactive: The criteria of the theorem are satisfied"><article class="example-like"><h5 class="heading"><span class="title">Interactive: The criteria of the theorem are satisfied</span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-33-hidden.html?vers=dd743d" knowl-id="hidden-example-33" alt="Example 2.3.24 Interactive: The critera of the theorem are not satisfied" title="Example 2.3.24 Interactive: The critera of the theorem are not satisfied"><article class="example-like"><h5 class="heading"><span class="title">Interactive: The critera of the theorem are not satisfied</span></h5></article></a></div>
+</svg></span></span> either <em>all</em> of the conditions of the above <a knowl="./knowl/matrixeq-thm-full-span.html?vers=d2e450" knowl-id="xref-matrixeq-thm-full-span" alt="Theorem 2.3.20 " title="Theorem 2.3.20 ">theorem</a> are true, or they are all false.</p>
+<article class="bluebox" id="bluebox-17"><p id="p-219">Be careful when reading the statement of the above <a knowl="./knowl/matrixeq-thm-full-span.html?vers=d2e450" knowl-id="xref-matrixeq-thm-full-span" alt="Theorem 2.3.20 " title="Theorem 2.3.20 ">theorem</a>.  The first two conditions look very much like this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=d2e450" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note</a>, but they are logically quite different because of the quantifier “<em>for all</em> <span class="pretex-bind"><span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span>”.</span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-32-hidden.html?vers=d2e450" knowl-id="hidden-example-32" alt="Example 2.3.22 Interactive: The criteria of the theorem are satisfied" title="Example 2.3.22 Interactive: The criteria of the theorem are satisfied"><article class="example-like"><h5 class="heading"><span class="title">Interactive: The criteria of the theorem are satisfied</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-33-hidden.html?vers=d2e450" knowl-id="hidden-example-33" alt="Example 2.3.24 Interactive: The critera of the theorem are not satisfied" title="Example 2.3.24 Interactive: The critera of the theorem are not satisfied"><article class="example-like"><h5 class="heading"><span class="title">Interactive: The critera of the theorem are not satisfied</span></h5></article></a></div>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-9" id="remark-9"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
-<div id="hk-remark-9" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-219">We will see in this <a knowl="./knowl/dimension-basis-colspace-dim.html?vers=dd743d" knowl-id="xref-dimension-basis-colspace-dim" alt="Corollary 2.7.12 " title="Corollary 2.7.12 ">corollary in Section 2.7</a> that the dimension of the span of the columns is equal to the number of pivots of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<div id="hk-remark-9" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-220">We will see in this <a knowl="./knowl/dimension-basis-colspace-dim.html?vers=d2e450" knowl-id="xref-dimension-basis-colspace-dim" alt="Corollary 2.7.12 " title="Corollary 2.7.12 ">corollary in Section 2.7</a> that the dimension of the span of the columns is equal to the number of pivots of <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>  That is, the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> span a line if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
@@ -1020,8 +1020,8 @@ svg.pretex path {
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
 </svg></span></span> when <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> has <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
-</svg></span></span> pivots.</p></article></div></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20matrix-equations&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</svg></span></span> pivots.</p></article></div></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20matrix-equations&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="CFbdb8d3IhcwQAijh9qhW"></script>
+<script src="js/ila.js?vers=58f93b" class="CFbdb8d3IhcwQAijh9qhW"></script>
 </body>
 </html>

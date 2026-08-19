@@ -13,7 +13,11 @@
 </head>
 <body>
 <h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The proof of the <a knowl="./knowl/det-cofact-inv-cramer.html?vers=dd743d" knowl-id="xref-det-cofact-inv-cramer" alt="Theorem 4.2.13 " title="Theorem 4.2.13 ">theorem</a> uses an interesting trick called <!--Style me with CSS--><em>Cramer’s Rule</em>, which gives a formula for the entries of the solution of an invertible matrix equation.</p>
+<p>It is clear from the previous example that <a knowl="./knowl/det-cofact-inv-cramer-fn.html?vers=d2e450" knowl-id="xref-det-cofact-inv-cramer-fn" alt="Equation 4.2.1 " title="Equation 4.2.1 ">(4.2.1)</a> is a very inefficient way of computing the inverse of a matrix, compared to augmenting by the identity matrix and row reducing, as in this <a href="matrix-inverses.html#matrix-inv-computing" alt="Subsection 3.5.2 Computing the Inverse Matrix" title="Subsection 3.5.2 Computing the Inverse Matrix">subsection in Section 3.5</a>.  However, it has its uses. </p>
+<ul style="list-style-type: disc;">
+<li>If a matrix has unknown entries, then it is difficult to compute its inverse using row reduction, for the same reason it is difficult to compute the determinant that way: one cannot be sure whether an entry containing an unknown is a pivot or not.</li>
+<li>This formula is useful for theoretical purposes.  Notice that the only denominators in <a knowl="./knowl/det-cofact-inv-cramer-fn.html?vers=d2e450" knowl-id="xref-det-cofact-inv-cramer-fn" alt="Equation 4.2.1 " title="Equation 4.2.1 ">(4.2.1)</a> occur when dividing by the determinant: computing cofactors only involves multiplication and addition, never division.  This means, for instance, that if the determinant is very small, then any measurement error in the entries of the matrix is greatly magnified when computing the inverse.  In this way, <a knowl="./knowl/det-cofact-inv-cramer-fn.html?vers=d2e450" knowl-id="xref-det-cofact-inv-cramer-fn" alt="Equation 4.2.1 " title="Equation 4.2.1 ">(4.2.1)</a> is useful in error analysis.</li>
+</ul>
 <span class="incontext"><a href="determinants-cofactors.html#p-939">in-context</a></span>
 </body>
 </html>

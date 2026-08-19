@@ -5,7 +5,7 @@
 <title>Vector Equations and Spans</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -107,14 +107,14 @@ svg.pretex path {
 .CmYdQavQSaBYkEsEUWLbc svg.pretex path.d { stroke-width:1px }
 .CmYdQavQSaBYkEsEUWLbc svg.pretex path.e { stroke-width:1.19553006px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive CmYdQavQSaBYkEsEUWLbc" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CmYdQavQSaBYkEsEUWLbc"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -122,7 +122,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -200,8 +200,8 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">2.2</span><span class="title">Vector Equations and Spans</span><a href="spans.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-5"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-14" style="list-style-type: decimal;">
-<li id="li-85">Understand the equivalence between a system of linear equations and a vector equation.</li>
-<li id="li-86">Learn the definition of <span class="pretex-inline" style="width:8.91851em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="a">Span</tspan></text>
+<li id="li-83">Understand the equivalence between a system of linear equations and a vector equation.</li>
+<li id="li-84">Learn the definition of <span class="pretex-inline" style="width:8.91851em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="a">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="b">{</tspan></text>
 <text transform="translate(31.068)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(37.117 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
@@ -214,9 +214,9 @@ svg.pretex path {
 <text transform="translate(94.003)"><tspan y="0" x="0" class="b">}</tspan></text>
 <text transform="translate(99.168)"><tspan y="0" x="0" class="a">,</tspan></text>
 </svg></span></span> and how to draw pictures of spans.</li>
-<li id="li-87">
+<li id="li-85">
 <em>Recipe:</em> solve a vector equation using augmented matrices / decide if a vector is in a span.</li>
-<li id="li-88">
+<li id="li-86">
 <em>Pictures:</em> an inconsistent system of equations, a consistent system of equations, spans in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">2</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
@@ -224,13 +224,13 @@ svg.pretex path {
 <text transform="translate(12.453)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-89">
+<li id="li-87">
 <em>Vocabulary word:</em> <em class="terminology">vector equation</em>.</li>
-<li id="li-90">
+<li id="li-88">
 <em>Essential vocabulary word:</em> <em class="terminology">span</em>.</li>
 </ol></article><section class="subsection" id="subsection-12"><header title="Subsection 2.2.1 Vector Equations"><h1 class="heading hide-type" alt="Subsection 2.2.1 Vector Equations">
 <span class="type">Subsection</span><span class="codenumber">2.2.1</span><span class="title">Vector Equations</span>
-</h1></header><p id="p-166"> An equation involving vectors with <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">n</tspan></text>
+</h1></header><p id="p-167"> An equation involving vectors with <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> coordinates is the same as <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> equations involving only numbers.  For example, the equation</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="186 2 131 40"><text transform="translate(187.998 25.235)"><tspan y="0" x="0" class="c">x</tspan></text>
@@ -315,7 +315,7 @@ svg.pretex path {
 <text transform="translate(285.427 38.763)"><tspan y="0" x="0 6.3812122" class="a">3.</tspan></text>
 </svg></div>
 <article class="definition-like" id="definition-16"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-167">A <em class="terminology">vector equation</em> is an equation involving a linear combination of vectors with possibly unknown coefficients.</p></article><article class="bluebox" id="bluebox-10"><p id="p-168">Asking whether or not a vector equation has a solution is the same as asking if a given vector is a linear combination of some other given vectors.</p></article><p id="p-169">For example the vector equation above is asking if the vector <span class="pretex-inline" style="width:3.84499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
+<p id="p-168">A <em class="terminology">vector equation</em> is an equation involving a linear combination of vectors with possibly unknown coefficients.</p></article><article class="bluebox" id="bluebox-10"><p id="p-169">Asking whether or not a vector equation has a solution is the same as asking if a given vector is a linear combination of some other given vectors.</p></article><p id="p-170">For example the vector equation above is asking if the vector <span class="pretex-inline" style="width:3.84499em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
 <text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811 23.941023 28.726931" class="a">8,16,3</tspan></text>
 <text transform="translate(39.619)"><tspan y="0" x="0" class="h">)</tspan></text>
 </svg></span></span> is a linear combination of the vectors <span class="pretex-inline" style="width:3.28899em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
@@ -329,9 +329,9 @@ svg.pretex path {
 <text transform="translate(50.017)"><tspan y="0" x="0" class="h">)</tspan></text>
 <text transform="translate(54.527)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></span></span></p>
-<p id="p-170">The thing we really care about is solving systems of linear equations, not solving vector equations.  The whole point of vector equations is that they give us a different, and more geometric, way of viewing systems of linear equations.</p>
+<p id="p-171">The thing we really care about is solving systems of linear equations, not solving vector equations.  The whole point of vector equations is that they give us a different, and more geometric, way of viewing systems of linear equations.</p>
 <article class="remark-like" id="note-5"><h5 class="heading"><span class="title">A Picture of a Consistent System</span></h5>
-<p id="p-171">Below we will show that the above system of equations  is consistent.  Equivalently, this means that the above vector equation  has a solution.  In other words, there is a linear combination of <span class="pretex-inline" style="width:3.28899em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
+<p id="p-172">Below we will show that the above system of equations  is consistent.  Equivalently, this means that the above vector equation  has a solution.  In other words, there is a linear combination of <span class="pretex-inline" style="width:3.28899em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
 <text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811 22.345718" class="a">1,2,6</tspan></text>
 <text transform="translate(33.237)"><tspan y="0" x="0" class="h">)</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:4.75099em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">(</tspan></text>
@@ -344,11 +344,11 @@ svg.pretex path {
 <text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811 23.941023 28.726931" class="a">8,16,3</tspan></text>
 <text transform="translate(39.619)"><tspan y="0" x="0" class="h">)</tspan></text>
 <text transform="translate(44.129)"><tspan y="0" x="0" class="a">.</tspan></text>
-</svg></span></span>  We can visualize the last statement geometrically.  Therefore, the following <a knowl="./knowl/vectors-figure-consistent.html?vers=dd743d" knowl-id="xref-vectors-figure-consistent" alt="Figure 2.2.4 " title="Figure 2.2.4 ">figure</a> gives a <em>picture of a consistent system of equations</em>.  Compare with <a knowl="./knowl/vectors-fig-inconsistent.html?vers=dd743d" knowl-id="xref-vectors-fig-inconsistent" alt="Figure 2.2.10 " title="Figure 2.2.10 ">figure</a> below, which shows a picture of an inconsistent system.</p></article><figure class="figure-like" id="vectors-figure-consistent"><div id="mathbox-17" class="mathbox" style="height:500px;">
-<iframe src="demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=8,16,3&amp;range=20&amp;camera=3,.5,1.5&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+</svg></span></span>  We can visualize the last statement geometrically.  Therefore, the following <a knowl="./knowl/vectors-figure-consistent.html?vers=d2e450" knowl-id="xref-vectors-figure-consistent" alt="Figure 2.2.4 " title="Figure 2.2.4 ">figure</a> gives a <em>picture of a consistent system of equations</em>.  Compare with <a knowl="./knowl/vectors-fig-inconsistent.html?vers=d2e450" knowl-id="xref-vectors-fig-inconsistent" alt="Figure 2.2.10 " title="Figure 2.2.10 ">figure</a> below, which shows a picture of an inconsistent system.</p></article><figure class="figure-like" id="vectors-figure-consistent"><div id="mathbox-17" class="mathbox" style="height:500px;">
+<iframe src="demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=8,16,3&amp;range=20&amp;camera=3,.5,1.5&amp;vers=d2e450" title="Interactive Figure"></iframe><div class="maximizer"></div>
 <div class="minimizer"></div>
 </div>
-<figcaption><span class="heading">Figure</span><span class="codenumber">4</span>A picture of the above vector equation.  Try to solve the equation geometrically by moving the sliders.</figcaption></figure><p id="p-172">In order to actually solve the vector equation</p>
+<figcaption><span class="heading">Figure</span><span class="codenumber">4</span>A picture of the above vector equation.  Try to solve the equation geometrically by moving the sliders.</figcaption></figure><p id="p-173">In order to actually solve the vector equation</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="187 2 130 40"><text transform="translate(188.004 25.235)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(194.535 3.417)"><tspan y="0" x="0" style="fill:#e41a1c" class="g">C</tspan></text>
 <text transform="translate(202.924 10.76)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">1</tspan><tspan y="13.947" x="0" style="fill:#e41a1c" class="a">2</tspan><tspan y="27.895" x="0" style="fill:#e41a1c" class="a">6</tspan></text>
@@ -402,10 +402,10 @@ svg.pretex path {
 <g transform="matrix(1,0,0,-1,261.176,42.839)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(272.539 38.655)"><tspan y="0" x="0" style="fill:#377eb8" class="a">3</tspan></text>
 <text transform="translate(280.521 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
 </svg></div>
-<p>and row reducing.  Note that <em>the columns of the augmented matrix are the vectors from the original vector equation</em>, so it is not actually necessary to write the system of equations: one can go directly from the vector equation to the augmented matrix by “smooshing the vectors together”.  In the following <a knowl="./knowl/vectors-example-consistent.html?vers=dd743d" knowl-id="xref-vectors-example-consistent" alt="Example 2.2.5 " title="Example 2.2.5 ">example</a> we carry out the row reduction and find the solution.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/vectors-example-consistent-hidden.html?vers=dd743d" knowl-id="hidden-vectors-example-consistent" alt="Example 2.2.5 " title="Example 2.2.5 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<p>and row reducing.  Note that <em>the columns of the augmented matrix are the vectors from the original vector equation</em>, so it is not actually necessary to write the system of equations: one can go directly from the vector equation to the augmented matrix by “smooshing the vectors together”.  In the following <a knowl="./knowl/vectors-example-consistent.html?vers=d2e450" knowl-id="xref-vectors-example-consistent" alt="Example 2.2.5 " title="Example 2.2.5 ">example</a> we carry out the row reduction and find the solution.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/vectors-example-consistent-hidden.html?vers=d2e450" knowl-id="hidden-vectors-example-consistent" alt="Example 2.2.5 " title="Example 2.2.5 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
 <article class="bluebox" id="bluebox-11"><h5 class="heading"><span class="title">Recipe: Solving a vector equation</span></h5>
-<p id="p-175">In general, the vector equation</p>
+<p id="p-176">In general, the vector equation</p>
 <div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="182 4 139 14"><text transform="translate(183.838 13.948)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(189.886 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(195.212 13.948)"><tspan y="0" x="0" class="c">v</tspan></text>
@@ -464,9 +464,9 @@ svg.pretex path {
 <p>whose columns are the <span class="pretex-bind"><span class="pretex-inline" style="width:0.76373em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(5.689 2.594)"><tspan y="0" x="0" class="e">i</tspan></text>
 </svg></span></span>’s</span> and the <span class="pretex-bind"><span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="c">b</tspan></text>
-</svg></span></span>’s.</span></p></article><p id="p-176">Now we have <em>three</em> equivalent ways of thinking about a linear system: </p>
+</svg></span></span>’s.</span></p></article><p id="p-177">Now we have <em>three</em> equivalent ways of thinking about a linear system: </p>
 <ol id="ol-15" style="list-style-type: decimal;">
-<li id="li-91">As a system of equations:
+<li id="li-89">As a system of equations:
 <div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="193 0 116 28"><text transform="translate(192.927 1.685)"><tspan y="0" x="0" class="g">H</tspan></text>
 <text transform="translate(202.103 9.379)"><tspan y="0" x="0" class="a">2</tspan></text>
 <text transform="translate(209.345 9.379)"><tspan y="0" x="0" class="c">x</tspan></text>
@@ -494,7 +494,7 @@ svg.pretex path {
 <text transform="translate(301.896 24.323)"><tspan y="0" x="0" class="a">5</tspan></text>
 </svg></div>
 </li>
-<li id="li-92">As an augmented matrix:
+<li id="li-90">As an augmented matrix:
 <div class="pretex-display"><svg height="2.52678em" version="1.1" class="pretex" viewbox="208 0 89 29"><text transform="translate(207.13 2.394)"><tspan y="0" x="0" class="g">F</tspan></text>
 <text transform="translate(215.904 10.76)"><tspan y="0" x="0 24.732935" class="a">23</tspan></text>
 <text transform="translate(256.981 10.76)"><tspan y="0" x="0" class="b">−</tspan></text>
@@ -508,7 +508,7 @@ svg.pretex path {
 <text transform="translate(289.697 2.394)"><tspan y="0" x="0" class="g">G</tspan></text>
 </svg></div>
 </li>
-<li id="li-93">As a vector equation <span class="pretex-bind">(<span class="pretex-inline" style="width:12.05071em"><span style="height:0.965em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="c">x</tspan></text>
+<li id="li-91">As a vector equation <span class="pretex-bind">(<span class="pretex-inline" style="width:12.05071em"><span style="height:0.965em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(12.235)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(17.159 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
@@ -557,7 +557,7 @@ svg.pretex path {
 </ol>
 <p> The third is geometric in nature: it lends itself to drawing pictures.</p></section><section class="subsection" id="subsection-13"><header title="Subsection 2.2.2 Spans"><h1 class="heading hide-type" alt="Subsection 2.2.2 Spans">
 <span class="type">Subsection</span><span class="codenumber">2.2.2</span><span class="title">Spans</span>
-</h1></header><p id="p-177">It will be important to know what are <em>all</em> linear combinations of a set of vectors <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
+</h1></header><p id="p-178">It will be important to know what are <em>all</em> linear combinations of a set of vectors <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="a">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="c">v</tspan></text>
@@ -603,7 +603,7 @@ svg.pretex path {
 <article class="definition-like" id="vectors-defn-span"><h5 class="heading important">
 <img src="images/important.svg" class="important"><span class="type">Definition</span>
 </h5>
-<p id="p-178">Let <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
+<p id="p-179">Let <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="a">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="c">v</tspan></text>
@@ -706,9 +706,9 @@ svg.pretex path {
 <text transform="translate(49.823)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="e">k</tspan></text>
 <text transform="translate(59.56)"><tspan y="0" x="0" class="a">.</tspan></text>
-</svg></span></span></p></article><p id="p-179">The above <a knowl="./knowl/vectors-defn-span.html?vers=dd743d" knowl-id="xref-vectors-defn-span" alt="Definition 2.2.7 " title="Definition 2.2.7 ">definition</a> is the first of several <em>essential definitions</em> that we will see in this textbook.  They are essential in that they form the essence of the subject of linear algebra: learning linear algebra means (in part) learning these definitions.  All of the definitions are important, but it is essential that you learn and understand the definitions marked as such.</p>
+</svg></span></span></p></article><p id="p-180">The above <a knowl="./knowl/vectors-defn-span.html?vers=d2e450" knowl-id="xref-vectors-defn-span" alt="Definition 2.2.7 " title="Definition 2.2.7 ">definition</a> is the first of several <em>essential definitions</em> that we will see in this textbook.  They are essential in that they form the essence of the subject of linear algebra: learning linear algebra means (in part) learning these definitions.  All of the definitions are important, but it is essential that you learn and understand the definitions marked as such.</p>
 <article class="remark-like" id="set-builder-notation"><h5 class="heading"><span class="title">Set Builder Notation</span></h5>
-<p id="p-180">The notation </p>
+<p id="p-181">The notation </p>
 <div class="pretex-display"><svg height="1.48122em" version="1.1" class="pretex" viewbox="140 2 224 17"><text transform="translate(139.419 3.682)"><tspan y="0" x="0" class="g">A</tspan></text>
 <text transform="translate(146.408 13.948)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(152.456 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
@@ -766,10 +766,10 @@ svg.pretex path {
 </svg></span></span> are in <span class="pretex-bind"><span class="pretex-inline" style="width:0.949em"><span style="height:0.691em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></span></span>”</span>  The vertical line is “such that”; everything to the left of it is “the set of all things of this form”, and everything to the right is the condition that those things must satisfy to be in the set.  Specifying a set in this way is called <em class="terminology">set builder notation</em>.</p>
-<p id="p-181">All mathematical notation is only shorthand: any sequence of symbols must translate into a usual sentence.</p></article><article class="remark-like" id="note-7"><h5 class="heading"><span class="title">Three characterizations of consistency</span></h5>
-<p id="p-182">Now we have three equivalent ways of making the same statement: </p>
+<p id="p-182">All mathematical notation is only shorthand: any sequence of symbols must translate into a usual sentence.</p></article><article class="remark-like" id="note-7"><h5 class="heading"><span class="title">Three characterizations of consistency</span></h5>
+<p id="p-183">Now we have three equivalent ways of making the same statement: </p>
 <ol id="ol-16" style="list-style-type: decimal;">
-<li id="li-94">A vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="c">b</tspan></text>
+<li id="li-92">A vector <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="c">b</tspan></text>
 </svg></span></span> is in the span of <span class="pretex-inline" style="width:5.46752em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="a">,</tspan></text>
@@ -781,7 +781,7 @@ svg.pretex path {
 <text transform="translate(59.56)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-95">The vector equation
+<li id="li-93">The vector equation
 <div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="182 4 139 14"><text transform="translate(183.838 13.948)"><tspan y="0" x="0" class="c">x</tspan></text>
 <text transform="translate(189.886 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(195.212 13.948)"><tspan y="0" x="0" class="c">v</tspan></text>
@@ -802,7 +802,7 @@ svg.pretex path {
 <text transform="translate(314.917 13.948)"><tspan y="0" x="0" class="c">b</tspan></text>
 </svg></div>
 has a solution.</li>
-<li id="li-96">The linear system with augmented matrix
+<li id="li-94">The linear system with augmented matrix
 <div class="pretex-display"><svg height="3.74661em" version="1.1" class="pretex" viewbox="196 0 112 43"><text transform="translate(195.956 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
 <text transform="translate(209.459 10.76)"><tspan y="0" x="0 20.210997 64.890961" class="b">|||</tspan></text>
 <g transform="matrix(1,0,0,-1,286.105,14.944)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(292.957 10.76)"><tspan y="0" x="0" class="b">|</tspan></text>
@@ -819,7 +819,7 @@ has a solution.</li>
 <text transform="translate(299.654 3.417)"><tspan y="0" x="0" class="g">D</tspan></text>
 </svg></div>
 is consistent.</li>
-</ol></article><p id="p-183"><em class="terminology">Equivalent</em> means that, for any given list of vectors <span class="pretex-inline" style="width:6.63151em"><span style="height:0.96467em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
+</ol></article><p id="p-184"><em class="terminology">Equivalent</em> means that, for any given list of vectors <span class="pretex-inline" style="width:6.63151em"><span style="height:0.96467em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="a">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="c">v</tspan></text>
@@ -832,7 +832,7 @@ is consistent.</li>
 <text transform="translate(72.92)"><tspan y="0" x="0" class="a">,</tspan></text>
 </svg></span></span> either all three statements are true, or all three statements are false.</p>
 <figure class="figure-like" id="vectors-fig-inconsistent"><div id="mathbox-18" class="mathbox" style="height:500px;">
-<iframe src="demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=2,-2,0&amp;range=8&amp;camera=3,.5,1.5&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<iframe src="demos/spans.html?v1=1,2,6&amp;v2=-1,-2,-1&amp;target=2,-2,0&amp;range=8&amp;camera=3,.5,1.5&amp;vers=d2e450" title="Interactive Figure"></iframe><div class="maximizer"></div>
 <div class="minimizer"></div>
 </div>
 <figcaption><span class="heading">Figure</span><span class="codenumber">10</span>This is a picture of an <em>inconsistent</em> linear system: the vector <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">w</tspan></text>
@@ -864,8 +864,8 @@ is consistent.</li>
 <text transform="translate(51.729 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
 <text transform="translate(59.15)"><tspan y="0" x="0" class="h">=</tspan></text>
 <text transform="translate(71.138)"><tspan y="0" x="0" class="c">w</tspan></text>
-</svg></span></span> by moving the sliders, and by row reduction.  Compare this <a knowl="./knowl/vectors-figure-consistent.html?vers=dd743d" knowl-id="xref-vectors-figure-consistent" alt="Figure 2.2.4 " title="Figure 2.2.4 ">figure</a>.</figcaption></figure><article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Pictures of Spans</span></h5>
-<p id="p-184">Drawing a picture of <span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="a">Span</tspan></text>
+</svg></span></span> by moving the sliders, and by row reduction.  Compare this <a knowl="./knowl/vectors-figure-consistent.html?vers=d2e450" knowl-id="xref-vectors-figure-consistent" alt="Figure 2.2.4 " title="Figure 2.2.4 ">figure</a>.</figcaption></figure><article class="paragraphs" id="paragraphs-9"><h5 class="heading"><span class="title">Pictures of Spans</span></h5>
+<p id="p-185">Drawing a picture of <span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="a">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="b">{</tspan></text>
 <text transform="translate(30.781)"><tspan y="0" x="0" class="c">v</tspan></text>
 <text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
@@ -948,16 +948,16 @@ is consistent.</li>
 </g></g></g></g></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 249.45294,-144.00256 V -158.7428" class="c"></path></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="m 267.59503,-124.7265 -36.28418,-38.55173" class="c"></path></g><g><g><path style="fill:#000;stroke:none" d="m 206.22388,-158.7428 c 0,1.17418 -0.95183,2.12601 -2.12599,2.12601 -1.17419,0 -2.12601,-0.95183 -2.12601,-2.12601 0,-1.17416 0.95182,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="d"></path></g></g></g></g></g></g></g></svg></div><figcaption><span class="heading">Figure</span><span class="codenumber">12</span>Pictures of spans in <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
 <text transform="translate(12.453)"><tspan y="0" x="0" class="a">.</tspan></text>
-</svg></span></span>  The span of two noncollinear vectors is the plane containing the origin and the heads of the vectors.  Note that three coplanar (but not collinear) vectors span a plane and not a 3-space, just as two collinear vectors span a line and not a plane.</figcaption></figure><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-24-hidden.html?vers=dd743d" knowl-id="hidden-example-24" alt="Example 2.2.13 Interactive: Span of two vectors in \R^2" title="Example 2.2.13 Interactive: Span of two vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
+</svg></span></span>  The span of two noncollinear vectors is the plane containing the origin and the heads of the vectors.  Note that three coplanar (but not collinear) vectors span a plane and not a 3-space, just as two collinear vectors span a line and not a plane.</figcaption></figure><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-24-hidden.html?vers=d2e450" knowl-id="hidden-example-24" alt="Example 2.2.13 Interactive: Span of two vectors in \R^2" title="Example 2.2.13 Interactive: Span of two vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">2</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-25-hidden.html?vers=dd743d" knowl-id="hidden-example-25" alt="Example 2.2.15 Interactive: Span of two vectors in \R^3" title="Example 2.2.15 Interactive: Span of two vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-25-hidden.html?vers=d2e450" knowl-id="hidden-example-25" alt="Example 2.2.15 Interactive: Span of two vectors in \R^3" title="Example 2.2.15 Interactive: Span of two vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-26-hidden.html?vers=dd743d" knowl-id="hidden-example-26" alt="Example 2.2.17 Interactive: Span of three vectors in \R^3" title="Example 2.2.17 Interactive: Span of three vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-26-hidden.html?vers=d2e450" knowl-id="hidden-example-26" alt="Example 2.2.17 Interactive: Span of three vectors in \R^3" title="Example 2.2.17 Interactive: Span of three vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Span of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="d">3</tspan></text>
-</svg></span></span></span></h5></article></a></div></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20spans&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</svg></span></span></span></h5></article></a></div></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20spans&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="CmYdQavQSaBYkEsEUWLbc"></script>
+<script src="js/ila.js?vers=58f93b" class="CmYdQavQSaBYkEsEUWLbc"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <title>Linear Transformations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -119,14 +119,14 @@ svg.pretex path {
 .Cl23I-k8Jq6yh39TCZz6h svg.pretex path.c { stroke-width:1.19553006px }
 .Cl23I-k8Jq6yh39TCZz6h svg.pretex path.d { stroke-width:1px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive Cl23I-k8Jq6yh39TCZz6h" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons Cl23I-k8Jq6yh39TCZz6h"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -134,7 +134,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -212,13 +212,13 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">3.3</span><span class="title">Linear Transformations</span><a href="linear-transformations.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-15"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-54" style="list-style-type: decimal;">
-<li id="li-283">Learn how to verify that a transformation is linear, or prove that a transformation is not linear.</li>
-<li id="li-284">Understand the relationship between linear transformations and matrix transformations.</li>
-<li id="li-285">
+<li id="li-281">Learn how to verify that a transformation is linear, or prove that a transformation is not linear.</li>
+<li id="li-282">Understand the relationship between linear transformations and matrix transformations.</li>
+<li id="li-283">
 <em>Recipe:</em> compute the matrix of a linear transformation.</li>
-<li id="li-286">
+<li id="li-284">
 <em>Theorem:</em> linear transformations and matrix transformations.</li>
-<li id="li-287">
+<li id="li-285">
 <em>Notation:</em> the <em class="terminology">standard coordinate vectors</em> <span class="pretex-inline" style="width:4.09162em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
 <text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(9.905)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -227,15 +227,15 @@ svg.pretex path {
 <text transform="translate(24.603)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,....</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-288">
+<li id="li-286">
 <em>Vocabulary words:</em> <em class="terminology">linear transformation</em>, <em class="terminology">standard matrix</em>, <em class="terminology">identity matrix</em>.</li>
-</ol></article><section class="introduction" id="introduction-11"><p id="p-569">In <a href="matrix-transformations.html" alt="Section 3.1 Matrix Transformations" title="Section 3.1 Matrix Transformations">Section 3.1</a>, we studied the geometry of matrices by regarding them as functions, i.e., by considering the associated <em>matrix transformations</em>.  We defined some vocabulary (domain, codomain, range), and asked a number of natural questions about a transformation.  For a matrix transformation, these translate into questions about matrices, which we have many tools to answer.</p>
-<p id="p-570">In this section, we make a change in perspective.  Suppose that we are given a <em>transformation</em> that we would like to study.  If we can prove that our transformation is a matrix transformation, then we can use linear algebra to study it.  This raises two important questions: </p>
+</ol></article><section class="introduction" id="introduction-11"><p id="p-570">In <a href="matrix-transformations.html" alt="Section 3.1 Matrix Transformations" title="Section 3.1 Matrix Transformations">Section 3.1</a>, we studied the geometry of matrices by regarding them as functions, i.e., by considering the associated <em>matrix transformations</em>.  We defined some vocabulary (domain, codomain, range), and asked a number of natural questions about a transformation.  For a matrix transformation, these translate into questions about matrices, which we have many tools to answer.</p>
+<p id="p-571">In this section, we make a change in perspective.  Suppose that we are given a <em>transformation</em> that we would like to study.  If we can prove that our transformation is a matrix transformation, then we can use linear algebra to study it.  This raises two important questions: </p>
 <ol id="ol-55" style="list-style-type: decimal;">
-<li id="li-289">How can we tell if a transformation is a matrix transformation?</li>
-<li id="li-290">If our transformation is a matrix transformation, how do we find its matrix?</li>
+<li id="li-287">How can we tell if a transformation is a matrix transformation?</li>
+<li id="li-288">If our transformation is a matrix transformation, how do we find its matrix?</li>
 </ol>
-<p> For example, we saw in this <a knowl="./knowl/matrix-trans-eg-rotation.html?vers=dd743d" knowl-id="xref-matrix-trans-eg-rotation" alt="Example 3.1.13 Rotation" title="Example 3.1.13 Rotation">example in Section 3.1</a> that the matrix transformation</p>
+<p> For example, we saw in this <a knowl="./knowl/matrix-trans-eg-rotation.html?vers=d2e450" knowl-id="xref-matrix-trans-eg-rotation" alt="Example 3.1.13 Rotation" title="Example 3.1.13 Rotation">example in Section 3.1</a> that the matrix transformation</p>
 <div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="160 1 184 28"><text transform="translate(160.154 18.261)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(169.083 18.261)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(175.946 18.261)"><tspan y="0" x="0" class="d">R</tspan></text>
@@ -279,9 +279,9 @@ svg.pretex path {
 <p>Given this definition, it is not at all obvious that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> is a matrix transformation, or what matrix it is associated to.</p></section><section class="subsection" id="subsection-34"><header title="Subsection 3.3.1 Linear Transformations: Definition"><h1 class="heading hide-type" alt="Subsection 3.3.1 Linear Transformations: Definition">
 <span class="type">Subsection</span><span class="codenumber">3.3.1</span><span class="title">Linear Transformations: Definition</span>
-</h1></header><p id="p-571">In this section, we introduce the class of transformations that come from matrices.</p>
+</h1></header><p id="p-572">In this section, we introduce the class of transformations that come from matrices.</p>
 <article class="definition-like" id="linear-trans-defn"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-572">A <em class="terminology">linear transformation</em> is a transformation <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p id="p-573">A <em class="terminology">linear transformation</em> is a transformation <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(9.503)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(16.366)"><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
@@ -319,7 +319,7 @@ svg.pretex path {
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
 </svg></span></span> and all scalars <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 <text transform="translate(5.383)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article><p id="p-573"> Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span></p></article><p id="p-574"> Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(9.503)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(16.366)"><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
@@ -336,7 +336,7 @@ svg.pretex path {
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span>  By this <a knowl="./knowl/matrix-linearity.html?vers=dd743d" knowl-id="xref-matrix-linearity" alt="Proposition 2.3.6 Properties of the Matrix-Vector Product" title="Proposition 2.3.6 Properties of the Matrix-Vector Product">proposition in Section 2.3</a>, we have</p>
+</svg></span></span>  By this <a knowl="./knowl/matrix-linearity.html?vers=d2e450" knowl-id="xref-matrix-linearity" alt="Proposition 2.3.6 Properties of the Matrix-Vector Product" title="Proposition 2.3.6 Properties of the Matrix-Vector Product">proposition in Section 2.3</a>, we have</p>
 <div class="pretex-display"><svg height="2.70104em" version="1.1" class="pretex" viewbox="140 9 224 31"><text transform="translate(140.208 18.829)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(148.07 18.829)"><tspan y="0" x="0" class="f">(</tspan></text>
 <text transform="translate(152.581 18.829)"><tspan y="0" x="0" class="a">u</tspan></text>
@@ -384,9 +384,9 @@ svg.pretex path {
 </svg></span></span> and all scalars <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 <text transform="translate(5.383)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>  Since a matrix transformation satisfies the two defining properties, it is a linear transformation</p>
-<p id="p-574">We will see in the next <a href="linear-transformations.html#linear-trans-is-matrix-trans" alt="Subsection 3.3.3 The Matrix of a Linear Transformation" title="Subsection 3.3.3 The Matrix of a Linear Transformation">subsection</a> that the opposite is true: every linear transformation is a matrix transformation; we just haven't computed its matrix yet.</p>
+<p id="p-575">We will see in the next <a href="linear-transformations.html#linear-trans-is-matrix-trans" alt="Subsection 3.3.3 The Matrix of a Linear Transformation" title="Subsection 3.3.3 The Matrix of a Linear Transformation">subsection</a> that the opposite is true: every linear transformation is a matrix transformation; we just haven't computed its matrix yet.</p>
 <article class="theorem-like" id="fact-3"><h5 class="heading"><span class="title">Facts about linear transformations</span></h5>
-<p id="p-575">Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p id="p-576">Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(9.503)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(16.366)"><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
@@ -395,13 +395,13 @@ svg.pretex path {
 <text transform="translate(53.855 -4.579)"><tspan y="0" x="0" class="i">m</tspan></text>
 </svg></span></span> be a linear transformation.  Then: </p>
 <ol id="ol-56" style="list-style-type: decimal;">
-<li id="li-291"><span class="pretex-inline" style="width:4.16299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<li id="li-289"><span class="pretex-inline" style="width:4.16299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
 <text transform="translate(12.946)"><tspan y="0" x="0" class="c">0</tspan></text>
 <text transform="translate(19.327)"><tspan y="0" x="0 7.1788635" class="f">)=</tspan></text>
 <text transform="translate(38.207)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
 </svg></span></span></li>
-<li id="li-292">For any vectors <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<li id="li-290">For any vectors <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
@@ -469,9 +469,9 @@ svg.pretex path {
 </li>
 </ol></article><div class="posterior">
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-13" id="proof-13"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-576"></p>
+<div id="hk-proof-13" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-577"></p>
 <ol id="ol-57" style="list-style-type: decimal;">
-<li id="li-293">Since <span class="pretex-inline" style="width:3.37299em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">0</tspan></text>
+<li id="li-291">Since <span class="pretex-inline" style="width:3.37299em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">0</tspan></text>
 <text transform="translate(9.05)"><tspan y="0" x="0" class="f">=</tspan></text>
 <text transform="translate(20.75)"><tspan y="0" x="0" class="e">−</tspan></text>
 <text transform="translate(29.14)"><tspan y="0" x="0 6.3812122" class="c">0,</tspan></text>
@@ -491,13 +491,13 @@ svg.pretex path {
 <text transform="translate(299.624 13.948)"><tspan y="0" x="0" class="c">0</tspan></text>
 <text transform="translate(306.005 13.948)"><tspan y="0" x="0" class="f">)</tspan></text>
 </svg></div>
-by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining property</a>.  The only vector <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
+by the second <a knowl="./knowl/linear-trans-defn.html?vers=d2e450" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining property</a>.  The only vector <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
 </svg></span></span> such that <span class="pretex-inline" style="width:3.45899em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
 <text transform="translate(11.138)"><tspan y="0" x="0" class="f">=</tspan></text>
 <text transform="translate(22.839)"><tspan y="0" x="0" class="e">−</tspan></text>
 <text transform="translate(31.516)"><tspan y="0" x="0" class="a">w</tspan></text>
 </svg></span></span> is the zero vector.</li>
-<li id="li-294">Let us suppose for simplicity that <span class="pretex-inline" style="width:2.64999em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">k</tspan></text>
+<li id="li-292">Let us suppose for simplicity that <span class="pretex-inline" style="width:2.64999em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">k</tspan></text>
 <text transform="translate(9.141)"><tspan y="0" x="0" class="f">=</tspan></text>
 <text transform="translate(20.842)"><tspan y="0" x="0 6.3812122" class="c">2.</tspan></text>
 </svg></span></span>  Then
@@ -548,7 +548,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 </li>
 </ol></article></div>
 </div>
-<p id="p-577"> In engineering, the second fact is called the <em>superposition principle</em>; it should remind you of the distributive property. For example, <span class="pretex-inline" style="width:12.41896em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p id="p-578"> In engineering, the second fact is called the <em>superposition principle</em>; it should remind you of the distributive property. For example, <span class="pretex-inline" style="width:12.41896em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
 <text transform="translate(13.233)"><tspan y="0" x="0 5.095788" class="a">cu</tspan></text>
 <text transform="translate(26.81)"><tspan y="0" x="0" class="f">+</tspan></text>
@@ -570,26 +570,26 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(10.461)"><tspan y="0" x="0" class="a">d</tspan></text>
 <text transform="translate(17.325)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>  To restate the first fact:</p>
-<article class="bluebox" id="linear-trans-T0-0"><p id="p-578">A linear transformation necessarily takes the zero vector to the zero vector.</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-eg-T0-non0-hidden.html?vers=dd743d" knowl-id="hidden-linear-trans-eg-T0-non0" alt="Example 3.3.4 A non-linear transformation" title="Example 3.3.4 A non-linear transformation"><article class="example-like"><h5 class="heading">
+<article class="bluebox" id="linear-trans-T0-0"><p id="p-579">A linear transformation necessarily takes the zero vector to the zero vector.</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-eg-T0-non0-hidden.html?vers=d2e450" knowl-id="hidden-linear-trans-eg-T0-non0" alt="Example 3.3.4 A non-linear transformation" title="Example 3.3.4 A non-linear transformation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A non-linear transformation)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-113-hidden.html?vers=dd743d" knowl-id="hidden-example-113" alt="Example 3.3.5 Verifying linearity: dilation" title="Example 3.3.5 Verifying linearity: dilation"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-113-hidden.html?vers=d2e450" knowl-id="hidden-example-113" alt="Example 3.3.5 Verifying linearity: dilation" title="Example 3.3.5 Verifying linearity: dilation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Verifying linearity: dilation)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-114-hidden.html?vers=dd743d" knowl-id="hidden-example-114" alt="Example 3.3.6 Verifying linearity: rotation" title="Example 3.3.6 Verifying linearity: rotation"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-114-hidden.html?vers=d2e450" knowl-id="hidden-example-114" alt="Example 3.3.6 Verifying linearity: rotation" title="Example 3.3.6 Verifying linearity: rotation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Verifying linearity: rotation)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-115-hidden.html?vers=dd743d" knowl-id="hidden-example-115" alt="Example 3.3.7 A transformation defined by a formula" title="Example 3.3.7 A transformation defined by a formula"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-115-hidden.html?vers=d2e450" knowl-id="hidden-example-115" alt="Example 3.3.7 A transformation defined by a formula" title="Example 3.3.7 A transformation defined by a formula"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A transformation defined by a formula)</span>
 </h5></article></a></div>
-<p id="p-590"> One can show that, if a transformation is defined by formulas in the coordinates as in the above example, then the transformation is linear if and only if each coordinate is a linear expression in the variables with no constant term.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-116-hidden.html?vers=dd743d" knowl-id="hidden-example-116" alt="Example 3.3.8 A translation" title="Example 3.3.8 A translation"><article class="example-like"><h5 class="heading">
+<p id="p-591"> One can show that, if a transformation is defined by formulas in the coordinates as in the above example, then the transformation is linear if and only if each coordinate is a linear expression in the variables with no constant term.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-116-hidden.html?vers=d2e450" knowl-id="hidden-example-116" alt="Example 3.3.8 A translation" title="Example 3.3.8 A translation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A translation)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-117-hidden.html?vers=dd743d" knowl-id="hidden-example-117" alt="Example 3.3.9 More non-linear transformations" title="Example 3.3.9 More non-linear transformations"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-117-hidden.html?vers=d2e450" knowl-id="hidden-example-117" alt="Example 3.3.9 More non-linear transformations" title="Example 3.3.9 More non-linear transformations"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(More non-linear transformations)</span>
 </h5></article></a></div>
-<p id="p-597">When deciding whether a transformation <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p id="p-598">When deciding whether a transformation <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> is linear, generally the first thing to do is to check whether <span class="pretex-inline" style="width:4.20399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="f">(</tspan></text>
 <text transform="translate(12.946)"><tspan y="0" x="0" class="c">0</tspan></text>
@@ -602,11 +602,11 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(6.771 2.594)"><tspan y="0" x="0" class="b">2</tspan></text>
 </svg></span></span> of the above example do take the zero vector to the zero vector.</p>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-15" id="remark-15"><article class="remark-like"><h5 class="heading"><span class="type">Challenge</span></h5></article></a></div>
-<div id="hk-remark-15" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-598">Find an example of a transformation that satisfies the first <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">property of linearity</a> but not the second.</p></article></div></section><section class="subsection" id="subsection-35"><header title="Subsection 3.3.2 The Standard Coordinate Vectors"><h1 class="heading hide-type" alt="Subsection 3.3.2 The Standard Coordinate Vectors">
+<div id="hk-remark-15" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-599">Find an example of a transformation that satisfies the first <a knowl="./knowl/linear-trans-defn.html?vers=d2e450" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">property of linearity</a> but not the second.</p></article></div></section><section class="subsection" id="subsection-35"><header title="Subsection 3.3.2 The Standard Coordinate Vectors"><h1 class="heading hide-type" alt="Subsection 3.3.2 The Standard Coordinate Vectors">
 <span class="type">Subsection</span><span class="codenumber">3.3.2</span><span class="title">The Standard Coordinate Vectors</span>
-</h1></header><p id="p-599">In the next subsection, we will present the relationship between linear transformations and matrix transformations.  Before doing so, we need the following important notation.</p>
+</h1></header><p id="p-600">In the next subsection, we will present the relationship between linear transformations and matrix transformations.  Before doing so, we need the following important notation.</p>
 <article class="bluebox" id="defn-standard-coord-vectors"><h5 class="heading"><span class="title">Standard coordinate vectors</span></h5>
-<p id="p-600"> The <em class="terminology">standard coordinate vectors in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
+<p id="p-601"> The <em class="terminology">standard coordinate vectors in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
 </svg></span></span></em> are the <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> vectors</p>
@@ -645,13 +645,13 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 </svg></span></span>th</span> entry of <span class="pretex-inline" style="width:0.73373em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
 <text transform="translate(5.344 2.594)"><tspan y="0" x="0" class="i">i</tspan></text>
 </svg></span></span> is equal to 1, and the other entries are zero.</p>
-<p id="p-601"><em>From now on,</em> for the rest of the book, we will use the symbols <span class="pretex-inline" style="width:3.67412em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" style="fill:#ff0000" class="a">e</tspan></text>
+<p id="p-602"><em>From now on,</em> for the rest of the book, we will use the symbols <span class="pretex-inline" style="width:3.67412em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" style="fill:#ff0000" class="a">e</tspan></text>
 <text transform="translate(5.153 2.594)"><tspan y="0" x="0" style="fill:#ff0000" class="b">1</tspan></text>
 <text transform="translate(9.905)"><tspan y="0" x="0" style="fill:#ff0000" class="c">,</tspan></text>
 <text transform="translate(14.984)"><tspan y="0" x="0" style="fill:#ff0000" class="a">e</tspan></text>
 <text transform="translate(19.85 2.594)"><tspan y="0" x="0" style="fill:#ff0000" class="b">2</tspan></text>
 <text transform="translate(24.603)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204" style="fill:#ff0000" class="c">,...</tspan></text>
-</svg></span></span> to denote the standard coordinate vectors.</p></article><p id="p-602">There is an ambiguity in this notation: one has to know from context that <span class="pretex-inline" style="width:0.86307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
+</svg></span></span> to denote the standard coordinate vectors.</p></article><p id="p-603">There is an ambiguity in this notation: one has to know from context that <span class="pretex-inline" style="width:0.86307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
 <text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 </svg></span></span> is meant to have <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> entries.  That is, the vectors</p>
@@ -672,7 +672,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 <text transform="translate(12.453)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
-<p id="p-603"> The standard coordinate vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
+<p id="p-604"> The standard coordinate vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
@@ -695,7 +695,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="matrix(1,0,0,-1,236.339,730.676)"><tspan y="0" x="0" style="fill:#4daf4a" class="b">3</tspan></text>
 </g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="d"></path></g></g></g></g></g></g></svg></div><p> These are the vectors of length 1 that point in the positive directions of each of the axes.</p>
 <article class="theorem-like" id="linear-trans-pick-columns"><h5 class="heading"><span class="title">Multiplying a matrix by the standard coordinate vectors</span></h5>
-<p id="p-604">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-605">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> is an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -740,7 +740,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <p>In other words, multiplying a matrix by <span class="pretex-inline" style="width:0.73373em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">e</tspan></text>
 <text transform="translate(5.344 2.594)"><tspan y="0" x="0" class="i">i</tspan></text>
 </svg></span></span> simply selects its <span class="pretex-bind"><span class="pretex-inline" style="width:0.362em"><span style="height:0.71em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">i</tspan></text>
-</svg></span></span>th</span> column.</p></article><p id="p-605">For example,</p>
+</svg></span></span>th</span> column.</p></article><p id="p-606">For example,</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="55 2 395 40"><text transform="translate(54.513 3.417)"><tspan y="0" x="0" class="g">C</tspan></text>
 <text transform="translate(64.504 10.76)"><tspan y="0" x="0 16.343248 32.686497" class="c">123</tspan><tspan y="13.947" x="0 16.343248 32.686497" class="c">456</tspan><tspan y="27.895" x="0 16.343248 32.686497" class="c">789</tspan></text>
 <text transform="translate(105.174 3.417)"><tspan y="0" x="0 9.9930239" class="g">DC</tspan></text>
@@ -769,7 +769,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(446.296 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <article class="definition-like" id="linear-trans-identity-mat"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-606">The <em class="terminology"><span class="pretex-inline" style="width:2.26499em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+<p id="p-607">The <em class="terminology"><span class="pretex-inline" style="width:2.26499em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 <text transform="translate(8.803)"><tspan y="0" x="0" class="e">×</tspan></text>
 <text transform="translate(19.614)"><tspan y="0" x="0" class="a">n</tspan></text>
 </svg></span></span> identity matrix</em> is the matrix <span class="pretex-inline" style="width:0.81774em"><span style="height:0.905em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">I</tspan></text>
@@ -795,13 +795,13 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(303.009 1.685)"><tspan y="0" x="0" class="g">F</tspan><tspan y="22.885" x="0" class="g">J</tspan><tspan y="30.368" x="0" class="g">J</tspan><tspan y="37.851002" x="0" class="g">J</tspan><tspan y="45.334" x="0" class="g">J</tspan><tspan y="53.506001" x="0" class="g">H</tspan></text>
 <text transform="translate(313.964 42.853)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-</article><p id="p-607">We will see in this <a knowl="./knowl/linear-trans-matrix-of-id.html?vers=dd743d" knowl-id="xref-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation">example</a> below that the identity matrix is the matrix of the <a knowl="./knowl/matrix-trans-identity.html?vers=dd743d" knowl-id="xref-matrix-trans-identity" alt="Definition 3.1.20 " title="Definition 3.1.20 ">identity transformation</a>.</p></section><section class="subsection" id="linear-trans-is-matrix-trans"><header title="Subsection 3.3.3 The Matrix of a Linear Transformation"><h1 class="heading hide-type" alt="Subsection 3.3.3 The Matrix of a Linear Transformation">
+</article><p id="p-608">We will see in this <a knowl="./knowl/linear-trans-matrix-of-id.html?vers=d2e450" knowl-id="xref-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation">example</a> below that the identity matrix is the matrix of the <a knowl="./knowl/matrix-trans-identity.html?vers=d2e450" knowl-id="xref-matrix-trans-identity" alt="Definition 3.1.20 " title="Definition 3.1.20 ">identity transformation</a>.</p></section><section class="subsection" id="linear-trans-is-matrix-trans"><header title="Subsection 3.3.3 The Matrix of a Linear Transformation"><h1 class="heading hide-type" alt="Subsection 3.3.3 The Matrix of a Linear Transformation">
 <span class="type">Subsection</span><span class="codenumber">3.3.3</span><span class="title">The Matrix of a Linear Transformation</span><a href="linear-transformations.html#linear-trans-is-matrix-trans" class="permalink">¶ permalink</a>
-</h1></header><p id="p-608">Now we can prove that every linear transformation is a matrix transformation, and we will show how to compute the matrix.</p>
+</h1></header><p id="p-609">Now we can prove that every linear transformation is a matrix transformation, and we will show how to compute the matrix.</p>
 <article class="theorem-like" id="matrix-of-transformation"><h5 class="heading">
 <span class="type">Theorem</span><span class="title">(The matrix of a linear transformation)</span>
 </h5>
-<p id="p-609">Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p id="p-610">Let <span class="pretex-inline" style="width:5.27912em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(9.503)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(16.366)"><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
@@ -847,7 +847,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(39.217)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
 <text transform="translate(52.989)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-610">We suppose for simplicity that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-14" id="proof-14"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-14" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-611">We suppose for simplicity that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> is a transformation from <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span> to <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
@@ -935,7 +935,7 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 </svg></div>
 </article></span>
 </div>
-<p id="p-611">The matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-612">The matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> in the above theorem is called the <em class="terminology">standard matrix</em> for <span class="pretex-inline" style="width:1.013em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>  The columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
@@ -945,8 +945,8 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>  To summarize part of the theorem:</p>
-<article class="bluebox" id="bluebox-42"><p id="p-612">Matrix transformations are the same as linear transformations.</p></article><article class="remark-like" id="note-14"><h5 class="heading"><span class="title">Dictionary</span></h5>
-<p id="p-613">Linear transformations are the same as matrix transformations, which come from matrices.  The correspondence can be summarized in the following dictionary. </p>
+<article class="bluebox" id="bluebox-42"><p id="p-613">Matrix transformations are the same as linear transformations.</p></article><article class="remark-like" id="note-14"><h5 class="heading"><span class="title">Dictionary</span></h5>
+<p id="p-614">Linear transformations are the same as matrix transformations, which come from matrices.  The correspondence can be summarized in the following dictionary. </p>
 <div class="pretex-display"><svg height="6.70905em" version="1.1" class="pretex" viewbox="20 1 393 77"><text transform="translate(45.88 16.228)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(54.809 16.228)"><tspan y="0" x="0" class="c">:</tspan></text>
 <text transform="translate(61.673 16.228)"><tspan y="0" x="0" class="d">R</tspan></text>
@@ -1000,13 +1000,13 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(211.116 67.291)"><tspan y="0" x="0" class="a">n</tspan></text>
 <text transform="translate(220.699 67.291)"><tspan y="0" x="0 9.6751108 15.49395 19.327269 23.711481 26.925041" class="c">matrix</tspan></text>
 <text transform="translate(256.599 67.291)"><tspan y="0" x="0" class="a">A</tspan></text>
-</svg></div></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-118-hidden.html?vers=dd743d" knowl-id="hidden-example-118" alt="Example 3.3.17 The matrix of a dilation" title="Example 3.3.17 The matrix of a dilation"><article class="example-like"><h5 class="heading">
+</svg></div></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-118-hidden.html?vers=d2e450" knowl-id="hidden-example-118" alt="Example 3.3.17 The matrix of a dilation" title="Example 3.3.17 The matrix of a dilation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(The matrix of a dilation)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-rotation-matrix-hidden.html?vers=dd743d" knowl-id="hidden-linear-trans-rotation-matrix" alt="Example 3.3.18 The matrix of a rotation" title="Example 3.3.18 The matrix of a rotation"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-rotation-matrix-hidden.html?vers=d2e450" knowl-id="hidden-linear-trans-rotation-matrix" alt="Example 3.3.18 The matrix of a rotation" title="Example 3.3.18 The matrix of a rotation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(The matrix of a rotation)</span>
 </h5></article></a></div>
-<p id="p-618">We saw in the above example that the matrix for counterclockwise rotation of the plane by an angle of <span class="pretex-inline" style="width:0.681em"><span style="height:0.739em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="n">θ</tspan></text>
+<p id="p-619">We saw in the above example that the matrix for counterclockwise rotation of the plane by an angle of <span class="pretex-inline" style="width:0.681em"><span style="height:0.739em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="n">θ</tspan></text>
 </svg></span></span> is</p>
 <div class="pretex-display"><svg height="2.43965em" version="1.1" class="pretex" viewbox="194 1 114 28"><text transform="translate(195.952 18.261)"><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(205.001 18.261)"><tspan y="0" x="0" class="f">=</tspan></text>
@@ -1023,13 +1023,13 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(296.083 2.394)"><tspan y="0" x="0" class="g">L</tspan></text>
 <text transform="translate(304.858 18.261)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-matrix-formula-hidden.html?vers=dd743d" knowl-id="hidden-linear-trans-matrix-formula" alt="Example 3.3.19 A transformation defined by a formula" title="Example 3.3.19 A transformation defined by a formula"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-matrix-formula-hidden.html?vers=d2e450" knowl-id="hidden-linear-trans-matrix-formula" alt="Example 3.3.19 A transformation defined by a formula" title="Example 3.3.19 A transformation defined by a formula"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A transformation defined by a formula)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-in-steps-hidden.html?vers=dd743d" knowl-id="hidden-linear-trans-in-steps" alt="Example 3.3.20 A transformation defined in steps" title="Example 3.3.20 A transformation defined in steps"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-in-steps-hidden.html?vers=d2e450" knowl-id="hidden-linear-trans-in-steps" alt="Example 3.3.20 A transformation defined in steps" title="Example 3.3.20 A transformation defined in steps"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A transformation defined in steps)</span>
 </h5></article></a></div>
-<p id="p-623">Recall from this <a knowl="./knowl/matrix-trans-identity.html?vers=dd743d" knowl-id="xref-matrix-trans-identity" alt="Definition 3.1.20 " title="Definition 3.1.20 ">definition in Section 3.1</a> that the <em>identity transformation</em> is the transformation <span class="pretex-inline" style="width:6.08509em"><span style="height:0.97133em;vertical-align:-0.23133em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 3.7185481" class="c">Id</tspan></text>
+<p id="p-624">Recall from this <a knowl="./knowl/matrix-trans-identity.html?vers=d2e450" knowl-id="xref-matrix-trans-identity" alt="Definition 3.1.20 " title="Definition 3.1.20 ">definition in Section 3.1</a> that the <em>identity transformation</em> is the transformation <span class="pretex-inline" style="width:6.08509em"><span style="height:0.97133em;vertical-align:-0.23133em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 3.7185481" class="c">Id</tspan></text>
 <text transform="translate(10.203 2.594)"><tspan y="0" x="0" class="o">R</tspan></text>
 <text transform="translate(15.481 0.513)"><tspan y="0" x="0" class="p">n</tspan></text>
 <text transform="translate(20.735)"><tspan y="0" x="0" class="c">:</tspan></text>
@@ -1048,10 +1048,10 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 </svg></span></span> for every vector <span class="pretex-inline" style="width:0.922em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-matrix-of-id-hidden.html?vers=dd743d" knowl-id="hidden-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/linear-trans-matrix-of-id-hidden.html?vers=d2e450" knowl-id="hidden-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(The standard matrix of the identity transformation)</span>
 </h5></article></a></div>
-<p id="p-627">We computed in this <a knowl="./knowl/linear-trans-matrix-of-id.html?vers=dd743d" knowl-id="xref-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation">example</a> that the matrix of the identity transform is the identity matrix: for every <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<p id="p-628">We computed in this <a knowl="./knowl/linear-trans-matrix-of-id.html?vers=d2e450" knowl-id="xref-linear-trans-matrix-of-id" alt="Example 3.3.22 The standard matrix of the identity transformation" title="Example 3.3.22 The standard matrix of the identity transformation">example</a> that the matrix of the identity transform is the identity matrix: for every <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="i">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -1076,8 +1076,8 @@ by the second <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xr
 <text transform="translate(32.006)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> for all vectors <span class="pretex-inline" style="width:0.963em"><span style="height:0.5075em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="c">:</tspan></text>
-</svg></span></span> the product of the identity matrix and a vector is the same vector.</p></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20linear-transformations&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</svg></span></span> the product of the identity matrix and a vector is the same vector.</p></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20linear-transformations&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="Cl23I-k8Jq6yh39TCZz6h"></script>
+<script src="js/ila.js?vers=58f93b" class="Cl23I-k8Jq6yh39TCZz6h"></script>
 </body>
 </html>

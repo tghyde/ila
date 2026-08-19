@@ -5,7 +5,7 @@
 <title>The Rank Theorem</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -105,14 +105,14 @@ svg.pretex path {
 .CXlQMdkFpk_6KsoYFhF2- svg.pretex path.b { stroke-width:0.3985px }
 .CXlQMdkFpk_6KsoYFhF2- svg.pretex path.c { stroke-width:1px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive CXlQMdkFpk_6KsoYFhF2-" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CXlQMdkFpk_6KsoYFhF2-"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -120,7 +120,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -198,15 +198,15 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">2.9</span><span class="title">The Rank Theorem</span><a href="rank-thm.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-12"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-45" style="list-style-type: decimal;">
-<li id="li-220">Learn to understand and use the rank theorem.</li>
-<li id="li-221">
+<li id="li-218">Learn to understand and use the rank theorem.</li>
+<li id="li-219">
 <em>Picture:</em> the rank theorem.</li>
-<li id="li-222">
+<li id="li-220">
 <em>Theorem:</em> rank theorem.</li>
-<li id="li-223">
+<li id="li-221">
 <em>Vocabulary words:</em> <em class="terminology">rank</em>, <em class="terminology">nullity</em>.</li>
-</ol></article><p id="p-437">In this section we present the rank theorem, which is the culmination of all of the work we have done so far.</p>
-<p id="p-438">The reader may have observed a relationship between the column space and the null space of a matrix.  In this <a knowl="./knowl/subspaces-col-nul-1.html?vers=dd743d" knowl-id="xref-subspaces-col-nul-1" alt="Example 2.6.17 " title="Example 2.6.17 ">example in Section 2.6</a>, the column space and the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
+</ol></article><p id="p-438">In this section we present the rank theorem, which is the culmination of all of the work we have done so far.</p>
+<p id="p-439">The reader may have observed a relationship between the column space and the null space of a matrix.  In this <a knowl="./knowl/subspaces-col-nul-1.html?vers=d2e450" knowl-id="xref-subspaces-col-nul-1" alt="Example 2.6.17 " title="Example 2.6.17 ">example in Section 2.6</a>, the column space and the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
 <text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
 <text transform="translate(19.04)"><tspan y="0" x="0" class="a">2</tspan></text>
 </svg></span></span> matrix are both lines, in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
@@ -228,7 +228,7 @@ svg.pretex path {
 <text transform="matrix(1,0,0,-1,170.639,765.146)"><tspan y="0" x="0" class="g">C</tspan></text>
 <text transform="matrix(1,0,0,-1,180.63,757.804)"><tspan y="0" x="0 16.343248" class="a">11</tspan><tspan y="13.948" x="0 16.343248" class="a">11</tspan><tspan y="27.896" x="0 16.343248" class="a">11</tspan></text>
 <text transform="matrix(1,0,0,-1,204.956,765.146)"><tspan y="0" x="0" class="g">D</tspan></text>
-</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-eg-plane2.html?vers=dd743d" knowl-id="xref-solnsets-eg-plane2" alt="Example 2.4.17 The solution set is a plane" title="Example 2.4.17 The solution set is a plane">example in Section 2.4</a>, the null space of the <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">2</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-eg-plane2.html?vers=d2e450" knowl-id="xref-solnsets-eg-plane2" alt="Example 2.4.17 The solution set is a plane" title="Example 2.4.17 The solution set is a plane">example in Section 2.4</a>, the null space of the <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">2</tspan></text>
 <text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
 <text transform="translate(19.04)"><tspan y="0" x="0" class="a">3</tspan></text>
 </svg></span></span> matrix <span class="pretex-inline" style="width:4.28037em"><span style="height:1.331em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="g">A</tspan></text>
@@ -271,7 +271,7 @@ svg.pretex path {
 <text transform="matrix(1,0,0,-1,277.173,646.173)"><tspan y="0" x="0" class="b">−</tspan></text>
 <text transform="matrix(1,0,0,-1,285.563,646.173)"><tspan y="0" x="0" class="a">4</tspan></text>
 <text transform="matrix(1,0,0,-1,293.545,668.487)"><tspan y="0" x="0" class="g">F</tspan></text>
-</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-line-plane.html?vers=dd743d" knowl-id="xref-solnsets-line-plane" alt="Example 2.4.28 Interactive: Solution set and span of the columns (3)" title="Example 2.4.28 Interactive: Solution set and span of the columns (3)">example in Section 2.4</a>, the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
+</g></g></g></g></g></g></g></svg></div><p> In this <a knowl="./knowl/solnsets-line-plane.html?vers=d2e450" knowl-id="xref-solnsets-line-plane" alt="Example 2.4.28 Interactive: Solution set and span of the columns (3)" title="Example 2.4.28 Interactive: Solution set and span of the columns (3)">example in Section 2.4</a>, the null space of a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">3</tspan></text>
 <text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
 <text transform="translate(19.04)"><tspan y="0" x="0" class="a">3</tspan></text>
 </svg></span></span> matrix is a line in <span class="pretex-inline" style="width:1.36307em"><span style="height:1.02666em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">R</tspan></text>
@@ -298,7 +298,7 @@ svg.pretex path {
 <text transform="matrix(1,0,0,-1,239.801,674.438)"><tspan y="0" x="0" class="g">D</tspan></text>
 </g></g></g></g></g></g></g></svg></div><p> In all examples, the dimension of the column space plus the dimension of the null space is equal to the number of <em>columns</em> of the matrix.  This is the content of the rank theorem.</p>
 <article class="definition-like" id="definition-25"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-439">The <em class="terminology">rank</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<p id="p-440">The <em class="terminology">rank</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="a">,</tspan></text>
 </svg></span></span> written <span class="pretex-inline" style="width:3.59399em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
 <text transform="translate(22.656)"><tspan y="0" x="0" class="e">(</tspan></text>
@@ -311,7 +311,7 @@ svg.pretex path {
 <text transform="translate(27.568)"><tspan y="0" x="0" class="e">)</tspan></text>
 <text transform="translate(32.078)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></span></span></p>
-<p id="p-440">The <em class="terminology">nullity</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<p id="p-441">The <em class="terminology">nullity</em> of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="a">,</tspan></text>
 </svg></span></span> written <span class="pretex-inline" style="width:4.42999em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.5189362 13.049349 16.285864 19.522377 22.735937 26.569256" class="a">nullity</tspan></text>
 <text transform="translate(32.25)"><tspan y="0" x="0" class="e">(</tspan></text>
@@ -323,12 +323,12 @@ svg.pretex path {
 <text transform="translate(22.461)"><tspan y="0" x="0" class="f">A</tspan></text>
 <text transform="translate(28.842)"><tspan y="0" x="0" class="e">)</tspan></text>
 <text transform="translate(33.352)"><tspan y="0" x="0" class="a">.</tspan></text>
-</svg></span></span></p></article><p id="p-441">The rank of a matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span></p></article><p id="p-442">The rank of a matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
 </svg></span></span> gives us important information about the solutions to <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
 <text transform="translate(35.108)"><tspan y="0" x="0" class="a">.</tspan></text>
-</svg></span></span>  Recall from this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=dd743d" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note in Section 2.3</a> that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+</svg></span></span>  Recall from this <a knowl="./knowl/matrixeq-spans-consistency.html?vers=d2e450" knowl-id="xref-matrixeq-spans-consistency" alt="Note 2.3.15 Spans and Consistency" title="Note 2.3.15 Spans and Consistency">note in Section 2.3</a> that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
 </svg></span></span> is consistent exactly when <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
@@ -346,9 +346,9 @@ svg.pretex path {
 <text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
 <text transform="translate(29.002)"><tspan y="0" x="0" class="f">b</tspan></text>
 </svg></span></span> is consistent.</p>
-<p id="p-442">We know that the rank of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
-</svg></span></span> is equal to the number of <a knowl="./knowl/defn-pivot-pos.html?vers=dd743d" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot columns</a> (see this <a knowl="./knowl/dimension-basis-colspace.html?vers=dd743d" knowl-id="xref-dimension-basis-colspace" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">theorem in Section 2.7</a>), and the nullity of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
-</svg></span></span> is equal to the number of free variables (see this <a knowl="./knowl/dimension-basis-nulspace.html?vers=dd743d" knowl-id="xref-dimension-basis-nulspace" alt="Theorem 2.7.17 " title="Theorem 2.7.17 ">theorem in Section 2.7</a>), which is the number of columns without pivots.  To summarize:</p>
+<p id="p-443">We know that the rank of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> is equal to the number of <a knowl="./knowl/defn-pivot-pos.html?vers=d2e450" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot columns</a> (see this <a knowl="./knowl/dimension-basis-colspace.html?vers=d2e450" knowl-id="xref-dimension-basis-colspace" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">theorem in Section 2.7</a>), and the nullity of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+</svg></span></span> is equal to the number of free variables (see this <a knowl="./knowl/dimension-basis-nulspace.html?vers=d2e450" knowl-id="xref-dimension-basis-nulspace" alt="Theorem 2.7.17 " title="Theorem 2.7.17 ">theorem in Section 2.7</a>), which is the number of columns without pivots.  To summarize:</p>
 <div class="pretex-display"><svg height="4.26939em" version="1.1" class="pretex" viewbox="90 9 324 49"><text transform="translate(101.838 18.829)"><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
 <text transform="translate(124.493 18.829)"><tspan y="0" x="0" class="e">(</tspan></text>
 <text transform="translate(129.004 18.829)"><tspan y="0" x="0" class="f">A</tspan></text>
@@ -378,7 +378,7 @@ svg.pretex path {
 </svg></div>
 <p>so we have proved the following theorem.</p>
 <article class="theorem-like" id="rank-theorem"><h5 class="heading"><span class="type">Rank Theorem</span></h5>
-<p id="p-443">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
+<p id="p-444">If <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">A</tspan></text>
 </svg></span></span> is a matrix with <span class="pretex-inline" style="width:0.581em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="f">n</tspan></text>
 </svg></span></span> columns, then</p>
 <div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="190 4 124 13"><text transform="translate(190.701 13.948)"><tspan y="0" x="0 4.3842139 10.203053 16.721989" class="a">rank</tspan></text>
@@ -392,14 +392,14 @@ svg.pretex path {
 <text transform="translate(303.727 13.948)"><tspan y="0" x="0" class="f">n</tspan></text>
 <text transform="translate(310.108 13.948)"><tspan y="0" x="0" class="a">.</tspan></text>
 </svg></div>
-</article><p id="p-444">In other words, for any consistent system of linear equations,</p>
+</article><p id="p-445">In other words, for any consistent system of linear equations,</p>
 <div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewbox="77 4 351 13"><text transform="translate(76.367 13.948)"><tspan y="0" x="0 4.7859092 11.270414 14.483974 27.361168 33.547272 40.433472 45.552212 51.738316 54.974831 61.505241 71.180351 80.901375 85.492172 91.816002 97.634842 104.15378" class="a">(dimofcolumnspan)</tspan></text>
 <text transform="translate(187.442 13.948)"><tspan y="0" x="0" class="e">+</tspan></text>
 <text transform="translate(197.966 13.948)"><tspan y="0" x="0 4.7859092 11.270414 14.483974 27.361168 33.547272 40.433472 45.024269 51.210373 54.446888 60.977303 64.810616 68.024178 74.210281 83.931297 88.522102 94.15731 97.990623" class="a">(dimofsolutionset)</tspan></text>
 <text transform="translate(303.411 13.948)"><tspan y="0" x="0" class="e">=</tspan></text>
 <text transform="translate(315.112 13.948)"><tspan y="0" x="0 4.7859092 11.304845 17.835258 27.510368 33.696472 39.33168 46.917976 53.10408 59.99028 65.65992 71.47876 75.862968 79.07653 84.89537 91.081474 94.317986 99.953194 104.54399 109.3299" class="a">(numberofvariables).</tspan></text>
 </svg></div>
-<p id="p-445">The rank theorem theorem is really the culmination of this chapter, as it gives a strong relationship between the null space of a matrix (the solution set of <span class="pretex-bind"><span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
+<p id="p-446">The rank theorem theorem is really the culmination of this chapter, as it gives a strong relationship between the null space of a matrix (the solution set of <span class="pretex-bind"><span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="f">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="e">=</tspan></text>
 <text transform="translate(28.142)"><tspan y="0" x="0" class="a">0</tspan></text>
 </svg></span></span>)</span> with the column space (the set of vectors <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
@@ -409,16 +409,16 @@ svg.pretex path {
 </svg></span></span> consistent), our two primary objects of interest.  The more freedom we have in choosing <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">x</tspan></text>
 </svg></span></span> the less freedom we have in choosing <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="f">b</tspan></text>
 </svg></span></span> and vice versa.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-75-hidden.html?vers=dd743d" knowl-id="hidden-example-75" alt="Example 2.9.3 Rank and nullity" title="Example 2.9.3 Rank and nullity"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-75-hidden.html?vers=d2e450" knowl-id="hidden-example-75" alt="Example 2.9.3 Rank and nullity" title="Example 2.9.3 Rank and nullity"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Rank and nullity)</span>
 </h5></article></a></div>
-<p id="p-449">The rank theorem is a prime example of how we use the theory of linear algebra to say something qualitative about a system of equations without ever solving it.  This is, in essence, the power of the subject.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-76-hidden.html?vers=dd743d" knowl-id="hidden-example-76" alt="Example 2.9.4 The rank is 2 and the nullity is 2" title="Example 2.9.4 The rank is 2 and the nullity is 2"><article class="example-like"><h5 class="heading">
+<p id="p-450">The rank theorem is a prime example of how we use the theory of linear algebra to say something qualitative about a system of equations without ever solving it.  This is, in essence, the power of the subject.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-76-hidden.html?vers=d2e450" knowl-id="hidden-example-76" alt="Example 2.9.4 The rank is 2 and the nullity is 2" title="Example 2.9.4 The rank is 2 and the nullity is 2"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(The rank is 2 and the nullity is 2)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-77-hidden.html?vers=dd743d" knowl-id="hidden-example-77" alt="Example 2.9.5 Interactive: Rank is 1, nullity is 2" title="Example 2.9.5 Interactive: Rank is 1, nullity is 2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 1, nullity is 2</span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-78-hidden.html?vers=dd743d" knowl-id="hidden-example-78" alt="Example 2.9.7 Interactive: Rank is 2, nullity is 1" title="Example 2.9.7 Interactive: Rank is 2, nullity is 1"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 2, nullity is 1</span></h5></article></a></div></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20rank-thm&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-77-hidden.html?vers=d2e450" knowl-id="hidden-example-77" alt="Example 2.9.5 Interactive: Rank is 1, nullity is 2" title="Example 2.9.5 Interactive: Rank is 1, nullity is 2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 1, nullity is 2</span></h5></article></a></div>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-78-hidden.html?vers=d2e450" knowl-id="hidden-example-78" alt="Example 2.9.7 Interactive: Rank is 2, nullity is 1" title="Example 2.9.7 Interactive: Rank is 2, nullity is 1"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Rank is 2, nullity is 1</span></h5></article></a></div></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20rank-thm&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="CXlQMdkFpk_6KsoYFhF2-"></script>
+<script src="js/ila.js?vers=58f93b" class="CXlQMdkFpk_6KsoYFhF2-"></script>
 </body>
 </html>

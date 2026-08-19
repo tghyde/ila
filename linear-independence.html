@@ -5,7 +5,7 @@
 <title>Linear Independence</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -116,14 +116,14 @@ svg.pretex path {
 .C5yBraAKpaRc5KlbpAgNl svg.pretex path.d { stroke-width:1px }
 .C5yBraAKpaRc5KlbpAgNl svg.pretex path.e { stroke-width:0.68900001px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive C5yBraAKpaRc5KlbpAgNl" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons C5yBraAKpaRc5KlbpAgNl"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -131,7 +131,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -209,22 +209,22 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">2.5</span><span class="title">Linear Independence</span><a href="linear-independence.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-8"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-23" style="list-style-type: decimal;">
-<li id="li-130">Understand the concept of linear independence.</li>
-<li id="li-131">Learn two criteria for linear independence.</li>
-<li id="li-132">Understand the relationship between linear independence and pivot columns / free variables.</li>
-<li id="li-133">
+<li id="li-128">Understand the concept of linear independence.</li>
+<li id="li-129">Learn two criteria for linear independence.</li>
+<li id="li-130">Understand the relationship between linear independence and pivot columns / free variables.</li>
+<li id="li-131">
 <em>Recipe:</em> test if a set of vectors is linearly independent / find an equation of linear dependence.</li>
-<li id="li-134">
+<li id="li-132">
 <em>Picture:</em> whether a set of vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
 </svg></span></span> or <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span> is linearly independent or not.</li>
-<li id="li-135">
+<li id="li-133">
 <em>Vocabulary words:</em> <em class="terminology">linear dependence relation</em> / <em class="terminology">equation of linear dependence</em>.</li>
-<li id="li-136">
+<li id="li-134">
 <em>Essential vocabulary words:</em> <em class="terminology">linearly independent</em>, <em class="terminology">linearly dependent</em>.</li>
-</ol></article><section class="introduction" id="introduction-6"><p id="p-274">Sometimes the span of a set of vectors is “smaller” than you expect from the number of vectors, as in the picture below.  This means that (at least) one of the vectors is redundant: it can be removed without affecting the span.  In the present section, we formalize this idea in the notion of <em>linear independence</em>.</p>
+</ol></article><section class="introduction" id="introduction-6"><p id="p-275">Sometimes the span of a set of vectors is “smaller” than you expect from the number of vectors, as in the picture below.  This means that (at least) one of the vectors is redundant: it can be removed without affecting the span.  In the present section, we formalize this idea in the notion of <em>linear independence</em>.</p>
 <figure class="figure-like" id="linindep-intro-pic"><div class="pretex-display"><svg height="12.72105em" version="1.1" class="pretex" viewbox="0 15 393 146"><defs><clippath id="clipPath58286" clippathunits="userSpaceOnUse"><path id="path58284" d="M -59.52802,-59.52802 V 79.37071 H 79.37071 V -59.52802 Z"></path></clippath><clippath id="clipPath58404" clippathunits="userSpaceOnUse"><path id="path58402" d="M -113.38724,-85.04042 V 85.04042 H 113.38724 V -85.04042 Z"></path></clippath><clippath id="clipPath58416" clippathunits="userSpaceOnUse"><path id="path58414" d="m 51.02371,-92.12602 -102.04742,184.25204 -68.03217,11.33855 -238.1134,-127.5593 z"></path></clippath><clippath id="clipPath58442" clippathunits="userSpaceOnUse"><path id="path58440" d="M 51.02371,-92.12602 -51.02371,92.12602 357.16928,24.09473 119.05588,-103.46457 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,59.627,99.213)"><g><g><g><path style="stroke:#bbbbbb" d="M -59.52802,-59.52802 H 79.37071 M -59.52802,-39.68535 H 79.37071 M -59.52802,-19.84267 H 79.37071 M -59.52802,0 H 79.37071 M -59.52802,19.84267 H 79.37071 M -59.52802,39.68535 H 79.37071 M -59.52802,59.52802 H 79.37071 M -59.52802,79.36372 H 79.37071 M -59.52802,-59.52802 V 79.37071 M -39.68535,-59.52802 V 79.37071 M -19.84267,-59.52802 V 79.37071 M 0,-59.52802 V 79.37071 M 19.84267,-59.52802 V 79.37071 M 39.68535,-59.52802 V 79.37071 M 59.52802,-59.52802 V 79.37071 M 79.36372,-59.52802 V 79.37071" class="a"></path></g><g clip-path="url(#clipPath58286)"><g><g transform="translate(-17.311 46.47)"><g><g transform="translate(-42.316 -739.257)"><text transform="matrix(1,0,0,-1,42.316,739.257)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" style="fill:#984ea3" class="c">Span</tspan></text>
 <text transform="matrix(1,0,0,-1,67.359,739.257)"><tspan y="0" x="0" style="fill:#984ea3" class="d">{</tspan></text>
 <text transform="matrix(1,0,0,-1,73.097,739.257)"><tspan y="0" x="0" style="fill:#984ea3" class="e">v</tspan></text>
@@ -249,7 +249,7 @@ svg.pretex path {
 </h1></header><article class="definition-like" id="linindep-defn-linindep"><h5 class="heading important">
 <img src="images/important.svg" class="important"><span class="type">Definition</span>
 </h5>
-<p id="p-275">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-276">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -301,7 +301,7 @@ svg.pretex path {
 <text transform="translate(54.988)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(60.103 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
 <text transform="translate(64.725)"><tspan y="0" x="0" class="d">}</tspan></text>
-</svg></span></span> is <em class="terminology">linearly dependent</em> otherwise.</p></article><p id="p-276">    In other words, <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+</svg></span></span> is <em class="terminology">linearly dependent</em> otherwise.</p></article><p id="p-277">    In other words, <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -341,18 +341,18 @@ svg.pretex path {
 <text transform="translate(312.754 13.948)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
 </svg></div>
 <p>This is called a <em class="terminology">linear dependence relation</em> or <em class="terminology">equation of linear dependence</em>.</p>
-<article class="bluebox" id="bluebox-26"><p id="p-277">Note that linear dependence and linear independence are notions that apply to a <em>collection of vectors</em>.  It does not make sense to say things like “this vector is linearly dependent on these other vectors,” or “this matrix is linearly independent.”</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-43-hidden.html?vers=dd743d" knowl-id="hidden-example-43" alt="Example 2.5.4 Checking linear dependence" title="Example 2.5.4 Checking linear dependence"><article class="example-like"><h5 class="heading">
+<article class="bluebox" id="bluebox-26"><p id="p-278">Note that linear dependence and linear independence are notions that apply to a <em>collection of vectors</em>.  It does not make sense to say things like “this vector is linearly dependent on these other vectors,” or “this matrix is linearly independent.”</p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-43-hidden.html?vers=d2e450" knowl-id="hidden-example-43" alt="Example 2.5.4 Checking linear dependence" title="Example 2.5.4 Checking linear dependence"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Checking linear dependence)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-44-hidden.html?vers=dd743d" knowl-id="hidden-example-44" alt="Example 2.5.6 Checking linear independence" title="Example 2.5.6 Checking linear independence"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-44-hidden.html?vers=d2e450" knowl-id="hidden-example-44" alt="Example 2.5.6 Checking linear independence" title="Example 2.5.6 Checking linear independence"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Checking linear independence)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/param-vect-form-lin-ind-hidden.html?vers=dd743d" knowl-id="hidden-param-vect-form-lin-ind" alt="Example 2.5.8 Vector parametric form" title="Example 2.5.8 Vector parametric form"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/param-vect-form-lin-ind-hidden.html?vers=d2e450" knowl-id="hidden-param-vect-form-lin-ind" alt="Example 2.5.8 Vector parametric form" title="Example 2.5.8 Vector parametric form"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Vector parametric form)</span>
 </h5></article></a></div>
-<p id="p-283">The above examples lead to the following recipe.</p>
+<p id="p-284">The above examples lead to the following recipe.</p>
 <article class="bluebox" id="linindep-matrix-cols"><h5 class="heading"><span class="title">Recipe: Checking linear independence</span></h5>
-<p id="p-284">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-285">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -412,8 +412,8 @@ svg.pretex path {
 <text transform="translate(309.159 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <p>This is true if and only if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
-</svg></span></span> has a <a knowl="./knowl/defn-pivot-pos.html?vers=dd743d" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot position</a> in every column.</p>
-<p id="p-285">Solving the matrix equatiion <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+</svg></span></span> has a <a knowl="./knowl/defn-pivot-pos.html?vers=d2e450" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot position</a> in every column.</p>
+<p id="p-286">Solving the matrix equatiion <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(28.142)"><tspan y="0" x="0" class="c">0</tspan></text>
 </svg></span></span> will either verify that the columns <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
@@ -424,23 +424,23 @@ svg.pretex path {
 <text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
 <text transform="translate(49.823)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
-</svg></span></span> are linearly independent, or will produce a linear dependence relation by substituting any nonzero values for the free variables.</p></article><p id="p-286">(Recall that <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
+</svg></span></span> are linearly independent, or will produce a linear dependence relation by substituting any nonzero values for the free variables.</p></article><p id="p-287">(Recall that <span class="pretex-inline" style="width:3.00799em"><span style="height:0.694em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="e">Ax</tspan></text>
 <text transform="translate(16.441)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(28.142)"><tspan y="0" x="0" class="c">0</tspan></text>
 </svg></span></span> has a nontrivial solution if and only if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
-</svg></span></span> has a column without a pivot: see this <a knowl="./knowl/solnsets-nontrivial.html?vers=dd743d" knowl-id="xref-solnsets-nontrivial" alt="Observation 2.4.3 " title="Observation 2.4.3 ">observation in Section 2.4</a>.)</p>
-<p id="p-287">Suppose that <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> has a column without a pivot: see this <a knowl="./knowl/solnsets-nontrivial.html?vers=d2e450" knowl-id="xref-solnsets-nontrivial" alt="Observation 2.4.3 " title="Observation 2.4.3 ">observation in Section 2.4</a>.)</p>
+<p id="p-288">Suppose that <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
 </svg></span></span> has more columns than rows.  Then <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
 </svg></span></span> cannot have a pivot in every column (it has at most one pivot per row), so its columns are automatically linearly dependent.</p>
-<article class="bluebox" id="linindep-wide-matrix"><p id="p-288">A wide matrix (a matrix with more columns than rows) has linearly dependent columns.</p></article><p id="p-289">For example, four vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<article class="bluebox" id="linindep-wide-matrix"><p id="p-289">A wide matrix (a matrix with more columns than rows) has linearly dependent columns.</p></article><p id="p-290">For example, four vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span> are automatically linearly dependent.  Note that a tall matrix may or may not have linearly independent columns.</p>
 <article class="theorem-like" id="linindep-facts"><h5 class="heading"><span class="title">Facts about linear independence</span></h5>
-<p id="p-290"></p>
+<p id="p-291"></p>
 <ol id="ol-24" style="list-style-type: decimal;">
-<li id="li-137">Two vectors are linearly dependent if and only if they are collinear, i.e., one is a scalar multiple of the other.</li>
-<li id="li-138">Any set containing the zero vector is linearly dependent.</li>
-<li id="li-139">If a subset of <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<li id="li-135">Two vectors are linearly dependent if and only if they are collinear, i.e., one is a scalar multiple of the other.</li>
+<li id="li-136">Any set containing the zero vector is linearly dependent.</li>
+<li id="li-137">If a subset of <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -463,9 +463,9 @@ svg.pretex path {
 </svg></span></span> is linearly dependent as well.</li>
 </ol></article><div class="posterior">
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-2" id="proof-2"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-2" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-291"></p>
+<div id="hk-proof-2" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-292"></p>
 <ol id="ol-25" style="list-style-type: decimal;">
-<li id="li-140">If <span class="pretex-inline" style="width:3.50713em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<li id="li-138">If <span class="pretex-inline" style="width:3.50713em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(12.918)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(24.906)"><tspan y="0" x="0 5.6696382" class="e">cv</tspan></text>
@@ -513,7 +513,7 @@ svg.pretex path {
 <text transform="translate(53.944)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-141">It is easy to produce a linear dependence relation if one vector is the zero vector: for instance, if <span class="pretex-inline" style="width:2.70106em"><span style="height:0.91716em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<li id="li-139">It is easy to produce a linear dependence relation if one vector is the zero vector: for instance, if <span class="pretex-inline" style="width:2.70106em"><span style="height:0.91716em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(12.918)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(24.619)"><tspan y="0" x="0" class="c">0</tspan></text>
@@ -538,7 +538,7 @@ svg.pretex path {
 <text transform="translate(316.045 13.948)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
 </svg></div>
 </li>
-<li id="li-142">After reordering, we may suppose that <span class="pretex-inline" style="width:6.06285em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<li id="li-140">After reordering, we may suppose that <span class="pretex-inline" style="width:6.06285em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -601,11 +601,11 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 </svg></span></span> to all be zero.</li>
 </ol></article></div>
 </div>
-<p id="p-292">With regard to the first fact, note that the zero vector is a multiple of any vector, so it is collinear with any other vector.  Hence facts 1 and 2 are consistent with each other.</p></section><section class="subsection" id="subsection-20"><header title="Subsection 2.5.2 Criteria for Linear Independence"><h1 class="heading hide-type" alt="Subsection 2.5.2 Criteria for Linear Independence">
+<p id="p-293">With regard to the first fact, note that the zero vector is a multiple of any vector, so it is collinear with any other vector.  Hence facts 1 and 2 are consistent with each other.</p></section><section class="subsection" id="subsection-20"><header title="Subsection 2.5.2 Criteria for Linear Independence"><h1 class="heading hide-type" alt="Subsection 2.5.2 Criteria for Linear Independence">
 <span class="type">Subsection</span><span class="codenumber">2.5.2</span><span class="title">Criteria for Linear Independence</span>
-</h1></header><p id="p-293">In this subsection we give two criteria for a set of vectors to be linearly independent.  Keep in mind, however, that the actual <a knowl="./knowl/linindep-defn-linindep.html?vers=dd743d" knowl-id="xref-linindep-defn-linindep" alt="Definition 2.5.2 " title="Definition 2.5.2 ">definition</a> is above.</p>
+</h1></header><p id="p-294">In this subsection we give two criteria for a set of vectors to be linearly independent.  Keep in mind, however, that the actual <a knowl="./knowl/linindep-defn-linindep.html?vers=d2e450" knowl-id="xref-linindep-defn-linindep" alt="Definition 2.5.2 " title="Definition 2.5.2 ">definition</a> is above.</p>
 <article class="theorem-like" id="linindep-criterion-inspan"><h5 class="heading"><span class="type">Theorem</span></h5>
-<p id="p-294">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-295">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -616,8 +616,8 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(60.103 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
 <text transform="translate(64.725)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is linearly dependent if and only if one of the vectors is in the span of the other ones.</p>
-<p id="p-295">Any such vector may be removed without affecting the span.</p></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-3" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-296">Suppose, for instance, that <span class="pretex-inline" style="width:0.89307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<p id="p-296">Any such vector may be removed without affecting the span.</p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-3" id="proof-3"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-3" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-297">Suppose, for instance, that <span class="pretex-inline" style="width:0.89307em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span> is in <span class="pretex-inline" style="width:6.87419em"><span style="height:1.01766em;vertical-align:-0.25066em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="d">{</tspan></text>
@@ -672,7 +672,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(311.035 16.955)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <p>This is a linear dependence relation.</p>
-<p id="p-297">In this case, any linear combination of <span class="pretex-inline" style="width:4.82476em"><span style="height:0.73566em;vertical-align:-0.25066em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<p id="p-298">In this case, any linear combination of <span class="pretex-inline" style="width:4.82476em"><span style="height:0.73566em;vertical-align:-0.25066em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="e">v</tspan></text>
@@ -850,7 +850,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(85.582)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(90.746)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> and thus they are equal.</p>
-<p id="p-298">In the other direction, if we have a linear dependence relation like</p>
+<p id="p-299">In the other direction, if we have a linear dependence relation like</p>
 <div class="pretex-display"><svg height="2.26539em" version="1.1" class="pretex" viewbox="189 0 126 26"><text transform="translate(189.774 16.955)"><tspan y="0" x="0" class="c">0</tspan></text>
 <text transform="translate(198.824 16.955)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(210.524 16.955)"><tspan y="0" x="0" class="c">2</tspan></text>
@@ -906,10 +906,10 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(70.54)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(75.705)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
-<p id="p-299">We leave it to the reader to generalize this proof for any set of vectors.</p></article></span>
+<p id="p-300">We leave it to the reader to generalize this proof for any set of vectors.</p></article></span>
 </div>
 <article class="bluebox" id="linindep-not-any"><h5 class="heading"><span class="type">Warning</span></h5>
-<p id="p-300">In a linearly dependent set <span class="pretex-inline" style="width:6.36751em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-301">In a linearly dependent set <span class="pretex-inline" style="width:6.36751em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -922,7 +922,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(69.89)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> it is not generally true that <em>any</em> vector <span class="pretex-inline" style="width:0.8184em"><span style="height:0.856em;vertical-align:-0.371em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(6.454 2.594)"><tspan y="0" x="0" class="f">j</tspan></text>
-</svg></span></span> is in the span of the others, only that <em>at least one</em> of them is.</p></article><p id="p-301">For example, the set <span class="pretex-inline" style="width:5.90998em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0 6.1287179" class="h">CA</tspan></text>
+</svg></span></span> is in the span of the others, only that <em>at least one</em> of them is.</p></article><p id="p-302">For example, the set <span class="pretex-inline" style="width:5.90998em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0 6.1287179" class="h">CA</tspan></text>
 <text transform="translate(11.133 -5.899)"><tspan y="0" x="0" class="b">1</tspan><tspan y="9.7089996" x="0" class="b">0</tspan></text>
 <text transform="translate(15.387 -10.266)"><tspan y="0" x="0" class="h">B</tspan></text>
 <text transform="translate(20.391)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -936,12 +936,12 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 </svg></span></span> is linearly dependent, but <span class="pretex-inline" style="width:1.24266em"><span style="height:1.34817em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="h">A</tspan></text>
 <text transform="translate(5.004 -5.899)"><tspan y="0" x="0" class="b">0</tspan><tspan y="9.7089996" x="0" class="b">1</tspan></text>
 <text transform="translate(9.258 -10.266)"><tspan y="0" x="0" class="h">B</tspan></text>
-</svg></span></span> is not in the span of the other two vectors.  Also see this <a knowl="./knowl/linindep-3d-4vecs.html?vers=dd743d" knowl-id="xref-linindep-3d-4vecs" alt="Figure 2.5.20 " title="Figure 2.5.20 ">figure</a> below.</p>
-<p id="p-302">The previous <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">theorem</a> makes precise in what sense a set of linearly dependent vectors is redundant.</p>
+</svg></span></span> is not in the span of the other two vectors.  Also see this <a knowl="./knowl/linindep-3d-4vecs.html?vers=d2e450" knowl-id="xref-linindep-3d-4vecs" alt="Figure 2.5.20 " title="Figure 2.5.20 ">figure</a> below.</p>
+<p id="p-303">The previous <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">theorem</a> makes precise in what sense a set of linearly dependent vectors is redundant.</p>
 <article class="theorem-like" id="linindep-increasing-span"><h5 class="heading">
 <span class="type">Theorem</span><span class="title">(Increasing Span Criterion)</span>
 </h5>
-<p id="p-303">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-304">A set of vectors <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -970,7 +970,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(98.697)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(103.862)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-4" id="proof-4"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-4" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-304">It is equivalent to show that <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-4" id="proof-4"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-4" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-305">It is equivalent to show that <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -997,7 +997,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(98.697)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> for some <span class="pretex-inline" style="width:0.722em"><span style="height:0.92em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="e">j</tspan></text>
 <text transform="translate(5.096)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span>  The “if” implication is an immediate consequence of the previous <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">theorem</a>.  Suppose then that <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+</svg></span></span>  The “if” implication is an immediate consequence of the previous <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">theorem</a>.  Suppose then that <span class="pretex-inline" style="width:6.08952em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="c">,</tspan></text>
@@ -1154,10 +1154,10 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(6.454 2.594)"><tspan y="0" x="0" class="f">j</tspan></text>
 </svg></span></span> is the last vector in the span of the others.</p></article></span>
 </div>
-<p id="p-305">We can rephrase this as follows:</p>
-<article class="bluebox" id="bluebox-30"><p id="p-306">If you make a set of vectors by adding one vector at a time, and if the span got bigger every time you added a vector, then your set is linearly independent.</p></article></section><section class="subsection" id="subsection-21"><header title="Subsection 2.5.3 Pictures of Linear Independence"><h1 class="heading hide-type" alt="Subsection 2.5.3 Pictures of Linear Independence">
+<p id="p-306">We can rephrase this as follows:</p>
+<article class="bluebox" id="bluebox-30"><p id="p-307">If you make a set of vectors by adding one vector at a time, and if the span got bigger every time you added a vector, then your set is linearly independent.</p></article></section><section class="subsection" id="subsection-21"><header title="Subsection 2.5.3 Pictures of Linear Independence"><h1 class="heading hide-type" alt="Subsection 2.5.3 Pictures of Linear Independence">
 <span class="type">Subsection</span><span class="codenumber">2.5.3</span><span class="title">Pictures of Linear Independence</span>
-</h1></header><p id="p-307">A set containg one vector <span class="pretex-inline" style="width:1.454em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+</h1></header><p id="p-308">A set containg one vector <span class="pretex-inline" style="width:1.454em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(11.523)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is linearly independent when <span class="pretex-inline" style="width:2.63999em"><span style="height:0.909em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
@@ -1182,11 +1182,11 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(16.074)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(24.257)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is linearly independent: </p>
-<ul id="ul-18" style="list-style-type: disc;">
-<li id="li-143">Neither is in the span of the other, so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
-<li id="li-144">The span got bigger when we added <span class="pretex-inline" style="width:1.016em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">w</tspan></text>
+<ul id="ul-17" style="list-style-type: disc;">
+<li id="li-141">Neither is in the span of the other, so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
+<li id="li-142">The span got bigger when we added <span class="pretex-inline" style="width:1.016em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(8.47)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
+</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=d2e450" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
 </ul>
 <p> </p>
 <div class="pretex-display"><svg height="22.3054em" version="1.1" class="pretex" viewbox="0 0 256 256"><defs><clippath id="clipPath63012" clippathunits="userSpaceOnUse"><path id="path63010" d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,127.559,127.559)"><g><g><g clip-path="url(#clipPath63012)"><g><path style="stroke:#e0cae3" d="M -170.08086,-85.04042 170.08086,85.04042" class="b"></path></g><g><path style="stroke:#e0cae3" d="M -127.56062,127.56062 127.56062,-127.56062" class="b"></path></g><g><g transform="translate(-84.043 -52.319)"><g><g transform="translate(-43.516 -612.122)"><text transform="matrix(1,0,0,-1,43.516,612.122)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" style="fill:#984ea3" class="c">Span</tspan></text>
@@ -1207,8 +1207,8 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(28.406)"><tspan y="0" x="0" class="e">u</tspan></text>
 <text transform="translate(34.752)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> below is linearly dependent: </p>
-<ul id="ul-19" style="list-style-type: disc;">
-<li id="li-145">
+<ul id="ul-18" style="list-style-type: disc;">
+<li id="li-143">
 <span class="pretex-inline" style="width:0.553em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 </svg></span></span> is in <span class="pretex-inline" style="width:5.02349em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="d">{</tspan></text>
@@ -1217,10 +1217,10 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(41.116)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(49.3)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(54.464)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
-<li id="li-146">The span did not increase when we added <span class="pretex-inline" style="width:0.831em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
+<li id="li-144">The span did not increase when we added <span class="pretex-inline" style="width:0.831em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 <text transform="translate(6.347)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
+</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=d2e450" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
 </ul>
 <p> In the picture below, note that <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 </svg></span></span> is in <span class="pretex-inline" style="width:5.06849em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
@@ -1257,18 +1257,18 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 </g></g></g></g></g><g><path style="stroke:#377eb8" d="M 0,0 -38.80914,38.80923" class="c"></path><g transform="matrix(-0.70712,0.7071,-0.7071,-0.70712,-36.50682,36.50694)"><g><path style="fill:#377eb8;stroke:#377eb8" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-30.726 14.697)"><g><g transform="translate(-96.833 -679.138)"><text transform="matrix(1,0,0,-1,97.12,679.138)"><tspan y="0" x="0" style="fill:#377eb8" class="e">w</tspan></text>
 </g></g></g></g></g><g><path style="stroke:#4daf4a" d="M 0,0 V -58.53218" class="c"></path><g transform="matrix(0,-1,1,0,0,-55.27628)"><g><path style="fill:#4daf4a;stroke:#4daf4a" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(0.996 -34.63)"><g><g transform="translate(-128.555 -629.811)"><text transform="matrix(1,0,0,-1,128.555,629.811)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">u</tspan></text>
 </g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="d"></path></g></g><g><path d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z" class="b"></path></g></g></g></g></g></svg></div><p> Two collinear vectors are always linearly dependent: </p>
-<ul id="ul-20" style="list-style-type: disc;">
-<li id="li-147">
+<ul id="ul-19" style="list-style-type: disc;">
+<li id="li-145">
 <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">w</tspan></text>
 </svg></span></span> is in <span class="pretex-inline" style="width:3.91399em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(36.566)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(41.73)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
-<li id="li-148">The span did not increase when we added <span class="pretex-inline" style="width:1.016em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">w</tspan></text>
+</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
+<li id="li-146">The span did not increase when we added <span class="pretex-inline" style="width:1.016em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(8.47)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
+</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=d2e450" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
 </ul>
 <p> </p>
 <div class="pretex-display"><svg height="22.3054em" version="1.1" class="pretex" viewbox="0 0 256 256"><defs><clippath id="clipPath63670" clippathunits="userSpaceOnUse"><path id="path63668" d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,127.559,127.559)"><g><g><g clip-path="url(#clipPath63670)"><g><path style="stroke:#e0cae3" d="M -170.08086,-85.04042 170.08086,85.04042" class="b"></path></g><g><g transform="translate(-84.043 -52.319)"><g><g transform="translate(-43.516 -612.122)"><text transform="matrix(1,0,0,-1,43.516,612.122)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" style="fill:#984ea3" class="c">Span</tspan></text>
@@ -1289,7 +1289,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(10.995)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(16.074)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(24.257)"><tspan y="0" x="0" class="d">}</tspan></text>
-</svg></span></span> is already linearly dependent, so we can use the third <a knowl="./knowl/linindep-facts.html?vers=dd743d" knowl-id="xref-linindep-facts" alt="Fact 2.5.11 Facts about linear independence" title="Fact 2.5.11 Facts about linear independence">fact</a>. </p>
+</svg></span></span> is already linearly dependent, so we can use the third <a knowl="./knowl/linindep-facts.html?vers=d2e450" knowl-id="xref-linindep-facts" alt="Fact 2.5.11 Facts about linear independence" title="Fact 2.5.11 Facts about linear independence">fact</a>. </p>
 <div class="pretex-display"><svg height="22.3054em" version="1.1" class="pretex" viewbox="0 0 256 256"><defs><clippath id="clipPath63862" clippathunits="userSpaceOnUse"><path id="path63860" d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,127.559,127.559)"><g><g><g clip-path="url(#clipPath63862)"><g><path style="stroke:#e0cae3" d="M -170.08086,-85.04042 170.08086,85.04042" class="b"></path></g><g><g transform="translate(-84.043 -52.319)"><g><g transform="translate(-43.516 -612.122)"><text transform="matrix(1,0,0,-1,43.516,612.122)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" style="fill:#984ea3" class="c">Span</tspan></text>
 <text transform="matrix(1,0,0,-1,68.559,612.122)"><tspan y="0" x="0" style="fill:#984ea3" class="d">{</tspan></text>
 <text transform="matrix(1,0,0,-1,74.297,612.122)"><tspan y="0" x="0" style="fill:#984ea3" class="e">v</tspan></text>
@@ -1297,13 +1297,13 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 </g></g></g></g><g><path style="stroke:#e41a1c" d="M 0,0 80.34639,40.17316" class="c"></path><g transform="matrix(0.89442,0.44722,-0.44722,0.89442,77.43422,38.71703)"><g><path style="fill:#e41a1c;stroke:#e41a1c" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(35.165 22.256)"><g><g transform="translate(-162.724 -686.697)"><text transform="matrix(1,0,0,-1,163.298,686.697)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">v</tspan></text>
 </g></g></g></g></g><g><path style="stroke:#377eb8" d="M 0,0 -37.82616,-18.9131" class="c"></path><g transform="matrix(-0.89442,-0.4472,0.4472,-0.89442,-34.914,-17.45705)"><g><path style="fill:#377eb8;stroke:#377eb8" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-26.474 -7.508)"><g><g transform="translate(-101.085 -656.933)"><text transform="matrix(1,0,0,-1,101.372,656.933)"><tspan y="0" x="0" style="fill:#377eb8" class="e">w</tspan></text>
 </g></g></g></g></g><g><path style="stroke:#4daf4a" d="M 0,0 V -58.53218" class="c"></path><g transform="matrix(0,-1,1,0,0,-55.27628)"><g><path style="fill:#4daf4a;stroke:#4daf4a" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(0.996 -34.63)"><g><g transform="translate(-128.555 -629.811)"><text transform="matrix(1,0,0,-1,128.555,629.811)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">u</tspan></text>
-</g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="d"></path></g></g><g><path d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z" class="b"></path></g></g></g></g></g></svg></div><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-46-hidden.html?vers=dd743d" knowl-id="hidden-example-46" alt="Example 2.5.16 Interactive: Linear independence of two vectors in \R^2" title="Example 2.5.16 Interactive: Linear independence of two vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+</g></g></g></g></g><g><g><path style="fill:#000;stroke:none" d="M 2.12599,0 C 2.12599,1.17416 1.17416,2.12599 0,2.12599 -1.17416,2.12599 -2.12599,1.17416 -2.12599,0 c 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="d"></path></g></g><g><path d="M -127.56062,-127.56062 V 127.56062 H 127.56062 V -127.56062 Z" class="b"></path></g></g></g></g></g></svg></div><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-46-hidden.html?vers=d2e450" knowl-id="hidden-example-46" alt="Example 2.5.16 Interactive: Linear independence of two vectors in \R^2" title="Example 2.5.16 Interactive: Linear independence of two vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-47-hidden.html?vers=dd743d" knowl-id="hidden-example-47" alt="Example 2.5.18 Interactive: Linear dependence of three vectors in \R^2" title="Example 2.5.18 Interactive: Linear dependence of three vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear dependence of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-47-hidden.html?vers=d2e450" knowl-id="hidden-example-47" alt="Example 2.5.18 Interactive: Linear dependence of three vectors in \R^2" title="Example 2.5.18 Interactive: Linear dependence of three vectors in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear dependence of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<p id="p-308">The two vectors <span class="pretex-inline" style="width:2.56349em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-309">The two vectors <span class="pretex-inline" style="width:2.56349em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.995)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(16.074)"><tspan y="0" x="0" class="e">w</tspan></text>
@@ -1330,7 +1330,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(8.47)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> then again when we added <span class="pretex-inline" style="width:0.831em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 <text transform="translate(6.347)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>. </p>
+</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=d2e450" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>. </p>
 <div class="pretex-display"><svg height="24.74505em" version="1.1" class="pretex" viewbox="0 0 284 284"><defs><clippath id="clipPath64340" clippathunits="userSpaceOnUse"><path id="path64338" d="M -141.73404,-141.73404 V 141.73404 H 141.73404 V -141.73404 Z"></path></clippath><clippath id="clipPath64352" clippathunits="userSpaceOnUse"><path id="path64350" d="M -673.3881,-88.60541 673.3881,88.60541 850.59459,-88.60106 -141.76866,-620.22485 Z"></path></clippath><clippath id="clipPath64394" clippathunits="userSpaceOnUse"><path id="path64392" d="M -673.3881,-88.60541 673.3881,88.60541 141.76866,620.22485 -850.59459,88.60106 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,141.732,141.732)"><g><g><g clip-path="url(#clipPath64340)"><g><g clip-path="url(#clipPath64352)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e0cae3" d="M -297.64182,-159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M 177.16754,-177.16754 0,0" class="b"></path></g><g><g><path style="fill:#ffffff;fill-opacity:0.5;stroke:none" d="M -14.17339,35.43176 H 162.99414 L 21.2601,-53.14766 h -177.16754 z" class="d"></path></g><g><path style="stroke:#bbbbbb" d="M -14.17339,35.43176 -155.90744,-53.14766 M 21.26012,35.43176 -120.47392,-53.14766 M 56.69362,35.43176 -85.04042,-53.14766 M 92.1271,35.43176 -49.60692,-53.14766 M 127.56062,35.43176 -14.1734,-53.14766 M 162.98169,35.43176 21.24765,-53.14766 M -14.17339,35.43176 H 162.99414 M -42.5202,17.71588 H 134.64734 M -70.867,0 H 106.30052 M -99.21382,-17.71588 H 77.95372 M -127.56062,-35.43176 H 49.6069 M -155.89748,-53.14145 H 21.27005" class="a"></path></g></g><g><path style="stroke:#e0cae3" d="M 297.64182,159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M -177.16754,177.16754 0,0" class="b"></path></g><g><g clip-path="url(#clipPath64394)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e41a1c" d="M 0,0 94.57683,50.66609" class="c"></path><g transform="matrix(0.88358,0.47334,-0.47334,0.88358,91.69998,49.12492)"><g><path style="fill:#e41a1c;stroke:#e41a1c" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(50.603 20.012)"><g><g transform="translate(-192.335 -670.28)"><text transform="matrix(1,0,0,-1,192.909,670.28)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">v</tspan></text>
 </g></g></g></g></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 99.21393,53.15024 V 17.71672" class="b"></path></g><g><path style="stroke:#9bbedc" d="M 0,0 31.72243,-31.72252" class="c"></path><g transform="matrix(0.70712,-0.7071,0.7071,0.70712,29.4201,-29.42023)"><g><path style="fill:#9bbedc;stroke:#9bbedc" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(8.25 -24.279)"><g><g transform="translate(-149.982 -625.989)"><text transform="matrix(1,0,0,-1,150.269,625.989)"><tspan y="0" x="0" style="fill:#9bbedc" class="e">w</tspan></text>
 </g></g></g></g></g><g><path style="stroke:#808080;stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 35.43349,-35.43349 V 0" class="b"></path></g><g><path style="stroke:#4daf4a" d="M 0,0 -52.23346,32.64578" class="c"></path><g transform="matrix(-0.8499,0.53119,-0.53119,-0.8499,-49.46626,30.91629)"><g><path style="fill:#4daf4a;stroke:#4daf4a" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-35.689 11.154)"><g><g transform="translate(-106.043 -661.422)"><text transform="matrix(1,0,0,-1,106.043,661.422)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">u</tspan></text>
@@ -1356,8 +1356,8 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(28.406)"><tspan y="0" x="0" class="e">u</tspan></text>
 <text transform="translate(34.752)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> below are linearly dependent: </p>
-<ul id="ul-21" style="list-style-type: disc;">
-<li id="li-149">
+<ul id="ul-20" style="list-style-type: disc;">
+<li id="li-147">
 <span class="pretex-inline" style="width:0.553em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 </svg></span></span> is in <span class="pretex-inline" style="width:5.02349em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="d">{</tspan></text>
@@ -1366,10 +1366,10 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(41.116)"><tspan y="0" x="0" class="e">w</tspan></text>
 <text transform="translate(49.3)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(54.464)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
-<li id="li-150">The span did not increase when we added <span class="pretex-inline" style="width:0.831em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+</svg></span></span> so we can apply the first <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>.</li>
+<li id="li-148">The span did not increase when we added <span class="pretex-inline" style="width:0.831em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 <text transform="translate(6.347)"><tspan y="0" x="0" class="c">,</tspan></text>
-</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=dd743d" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
+</svg></span></span> so we can apply the <a knowl="./knowl/linindep-increasing-span.html?vers=d2e450" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion</a>.</li>
 </ul>
 <p> </p>
 <div class="pretex-display"><svg height="24.74505em" version="1.1" class="pretex" viewbox="0 0 284 284"><defs><clippath id="clipPath64736" clippathunits="userSpaceOnUse"><path id="path64734" d="M -141.73404,-141.73404 V 141.73404 H 141.73404 V -141.73404 Z"></path></clippath><clippath id="clipPath64748" clippathunits="userSpaceOnUse"><path id="path64746" d="M -673.3881,-88.60541 673.3881,88.60541 850.59459,-88.60106 -141.76866,-620.22485 Z"></path></clippath><clippath id="clipPath64790" clippathunits="userSpaceOnUse"><path id="path64788" d="M -673.3881,-88.60541 673.3881,88.60541 141.76866,620.22485 -850.59459,88.60106 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,141.732,141.732)"><g><g><g clip-path="url(#clipPath64736)"><g><g clip-path="url(#clipPath64748)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e0cae3" d="M -297.64182,-159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M 177.16754,-177.16754 0,0" class="b"></path></g><g><g><path style="fill:#ffffff;fill-opacity:0.5;stroke:none" d="M -14.17339,35.43176 H 162.99414 L 21.2601,-53.14766 h -177.16754 z" class="d"></path></g><g><path style="stroke:#bbbbbb" d="M -14.17339,35.43176 -155.90744,-53.14766 M 21.26012,35.43176 -120.47392,-53.14766 M 56.69362,35.43176 -85.04042,-53.14766 M 92.1271,35.43176 -49.60692,-53.14766 M 127.56062,35.43176 -14.1734,-53.14766 M 162.98169,35.43176 21.24765,-53.14766 M -14.17339,35.43176 H 162.99414 M -42.5202,17.71588 H 134.64734 M -70.867,0 H 106.30052 M -99.21382,-17.71588 H 77.95372 M -127.56062,-35.43176 H 49.6069 M -155.89748,-53.14145 H 21.27005" class="a"></path></g></g><g><path style="stroke:#e0cae3" d="M 297.64182,159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M -177.16754,177.16754 0,0" class="b"></path></g><g><g clip-path="url(#clipPath64790)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e41a1c" d="M 0,0 94.57683,50.66609" class="c"></path><g transform="matrix(0.88358,0.47334,-0.47334,0.88358,91.69998,49.12492)"><g><path style="fill:#e41a1c;stroke:#e41a1c" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(50.603 20.012)"><g><g transform="translate(-192.335 -670.28)"><text transform="matrix(1,0,0,-1,192.909,670.28)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">v</tspan></text>
@@ -1400,7 +1400,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(5.165)"><tspan y="0" x="0" class="c">0</tspan></text>
 <text transform="translate(11.546)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span>).</span></p>
-<p id="p-309">The four vectors <span class="pretex-inline" style="width:4.53949em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
+<p id="p-310">The four vectors <span class="pretex-inline" style="width:4.53949em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(10.995)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(16.074)"><tspan y="0" x="0" class="e">w</tspan></text>
@@ -1409,7 +1409,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(34.752)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(40.405)"><tspan y="0" x="0" class="e">x</tspan></text>
 <text transform="translate(46.935)"><tspan y="0" x="0" class="d">}</tspan></text>
-</svg></span></span> below are linearly dependent: they are the columns of a <a knowl="./knowl/linindep-wide-matrix.html?vers=dd743d" knowl-id="xref-linindep-wide-matrix" alt="Important Note 2.5.10 " title="Important Note 2.5.10 ">wide matrix</a>.  Note however that <span class="pretex-inline" style="width:0.553em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
+</svg></span></span> below are linearly dependent: they are the columns of a <a knowl="./knowl/linindep-wide-matrix.html?vers=d2e450" knowl-id="xref-linindep-wide-matrix" alt="Important Note 2.5.10 " title="Important Note 2.5.10 ">wide matrix</a>.  Note however that <span class="pretex-inline" style="width:0.553em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">u</tspan></text>
 </svg></span></span> is not contained in <span class="pretex-inline" style="width:6.02898em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
 <text transform="translate(25.043)"><tspan y="0" x="0" class="d">{</tspan></text>
 <text transform="translate(30.781)"><tspan y="0" x="0" class="e">v</tspan></text>
@@ -1419,7 +1419,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(54.309)"><tspan y="0" x="0" class="e">x</tspan></text>
 <text transform="translate(60.84)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(66.004)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span>  See this <a knowl="./knowl/linindep-not-any.html?vers=dd743d" knowl-id="xref-linindep-not-any" alt="Warning 2.5.13 " title="Warning 2.5.13 ">warning</a>.</p>
+</svg></span></span>  See this <a knowl="./knowl/linindep-not-any.html?vers=d2e450" knowl-id="xref-linindep-not-any" alt="Warning 2.5.13 " title="Warning 2.5.13 ">warning</a>.</p>
 <figure class="figure-like" id="linindep-3d-4vecs"><div class="pretex-display"><svg height="24.74505em" version="1.1" class="pretex" viewbox="0 0 284 284"><defs><clippath id="clipPath65190" clippathunits="userSpaceOnUse"><path id="path65188" d="M -141.73404,-141.73404 V 141.73404 H 141.73404 V -141.73404 Z"></path></clippath><clippath id="clipPath65202" clippathunits="userSpaceOnUse"><path id="path65200" d="M -673.3881,-88.60541 673.3881,88.60541 850.59459,-88.60106 -141.76866,-620.22485 Z"></path></clippath><clippath id="clipPath65244" clippathunits="userSpaceOnUse"><path id="path65242" d="M -673.3881,-88.60541 673.3881,88.60541 141.76866,620.22485 -850.59459,88.60106 Z"></path></clippath></defs><g transform="matrix(1,0,0,-1,141.732,141.732)"><g><g><g clip-path="url(#clipPath65190)"><g><g clip-path="url(#clipPath65202)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e0cae3" d="M -297.64182,-159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M 177.16754,-177.16754 0,0" class="b"></path></g><g><g><path style="fill:#ffffff;fill-opacity:0.5;stroke:none" d="M -14.17339,35.43176 H 162.99414 L 21.2601,-53.14766 h -177.16754 z" class="d"></path></g><g><path style="stroke:#bbbbbb" d="M -14.17339,35.43176 -155.90744,-53.14766 M 21.26012,35.43176 -120.47392,-53.14766 M 56.69362,35.43176 -85.04042,-53.14766 M 92.1271,35.43176 -49.60692,-53.14766 M 127.56062,35.43176 -14.1734,-53.14766 M 162.98169,35.43176 21.24765,-53.14766 M -14.17339,35.43176 H 162.99414 M -42.5202,17.71588 H 134.64734 M -70.867,0 H 106.30052 M -99.21382,-17.71588 H 77.95372 M -127.56062,-35.43176 H 49.6069 M -155.89748,-53.14145 H 21.27005" class="a"></path></g></g><g><path style="stroke:#e0cae3" d="M 297.64182,159.45076 0,0" class="b"></path></g><g><path style="stroke:#e0cae3" d="M -177.16754,177.16754 0,0" class="b"></path></g><g><g clip-path="url(#clipPath65244)"><g><path style="fill:#f5edf6;fill-opacity:0.75;stroke:none" d="M -184.29573,-44.30225 -77.97186,-150.62611 219.73703,8.86095 113.41316,115.18481 Z" class="d"></path></g><g><path style="stroke:#e0cae3" d="M -184.29572,-44.30226 113.41318,115.1848 M -166.57507,-62.0229 131.13382,97.46416 M -148.85445,-79.74353 148.85445,79.74353 M -131.13382,-97.46416 166.57507,62.0229 M -113.41318,-115.1848 184.29572,44.30226 M -95.69254,-132.90544 202.01636,26.58162 M -77.9719,-150.62608 219.737,8.86098 M -184.29567,-44.30222 -77.9718,-150.62608 M -134.67754,-17.72104 -28.35367,-124.0449 M -85.0594,8.86012 21.26445,-97.46373 M -35.44128,35.44128 70.88258,-70.88258 M 14.17683,62.02243 120.5007,-44.30142 M 63.79497,88.6036 170.11884,-17.72025 M 113.4131,115.18478 219.73697,8.86092" class="a"></path></g></g></g><g><path style="stroke:#e41a1c" d="M 0,0 94.57683,50.66609" class="c"></path><g transform="matrix(0.88358,0.47334,-0.47334,0.88358,91.69998,49.12492)"><g><path style="fill:#e41a1c;stroke:#e41a1c" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(50.603 20.012)"><g><g transform="translate(-192.335 -670.28)"><text transform="matrix(1,0,0,-1,192.909,670.28)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">v</tspan></text>
 </g></g></g></g></g><g><path style="stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 99.21393,53.15024 V 17.71672" class="b"></path></g><g><path style="stroke:#9bbedc" d="M 0,0 31.72243,-31.72252" class="c"></path><g transform="matrix(0.70712,-0.7071,0.7071,0.70712,29.4201,-29.42023)"><g><path style="fill:#9bbedc;stroke:#9bbedc" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(8.25 -24.279)"><g><g transform="translate(-149.982 -625.989)"><text transform="matrix(1,0,0,-1,150.269,625.989)"><tspan y="0" x="0" style="fill:#9bbedc" class="e">w</tspan></text>
 </g></g></g></g></g><g><path style="stroke:#808080;stroke-dasharray:0.3985,0.99628;stroke-dashoffset:0" d="M 35.43349,-35.43349 V 0" class="b"></path></g><g><path style="stroke:#4daf4a" d="M 0,0 -52.23346,32.64578" class="c"></path><g transform="matrix(-0.8499,0.53119,-0.53119,-0.8499,-49.46626,30.91629)"><g><path style="fill:#4daf4a;stroke:#4daf4a" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="c"></path></g></g><g><g transform="translate(-35.689 11.154)"><g><g transform="translate(-106.043 -661.422)"><text transform="matrix(1,0,0,-1,106.043,661.422)"><tspan y="0" x="0" style="fill:#4daf4a" class="e">u</tspan></text>
@@ -1457,16 +1457,16 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(54.309)"><tspan y="0" x="0" class="e">x</tspan></text>
 <text transform="translate(60.84)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(66.004)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></figcaption></figure><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-48-hidden.html?vers=dd743d" knowl-id="hidden-example-48" alt="Example 2.5.21 Interactive: Linear independence of two vectors in \R^3" title="Example 2.5.21 Interactive: Linear independence of two vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+</svg></span></span></figcaption></figure><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-48-hidden.html?vers=d2e450" knowl-id="hidden-example-48" alt="Example 2.5.21 Interactive: Linear independence of two vectors in \R^3" title="Example 2.5.21 Interactive: Linear independence of two vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of two vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-49-hidden.html?vers=dd743d" knowl-id="hidden-example-49" alt="Example 2.5.23 Interactive: Linear independence of three vectors in \R^3" title="Example 2.5.23 Interactive: Linear independence of three vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-49-hidden.html?vers=d2e450" knowl-id="hidden-example-49" alt="Example 2.5.23 Interactive: Linear independence of three vectors in \R^3" title="Example 2.5.23 Interactive: Linear independence of three vectors in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Linear independence of three vectors in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="b">3</tspan></text>
 </svg></span></span></span></h5></article></a></div></section><section class="subsection" id="subsection-22"><header title="Subsection 2.5.4 Linear Dependence and Free Variables"><h1 class="heading hide-type" alt="Subsection 2.5.4 Linear Dependence and Free Variables">
 <span class="type">Subsection</span><span class="codenumber">2.5.4</span><span class="title">Linear Dependence and Free Variables</span>
-</h1></header><p id="p-310">In light of this <a knowl="./knowl/linindep-matrix-cols.html?vers=dd743d" knowl-id="xref-linindep-matrix-cols" alt="Important Note 2.5.9 Recipe: Checking linear independence" title="Important Note 2.5.9 Recipe: Checking linear independence">important note</a> and this <a knowl="./knowl/linindep-criterion-inspan.html?vers=dd743d" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>, it is natural to ask which columns of a matrix are redundant, i.e., which we can remove without affecting the column span.</p>
+</h1></header><p id="p-311">In light of this <a knowl="./knowl/linindep-matrix-cols.html?vers=d2e450" knowl-id="xref-linindep-matrix-cols" alt="Important Note 2.5.9 Recipe: Checking linear independence" title="Important Note 2.5.9 Recipe: Checking linear independence">important note</a> and this <a knowl="./knowl/linindep-criterion-inspan.html?vers=d2e450" knowl-id="xref-linindep-criterion-inspan" alt="Theorem 2.5.12 " title="Theorem 2.5.12 ">criterion</a>, it is natural to ask which columns of a matrix are redundant, i.e., which we can remove without affecting the column span.</p>
 <article class="theorem-like" id="linindep-pivot-cols"><h5 class="heading"><span class="type">Theorem</span></h5>
-<p id="p-311">Let <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
+<p id="p-312">Let <span class="pretex-inline" style="width:5.18952em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="e">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="b">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="c">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="e">v</tspan></text>
@@ -1507,8 +1507,8 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(89.768)"><tspan y="0" x="0" class="d">}</tspan></text>
 <text transform="translate(94.933)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span></p>
-<p id="p-312">The pivot columns are linearly independent, so we cannot delete any more columns without changing the span.</p></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-5" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-313">If the matrix is in reduced row echelon form:</p>
+<p id="p-313">The pivot columns are linearly independent, so we cannot delete any more columns without changing the span.</p></article><div class="posterior">
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-5" id="proof-5"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-5" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-314">If the matrix is in reduced row echelon form:</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="202 2 98 40"><text transform="translate(203.928 25.235)"><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(212.977 25.235)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(224.678 3.417)"><tspan y="0" x="0" class="h">E</tspan></text>
@@ -1580,7 +1580,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(396.883 25.235)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(408.583 25.235)"><tspan y="0" x="0 6.3812122" class="c">0.</tspan></text>
 </svg></div>
-<p id="p-314">If the matrix is not in reduced row echelon form, then we row reduce:</p>
+<p id="p-315">If the matrix is not in reduced row echelon form, then we row reduce:</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="124 2 255 40"><text transform="translate(125.414 25.235)"><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(134.463 25.235)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(146.164 3.417)"><tspan y="0" x="0" class="h">E</tspan></text>
@@ -1710,13 +1710,13 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 </svg></div>
 <p>has only the trivial solution.</p></article></span>
 </div>
-<p id="p-315">Note that it is necessary to row reduce <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
-</svg></span></span> to find which are its <a knowl="./knowl/defn-pivot-pos.html?vers=dd743d" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot columns</a>.  However, the span of the columns of the row reduced matrix is generally <em>not</em> equal to the span of the columns of <span class="pretex-inline" style="width:0.875em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+<p id="p-316">Note that it is necessary to row reduce <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
+</svg></span></span> to find which are its <a knowl="./knowl/defn-pivot-pos.html?vers=d2e450" knowl-id="xref-defn-pivot-pos" alt="Definition 1.2.18 " title="Definition 1.2.18 ">pivot columns</a>.  However, the span of the columns of the row reduced matrix is generally <em>not</em> equal to the span of the columns of <span class="pretex-inline" style="width:0.875em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="c">:</tspan></text>
-</svg></span></span> one must use the pivot columns of the <em>original</em> matrix.  See <a knowl="./knowl/dimension-basis-colspace.html?vers=dd743d" knowl-id="xref-dimension-basis-colspace" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">theorem in Section 2.7</a> for a restatement of the above theorem.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-50-hidden.html?vers=dd743d" knowl-id="hidden-example-50" alt="Example 2.5.26 " title="Example 2.5.26 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+</svg></span></span> one must use the pivot columns of the <em>original</em> matrix.  See <a knowl="./knowl/dimension-basis-colspace.html?vers=d2e450" knowl-id="xref-dimension-basis-colspace" alt="Theorem 2.7.10 " title="Theorem 2.7.10 ">theorem in Section 2.7</a> for a restatement of the above theorem.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-50-hidden.html?vers=d2e450" knowl-id="hidden-example-50" alt="Example 2.5.26 " title="Example 2.5.26 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
 <article class="bluebox" id="pivot-cols-dim"><h5 class="heading"><span class="title">Pivot Columns and Dimension</span></h5>
-<p id="p-317">Let <span class="pretex-inline" style="width:0.623em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
+<p id="p-318">Let <span class="pretex-inline" style="width:0.623em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
 </svg></span></span> be the number of pivot columns in the matrix</p>
 <div class="pretex-display"><svg height="3.57235em" version="1.1" class="pretex" viewbox="190 1 123 41"><text transform="translate(191.65 25.235)"><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(200.7 25.235)"><tspan y="0" x="0" class="g">=</tspan></text>
@@ -1733,8 +1733,8 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(299.169 3.417)"><tspan y="0" x="0" class="h">F</tspan></text>
 <text transform="translate(309.159 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-<ul id="ul-22" style="list-style-type: disc;">
-<li id="li-151">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
+<ul id="ul-21" style="list-style-type: disc;">
+<li id="li-149">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
 <text transform="translate(9.819)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(21.519)"><tspan y="0" x="0" class="c">1</tspan></text>
 </svg></span></span> then <span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
@@ -1749,7 +1749,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(85.146 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
 <text transform="translate(89.768)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is a line.</li>
-<li id="li-152">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
+<li id="li-150">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
 <text transform="translate(9.819)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(21.519)"><tspan y="0" x="0" class="c">2</tspan></text>
 </svg></span></span> then <span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
@@ -1764,7 +1764,7 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(85.146 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
 <text transform="translate(89.768)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is a plane.</li>
-<li id="li-153">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
+<li id="li-151">If <span class="pretex-inline" style="width:2.43099em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
 <text transform="translate(9.819)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(21.519)"><tspan y="0" x="0" class="c">3</tspan></text>
 </svg></span></span> then <span class="pretex-inline" style="width:8.27151em"><span style="height:0.99766em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
@@ -1779,11 +1779,11 @@ with at least one of <span class="pretex-inline" style="width:5.53185em"><span s
 <text transform="translate(85.146 2.594)"><tspan y="0" x="0" class="f">k</tspan></text>
 <text transform="translate(89.768)"><tspan y="0" x="0" class="d">}</tspan></text>
 </svg></span></span> is a 3-space.</li>
-<li id="li-154">Et cetera.</li>
+<li id="li-152">Et cetera.</li>
 </ul>
 <p> The number <span class="pretex-inline" style="width:0.623em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="e">d</tspan></text>
-</svg></span></span> is called the dimension.  We discussed this notion in this <a knowl="./knowl/soln-sets-dim-hom.html?vers=dd743d" knowl-id="xref-soln-sets-dim-hom" alt="Important Note 2.4.14 Dimension of the solution set" title="Important Note 2.4.14 Dimension of the solution set">important note in Section 2.4</a> and this <a knowl="./knowl/soln-sets-dim-inhom.html?vers=dd743d" knowl-id="xref-soln-sets-dim-inhom" alt="Important Note 2.4.22 Dimension of the solution set" title="Important Note 2.4.22 Dimension of the solution set">important note in Section 2.4</a>.  We will define this concept rigorously in <a href="dimension.html" alt="Section 2.7 Basis and Dimension" title="Section 2.7 Basis and Dimension">Section 2.7</a>.</p></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20linear-independence&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</svg></span></span> is called the dimension.  We discussed this notion in this <a knowl="./knowl/soln-sets-dim-hom.html?vers=d2e450" knowl-id="xref-soln-sets-dim-hom" alt="Important Note 2.4.14 Dimension of the solution set" title="Important Note 2.4.14 Dimension of the solution set">important note in Section 2.4</a> and this <a knowl="./knowl/soln-sets-dim-inhom.html?vers=d2e450" knowl-id="xref-soln-sets-dim-inhom" alt="Important Note 2.4.22 Dimension of the solution set" title="Important Note 2.4.22 Dimension of the solution set">important note in Section 2.4</a>.  We will define this concept rigorously in <a href="dimension.html" alt="Section 2.7 Basis and Dimension" title="Section 2.7 Basis and Dimension">Section 2.7</a>.</p></article></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20linear-independence&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="C5yBraAKpaRc5KlbpAgNl"></script>
+<script src="js/ila.js?vers=58f93b" class="C5yBraAKpaRc5KlbpAgNl"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@
 <title>Bases as Coordinate Systems</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -120,14 +120,14 @@ svg.pretex path {
 .CCnQzQbwax0kACzxAD_lw svg.pretex path.d { stroke-width:0.68900001px }
 .CCnQzQbwax0kACzxAD_lw svg.pretex path.e { stroke-width:0.61000001px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive CCnQzQbwax0kACzxAD_lw" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons CCnQzQbwax0kACzxAD_lw"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -135,7 +135,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -213,24 +213,24 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">2.8</span><span class="title">Bases as Coordinate Systems</span><a href="bases-as-coord-systems.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-11"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-38" style="list-style-type: decimal;">
-<li id="li-200">Learn to view a basis as a coordinate system on a subspace.</li>
-<li id="li-201">
+<li id="li-198">Learn to view a basis as a coordinate system on a subspace.</li>
+<li id="li-199">
 <em>Recipes:</em> compute the <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span>-coordinates</span> of a vector, compute the usual coordinates of a vector from its <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span>-coordinates.</span></li>
-<li id="li-202">
+<li id="li-200">
 <em>Picture:</em> the <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span>-coordinates</span> of a vector using its location on a nonstandard coordinate grid.</li>
-<li id="li-203">
+<li id="li-201">
 <em>Vocabulary word:</em> <em class="terminology"><span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span>-coordinates</span></em>.</li>
-</ol></article><p id="p-420">In this section, we interpret a basis of a subspace <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
+</ol></article><p id="p-421">In this section, we interpret a basis of a subspace <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
 </svg></span></span> as a <em>coordinate system</em> on <span class="pretex-inline" style="width:1.027em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
 <text transform="translate(8.596)"><tspan y="0" x="0" class="c">,</tspan></text>
 </svg></span></span> and we learn how to write a vector in <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
 </svg></span></span> in that coordinate system.</p>
 <article class="theorem-like" id="dimension-unique-coeff"><h5 class="heading"><span class="type">Fact</span></h5>
-<p id="p-421">If <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
+<p id="p-422">If <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(10.416)"><tspan y="0" x="0" class="d">=</tspan></text>
 <text transform="translate(22.117)"><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(27.855)"><tspan y="0" x="0" class="b">v</tspan></text>
@@ -268,7 +268,7 @@ svg.pretex path {
 </svg></div>
 <p>in exactly one way.</p></article><div class="posterior">
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-10" id="proof-10"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-422">Recall that to say <span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
+<div id="hk-proof-10" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-423">Recall that to say <span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span> is a <em>basis</em> for <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
 </svg></span></span> means that <span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span> spans <span class="pretex-inline" style="width:0.749em"><span style="height:0.6775em;vertical-align:-0.0035em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
@@ -402,9 +402,9 @@ svg.pretex path {
 </svg></span></span></p></article></div>
 </div>
 <article class="example-like" id="specialcase-24"><h5 class="heading"><span class="type">Example</span></h5>
-<p id="p-423">Consider the standard basis of <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
+<p id="p-424">Consider the standard basis of <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="f">3</tspan></text>
-</svg></span></span> from this <a knowl="./knowl/dimension-eg-Rn.html?vers=dd743d" knowl-id="xref-dimension-eg-Rn" alt="Example 2.7.6 The standard basis of \R^n" title="Example 2.7.6 The standard basis of \R^n">example in Section 2.7</a>:</p>
+</svg></span></span> from this <a knowl="./knowl/dimension-eg-Rn.html?vers=d2e450" knowl-id="xref-dimension-eg-Rn" alt="Example 2.7.6 The standard basis of \R^n" title="Example 2.7.6 The standard basis of \R^n">example in Section 2.7</a>:</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="160 2 184 40"><text transform="translate(160.868 25.235)"><tspan y="0" x="0" class="b">e</tspan></text>
 <text transform="translate(165.735 27.828)"><tspan y="0" x="0" class="f">1</tspan></text>
 <text transform="translate(173.155 25.235)"><tspan y="0" x="0" class="d">=</tspan></text>
@@ -427,7 +427,7 @@ svg.pretex path {
 <text transform="translate(330.237 3.417)"><tspan y="0" x="0" class="j">F</tspan></text>
 <text transform="translate(340.228 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-<p>According to the above <a knowl="./knowl/dimension-unique-coeff.html?vers=dd743d" knowl-id="xref-dimension-unique-coeff" alt="Fact 2.8.1 " title="Fact 2.8.1 ">fact</a>, every vector in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
+<p>According to the above <a knowl="./knowl/dimension-unique-coeff.html?vers=d2e450" knowl-id="xref-dimension-unique-coeff" alt="Fact 2.8.1 " title="Fact 2.8.1 ">fact</a>, every vector in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="f">3</tspan></text>
 </svg></span></span> can be written as a linear combination of <span class="pretex-inline" style="width:3.7022em"><span style="height:0.71567em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">e</tspan></text>
 <text transform="translate(5.153 2.594)"><tspan y="0" x="0" class="f">1</tspan></text>
@@ -485,7 +485,7 @@ svg.pretex path {
 <text transform="translate(29.681)"><tspan y="0" x="0" class="b">e</tspan></text>
 <text transform="translate(34.547 2.594)"><tspan y="0" x="0" class="f">3</tspan></text>
 <text transform="translate(39.3)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></em></p></article><p id="p-424">What exactly are coordinates, anyway?  One way to think of coordinates is that they give directions for how to get to a certain point from the origin.  In the above example, the linear combination <span class="pretex-inline" style="width:6.46319em"><span style="height:0.91716em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">3</tspan></text>
+</svg></span></span></em></p></article><p id="p-425">What exactly are coordinates, anyway?  One way to think of coordinates is that they give directions for how to get to a certain point from the origin.  In the above example, the linear combination <span class="pretex-inline" style="width:6.46319em"><span style="height:0.91716em;vertical-align:-0.23067em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">3</tspan></text>
 <text transform="translate(6.668)"><tspan y="0" x="0" class="b">e</tspan></text>
 <text transform="translate(11.534 2.594)"><tspan y="0" x="0" class="f">1</tspan></text>
 <text transform="translate(18.421)"><tspan y="0" x="0" class="d">+</tspan></text>
@@ -501,7 +501,7 @@ svg.pretex path {
 </svg></span></span> units east, then <span class="pretex-inline" style="width:0.556em"><span style="height:0.6865em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">2</tspan></text>
 </svg></span></span> units down.</p>
 <article class="definition-like" id="dimension-defn-Bcoords"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-425">Let <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
+<p id="p-426">Let <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(10.416)"><tspan y="0" x="0" class="d">=</tspan></text>
 <text transform="translate(22.117)"><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(27.855)"><tspan y="0" x="0" class="b">v</tspan></text>
@@ -569,7 +569,7 @@ svg.pretex path {
 <text transform="translate(297.723 30.492)"><tspan y="0" x="0" class="g">m</tspan></text>
 <text transform="translate(304.457 35.37)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-</article><p id="p-426"> If we change the basis, then we can still give instructions for how to get to the point <span class="pretex-inline" style="width:4.29799em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">(</tspan></text>
+</article><p id="p-427"> If we change the basis, then we can still give instructions for how to get to the point <span class="pretex-inline" style="width:4.29799em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">(</tspan></text>
 <text transform="translate(4.51)"><tspan y="0" x="0 6.3812122 11.178598 17.559811" class="c">3,5,</tspan></text>
 <text transform="translate(26.856)"><tspan y="0" x="0" class="e">−</tspan></text>
 <text transform="translate(35.246)"><tspan y="0" x="0" class="c">2</tspan></text>
@@ -662,7 +662,7 @@ svg.pretex path {
 <text transform="translate(41.627)"><tspan y="0" x="0" class="d">)</tspan></text>
 <text transform="translate(46.138)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></span></span>”</span></p>
-<article class="bluebox" id="bluebox-37"><p id="p-427">The above <a knowl="./knowl/dimension-defn-Bcoords.html?vers=dd743d" knowl-id="xref-dimension-defn-Bcoords" alt="Definition 2.8.3 " title="Definition 2.8.3 ">definition</a> gives a way of using <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
+<article class="bluebox" id="bluebox-37"><p id="p-428">The above <a knowl="./knowl/dimension-defn-Bcoords.html?vers=d2e450" knowl-id="xref-dimension-defn-Bcoords" alt="Definition 2.8.3 " title="Definition 2.8.3 ">definition</a> gives a way of using <span class="pretex-inline" style="width:1.2744em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="g">m</tspan></text>
 </svg></span></span> to <em>label</em> the points of a subspace of dimension <span class="pretex-inline" style="width:1.159em"><span style="height:0.5075em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">m</tspan></text>
 <text transform="translate(9.641)"><tspan y="0" x="0" class="c">:</tspan></text>
@@ -670,13 +670,13 @@ svg.pretex path {
 </svg></span></span>-coordinate</span> vector.  For instance, if we choose a basis for a plane, we can label the points of that plane with the points of <span class="pretex-inline" style="width:1.36307em"><span style="height:0.87066em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="f">2</tspan></text>
 <text transform="translate(12.453)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-72-hidden.html?vers=dd743d" knowl-id="hidden-example-72" alt="Example 2.8.5 A nonstandard coordinate system on \R^2" title="Example 2.8.5 A nonstandard coordinate system on \R^2"><article class="example-like"><h5 class="heading">
+</svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-72-hidden.html?vers=d2e450" knowl-id="hidden-example-72" alt="Example 2.8.5 A nonstandard coordinate system on \R^2" title="Example 2.8.5 A nonstandard coordinate system on \R^2"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A nonstandard coordinate system on <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="i">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="f">2</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
 <article class="example-like" id="specialcase-25"><h5 class="heading"><span class="type">Example</span></h5>
-<p id="p-430">Let</p>
+<p id="p-431">Let</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="186 2 131 40"><text transform="translate(187.47 25.235)"><tspan y="0" x="0" class="b">v</tspan></text>
 <text transform="translate(192.393 27.828)"><tspan y="0" x="0" class="f">1</tspan></text>
 <text transform="translate(199.814 25.235)"><tspan y="0" x="0" class="d">=</tspan></text>
@@ -785,7 +785,7 @@ svg.pretex path {
 <text transform="translate(377.005 19.784)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 <figure class="figure-like" id="dimension-coordinates"><div id="mathbox-44" class="mathbox" style="height:500px;">
-<iframe src="demos/Axequalsb.html?captions=basis&amp;mat=2,1:-1,0:1,-1&amp;range2=5&amp;vers=dd743d" title="Interactive Figure"></iframe><div class="maximizer"></div>
+<iframe src="demos/Axequalsb.html?captions=basis&amp;mat=2,1:-1,0:1,-1&amp;range2=5&amp;vers=d2e450" title="Interactive Figure"></iframe><div class="maximizer"></div>
 <div class="minimizer"></div>
 </div>
 <figcaption><span class="heading">Figure</span><span class="codenumber">8</span>Left: the <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
@@ -806,15 +806,15 @@ svg.pretex path {
 <text transform="translate(16.734 2.594)"><tspan y="0" x="0" class="k">B</tspan></text>
 </svg></span></span> to understand the correspondence between <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="b">x</tspan></text>
 </svg></span></span> and its <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
-</svg></span></span>-coordinate</span> vector.</figcaption></figure></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-73-hidden.html?vers=dd743d" knowl-id="hidden-example-73" alt="Example 2.8.9 A coordinate system on a plane" title="Example 2.8.9 A coordinate system on a plane"><article class="example-like"><h5 class="heading">
+</svg></span></span>-coordinate</span> vector.</figcaption></figure></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/example-73-hidden.html?vers=d2e450" knowl-id="hidden-example-73" alt="Example 2.8.9 A coordinate system on a plane" title="Example 2.8.9 A coordinate system on a plane"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A coordinate system on a plane)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-74-hidden.html?vers=dd743d" knowl-id="hidden-example-74" alt="Example 2.8.11 A coordinate system on another plane" title="Example 2.8.11 A coordinate system on another plane"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-74-hidden.html?vers=d2e450" knowl-id="hidden-example-74" alt="Example 2.8.11 A coordinate system on another plane" title="Example 2.8.11 A coordinate system on another plane"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(A coordinate system on another plane)</span>
 </h5></article></a></div>
 <article class="bluebox" id="bluebox-38"><h5 class="heading"><span class="title">Recipes: <span class="pretex-bind"><span class="pretex-inline" style="width:0.67504em"><span style="height:0.67122em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span>-coordinates</span></span></h5>
-<p id="p-435">If <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
+<p id="p-436">If <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(10.416)"><tspan y="0" x="0" class="d">=</tspan></text>
 <text transform="translate(22.117)"><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(27.855)"><tspan y="0" x="0" class="b">v</tspan></text>
@@ -915,7 +915,7 @@ svg.pretex path {
 <text transform="translate(308.517 25.235)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
 </article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-12" id="remark-12"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
-<div id="hk-remark-12" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-436">Let <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
+<div id="hk-remark-12" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-437">Let <span class="pretex-inline" style="width:8.20055em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(10.416)"><tspan y="0" x="0" class="d">=</tspan></text>
 <text transform="translate(22.117)"><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(27.855)"><tspan y="0" x="0" class="b">v</tspan></text>
@@ -973,8 +973,8 @@ svg.pretex path {
 </svg></span></span>  In other words, the above equation is <em>inconsistent</em> when <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="b">x</tspan></text>
 </svg></span></span> is not in <span class="pretex-inline" style="width:1.027em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">V</tspan></text>
 <text transform="translate(8.596)"><tspan y="0" x="0" class="c">.</tspan></text>
-</svg></span></span></p></article></div></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20bases-as-coord-systems&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</svg></span></span></p></article></div></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20bases-as-coord-systems&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="CCnQzQbwax0kACzxAD_lw"></script>
+<script src="js/ila.js?vers=58f93b" class="CCnQzQbwax0kACzxAD_lw"></script>
 </body>
 </html>

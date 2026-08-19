@@ -5,7 +5,7 @@
 <title>Orthogonal Projection</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width,  initial-scale=1.0">
-<link href="css/ila.css?vers=ed0a39" rel="stylesheet" type="text/css">
+<link href="css/ila.css?vers=92d753" rel="stylesheet" type="text/css">
 <link rel="manifest" href="manifest.json">
 <style id="pretex-style">
 .pretex-bind {
@@ -118,14 +118,14 @@ svg.pretex path {
 .C4UkYd8nHYiLJMmwB9cAE svg.pretex path.d { stroke-width:1.19553006px }
 .C4UkYd8nHYiLJMmwB9cAE svg.pretex path.e { stroke-width:0.68900001px }
 </style>
-<link rel="shortcut icon" href="images/logo.gif">
+<link rel="shortcut icon" href="images/icon-2x.png">
+<script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
 <a class="assistive C4UkYd8nHYiLJMmwB9cAE" href="#content">Skip to main content</a><header id="masthead" class="smallbuttons C4UkYd8nHYiLJMmwB9cAE"><div class="banner"><div class="container">
-<div class="pdf-version"><a href="ila.pdf" target="_blank" rel="noopener">PDF version</a></div>
-<a id="logo-link" href="http://www.gatech.edu/" target="_blank" rel="noopener"><img src="images/logo.gif" alt="Logo image for document"></a><div class="title-container">
-<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra</span></a></h1>
-<p class="byline">Dan Margalit, Joseph Rabinoff</p>
+<a id="logo-link" href="https://tghyde.github.io/math221-fall2026/" target="_blank" rel="noopener"><img src="images/logo.png" alt="Logo image for document"></a><div class="title-container">
+<h1 class="heading"><a href="index.html"><span class="title">Interactive Linear Algebra: Vassar Edition</span></a></h1>
+<p class="byline">Dan Margalit, Joseph Rabinoff (edited by Trevor Hyde)</p>
 </div>
 </div></div>
 <nav id="gt-navbar" class="navbar container" style=""><div class="dropdown"><div class="toc-border-container" id="toc"><div class="toc-contents">
@@ -133,7 +133,7 @@ svg.pretex path {
 <ul>
 <li><a href="colophon-1.html" data-scroll="colophon-1">Colophon</a></li>
 <li><a href="preface-1.html" data-scroll="preface-1">Contributors to this textbook</a></li>
-<li><a href="preface-2.html" data-scroll="preface-2">Variants of this textbook</a></li>
+<li><a href="preface-2.html" data-scroll="preface-2">About the Vassar Edition</a></li>
 <li><a href="overview.html" data-scroll="overview">Overview</a></li>
 </ul>
 <h2 class="link"><a href="chap-algebra.html" data-scroll="chap-algebra"><span class="codenumber">1</span><span class="title">Systems of Linear Equations: Algebra</span></a></h2>
@@ -211,17 +211,17 @@ svg.pretex path {
 <span class="type">Section</span><span class="codenumber">6.3</span><span class="title">Orthogonal Projection</span><a href="projections.html" class="permalink">¶ permalink</a>
 </h1></header><article class="objectives" id="objectives-30"><h5 class="heading"><span class="type">Objectives</span></h5>
 <ol id="ol-127" style="list-style-type: decimal;">
-<li id="li-618">Understand the orthogonal decomposition of a vector with respect to a subspace.</li>
-<li id="li-619">Understand the relationship between orthogonal decomposition and orthogonal projection.</li>
-<li id="li-620">Understand the relationship between orthogonal decomposition and the closest vector on / distance to a subspace.</li>
-<li id="li-621">Learn the basic properties of orthogonal projections as linear transformations and as matrix transformations.</li>
-<li id="li-622">
+<li id="li-616">Understand the orthogonal decomposition of a vector with respect to a subspace.</li>
+<li id="li-617">Understand the relationship between orthogonal decomposition and orthogonal projection.</li>
+<li id="li-618">Understand the relationship between orthogonal decomposition and the closest vector on / distance to a subspace.</li>
+<li id="li-619">Learn the basic properties of orthogonal projections as linear transformations and as matrix transformations.</li>
+<li id="li-620">
 <em>Recipes:</em> orthogonal projection onto a line, orthogonal decomposition by solving a system of equations, orthogonal projection via a complicated matrix product.</li>
-<li id="li-623">
+<li id="li-621">
 <em>Pictures:</em> orthogonal decomposition, orthogonal projection.</li>
-<li id="li-624">
+<li id="li-622">
 <em>Vocabulary words:</em> <em class="terminology">orthogonal decomposition</em>, <em class="terminology">orthogonal projection</em>.</li>
-</ol></article><section class="introduction" id="introduction-27"><p id="p-1469">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+</ol></article><section class="introduction" id="introduction-27"><p id="p-1470">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -240,9 +240,9 @@ svg.pretex path {
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  This is exactly what we will use to almost solve matrix equations, as discussed in the introduction to <a href="chap-orthogonality.html" alt="Chapter 6 Orthogonality" title="Chapter 6 Orthogonality">Chapter 6</a>.</p></section><section class="subsection" id="subsection-73"><header title="Subsection 6.3.1 Orthogonal Decomposition"><h1 class="heading hide-type" alt="Subsection 6.3.1 Orthogonal Decomposition">
 <span class="type">Subsection</span><span class="codenumber">6.3.1</span><span class="title">Orthogonal Decomposition</span>
-</h1></header><p id="p-1470">We begin by fixing some notation.</p>
+</h1></header><p id="p-1471">We begin by fixing some notation.</p>
 <article class="definition-like" id="projections-closest-notn"><h5 class="heading"><span class="type">Notation</span></h5>
-<p id="p-1471">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1472">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -254,7 +254,7 @@ svg.pretex path {
 </svg></span></span> by <span class="pretex-inline" style="width:1.6074em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 <text transform="translate(15.258)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span></p></article><p id="p-1472">To say that <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span></p></article><p id="p-1473">To say that <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> is the closest vector to <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> on <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
@@ -304,7 +304,7 @@ svg.pretex path {
 <article class="theorem-like" id="projections-decomp-exists"><h5 class="heading">
 <span class="type">Theorem</span><span class="title">(Orthogonal decomposition)</span>
 </h5>
-<p id="p-1473">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1474">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -333,7 +333,7 @@ svg.pretex path {
 <text transform="translate(11.775 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></p></article><div class="posterior">
-<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-58" id="proof-58"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-58" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1474">Let <span class="pretex-inline" style="width:5.86999em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<span class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-58" id="proof-58"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></span><span id="hk-proof-58" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1475">Let <span class="pretex-inline" style="width:5.86999em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(12.309)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(24.01)"><tspan y="0" x="0 6.4845052 9.6980648" class="d">dim</tspan></text>
 <text transform="translate(43.383)"><tspan y="0" x="0" class="g">(</tspan></text>
@@ -349,7 +349,7 @@ svg.pretex path {
 <text transform="translate(67.221)"><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(78.996 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 <text transform="translate(85.516)"><tspan y="0" x="0" class="g">)</tspan></text>
-</svg></span></span> by this <a knowl="./knowl/orthocomp-facts-basic.html?vers=dd743d" knowl-id="xref-orthocomp-facts-basic" alt="Fact 6.2.16 Facts about Orthogonal Complements" title="Fact 6.2.16 Facts about Orthogonal Complements">fact in Section 6.2</a>.  Let <span class="pretex-inline" style="width:5.37352em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> by this <a knowl="./knowl/orthocomp-facts-basic.html?vers=d2e450" knowl-id="xref-orthocomp-facts-basic" alt="Fact 6.2.16 Facts about Orthogonal Complements" title="Fact 6.2.16 Facts about Orthogonal Complements">fact in Section 6.2</a>.  Let <span class="pretex-inline" style="width:5.37352em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="i">1</tspan></text>
 <text transform="translate(10.25)"><tspan y="0" x="0" class="d">,</tspan></text>
 <text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
@@ -373,7 +373,7 @@ svg.pretex path {
 </svg></span></span> be a basis for <span class="pretex-inline" style="width:1.87207em"><span style="height:0.90566em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span>  We showed in the proof of this <a knowl="./knowl/orthocomp-facts-basic.html?vers=dd743d" knowl-id="xref-orthocomp-facts-basic" alt="Fact 6.2.16 Facts about Orthogonal Complements" title="Fact 6.2.16 Facts about Orthogonal Complements">fact in Section 6.2</a> that <span class="pretex-inline" style="width:13.98653em"><span style="height:1.006em;vertical-align:-0.239em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">{</tspan></text>
+</svg></span></span>  We showed in the proof of this <a knowl="./knowl/orthocomp-facts-basic.html?vers=d2e450" knowl-id="xref-orthocomp-facts-basic" alt="Fact 6.2.16 Facts about Orthogonal Complements" title="Fact 6.2.16 Facts about Orthogonal Complements">fact in Section 6.2</a> that <span class="pretex-inline" style="width:13.98653em"><span style="height:1.006em;vertical-align:-0.239em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="a">v</tspan></text>
 <text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="i">1</tspan></text>
 <text transform="translate(15.414)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -483,7 +483,7 @@ svg.pretex path {
 </svg></span></span> on <span class="pretex-inline" style="width:1.304em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">,</tspan></text>
 </svg></span></span> so this proves that such a decomposition exists.</p>
-<p id="p-1475">As for uniqueness, suppose that</p>
+<p id="p-1476">As for uniqueness, suppose that</p>
 <div class="pretex-display"><svg height="0.95844em" version="1.1" class="pretex" viewbox="185 6 133 11"><text transform="translate(186.63 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(195.829 13.948)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(208.391 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -571,7 +571,7 @@ svg.pretex path {
 </svg></span></span> which proves uniqueness.</p></article></span>
 </div>
 <article class="definition-like" id="projections-defn-of"><h5 class="heading"><span class="type">Definition</span></h5>
-<p id="p-1476">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1477">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -605,7 +605,7 @@ svg.pretex path {
 </svg></span></span> is the <em class="terminology">orthogonal projection</em> of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> onto <span class="pretex-inline" style="width:1.304em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span></p></article><p id="p-1477">Since <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span></p></article><p id="p-1478">Since <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> is the closest vector on <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> to <span class="pretex-inline" style="width:0.922em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -622,7 +622,7 @@ svg.pretex path {
 <text transform="translate(20.272)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  To restate:</p>
 <article class="bluebox" id="projections-closest-vector"><h5 class="heading"><span class="title">Closest vector and distance</span></h5>
-<p id="p-1478">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1479">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -630,15 +630,15 @@ svg.pretex path {
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span> </p>
-<ul id="ul-59" style="list-style-type: disc;">
-<li id="li-625">The orthogonal projection <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<ul id="ul-58" style="list-style-type: disc;">
+<li id="li-623">The orthogonal projection <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> is the closest vector to <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.304em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-626">The distance from <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<li id="li-624">The distance from <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> to <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> is <span class="pretex-inline" style="width:3.0563em"><span style="height:0.993em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">B</tspan></text>
 <text transform="translate(6.668)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -648,29 +648,29 @@ svg.pretex path {
 <text transform="translate(31.887)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-</ul></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-xy-plane-hidden.html?vers=dd743d" knowl-id="hidden-projections-eg-xy-plane" alt="Example 6.3.5 Orthogonal decomposition with respect to the xy-plane" title="Example 6.3.5 Orthogonal decomposition with respect to the xy-plane"><article class="example-like"><h5 class="heading">
+</ul></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-xy-plane-hidden.html?vers=d2e450" knowl-id="hidden-projections-eg-xy-plane" alt="Example 6.3.5 Orthogonal decomposition with respect to the xy-plane" title="Example 6.3.5 Orthogonal decomposition with respect to the xy-plane"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Orthogonal decomposition with respect to the <span class="pretex-bind"><span class="pretex-inline" style="width:1.328em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0 7.9650378" class="a">xy</tspan></text>
 </svg></span></span>-plane)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-inW-hidden.html?vers=dd743d" knowl-id="hidden-projections-eg-inW" alt="Example 6.3.7 Orthogonal decomposition of a vector in W" title="Example 6.3.7 Orthogonal decomposition of a vector in W"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-inW-hidden.html?vers=d2e450" knowl-id="hidden-projections-eg-inW" alt="Example 6.3.7 Orthogonal decomposition of a vector in W" title="Example 6.3.7 Orthogonal decomposition of a vector in W"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Orthogonal decomposition of a vector in <span class="pretex-bind"><span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-inWperp-hidden.html?vers=dd743d" knowl-id="hidden-projections-eg-inWperp" alt="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp" title="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-eg-inWperp-hidden.html?vers=d2e450" knowl-id="hidden-projections-eg-inWperp" alt="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp" title="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Orthogonal decomposition of a vector in <span class="pretex-bind"><span class="pretex-inline" style="width:1.59407em"><span style="height:0.89167em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-259-hidden.html?vers=dd743d" knowl-id="hidden-example-259" alt="Example 6.3.9 Interactive: Orthogonal decomposition in \R^2" title="Example 6.3.9 Interactive: Orthogonal decomposition in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-259-hidden.html?vers=d2e450" knowl-id="hidden-example-259" alt="Example 6.3.9 Interactive: Orthogonal decomposition in \R^2" title="Example 6.3.9 Interactive: Orthogonal decomposition in \R^2"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">2</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-260-hidden.html?vers=dd743d" knowl-id="hidden-example-260" alt="Example 6.3.11 Interactive: Orthogonal decomposition in \R^3" title="Example 6.3.11 Interactive: Orthogonal decomposition in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-260-hidden.html?vers=d2e450" knowl-id="hidden-example-260" alt="Example 6.3.11 Interactive: Orthogonal decomposition in \R^3" title="Example 6.3.11 Interactive: Orthogonal decomposition in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-261-hidden.html?vers=dd743d" knowl-id="hidden-example-261" alt="Example 6.3.13 Interactive: Orthogonal decomposition in \R^3" title="Example 6.3.13 Interactive: Orthogonal decomposition in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-261-hidden.html?vers=d2e450" knowl-id="hidden-example-261" alt="Example 6.3.13 Interactive: Orthogonal decomposition in \R^3" title="Example 6.3.13 Interactive: Orthogonal decomposition in \R^3"><article class="example-like"><h5 class="heading"><span class="title">Interactive: Orthogonal decomposition in <span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
 </svg></span></span></span></h5></article></a></div>
-<p id="p-1482">Now we turn to the problem of computing <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<p id="p-1483">Now we turn to the problem of computing <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:2.0443em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
@@ -688,9 +688,9 @@ svg.pretex path {
 </svg></span></span> really all we need is to compute <span class="pretex-inline" style="width:1.6074em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 <text transform="translate(15.258)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span>  The following theorem gives a method for computing the orthogonal projection onto a column space.  To compute the orthogonal projection onto a general subspace, usually it is best to rewrite the subspace as the column space of a matrix, as in this <a knowl="./knowl/subspace-is-col-or-nul.html?vers=dd743d" knowl-id="xref-subspace-is-col-or-nul" alt="Important Note 2.6.22 " title="Important Note 2.6.22 ">important note in Section 2.6</a>.</p>
+</svg></span></span>  The following theorem gives a method for computing the orthogonal projection onto a column space.  To compute the orthogonal projection onto a general subspace, usually it is best to rewrite the subspace as the column space of a matrix, as in this <a knowl="./knowl/subspace-is-col-or-nul.html?vers=d2e450" knowl-id="xref-subspace-is-col-or-nul" alt="Important Note 2.6.22 " title="Important Note 2.6.22 ">important note in Section 2.6</a>.</p>
 <article class="theorem-like" id="projections-ATA-formula"><h5 class="heading"><span class="type">Theorem</span></h5>
-<p id="p-1483">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-1484">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -721,7 +721,7 @@ svg.pretex path {
 </svg></span></span> for any solution <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 <text transform="translate(5.383)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></p></article><div class="posterior"><article class="hiddenproof" id="proof-59"><h5 class="heading"><span class="type">Proof</span></h5>
-<p id="p-1484">Let <span class="pretex-inline" style="width:6.09469em"><span style="height:0.824em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<p id="p-1485">Let <span class="pretex-inline" style="width:6.09469em"><span style="height:0.824em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(10.06)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(22.621)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(28.67 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
@@ -765,7 +765,7 @@ svg.pretex path {
 <text transform="translate(22.461)"><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(29.224 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(34.964)"><tspan y="0" x="0" class="g">)</tspan></text>
-</svg></span></span> by this <a knowl="./knowl/shortcuts-for-orthog-comp.html?vers=dd743d" knowl-id="xref-shortcuts-for-orthog-comp" alt="Important Note 6.2.18 Recipes: Shortcuts for computing orthogonal complements" title="Important Note 6.2.18 Recipes: Shortcuts for computing orthogonal complements">important note in Section 6.2</a>.  We thus have</p>
+</svg></span></span> by this <a knowl="./knowl/shortcuts-for-orthog-comp.html?vers=d2e450" knowl-id="xref-shortcuts-for-orthog-comp" alt="Important Note 6.2.18 Recipes: Shortcuts for computing orthogonal complements" title="Important Note 6.2.18 Recipes: Shortcuts for computing orthogonal complements">important note in Section 6.2</a>.  We thus have</p>
 <div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewbox="179 3 146 14"><text transform="translate(179.361 13.948)"><tspan y="0" x="0" class="d">0</tspan></text>
 <text transform="translate(188.411 13.948)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(200.111 13.948)"><tspan y="0" x="0" class="a">A</tspan></text>
@@ -817,7 +817,7 @@ svg.pretex path {
 <article class="example-like" id="projections-onto-line"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Orthogonal projection onto a line)</span>
 </h5>
-<p id="p-1485">Let <span class="pretex-inline" style="width:5.50998em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">L</tspan></text>
+<p id="p-1486">Let <span class="pretex-inline" style="width:5.50998em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">L</tspan></text>
 <text transform="translate(9.819)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(21.519)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
 <text transform="translate(46.562)"><tspan y="0" x="0" class="e">{</tspan></text>
@@ -829,7 +829,7 @@ svg.pretex path {
 </svg></span></span> be a vector in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span>  By the <a knowl="./knowl/projections-ATA-formula.html?vers=dd743d" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a>, to find <span class="pretex-inline" style="width:1.06073em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span>  By the <a knowl="./knowl/projections-ATA-formula.html?vers=d2e450" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a>, to find <span class="pretex-inline" style="width:1.06073em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.483 2.594)"><tspan y="0" x="0" class="c">L</tspan></text>
 </svg></span></span> we must solve the matrix equation <span class="pretex-inline" style="width:5.36879em"><span style="height:1.01833em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">u</tspan></text>
 <text transform="translate(6.729 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
@@ -913,9 +913,9 @@ svg.pretex path {
 </g></g></g></g><g><path style="stroke:#4daf4a" d="M -33.89113,-20.03119 -80.93762,50.53923" class="d"></path><g transform="matrix(-0.55638,0.8346,-0.8346,-0.55638,-79.1261,47.82185)"><g><path style="fill:#4daf4a;stroke:#4daf4a" d="M 6.8016,0 1.93039,1.84627 3.55478,0 1.93039,-1.84627 Z" class="d"></path></g></g><g><g transform="translate(-77.058 10.881)"><g><g transform="translate(-10.107 -744.062)"><text transform="matrix(1,0,0,-1,10.968,744.062)"><tspan y="0" x="0" style="fill:#4daf4a" class="a">x</tspan></text>
 <text transform="matrix(1,0,0,-1,17.59,741.468)"><tspan y="0" x="0" style="fill:#4daf4a" class="c">L</tspan></text>
 <text transform="matrix(1,0,0,-1,21.783,743.55)"><tspan y="0" x="0" style="fill:#4daf4a" class="f">⊥</tspan></text>
-</g></g></g></g></g><g><g><g><path d="m -35.8626,-17.07393 4.7317,3.1545 3.1543,-4.73162" class="b"></path></g></g></g></g></g></g></svg></div></article><p id="p-1486">To reiterate:</p>
+</g></g></g></g></g><g><g><g><path d="m -35.8626,-17.07393 4.7317,3.1545 3.1543,-4.73162" class="b"></path></g></g></g></g></g></g></svg></div></article><p id="p-1487">To reiterate:</p>
 <article class="bluebox" id="bluebox-89"><h5 class="heading"><span class="title">Recipe: Orthogonal projection onto a line</span></h5>
-<p id="p-1487">If <span class="pretex-inline" style="width:5.50998em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">L</tspan></text>
+<p id="p-1488">If <span class="pretex-inline" style="width:5.50998em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">L</tspan></text>
 <text transform="translate(9.819)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(21.519)"><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="d">Span</tspan></text>
 <text transform="translate(46.562)"><tspan y="0" x="0" class="e">{</tspan></text>
@@ -946,7 +946,7 @@ svg.pretex path {
 </svg></span></span></p></article><div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-simple-proof-for-projection-to-line" id="simple-proof-for-projection-to-line"><article class="remark-like"><h5 class="heading">
 <span class="type">Remark</span><span class="title">(Simple proof for the formula for projection onto a line)</span>
 </h5></article></a></div>
-<div id="hk-simple-proof-for-projection-to-line" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1488">In the special case where we are projecting a vector <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<div id="hk-simple-proof-for-projection-to-line" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1489">In the special case where we are projecting a vector <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> onto a line <span class="pretex-inline" style="width:5.78798em"><span style="height:0.9875em;vertical-align:-0.2205em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">L</tspan></text>
@@ -1028,17 +1028,17 @@ svg.pretex path {
 <text transform="translate(292.511 14.706)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></div>
 </article></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-line2-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-line2" alt="Example 6.3.19 Projection onto a line in \R^2" title="Example 6.3.19 Projection onto a line in \R^2"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-line2-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-line2" alt="Example 6.3.19 Projection onto a line in \R^2" title="Example 6.3.19 Projection onto a line in \R^2"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto a line in <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">2</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-line3-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-line3" alt="Example 6.3.21 Projection onto a line in \R^3" title="Example 6.3.21 Projection onto a line in \R^3"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-line3-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-line3" alt="Example 6.3.21 Projection onto a line in \R^3" title="Example 6.3.21 Projection onto a line in \R^3"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto a line in <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<p id="p-1493">When <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-1494">When <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> is a matrix with more than one column, computing the orthogonal projection of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> onto <span class="pretex-inline" style="width:5.07298em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(14.444)"><tspan y="0" x="0" class="g">=</tspan></text>
@@ -1054,9 +1054,9 @@ svg.pretex path {
 <text transform="translate(45.4 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(52)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(58.53)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span>  In other words, we can compute the closest vector by <em>solving a system of linear equations</em>.  To be explicit, we state the <a knowl="./knowl/projections-ATA-formula.html?vers=dd743d" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a> as a recipe:</p>
+</svg></span></span>  In other words, we can compute the closest vector by <em>solving a system of linear equations</em>.  To be explicit, we state the <a knowl="./knowl/projections-ATA-formula.html?vers=d2e450" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a> as a recipe:</p>
 <article class="bluebox" id="bluebox-90"><h5 class="heading"><span class="title">Recipe: Compute an orthogonal decomposition</span></h5>
-<p id="p-1494">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1495">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">m</tspan></text>
 <text transform="translate(14.626)"><tspan y="0" x="0" class="d">.</tspan></text>
@@ -1065,14 +1065,14 @@ svg.pretex path {
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">:</tspan></text>
 </svg></span></span> </p>
 <ol id="ol-128" start="0" style="list-style-type: decimal;">
-<li id="li-627">Rewrite <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<li id="li-625">Rewrite <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> as the column space of a matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  In other words, find a a spanning set for <span class="pretex-inline" style="width:1.304em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">,</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be the matrix with those columns.</li>
-<li id="li-628">Compute the matrix <span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<li id="li-626">Compute the matrix <span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(12.503)"><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> and the vector <span class="pretex-inline" style="width:2.0114em"><span style="height:0.86233em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
@@ -1081,7 +1081,7 @@ svg.pretex path {
 <text transform="translate(19.894)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-629">Form the augmented matrix for the matrix equation <span class="pretex-inline" style="width:5.09979em"><span style="height:0.85983em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<li id="li-627">Form the augmented matrix for the matrix equation <span class="pretex-inline" style="width:5.09979em"><span style="height:0.85983em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(12.503)"><tspan y="0" x="0 6.6681371" class="a">Ac</tspan></text>
 <text transform="translate(26.935)"><tspan y="0" x="0" class="g">=</tspan></text>
@@ -1091,7 +1091,7 @@ svg.pretex path {
 </svg></span></span> in the unknown vector <span class="pretex-inline" style="width:0.747em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 <text transform="translate(5.383)"><tspan y="0" x="0" class="d">,</tspan></text>
 </svg></span></span> and row reduce.</li>
-<li id="li-630">This equation is always consistent; choose one solution <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
+<li id="li-628">This equation is always consistent; choose one solution <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
 <text transform="translate(5.383)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  Then
 <div class="pretex-display"><svg height="1.04557em" version="1.1" class="pretex" viewbox="183 5 138 12"><text transform="translate(184.119 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -1108,27 +1108,27 @@ svg.pretex path {
 <text transform="translate(317.552 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></div>
 </li>
-</ol></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-xy-plane-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-xy-plane" alt="Example 6.3.24 Projection onto the xy-plane" title="Example 6.3.24 Projection onto the xy-plane"><article class="example-like"><h5 class="heading">
+</ol></article><div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-xy-plane-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-xy-plane" alt="Example 6.3.24 Projection onto the xy-plane" title="Example 6.3.24 Projection onto the xy-plane"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto the <span class="pretex-bind"><span class="pretex-inline" style="width:1.328em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0 7.9650378" class="a">xy</tspan></text>
 </svg></span></span>-plane)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-plane" alt="Example 6.3.25 Projection onto a plane in \R^3" title="Example 6.3.25 Projection onto a plane in \R^3"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-plane" alt="Example 6.3.25 Projection onto a plane in \R^3" title="Example 6.3.25 Projection onto a plane in \R^3"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto a plane in <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane-2-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-plane-2" alt="Example 6.3.27 Projection onto another plane in \R^3" title="Example 6.3.27 Projection onto another plane in \R^3"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane-2-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-plane-2" alt="Example 6.3.27 Projection onto another plane in \R^3" title="Example 6.3.27 Projection onto another plane in \R^3"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto another plane in <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.86467em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">3</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-267-hidden.html?vers=dd743d" knowl-id="hidden-example-267" alt="Example 6.3.29 Projection onto a 3-space in \R^4" title="Example 6.3.29 Projection onto a 3-space in \R^4"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-267-hidden.html?vers=d2e450" knowl-id="hidden-example-267" alt="Example 6.3.29 Projection onto a 3-space in \R^4" title="Example 6.3.29 Projection onto a 3-space in \R^4"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Projection onto a <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">3</tspan></text>
 </svg></span></span>-space</span> in <span class="pretex-bind"><span class="pretex-inline" style="width:1.08507em"><span style="height:0.856em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.701 -4.579)"><tspan y="0" x="0" class="i">4</tspan></text>
 </svg></span></span>)</span></span>
 </h5></article></a></div>
-<p id="p-1505">In the context of the above recipe, if we start with a <em>basis</em> of <span class="pretex-inline" style="width:1.304em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1506">In the context of the above recipe, if we start with a <em>basis</em> of <span class="pretex-inline" style="width:1.304em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">,</tspan></text>
 </svg></span></span> then it turns out that the square matrix <span class="pretex-inline" style="width:1.6454em"><span style="height:0.84833em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
@@ -1148,7 +1148,7 @@ svg.pretex path {
 <text transform="translate(12.503)"><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> need not be invertible in general.)</p>
 <article class="theorem-like" id="projections-ATA-formula2"><h5 class="heading"><span class="type">Corollary</span></h5>
-<p id="p-1506">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<p id="p-1507">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 </svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="e">×</tspan></text>
 <text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -1187,7 +1187,7 @@ svg.pretex path {
 <text transform="translate(297.481 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></div>
 </article><div class="posterior"><article class="hiddenproof" id="proof-60"><h5 class="heading"><span class="type">Proof</span></h5>
-<p id="p-1507">We will show that <span class="pretex-inline" style="width:6.98138em"><span style="height:1.03733em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<p id="p-1508">We will show that <span class="pretex-inline" style="width:6.98138em"><span style="height:1.03733em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
 <text transform="translate(17.95)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(22.461)"><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(29.224 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
@@ -1197,7 +1197,7 @@ svg.pretex path {
 <text transform="translate(65.389)"><tspan y="0" x="0" class="d">0</tspan></text>
 <text transform="translate(71.77)"><tspan y="0" x="0" class="e">}</tspan></text>
 <text transform="translate(76.935)"><tspan y="0" x="0" class="d">,</tspan></text>
-</svg></span></span> which implies invertibility by the <a knowl="./knowl/imt-2.html?vers=dd743d" knowl-id="xref-imt-2" alt="Invertible Matrix Theorem 5.1.31 " title="Invertible Matrix Theorem 5.1.31 ">invertible matrix theorem in Section 5.1</a>.  Suppose that <span class="pretex-inline" style="width:4.20039em"><span style="height:0.86233em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> which implies invertibility by the <a knowl="./knowl/imt-2.html?vers=d2e450" knowl-id="xref-imt-2" alt="Invertible Matrix Theorem 5.1.31 " title="Invertible Matrix Theorem 5.1.31 ">invertible matrix theorem in Section 5.1</a>.  Suppose that <span class="pretex-inline" style="width:4.20039em"><span style="height:0.86233em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.764 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(12.503)"><tspan y="0" x="0 6.6681371" class="a">Ac</tspan></text>
 <text transform="translate(26.935)"><tspan y="0" x="0" class="g">=</tspan></text>
@@ -1213,7 +1213,7 @@ svg.pretex path {
 <text transform="translate(6.381 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 <text transform="translate(17.398)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(29.099)"><tspan y="0" x="0 6.6681371" class="a">Ac</tspan></text>
-</svg></span></span> by the <a knowl="./knowl/projections-ATA-formula.html?vers=dd743d" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a>.  But <span class="pretex-inline" style="width:3.09139em"><span style="height:0.9125em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">0</tspan></text>
+</svg></span></span> by the <a knowl="./knowl/projections-ATA-formula.html?vers=d2e450" knowl-id="xref-projections-ATA-formula" alt="Theorem 6.3.15 " title="Theorem 6.3.15 ">theorem</a>.  But <span class="pretex-inline" style="width:3.09139em"><span style="height:0.9125em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">0</tspan></text>
 <text transform="translate(6.381 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 <text transform="translate(17.398)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(29.099)"><tspan y="0" x="0" class="d">0</tspan></text>
@@ -1245,7 +1245,7 @@ svg.pretex path {
 <text transform="translate(41.345)"><tspan y="0" x="0 7.1788635" class="g">)=</tspan></text>
 <text transform="translate(60.224)"><tspan y="0" x="0 6.3812122" class="d">0,</tspan></text>
 </svg></span></span> as desired.</p>
-<p id="p-1508">Let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<p id="p-1509">Let <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> be a vector in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> and let <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
@@ -1287,7 +1287,7 @@ svg.pretex path {
 <text transform="translate(113.755)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(120.286)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></p></article></div>
-<p id="p-1509">The corollary applies in particular to the case where we have a subspace <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1510">The corollary applies in particular to the case where we have a subspace <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> of <span class="pretex-inline" style="width:1.5524em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">m</tspan></text>
 <text transform="translate(14.626)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -1315,17 +1315,17 @@ svg.pretex path {
 <text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(59.69)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane2-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-plane2" alt="Example 6.3.31 Computing a projection" title="Example 6.3.31 Computing a projection"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane2-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-plane2" alt="Example 6.3.31 Computing a projection" title="Example 6.3.31 Computing a projection"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Computing a projection)</span>
 </h5></article></a></div></section><section class="subsection" id="subsection-74"><header title="Subsection 6.3.2 Orthogonal Projection"><h1 class="heading hide-type" alt="Subsection 6.3.2 Orthogonal Projection">
 <span class="type">Subsection</span><span class="codenumber">6.3.2</span><span class="title">Orthogonal Projection</span>
-</h1></header><p id="p-1512">In this subsection, we change perspective and think of the orthogonal projection <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</h1></header><p id="p-1513">In this subsection, we change perspective and think of the orthogonal projection <span class="pretex-inline" style="width:1.3294em"><span style="height:0.711em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(6.909 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> as a <em>function</em> of <span class="pretex-inline" style="width:0.922em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  This function turns out to be a linear transformation with many nice properties, and is a good example of a linear transformation which is not originally defined as a matrix transformation.</p>
 <article class="theorem-like" id="projections-properties-of"><h5 class="heading"><span class="title">Properties of Orthogonal Projections</span></h5>
-<p id="p-1513">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1514">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -1345,10 +1345,10 @@ svg.pretex path {
 <text transform="translate(54.475)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  Then: </p>
 <ol id="ol-129" style="list-style-type: decimal;">
-<li id="li-631">
+<li id="li-629">
 <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> is a linear transformation.</li>
-<li id="li-632">
+<li id="li-630">
 <span class="pretex-inline" style="width:4.06099em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -1359,7 +1359,7 @@ svg.pretex path {
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-633">
+<li id="li-631">
 <span class="pretex-inline" style="width:3.97299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
@@ -1371,23 +1371,23 @@ svg.pretex path {
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-634"><span class="pretex-inline" style="width:4.61298em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<li id="li-632"><span class="pretex-inline" style="width:4.61298em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(10.57)"><tspan y="0" x="0" class="e">◦</tspan></text>
 <text transform="translate(19.086)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(29.616)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(41.891)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(49.753)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></li>
-<li id="li-635">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<li id="li-633">The range of <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> is <span class="pretex-inline" style="width:1.304em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
 </ol></article><div class="posterior">
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-61" id="proof-61"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-61" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1514"></p>
+<div id="hk-proof-61" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1515"></p>
 <ol id="ol-130" style="list-style-type: decimal;">
-<li id="li-636">We have to verify the <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining properties of linearity in Section 3.3</a>.  Let <span class="pretex-inline" style="width:1.7455em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<li id="li-634">We have to verify the <a knowl="./knowl/linear-trans-defn.html?vers=d2e450" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining properties of linearity in Section 3.3</a>.  Let <span class="pretex-inline" style="width:1.7455em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(7.391)"><tspan y="0" x="0" class="d">,</tspan></text>
 <text transform="translate(13.617)"><tspan y="0" x="0" class="a">y</tspan></text>
 </svg></span></span> be vectors in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
@@ -1513,10 +1513,10 @@ Now let <span class="pretex-inline" style="width:0.469em"><span style="height:0.
 <text transform="translate(327.581 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></div>
 Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
-</svg></span></span> satisfies the two <a knowl="./knowl/linear-trans-defn.html?vers=dd743d" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining properties in Section 3.3</a>, it is a linear transformation.</li>
-<li id="li-637">See this <a knowl="./knowl/projections-eg-inW.html?vers=dd743d" knowl-id="xref-projections-eg-inW" alt="Example 6.3.7 Orthogonal decomposition of a vector in W" title="Example 6.3.7 Orthogonal decomposition of a vector in W">example</a>.</li>
-<li id="li-638">See this <a knowl="./knowl/projections-eg-inWperp.html?vers=dd743d" knowl-id="xref-projections-eg-inWperp" alt="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp" title="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp">example</a>.</li>
-<li id="li-639">For any <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> satisfies the two <a knowl="./knowl/linear-trans-defn.html?vers=d2e450" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining properties in Section 3.3</a>, it is a linear transformation.</li>
+<li id="li-635">See this <a knowl="./knowl/projections-eg-inW.html?vers=d2e450" knowl-id="xref-projections-eg-inW" alt="Example 6.3.7 Orthogonal decomposition of a vector in W" title="Example 6.3.7 Orthogonal decomposition of a vector in W">example</a>.</li>
+<li id="li-636">See this <a knowl="./knowl/projections-eg-inWperp.html?vers=d2e450" knowl-id="xref-projections-eg-inWperp" alt="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp" title="Example 6.3.8 Orthogonal decomposition of a vector in W^\perp">example</a>.</li>
+<li id="li-637">For any <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> the vector <span class="pretex-inline" style="width:2.165em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
@@ -1542,7 +1542,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(128.21)"><tspan y="0" x="0" class="a">x</tspan></text>
 <text transform="translate(134.74)"><tspan y="0" x="0" class="g">)</tspan></text>
 </svg></span></span> by 2.</li>
-<li id="li-640">Any vector <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<li id="li-638">Any vector <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
 </svg></span></span> in <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> is in the range of <span class="pretex-inline" style="width:1.013em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 <text transform="translate(8.436)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -1569,17 +1569,17 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 </li>
 </ol></article></div>
 </div>
-<p id="p-1515">  We compute the standard matrix of the orthogonal projection in the same way as for <a knowl="./knowl/matrix-of-transformation.html?vers=dd743d" knowl-id="xref-matrix-of-transformation" alt="Theorem 3.3.14 The matrix of a linear transformation" title="Theorem 3.3.14 The matrix of a linear transformation">any other transformation</a>: by evaluating on the standard coordinate vectors.  In this case, this means projecting the standard coordinate vectors onto the subspace.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-269-hidden.html?vers=dd743d" knowl-id="hidden-example-269" alt="Example 6.3.33 Matrix of a projection" title="Example 6.3.33 Matrix of a projection"><article class="example-like"><h5 class="heading">
+<p id="p-1516">  We compute the standard matrix of the orthogonal projection in the same way as for <a knowl="./knowl/matrix-of-transformation.html?vers=d2e450" knowl-id="xref-matrix-of-transformation" alt="Theorem 3.3.14 The matrix of a linear transformation" title="Theorem 3.3.14 The matrix of a linear transformation">any other transformation</a>: by evaluating on the standard coordinate vectors.  In this case, this means projecting the standard coordinate vectors onto the subspace.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-269-hidden.html?vers=d2e450" knowl-id="hidden-example-269" alt="Example 6.3.33 Matrix of a projection" title="Example 6.3.33 Matrix of a projection"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Matrix of a projection)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-270-hidden.html?vers=dd743d" knowl-id="hidden-example-270" alt="Example 6.3.34 Matrix of a projection" title="Example 6.3.34 Matrix of a projection"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-270-hidden.html?vers=d2e450" knowl-id="hidden-example-270" alt="Example 6.3.34 Matrix of a projection" title="Example 6.3.34 Matrix of a projection"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Matrix of a projection)</span>
 </h5></article></a></div>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane3-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection"><article class="example-like"><h5 class="heading">
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane3-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection"><article class="example-like"><h5 class="heading">
 <span class="type">Example</span><span class="title">(Matrix of a projection)</span>
 </h5></article></a></div>
-<p id="p-1522">In the previous <a knowl="./knowl/projections-onto-plane3.html?vers=dd743d" knowl-id="xref-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection">example</a>, we could have used the fact that</p>
+<p id="p-1523">In the previous <a knowl="./knowl/projections-onto-plane3.html?vers=d2e450" knowl-id="xref-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection">example</a>, we could have used the fact that</p>
 <div class="pretex-display"><svg height="3.48522em" version="1.1" class="pretex" viewbox="212 2 80 40"><text transform="translate(211.082 3.417)"><tspan y="0" x="0 9.031251" class="l">EC</tspan></text>
 <text transform="translate(232.699 10.76)"><tspan y="0" x="0" class="d">1</tspan><tspan y="13.947" x="0" class="d">0</tspan></text>
 <text transform="translate(228.504 38.655)"><tspan y="0" x="0" class="e">−</tspan></text>
@@ -1622,7 +1622,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(349.013 38.655)"><tspan y="0" x="0 16.343248" class="d">10</tspan></text>
 <text transform="translate(373.339 3.417)"><tspan y="0" x="0" class="l">D</tspan></text>
 </svg></div>
-<p>by the <a knowl="./knowl/projections-ATA-formula2.html?vers=dd743d" knowl-id="xref-projections-ATA-formula2" alt="Corollary 6.3.30 " title="Corollary 6.3.30 ">corollary</a>.  In this case, we have already expressed <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<p>by the <a knowl="./knowl/projections-ATA-formula2.html?vers=d2e450" knowl-id="xref-projections-ATA-formula2" alt="Corollary 6.3.30 " title="Corollary 6.3.30 ">corollary</a>.  In this case, we have already expressed <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
 </svg></span></span> as a matrix transformation with matrix <span class="pretex-inline" style="width:5.25619em"><span style="height:1.04566em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(6.381)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(10.892)"><tspan y="0" x="0" class="a">A</tspan></text>
@@ -1634,8 +1634,8 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(44.632)"><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(51.396 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(57.135)"><tspan y="0" x="0" class="d">.</tspan></text>
-</svg></span></span>  See this <a knowl="./knowl/projections-onto-plane2.html?vers=dd743d" knowl-id="xref-projections-onto-plane2" alt="Example 6.3.31 Computing a projection" title="Example 6.3.31 Computing a projection">example</a>.</p>
-<article class="bluebox" id="bluebox-91"><p id="p-1523">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+</svg></span></span>  See this <a knowl="./knowl/projections-onto-plane2.html?vers=d2e450" knowl-id="xref-projections-onto-plane2" alt="Example 6.3.31 Computing a projection" title="Example 6.3.31 Computing a projection">example</a>.</p>
+<article class="bluebox" id="bluebox-91"><p id="p-1524">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> with basis <span class="pretex-inline" style="width:5.65152em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
@@ -1676,9 +1676,9 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(273.233 9.07)"><tspan y="0" x="0" class="c">T</tspan></text>
 <text transform="translate(278.972 13.948)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></div>
-</article><p id="p-1524">We can translate the above <a knowl="./knowl/projections-properties-of.html?vers=dd743d" knowl-id="xref-projections-properties-of" alt="Proposition 6.3.32 Properties of Orthogonal Projections" title="Proposition 6.3.32 Properties of Orthogonal Projections">properties of orthogonal projections</a> into properties of the associated standard matrix.</p>
+</article><p id="p-1525">We can translate the above <a knowl="./knowl/projections-properties-of.html?vers=d2e450" knowl-id="xref-projections-properties-of" alt="Proposition 6.3.32 Properties of Orthogonal Projections" title="Proposition 6.3.32 Properties of Orthogonal Projections">properties of orthogonal projections</a> into properties of the associated standard matrix.</p>
 <article class="theorem-like" id="projections-matrices-properties-of"><h5 class="heading"><span class="title">Properties of Projection Matrices</span></h5>
-<p id="p-1525">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<p id="p-1526">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -1701,14 +1701,14 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(8.436)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>  Then: </p>
 <ol id="ol-131" style="list-style-type: decimal;">
-<li id="li-641"><span class="pretex-inline" style="width:5.31398em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="d">Col</tspan></text>
+<li id="li-639"><span class="pretex-inline" style="width:5.31398em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2534642 13.439567" class="d">Col</tspan></text>
 <text transform="translate(16.676)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(21.473)"><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(28.681)"><tspan y="0" x="0 7.1788635" class="g">)=</tspan></text>
 <text transform="translate(47.561)"><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(57.798)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></li>
-<li id="li-642"><span class="pretex-inline" style="width:6.12705em"><span style="height:1.08067em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
+<li id="li-640"><span class="pretex-inline" style="width:6.12705em"><span style="height:1.08067em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 8.1831007 14.713514" class="d">Nul</tspan></text>
 <text transform="translate(17.95)"><tspan y="0" x="0" class="g">(</tspan></text>
 <text transform="translate(22.747)"><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(29.955)"><tspan y="0" x="0 7.1788635" class="g">)=</tspan></text>
@@ -1716,13 +1716,13 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(60.61 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 <text transform="translate(67.13)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></li>
-<li id="li-643"><span class="pretex-inline" style="width:3.25006em"><span style="height:0.86417em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<li id="li-641"><span class="pretex-inline" style="width:3.25006em"><span style="height:0.86417em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(7.494 -4.579)"><tspan y="0" x="0" class="i">2</tspan></text>
 <text transform="translate(14.915)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(26.903)"><tspan y="0" x="0" class="a">B</tspan></text>
 <text transform="translate(34.11)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></li>
-<li id="li-644">If <span class="pretex-inline" style="width:4.01199em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<li id="li-642">If <span class="pretex-inline" style="width:4.01199em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(14.444)"><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(14.444)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(26.145)"><tspan y="0" x="0" class="e">{</tspan></text>
@@ -1735,7 +1735,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(11.775)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-645">If <span class="pretex-inline" style="width:3.65772em"><span style="height:0.909em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<li id="li-643">If <span class="pretex-inline" style="width:3.65772em"><span style="height:0.909em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(14.444)"><tspan y="0" x="0" class="e">A</tspan></text>
 <text transform="translate(14.444)"><tspan y="0" x="0" class="g">=</tspan></text>
 <text transform="translate(26.145)"><tspan y="0" x="0" class="b">R</tspan></text>
@@ -1748,7 +1748,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-646">
+<li id="li-644">
 <span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
 </svg></span></span> is similar to the diagonal matrix with <span class="pretex-inline" style="width:0.84em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> ones and <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
@@ -1765,8 +1765,8 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 </li>
 </ol></article><div class="posterior">
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-proof-62" id="proof-62"><article class="hiddenproof"><h5 class="heading"><span class="type">Proof</span></h5></article></a></div>
-<div id="hk-proof-62" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1526">The first four assertions are translations of <a knowl="./knowl/projections-properties-of.html?vers=dd743d" knowl-id="xref-projections-properties-of" alt="Proposition 6.3.32 Properties of Orthogonal Projections" title="Proposition 6.3.32 Properties of Orthogonal Projections">properties 5, 3, 4, and 2</a>, respectively, using this <a knowl="./knowl/matrix-trans-dictionary.html?vers=dd743d" knowl-id="xref-matrix-trans-dictionary" alt="Important Note 3.1.23 " title="Important Note 3.1.23 ">important note in Section 3.1</a> and this <a knowl="./knowl/matrix-mult-comp-is-prod.html?vers=dd743d" knowl-id="xref-matrix-mult-comp-is-prod" alt="Theorem 3.4.25 " title="Theorem 3.4.25 ">theorem in Section 3.4</a>.  The fifth assertion is equivalent to the second, by this <a knowl="./knowl/evecs-eval0.html?vers=dd743d" knowl-id="xref-evecs-eval0" alt="Fact 5.1.30 " title="Fact 5.1.30 ">fact in Section 5.1</a>.</p>
-<p id="p-1527">For the final assertion, we showed in the proof of this <a knowl="./knowl/projections-decomp-exists.html?vers=dd743d" knowl-id="xref-projections-decomp-exists" alt="Theorem 6.3.2 Orthogonal decomposition" title="Theorem 6.3.2 Orthogonal decomposition">theorem</a> that there is a basis of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
+<div id="hk-proof-62" style="display: none;" class="tex2jax_ignore"><article class="hiddenproof"><p id="p-1527">The first four assertions are translations of <a knowl="./knowl/projections-properties-of.html?vers=d2e450" knowl-id="xref-projections-properties-of" alt="Proposition 6.3.32 Properties of Orthogonal Projections" title="Proposition 6.3.32 Properties of Orthogonal Projections">properties 5, 3, 4, and 2</a>, respectively, using this <a knowl="./knowl/matrix-trans-dictionary.html?vers=d2e450" knowl-id="xref-matrix-trans-dictionary" alt="Important Note 3.1.23 " title="Important Note 3.1.23 ">important note in Section 3.1</a> and this <a knowl="./knowl/matrix-mult-comp-is-prod.html?vers=d2e450" knowl-id="xref-matrix-mult-comp-is-prod" alt="Theorem 3.4.25 " title="Theorem 3.4.25 ">theorem in Section 3.4</a>.  The fifth assertion is equivalent to the second, by this <a knowl="./knowl/evecs-eval0.html?vers=d2e450" knowl-id="xref-evecs-eval0" alt="Fact 5.1.30 " title="Fact 5.1.30 ">fact in Section 5.1</a>.</p>
+<p id="p-1528">For the final assertion, we showed in the proof of this <a knowl="./knowl/projections-decomp-exists.html?vers=d2e450" knowl-id="xref-projections-decomp-exists" alt="Theorem 6.3.2 Orthogonal decomposition" title="Theorem 6.3.2 Orthogonal decomposition">theorem</a> that there is a basis of <span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 </svg></span></span> of the form <span class="pretex-inline" style="width:10.59607em"><span style="height:1.006em;vertical-align:-0.239em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">{</tspan></text>
 <text transform="translate(5.739)"><tspan y="0" x="0" class="a">v</tspan></text>
@@ -1861,12 +1861,12 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 </svg></span></span></span> ones and <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
 <text transform="translate(8.803)"><tspan y="0" x="0" class="e">−</tspan></text>
 <text transform="translate(19.614)"><tspan y="0" x="0" class="a">m</tspan></text>
-</svg></span></span> zeros).  Now we use the <a knowl="./knowl/diagonalization-thm.html?vers=dd743d" knowl-id="xref-diagonalization-thm" alt="Diagonalization Theorem 5.4.7 " title="Diagonalization Theorem 5.4.7 ">diagonalization theorem in Section 5.4</a>.</p></article></div>
+</svg></span></span> zeros).  Now we use the <a knowl="./knowl/diagonalization-thm.html?vers=d2e450" knowl-id="xref-diagonalization-thm" alt="Diagonalization Theorem 5.4.7 " title="Diagonalization Theorem 5.4.7 ">diagonalization theorem in Section 5.4</a>.</p></article></div>
 </div>
-<p id="p-1528">We emphasize that the <a knowl="./knowl/projections-matrices-properties-of.html?vers=dd743d" knowl-id="xref-projections-matrices-properties-of" alt="Proposition 6.3.37 Properties of Projection Matrices" title="Proposition 6.3.37 Properties of Projection Matrices">properties of projection matrices</a> would be very hard to prove in terms of matrices.  By translating all of the statements into statements about linear transformations, they become much more transparent.  For example, consider the projection matrix we found in this <a knowl="./knowl/projections-onto-plane3.html?vers=dd743d" knowl-id="xref-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection">example</a>.  Just by looking at the matrix it is not at all obvious that when you square the matrix you get the same matrix back.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane4-hidden.html?vers=dd743d" knowl-id="hidden-projections-onto-plane4" alt="Example 6.3.38 " title="Example 6.3.38 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
+<p id="p-1529">We emphasize that the <a knowl="./knowl/projections-matrices-properties-of.html?vers=d2e450" knowl-id="xref-projections-matrices-properties-of" alt="Proposition 6.3.37 Properties of Projection Matrices" title="Proposition 6.3.37 Properties of Projection Matrices">properties of projection matrices</a> would be very hard to prove in terms of matrices.  By translating all of the statements into statements about linear transformations, they become much more transparent.  For example, consider the projection matrix we found in this <a knowl="./knowl/projections-onto-plane3.html?vers=d2e450" knowl-id="xref-projections-onto-plane3" alt="Example 6.3.35 Matrix of a projection" title="Example 6.3.35 Matrix of a projection">example</a>.  Just by looking at the matrix it is not at all obvious that when you square the matrix you get the same matrix back.</p>
+<div class="hidden-knowl-wrapper"><a knowl="./knowl/projections-onto-plane4-hidden.html?vers=d2e450" knowl-id="hidden-projections-onto-plane4" alt="Example 6.3.38 " title="Example 6.3.38 "><article class="example-like"><h5 class="heading"><span class="type">Example</span></h5></article></a></div>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-32" id="remark-32"><article class="remark-like"><h5 class="heading"><span class="type">Remark</span></h5></article></a></div>
-<div id="hk-remark-32" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1530">As we saw in this <a knowl="./knowl/projections-onto-plane4.html?vers=dd743d" knowl-id="xref-projections-onto-plane4" alt="Example 6.3.38 " title="Example 6.3.38 ">example</a>, if you are willing to compute bases for <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<div id="hk-remark-32" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1531">As we saw in this <a knowl="./knowl/projections-onto-plane4.html?vers=d2e450" knowl-id="xref-projections-onto-plane4" alt="Example 6.3.38 " title="Example 6.3.38 ">example</a>, if you are willing to compute bases for <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> and <span class="pretex-inline" style="width:1.87207em"><span style="height:1.06166em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 <text transform="translate(11.775 -4.579)"><tspan y="0" x="0" class="h">⊥</tspan></text>
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -1963,11 +1963,11 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(39.88 -4.579)"><tspan y="0" x="0" class="i">1</tspan></text>
 <text transform="translate(44.632)"><tspan y="0" x="0" class="a">A</tspan></text>
 <text transform="translate(51.396 -4.579)"><tspan y="0" x="0" class="c">T</tspan></text>
-</svg></span></span> as in the <a knowl="./knowl/projections-ATA-formula2.html?vers=dd743d" knowl-id="xref-projections-ATA-formula2" alt="Corollary 6.3.30 " title="Corollary 6.3.30 ">corollary</a>.</p></article></div>
+</svg></span></span> as in the <a knowl="./knowl/projections-ATA-formula2.html?vers=d2e450" knowl-id="xref-projections-ATA-formula2" alt="Corollary 6.3.30 " title="Corollary 6.3.30 ">corollary</a>.</p></article></div>
 <div class="hidden-knowl-wrapper"><a knowl="" class="id-ref" refid="hk-remark-33" id="remark-33"><article class="remark-like"><h5 class="heading">
 <span class="type">Remark</span><span class="title">(Reflections)</span>
 </h5></article></a></div>
-<div id="hk-remark-33" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1531">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
+<div id="hk-remark-33" style="display: none;" class="tex2jax_ignore"><article class="remark-like"><p id="p-1532">Let <span class="pretex-inline" style="width:1.026em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
 </svg></span></span> be a subspace of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.89233em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">R</tspan></text>
 <text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="c">n</tspan></text>
 <text transform="translate(12.645)"><tspan y="0" x="0" class="d">,</tspan></text>
@@ -2064,7 +2064,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 </svg></div>
 <p>We leave it to the reader to check using the definition that: </p>
 <ol id="ol-132" style="list-style-type: decimal;">
-<li id="li-647"><span class="pretex-inline" style="width:8.01092em"><span style="height:0.97133em;vertical-align:-0.23133em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.019421" class="d">ref</tspan></text>
+<li id="li-645"><span class="pretex-inline" style="width:8.01092em"><span style="height:0.97133em;vertical-align:-0.23133em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.019421" class="d">ref</tspan></text>
 <text transform="translate(13.704 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 <text transform="translate(23.653)"><tspan y="0" x="0" class="e">◦</tspan></text>
 <text transform="translate(31.061)"><tspan y="0" x="0 4.3842139 10.019421" class="d">ref</tspan></text>
@@ -2075,7 +2075,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(82.963 0.513)"><tspan y="0" x="0" class="n">n</tspan></text>
 <text transform="translate(88.751)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span></li>
-<li id="li-648">The <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">1</tspan></text>
+<li id="li-646">The <span class="pretex-bind"><span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">1</tspan></text>
 </svg></span></span>-eigenspace</span> of <span class="pretex-inline" style="width:1.9214em"><span style="height:0.966em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.019421" class="d">ref</tspan></text>
 <text transform="translate(13.704 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> is <span class="pretex-inline" style="width:1.304em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">W</tspan></text>
@@ -2089,7 +2089,7 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(18.295)"><tspan y="0" x="0" class="d">.</tspan></text>
 </svg></span></span>
 </li>
-<li id="li-649">
+<li id="li-647">
 <span class="pretex-inline" style="width:1.9214em"><span style="height:0.966em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 4.3842139 10.019421" class="d">ref</tspan></text>
 <text transform="translate(13.704 2.594)"><tspan y="0" x="0" class="c">W</tspan></text>
 </svg></span></span> is similar to the diagonal matrix with <span class="pretex-inline" style="width:5.59199em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
@@ -2102,8 +2102,8 @@ Since <span class="pretex-inline" style="width:0.735em"><span style="height:0.67
 <text transform="translate(8.803)"><tspan y="0" x="0" class="e">−</tspan></text>
 <text transform="translate(19.614)"><tspan y="0" x="0" class="a">m</tspan></text>
 </svg></span></span> negative ones.</li>
-</ol></article></div></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20projections&amp;body=In%20reference%20to%20version%20dd743d82b70d473ad3b6398a9e0d021efb4ace18" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
+</ol></article></div></section></section><div class="feedback-link"><a href="https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20projections&amp;body=In%20reference%20to%20version%20d2e450e0924d5eef76f05b0467c55d046716c082" class="feedback-link" target="_blank" rel="noopener">Comments, corrections or suggestions?<span class="feedback-link">(Free GitHub account required)</span></a></div>
 </div></main></div>
-<script src="js/ila.js?vers=6a8c73" class="C4UkYd8nHYiLJMmwB9cAE"></script>
+<script src="js/ila.js?vers=58f93b" class="C4UkYd8nHYiLJMmwB9cAE"></script>
 </body>
 </html>
