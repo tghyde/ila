@@ -17,6 +17,35 @@ body, html body {
     background-color: transparent;
 }
 
+/* ============================================================
+   Hero title page: course banner behind a floating title card,
+   echoing the course website.
+   ============================================================ */
+
+.mathbook-content .title-hero {
+    background: url("../images/banner.png") center / cover no-repeat;
+    border-radius: 10px;
+    padding: 3.5em 1.5em;
+    margin: 0.5em 0 1.5em 0;
+}
+.mathbook-content .title-card {
+    background: rgba(250, 249, 246, 0.94);
+    border: 1px solid #dcdad0;
+    border-radius: 10px;
+    max-width: 36em;
+    margin: 0 auto;
+    padding: 1.5em 2em 1em 2em;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+.mathbook-content .title-card h1.heading {
+    margin-top: 0;
+    text-align: center;
+}
+html[data-theme="dark"] .mathbook-content .title-card {
+    background: rgba(21, 23, 28, 0.93);
+    border-color: #33363e;
+}
+
 /* Sticky navbar */
 #gt-navbar {
     position: relative;  /* anchor for the theme toggle */
@@ -81,10 +110,33 @@ html[data-theme="dark"] .mathbook-content pre {
     background-color: #22252d;
 }
 
-/* Pre-rendered math (inline svg) and figures (img): recolor for dark */
-html[data-theme="dark"] .mathbook-content svg,
+/* Figures shipped as raster images: recolor with a filter */
 html[data-theme="dark"] .mathbook-content img {
     filter: invert(0.88) hue-rotate(180deg);
+}
+
+/* Pre-rendered math and figures as inline SVG: recolor via fill/stroke
+   instead of a filter — a filter on every SVG creates hundreds of
+   compositor layers, which made pages and the ToC dropdown lag badly.
+   Ink (default or explicit black) is lightened; math that was colored
+   on purpose keeps its true colors. */
+html[data-theme="dark"] .mathbook-content svg {
+    fill: #e7e5e0;
+}
+html[data-theme="dark"] .mathbook-content svg.pretex text {
+    fill: #e7e5e0;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#000;"],
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#000000"],
+html[data-theme="dark"] .mathbook-content svg [style$="fill:#000"],
+html[data-theme="dark"] .mathbook-content svg [style*="fill:black"] {
+    fill: #e7e5e0 !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#000;"],
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#000000"],
+html[data-theme="dark"] .mathbook-content svg [style$="stroke:#000"],
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:black"] {
+    stroke: #e7e5e0 !important;
 }
 /* ...but never the interactive demos.  Demo pages have transparent
    bodies and expect a white page behind them, so back them with white. */
@@ -153,11 +205,49 @@ html[data-theme="dark"] #toc a:hover {
     color: #cfe0f7;
 }
 
-/* Title page: author/date address block was #333 */
+/* Title page: author/date address block was #333 (upstream selector
+   has three classes, so mirror it) */
+html[data-theme="dark"] .mathbook-content .frontmatter .contributors,
+html[data-theme="dark"] .mathbook-content .book .contributors,
 html[data-theme="dark"] .mathbook-content address,
-html[data-theme="dark"] address.contributors,
 html[data-theme="dark"] address.contributors p {
-    color: #c4c9d2;
+    color: #d5dae1;
+}
+html[data-theme="dark"] #cover-controls button {
+    opacity: 1;
+}
+
+/* Collapse chevrons on knowlized remarks/examples and hidden
+   subsections are drawn with black borders */
+html[data-theme="dark"] .mathbook-content .hidden-knowl-wrapper > a[knowl] > article::after,
+html[data-theme="dark"] .mathbook-content section.hidden-subsection > header > h1::after {
+    border-color: #8db1ea;
+}
+
+/* Dotted underline under knowl links lives on ::after */
+html[data-theme="dark"] .mathbook-content [knowl]::after,
+html[data-theme="dark"] .mathbook-content [knowl]:hover::after,
+html[data-theme="dark"] .mathbook-content [knowl].active::after,
+html[data-theme="dark"] .mathbook-content section > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .definition-like > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .theorem-like > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .example-like > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .remark-like > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .proof > .heading [knowl]::after,
+html[data-theme="dark"] .mathbook-content .hiddenproof > .heading [knowl]::after {
+    border-bottom-color: #5b7db3;
+}
+
+/* Article accent borders: brighter blue against the dark surface */
+html[data-theme="dark"] article.theorem-like, html[data-theme="dark"] article.objectives,
+html[data-theme="dark"] article.example-like, html[data-theme="dark"] article.definition-like,
+html[data-theme="dark"] article.remark-like {
+    border-left-color: #5b7db3;
+}
+html[data-theme="dark"] article.theorem-like:after, html[data-theme="dark"] article.objectives:after,
+html[data-theme="dark"] article.example-like:after, html[data-theme="dark"] article.definition-like:after,
+html[data-theme="dark"] article.remark-like:after {
+    border-bottom-color: #5b7db3;
 }
 
 /* Headings default to light ink */
