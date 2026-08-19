@@ -18,37 +18,54 @@ body, html body {
 }
 
 /* ============================================================
-   Hero title page: course banner behind a floating title card,
-   echoing the course website.
+   Masthead hero (every page): course banner behind the header,
+   with the logo/title/byline floating in a card, echoing the
+   course website's hero.
    ============================================================ */
 
-.mathbook-content .title-hero {
+#masthead .banner {
     background: url("../images/banner.png") center / cover no-repeat;
+    padding: 2.2em 1em;
+}
+#masthead .banner .container {
+    background: rgba(239, 238, 232, 0.95);
     border-radius: 10px;
-    padding: 3.5em 1.5em;
-    margin: 0.5em 0 1.5em 0;
+    padding: 0.8em 1.5em;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
 }
-.mathbook-content .title-card {
-    background: rgba(250, 249, 246, 0.94);
-    border: 1px solid #dcdad0;
-    border-radius: 10px;
-    max-width: 36em;
-    margin: 0 auto;
-    padding: 1.5em 2em 1em 2em;
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+#masthead .banner .title a,
+#masthead .banner .title {
+    color: #20242a;
 }
-.mathbook-content .title-card h1.heading {
-    margin-top: 0;
-    text-align: center;
+#masthead .banner .title a:hover,
+#masthead .banner .title a:focus {
+    color: #24589f;
 }
-html[data-theme="dark"] .mathbook-content .title-card {
-    background: rgba(21, 23, 28, 0.93);
-    border-color: #33363e;
+#masthead #byline, #masthead .byline,
+#masthead #byline a, #masthead .byline a {
+    color: #24589f;
+}
+html[data-theme="dark"] #masthead .banner .container {
+    background: rgba(31, 34, 42, 0.95);
+}
+html[data-theme="dark"] #masthead .banner .title a,
+html[data-theme="dark"] #masthead .banner .title {
+    color: #e7e5e0;
+}
+html[data-theme="dark"] #masthead .banner .title a:hover,
+html[data-theme="dark"] #masthead .banner .title a:focus {
+    color: #8db1ea;
+}
+html[data-theme="dark"] #masthead #byline, html[data-theme="dark"] #masthead .byline,
+html[data-theme="dark"] #masthead #byline a, html[data-theme="dark"] #masthead .byline a {
+    color: #8db1ea;
 }
 
-/* Sticky navbar */
+/* Sticky navbar.  NOTE: never position #gt-navbar — it has
+   overflow:hidden, and positioning it turns it into the containing
+   block for the absolutely-positioned ToC dropdown, which then gets
+   clipped to the 37px bar (invisible ToC). */
 #gt-navbar {
-    position: relative;  /* anchor for the theme toggle */
     background: #efeee8;
     border-color: #dcdad0;
 }
@@ -199,9 +216,16 @@ html[data-theme="dark"] #toc a:hover {
    Dark-mode audit fixes (contrast + light-chrome findings)
    ============================================================ */
 
-/* Masthead byline links: masthead is dark in both modes, but the
-   stock hover color is a dark blue (both-mode fix) */
-#masthead #byline a:hover, #masthead #byline a:focus {
+/* Masthead byline link hovers, per theme (title sits in a light card
+   in light mode, dark card in dark mode) */
+#masthead #byline a:hover, #masthead #byline a:focus,
+#masthead .byline a:hover, #masthead .byline a:focus {
+    color: #1c467e;
+}
+html[data-theme="dark"] #masthead #byline a:hover,
+html[data-theme="dark"] #masthead #byline a:focus,
+html[data-theme="dark"] #masthead .byline a:hover,
+html[data-theme="dark"] #masthead .byline a:focus {
     color: #cfe0f7;
 }
 
@@ -334,6 +358,9 @@ html[data-theme="dark"] .dropdown .toc-contents a {
 }
 html[data-theme="dark"] .dropdown .toc-contents a:hover {
     background: #2b3242;
+}
+html[data-theme="dark"] .dropdown .toc-contents {
+    scrollbar-color: #33363e #1f222a;
 }
 
 /* Big section links at the bottom of the title page */

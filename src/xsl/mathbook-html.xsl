@@ -578,30 +578,4 @@
   </div>
 </xsl:template>
 
-<!-- Vassar Edition: hero title page.  Overrides the stock titlepage
-     template (import precedence) to place the banner image behind the
-     title/author block, floating in a card, echoing the course site. -->
-<xsl:template match="titlepage">
-  <div class="title-hero">
-    <div class="title-card">
-      <h1 class="heading">
-        <span class="title">
-          <xsl:apply-templates select="/mathbook/*" mode="title-full" />
-        </span>
-        <xsl:if test="/mathbook/*/subtitle">
-          <span class="subtitle">
-            <xsl:apply-templates select="/mathbook/*" mode="subtitle" />
-          </span>
-        </xsl:if>
-      </h1>
-      <address class="contributors">
-        <xsl:apply-templates select="author|editor" mode="full-info" />
-        <xsl:apply-templates select="credit" />
-      </address>
-      <xsl:apply-templates select="date" />
-    </div>
-  </div>
-  <xsl:call-template name="cover" />
-</xsl:template>
-
 </xsl:stylesheet>
