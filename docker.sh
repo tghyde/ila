@@ -17,23 +17,25 @@
 set -e
 cd "$(dirname "$0")"
 
-RUN="docker run --rm --platform linux/amd64
-     -v $PWD:/base
-     -v ila-out:/home/vagrant/build
-     -v ila-cache:/home/vagrant/cache
-     -v ila-tmp:/home/vagrant/output-html
-     -w /base ila-build"
+run_build() {
+    docker run --rm --platform linux/amd64 \
+        -v "$PWD":/base \
+        -v ila-out:/home/vagrant/build \
+        -v ila-cache:/home/vagrant/cache \
+        -v ila-tmp:/home/vagrant/output-html \
+        -w /base ila-build "$@"
+}
 
 case "${1:-build}" in
     image)
         docker build --platform linux/amd64 -t ila-build build-environment
         ;;
     subpackages)
-        $RUN scons subpackages
+        run_build scons subpackages
         ;;
     build)
         shift
-        $RUN scons "$@"
+        run_build scons "$@"
         ;;
     serve)
         docker rm -f ila-web 2>/dev/null || true
@@ -45,7 +47,7 @@ case "${1:-build}" in
         # Export the built site to html/, then commit it to the gh-pages
         # branch (checked out in the .gh-pages worktree) and push.  GitHub
         # Pages serves that branch to students.
-        $RUN scons html
+        run_build scons html
         if [ ! -d .gh-pages ]; then
             if ! git show-ref --quiet refs/heads/gh-pages; then
                 if git fetch origin gh-pages:gh-pages 2>/dev/null; then
@@ -73,7 +75,7 @@ case "${1:-build}" in
             -w /base ila-build bash
         ;;
     *)
-        echo "usage: $0 {image|subpackages|build|serve|shell}" >&2
+        echo "usage: $0 {image|subpackages|build|serve|publish|shell}" >&2
         exit 1
         ;;
 esac
