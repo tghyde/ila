@@ -164,6 +164,13 @@ html[data-theme="dark"] .mathbook-content svg [style$="stroke:#000"],
 html[data-theme="dark"] .mathbook-content svg [style*="stroke:black"] {
     stroke: #e7e5e0 !important;
 }
+/* The QR-code figure has a night variant; swap it in and skip the
+   generic image filter */
+html[data-theme="dark"] .mathbook-content img[src*="qrcode"] {
+    content: url("../images/qrcode-dark.png");
+    filter: none;
+}
+
 /* ...but never the interactive demos.  Demo pages have transparent
    bodies and expect a white page behind them, so back them with white. */
 html[data-theme="dark"] .mathbook-content iframe {
