@@ -43,6 +43,10 @@ if env['VARIANT'] == 'default':
     env['PDF_FILE'] = 'ila.pdf'
 else:
     env['PDF_FILE'] = 'ila-%s.pdf' % env['VARIANT']
+# No PDF is built or published: pass an empty pdf.online so the html
+# does not render a dead "PDF version" link.
+if not env['BUILD_PDF']:
+    env['PDF_FILE'] = ''
 
 # Put it in /tmp because a ramdisk is much faster in a vm
 env['OUTPUT_HTML'] = '/home/vagrant/output-html'
@@ -50,7 +54,7 @@ output_html = \
     env.Command('$OUTPUT_HTML',
                 ['xsl/mathbook-html.xsl', versioned_xml],
                 Action('xsltproc -o $OUTPUT_HTML/ --xinclude ' \
-                       '    --stringparam pdf.online $PDF_FILE $SOURCES',
+                       '    --stringparam pdf.online "$PDF_FILE" $SOURCES',
                        'Generating html files...'))
 env.AddPreAction(output_html,
                  Action('xmllint --xinclude --noout'

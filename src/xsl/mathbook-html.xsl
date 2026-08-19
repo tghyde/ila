@@ -54,7 +54,9 @@
     <!-- JDR: preprocessed inline pretex stylesheet is inserted here -->
     <style id="pretex-style"></style>
     <style id="pretex-fonts"></style>
-    <link rel="shortcut icon" href="images/logo.gif"/>
+    <link rel="shortcut icon" href="images/icon-2x.png"/>
+    <!-- Apply saved day/night theme before first paint -->
+    <script>try{if(localStorage.getItem('theme')==='dark'){document.documentElement.setAttribute('data-theme','dark');}}catch(e){}</script>
 </xsl:template>
 
 <!-- JDR: use theme.sponsor in brand logo -->
@@ -525,17 +527,20 @@
 </xsl:template>
 
 <!-- JDR: pdf version -->
+<!-- Suppressed when pdf.online is empty (no PDF is built/published) -->
 <xsl:template name="pdf-version">
-  <div class="pdf-version">
-    <xsl:element name="a">
-      <xsl:attribute name="href">
-        <xsl:value-of select="$pdf.online" />
-      </xsl:attribute>
-      <xsl:attribute name="target">_blank</xsl:attribute>
-      <xsl:attribute name="rel">noopener</xsl:attribute>
-      <xsl:text>PDF version</xsl:text>
-    </xsl:element>
-  </div>
+  <xsl:if test="$pdf.online != ''">
+    <div class="pdf-version">
+      <xsl:element name="a">
+        <xsl:attribute name="href">
+          <xsl:value-of select="$pdf.online" />
+        </xsl:attribute>
+        <xsl:attribute name="target">_blank</xsl:attribute>
+        <xsl:attribute name="rel">noopener</xsl:attribute>
+        <xsl:text>PDF version</xsl:text>
+      </xsl:element>
+    </div>
+  </xsl:if>
 </xsl:template>
 
 <!-- JDR: number overrides -->

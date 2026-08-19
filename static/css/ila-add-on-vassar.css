@@ -2,7 +2,145 @@
    (hwGenie) palette: ink #20242a, accent #24589f, warm neutrals. */
 
 body, html body {
-    background: #e7e5dd;
+    background: #efeee8;
+}
+
+/* Content surface: warm off-white, as on the course site */
+.main {
+    background: #faf9f6;
+}
+
+/* mathbook-add-on paints p/.heading white for aside layering; this
+   book has no asides, and the strips clash with the warm surface */
+.mathbook-content p,
+.mathbook-content .heading {
+    background-color: transparent;
+}
+
+/* Sticky navbar */
+#gt-navbar {
+    position: relative;  /* anchor for the theme toggle */
+    background: #efeee8;
+    border-color: #dcdad0;
+}
+#gt-navbar a:hover {
+    background: #e2e8f3;
+}
+
+/* Day/night toggle button (inserted by Mathbook.js) */
+#theme-toggle {
+    display: inline-block;
+    vertical-align: top;
+    height: 36px;
+    width: 40px;
+    border: none;
+    border-left: 1px solid #dcdad0;
+    border-right: 1px solid #dcdad0;
+    background: transparent;
+    color: #20242a;
+    font-size: 16px;
+    cursor: pointer;
+}
+#theme-toggle:hover {
+    background: #e2e8f3;
+}
+
+/* ============================================================
+   Dark mode ("night"), palette matching the course site.
+   Math and figures are pre-rendered SVGs/images with dark ink,
+   so they are recolored with an invert filter.
+   ============================================================ */
+
+html[data-theme="dark"], html[data-theme="dark"] body {
+    background: #101216;
+}
+html[data-theme="dark"] .main {
+    background: #15171c;
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .mathbook-content,
+html[data-theme="dark"] .mathbook-content h1,
+html[data-theme="dark"] .mathbook-content h2,
+html[data-theme="dark"] .mathbook-content h3,
+html[data-theme="dark"] .mathbook-content h4,
+html[data-theme="dark"] .mathbook-content h5,
+html[data-theme="dark"] .mathbook-content h6 {
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .mathbook-content a {
+    color: #8db1ea;
+}
+
+/* mathbook-add-on gives p/.heading/pre white backgrounds for aside
+   layering; let them inherit the dark surface instead */
+html[data-theme="dark"] .mathbook-content p,
+html[data-theme="dark"] .mathbook-content .heading {
+    background-color: transparent;
+}
+html[data-theme="dark"] .mathbook-content pre {
+    background-color: #22252d;
+}
+
+/* Pre-rendered math (inline svg) and figures (img): recolor for dark */
+html[data-theme="dark"] .mathbook-content svg,
+html[data-theme="dark"] .mathbook-content img {
+    filter: invert(0.88) hue-rotate(180deg);
+}
+/* ...but never the interactive demos.  Demo pages have transparent
+   bodies and expect a white page behind them, so back them with white. */
+html[data-theme="dark"] .mathbook-content iframe {
+    filter: none;
+    background: #fff;
+    border-color: #33363e;
+}
+
+/* Boxes and knowls */
+html[data-theme="dark"] .mathbook-content article {
+    background: #1f222a;
+}
+html[data-theme="dark"] .mathbook-content .bluebox {
+    background: #1c2340;
+    border-color: #40598a;
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .knowl-output,
+html[data-theme="dark"] .knowl {
+    background: #1f222a;
+    border-color: #33363e;
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .mathbook-content section.hidden-subsection > header > h1:hover {
+    background: #2b3242;
+}
+
+/* Sticky navbar + ToC, dark */
+html[data-theme="dark"] #gt-navbar {
+    background: #1f222a;
+    border-color: #33363e;
+}
+html[data-theme="dark"] #gt-navbar a {
+    color: #e7e5e0;
+}
+html[data-theme="dark"] #gt-navbar a:hover {
+    background: #2b3242;
+}
+html[data-theme="dark"] #theme-toggle {
+    color: #e7e5e0;
+    border-left-color: #33363e;
+}
+html[data-theme="dark"] #theme-toggle:hover {
+    background: #2b3242;
+}
+html[data-theme="dark"] #toc,
+html[data-theme="dark"] .sidebar {
+    background: #1f222a;
+    color: #e7e5e0;
+}
+html[data-theme="dark"] #toc a {
+    color: #e7e5e0;
+}
+html[data-theme="dark"] #toc a:hover {
+    background: #2b3242;
 }
 
 article.theorem-like, article.objectives {
