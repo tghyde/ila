@@ -52,7 +52,7 @@ body, html body {
    ============================================================ */
 
 html[data-theme="dark"], html[data-theme="dark"] body {
-    background: #101216;
+    background: #262b35;  /* soft slate frame around the dark surface */
 }
 html[data-theme="dark"] .main {
     background: #15171c;
@@ -141,6 +141,159 @@ html[data-theme="dark"] #toc a {
 }
 html[data-theme="dark"] #toc a:hover {
     background: #2b3242;
+}
+
+/* ============================================================
+   Dark-mode audit fixes (contrast + light-chrome findings)
+   ============================================================ */
+
+/* Masthead byline links: masthead is dark in both modes, but the
+   stock hover color is a dark blue (both-mode fix) */
+#masthead #byline a:hover, #masthead #byline a:focus {
+    color: #cfe0f7;
+}
+
+/* Title page: author/date address block was #333 */
+html[data-theme="dark"] .mathbook-content address,
+html[data-theme="dark"] address.contributors,
+html[data-theme="dark"] address.contributors p {
+    color: #c4c9d2;
+}
+
+/* Headings default to light ink */
+html[data-theme="dark"] .mathbook-content .heading {
+    color: #e7e5e0;
+}
+
+/* Knowl links (collapsible remarks, proofs, inline references):
+   stock color is the ink navy, invisible on dark.  Scoped variants
+   mirror the specificity of the light rules. */
+html[data-theme="dark"] .mathbook-content [knowl],
+html[data-theme="dark"] .mathbook-content section > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .definition-like > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .theorem-like > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .example-like > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .remark-like > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .proof > .heading [knowl],
+html[data-theme="dark"] .mathbook-content .hiddenproof > .heading [knowl] {
+    color: #8db1ea;
+    border-bottom-color: #5b7db3;
+}
+html[data-theme="dark"] .mathbook-content [knowl]:hover,
+html[data-theme="dark"] .mathbook-content [knowl].active,
+html[data-theme="dark"] .mathbook-content .autoterm [knowl]:hover,
+html[data-theme="dark"] .mathbook-content section > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content section > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .definition-like > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .definition-like > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .theorem-like > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .theorem-like > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .example-like > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .example-like > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .remark-like > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .remark-like > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .proof > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .proof > .heading [knowl].active,
+html[data-theme="dark"] .mathbook-content .hiddenproof > .heading [knowl]:hover,
+html[data-theme="dark"] .mathbook-content .hiddenproof > .heading [knowl].active {
+    color: #cfe0f7;
+    background: #2b3242;
+}
+
+/* Section-heading anchor hovers were a dark blue */
+html[data-theme="dark"] .mathbook-content section h2 > a:hover,
+html[data-theme="dark"] .mathbook-content section h2 > a:focus,
+html[data-theme="dark"] .mathbook-content section > .heading a:hover,
+html[data-theme="dark"] .mathbook-content section > .heading a:focus {
+    color: #a9c6f0;
+}
+
+/* Permalink pilcrow: red is invisible on dark */
+html[data-theme="dark"] .mathbook-content .heading a.permalink,
+html[data-theme="dark"] .mathbook-content .heading a.permalink:hover {
+    color: #e87a90;
+}
+
+/* Sticky-navbar buttons (Index, hamburger, Prev/Up/Next) kept their
+   light chrome */
+html[data-theme="dark"] #gt-navbar .button,
+html[data-theme="dark"] #gt-navbar .toolbar-item {
+    background: #262b35;
+    color: #e7e5e0;
+    border-color: #33363e;
+}
+html[data-theme="dark"] #gt-navbar .button:hover {
+    background: #2b3242;
+    color: #ffffff;
+}
+html[data-theme="dark"] #gt-navbar .button.disabled,
+html[data-theme="dark"] #gt-navbar .button.disabled:hover {
+    background: #1f222a;
+    color: #5d646f;
+}
+
+/* ToC dropdown (populated lazily by JS) */
+html[data-theme="dark"] .dropdown .toc-border-container,
+html[data-theme="dark"] .dropdown .toc-border-container .toc-contents {
+    background: #1f222a;
+    border-color: #33363e;
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .dropdown .toc-contents a {
+    color: #e7e5e0;
+}
+html[data-theme="dark"] .dropdown .toc-contents a:hover {
+    background: #2b3242;
+}
+
+/* Big section links at the bottom of the title page */
+html[data-theme="dark"] .mathbook-content .summary-links a,
+html[data-theme="dark"] .mathbook-content .summary-links a:link,
+html[data-theme="dark"] .mathbook-content .summary-links a:visited {
+    background: #1f222a;
+    color: #e7e5e0;
+    border-color: #33363e;
+}
+html[data-theme="dark"] .mathbook-content .summary-links a:hover,
+html[data-theme="dark"] .mathbook-content .summary-links a:focus,
+html[data-theme="dark"] .mathbook-content .summary-links a:active {
+    background: #24589f;
+    color: #ffffff;
+}
+html[data-theme="dark"] .mathbook-content .summary-links a .codenumber {
+    color: #9aa1ad;
+}
+
+/* Search controls on the title page (appearance:none, or the browser
+   paints native light widgets and ignores the colors) */
+html[data-theme="dark"] #cover-controls select,
+html[data-theme="dark"] #cover-controls button,
+html[data-theme="dark"] #cover-controls input {
+    -webkit-appearance: none;
+    appearance: none;
+    background: #1f222a;
+    color: #e7e5e0;
+    border: 1px solid #33363e;
+    border-radius: 3px;
+    padding: 2px 8px;
+}
+html[data-theme="dark"] #cover-controls select:hover,
+html[data-theme="dark"] #cover-controls button:hover {
+    background: #2b3242;
+    color: #ffffff;
+}
+
+/* Index-page letter navigation hovers were light purple */
+html[data-theme="dark"] .indexnav a:hover,
+html[data-theme="dark"] .floatnav a:hover {
+    background: #2b3242;
+}
+
+/* Demo maximize/minimize buttons */
+html[data-theme="dark"] .mathbox .maximizer,
+html[data-theme="dark"] .mathbox .minimizer {
+    background: #262b35;
+    color: #e7e5e0;
 }
 
 article.theorem-like, article.objectives {
