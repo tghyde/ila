@@ -578,4 +578,23 @@
   </div>
 </xsl:template>
 
+<!-- Vassar Edition: append "(edited by ...)" from the titlepage credit
+     to the last author in the masthead byline. -->
+<xsl:template match="frontmatter/titlepage/author[position()=last()]" mode="name-list">
+    <xsl:if test="preceding-sibling::author">
+        <xsl:text>, </xsl:text>
+    </xsl:if>
+    <xsl:apply-templates select="personname" />
+    <xsl:if test="../credit/author/personname">
+        <xsl:text> (edited by </xsl:text>
+        <xsl:for-each select="../credit/author/personname">
+            <xsl:if test="position() &gt; 1">
+                <xsl:text>, </xsl:text>
+            </xsl:if>
+            <xsl:apply-templates select="." />
+        </xsl:for-each>
+        <xsl:text>)</xsl:text>
+    </xsl:if>
+</xsl:template>
+
 </xsl:stylesheet>
