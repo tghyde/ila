@@ -623,15 +623,13 @@ false);
             document.documentElement.removeAttribute("data-theme");
         }
         try { localStorage.setItem("theme", t); } catch (e) {}
-        $("#theme-toggle").text(t === "dark" ? "☀" : "☾");
+        $(".theme-toggle").text(t === "dark" ? "☀" : "☾");
     }
-    $(function() {
-        var nav = $("#gt-navbar");
-        if (!nav.length) { return; }
+    function makeToggle(extraClass) {
         var cur = "light";
         try { cur = localStorage.getItem("theme") || "light"; } catch (e) {}
         var btn = $("<button>", {
-            id: "theme-toggle",
+            "class": "theme-toggle " + extraClass,
             "aria-label": "Toggle day/night mode",
             title: "Toggle day/night mode",
             text: cur === "dark" ? "☀" : "☾"
@@ -640,17 +638,33 @@ false);
             var dark = document.documentElement.hasAttribute("data-theme");
             setTheme(dark ? "light" : "dark");
         });
+        return btn;
+    }
+    $(function() {
+        var nav = $("#gt-navbar");
+        if (!nav.length) { return; }
+        // Desktop: toggle in the top toolbar
         var group = nav.find(".toolbar-buttons-right");
-        if (group.length) { group.prepend(btn); } else { nav.append(btn); }
-        // Link back to the course webpage
-        var course = $("<a>", {
-            "class": "button toolbar-item course-link",
-            href: "https://tghyde.github.io/math221-fall2026/",
-            title: "Math 221 course webpage",
-            text: "Math 221"
-        });
+        if (group.length) { group.prepend(makeToggle("theme-toggle--nav")); }
+        // Mobile: the top toolbar is hidden, so put a toggle in the
+        // corner of the masthead card
+        $("#masthead .banner .container").append(makeToggle("theme-toggle--masthead"));
+        // Link back to the course webpage (full label on desktop,
+        // abbreviated in the mobile bottom bar)
+        var courseURL = "https://tghyde.github.io/math221-fall2026/";
         var left = nav.find(".toolbar-buttons-left");
-        if (left.length) { left.append(course); } else { nav.append(course); }
+        if (left.length) {
+            left.append($("<a>", {
+                "class": "button toolbar-item course-link",
+                href: courseURL, title: "Math 221 course webpage",
+                text: "Math 221"
+            }));
+        }
+        nav.find(".navbar-bottom-buttons").append($("<a>", {
+            "class": "button toolbar-item course-link-bottom",
+            href: courseURL, title: "Math 221 course webpage",
+            text: "M221"
+        }));
     });
 })(jQuery);
 ;
