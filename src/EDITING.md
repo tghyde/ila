@@ -5,7 +5,9 @@ per section, stitched together by `ila.xml`.  Front matter (title page,
 contributors, prefaces) is `frontmatter.xml`; LaTeX macros are in
 `latex/macros.sty`.
 
-All commands run from the repository root (one level up from here).
+The `./docker.sh` commands below work from this directory or from the
+repository root (this directory has a forwarder to the real script one
+level up).  The `git` commands work from anywhere in the repository.
 
 ## The loop
 
