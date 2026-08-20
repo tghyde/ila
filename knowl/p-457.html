@@ -1,19 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: id3oHaesrMxjVLXBjmvY */
+
+@font-face {
+  font-family: "fDmh_jkze3PbXPwXOSDz8";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR4AAAEh0EEBOkZGVE0AAASUAAAAGgAAAByjRDPtT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvhTFZaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGKAAAC0Jb5PC5wb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAA4lzVg7nx/DZfGbiZXwBFGJ6tLpeC0xYM05huMK4CcjkYmECiADr0CvkAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuZowZZNqqX1WlEvYinFszFd0kBISppAj76D76F3wUfwKD6GD+DFL+uiICIGJvObzMw3s1kAm7iHwuejceNYYQMPjmtYwbPjJfTUmeM69tSj4wbW1JvjZazXtlip6quMrm1XxQq7uHNc49wnx0uY4cVxnfq3jhvYVq+Ol7Gj3rGPEE0IfG6qcUgaIkCJxFLM7NTGOYz1B/xeIsWEcU4umDf0ESdWPYntMayo3m1gP2yKr/WhDIMykWEcToMyN0F5IGU6MbkUUyPRLJEkDk0aGnZccFAle0KBOeUiirUwwDlTQTE9MfM4SlsDhiNWRHbZgMtgZKIyCQinyNhTWJ+zwtgDtnlAwTHttwliJ8gPTcElxvDova9uD33u06NVP81HlwOztDjN8siI39ZyLN97yuBc3F5yOfbEq9Jev9Vr+drv/n7Y/6yCv0YAV/Z6KsHMCnr29Lgy+TzOUvHaDGb2Ugvawl6+xhGtw0RuCrPQWh/pDj4AKVp6ngAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWLP0vDQBxAf78kVkyv9Q9GBGM5nGypetE6KoUayFIs4uQW4tEUQimxQWfXOImCIC7ioKuQ8QbpkC9R/Bq5YAuKDr7pweMhaBogYmkQ8iG/Yoztsz1ABRAsuYbSVOS6Kle1G4JVon4QbZTV8kAezpjwPm8CLJiQLJpQMyFbAvV3gzacbXpVustYg3bcKKCdnue7UcjdqE6j/jkP6dDntDsIaNDzeN/j22136B/xi163T1sOPeHdKHBDenxqUYv9t62WAz9UQEHcOIiFtAUKIcdCFSt5U75NmwUxuTSkLccTe7ac1dKMpTiSipE30mmj8PWq/Uk5f1mOjes7Gd1nzmOhouPDDpm7JXpMiomePBHyWUyfSSkm5W8mBmAGAAB4nGNgYGBkAIKrb113gOhnq8ulYDQAUdQHBQAAAxAAAAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fUPadvOOx-8hgTNQIIZwA";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWcAAoAAAAACAQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAcYAAAHYI4DOnEZGVE0AAAVwAAAAGgAAAByjRDPtT1MvMgAAAVAAAABFAAAAYFW0XrdjbWFwAAADTAAAAEcAAAFKAUYE52hlYWQAAAD0AAAAMwAAADYuozG4aGhlYQAAASgAAAAeAAAAJAUKAiRobXR4AAAFjAAAAA4AAAAOBZQAdG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAG0AAADJCihYqBwb3N0AAADlAAAABMAAAAg/3gAPXicY2BkYGBgYmBYFH75WTy/zVcGbuYXQBGGZ6vLpeC05v8vTMxMq4FcDpBaBgYAbpkMZwB4nGNgZGBgWv3/C0MUkw4DEDAxMzAyoAJmAF01AzMAAAAAUAAABAAAeJxjYGY8zziBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKk9BgMmRX+WzBEMa1m4EFRowCEjABDAAoXAAAAeJydUsFOGzEUHC8hUhGqmlsPPVi9b7RZKRHhUAlWouJCT+WAetmwJrHYeFe2A+SnOFVVv4jvYOxYQlXhwlr2Gz/PG4+9BvARjxDYfVf4k7DASEwTzjAUPxPeQy7+JjzAKDtIeB+fsm8JD3GYaTLF4ANnv2NVwAJfxSjhDIfie8J7uBK/Eh6Q85TwPmT2JeEhPmc/UKFDjy0sNJZYwUNigjlbQVTDxdFw3HDsOS7QkuvIVWiYv6eCxS3RgjoSp1z1XPfMKtaumTtn7TXGRCesbhlf9nNxphgV411UDczgzOCGvIY5Q6amWss1VF2/tXq58nIynxeydrI2cmP6zaLVbqUaed/ZW7nYylPtnbeqXstzcz2WJ20rY52TVjll71QzllVnbnSjjNd1S+3X7Fc0WnPuo0W8qFar2nrF1EW8hHU0iIvOrmvGs3gCH6PlaRWlSvoPN3v8xk39u9WOF/5HjiP2krUlZpTujD/r7FLJclzIY/mfJeYm8/woL4ty9t5DXcYVx9ouvoCd95x+dmfApbJOdyZ4yCf0AT6QsEGQfCAltCk7HfRWefVQFMW0mOEZjfCTU3icY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBj0GAz//wfy9RgM/v//f/n/Jah6IGBkY0BwiAJAA5lJ0jDoAQD/dQksAHicY2BmAIP/pQy2DFgAACfpAbUAeJxlzDGI02AYxvH3u6RX7cWc11oX4+WDtovQXCoo3FS0FtHBWauDqY1NMU3aJPU8HQqiy0VQFE5QxLHqEBHuHCqRjoK7my4HHhUFXXy/8hXUc3HwGf/wewiIIhBC9nQ8MzCv6bp+RD8KZAYIlNgBYAphB2fYosBUkRNJeCeJG332cFJOKPB5XgHYq8C3BQUOKSRKQ2KH7YI6+HAL1g5rerGk6RW3s+q1mlZAS8vLOjV8aji053R6dbvlW2aDrrjeFVpfpcdbgR94ptGmp5xLGj1m2/Sv86ln+qZ31WxotOI6l1sN0wlahq39AxXL8ALT+y+ccb22YcOfzcMCpEEkJH9ibYgfw5hVYxLHOIqFeD/Ls+fT/Gw8XcmyKo6m1aT88yZmyAfMCKhiKms5brP5rBNFg0H00h1Yqtx/w74OycYYX30R8MWknOW5Ik/zLu+OeQZzmBtjBrvYLWKa59QL4nZc4DVeO1dYWjr7HWt4/u2PbVUONyfkKcG7WwK+3/lonw4NLA3CadS/zpO3w4u4FYabHO71H4UTkpDZaB+Wszces946nnwyfDDLnTC5mBLWC7+k3fel1B1p7nXq01woyb8BnYm+gAAAeJxjYGBgZACCq29dd4DoZ6vLpWA0AFHUBwUAAAH0AAABFgBLAiwAKQBeAAA=) format('woff');
+}
+
+@font-face {
+  font-family: "fAnk5qZhqkikqL8K1Zc_M";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUkAAoAAAAAB4QAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADhAAAAXYAAAGSn41ld0ZGVE0AAAT8AAAAGgAAAByjRDPtT1MvMgAAAVAAAABHAAAAYF7DXP9jbWFwAAADLAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYu5SaJaGhlYQAAASgAAAAeAAAAJALO+aZobXR4AAAFGAAAAAoAAAAKBRYAW21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGRAAAC9EAmbcZwb3N0AAADbAAAABYAAAAg/4YAN3icY2BkYGAA4pyYg0zx/DZfGbiZXwBFGJ6tLpeC0xbfTZjMGWyAXA4GJpAoAC83CkkAAAB4nGNgZGBgsPluwhDFlA9kMTCZM4BEkAETAEM6AnAAAAAAUAAAAwAAeJxjYGbKZ5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSjgxOzAr/LRiiGGw4ziCpsWFQAEJGAC1jCnUAeJyVkstKw0AUhv+kFxEvG0HEjQdXLbRlGtrSduGmF7oRSoWujemQBkIS0gSy8Cn0PfQJfASXgu/ixjPTQUUKYmAy35n5z21mABzjCRa2n8CdYQtHeDZsYw+vhku4sm4Ml3FpvRuu4MA+MVzFoT1gpVXeZ+tWeym2cI5HwzbnfTFcwj3eDJcxth4MV3BqfRiu4sy+QA0e6iA4XKlAh2kOFzlCTQHvrrWdQuq5wes5IqzYTpkz3pc8+0i0T6h9JCvUvwXUvDo5QnRo7uYhzQNv7eapdPMG5dFKppStJflJSGHgyciT7HHNiVTYMQfYcDifgzUxwoy33Gw9lpvAj5ojNhes8HWxLheDhfTz0GWYImafTM8pK6RusMUNEoY8dmUgnYF+xSRMULBWNaSUsVa2vyK1MeDa+jzUATrocfI4yqZx6ktyWoKG9F0zjWZkaqRJkcloE8QRtZWoPWj2m45wervb/29x+DspsNRX+NNRnRCWMt1KWmwk+uJVikI/EIGufiZIUpnJQgjRFR18Avi9hTYAAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvtP//0DS8f///wegKhkY2RhgTPIBIxOlJgwoAACATgb3AAAAeJxjYGYAg//NDGZAipEBDQAAKKkBvQAAeJxFjs9LAkEcxWdc081G+0FG0BaDQWT0Yww7eVRBsEAKOresgyssm6jLeu66naQgiBCCDl32IAhd9hCBHvoXomP0H8zIbtHYxS/v8Hh8vo8HQTgMIITxRpO2aYcQckSyAIYABBm+BrkS4usSXw1fI5hG0isKvyksy99HMwp4mVcAWFCAt6iAHQXqS0D6fwNn4GJbS+NDQrK4oloGrtQ1XbWaVLV2sWVWaRO3dYprDQMbdY2aGt0/Udt6gbbqNRPnS/iU1ixDbeJip03NVv3SxBkyJfbyJSAuBTaBBGFKe3I8XvSg5/GcJ3krvMefg17EC+wkL/JcUIwmxOShIneH8OtbYse/H0lnXGCER5jdl4dR39X982DL+dGEmHDM1Sex3fcFI1B5WsDL3xIvTxp+Cj4JIr5dlStR5rrsnG85Y03IF8533UlsV5lgBConxtKyk7y64dYtK91HNmLw7gDNdlHMQXOD2OABoc+50SOKOyjxB1VWmpQAAHicY2BgYGQAgqtvXXeA6Gery6VgNABR1AcFAAACbwAAAm8AWwA4AAA=) format('woff');
+}
+
+@font-face {
+  font-family: "fEyKkCbwtIBHOXNNPh18l";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASkAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAARQAAAEUBeszHUZGVE0AAASAAAAAGgAAAByjRDPtT1MvMgAAAVAAAABLAAAAYHbKgHtjbWFwAAADHAAAADQAAAFCAA0kuGhlYWQAAAD0AAAAMQAAADYvTTFZaGhlYQAAASgAAAAgAAAAJARGBEBobXR4AAAEnAAAAAgAAAAIBbAAGG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF/AAACuJKrWfNwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4pNNsxPi+W2+MnAzvwCKMDxbXS4FpyUYmZgOMNoBuRwMTCBRAEKGCkgAAAB4nGNgZGBgtGNkYohiusEABEwHGFL+v2VABkwAWewEjAAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTARk4wBgBaa4pDAxKQkpCzAr/LRiiGO3+/QMKM8JVKgAhIwAmMA4xAHicfZHNSsNAEMf/az9E/DiKeJpjC03YhLa0vXhoKb0IpYeejemSBEIStgn0PXwHj/oE4hN4FB/A5xCcrIuCVAOT/U1m5j8zWQBneIDA1yNxa1ngFI+WD3CIF8sN9MWV5SYuxL3lFo7Fm+U2TsQHZ4rmEXs3pqpmgUvcWT7gvk+WG4jxarkJKUrLLZyLZ8tt7vWODkJ0QfB5Uok+0xIBKqSGEo7GxtdQ5uzx9woZNuxr5pLjis8IhalJTY3ijPrtAp2wS76UfVoGVUrLJIyDSqug6lGVbZSmMlYUFSmlSaiyUHHFNTeqZWcssGW5iMUcTLHgUFDGM7VNosyZsrvijMgMG/AwWKmoSgOGOXKuKc2pOUOZBV1ekDBh29eBTAf6pUnwvqs8jHmOEVv9s3wMuVGelfNcR4p8V9KEfuaj6YLsPOTVIW/sjBxf+sP9C/7XHn/JAmtzDbVIbkQ8syXWSm+TPCPPZacwl1ey7cwlSwyModCqVDsp5UAO8AmatHcxAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEC+ktD//xDy7nuoSgZGNgYYc8QCAG6/BuZ4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAAQAEBAABAQENcHJldGV4MDAwNTA1AAECAAEANPgbAfgcAvgdA/gYBIwMAZYMAikMA8EMBKP3lvlU99IFHACxDxwAABAcALQRHAAqHADqEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmAAIBASIxi734Rb0Bvb34pL0DvRb5CPip/QgGvfx3FfhF+KT8RQcO95bHAaP3lhX5PMf9PAYO+WwUixWClPh1lfdImwYeCgGYLwwJkgwKiwwLtQq1nQwM3gvHogwNiwwOeJxjYGBgZACCq29dd4DoZ6vLpWA0AFHUBwUAAALYAAAC2AAY) format('woff');
+}
+
+@font-face {
+  font-family: "f7DHVXwBmu27bOFtKm2qr";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.Cid3oHaesrMxjVLXBjmvY svg.pretex tspan.a { font-size:11.47700024px;font-family:f7DHVXwBmu27bOFtKm2qr }
+.Cid3oHaesrMxjVLXBjmvY svg.pretex tspan.b { font-size:11.47700024px;font-family:fDmh_jkze3PbXPwXOSDz8 }
+.Cid3oHaesrMxjVLXBjmvY svg.pretex tspan.c { font-size:11.47700024px;font-family:fAnk5qZhqkikqL8K1Zc_M }
+.Cid3oHaesrMxjVLXBjmvY svg.pretex tspan.d { font-size:11.47700024px;font-family:fEyKkCbwtIBHOXNNPh18l }
+.Cid3oHaesrMxjVLXBjmvY svg.pretex tspan.e { font-size:11.47700024px;font-family:fUPadvOOx-8hgTNQIIZwA }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Unfortunately, this kind of function does not come from a matrix, so one cannot use linear algebra to answer questions about this function.  In fact, these functions are rather complicated; their study is the subject of <a class="external-url" href="https://en.wikipedia.org/wiki/Inverse_kinematics" target="_blank" rel="noopener">inverse kinematics</a>.</p>
-<span class="incontext"><a href="chap-matrices.html#p-457">in-context</a></span>
+<h5 class="heading Cid3oHaesrMxjVLXBjmvY"><span class="type">Paragraph</span></h5>
+<p class="Cid3oHaesrMxjVLXBjmvY">Let</p>
+<div class="pretex-display Cid3oHaesrMxjVLXBjmvY Cid3oHaesrMxjVLXBjmvY"><svg height="2.43965em" version="1.1" class="pretex" viewbox="213 1 76 28"><text transform="translate(214.897 18.261)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(223.947 18.261)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(235.648 2.394)"><tspan y="0" x="0" class="c">A</tspan></text>
+<text transform="translate(244.422 10.76)"><tspan y="0" x="0" class="d">−</tspan></text>
+<text transform="translate(252.812 10.76)"><tspan y="0" x="0 16.343248" class="e">10</tspan><tspan y="13.947" x="-4.1950002 16.348829" class="e">01</tspan></text>
+<text transform="translate(277.138 2.394)"><tspan y="0" x="0" class="c">B</tspan></text>
+<text transform="translate(285.912 18.261)"><tspan y="0" x="0" class="e">.</tspan></text>
+</svg></div>
+<p class="Cid3oHaesrMxjVLXBjmvY">Describe the function <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.635)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(21.336)"><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+</svg></span></span> geometrically.</p>
+<span class="incontext Cid3oHaesrMxjVLXBjmvY"><a href="matrix-transformations.html#p-457">in-context</a></span>
 </body>
 </html>

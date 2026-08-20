@@ -1,21 +1,257 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: MMgX1nY0zCDI_z3OaROO */
+
+@font-face {
+  font-family: "fMothMPaaI5udAYf-Qo6s";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATkAAoAAAAABwgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAUUAAAFMS4bZ5EZGVE0AAAS8AAAAGgAAAByjRDP/T1MvMgAAAVAAAABLAAAAYFYCXytjbWFwAAADHAAAAD8AAAFKAQoDUGhlYWQAAAD0AAAAMQAAADYvHDFraGhlYQAAASgAAAAgAAAAJASyA3BobXR4AAAE2AAAAAwAAAAMBeQAyW1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAGAAAACuJWvXPNwb3N0AAADXAAAABcAAAAg/5EANnicY2BkYGAA4rKfZ9Li+W2+MnAzvwCKMDxbXa4Mp30YDJmimfiBXA4GJpAoAFKeCoQAAAB4nGNgZGBg4mcwZIhiusEABEzRDCn/3zIgA2YAUhIEKAAAUAAAAwAAeJxjYGb8wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWZAQaYGJBAQJprCpDaznCdWeG/BUMUE///80A+I1yBAhAyAgA/jA7WAHicfZHPSsNAEMa/tX9E/HMU8TTHFtqyCaHaXjy0iBeheOjZGJckEJKSJuB7+A4e9QnEJ/AoPoDPIfhlXRREDWz2N5mZb2YyAPZwD4XPR+PKscIuHhxvYBPPjlsI1InjNg7UneMOttWr4y521DsjVXuL1qXNaljhELeON1j30XELCV4ct6FV5biDffXkuMtab+ghQh8Cn51qBKQFQtTILKX0JtYuYew94PcaOa5pl+SKfsM7xsrmZDbHMKJ5j4Be1Bdf60AWYZ3JIo2SsC5NWA+kzq9NKVViJF5lkqWRySPDjHMWamTnFFhTLqbYEDOc0RVWydys0zgfzmheMCK2zYZsBhcmrrOQcIqCOZW9S0YYO+CIAwqmPL9VEFtBfmgKvK8sDxP2cczT/CwfYxYq8uq0KGMj/kjLVL77k9mZuH7Ea1zeZHg89LU//n3A/8rjL1lgadfQiBRWxLNTYmnKdVrk4o1orOzyKp4bu2SNIy46oKM0lbnRWh8FAT4AmyZ3O3icY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBi2M1z//x/IB9P/vf5rQ9UDASMbA4IzXAEBDwIAVFgKVgB4nGNgZmBg4GZg+N/MYMaABQAAKcEBxwB4nGNkYGFhYGRk5C0oSi1JrTAwMDA3MWFgZGJgZDD4Ic34Q4bphyzzDwmWaTxMmjzMB3lYru/58f7HYlYZhrX8MgwMAjIMmwRlGLRlGBWFGJhBugwZPBnCNJI1FYwMDEwUAhJLcxQCMpMzEkuLUhNLdRRK81JSixRKMlIV0gtyFHIyk1PzklP1fBNLMlxSizPT8xScPRSCUtNLcxKLFAwNEOK6zh4MQFDEsIKBmZFRxTrzN2/33h+uexn37v1+YC/zXrEfKj9W/lFh2/unXPSH6/cDf1zZ+b7Hf98iui5/RUZGXl5Gxor8deuWL18nx/ftB8P3LtHvkb8jt279HfkdDBOBLBAEshK/R0LYWxMXLmDl+75G5CejaNOUH6VTv3vMZpPjYpyhz8M5iYerm4d7K9fWuTw897iPL+Lh7ebhAwAxY3syAAAAeJxjYGBgZACCq29dd4DoZ6vLlWE0AFIuBxcAAAH0AAABGABMAtgAfQ==) format('woff');
+}
+
+@font-face {
+  font-family: "fHYKmoFISWxPNElziDNf1";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fQt5evNAF6o5PXwqu9nHV";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAToAAoAAAAABxwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAUIAAAFGFYioJkZGVE0AAATAAAAAGgAAAByjRDP/T1MvMgAAAVAAAABFAAAAYFW5X5FjbWFwAAADJAAAAEMAAAFKAGMC02hlYWQAAAD0AAAAMgAAADYvhjFraGhlYQAAASgAAAAeAAAAJAWIAwBobXR4AAAE3AAAAAwAAAAMB9wAcG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGKAAAC0Jz9Qi5wb3N0AAADaAAAABMAAAAg/4YANnicY2BkYGAA4vMP0lbF89t8ZeBmfgEUYXi2ulwZTlv8f8N0gykEyOVgYAKJAgB6/A0KAAB4nGNgZGBgCvn/hiGKWYABCJhuMDAyoAJmAF7xA44AAAAAUAAAAwAAeJxjYGb6wjiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKktBlsmRX+WzBEMYUwiKCoUQBCRgBLQwn3AAAAeJyNks9Kw0AQxr+trSL+uSkiHuaoYMsm9P+1ol7EIuLZmC5pICQlTaBH38H30LvgI3gUH8MH8OKXdVEQEQvb+U1m5puZbABs4h4Knz+NG8cKG3hwXMMKnh0voa9OHNexpx4dN7Cm3hwvY722xUxVX6V3basqVtjFneMa+z45XsIML47r1L913MC2enW8jB31jn2EOIDA56QabdIYAUoklmJGp9bPYaw95PMSKSb0c3LBuKGN2LGqSWyNYUb13wL2wwPxtW7LOCgTGcfhNChzE5SHUqYTk0sxNRLNEkni0KShYcUZG1WyRxSYUy6iWBMjnDIUFNMjM4+jtDmie8GMyA4bcBhcmKhMAsIxMtYU1ubMMHbBFhcUDHl+6yC2g/zQFJzjEh6t91XtYcB5+jzVS/PRZcMsLY6zPDLit7QM5XtOGZ2Km0vOLz3xqrA3aPabvva7vy/7n1HwVwvgyl5PJZhZQc9ujyuTz+MsFa9FZ2YvteBZ2MvX6PED6DCQm8IstNa9dgcfKgJ6rgAAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGLQZbP//B/LB9P9r/49C1QMBIxsDgkMYYCplIl7zYAUABzsJMgB4nGNgZgCD/80MZgxYAAAomAG8AHicRYu/SwJhHIe/r3cp6ev1gy4CL3kHh8ysMy6i2S5cRImmtut6UeEQuTxsbnWLkiBamvKGlnA8MBze/6LBqb+g9z3OIKOhz/DwwMMHgSwDQijdcWmXXuu6fmgcAIoBgqLIIKHFxKYkNuQ8lt6xPOmFjvhc0OB1SQNY1uBtRYOChjKrIP1eSlCF8y07T/Z13SB1y3NIvWU3Lc+llrdDvPYldUm3SUmj4xCnZdO2TXerVrd5TK9ajTYpV8gpbXiO5ZLaWYmU9P9WLFdgPgxZkBDKnVxEZj8QZoCCgI8DKVgXOTGc5eLBrKcKk49nZkLhA4b4lEl8ygdq5DPuc59Fc9QiP/Jrw4TyxbcZ1xmaiJgaGuzbiEcv8p8oobMWHqk3d8K755XHeDaJHvbw4i1O9nFqlBw9YfyRYs843cfKD/+xeBAAAHicY2BgYGQAgqtvXXeA6Gery5VhNABSLgcXAAAB9AAAAtgAOAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fZ3-dCrJ1uKcyNFi7ZKeH";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "ffXo_W8C5GA0VTx4Xbrkn";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.a { font-size:11.47700024px;font-family:fZ3-dCrJ1uKcyNFi7ZKeH }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.b { font-size:11.47700024px;font-family:ffXo_W8C5GA0VTx4Xbrkn }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.c { font-size:7.65140009px;font-family:fHYKmoFISWxPNElziDNf1 }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.d { font-size:11.47700024px;font-family:fMothMPaaI5udAYf-Qo6s }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.e { font-size:7.65140009px;font-family:ffXo_W8C5GA0VTx4Xbrkn }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.f { font-size:11.47700024px;font-family:fHYKmoFISWxPNElziDNf1 }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.g { font-size:11.47700024px;font-family:fQt5evNAF6o5PXwqu9nHV }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.h { font-size:10.47280025px;font-family:ffXo_W8C5GA0VTx4Xbrkn }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex tspan.i { font-size:10.47280025px;font-family:fHYKmoFISWxPNElziDNf1 }
+.CMMgX1nY0zCDI_z3OaROO svg.pretex path.a { stroke-width:0.79701px }
+</style>
 </head>
 <body>
-<article class="paragraphs"><h5 class="heading"><span class="title">A basis for a general subspace</span></h5>
-<p>As mentioned at the beginning of this subsection, when given a subspace written in a different form, in order to compute a basis it is usually best to rewrite it as a column space or null space of a matrix.</p>
-<div class="hidden-knowl-wrapper"><a knowl="./knowl/example-69-hidden.html?vers=0b5e19" knowl-id="hidden-example-69" alt="Example 2.7.18 A basis of a subspace" title="Example 2.7.18 A basis of a subspace"><article class="example-like"><h5 class="heading">
-<span class="type">Example</span><span class="title">(A basis of a subspace)</span>
-</h5></article></a></div></article><span class="incontext"><a href="dimension.html#paragraphs-16">in-context</a></span>
+<article class="paragraphs CMMgX1nY0zCDI_z3OaROO"><h5 class="heading"><span class="title">The row-column rule for matrix multiplication</span></h5>
+<p>Recall from this <a knowl="./knowl/matrixeq-row-column-prod.html?vers=ebc07a" knowl-id="xref-matrixeq-row-column-prod" alt="Definition 2.3.12 " title="Definition 2.3.12 ">definition in Section 2.3</a> that the product of a row vector and a column vector is the scalar</p>
+<div class="pretex-display"><svg height="5.57635em" version="1.1" class="pretex" viewbox="121 0 261 64"><text transform="translate(121.951 25.104)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(128.843 34.843)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(134.868 37.436)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(149.87 34.843)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(155.896 37.436)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(170.611 34.843)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+<text transform="translate(195.338 34.843)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(201.555 37.436)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(207.908 25.104)"><tspan y="0" x="0" class="a">B</tspan><tspan y="-23.419001" x="6.605" class="a">C</tspan><tspan y="-0.53399998" x="6.605" class="a">G</tspan><tspan y="6.9489999" x="6.605" class="a">G</tspan><tspan y="15.121" x="6.605" class="a">E</tspan></text>
+<text transform="translate(224.824 11.186)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(230.872 13.78)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(224.824 25.134)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(230.872 27.728)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(228.198 36.581)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+<text transform="translate(224.728 58.499)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(230.968 61.093)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(235.72 1.685)"><tspan y="0" x="0" class="a">D</tspan><tspan y="22.885" x="0" class="a">H</tspan><tspan y="30.368" x="0" class="a">H</tspan><tspan y="38.540001" x="0" class="a">F</tspan></text>
+<text transform="translate(247.742 35.37)"><tspan y="0" x="0" class="g">=</tspan></text>
+<text transform="translate(259.73 35.37)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(265.755 37.964)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(271.368 35.37)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(277.417 37.964)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(284.304 35.37)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(295.115 35.37)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(301.141 37.964)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(306.754 35.37)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(312.802 37.964)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(319.689 35.37)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(330.213 35.37)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+<text transform="translate(345.225 35.37)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(356.037 35.37)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(362.253 37.964)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(367.866 35.37)"><tspan y="0" x="0" class="b">x</tspan></text>
+<text transform="translate(374.106 37.964)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(378.858 35.37)"><tspan y="0" x="0" class="f">.</tspan></text>
+</svg></div>
+<p>The following procedure for finding the matrix product is much better adapted to computations by hand; the previous <a knowl="./knowl/matrix-mult-defn-of.html?vers=ebc07a" knowl-id="xref-matrix-mult-defn-of" alt="Definition 3.4.17 Matrix multiplication" title="Definition 3.4.17 Matrix multiplication">definition</a> is more suitable for proving theorems, such as this <a knowl="./knowl/matrix-mult-comp-is-prod.html?vers=ebc07a" knowl-id="xref-matrix-mult-comp-is-prod" alt="Theorem 3.4.25 " title="Theorem 3.4.25 ">theorem</a> below.</p>
+<article class="bluebox"><h5 class="heading"><span class="title">Recipe: The row-column rule for matrix multiplication</span></h5>
+<p>Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="b">n</tspan></text>
+</svg></span></span> matrix, let <span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">B</tspan></text>
+</svg></span></span> be an <span class="pretex-inline" style="width:2.27499em"><span style="height:0.8125em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">n</tspan></text>
+<text transform="translate(8.803)"><tspan y="0" x="0" class="d">×</tspan></text>
+<text transform="translate(19.901)"><tspan y="0" x="0" class="b">p</tspan></text>
+</svg></span></span> matrix, and let <span class="pretex-inline" style="width:3.46099em"><span style="height:0.6975em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">C</tspan></text>
+<text transform="translate(10.955)"><tspan y="0" x="0" class="g">=</tspan></text>
+<text transform="translate(22.656)"><tspan y="0" x="0 6.6681371" class="b">AB</tspan></text>
+<text transform="translate(36.531)"><tspan y="0" x="0" class="f">.</tspan></text>
+</svg></span></span>  Then the <span class="pretex-inline" style="width:0.806em"><span style="height:0.92em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.3023739" class="b">ij</tspan></text>
+</svg></span></span> entry of <span class="pretex-inline" style="width:0.722em"><span style="height:0.695em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">C</tspan></text>
+</svg></span></span> is the <span class="pretex-bind"><span class="pretex-inline" style="width:0.362em"><span style="height:0.71em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">i</tspan></text>
+</svg></span></span>th</span> row of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">A</tspan></text>
+</svg></span></span> times the <span class="pretex-bind"><span class="pretex-inline" style="width:0.444em"><span style="height:0.92em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="b">j</tspan></text>
+</svg></span></span>th</span> column of <span class="pretex-inline" style="width:0.972em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="b">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="f">:</tspan></text>
+</svg></span></span></p>
+<div class="pretex-display"><svg height="1.30696em" version="1.1" class="pretex" viewbox="169 4 166 15"><text transform="translate(169.156 13.948)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="translate(173.869 16.542)"><tspan y="0" x="0 3.5349469" class="e">ij</tspan></text>
+<text transform="translate(183.012 13.948)"><tspan y="0" x="0" class="g">=</tspan></text>
+<text transform="translate(194.999 13.948)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(201.216 16.542)"><tspan y="0" x="0" class="e">i</tspan></text>
+<text transform="translate(203.795 16.542)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(209.408 13.948)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="translate(215.226 16.542)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(220.437 16.542)"><tspan y="0" x="0" class="e">j</tspan></text>
+<text transform="translate(225.511 13.948)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(236.322 13.948)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(242.539 16.542)"><tspan y="0" x="0" class="e">i</tspan></text>
+<text transform="translate(245.117 16.542)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(250.73 13.948)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="translate(256.549 16.542)"><tspan y="0" x="0" class="c">2</tspan></text>
+<text transform="translate(261.76 16.542)"><tspan y="0" x="0" class="e">j</tspan></text>
+<text transform="translate(266.833 13.948)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(277.358 13.948)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+<text transform="translate(292.37 13.948)"><tspan y="0" x="0" class="g">+</tspan></text>
+<text transform="translate(303.181 13.948)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="translate(309.398 16.542)"><tspan y="0" x="0 2.7698069" class="e">in</tspan></text>
+<text transform="translate(317.78 13.948)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="translate(323.791 16.542)"><tspan y="0" x="0 5.2106032" class="e">nj</tspan></text>
+<text transform="translate(331.94 13.948)"><tspan y="0" x="0" class="f">.</tspan></text>
+</svg></div>
+<p>Here is a diagram:</p>
+<div class="pretex-display"><svg height="8.53879em" version="1.1" class="pretex" viewbox="60 0 383 98"><g transform="matrix(1,0,0,-1,125.157,41.758)"><g><g><g><g transform="translate(-54.542 -28.919)"><g transform="translate(8.746 54.86)"><g><g><g transform="translate(-7.659)"><g><g transform="translate(-71.702 -776.183)"><text transform="matrix(1,0,0,-1,71.989,776.183)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,78.014,773.589)"><tspan y="0" x="0 4.2541785" class="c">11</tspan></text>
+</g></g></g></g></g><g transform="translate(22.835)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-95.757 -776.183)"><text transform="matrix(1,0,0,-1,95.757,776.183)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.866)"><g><g><g transform="translate(-7.69)"><g><g transform="translate(-117.372 -776.183)"><text transform="matrix(1,0,0,-1,117.659,776.183)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,123.684,773.589)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,128.129,773.589)"><tspan y="0" x="0" class="e">k</tspan></text>
+</g></g></g></g></g><g transform="translate(22.865)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-141.489 -776.183)"><text transform="matrix(1,0,0,-1,141.489,776.183)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.931)"><g><g><g transform="translate(-7.755)"><g><g transform="translate(-163.103 -776.183)"><text transform="matrix(1,0,0,-1,163.39,776.183)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,169.415,773.589)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,173.861,773.589)"><tspan y="0" x="0" class="e">n</tspan></text>
+</g></g></g></g></g><g transform="translate(-91.497 -17.21)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-77.766 -758.973)"><text transform="matrix(1,0,0,-1,77.766,766.943)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.835)"><g transform="translate(22.866)"><g><g><g transform="translate(-1.596)"><g><g transform="translate(-123.466 -758.973)"><text transform="matrix(1,0,0,-1,123.466,766.943)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.865)"><g transform="translate(22.931)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-169.263 -758.973)"><text transform="matrix(1,0,0,-1,169.263,766.943)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-91.497 -10.22)"><g><g><g transform="translate(-6.917)"><g><g transform="translate(-72.444 -748.753)"><text transform="matrix(1,0,0,-1,72.731,748.753)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,78.947,746.159)"><tspan y="0" x="0" class="e">i</tspan></text>
+<text transform="matrix(1,0,0,-1,81.526,746.159)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.835)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-95.757 -748.753)"><text transform="matrix(1,0,0,-1,95.757,748.753)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.866)"><g><g><g transform="translate(-6.948)"><g><g transform="translate(-118.114 -748.753)"><text transform="matrix(1,0,0,-1,118.401,748.753)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,124.617,746.159)"><tspan y="0" x="0 2.7698069" class="e">ik</tspan></text>
+</g></g></g></g></g><g transform="translate(22.865)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-141.489 -748.753)"><text transform="matrix(1,0,0,-1,141.489,748.753)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.931)"><g><g><g transform="translate(-7.013)"><g><g transform="translate(-163.845 -748.753)"><text transform="matrix(1,0,0,-1,164.132,748.753)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,170.349,746.159)"><tspan y="0" x="0 2.7698069" class="e">in</tspan></text>
+</g></g></g></g></g><g transform="translate(-91.497 -17.21)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-77.766 -731.543)"><text transform="matrix(1,0,0,-1,77.766,739.513)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.835)"><g transform="translate(22.866)"><g><g><g transform="translate(-1.596)"><g><g transform="translate(-123.466 -731.543)"><text transform="matrix(1,0,0,-1,123.466,739.513)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.865)"><g transform="translate(22.931)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-169.263 -731.543)"><text transform="matrix(1,0,0,-1,169.263,739.513)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-91.497 -10.22)"><g><g><g transform="translate(-8.746)"><g><g transform="translate(-70.615 -721.323)"><text transform="matrix(1,0,0,-1,70.902,721.323)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,77.119,718.729)"><tspan y="0" x="0" class="e">m</tspan></text>
+<text transform="matrix(1,0,0,-1,83.355,718.729)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.835)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-95.757 -721.323)"><text transform="matrix(1,0,0,-1,95.757,721.323)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.866)"><g><g><g transform="translate(-8.777)"><g><g transform="translate(-116.285 -721.323)"><text transform="matrix(1,0,0,-1,116.572,721.323)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,122.789,718.729)"><tspan y="0" x="0 6.427176" class="e">mk</tspan></text>
+</g></g></g></g></g><g transform="translate(22.865)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-141.489 -721.323)"><text transform="matrix(1,0,0,-1,141.489,721.323)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.931)"><g><g><g transform="translate(-8.842)"><g><g transform="translate(-162.016 -721.323)"><text transform="matrix(1,0,0,-1,162.303,721.323)"><tspan y="0" x="0" class="b">a</tspan></text>
+<text transform="matrix(1,0,0,-1,168.52,718.729)"><tspan y="0" x="0 6.427176" class="e">mn</tspan></text>
+</g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g><g><g transform="translate(-65.289 -2.28)"><g><g transform="translate(-59.868 -747.962)"><text transform="matrix(1,0,0,-1,59.868,785.389)"><tspan y="0" x="0" class="a">C</tspan><tspan y="22.885" x="0" class="a">G</tspan><tspan y="30.368" x="0" class="a">G</tspan><tspan y="37.851002" x="0" class="a">G</tspan><tspan y="46.022999" x="0" class="a">E</tspan></text>
+</g></g></g></g><g><g transform="translate(54.741 -2.28)"><g><g transform="translate(-179.898 -747.962)"><text transform="matrix(1,0,0,-1,181.093,785.389)"><tspan y="0" x="0" class="a">D</tspan><tspan y="22.885" x="0" class="a">H</tspan><tspan y="30.368" x="0" class="a">H</tspan><tspan y="37.851002" x="0" class="a">H</tspan><tspan y="46.022999" x="0" class="a">F</tspan></text>
+</g></g></g></g><g><g><path style="stroke:#00b300" d="M 50.9197,6.26895 H -50.9197 c -2.20094,0 -3.9851,-1.78416 -3.9851,-3.98511 v -4.63078 c 0,-2.20094 1.78416,-3.98511 3.9851,-3.98511 H 50.9197 c 2.20094,0 3.9851,1.78417 3.9851,3.98511 v 4.63078 c 0,2.20095 -1.78416,3.98511 -3.9851,3.98511 z" class="a"></path></g></g><g><g transform="matrix(0,1,-1,0,61.218,-16.95)"><g><g transform="translate(-186.375 -733.292)"><text transform="matrix(1,0,0,-1,186.637,733.292)"><tspan y="0" x="0" style="fill:#00b300" class="h">i</tspan></text>
+<text transform="matrix(1,0,0,-1,190.166,733.292)"><tspan y="0" x="0 3.4979153 12.326486 16.327095 21.971935" style="fill:#00b300" class="i">throw</tspan></text>
+</g></g></g></g></g></g><g transform="translate(124.902)"><g><g><g><g transform="translate(-51.699 -33.915)"><g transform="translate(7.938 63.663)"><g><g><g transform="translate(-7.843)"><g><g transform="translate(-198.455 -779.99)"><text transform="matrix(1,0,0,-1,199.316,779.99)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,205.135,777.396)"><tspan y="0" x="0 4.2541785" class="c">11</tspan></text>
+</g></g></g></g></g><g transform="translate(22.028)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-221.887 -779.99)"><text transform="matrix(1,0,0,-1,221.887,779.99)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.599)"><g><g><g transform="translate(-7.414)"><g><g transform="translate(-242.511 -779.99)"><text transform="matrix(1,0,0,-1,243.372,779.99)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,249.19,777.396)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,254.401,777.396)"><tspan y="0" x="0" class="e">j</tspan></text>
+</g></g></g></g></g><g transform="translate(21.6)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-265.086 -779.99)"><text transform="matrix(1,0,0,-1,265.086,779.99)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.161)"><g><g><g transform="translate(-7.977)"><g><g transform="translate(-285.709 -779.99)"><text transform="matrix(1,0,0,-1,286.57,779.99)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,292.389,777.396)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,297.026,777.396)"><tspan y="0" x="0" class="e">p</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.388 -18.816)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-204.703 -761.174)"><text transform="matrix(1,0,0,-1,204.703,769.144)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.028)"><g transform="translate(21.599)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-248.33 -761.174)"><text transform="matrix(1,0,0,-1,248.33,769.144)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(21.6)"><g transform="translate(22.161)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-292.091 -761.174)"><text transform="matrix(1,0,0,-1,292.091,769.144)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.388 -13.015)"><g><g><g transform="translate(-7.873)"><g><g transform="translate(-198.425 -748.159)"><text transform="matrix(1,0,0,-1,199.285,748.159)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,205.295,745.565)"><tspan y="0" x="0" class="e">k</tspan></text>
+<text transform="matrix(1,0,0,-1,209.42,745.565)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.028)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-221.887 -748.159)"><text transform="matrix(1,0,0,-1,221.887,748.159)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.599)"><g><g><g transform="translate(-7.445)"><g><g transform="translate(-242.48 -748.159)"><text transform="matrix(1,0,0,-1,243.341,748.159)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,249.351,745.565)"><tspan y="0" x="0 5.0805297" class="e">kj</tspan></text>
+</g></g></g></g></g><g transform="translate(21.6)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-265.086 -748.159)"><text transform="matrix(1,0,0,-1,265.086,748.159)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.161)"><g><g><g transform="translate(-8.007)"><g><g transform="translate(-285.679 -748.159)"><text transform="matrix(1,0,0,-1,286.54,748.159)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,292.55,745.565)"><tspan y="0" x="0 4.5066748" class="e">kp</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.388 -18.817)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-204.703 -729.342)"><text transform="matrix(1,0,0,-1,204.703,737.312)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.028)"><g transform="translate(21.599)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-248.33 -729.342)"><text transform="matrix(1,0,0,-1,248.33,737.312)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(21.6)"><g transform="translate(22.161)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-292.091 -729.342)"><text transform="matrix(1,0,0,-1,292.091,737.312)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.388 -13.015)"><g><g><g transform="translate(-7.938)"><g><g transform="translate(-198.36 -716.327)"><text transform="matrix(1,0,0,-1,199.22,716.327)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,205.23,713.734)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="matrix(1,0,0,-1,209.485,713.734)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.028)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-221.887 -716.327)"><text transform="matrix(1,0,0,-1,221.887,716.327)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.599)"><g><g><g transform="translate(-7.51)"><g><g transform="translate(-242.415 -716.327)"><text transform="matrix(1,0,0,-1,243.276,716.327)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,249.286,713.734)"><tspan y="0" x="0 5.2106032" class="e">nj</tspan></text>
+</g></g></g></g></g><g transform="translate(21.6)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-265.086 -716.327)"><text transform="matrix(1,0,0,-1,265.086,716.327)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.161)"><g><g><g transform="translate(-8.072)"><g><g transform="translate(-285.614 -716.327)"><text transform="matrix(1,0,0,-1,286.475,716.327)"><tspan y="0" x="0" class="b">b</tspan></text>
+<text transform="matrix(1,0,0,-1,292.485,713.734)"><tspan y="0" x="0 4.6367483" class="e">np</tspan></text>
+</g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g><g><g transform="translate(-62.447 -3.316)"><g><g transform="translate(-187.612 -746.926)"><text transform="matrix(1,0,0,-1,187.612,788.094)"><tspan y="0" x="0" class="a">C</tspan><tspan y="22.885" x="0" class="a">G</tspan><tspan y="30.368" x="0" class="a">G</tspan><tspan y="37.851002" x="0" class="a">G</tspan><tspan y="45.334" x="0" class="a">G</tspan><tspan y="53.506001" x="0" class="a">E</tspan></text>
+</g></g></g></g><g><g transform="translate(51.898 -3.316)"><g><g transform="translate(-301.957 -746.926)"><text transform="matrix(1,0,0,-1,303.153,788.094)"><tspan y="0" x="0" class="a">D</tspan><tspan y="22.885" x="0" class="a">H</tspan><tspan y="30.368" x="0" class="a">H</tspan><tspan y="37.851002" x="0" class="a">H</tspan><tspan y="45.334" x="0" class="a">H</tspan><tspan y="53.506001" x="0" class="a">F</tspan></text>
+</g></g></g></g><g><g><path style="stroke:#8080ff" d="M 5.58292,40.36385 H -5.8507 c -2.20094,0 -3.9851,-1.78417 -3.9851,-3.98511 v -72.75748 c 0,-2.20094 1.78416,-3.98511 3.9851,-3.98511 H 5.58292 c 2.20094,0 3.9851,1.78417 3.9851,3.98511 v 72.75748 c 0,2.20094 -1.78416,3.98511 -3.9851,3.98511 z" class="a"></path></g></g><g><g transform="translate(-25.624 -52.347)"><g><g transform="translate(-224.435 -697.895)"><text transform="matrix(1,0,0,-1,225.744,697.895)"><tspan y="0" x="0" style="fill:#8080ff" class="h">j</tspan></text>
+<text transform="matrix(1,0,0,-1,229.084,697.895)"><tspan y="0" x="0 3.4979153 12.326486 16.997355 22.642193 25.595524 31.554546 40.383118" style="fill:#8080ff" class="i">thcolumn</tspan></text>
+</g></g></g></g></g></g><g transform="translate(-250.059 -750.242)"><text transform="matrix(1,0,0,-1,311.19,750.242)"><tspan y="0" x="0" class="g">=</tspan></text>
+<g transform="translate(381.519 750.242)"><g><g><g><g transform="translate(-51.866 -29.723)"><g transform="translate(7.994 58.074)"><g><g><g transform="translate(-6.908)"><g><g transform="translate(-330.739 -778.593)"><text transform="matrix(1,0,0,-1,331.026,778.593)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,335.548,775.999)"><tspan y="0" x="0 4.2541785" class="c">11</tspan></text>
+</g></g></g></g></g><g transform="translate(22.083)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-353.292 -778.593)"><text transform="matrix(1,0,0,-1,353.292,778.593)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-6.479)"><g><g transform="translate(-374.906 -778.593)"><text transform="matrix(1,0,0,-1,375.193,778.593)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,379.715,775.999)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,384.925,775.999)"><tspan y="0" x="0" class="e">j</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-396.601 -778.593)"><text transform="matrix(1,0,0,-1,396.601,778.593)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.217)"><g><g><g transform="translate(-7.042)"><g><g transform="translate(-418.215 -778.593)"><text transform="matrix(1,0,0,-1,418.502,778.593)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,423.024,775.999)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="matrix(1,0,0,-1,427.661,775.999)"><tspan y="0" x="0" class="e">p</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.61 -18.817)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-336.052 -759.776)"><text transform="matrix(1,0,0,-1,336.052,767.746)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.083)"><g transform="translate(21.655)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-379.79 -759.776)"><text transform="matrix(1,0,0,-1,379.79,767.746)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g transform="translate(22.217)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-423.662 -759.776)"><text transform="matrix(1,0,0,-1,423.662,767.746)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.61 -10.22)"><g><g><g transform="translate(-6.166)"><g><g transform="translate(-331.481 -749.556)"><text transform="matrix(1,0,0,-1,331.768,749.556)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,336.482,746.962)"><tspan y="0" x="0" class="e">i</tspan></text>
+<text transform="matrix(1,0,0,-1,339.06,746.962)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.083)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-353.292 -749.556)"><text transform="matrix(1,0,0,-1,353.292,749.556)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-5.737)"><g><g transform="translate(-375.648 -749.556)"><text transform="matrix(1,0,0,-1,375.935,749.556)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,380.648,746.962)"><tspan y="0" x="0 3.5349469" class="e">ij</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-396.601 -749.556)"><text transform="matrix(1,0,0,-1,396.601,749.556)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.217)"><g><g><g transform="translate(-6.3)"><g><g transform="translate(-418.957 -749.556)"><text transform="matrix(1,0,0,-1,419.244,749.556)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,423.958,746.962)"><tspan y="0" x="0 2.9610918" class="e">ip</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.61 -18.816)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-336.052 -730.74)"><text transform="matrix(1,0,0,-1,336.052,738.71)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(22.083)"><g transform="translate(21.655)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-379.79 -730.74)"><text transform="matrix(1,0,0,-1,379.79,738.71)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g transform="translate(22.217)"><g><g><g transform="translate(-1.595)"><g><g transform="translate(-423.662 -730.74)"><text transform="matrix(1,0,0,-1,423.662,738.71)"><tspan y="0" x="0" class="f">.</tspan><tspan y="3.9849999" x="0" class="f">.</tspan><tspan y="7.9699998" x="0" class="f">.</tspan></text>
+</g></g></g></g></g><g transform="translate(-87.61 -10.221)"><g><g><g transform="translate(-7.994)"><g><g transform="translate(-329.653 -720.519)"><text transform="matrix(1,0,0,-1,329.94,720.519)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,334.653,717.926)"><tspan y="0" x="0" class="e">m</tspan></text>
+<text transform="matrix(1,0,0,-1,340.889,717.926)"><tspan y="0" x="0" class="c">1</tspan></text>
+</g></g></g></g></g><g transform="translate(22.083)"><g><g><g transform="translate(-6.438)"><g><g transform="translate(-353.292 -720.519)"><text transform="matrix(1,0,0,-1,353.292,720.519)"><tspan y="0" x="0 4.8203402 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-7.566)"><g><g transform="translate(-373.819 -720.519)"><text transform="matrix(1,0,0,-1,374.106,720.519)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,378.819,717.926)"><tspan y="0" x="0 7.1923161" class="e">mj</tspan></text>
+</g></g></g></g></g><g transform="translate(21.655)"><g><g><g transform="translate(-6.439)"><g><g transform="translate(-396.601 -720.519)"><text transform="matrix(1,0,0,-1,396.601,720.519)"><tspan y="0" x="0 4.8318172 9.6521568" class="d">···</tspan></text>
+</g></g></g></g></g><g transform="translate(22.217)"><g><g><g transform="translate(-8.128)"><g><g transform="translate(-417.129 -720.519)"><text transform="matrix(1,0,0,-1,417.416,720.519)"><tspan y="0" x="0" class="b">c</tspan></text>
+<text transform="matrix(1,0,0,-1,422.129,717.926)"><tspan y="0" x="0 6.6184611" class="e">mp</tspan></text>
+</g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g></g><g><g transform="translate(-62.614 -3.316)"><g><g transform="translate(-318.905 -746.926)"><text transform="matrix(1,0,0,-1,318.905,784.352)"><tspan y="0" x="0" class="a">C</tspan><tspan y="22.885" x="0" class="a">G</tspan><tspan y="30.368" x="0" class="a">G</tspan><tspan y="37.851002" x="0" class="a">G</tspan><tspan y="46.022999" x="0" class="a">E</tspan></text>
+</g></g></g></g><g><g transform="translate(52.064 -3.316)"><g><g transform="translate(-433.583 -746.926)"><text transform="matrix(1,0,0,-1,434.779,784.352)"><tspan y="0" x="0" class="a">D</tspan><tspan y="22.885" x="0" class="a">H</tspan><tspan y="30.368" x="0" class="a">H</tspan><tspan y="37.851002" x="0" class="a">H</tspan><tspan y="46.022999" x="0" class="a">F</tspan></text>
+</g></g></g></g><g><g transform="translate(-19.253 -48.259)"><g><g transform="translate(-362.266 -701.983)"><text transform="matrix(1,0,0,-1,362.553,701.983)"><tspan y="0" x="0" style="fill:#00b300" class="b">i</tspan><tspan y="0" x="5.3023739" style="fill:#8080ff" class="b">j</tspan></text>
+<text transform="matrix(1,0,0,-1,374.719,701.983)"><tspan y="0" x="0 5.6352072 12.154143 15.987461 20.371675" class="f">entry</tspan></text>
+</g></g></g></g><g><path style="stroke:#00b300" d="m 6.94617,-0.03154 c 0,3.91025 -3.1698,7.08005 -7.08005,7.08005 -3.91025,0 -7.08006,-3.1698 -7.08006,-7.08005 0,-3.91025 3.16981,-7.08006 7.08006,-7.08006 3.91025,0 7.08005,3.16981 7.08005,7.08006 z" class="a"></path></g><g><path style="stroke:#8080ff" d="m 7.70334,-0.03154 c 0,4.32842 -3.50881,7.83722 -7.83722,7.83722 -4.32843,0 -7.83722,-3.5088 -7.83722,-7.83722 0,-4.32843 3.50879,-7.83722 7.83722,-7.83722 4.32841,0 7.83722,3.50879 7.83722,7.83722 z" class="a"></path></g></g></g></g></g></g></g></svg></div>
+</article></article><span class="incontext CMMgX1nY0zCDI_z3OaROO"><a href="matrix-multiplication.html#paragraphs-16">in-context</a></span>
 </body>
 </html>

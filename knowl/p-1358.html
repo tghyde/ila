@@ -1,101 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-
-
-
-
-
-
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts">
-/* pretex cache: X_0JiroDbSmrxniI0giV */
-
-@font-face {
-  font-family: "fD5n5gjiuWKVi3LCtzVUd";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATMAAoAAAAAB0wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAASUAAAEtTaiNP0ZGVE0AAASoAAAAGgAAAByjRDPjT1MvMgAAAVQAAABIAAAAYFZmX3BjbWFwAAADLAAAADcAAAFCAA4C1WhlYWQAAAD0AAAAMQAAADYubjFPaGhlYQAAASgAAAAhAAAAJAUGAaJobXR4AAAExAAAAAgAAAAIA/AAOG1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGOAAADJAa4265wb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4mnF2Wfj+W2+MnAzvwCKMDxbXS4Kpy3+uzAeYPoD5HIwMIFEAV3oDFcAAAB4nGNgZGBg+vPfhSGK8QcDEDAeYEj5/44BGTABAJlNBqoAAAAAAFAAAAIAAHicY2Bm/ME4gYGVgYGpi2nP/xcMPSCaIZjxAYMhIxNQlIGVkwEGGBmQQECaawqQ0mfQZ1b4b8EQxfSHYQ+KGgUgZAQAGb0NgHicpZLNSsNAFIVP0lYRf5Yiru6y1bYkoRTttqW0C7GIdO2YDmkgJCVNwIdw51u40CfwEVz6Pp5MB4viQrAwne/m/p17EwBHeIGDzc/DvWUHh3i17GIX75ZrGDuh5TrOXFhuYN8dWt7BgRsz0qnv0bozWRU7OMWTZZd93yzX8IgPy3XcOs+WGzh2zy3v4MS9RhMhWhAEVOqhR5pBoURiKKZ3aewc2txtPi+RYkE7Jxf0a94RViYnMTmaEdV/F2iGLQk8ryczVSYyi8OlKnOtyraU6ULnUiy1RKtEkjjUaaiZccVGVdkRC6xZLmKxDoaY0KWK5Uiv4yjtDGneMCIyYhXF4EZHZaIIY2TMKcydM0KbAbscUDDg+a2DmA7yo6Zgykhlx9pmfn/qf1X2cUmtFzzVQgP0KSZLi3GWR1qCricD2c4gw4lYzTItFDdgnBb9Kti/7Fx0Ai/o/76W/4rG38UAc/PKq9aZae2bjWKu83WcpeJ3aazMh1LwPJgParODgI5cF/rB8zhKgE9WC47eAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvv7//xDy/yWoSgZGNgYYk1hAovLBDwBp5wbiAHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAyM2JgZGJgZDD5Ic34Q4bphyzzDwmWHh7GqTxMmjzMB3lYDv8O+BHycwKrDMNhfhkGBgEZhmOCMgxaMozMQgzMIJ2GDNEMGRrJmgpGBgYmCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQqeJYlABQogSSjT0AChUtfZgwEIBBiYGBmVLLr3/nDdy7h37/cje5n3iv3Q+LHyjwbb3j/loj9cvx/548rO9zug7FdiOSPI8aI+3b/v/vM51c3K96NHpFu0acqPsv7vvtPZ5LgYZ+jzcE7i4erm4d7KtXUuD88D7uNLeHi7efgA0rtjegAAAHicY2BgYGQAgqtvXXeA6Gery0VhNABRogb7AAAB+AAAAfgAOA==) format('woff');
-}
-
-@font-face {
-  font-family: "fT2orh_fe3nMhLxXvkLHH";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASkAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAARQAAAEUAOswI0ZGVE0AAASAAAAAGgAAAByjRDPjT1MvMgAAAVAAAABLAAAAYHbKgHtjbWFwAAADHAAAADQAAAFCAA0kuGhlYWQAAAD0AAAAMQAAADYvTTFPaGhlYQAAASgAAAAgAAAAJARGBEBobXR4AAAEnAAAAAgAAAAIBbAAGG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF9AAACuIexWvNwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4pdl82vi+W2+MnAzvwCKMDxbXS4KpyUYmZgOMNoBuRwMTCBRAEqoCnIAAAB4nGNgZGBgtGNkYohiusEABEwHGFL+v2VABkwAWewEjAAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTARk4wBgBaa4pDAxKQkpCzAr/LRiiGO3+/QMKM8JVKgAhIwAmMA4xAHicfZHNSsNAFIXPaFXEn6WIq7tswZRJKNK6cdFSuhFKF10b45AEQlLSBPoevoNLfQLxCVyKD+BzCJ5MBwWpBibz3dx7zz2TAXCMRyisH41bxwpHeHK8hT28Ot5GT105buFUPTjewYF6d7yLQ/XJStXaZ3RjuxpWOMO94y3OfXa8jQRvjlvQqnK8gxP14niXsz7QRoQOBAGdavRIU4SokVlKmU1sXMLY/Zzfa+S4Y1ySK+YN9xgL25PZHsOK5t0F2lFHAq17Mg3rTKZplIR1acL6XOr8zpRSJUbiRSZZGpk8Muy45qBGdkSBJeViinkYYsJUWCUjs0zj3BsynLEitmZDmsHMxHUWEsYo2FPZvWSFsQfs8oCCS65NE8ROkF+aAv+7y8eAPvpczc8KcMFBRV6NizI2EnS1XMqPPxlOxPkRv0n5A6/vBTq42HzA/8bjL1lgbq+hESmsiG9Pibkpl2mRi99lsLCXV3Gt7CWvvTeJ0lRmpTVNaXwBmpB3LQAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEC+ktD//xDy7nuoSgZGNgYYc8QCAG6/BuZ4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAAQAEBAABAQENcHJldGV4MDAwMjYwAAECAAEANPgbAfgcAvgdA/gYBIwMAZYMAikMA8EMBKP3lvlU99IFHACxDxwAABAcALQRHAAqHADqEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmAAIBASIxi734Rb0Bvb34pL0DvRb5CPip/QgGvfx3FfhF+KT8RQcO95bHAaP3lhX5PMf9PAYO+WwUixWClPh1lfdImwYeCgGYLwwJkgwKiwwLtQq1nQwM3gvHogwNiwwOeJxjYGBgZACCq29dd4DoZ6vLRWE0AFGiBvsAAALYAAAC2AAY) format('woff');
-}
-
-@font-face {
-  font-family: "fR5sV04kFroM_DlTsU9Ap";
-  src: url(data:application/font-woff;base64,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) format('woff');
-}
-
-@font-face {
-  font-family: "fjjlX5rGKzWL8tKG4JB3w";
-  src: url(data:application/font-woff;base64,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) format('woff');
-}
-
-@font-face {
-  font-family: "fxdU36xvjaozixaUT_xpu";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUkAAoAAAAAB4gAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXkAAAGVw11w9UZGVE0AAAT8AAAAGgAAAByjRDPjT1MvMgAAAVAAAABHAAAAYGK/XWhjbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYvTiKDaGhlYQAAASgAAAAeAAAAJAM39hNobXR4AAAFGAAAAAoAAAAKBegAcG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGNAAAC9DcscMZwb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAAYu2CTa7x/DZfGbiZXwBFGJ6tLheF0xafLZgWMNgAuRwMTCBRADQlCq8AAAB4nGNgZGBgsPlswRDFdAPIYmBawAASQQZMAFVCA0IAAAAAUAAAAwAAeJxjYGa6wTiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWDlZIABRgYkEJDmmgKkHBmcmBX+WzBEMdjwnEBSY8OgAISMAFOMCt4AeJyVks1Kw0AUhU/SWhF/NoKIGy+uKtiShFLaLty0SjdCUejaGIc0EJKSJtCFT6HvoU/gI7gUfBc3npkOKiKIgcl8N/fcv5kA2MEjHKweDzeWHWzjybKLdbxYruHUubJcx5HzZnkNm+6u5Qa23D6VTn2D1rWJ0uzgAA+WXdZ9tlzDHV4t1zFy7i2vYc95t9zAvnuIJiIcQxCwUw8d0gQhKqSGEnpnxi6gzH7C7xUy3NIuyCX9inuMuYlJTYyiQr/bQDM6lsDzOjIJq1QmSTQLq0KF1YlU2a0qpJwpieeppEmkskgx4oKFdNoREyyYLmayFoYY0xWWs5FaJHHWGtK8pCI2zYZsBpcqrtKQcI6cMaXZCyqUGbDNAQUDrt8qiKkgP3IKzrCkVg+klblR+p+ZfPTZW49LH2CALovnWXmeF7GSoO3JQL56luFYbI9ytixVtkjyTHwt8vutXivwgu7v4/+3OfxdFJiaK/weqE8IU1WsJG0ac3PxusTS/CCrGX06ClWqpeexZR8f+L2FNgAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOv0vDQBzF70xsY73WH1gRPOXQRcUfaRFxr4UuWtG1g7EebWmIEhuMq6NxEksFcQkOurcghQwitP0r7O6ow11NLJ4ufnnD4/H5Ph4EsgwghNETk1aorapqciMB4ACAIMGnIccDfEbiU/IVgotIekHyK/7c7K23BzF4HsEAjGLgjWGwhGF5HEh/b2AfHCzkF0lSVdfJrmbpZLeUL2qWSTVrmVjGETVJpUhJ4UQneilPjTxd3dYqxS16WioYJJUhe7Rg6ZpJ0naFGqelY4Mk1H9iJZUB4ubAPJAgnKOPjsfTHvQ8/uBJ3mRP4U/fSsgLzuI8zR+CdDgmJncwuuxAJn9IrIx7zbjzZbMsbzG3qXTCfvfQPw/enX5NiAnHuoe/sdv0BSNQ5b+CVz8kXv2r6Nt+Nmj5bk7ZCbNunZ3zd+erJuQL53frv7GbY4IRqBLr6RNO/OKGW1WWuQvNRuDtGhq6RhEHDTcijXuE3obbLoo6KPYDutOlCwAAAHicY2BgYGQAgqtvXXeA6Gery0VhNABRogb7AAAC2AAAAtgAcAA4AAA=) format('woff');
-}
-
-@font-face {
-  font-family: "fh2IBri-VucSUUSJZz403";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR8AAAEh1kD+P0ZGVE0AAASUAAAAGgAAAByjRDPjT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvhTFPaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGKAAAC0Jb+Ry5wb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAA4kTpjd3x/DZfGbiZXwBFGJ6tLheF0xYM05huMK4CcjkYmECiADhuCucAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr9tqyL+uSkiHubYgi2b0Ja214r2Ii0ino1xSQMhKWkCHn0H30Pvgo/gUXwMH8CLX9ZFQUQMbOY3mZlvZrIAtnEPhc9H48qxwhYeHNewhmfHdQzUieMGDtSj4xVsqDfHq9is7TBTNdbpXdqqihX2cee4xr5PjutY4MVxg/q3jlewq14dr2JPvaOJEC0IfE6q0SXNEKBEYilmdG79HMbaQ34vkeKafk4uGDe0ETtWNYmtMcyo3h2gGbbE17ors6BMZBaH86DMTVAeSplem1yKuZFokUgShyYNDStO2aiSPaLAknIRxdoYY8JQUMyPzDKO0vaY7hkzIjtswGFwZqIyCQjHyFhTWJszw9gFO1xQMOL5rYPYDvJDUzDFOTxa76vaw5DzDHiqn+ajz4ZZWhxneWTE72gZyfecMp6Im0um5554VdgbtgdtX/v935f9zyj4qwVwYa+nEsysoGe3x4XJl3GWitehs7CXWvDc2MuvdulxNyxyU5gbrbXfG+IDKed6rgAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAytWRgZGJgZDD8Ic34Q4bphyzzDwmWHh5GTR7mgzwsh79r/cz5Yccqw7CJX4aBQUCGYaugDIOWDMN3IQZmsDYGX4YojWRNBSMDAxOFgMTSHIWAzOSMxNKi1MRSHYXSvJTUIoWSjFSF9IIchZzM5NS85FQ938SSDJfU4sz0PAVnD4Wg1PTSnMQiBf8QQwVDA4ScrrMHAxDIMTAxMirZdu/94bqXce/eH3f2Mu8V++nwY+VfB7a9f8pFf7j+uPPHlZ3vu9bx7wbHGQ//YBL9aXL8rwnb7xUsEAbfzyUi3aJNU36UTv3uMZtNjotxhj4P5yQerm4e7q1cW+fy8NzjPr6Ih7ebhw8ALm1gDgB4nGNgYGBkAIKrb113gOhnq8tFYTQAUaIG+wAAAxAAAAMQADg=) format('woff');
-}
-
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.a { font-size:11.47700024px;font-family:fjjlX5rGKzWL8tKG4JB3w }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.b { font-size:11.47700024px;font-family:fR5sV04kFroM_DlTsU9Ap }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.c { font-size:11.47700024px;font-family:fh2IBri-VucSUUSJZz403 }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.d { font-size:7.65140009px;font-family:fT2orh_fe3nMhLxXvkLHH }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.e { font-size:7.65140009px;font-family:fR5sV04kFroM_DlTsU9Ap }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.f { font-size:11.47700024px;font-family:fxdU36xvjaozixaUT_xpu }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.g { font-size:11.47700024px;font-family:fT2orh_fe3nMhLxXvkLHH }
-.CX_0JiroDbSmrxniI0giV svg.pretex tspan.h { font-size:11.47700024px;font-family:fD5n5gjiuWKVi3LCtzVUd }
-</style>
+<style id="pretex-fonts"></style>
 </head>
 <body>
-<h5 class="heading CX_0JiroDbSmrxniI0giV"><span class="type">Paragraph</span></h5>
-<p class="CX_0JiroDbSmrxniI0giV">Now we turn to visualizing the dynamics of (i.e., repeated multiplication by) the matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(6.381)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></span></span>  This matrix is diagonalizable; we have <span class="pretex-inline" style="width:4.89939em"><span style="height:0.86816em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(9.05)"><tspan y="0" x="0" class="c">=</tspan></text>
-<text transform="translate(21.037)"><tspan y="0" x="0 8.5733194 16.848236" class="a">CDC</tspan></text>
-<text transform="translate(45.885 -4.579)"><tspan y="0" x="0" class="d">−</tspan></text>
-<text transform="translate(51.478 -4.579)"><tspan y="0" x="0" class="e">1</tspan></text>
-</svg></span></span> for</p>
-<div class="pretex-display CX_0JiroDbSmrxniI0giV CX_0JiroDbSmrxniI0giV"><svg height="3.48522em" version="1.1" class="pretex" viewbox="139 2 226 40"><text transform="translate(139.995 25.235)"><tspan y="0" x="0" class="a">C</tspan></text>
-<text transform="translate(150.663 25.235)"><tspan y="0" x="0" class="c">=</tspan></text>
-<text transform="translate(162.363 3.417)"><tspan y="0" x="0" class="f">A</tspan></text>
-<text transform="translate(172.354 10.76)"><tspan y="0" x="0" class="b">7</tspan></text>
-<text transform="translate(188.698 10.76)"><tspan y="0" x="0" class="g">−</tspan></text>
-<text transform="translate(197.088 10.76)"><tspan y="0" x="0 20.543831" class="b">11</tspan><tspan y="13.947" x="-24.733999 -4.1901698" class="b">60</tspan></text>
-<text transform="translate(213.432 24.707)"><tspan y="0" x="0" class="g">−</tspan></text>
-<text transform="translate(221.821 24.707)"><tspan y="0" x="0" class="b">3</tspan><tspan y="13.948" x="-49.466999 -28.92317 -4.1902351" class="b">512</tspan></text>
-<text transform="translate(229.803 3.417)"><tspan y="0" x="0" class="f">B</tspan></text>
-<text transform="translate(263.322 25.235)"><tspan y="0" x="0" class="a">D</tspan></text>
-<text transform="translate(273.978 25.235)"><tspan y="0" x="0" class="c">=</tspan></text>
-<text transform="translate(285.679 3.417)"><tspan y="0" x="0" class="f">A</tspan></text>
-<text transform="translate(295.67 10.76)"><tspan y="0" x="0 22.139133 45.862091" class="b">100</tspan><tspan y="13.947" x="0" class="b">0</tspan></text>
-<text transform="translate(312.014 24.707)"><tspan y="0" x="0" class="g">−</tspan></text>
-<text transform="translate(320.404 24.707)"><tspan y="0" x="0 3.1906061 21.129156" class="b">.20</tspan><tspan y="13.948" x="-24.733999 -2.594867 19.532789 22.723394" class="b">00.1</tspan></text>
-<text transform="translate(351.111 3.417)"><tspan y="0" x="0" class="f">B</tspan></text>
-<text transform="translate(361.102 25.235)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></div>
-<p class="CX_0JiroDbSmrxniI0giV">The matrix <span class="pretex-inline" style="width:0.746em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">D</tspan></text>
-</svg></span></span> leaves the <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
-</svg></span></span>-coordinate</span> unchanged, scales the <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
-</svg></span></span>-coordinate</span> by <span class="pretex-inline" style="width:2.627em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="g">−</tspan></text>
-<text transform="translate(8.39)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(14.771)"><tspan y="0" x="0" class="h">/</tspan></text>
-<text transform="translate(20.578)"><tspan y="0" x="0 6.3812122" class="b">5,</tspan></text>
-</svg></span></span> and scales the <span class="pretex-bind"><span class="pretex-inline" style="width:0.49em"><span style="height:0.501em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">z</tspan></text>
-</svg></span></span>-coordinate</span> by <span class="pretex-inline" style="width:2.452em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(6.381)"><tspan y="0" x="0" class="h">/</tspan></text>
-<text transform="translate(12.189)"><tspan y="0" x="0 6.3812122 12.762424" class="b">10.</tspan></text>
-</svg></span></span>  Repeated multiplication by <span class="pretex-inline" style="width:0.746em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">D</tspan></text>
-</svg></span></span> makes the <span class="pretex-bind"><span class="pretex-inline" style="width:0.684em"><span style="height:0.7025em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
-</svg></span></span>-</span> and <span class="pretex-bind"><span class="pretex-inline" style="width:0.49em"><span style="height:0.501em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">z</tspan></text>
-</svg></span></span>-coordinates</span> very small, so it “sucks all vectors into the <span class="pretex-bind"><span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
-</svg></span></span>-axis.”</span></p>
-<span class="incontext CX_0JiroDbSmrxniI0giV"><a href="stochastic-matrices.html#p-1358">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>In practice, this means: </p>
+<ul style="list-style-type: disc;">
+<li>If a very important page links to your page (and not to a zillion other ones as well), then your page is considered important.</li>
+<li>If a zillion unimportant pages link to your page, then your page is still important.</li>
+<li>If only one unknown page links to yours, your page is not important.</li>
+</ul>
+<p> Alternatively, there is the <!--Style me with CSS--><em>random surfer interpretation.</em>  A “random surfer” just sits at his computer all day, randomly clicking on links.  The pages he spends the most time on should be the most important.  So, the important (high-ranked) pages are those where a random surfer will end up most often.  This measure turns out to be equivalent to the rank.</p>
+<span class="incontext"><a href="stochastic-matrices.html#p-1358">in-context</a></span>
 </body>
 </html>
