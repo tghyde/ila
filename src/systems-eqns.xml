@@ -21,12 +21,12 @@ the license is included in gfdl.xml.
   </objectives>
 
   <introduction>
-    <p>During the first half of this textbook, we will be primarily concerned with understanding the solutions of systems of linear equations.</p>
+    <p>In the first half of this textbook, we are primarily concerned with understanding the solutions of systems of linear equations.</p>
 
     <definition>
       <idx><h>Linear equation</h><h>definition of</h></idx>
       <statement>
-        <p>An equation in the unknowns <m>x,y,z,\ldots</m> is called <term>linear</term> if both sides of the equation are a sum of (constant) multiples of <m>x,y,z,\ldots</m>, plus an optional constant.</p>
+        <p>An equation in the variables <m>x,y,z,\ldots</m> is called <term>linear</term> if both sides of the equation are a sum of (constant) multiples of <m>x,y,z,\ldots</m>, plus an optional constant.</p>
       </statement>
     </definition>
 
@@ -37,16 +37,16 @@ the license is included in gfdl.xml.
       -x - z &amp;= 100
       \end{split}
     </me>
-    are linear equations, but
+    are both linear equations, but neither of
     <me>
       \begin{split}
       3x + yz &amp;= 3 \\
       \sin(x) - \cos(y) &amp;= 2
       \end{split}
     </me>
-    are not.</p>
+    are linear. The first equation fails to be linear because of the product $yz$ and the second equation fails to be linear because of the non-linear functions <m>\sin(x)</m> and <m>\cos(y)</m>.</p>
 
-    <p>We will usually move the unknowns to the left side of the equation, and move the constants to the right.
+    <p>As a convention, we generally move the terms with variables to the left side of the equation, and move the constants to the right.
     </p>
 
     <p>A <term>system</term> of linear equations is a collection of several linear equations, like
@@ -57,6 +57,7 @@ the license is included in gfdl.xml.
       }</men>
       <idx><h>Linear equation</h><h>system of</h><see>System of linear equations</see></idx>
       <idx><h>System of linear equations</h><h>definition of</h></idx>
+      The curly brace here is optional, it is just there to emphasize that we are considering all three of these equations at once.
     </p>
 
     <definition xml:id="systems-eqns-soln-sets">
@@ -64,7 +65,7 @@ the license is included in gfdl.xml.
       <statement>
         <p>
           <ul>
-            <li>A <term>solution</term> of a system of equations is a list of numbers <m>x, y, z, \ldots</m> that make all of the equations true simultaneously.</li>
+            <li>A <term>solution</term> of a system of equations is a list of numbers <m>a, b, c, \ldots</m> which when substituted for the variables <m>x = a, y = b, z = c, \ldots</m> makes all of the equations true simultaneously.</li>
             <li>The <term>solution set</term> of a system of equations is the collection of all solutions.</li>
             <li><term>Solving</term> the system means finding all solutions with formulas involving some number of parameters.</li>
           </ul>
@@ -76,10 +77,11 @@ the license is included in gfdl.xml.
     </definition>
 
     <p>
-      A system of linear equations need not have a solution.  For example, there do not exist numbers <m>x</m> and <m>y</m> making the following two equations true simultaneously:
+      A system of linear equations need not have a solution.  For example, since <m>3 \neq -3</m> the following system of equations has no solution:
       <me>
         \syseq{x + 2y = 3 ; x + 2y = -3\rlap.}
       </me>
+
       In this case, the solution set is <em>empty</em>.  As this is a rather important property of a system of equations, it has its own name.
     </p>
 
@@ -89,7 +91,7 @@ the license is included in gfdl.xml.
       <idx><h>Consistent</h><see>System of linear equations</see></idx>
       <idx><h>Inconsistent</h><see>System of linear equations</see></idx>
       <statement>
-        <p>A system of equations is called <term>inconsistent</term> if it has no solutions.  It is called <term>consistent</term> otherwise.</p>
+        <p>A system of equations is called <term>inconsistent</term> if it has no solutions.  If there is at least one solution, then the system is called <term>consistent</term> otherwise.</p>
       </statement>
     </definition>
 
@@ -118,19 +120,19 @@ the license is included in gfdl.xml.
       </notation>
       <statement>
         <p>Let <m>n</m> be a positive whole number.  We define
-        <me>\R^n = \text{all ordered $n$-tuples of real numbers }(x_1,x_2,x_3,\ldots,x_n).</me>
+        <me>\R^n = \text{all ordered $n$-tuples of real numbers }(x_1,x_2,\ldots,x_n).</me>
         An <m>n</m>-tuple of real numbers is called a <term>point</term> of <m>\R^n</m>.
         </p>
       </statement>
     </definition>
 
-    <p>In other words, <m>\R^n</m> is just the set of all (ordered) lists of <m>n</m> real numbers.  We will draw pictures of <m>\R^n</m> in a moment, but keep in mind that <em>this is the definition</em>.  For example, <m>(0, \frac 32, -\pi)</m> and <m>(1,-2,3)</m> are points of <m>\R^3</m>.</p>
+    <p> We will draw pictures of <m>\R^n</m> in a moment, but keep in mind that <em>this is the definition</em>.  For example, <m>(0, \frac 32, -\pi)</m> and <m>(1,-2,3)</m> are points of <m>\R^3</m>.</p>
 
     <specialcase>
       <title>The number line</title>
       <idx><h>Real numbers <m>\R</m></h></idx>
       <idx><h>Line</h><h>number line</h></idx>
-      <p>When <m>n=1</m>, we just get <m>\R</m> back: <m>\R^1=\R</m>.  Geometrically, this is the number line.
+      <p>When <m>n=1</m>, <m>\R^1 = \R</m> is just the real numbers.  Geometrically, this is the number line.
       <latex-code>
     \begin{tikzpicture}
       \draw [&lt;-&gt;, thick] (-3.5,0) -- (3.5,0);
@@ -145,7 +147,7 @@ the license is included in gfdl.xml.
     <specialcase>
       <title>The Euclidean plane</title>
       <idx><h>Plane</h><h><m>xy</m>-plane</h></idx>
-      <p>When <m>n=2</m>, we can think of <m>\R^2</m> as the <m>xy</m>-plane.  We can do so because every point on the plane can be represented by an ordered pair of real numbers, namely, its <m>x</m>- and <m>y</m>-coordinates.
+      <p>When <m>n=2</m>, we may geometrically interpret <m>\R^2</m> as the <m>xy</m>-plane.  Every point in <m>\R^2</m> corresponds to a geometric point on the plane, which is to say that every point can be represented by an ordered pair of real numbers, namely, its <m>x</m>- and <m>y</m>-coordinates.
       <latex-code>
         <![CDATA[
     \begin{tikzpicture}[every node/.append style={whitebg, thin border},
@@ -164,7 +166,7 @@ the license is included in gfdl.xml.
     <specialcase>
       <title>3-Space</title>
       <idx><h>Space</h><h><m>\R^3</m></h></idx>
-      <p>When <m>n=3</m>, we can think of <m>\R^3</m> as the <em>space</em> we (appear to) live in.  We can do so because every point in space can be represented by an ordered triple of real numebrs, namely, its <m>x</m>-, <m>y</m>-, and <m>z</m>-coordinates.
+      <p>When <m>n=3</m>, we may geometrically interpret <m>\R^3</m> as the <em>space</em> we (appear to) live in.  We can do so because every point in space can be represented by an ordered triple of real numebrs, namely, its <m>x</m>-, <m>y</m>-, and <m>z</m>-coordinates.
       <latex-code><![CDATA[
     \begin{tikzpicture}[myxyz, scale=.75,
         every label/.append style={text=seq-blue}]
@@ -195,13 +197,10 @@ the license is included in gfdl.xml.
     </example>
 
     <p>So what is <m>\R^4</m>?  or <m>\R^5</m>?  or <m>\R^n</m>?
-    These are harder to visualize, so you have to go back to the definition: <m>\R^n</m> is the set of all ordered <m>n</m>-tuples of real numbers <m>(x_1,x_2,x_3,\ldots,x_n)</m>.</p>
+    These are harder to visualize. Instead of trying to <em>see</em> these spaces, we fall back on their mathematical definition: <m>\R^n</m> is the set of all ordered <m>n</m>-tuples of real numbers <m>(x_1,x_2,\ldots,x_n)</m>. 
+    These are still <q>geometric</q> spaces from the point of view of mathematics, even if we may have a harder time imagining that geometry. By combining our intution from dimensions one, two, and three with the methods of algebra, we are still able to fruitfully do geometry in higher dimensions.
+    </p>
 
-    <p>They are still <q>geometric</q> spaces, in the sense that our intuition for <m>\R^2</m> and <m>\R^3</m> often extends to <m>\R^n</m>.</p>
-
-    <p>We will make definitions and state theorems that apply to any <m>\R^n</m>, but we will only draw pictures for <m>\R^2</m> and <m>\R^3</m>.</p>
-
-    <p>The power of using these spaces is the ability to <em>label</em> various objects of interest, such as geometric objects and solutions of systems of equations, by the points of <m>\R^n</m>.</p>
 
     <example>
       <title>Color Space</title>
@@ -323,15 +322,14 @@ the license is included in gfdl.xml.
       <title>QR Codes</title>
       <idx><h>QR codes</h></idx>
       <p>
-        A <url href="https://en.wikipedia.org/wiki/QR_code">QR code</url> is a method of storing data in a grid of black and white squares in a way that computers can easily read.  A typical QR code is a <m>29 \times 29</m> grid.  Reading each line left-to-right and reading the lines top-to-bottom (like you read a book) we can think of such a QR code as a sequence of <m>29 \times 29 = 841</m> digits, each digit being 1 (for white) or 0 (for black).  In such a way, the entire QR code can be regarded as a point in <m>\R^{841}</m>.  As in the previous <xref ref="systems-eqns-R4"/>, it is very useful from a psychological perspective to view a QR code as a <em>single</em> piece of data in this way.
-</p>
+        A <url href="https://en.wikipedia.org/wiki/QR_code">QR code</url> is a method of storing data in a grid of black and white squares in a way that computers can easily read.  A typical QR code is a <m>29 \times 29</m> grid.  Reading each line left-to-right and reading the lines top-to-bottom (like you read a book) we can think of a QR code as a sequence of <m>29 \times 29 = 841</m> digits, each digit being 1 (for white) or 0 (for black).  In such a way, the entire QR code can be regarded as a point in <m>\R^{841}</m>.  As in the previous <xref ref="systems-eqns-R4"/>, the ability to view such a complex piece of data as a single point in a high dimensional space can be a useful perspective.
+      </p>
       <figure>
         <caption>The QR code for this textbook is a <m>29\times29</m> array of black/white squares.</caption>
         <image source="images/qrcode.png" width="50%"/>
       </figure>
     </example>
 
-    <p>In the above examples, it was useful from a psychological perspective to replace a list of four numbers (representing traffic flow) or of 841 numbers (representing a QR code) by a single piece of data: a point in some <m>\R^n</m>.  This is a powerful concept;   starting in <xref ref="spans"/>, we will almost exclusively record solutions of systems of linear equations in this way.</p>
   </subsection>
 
 
@@ -427,7 +425,7 @@ the license is included in gfdl.xml.
   \end{tikzpicture}
           ]]>
         </latex-code>
-        A solution to the <em>system</em> of both equations is a pair of numbers <m>(x,y)</m> that makes both equations true at once.  In other words, it as a point that lies on both lines simultaneously.  We can see in the picture above that there is only one point where the lines intersect: therefore, this system has exactly one solution.  (This solution is <m>(3,2)</m>, as the reader can verify.)
+        A solution to the <em>system</em> equations is a pair of numbers <m>(x,y)</m> that makes both equations true at once.  In other words, it as a point that lies on both lines simultaneously.  We can see in the picture above that there is only one point where the lines intersect: therefore, this system has exactly one solution.  (This solution is <m>(3,2)</m>, as the reader can verify.)
       </p>
 
       <p>
@@ -477,7 +475,7 @@ the license is included in gfdl.xml.
         Consider the system of two linear equations
         <me>\def\r{\color{seq-violet}}\def\b{\color{seq-green}}
         \syseq{\r x \r+ \r y \r+ \r z \r= \r1; \b x \+ \. \b- \b z \b= \b0\rlap.}</me>
-        Each equation individually defines a plane in space.  The solutions of the system of both equations are the points that lie on both planes.  We can see in the picture below that the planes intersect in a line.  In particular, this system has infinitely many solutions.
+        Each equation individually defines a plane in space.  The solutions of the system equations are the points that lie on both planes.  We can see in the picture below that the planes intersect in a line. Hence this system has infinitely many solutions.
       </p>
 
       <figure>
@@ -501,7 +499,7 @@ the license is included in gfdl.xml.
     <idx><h>Parametric form</h></idx>
 
     <p>
-      According to this <xref ref="systems-eqns-soln-sets"/>, solving a system of equations means writing down all solutions in terms of some number of parameters.  We will give a systematic way of doing so in <xref ref="parametric-form"/>; for now we give parametric descriptions in the examples of the previous <xref ref="systems-eqns-pictures"/>.
+      According to this <xref ref="systems-eqns-soln-sets"/>, solving a system of equations means writing down all solutions in terms of some number of parameters.  We describe a systematic way of doing this in <xref ref="parametric-form"/>; for now we simply present parametric descriptions in the examples of the previous <xref ref="systems-eqns-pictures"/>.
     </p>
 
     <specialcase hide-type="true">
@@ -531,7 +529,7 @@ the license is included in gfdl.xml.
         Now consider the system of two linear equations
         <me>\def\r{\color{seq-violet}}\def\b{\color{seq-green}}
         \syseq{\r x \r+ \r y \r+ \r z \r= \r1; \b x \+ \. \b- \b z \b= \b0}</me>
-        of this <xref ref="systems-eqns-two-planes"/>.  These collectively form the <term>implicit equations</term> for a line in <m>\R^3</m>.  (At least two equations are needed to define a line in space.)  This line also has a <term>parametric form</term> with one <term>parameter</term> <m>t</m>:
+        of this <xref ref="systems-eqns-two-planes"/>.  These collectively form the <term>implicit equations</term> for a line in <m>\R^3</m>.  (At least two equations are needed to define a line in 3-space.)  This line also has a <term>parametric form</term> with one <term>parameter</term> <m>t</m>:
         <me>
           (x,\, y,\, z) = (t,\, 1-2t,\, t).
         </me>
