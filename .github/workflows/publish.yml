@@ -64,8 +64,16 @@ jobs:
               -v "$PWD/.ci-tmp":/home/vagrant/output-html \
               -w /base "$IMAGE" "$@"
           }
-          run_build scons subpackages
-          run_build scons
+          # The checkout is owned by the runner user but the container
+          # runs as root; git's ownership check (backported into the
+          # image's git 2.17) must be waived for the repo + submodules.
+          SAFE="git config --global --add safe.directory '*';
+                for d in /base /base/mathbook /base/mathbook-assets /base/mathbox \
+                         /base/mathbox/vendor/shadergraph /base/mathbox/vendor/threestrap; do
+                  git config --global --add safe.directory \$d;
+                done"
+          run_build bash -c "$SAFE; scons subpackages"
+          run_build bash -c "$SAFE; scons"
           sudo chown -R "$(id -u):$(id -g)" .ci-cache _site
 
       - name: Publish to gh-pages
