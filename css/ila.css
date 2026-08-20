@@ -7214,6 +7214,46 @@ article.remark-like:after {
         display: block;
     }
 }
+
+/* Saturated LaTeX colors in math and figures are hard to read on
+   dark; remap each to a lighter same-hue tone.  Colors arrive as
+   inline styles, hence per-color attribute selectors. */
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#0000ff"] {
+    fill: #8fa8ff !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#0000ff"] {
+    stroke: #8fa8ff !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#ff0000"] {
+    fill: #ff8f8f !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#ff0000"] {
+    stroke: #ff8f8f !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#e41a1c"] {
+    fill: #ef8a8a !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#e41a1c"] {
+    stroke: #ef8a8a !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#984ea3"] {
+    fill: #c99bd4 !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#984ea3"] {
+    stroke: #c99bd4 !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#377eb8"] {
+    fill: #6fa8dc !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#377eb8"] {
+    stroke: #6fa8dc !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#4daf4a"] {
+    fill: #66c266 !important;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="stroke:#4daf4a"] {
+    stroke: #66c266 !important;
+}
 /** page wide defs for knowls, the *[knowl] is a selector for
  *  all elements, that have a knowl attribute set to any value */
 .knowl-content {
