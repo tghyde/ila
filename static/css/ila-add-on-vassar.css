@@ -164,6 +164,35 @@ html[data-theme="dark"] .mathbook-content svg [style$="stroke:#000"],
 html[data-theme="dark"] .mathbook-content svg [style*="stroke:black"] {
     stroke: #e7e5e0 !important;
 }
+/* Default ink in tikz/pretex figures comes from a class rule injected
+   per page (svg.pretex path { stroke:#000000 }), not an inline style,
+   so the attribute selectors above never see it.  Override the class
+   rule directly — no !important, so any path that was given an inline
+   stroke color on purpose (or stroke:none) still wins. */
+html[data-theme="dark"] .mathbook-content svg.pretex path {
+    stroke: #e7e5e0;
+}
+/* tikz "whitebg" nodes knock out the lines behind labels with a white
+   patch; repaint those patches to match whatever dark surface the
+   figure sits on.  The surface color rides a custom property, which
+   inherits into the SVG, so knockouts always match their container. */
+html[data-theme="dark"] .mathbook-content {
+    --svg-surface: #15171c;
+}
+html[data-theme="dark"] .mathbook-content article,
+html[data-theme="dark"] .knowl-output,
+html[data-theme="dark"] .knowl {
+    --svg-surface: #1f222a;
+}
+html[data-theme="dark"] .mathbook-content .bluebox {
+    --svg-surface: #1c2340;
+}
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#ffffff"],
+html[data-theme="dark"] .mathbook-content svg [style*="fill:#fff;"],
+html[data-theme="dark"] .mathbook-content svg [style$="fill:#fff"],
+html[data-theme="dark"] .mathbook-content svg [style*="fill:white"] {
+    fill: var(--svg-surface, #15171c) !important;
+}
 /* The QR-code figure has a night variant; swap it in and skip the
    generic image filter */
 html[data-theme="dark"] .mathbook-content img[src*="qrcode"] {

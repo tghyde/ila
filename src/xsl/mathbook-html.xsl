@@ -506,25 +506,12 @@
 </xsl:template>
 
 <!-- JDR: feedback link -->
-<xsl:template name="feedback-link">
-  <div class="feedback-link">
-    <xsl:element name="a">
-      <xsl:attribute name="href">
-        <xsl:text>https://github.com/QBobWatson/ila/issues/new?title=Feedback%20on%20</xsl:text>
-        <xsl:apply-templates select="." mode="internal-id" />
-        <xsl:text>&amp;body=In%20reference%20to%20version%20</xsl:text>
-        <xsl:call-template name="git-hash" />
-      </xsl:attribute>
-      <xsl:attribute name="class">
-        <xsl:text>feedback-link</xsl:text>
-      </xsl:attribute>
-      <xsl:attribute name="target">_blank</xsl:attribute>
-      <xsl:attribute name="rel">noopener</xsl:attribute>
-      <xsl:text>Comments, corrections or suggestions?</xsl:text>
-      <span class="feedback-link">(Free GitHub account required)</span>
-    </xsl:element>
-  </div>
-</xsl:template>
+<!-- Vassar Edition: suppressed.  The link pointed at the original
+     book's GitHub issue tracker, which is the wrong place for
+     corrections to this edition.  To restore a feedback channel,
+     re-add the <div> here with an href for this edition (e.g.
+     https://github.com/tghyde/ila/issues/new or a mailto:). -->
+<xsl:template name="feedback-link" />
 
 <!-- JDR: pdf version -->
 <!-- Suppressed when pdf.online is empty (no PDF is built/published) -->
