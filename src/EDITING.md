@@ -27,6 +27,23 @@ git add -A && git commit -m "describe the change" && git push
 ./docker.sh publish
 ```
 
+## Which file makes which page?
+
+A page's filename is the `xml:id` of the element that generated it, so
+strip `.html` and grep for the id:
+
+```bash
+grep -rn 'xml:id="matrix-equations"' *.xml
+```
+
+Two things to know about the layout:
+
+- **Chapter overview pages** (`chap-*.html`) come from `ila.xml` — each
+  chapter's `<introduction>` is written inline there, not in a section
+  file.
+- Section files mostly echo their section's id (`matrixeq.xml` holds
+  `xml:id="matrix-equations"`), but not exactly — trust the grep.
+
 ## Things to know
 
 - **Math is real LaTeX** inside `<m>...</m>` (inline) and `<me>...</me>`
