@@ -60,6 +60,9 @@ case "${1:-build}" in
             fi
             git worktree add .gh-pages gh-pages
         fi
+        # CI publishes this branch too; sync before committing on top
+        git fetch origin gh-pages 2>/dev/null || true
+        git -C .gh-pages reset --hard origin/gh-pages 2>/dev/null || true
         rsync -a --delete --exclude .git html/ .gh-pages/
         touch .gh-pages/.nojekyll
         git -C .gh-pages add -A

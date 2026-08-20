@@ -20,12 +20,15 @@ level up).  The `git` commands work from anywhere in the repository.
 # 3. Preview at http://localhost:8081/
 ./docker.sh serve        # only needed if the server isn't already running
 
-# 4. When happy, commit your edits
+# 4. When happy, commit and push — this AUTO-PUBLISHES to students:
+#    a GitHub Action builds the book and deploys it to
+#    https://tghyde.github.io/ila/ (live a few minutes later; progress
+#    under the repo's Actions tab)
 git add -A && git commit -m "describe the change" && git push
-
-# 5. Publish to students at https://tghyde.github.io/ila/
-./docker.sh publish
 ```
+
+`./docker.sh publish` still works as a manual fallback if the Action
+is ever down, but pushing is normally all you need.
 
 ## Which file makes which page?
 
