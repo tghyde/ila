@@ -90,9 +90,9 @@ the license is included in gfdl.xml.
           Now we row reduce, noting that the second row is <m>i</m> times the first:
           <me>
             \mat{-i -1; 1 -i}
-            \;\xrightarrow{R_2=R_2-iR_1}\;
+            \;\xrightarrow{R_2\to R_2-iR_1}\;
             \mat{-i -1; 0 0}
-            \;\xrightarrow{R_1=R_1\div -i}\;
+            \;\xrightarrow{R_1\to -\frac{1}{i}R_1}\;
             \mat{1 -i; 0 0}.
           </me>
           The parametric form is <m>x = iy</m>, so that an eigenvector is <m>v_1={i\choose 1}</m>.  Next we compute an eigenvector for <m>\lambda=1-i</m>.  We have
@@ -102,9 +102,9 @@ the license is included in gfdl.xml.
           Now we row reduce, noting that the second row is <m>-i</m> times the first:
           <me>
             \mat{i -1; 1 i}
-            \;\xrightarrow{R_2=R_2+iR_1}\;
+            \;\xrightarrow{R_2\to R_2+iR_1}\;
             \mat{i -1; 0 0}
-            \;\xrightarrow{R_1=R_1\div i}\;
+            \;\xrightarrow{R_1\to \frac{1}{i}R_1}\;
             \mat{1 i; 0 0}.
           </me>
           The parametric form is <m>x = -iy</m>, so that an eigenvector is <m>v_2 = {-i\choose 1}</m>.
@@ -154,22 +154,22 @@ the license is included in gfdl.xml.
 A-\frac{4+3i}5I_3 =
 \mat{-3i/5 -3/5 0; 3/5 -3i/5 0;
 1 2 2-(4+3i)/5}
-\;\xrightarrow[R_2=R_2\times5/3]{R_1=R_1\times -5/3}\;
+\;\xrightarrow[R_2\to \frac{5}{3}R_2]{R_1\to -\frac{5}{3}R_1}\;
 \mat{i 1 0; 1 -i 0; 1 2 \frac{6-3i}5}.
           </me>
           We row reduce, noting that the second row is <m>-i</m> times the first:
           <me>
             \begin{split}
             \mat{i 1 0; 1 -i 0; 1 2 \frac{6-3i}5}
-            \amp\;\xrightarrow[\hbox to 2cm{}]{R_2=R_2+iR_1}\;
+            \amp\;\xrightarrow[\hbox to 2cm{}]{R_2\to R_2+iR_1}\;
             \mat{i 1 0; 0 0 0; 1 2 \frac{6-3i}5} \\
-            \amp\;\xrightarrow[\hbox to 2cm{}]{R_3=R_3+iR_1}\;
+            \amp\;\xrightarrow[\hbox to 2cm{}]{R_3\to R_3+iR_1}\;
             \mat{i 1 0; 0 0 0; 0 2+i \frac{6-3i}5} \\
             \amp\;\xrightarrow[\hbox to 2cm{}]{R_2\longleftrightarrow R_3}\;
             \mat{i 1 0; 0 2+i \frac{6-3i}5; 0 0 0} \\
-            \amp\;\xrightarrow[\hbox to 2cm{\tiny\hss$R_2=R_2\div (2+i)$\hss}]{R_1=R_1\div i}\;
+            \amp\;\xrightarrow[\hbox to 2cm{\tiny\hss$R_2\to \frac{1}{2+i}R_2$\hss}]{R_1\to \frac{1}{i}R_1}\;
             \mat{1 -i 0; 0 1 \frac{9-12i}{25}; 0 0 0} \\
-            \amp\;\xrightarrow[\hbox to 2cm{}]{R_1=R_1+iR_2}\;
+            \amp\;\xrightarrow[\hbox to 2cm{}]{R_1\to R_1+iR_2}\;
             \mat{1 0 \frac{12+9i}{25}; 0 1 \frac{9-12i}{25}; 0 0 0}.
           \end{split}
           </me>
