@@ -10,94 +10,520 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <style id="pretex-fonts">
-/* pretex cache: gN4TUbC6RytDUgyq5hzP */
+/* pretex cache: jsSL_SSOmB06EffFZLM3 */
 
 @font-face {
-  font-family: "fpBQgyugMKKUr7qnfakXT";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUMAAoAAAAAB1AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADeAAAAWsAAAGEciLbvkZGVE0AAATkAAAAGgAAAByjR0CfT1MvMgAAAVAAAABFAAAAYFZeXr9jbWFwAAADIAAAAD0AAAFCAA0D0WhlYWQAAAD0AAAAMQAAADYuAT4LaGhlYQAAASgAAAAeAAAAJASoAM9obXR4AAAFAAAAAAoAAAAKA0gAOG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGHAAAC0Ib1QC5wb3N0AAADYAAAABYAAAAg/4YAN3icY2BkYGAA4gDOK8/i+W2+MnAzvwCKMDxb87cYTlv8d2EMYPoD5HIwMIFEAXl3DYMAAAB4nGNgZGBg+vPfhSGKsYMBCBgDGBgZUAETAGGYA3oAAAAAUAAAAwAAeJxjYGbsYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSGgyazAr/LRiimP4w7EFRowCEjAA8tgrJAAAAeJyNkc9Kw0AQxr+ttSL+uSkiHuao0JRN0FJ6ragXsYh4NqZLGghJSRPw6Dv4HnoXfASP4mP4AF78dl0URMTAZn6TmflmJgtgHfdQ+Hw0rj0rrOHBcwtLePa8gIE69tzGjnr0vIgV9ea5g9XWBjNVe5nelauyrLCNO88t9n3yvIAZXjy3qX/reRGb6tVzB1vqHbtIsAdBxEk19kljxGiQO8oYnTq/gnG2y+8NCkzoV+SacUObsqOtyV2NYYZ994DdZE8irfdlHDe5jLNkGjeViZuuNMXEVFJPjaSzXPIsMUViWHHKRlb2kAJzyqUUCzDCCUNxPT008ywtghHdc2akbtiYw+DcpE0eE45QsqZ2tmKGcQv2uKBgyPNbB3Ed5Iem4AwXCGnDr2r7qwIMeCxF6LNhWdRHZZUaiXpahvI9p4xOxM8lZxehhDYc6WAQRDrq/77sf0bBXy2AS3c9VrB0gqHbHpemmmdlIWGPzsxdas1z4y7f7nLATMwqU5sbrXV0EOIDHKJ6jgB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvub//0BS4////zehKhkY2RhgTIKAkYlIhUMMAABk9gbeAAAAeJxjYGYAg//NDGZAipEBDQAAKKkBvQAAeJxFi89LAkEcxWdac/0x2g8ygqaYOmWUrVIXPZrgRZLwJEQsNqggIuaynbtuYERBECJ0ELpGkh72kB76I4To0B/Q7TsyHlqD6PEOj/feByOXC2GMA7U6b/ALTdNiB1GEZxBGUbGKBZ0Ra4pYcV0RHCbKG3ENZRa+xtezFD3PUYTmKXpdoGib4vwiUn4xlEH5rUKYxTRtn2V1o8Ky5UJJN+pcN3aYUT3jddYocVasVVilXODVAo9k9EbpkJ+Xi1WWTLNjXjQqep0d5aIsqv1vu8k0cuRFPqRgvHnasmyRsrFtQ85W7GXoiSfZc9sTMyRSkJuk1KDM9sfffTz8VGADXkIWdEZAQW17+qqMm9ItI5YcOAYnQdyc1mo7AdQ5ev5gaDp0c0rLTkJSqZqeExXibXBDxIKBY+kkGW9Pa9UcSeocPUFBl6zQ5a0w7iD94F734fs94r0hPov4u75ui5AP//sjCVgk+AMH55a8AHicY2BgYGQAgqtvXXeA6Gdr/hbDaABbpAjFAAABiAAAAYgAOAA4AAA=) format('woff');
+  font-family: "f-tcbkqFyxhhv1FEHVGA_";
+  src: url(data:application/font-woff;base64,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) format('woff');
 }
 
 @font-face {
-  font-family: "fEK1m4GiF36pjasB1FhdO";
-  src: url(data:application/font-woff;base64,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) format('woff');
+  font-family: "fcctSgWPb8ORSD_Zxgvz3";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATgAAoAAAAABwgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADcAAAAUgAAAFJktAFcUZGVE0AAAS4AAAAGgAAAByjR0GPT1MvMgAAAVAAAABLAAAAYHcTgapjbWFwAAADHAAAADwAAAFKIqYjyWhlYWQAAAD0AAAAMgAAADYwSD77aGhlYQAAASgAAAAgAAAAJAXnBLBobXR4AAAE1AAAAAwAAAAMCLwAUG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAF9AAACuIWqZfNwb3N0AAADWAAAABcAAAAg/5EANnicY2BkYGAA4op5SyfG89t8ZeBmfgEUYXi25u9rOC3BEMm8g/E5kMvBwAQSBQCNqQ32AAB4nGNgZGBgfM4QyRDF/IEBCJh3MKT8f8uADJgBeg8FngAAUAAAAwAAeJxjYGZOYZzAwMrAwNTFtOf/M4YeEM0QzfiAwZCRCSjKwMrMgAwSYIyANNcUBgbFSUpCzAr/LRiiGJ//Xw4UZoSrVABCRgAXuA6qAHicfZHPSsNAEMa/1VYR/xxFPM1RwYRNKCV48dBSvAilh56N6ZIEQlLSBHwP38GjPoH4BB7FB/A5BL+si4JUEzb7m8zMNzO7AA7wAIWvR+PGscI+Hh1vYBsvjjcxUBeOezhS94772FVvjrewpz4YqXo7tK5tVscKx7hzvMG6T443keHVcQ9aNY77OFTPjrdY6x0nSHAKQchONQakKWK0KCzl9GbWrmHsfsb/LUosaNfkhn7DPcXS5hQ2xzCi+/rASXIqodYDmcZtIdM8yeK2NnF7Jm25MLU0mZF0WUiRJ6ZMDDOuWKiTHVNgRbmUYh5GuKQrbrKxWeVp6Y1ozhiR2mZjNoOZSdsiJkxQMaexe80IYwf0OaDgnGtdBbEV5JemIPjO6o7IQ8TVUYghC1VlM6nq1EjoazmXn/5kdCmuHwk6V6i9yAt1OFw/4H/l8ZcsMLfX0IlUViSwU2Ju6lVelRL4NJb28hquW3vJmlERXyxr05hbrXUQRfgEj113LwAAAHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBQnKQn9/8/AAKHvFdx9D1UPBIxsDAjOCAUAlpIJrnicY2BmYGDgZmD438xgxoAFAAApwQHHAHicY2RgYWFgZGTkLShKLUmtMDAwMLSwYGBkYmBkMPghw/hDlumHHPMPCZZpPEyaPMwHeVgWP/nl86OaVYZhJ78MA4OADMM+QRkGbRlGOSEGFpAubgZrhmCGhMSiovzyosz0jBKNZE0FIwMDE4WAxNIchYDM5IzE0qLUxFIdhdK8lNQihZKMVIX0ghyFnMzk1LzkVD3fxJIMl9TizPQ8BWcPhaDU9NKcxCIFQwOEuK6zBwMQLGNsZ2BmZFQxjvqj2r33h+texr17vx/Yy7xX7IfKj5V/VNj2/ikX/eH6/cAfV3a+79OOMy7+Pk30p83xvzZsfN9A/MMg/pzu37y/hbYmfI/+HtI963f09+DEhO9Akb9zuln5fuaI/JIUbZryo3Tqd4/ZbHJcjDP0eTgn8XB183Bv5do6l4fnHvfxRTy83Tx8AMXcdYF4nGNgYGBkAIKrb113gOhna/6+htEAYFQJtQAAAfQAAALYABgD8AA4) format('woff');
 }
 
 @font-face {
-  font-family: "fRgxWACMKpfyma5jTXwqK";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASkAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAARQAAAEUA+swIkZGVE0AAASAAAAAGgAAAByjR0CfT1MvMgAAAVAAAABLAAAAYHbKgHtjbWFwAAADHAAAADQAAAFCAA0kuGhlYWQAAAD0AAAAMQAAADYvUD4LaGhlYQAAASgAAAAgAAAAJARGBEBobXR4AAAEnAAAAAgAAAAIBbAAGG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF/AAACuIKnXfNwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4rd1aX3x/DZfGbiZXwBFGJ6t+VsMpyUYmZgOMNoBuRwMTCBRAHA4DCEAAAB4nGNgZGBgtGNkYohiusEABEwHGFL+v2VABkwAWewEjAAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTARk4wBgBaa4pDAxKQkpCzAr/LRiiGO3+/QMKM8JVKgAhIwAmMA4xAHicfZHNSsNAEMf/az9E/DiKeJpjC03Yph+UXjy0lF6E0kPPxnRJAiEp2w30PXwHj/oE4hN4FB/A5xCcrIuCVAOb/U1m5j8zGQBneIDA1yNx61jgFI+OD3CIF8c19MWV4zouxL3jBo7Fm+MmTsQHR4r6EVs3NqtigUvcOT7guk+Oa0jw6rgOKYzjBs7Fs+Mm13pHCxHaIATcqUSfaYEQJTJLKXsTa2soe3f4e4kca7Y1s2G/4jvGxuZkNkdxRPX2gVbUpkDKPi3CMqNFGiVhqVVYdqjM10qTSRTFm4yyNFJ5pDjjmgtVslMW2LJczGIeJpizKzTJVG3TOPcmbC45IrbNhtwMlious5BhhoJzjL01Ryg7oM8DEsZ89lUgW4F+aRK631nVL/Iw4lNRgCEXKnIzK3SsKPAljemnP5rMyfVD3coVSG/kBTIY7h/wv/L4SxZY2TVUIoUV6dopsVJ6mxY5dX02NnZ5hs/OLrnqfYAeO7QyaielDAY9fAKO3HchAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEC+ktD//xDy7nuoSgZGNgYYc8QCAG6/BuZ4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAAQAEBAABAQENcHJldGV4MDAwMjUzAAECAAEANPgbAfgcAvgdA/gYBIwMAZYMAikMA8EMBKP3lvlU99IFHACxDxwAABAcALQRHAAqHADqEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmAAIBASIxi734Rb0Bvb34pL0DvRb5CPip/QgGvfx3FfhF+KT8RQcO95bHAaP3lhX5PMf9PAYO+WwUixWClPh1lfdImwYeCgGYLwwJkgwKiwwLtQq1nQwM3gvHogwNiwwOeJxjYGBgZACCq29dd4DoZ2v+FsNoAFukCMUAAALYAAAC2AAY) format('woff');
+  font-family: "fy2kiEaW9wCGHiRN5q5pC";
+  src: url(data:application/font-woff;base64,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) format('woff');
 }
 
-.CgN4TUbC6RytDUgyq5hzP svg.pretex tspan.a { font-size:11.47700024px;font-family:fpBQgyugMKKUr7qnfakXT }
-.CgN4TUbC6RytDUgyq5hzP svg.pretex tspan.b { font-size:11.47700024px;font-family:fEK1m4GiF36pjasB1FhdO }
-.CgN4TUbC6RytDUgyq5hzP svg.pretex tspan.c { font-size:11.47700024px;font-family:fRgxWACMKpfyma5jTXwqK }
-.CgN4TUbC6RytDUgyq5hzP svg.pretex path.a { stroke-width:0.19925px }
-.CgN4TUbC6RytDUgyq5hzP svg.pretex path.b { stroke-width:0.3985px }
-.CgN4TUbC6RytDUgyq5hzP svg.pretex path.c { stroke-width:1px }
+@font-face {
+  font-family: "fEa64NfNhrLTs5Tilf3Ad";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATMAAoAAAAAB0wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAASUAAAEtS6iMQkZGVE0AAASoAAAAGgAAAByjR0GPT1MvMgAAAVQAAABIAAAAYFZmX3BjbWFwAAADLAAAADcAAAFCAA4C1WhlYWQAAAD0AAAAMgAAADYucT77aGhlYQAAASgAAAAhAAAAJAUGAaJobXR4AAAExAAAAAgAAAAIA/AAOG1heHAAAAFMAAAABgAAAAYAAlAAbmFtZQAAAZwAAAGNAAADJPm73qVwb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAA4i2Jhprx/DZfGbiZXwBFGJ6t+fsaTlv8d2E8wPQHyOVgYAKJAgB6ZA4/AAB4nGNgZGBg+vPfhSGK8QcDEDAeYEj5/44BGTABAJlNBqoAAAAAAFAAAAIAAHicY2Bm/ME4gYGVgYGpi2nP/xcMPSCaIZjxAYMhIxNQlIGVkwEGGBmQQECaawqQ0mfQZ1b4b8EQxfSHYQ+KGgUgZAQAGb0NgHicpZLLSsNAFIb/xFoRL0sRV2dZLwmTINJ2Wyl2IRYR145xSAMhKWkCfQh3voULfQIfwaXv459xUBQXgoHJfCfzn2sGwDae4OHjUbh17GELz459rOHV8QrGXuK4gwMfjlex4Y8cd7HpZ1R6nXVaN9arZQ97eHDsM++L4xXc481xB1feo+NV7PiHjrvY9S/QQ4J9CGJWqnBMmkKjQW4p4+nM2hWM3Y/4vUGBO9oVuea54Z5ibn1y62OoaN8h0Ev2JVbqWKa6yWWaJTPdVEY3R9IUd6aSemYkneeSZ4kpEkOPcyZqw54ywILhUgYLMMIZj3Q9OzWLLC2CEc1LKlJbrGYxuDRpk2vCGCV9artXVBjbYMgGBUOu3zKIzSA/YgomVGrX1pfn96/RZ+R2jAH6XC3FOGExZVGPyyo1EodKhvLVg4zOxNUsk1pzAvbQYdSKYxX0g1jFJ7+P5b9F4+/FANf2l7epS5s6shPFtakWWVlIFNKY24tScy3thVJUDVrVvDK1WSqlooHCO0ZJjs4AAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvv7//xDy/yWoSgZGNgYYk1hAovLBDwBp5wbiAHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDC0NGBgZGJgZDD5Ic34Q4bphyzzDwmWHh7GqTxMmjzMB3lYDv8O+BHycwKrDMNhfhkGBgEZhmOCMgxaMozMQgzMIJ2GDNEMGRrJmgpGBgYmCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQqeJYlABQogSSjT0AChUtfZgwEIBBiYGBmVLLr3/nDdy7h37/cje5n3iv3Q+LHyjwbb3j/loj9cvx/548rO9zug7FdiOSPI8aI+3b/v/vM51c3K96NHpFu0acqPsv7vvtPZ5LgYZ+jzcE7i4erm4d7KtXUuD88D7uNLeHi7efgA0rxjegAAAHicY2BgYGQAgqtvXXeA6Gdr/r6G0QBgVAm1AAAB+AAAAfgAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fBRYuhoJ8MnAQjjEMpsMj";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVcAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAaoAAAHJZ1565kZGVE0AAAUsAAAAGgAAAByjR0GPT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADIAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMgAAADYviT77aGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFSAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGHAAAC0Ir4SS5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYvdNFS/j+W2+MnAzvwCKMDxb8/c1nLb478J0g+kPkMvBwAQSBQCixQ9DAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr9ta0X8c1NEPMxRwZRNEBt6rWgvYpHi2RiXNBCSkibQo+/ge+hd8BE8io/hA3jxy7ooiIiBzfwmM/PNTBbABu6h8PloXDtWWMeD4xaW8ey4jVCdOu5gVz06XsKqenPcxVprk5mqs0LvylY1rLCDO8ct9n1y3MYML4471L91vIQt9eq4i231jj3E2Icg4KQah6QxItTILKWMTq1fwlh7wO81ctzQL8kV44Y2YcemJrM1hhnNuwfsxfsSaH0o46jOZJzG06guTVQfSJ3fmFKqqZFklkmWxiaPDSvO2KiRPabAnHIJxTwMMWIoqqbHZp4muTeke8GMxA4bcRhcmKTOIsIJCtZU1pbMMHbBHhcUDHh+6yC2g/zQFJxjAp/W/6pufpWHkKehAEdsWOTVSVEmRoKeloF8zynDkbi55Hzii9+EA+2FXqCDo9+X/c8o+KsFcGmvpxEsrKBvt8elKedpkYvfozOzl1rxLOzla2aF6DNQmsostNZ+2McHHTV6ngB4nGNgYGBmgGAZBkYGEPAB8hjBfBYGAyDNAYRMQFqTQZvB9v9/IEsDwvp/8/+N/8ehusCAkY0BmYsXMDKBbUUFLERqHsQAAKuIC3sAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLQWsTURSF38tMZ9L0dazFEcFneUIWVms6kYCaLmsgm5IgrgQXQxySwBBKzDCu3c6ipWgRRAdcFDsbNxbMYqQmi/kRhSL9Ba68b7gRfEHEy+FyOOd8lOg6oZQu7w69kffScZzqg/uEFgglFXmdSl6QNzR5TV9n2nemT7Gd+/n+AiefL3FCVjj5epmTO5x+WCXanKmSHfL0Vmdd3HOcmmi7gS/a/U7PDYaeG2yIYPDcG4pRzxPdXV/4/Y436HiVHXfUe+S96HcHYrspHnvdwHeHovWkKqrO/+7udpOoWyQlwsgaWaC07MaTc2xEqWykNE3hNNXSq7Isj2dlI52FtmzA6axhWtge5z/HdPpDg5vwxY7g6Aw4mHFxbGI9RAMrEU6UQDmoh/PYjLeAq2HxHwx7it6b03i0hRzNsPjMhHoMBlQimCihcliP57EZniFXw6L1DQ4zCheZBhdwaGOSQQJJhuq1MMGkdWxav+B2Bk5Gp7Jg57Xsd83AT/pfY0l+JX9ov3otgzfQfGeslejbTbZ4wEoRWzopnbxn7Hwp+8iWI2b9AfLkv5wAAHicY2BgYGQAgqtvXXeA6Gdr/r6G0QBgVAm1AAAB9AAAAYgAOAGIADgC2AA4AxAAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "f4WfRs0AY5nEyP4J61JD1";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWcAAoAAAAACDwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAeQAAAI2aCdHzEZGVE0AAAVkAAAAGgAAAByjR0GPT1MvMgAAAVAAAABHAAAAYF3GYGBjbWFwAAADKAAAAEIAAAFCCBcG82hlYWQAAAD0AAAAMwAAADYvYzfxaGhlYQAAASgAAAAgAAAAJAZL+1xobXR4AAAFgAAAABoAAAAgFy0Ed21heHAAAAFIAAAABgAAAAYACFAAbmFtZQAAAZgAAAGOAAAC9DQufL1wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAA4j2nmu/E89t8ZeBmfgEUYXi25u9rGP3/2w9Dpi/MrEAuBwMTSBQAz5IQlwB4nGNgZGBgZv1hyBDFrPP/2/9vTF8YgCIogAMAnG4GpQAAUAAACAAAeJxjYGbmYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSjgzuzAr/LRiimFnZzyOpsWFQAEJGAANdCdwAeJyVkstKw0AUhv+kFxEvG0HEjQdXLTRlGkpJu3DTC90IpULXxnRIAyEpaQJZ+BT6HvoEPoJLwXdx45npoCIFMTCZ7+T85zYTAMd4goXtI3Bn2MIRng3b2MOr4QqurBvDVVxa74ZrOLBPDNdxaPdZaVX32brVUYotnOPRsM11XwxXcI83w1WMrAfDNZxaH4brOLMv0ECAJggudyrQZZrBR4FYU8TelbYzSL23+HuBBEu2M+ac/ZL3EGsdE+sYyQr1bgONoEmuEF2a+UVMsyhY+UUm/aJFRbKUGeUrSeE6pjgKZBJIjrjmQirtiBNsOF3IyRwMMWWXn69GchOFiTNkc86KUDfrczOYy7CIfYYJUo7J9Z6xQuoB2zwgYcBrVwXSFehXTsIYJWvVQEqZamXnK5M6NgceL0Uuelw8TfJJmoWS3LagAX33TMMpmR5pXOYy2URpQh0lcoXjOa5we7vH/29z+LsosNBX+DNQnRAWMttK2mys9cWrEqX+QQSrPPTZkclclkKIjtfHJ+tahTgAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC++///QNLx////B6AqGRjZGGBM8gEjEzMLKxs7pcYMFAAAl/oHFQAAeJxjYGYAg//NDGYMWAAAKJgBvAB4nF2NS2sTURSAz81MO2MyjQ8yIngjFxu1xUcnRUShuxpIF8ViFWpXGeI1CSRjSTPYrVJEmJ1YUESEbKRIF4FmFtKRuJAh/gh3isus5t7hZqAziA96dudwvu9DIMuAEJraaNMO3TIMo3jzFqAUIJjjZxHHKZ6X+Bl5VpO+aPJTzIvhi/DNBAb3OAY4geHrSQyXcSpzCqQEKsIqVGaqs2TeMK6TFdNukpVGtW7abWraV4htPaRt0qlTUttokmajSq0qvbZsduq36WajZpHFMrlLa3bTbJPSVodam43HFika/z6uLpYhnvMwDQW4ABfhEsyAmqSn4R48Bxd+QIR0NP/J8XjJQ57HBp7kneYFvjsuTHrjJzovscG4pGQxbw2xsjpEbCGQ2Id41R0sf2Rr4RLrHahDRYwqYjuyHCxuqK3gP4DvBRLfS4A7ga/E0DexHVpi5KrLCuuts7VoKYbuq0cTvr5LWkriY7GXjSpJpHcg4mJSVo8WfD3RiFgneuuJe+SyOJQEVZ8o2WhhyAd/5OKXzgsk2g/+3n9L4vu4EIT78X8QPvqMdvhPnXVZjnVF7n1fuCwvXJGfyIaDHH+gP3vF7R1Wfjt5Lo1ez2nHXmppR8v00/13mvY943e1KUfLHgJggOnyeJxjYGBgZACCq29dd4DoZ2v+vobRAGBUCbUAAHicY/zCwMCsw7ACiC1QaSZJJoP/3wBdlQa6AAA=) format('woff');
+}
+
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.a { font-size:11.47700024px;font-family:f-tcbkqFyxhhv1FEHVGA_ }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.b { font-size:7.65140009px;font-family:fy2kiEaW9wCGHiRN5q5pC }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.c { font-size:11.47700024px;font-family:fBRYuhoJ8MnAQjjEMpsMj }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.d { font-size:11.47700024px;font-family:fy2kiEaW9wCGHiRN5q5pC }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.e { font-size:11.47700024px;font-family:fcctSgWPb8ORSD_Zxgvz3 }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.f { font-size:11.47700024px;font-family:f4WfRs0AY5nEyP4J61JD1 }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.g { font-size:7.65140009px;font-family:f-tcbkqFyxhhv1FEHVGA_ }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex tspan.h { font-size:11.47700024px;font-family:fEa64NfNhrLTs5Tilf3Ad }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.a { stroke-width:0.61000001px }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.b { stroke-width:0.68900001px }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.c { stroke-width:0.19925px }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.d { stroke-width:0.3985px }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.e { stroke-width:1px }
+.CjsSL_SSOmB06EffFZLM3 svg.pretex path.f { stroke-width:0.79701px }
 </style>
 </head>
 <body>
-<h5 class="heading CgN4TUbC6RytDUgyq5hzP"><span class="type">Paragraph</span></h5>
-<p class="CgN4TUbC6RytDUgyq5hzP">Find the best-fit ellipse through the points</p>
-<div class="pretex-display CgN4TUbC6RytDUgyq5hzP"><svg height="1.1327em" version="1.1" class="pretex" viewBox="129 4 246 13"><text transform="translate(129.529 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(134.039 13.948)"><tspan y="0" x="0 6.3812122 11.178598" class="b">0,2</tspan></text>
-<text transform="translate(151.593 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(156.104 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(162.497 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(167.007 13.948)"><tspan y="0" x="0 6.3812122 11.178598" class="b">2,1</tspan></text>
-<text transform="translate(184.561 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(189.072 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(195.464 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(199.975 13.948)"><tspan y="0" x="0 6.3812122" class="b">1,</tspan></text>
-<text transform="translate(211.148 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(219.537 13.948)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(225.918 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(230.429 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(236.822 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(241.332 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(249.722 13.948)"><tspan y="0" x="0 6.3812122" class="b">1,</tspan></text>
-<text transform="translate(260.895 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(269.284 13.948)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(275.666 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(280.176 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(286.569 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(291.079 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(299.469 13.948)"><tspan y="0" x="0 6.3812122 11.167121" class="b">3,1</tspan></text>
-<text transform="translate(317.023 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(321.533 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(327.926 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="translate(332.437 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(340.826 13.948)"><tspan y="0" x="0 6.3812122" class="b">1,</tspan></text>
-<text transform="translate(351.999 13.948)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(360.389 13.948)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(366.77 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
-<text transform="translate(371.28 13.948)"><tspan y="0" x="0" class="b">.</tspan></text>
+<h5 class="heading CjsSL_SSOmB06EffFZLM3"><span class="type">Paragraph</span></h5>
+<p class="CjsSL_SSOmB06EffFZLM3">The general equation for an ellipse (actually, for a nondegenerate conic section) is</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="1.21983em" version="1.1" class="pretex" viewbox="160 3 183 14"><text transform="translate(161.893 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(168.424 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(175.311 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(186.122 13.948)"><tspan y="0" x="0 8.6421814" class="a">By</tspan></text>
+<text transform="translate(201.18 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(208.067 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(218.878 13.948)"><tspan y="0" x="0 8.8602438 16.825281" class="a">Cxy</tspan></text>
+<text transform="translate(244.254 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(255.352 13.948)"><tspan y="0" x="0 8.8487673" class="a">Dx</tspan></text>
+<text transform="translate(272.866 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(283.964 13.948)"><tspan y="0" x="0 8.3552561" class="a">Ey</tspan></text>
+<text transform="translate(300.87 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(311.968 13.948)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(321.695 13.948)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(333.396 13.948)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
 </svg></div>
-<div class="pretex-display CgN4TUbC6RytDUgyq5hzP"><svg height="19.86575em" version="1.1" class="pretex" viewBox="0 0 341 228"><g transform="matrix(1,0,0,-1,170.278,113.585)"><g><g><g><path style="stroke:#b3b3b3" d="m -170.08086,-113.38724 h 340.16172 m -340.16172,28.34682 h 340.16172 m -340.16172,28.3468 H 170.08086 M -170.08086,-28.3468 H 170.08086 M -170.08086,0 h 340.16172 m -340.16172,28.3468 h 340.16172 m -340.16172,28.34682 h 340.16172 m -340.16172,28.3468 h 340.16172 m -340.16172,28.33685 h 340.16172 m -340.16172,-226.76451 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 V 113.38724 M -28.3468,-113.38724 V 113.38724 M 0,-113.38724 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.33685,-226.77448 v 226.77448" class="a"></path></g><path d="m -170.08086,0 h 339.7632" class="b"></path><g transform="translate(169.88159)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M 0,-113.38724 V 112.98872" class="b"></path><g transform="matrix(0,1,-1,0,0,113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,56.69362 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="M -14.28394,58.81961 H 14.28395 V 71.78433 H -14.28394 Z" class="c"></path></g><g transform="translate(-13.288 61.984)"><g><g transform="translate(-156.99 -740.399)"><text transform="matrix(1,0,0,-1,156.99,740.399)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,161.501,740.399)"><tspan y="0" x="0 6.3812122 11.167121" class="b">0,2</tspan></text>
-<text transform="matrix(1,0,0,-1,179.055,740.399)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.126 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="M 58.81961,21.86444 H 87.3875 V 34.82916 H 58.81961 Z" class="c"></path></g><g transform="translate(59.815 25.03)"><g><g transform="translate(-230.093 -703.445)"><text transform="matrix(1,0,0,-1,230.093,703.445)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,234.603,703.445)"><tspan y="0" x="0 6.3812122 11.178598" class="b">2,1</tspan></text>
-<text transform="matrix(1,0,0,-1,252.158,703.445)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,-28.3468 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 30.4728,-34.82916 h 36.9577 v 12.96472 H 30.4728 Z" class="c"></path></g><g transform="translate(31.469 -31.663)"><g><g transform="translate(-201.747 -646.752)"><text transform="matrix(1,0,0,-1,201.747,646.752)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,206.257,646.752)"><tspan y="0" x="0 6.3812122" class="b">1,</tspan></text>
-<text transform="matrix(1,0,0,-1,217.43,646.752)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="matrix(1,0,0,-1,225.82,646.752)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="matrix(1,0,0,-1,232.201,646.752)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,-56.69362 c 0,1.17418 -0.95183,2.12601 -2.12599,2.12601 -1.17417,0 -2.126,-0.95183 -2.126,-2.12601 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -53.85524,-71.78435 h 45.34752 v 12.96472 h -45.34752 z" class="c"></path></g><g transform="translate(-52.858 -68.618)"><g><g transform="translate(-117.42 -609.797)"><text transform="matrix(1,0,0,-1,117.42,609.797)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,121.93,609.797)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="matrix(1,0,0,-1,130.32,609.797)"><tspan y="0" x="0 6.3812122" class="b">1,</tspan></text>
-<text transform="matrix(1,0,0,-1,141.493,609.797)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="matrix(1,0,0,-1,149.882,609.797)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="matrix(1,0,0,-1,156.264,609.797)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -82.91443,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17416 0.95181,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -103.51927,30.4728 h 36.9577 v 12.96472 h -36.9577 z" class="c"></path></g><g transform="translate(-102.522 33.638)"><g><g transform="translate(-67.756 -712.053)"><text transform="matrix(1,0,0,-1,67.756,712.053)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,72.267,712.053)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="matrix(1,0,0,-1,80.656,712.053)"><tspan y="0" x="0 6.3812122 11.178598" class="b">3,1</tspan></text>
-<text transform="matrix(1,0,0,-1,98.211,712.053)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17417,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -46.82565,13.25607 h 36.9577 v 12.96472 h -36.9577 z" class="c"></path></g><g transform="translate(-45.829 16.421)"><g><g transform="translate(-124.449 -694.836)"><text transform="matrix(1,0,0,-1,124.449,694.836)"><tspan y="0" x="0" class="a">(</tspan></text>
-<text transform="matrix(1,0,0,-1,128.96,694.836)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="matrix(1,0,0,-1,137.349,694.836)"><tspan y="0" x="0 6.3812122 11.178598" class="b">1,1</tspan></text>
-<text transform="matrix(1,0,0,-1,154.903,694.836)"><tspan y="0" x="0" class="a">)</tspan></text>
-</g></g></g></g></g></g></g></svg></div><p class="CgN4TUbC6RytDUgyq5hzP"> What quantity is being minimized?</p>
-<span class="incontext CgN4TUbC6RytDUgyq5hzP"><a href="least-squares.html#p-1626">in-context</a></span>
+<p class="CjsSL_SSOmB06EffFZLM3">This is an <em>implicit equation</em>: the ellipse is the set of all solutions of the equation, just like the unit circle is the set of solutions of <span class="pretex-inline" style="width:5.34512em"><span style="height:1.07416em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(14.278)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(26.237)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(32.653 -4.579)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(40.074)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(51.774)"><tspan y="0" x="0 6.3812122" class="d">1.</tspan></text>
+</svg></span></span>  To say that our data points lie on the ellipse means that the above equation is satisfied for the given values of <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:1.003em"><span style="height:0.711em;vertical-align:-0.2175em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(1.435)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(7.85)"><tspan y="0" x="0" class="d">:</tspan></text>
+</svg></span></span></p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="7.75461em" version="1.1" class="pretex" viewbox="107 0 293 89"><text transform="translate(116.028 10.828)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(120.539 10.828)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(126.92 10.828)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 6.249)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 10.828)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(159.511 10.828)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(166.719 10.828)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(171.229 10.828)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(177.61 10.828)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 6.249)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 10.828)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(218.591 10.828)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(226.591 10.828)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(231.101 10.828)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(237.482 10.828)"><tspan y="0" x="0 4.5161996" class="c">)(</tspan></text>
+<text transform="translate(246.503 10.828)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(252.884 10.828)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(281.01 10.828)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(288.998 10.828)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(293.509 10.828)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(299.89 10.828)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(328.015 10.828)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(334.936 10.828)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(339.446 10.828)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(345.828 10.828)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 10.828)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 10.828)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 10.828)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(116.028 25.772)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(120.539 25.772)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(126.92 25.772)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 21.193)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 25.772)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(159.511 25.772)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(166.719 25.772)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(171.229 25.772)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(177.61 25.772)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 21.193)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 25.772)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(218.591 25.772)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(226.591 25.772)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(231.101 25.772)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(237.482 25.772)"><tspan y="0" x="0 4.5161996" class="c">)(</tspan></text>
+<text transform="translate(246.503 25.772)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(252.884 25.772)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(281.01 25.772)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(288.998 25.772)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(293.508 25.772)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(299.89 25.772)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(328.015 25.772)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(334.936 25.772)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(339.446 25.772)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(345.828 25.772)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 25.772)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 25.772)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 25.772)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(116.028 40.716)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(120.539 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(126.92 40.716)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 36.137)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 40.716)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(151.121 40.716)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(158.329 40.716)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(162.839 40.716)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(171.229 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(177.61 40.716)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 36.137)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 40.716)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(210.201 40.716)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(218.201 40.716)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(222.711 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(229.093 40.716)"><tspan y="0" x="0 4.5047226" class="c">)(</tspan></text>
+<text transform="translate(238.113 40.716)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(246.503 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(252.884 40.716)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(281.01 40.716)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(288.998 40.716)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(293.508 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(299.89 40.716)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(319.626 40.716)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(326.546 40.716)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(331.057 40.716)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(339.446 40.716)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(345.828 40.716)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 40.716)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 40.716)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 40.716)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(107.639 55.66)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(112.149 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(120.539 55.66)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(126.92 55.66)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 51.081)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 55.66)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(151.121 55.66)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(158.329 55.66)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(162.839 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(171.229 55.66)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(177.61 55.66)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 51.081)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 55.66)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(201.812 55.66)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(209.811 55.66)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(214.322 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(222.711 55.66)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(229.093 55.66)"><tspan y="0" x="0 4.5047226" class="c">)(</tspan></text>
+<text transform="translate(238.113 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(246.503 55.66)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(252.884 55.66)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(272.62 55.66)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(280.608 55.66)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(285.119 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(293.508 55.66)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(299.89 55.66)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(319.626 55.66)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(326.546 55.66)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(331.057 55.66)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(339.446 55.66)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(345.828 55.66)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 55.66)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 55.66)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 55.66)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(107.639 70.604)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(112.149 70.604)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(120.539 70.604)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(126.92 70.604)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 66.025)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 70.604)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(159.511 70.604)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(166.719 70.604)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(171.229 70.604)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(177.61 70.604)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 66.025)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 70.604)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(210.201 70.604)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(218.201 70.604)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(222.711 70.604)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(231.101 70.604)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(237.482 70.604)"><tspan y="0" x="0 4.5161996" class="c">)(</tspan></text>
+<text transform="translate(246.503 70.604)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(252.884 70.604)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(272.62 70.604)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(280.608 70.604)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(285.119 70.604)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(293.508 70.604)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(299.89 70.604)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(328.015 70.604)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(334.936 70.604)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(339.446 70.604)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(345.828 70.604)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 70.604)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 70.604)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 70.604)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(107.639 85.548)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(112.149 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(120.539 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(126.92 85.548)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(131.431 80.969)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(139.314 85.548)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(151.121 85.548)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(158.329 85.548)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(162.839 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(171.229 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(177.61 85.548)"><tspan y="0" x="0" class="c">)</tspan></text>
+<text transform="translate(182.121 80.969)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(190.004 85.548)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(201.812 85.548)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(209.811 85.548)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(214.322 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(222.711 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(229.093 85.548)"><tspan y="0" x="0 4.5047226" class="c">)(</tspan></text>
+<text transform="translate(238.113 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(246.503 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(252.884 85.548)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(272.62 85.548)"><tspan y="0" x="0" class="a">D</tspan></text>
+<text transform="translate(280.608 85.548)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(285.119 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(293.508 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(299.89 85.548)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(319.626 85.548)"><tspan y="0" x="0" class="a">E</tspan></text>
+<text transform="translate(326.546 85.548)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="translate(331.057 85.548)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(339.446 85.548)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(345.828 85.548)"><tspan y="0" x="0 7.6379433" class="c">)+</tspan></text>
+<text transform="translate(365.564 85.548)"><tspan y="0" x="0" class="a">F</tspan></text>
+<text transform="translate(376.287 85.548)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(388.984 85.548)"><tspan y="0" x="0 7.3797112" class="d">0.</tspan></text>
+</svg><span class="tag">(6.5.4)<span style="height:4.15382em"></span></span></div>
+<p class="CjsSL_SSOmB06EffFZLM3">To put this in matrix form, we move the constant terms to the right-hand side of the equals sign; then we can write this as <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> for</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="7.49322em" version="1.1" class="pretex" viewbox="98 0 307 86"><text transform="translate(99.139 46.595)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(108.189 46.595)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(119.89 1.685)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="45.334" x="0" class="f">E</tspan><tspan y="52.817001" x="0" class="f">E</tspan><tspan y="60.988998" x="0" class="f">C</tspan></text>
+<text transform="translate(130.845 11.198)"><tspan y="0" x="0 24.732935 49.46587 74.198807 98.93174" class="d">40021</tspan><tspan y="13.948" x="0 24.732935 49.46587 74.198807 98.93174" class="d">12211</tspan><tspan y="27.895" x="0" class="d">1</tspan></text>
+<text transform="translate(147.188 39.093)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(155.578 39.093)"><tspan y="0" x="0 24.732935" class="d">11</tspan></text>
+<text transform="translate(196.656 39.093)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(205.045 39.093)"><tspan y="0" x="0 24.732935" class="d">11</tspan><tspan y="13.948" x="-74.199997 -49.467064" class="d">42</tspan></text>
+<text transform="translate(171.922 53.041)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(180.312 53.041)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(196.656 53.041)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(205.045 53.041)"><tspan y="0" x="0 24.732935" class="d">21</tspan><tspan y="13.948" x="-74.199997" class="d">1</tspan></text>
+<text transform="translate(147.188 66.989)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(155.578 66.989)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(171.922 66.989)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(180.312 66.989)"><tspan y="0" x="0 24.732935 49.46587" class="d">311</tspan><tspan y="13.947" x="-49.466999 -24.734064" class="d">11</tspan></text>
+<text transform="translate(171.922 80.936)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(180.312 80.936)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(196.656 80.936)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(205.045 80.936)"><tspan y="0" x="0 24.732935" class="d">11</tspan></text>
+<text transform="translate(237.761 1.685)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="45.334" x="0" class="f">F</tspan><tspan y="52.817001" x="0" class="f">F</tspan><tspan y="60.988998" x="0" class="f">D</tspan></text>
+<text transform="translate(272.531 46.595)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(281.73 46.595)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(293.43 9.168)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(303.605 18.172)"><tspan y="0" x="0" class="a">B</tspan><tspan y="13.948" x="-0.396" class="a">C</tspan><tspan y="27.895" x="-0.24699999" class="a">D</tspan><tspan y="41.842999" x="0.287" class="a">E</tspan><tspan y="55.791" x="0.21799999" class="a">F</tspan></text>
+<text transform="translate(311.346 9.168)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(346.116 46.595)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(354.89 46.595)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(366.591 1.685)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="45.334" x="0" class="f">E</tspan><tspan y="52.817001" x="0" class="f">E</tspan><tspan y="60.988998" x="0" class="f">C</tspan></text>
+<text transform="translate(384.334 11.198)"><tspan y="0" x="0" class="d">0</tspan></text>
+<text transform="translate(375.944 25.146)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(384.334 25.146)"><tspan y="0" x="0" class="d">4</tspan></text>
+<text transform="translate(375.944 39.093)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(384.334 39.093)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(375.944 53.041)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(384.334 53.041)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(375.944 66.989)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(384.334 66.989)"><tspan y="0" x="0" class="d">9</tspan></text>
+<text transform="translate(375.944 80.937)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(384.334 80.937)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(390.715 1.685)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="45.334" x="0" class="f">F</tspan><tspan y="52.817001" x="0" class="f">F</tspan><tspan y="60.988998" x="0" class="f">D</tspan></text>
+<text transform="translate(401.67 46.595)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></div>
+<p class="CjsSL_SSOmB06EffFZLM3">We compute</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="6.18626em" version="1.1" class="pretex" viewbox="115 0 273 71"><text transform="translate(116.043 39.182)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(122.807 34.305)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="translate(128.546 39.182)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(137.596 39.182)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(149.297 1.756)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(162.26 10.76)"><tspan y="0" x="0 6.3812122 31.114147" class="d">367</tspan></text>
+<text transform="translate(209.719 10.76)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(218.108 10.76)"><tspan y="0" x="0 24.732935 43.08466 49.46587" class="d">5012</tspan><tspan y="13.947" x="-49.466999 -31.115276 -24.734064 -0.00113" class="d">7199</tspan></text>
+<text transform="translate(234.452 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(242.842 24.707)"><tspan y="0" x="0 24.732935" class="d">51</tspan></text>
+<text transform="translate(160.252 38.655)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(168.641 38.655)"><tspan y="0" x="0 24.732935 43.08466 49.46587 74.198807" class="d">59161</tspan></text>
+<text transform="translate(259.186 38.655)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(267.576 38.655)"><tspan y="0" x="0" class="d">2</tspan><tspan y="13.948" x="-98.934998" class="d">0</tspan></text>
+<text transform="translate(184.985 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(193.375 52.603)"><tspan y="0" x="0 24.732935 43.08466 49.46587 74.198807" class="d">51120</tspan><tspan y="13.947" x="-31.115 -24.733788 -0.00085299998" class="d">121</tspan></text>
+<text transform="translate(209.719 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(218.108 66.55)"><tspan y="0" x="0 24.732935 49.46587" class="d">206</tspan></text>
+<text transform="translate(275.558 1.756)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(309.467 39.182)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(316.23 34.305)"><tspan y="0" x="0" class="g">T</tspan></text>
+<text transform="translate(322.83 39.182)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(331.605 39.182)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(343.305 1.756)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(352.659 10.76)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(361.049 10.76)"><tspan y="0" x="0 6.3812122" class="d">19</tspan><tspan y="13.947" x="0 6.3812122" class="d">17</tspan><tspan y="27.895" x="0 6.3812122" class="d">20</tspan></text>
+<text transform="translate(359.04 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(367.43 52.603)"><tspan y="0" x="0" class="d">9</tspan></text>
+<text transform="translate(352.659 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(361.049 66.55)"><tspan y="0" x="0 6.3812122" class="d">16</tspan></text>
+<text transform="translate(373.811 1.756)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(384.766 39.182)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></div>
+<p class="CjsSL_SSOmB06EffFZLM3">We form an augmented matrix and row reduce:</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="6.18626em" version="1.1" class="pretex" viewbox="72 0 361 71"><text transform="translate(71.155 1.756)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(84.118 10.76)"><tspan y="0" x="0 6.3812122 31.114147" class="d">367</tspan></text>
+<text transform="translate(131.577 10.76)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(139.966 10.76)"><tspan y="0" x="0 24.732935 43.08466 49.46587" class="d">5012</tspan></text>
+<g transform="matrix(1,0,0,-1,200.796,14.944)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(205.777 10.76)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(214.167 10.76)"><tspan y="0" x="0 6.3812122" class="d">19</tspan><tspan y="13.947" x="-123.668 -105.31628 -98.935066 -74.202133" class="d">7199</tspan></text>
+<text transform="translate(156.31 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(164.7 24.707)"><tspan y="0" x="0 24.732935" class="d">51</tspan></text>
+<g transform="matrix(1,0,0,-1,200.796,28.892)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(214.167 24.707)"><tspan y="0" x="0 6.3812122" class="d">17</tspan></text>
+<text transform="translate(82.11 38.655)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(90.499 38.655)"><tspan y="0" x="0 24.732935 43.08466 49.46587 74.198807" class="d">59161</tspan></text>
+<text transform="translate(181.044 38.655)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(189.434 38.655)"><tspan y="0" x="0" class="d">2</tspan></text>
+<g transform="matrix(1,0,0,-1,200.796,42.839)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(214.167 38.655)"><tspan y="0" x="0 6.3812122" class="d">20</tspan><tspan y="13.948" x="-123.668" class="d">0</tspan></text>
+<text transform="translate(106.843 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(115.233 52.603)"><tspan y="0" x="0 24.732935 43.08466 49.46587 74.198807" class="d">51120</tspan></text>
+<g transform="matrix(1,0,0,-1,200.796,56.787)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(212.159 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(220.548 52.603)"><tspan y="0" x="0" class="d">9</tspan><tspan y="13.947" x="-136.42999 -130.04878 -105.31585" class="d">121</tspan></text>
+<text transform="translate(131.577 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(139.966 66.55)"><tspan y="0" x="0 24.732935 49.46587" class="d">206</tspan></text>
+<g transform="matrix(1,0,0,-1,200.796,70.735)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(205.777 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(214.167 66.55)"><tspan y="0" x="0 6.3812122" class="d">16</tspan></text>
+<text transform="translate(228.531 1.756)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(245.178 31.246)"><tspan y="0" x="0 4.9428043 9.8856087 14.292815" class="b">RREF</tspan></text>
+<text transform="translate(243.221 39.182)"><tspan y="0" x="0 5.8842578 11.768516" class="e">−−→</tspan></text>
+<text transform="translate(271.94 1.756)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(282.895 10.76)"><tspan y="0" x="0 16.343248 32.686497 49.029743 65.372993" class="d">10000</tspan></text>
+<g transform="matrix(1,0,0,-1,359.633,14.944)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(373.004 10.76)"><tspan y="0" x="0 6.3812122 12.762424" class="d">405</tspan></text>
+<text transform="translate(392.148 10.76)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(397.955 10.76)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan><tspan y="13.947" x="-115.06 -98.716751 -82.373505 -66.030258 -49.687008" class="d">01000</tspan></text>
+<g transform="matrix(1,0,0,-1,359.633,28.892)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(370.996 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(379.385 24.707)"><tspan y="0" x="0 6.3812122" class="d">89</tspan></text>
+<text transform="translate(392.148 24.707)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(397.955 24.707)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan><tspan y="13.948" x="-115.06 -98.716751 -82.373505 -66.030258 -49.687008" class="d">00100</tspan></text>
+<g transform="matrix(1,0,0,-1,359.633,42.839)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(373.004 38.655)"><tspan y="0" x="0 6.3812122 12.762424" class="d">201</tspan></text>
+<text transform="translate(392.148 38.655)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(397.955 38.655)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan><tspan y="13.948" x="-115.06 -98.716751 -82.373505 -66.030258 -49.687008" class="d">00010</tspan></text>
+<g transform="matrix(1,0,0,-1,359.633,56.787)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(364.614 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(373.004 52.603)"><tspan y="0" x="0 6.3812122 12.762424" class="d">123</tspan></text>
+<text transform="translate(392.148 52.603)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(397.955 52.603)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan><tspan y="13.947" x="-115.06 -98.716751 -82.373505 -66.030258 -49.687008" class="d">00001</tspan></text>
+<g transform="matrix(1,0,0,-1,359.633,70.735)"><path d="M 0,0 V 13.948" class="a"></path></g><text transform="translate(364.614 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(373.004 66.55)"><tspan y="0" x="0 6.3812122 12.762424" class="d">687</tspan></text>
+<text transform="translate(392.148 66.55)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(397.955 66.55)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(418.7 1.756)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(429.655 39.182)"><tspan y="0" x="0" class="d">.</tspan></text>
+</svg></div>
+<p class="CjsSL_SSOmB06EffFZLM3">The least-squares solution is</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="6.18626em" version="1.1" class="pretex" viewbox="202 0 99 71"><text transform="translate(203.885 39.159)"><tspan y="0" x="0" class="f">G</tspan></text>
+<text transform="translate(203.989 39.182)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(213.188 39.182)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(224.888 1.756)"><tspan y="0" x="0" class="f">A</tspan><tspan y="22.885" x="0" class="f">E</tspan><tspan y="30.368" x="0" class="f">E</tspan><tspan y="37.851002" x="0" class="f">E</tspan><tspan y="46.022999" x="0" class="f">C</tspan></text>
+<text transform="translate(238.437 10.76)"><tspan y="0" x="0 6.3812122 12.762424" class="d">405</tspan></text>
+<text transform="translate(257.581 10.76)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(263.388 10.76)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan></text>
+<text transform="translate(237.433 24.707)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(245.822 24.707)"><tspan y="0" x="0 6.3812122" class="d">89</tspan></text>
+<text transform="translate(258.585 24.707)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(264.392 24.707)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan><tspan y="13.948" x="-25.955 -19.573788 -13.192576" class="d">201</tspan></text>
+<text transform="translate(257.581 38.655)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(263.388 38.655)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(234.242 52.603)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(242.632 52.603)"><tspan y="0" x="0 6.3812122 12.762424" class="d">123</tspan></text>
+<text transform="translate(261.776 52.603)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(267.583 52.603)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan></text>
+<text transform="translate(234.242 66.55)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(242.632 66.55)"><tspan y="0" x="0 6.3812122 12.762424" class="d">687</tspan></text>
+<text transform="translate(261.776 66.55)"><tspan y="0" x="0" class="h">/</tspan></text>
+<text transform="translate(267.583 66.55)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(286.727 1.756)"><tspan y="0" x="0" class="f">B</tspan><tspan y="22.885" x="0" class="f">F</tspan><tspan y="30.368" x="0" class="f">F</tspan><tspan y="37.851002" x="0" class="f">F</tspan><tspan y="46.022999" x="0" class="f">D</tspan></text>
+<text transform="translate(297.681 39.182)"><tspan y="0" x="0" class="d">,</tspan></text>
+</svg></div>
+<p class="CjsSL_SSOmB06EffFZLM3">so the best-fit ellipse is</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="2.35252em" version="1.1" class="pretex" viewbox="126 0 251 27"><text transform="translate(127.791 17.265)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(134.322 12.387)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(141.209 17.265)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(152.929 9.185)"><tspan y="0" x="0 6.3812122 12.762424" class="d">405</tspan></text>
+<g transform="matrix(1,0,0,-1,152.929,13.948)"><path d="M 0,0 H 19.144" class="b"></path></g><text transform="translate(152.929 25.758)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan></text>
+<text transform="translate(174.702 17.265)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(181.118 12.387)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(188.005 17.265)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(202.916 9.185)"><tspan y="0" x="0 6.3812122" class="d">89</tspan></text>
+<g transform="matrix(1,0,0,-1,199.725,13.948)"><path d="M 0,0 H 19.144" class="b"></path></g><text transform="translate(199.725 25.758)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(220.925 17.265)"><tspan y="0" x="0 7.9650378" class="a">xy</tspan></text>
+<text transform="translate(237.44 17.265)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(249.16 9.185)"><tspan y="0" x="0 6.3812122 12.762424" class="d">201</tspan></text>
+<g transform="matrix(1,0,0,-1,249.16,13.948)"><path d="M 0,0 H 19.144" class="b"></path></g><text transform="translate(249.16 25.758)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(270.36 17.265)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(279.025 17.265)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(290.745 9.185)"><tspan y="0" x="0 6.3812122 12.762424" class="d">123</tspan></text>
+<g transform="matrix(1,0,0,-1,290.745,13.948)"><path d="M 0,0 H 19.144" class="b"></path></g><text transform="translate(290.745 25.758)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan></text>
+<text transform="translate(312.519 17.265)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(321.069 17.265)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(332.789 9.185)"><tspan y="0" x="0 6.3812122 12.762424" class="d">687</tspan></text>
+<g transform="matrix(1,0,0,-1,332.789,13.948)"><path d="M 0,0 H 19.144" class="b"></path></g><text transform="translate(332.789 25.758)"><tspan y="0" x="0 6.3812122 12.762424" class="d">133</tspan></text>
+<text transform="translate(355.797 17.265)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(367.498 17.265)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></div>
+<p class="CjsSL_SSOmB06EffFZLM3">Multiplying through by <span class="pretex-inline" style="width:1.946em"><span style="height:0.8835em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.762424 19.143637" class="d">266,</tspan></text>
+</svg></span></span> we can write this as</p>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="1.21983em" version="1.1" class="pretex" viewbox="120 3 264 14"><text transform="translate(120.146 13.948)"><tspan y="0" x="0 6.3812122 12.762424" class="d">266</tspan></text>
+<text transform="translate(140.15 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(146.68 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(153.567 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(164.092 13.948)"><tspan y="0" x="0 6.3812122 12.762424" class="d">405</tspan></text>
+<text transform="translate(184.67 13.948)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(191.086 9.07)"><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(197.973 13.948)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(208.497 13.948)"><tspan y="0" x="0 6.3812122 12.762424" class="d">178</tspan></text>
+<text transform="translate(228.502 13.948)"><tspan y="0" x="0 7.9650378" class="a">xy</tspan></text>
+<text transform="translate(245.017 13.948)"><tspan y="0" x="0" class="c">+</tspan></text>
+<text transform="translate(255.541 13.948)"><tspan y="0" x="0 6.3812122 12.762424" class="d">402</tspan></text>
+<text transform="translate(275.546 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(284.211 13.948)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(294.735 13.948)"><tspan y="0" x="0 6.3812122 12.762424" class="d">123</tspan></text>
+<text transform="translate(315.314 13.948)"><tspan y="0" x="0" class="a">y</tspan></text>
+<text transform="translate(323.864 13.948)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="translate(334.388 13.948)"><tspan y="0" x="0 6.3812122 12.762424 19.143637" class="d">1374</tspan></text>
+<text transform="translate(362.582 13.948)"><tspan y="0" x="0" class="c">=</tspan></text>
+<text transform="translate(374.283 13.948)"><tspan y="0" x="0 6.3812122" class="d">0.</tspan></text>
+</svg></div>
+<div class="pretex-display CjsSL_SSOmB06EffFZLM3 CjsSL_SSOmB06EffFZLM3"><svg height="19.86575em" version="1.1" class="pretex" viewbox="0 0 341 228"><g transform="matrix(1,0,0,-1,170.278,113.585)"><g><g><g><path style="stroke:#b3b3b3" d="m -170.08086,-113.38724 h 340.16172 m -340.16172,28.34682 h 340.16172 m -340.16172,28.3468 H 170.08086 M -170.08086,-28.3468 H 170.08086 M -170.08086,0 h 340.16172 m -340.16172,28.3468 h 340.16172 m -340.16172,28.34682 h 340.16172 m -340.16172,28.3468 h 340.16172 m -340.16172,28.33685 h 340.16172 m -340.16172,-226.76451 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 V 113.38724 M -28.3468,-113.38724 V 113.38724 M 0,-113.38724 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.34682,-226.77448 v 226.77448 m 28.3468,-226.77448 v 226.77448 m 28.33685,-226.77448 v 226.77448" class="c"></path></g><path d="m -170.08086,0 h 339.7632" class="d"></path><g transform="translate(169.88159)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="d"></path></g></g><path d="M 0,-113.38724 V 112.98872" class="d"></path><g transform="matrix(0,1,-1,0,0,113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="d"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,56.69362 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="M -14.28394,58.81961 H 14.28395 V 71.78433 H -14.28394 Z" class="e"></path></g><g transform="translate(-13.288 61.984)"><g><g transform="translate(-156.99 -740.399)"><text transform="matrix(1,0,0,-1,156.99,740.399)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,161.501,740.399)"><tspan y="0" x="0 6.3812122 11.167121" class="d">0,2</tspan></text>
+<text transform="matrix(1,0,0,-1,179.055,740.399)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.126 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="M 58.81961,21.86444 H 87.3875 V 34.82916 H 58.81961 Z" class="e"></path></g><g transform="translate(59.815 25.03)"><g><g transform="translate(-230.093 -703.445)"><text transform="matrix(1,0,0,-1,230.093,703.445)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,234.603,703.445)"><tspan y="0" x="0 6.3812122 11.178598" class="d">2,1</tspan></text>
+<text transform="matrix(1,0,0,-1,252.158,703.445)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,-28.3468 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17417 0.95183,-2.126 2.12599,-2.126 1.17417,0 2.126,0.95183 2.126,2.126 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m 30.4728,-37.66383 h 36.9577 v 12.96472 H 30.4728 Z" class="e"></path></g><g transform="translate(31.469 -34.498)"><g><g transform="translate(-201.747 -643.917)"><text transform="matrix(1,0,0,-1,201.747,643.917)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,206.257,643.917)"><tspan y="0" x="0 6.3812122" class="d">1,</tspan></text>
+<text transform="matrix(1,0,0,-1,217.43,643.917)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,225.82,643.917)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="matrix(1,0,0,-1,232.201,643.917)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,-56.69362 c 0,1.17418 -0.95183,2.12601 -2.12599,2.12601 -1.17417,0 -2.126,-0.95183 -2.126,-2.12601 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -46.76855,-71.78435 h 45.34752 v 12.96472 h -45.34752 z" class="e"></path></g><g transform="translate(-45.772 -68.618)"><g><g transform="translate(-124.506 -609.797)"><text transform="matrix(1,0,0,-1,124.506,609.797)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,129.017,609.797)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,137.406,609.797)"><tspan y="0" x="0 6.3812122" class="d">1,</tspan></text>
+<text transform="matrix(1,0,0,-1,148.579,609.797)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,156.969,609.797)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="matrix(1,0,0,-1,163.35,609.797)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -82.91443,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17418,0 -2.12599,-0.95183 -2.12599,-2.126 0,-1.17416 0.95181,-2.12599 2.12599,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -107.77129,30.4728 h 36.9577 v 12.96472 h -36.9577 z" class="e"></path></g><g transform="translate(-106.774 33.638)"><g><g transform="translate(-63.504 -712.053)"><text transform="matrix(1,0,0,-1,63.504,712.053)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,68.015,712.053)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,76.404,712.053)"><tspan y="0" x="0 6.3812122 11.178598" class="d">3,1</tspan></text>
+<text transform="matrix(1,0,0,-1,93.959,712.053)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m -26.22081,28.3468 c 0,1.17417 -0.95183,2.126 -2.12599,2.126 -1.17417,0 -2.126,-0.95183 -2.126,-2.126 0,-1.17416 0.95183,-2.12599 2.126,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="e"></path></g></g><g><g><path style="fill:#ffffff;stroke:none" d="m -46.82565,13.25607 h 36.9577 v 12.96472 h -36.9577 z" class="e"></path></g><g transform="translate(-45.829 16.421)"><g><g transform="translate(-124.449 -694.836)"><text transform="matrix(1,0,0,-1,124.449,694.836)"><tspan y="0" x="0" class="c">(</tspan></text>
+<text transform="matrix(1,0,0,-1,128.96,694.836)"><tspan y="0" x="0" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,137.349,694.836)"><tspan y="0" x="0 6.3812122 11.178598" class="d">1,1</tspan></text>
+<text transform="matrix(1,0,0,-1,154.903,694.836)"><tspan y="0" x="0" class="c">)</tspan></text>
+</g></g></g></g><g><path style="stroke:#e41a1c" d="M 45.14006,32.10886 C 32.47708,58.06454 -7.65259,64.53517 -44.49352,46.56163 -81.33443,28.58809 -100.93398,-7.02257 -88.271,-32.97826 c 12.66298,-25.95568 52.79268,-32.42631 89.63358,-14.45277 36.84091,17.97354 56.44046,53.5842 43.77748,79.53989 z" class="f"></path></g><g><g><path style="fill:#ffffff;stroke:none" d="M -131.25703,-100.70502 H 131.25705 V -86.3841 H -131.25703 Z" class="e"></path></g><g transform="translate(-130.259 -97.211)"><g><g transform="translate(-40.019 -581.204)"><text transform="matrix(1,0,0,-1,40.019,581.204)"><tspan y="0" x="0 6.3812122 12.762424" style="fill:#e41a1c" class="d">266</tspan></text>
+<text transform="matrix(1,0,0,-1,60.023,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,66.554,585.783)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">2</tspan></text>
+<text transform="matrix(1,0,0,-1,73.441,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">+</tspan></text>
+<text transform="matrix(1,0,0,-1,83.965,581.204)"><tspan y="0" x="0 6.3812122 12.762424" style="fill:#e41a1c" class="d">405</tspan></text>
+<text transform="matrix(1,0,0,-1,104.543,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">y</tspan></text>
+<text transform="matrix(1,0,0,-1,110.959,585.783)"><tspan y="0" x="0" style="fill:#e41a1c" class="b">2</tspan></text>
+<text transform="matrix(1,0,0,-1,117.846,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,128.37,581.204)"><tspan y="0" x="0 6.3812122 12.762424" style="fill:#e41a1c" class="d">178</tspan></text>
+<text transform="matrix(1,0,0,-1,148.375,581.204)"><tspan y="0" x="0 7.9650378" style="fill:#e41a1c" class="a">xy</tspan></text>
+<text transform="matrix(1,0,0,-1,164.89,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">+</tspan></text>
+<text transform="matrix(1,0,0,-1,175.415,581.204)"><tspan y="0" x="0 6.3812122 12.762424" style="fill:#e41a1c" class="d">402</tspan></text>
+<text transform="matrix(1,0,0,-1,195.419,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">x</tspan></text>
+<text transform="matrix(1,0,0,-1,204.084,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,214.609,581.204)"><tspan y="0" x="0 6.3812122 12.762424" style="fill:#e41a1c" class="d">123</tspan></text>
+<text transform="matrix(1,0,0,-1,235.187,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="a">y</tspan></text>
+<text transform="matrix(1,0,0,-1,243.737,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="e">−</tspan></text>
+<text transform="matrix(1,0,0,-1,254.262,581.204)"><tspan y="0" x="0 6.3812122 12.762424 19.143637" style="fill:#e41a1c" class="d">1374</tspan></text>
+<text transform="matrix(1,0,0,-1,282.455,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="c">=</tspan></text>
+<text transform="matrix(1,0,0,-1,294.156,581.204)"><tspan y="0" x="0" style="fill:#e41a1c" class="d">0</tspan></text>
+</g></g></g></g></g></g></g></svg></div><span class="incontext CjsSL_SSOmB06EffFZLM3"><a href="least-squares.html#p-1626">in-context</a></span>
 </body>
 </html>
