@@ -34,9 +34,9 @@ the license is included in gfdl.xml.
     <title>The Elimination Method</title>
     <idx><h>Elimination method</h></idx>
 
-    <p>We will solve systems of linear equations algebraically using the <term>elimination</term> method.  In other words, we will combine the equations in various ways to try to eliminate as many variables as possible from each equation.  There are three valid operations we can perform on our system of equations:
+    <p>Any system of linear equations may be algebraically solved by the <term>elimination</term> method. This involves systematically eliminating variables from a system of equations until the solution manifests. To perform elimination, there are three valid operations we may apply to a system of equations:
     <ul>
-      <li><alert>Scaling:</alert> we can multiply both sides of an equation by a nonzero number.
+      <li><alert>Scaling:</alert> we can multiply both sides of one equation by a nonzero number.
       <me>
         \syseq{x + 2y + 3z = 6;
         2x - 3y + 2z = 14;
@@ -53,7 +53,7 @@ the license is included in gfdl.xml.
         \syseq{x + 2y + 3z = 6;
         2x - 3y + 2z = 14;
         3x + y - z = -2
-        } \quad\xrightarrow{\text{2nd ${}={}$ 2nd$-2\times$1st}}\quad
+        } \quad\xrightarrow{\text{2nd ${}\to{}$ 2nd$-2\times$1st}}\quad
         \syseq{x + 2y + 3z = 6;
         \. \+ -7y - 4z = 2;
         3x + y - z = -2
@@ -73,6 +73,7 @@ the license is included in gfdl.xml.
       </me>
       </li>
     </ul>
+    Using these three operations, we begin by choosing an equation which contains the first variable <m>x</m>, <em>swap</em> to move it to be the first equation (if there are several options, pick your favorite), then <em>scale</em> this equation so that the coefficient of <m>x</m> is <m>1</m>. Next we <em>replace</em> any other equation which contains <m>x</m> by adding a scaled copy of the first equation in order to eliminate <m>x</m> from that equation. Once this has been done for all equations, only the first equation will still have an <m>x</m> term. We then forget about the first equation and the first variable and repeat this process with the second variable <m>y</m>, swapping it to be the second equation, and so on until we either run out of variables or run out of equations. An example will illuminate this process.
     </p>
 
     <example xml:id="systems-eqns-example1">
@@ -86,12 +87,12 @@ the license is included in gfdl.xml.
           2x - 3y + 2z = 14;
           3x + y - z = -2
           }
-          \quad\xrightarrow{\text{2nd ${}={}$ 2nd$-2\times$1st}}\quad&amp;
+          \quad\xrightarrow{\text{2nd ${}\to{}$ 2nd$-2\times$1st}}\quad&amp;
           \syseq{x + 2y + 3z = 6;
           \. \+ -7y - 4z = 2;
           3x + y - z = -2
           } \\
-          {}\quad\xrightarrow{\text{3rd ${}={}$ 3rd$-3\times$1st}}\quad&amp;
+          {}\quad\xrightarrow{\text{3rd ${}\to{}$ 3rd$-3\times$1st}}\quad&amp;
           \syseq{x + 2y + 3z = 6;
           \. \+ -7y - 4z = 2;
           \. \+ -5y - 10z = -20
@@ -106,7 +107,7 @@ the license is included in gfdl.xml.
           \. \+  y + 2z = 4;
           \. \+ -7y - 4z = 2
           } \\
-          {}\quad\xrightarrow{\text{3rd ${}={}$ 3rd$+7\times$2nd}}\quad&amp;
+          {}\quad\xrightarrow{\text{3rd ${}\to{}$ 3rd$+7\times$2nd}}\quad&amp;
           \syseq{x + \phantom-2y + 3z = 6;
           \. \+  y + 2z = 4;
           \. \+ \. \+ 10z = 30
@@ -134,7 +135,7 @@ the license is included in gfdl.xml.
     </example>
 
     <paragraphs><title>Augmented Matrices and Row Operations</title>
-    <p>Solving equations by elimination requires writing the variables <m>x,y,z</m> and the equals sign <m>=</m> over and over again, merely as placeholders: all that is changing in the equations is the coefficient <em>numbers</em>.  We can make our life easier by extracting only the numbers, and putting them in a box:
+    <p>Solving equations by elimination requires writing the variables <m>x,y,z</m>, the plus signs <m>+</m>, and the equals signs <m>=</m> over and over again, when all that is changing in the equations is are the coefficients.  We can make life easier by extracting only the coefficients, and putting them into a box:
     <idx><h>Augmented matrix</h><see>Matrix</see></idx>
     <me>
       \syseq{x + 2y + 3z = 6;
@@ -161,7 +162,7 @@ the license is included in gfdl.xml.
         2  -3  2  14;
         3  1  -1  -2
         }
-        \quad\xrightarrow{R_1 = R_1 \times -3}\quad
+        \quad\xrightarrow{R_1 \to -3R_1}\quad
         \amat{
         -3  -6  -9  -18 ;
         2  -3  2  14;
@@ -171,7 +172,7 @@ the license is included in gfdl.xml.
       Here the notation <m>R_1</m> simply means <q>the first row</q>, and likewise for <m>R_2,R_3,</m> etc.
       <notation><usage>R_i</usage><description>Row <m>i</m> of a matrix</description></notation>
       </li>
-      <li><alert>Replacement:</alert> add a multiple of one row to another, replacing the second row with the result.
+      <li><alert>Replacement:</alert> add a multiple of one row to another.
       <idx><h>Row operations</h><h>replacement</h></idx>
       <idx><h>Row replacement</h><see>Row operations, replacement</see></idx>
       <me>
@@ -180,7 +181,7 @@ the license is included in gfdl.xml.
         2  -3  2  14;
         3  1  -1  -2
         }
-        \quad\xrightarrow{R_2 = R_2 -2\times R_1}\quad
+        \quad\xrightarrow{R_2 \to R_2 -2 R_1}\quad
         \amat{
         1  2  3  6 ;
         0 -7 -4 2;
@@ -207,13 +208,6 @@ the license is included in gfdl.xml.
     </ul>
     </p>
 
-            <remark>
-      <p>When we wrote our row operations above we used expressions like <m>R_2 = R_2 - 2 \times R_1</m>.  Of course this does not mean that the second row is equal to the second row minus twice the first row.  Instead it means that we are <em>replacing</em> the second row with the second row minus twice the first row.  This kind of syntax is used frequently in computer programming when we want to change the value of a variable.</p>
-    </remark>
-
-
-
-
     <example xml:id="systems-eqns-example1b">
       <statement>
         <p>Solve <xref ref="systems-eqns-example"/> using row operations.</p>
@@ -233,7 +227,7 @@ the license is included in gfdl.xml.
           3  1  -1  -2
           }.
         </me>
-        Eliminating a variable from an equation means producing a zero to the left of the line in an augmented matrix.  First we produce zeros in the first column (i.e. we eliminate <m>x</m>) by subtracting multiples of the first row.
+        Each column left of the augmentation line corresponds to a variable. Eliminating a variable means getting a single row where that column has a <m>1</m> and every row below has <m>0</m> in that column. We produce zeros in the first column (i.e. we eliminate <m>x</m>) by subtracting multiples of the first row.
         <me>\def\r{\color{red}}
           \begin{split}
           \amat{
@@ -241,13 +235,13 @@ the license is included in gfdl.xml.
           2  -3  2  14;
           3  1  -1  -2
           }
-          \quad\xrightarrow{R_2=R_2-2R_1}\quad&amp;
+          \quad\xrightarrow{R_2\to R_2-2R_1}\quad&amp;
           \amat{
           1  2  3  6 ;
           \r0 -7 -4 2 ;
           3  1  -1  -2
           } \\
-          {}\quad\xrightarrow{R_3=R_3-3R_1}\quad&amp;
+          {}\quad\xrightarrow{R_3\to R_3-3R_1}\quad&amp;
           \amat{
           1  2  3  6 ;
           0 -7 -4 2 ;
@@ -255,7 +249,7 @@ the license is included in gfdl.xml.
           }
           \end{split}
         </me>
-        This was made much easier by the fact that the top-left entry is equal to <m>1</m>, so we can simply multiply the first row by the number below and subtract.  In order to eliminate <m>y</m> in the same way, we would like to produce a <m>1</m> in the second column.  We could divide the second row by <m>-7</m>, but this would produce fractions; instead, let<rsq/>s divide the third by <m>-5</m>.
+        This was made much easier by the fact that the top-left entry is equal to <m>1</m>, so we can simply multiply the first row by the number below and subtract.  In order to eliminate <m>y</m> in the same way, we would like to produce a <m>1</m> in the second column (without messing up the <m>1</m> in the first column!)  We could divide the second row by <m>-7</m>, but this would produce fractions (which are mathematically okay, but are annoying); instead, we divide <m>R_3</m> by <m>-5</m> and then swap <m>R_2</m> and <m>R_3</m>.
         <me>\def\r{\color{red}}
           \begin{split}
           \amat{
@@ -263,7 +257,7 @@ the license is included in gfdl.xml.
           0 -7 -4 2 ;
           0 -5 -10 -20
           }
-          \quad\xrightarrow{R_3=R_3\div-5}\quad&amp;
+          \quad\xrightarrow{R_3\to -\frac{1}{5}R_3}\quad&amp;
           \amat{
           1  2  3  6 ;
           0 -7 -4 2 ;
@@ -275,13 +269,13 @@ the license is included in gfdl.xml.
           0 1 2 4 ;
           0 -7 -4 2
           } \\
-          {}\quad\xrightarrow{R_3 = R_3+7R_2}\quad&amp;
+          {}\quad\xrightarrow{R_3 \to R_3+7R_2}\quad&amp;
           \amat{
           1  2  3  6 ;
           0 1 2 4 ;
           0 \r0 10 30
           } \\
-          {}\quad\xrightarrow{R_3 = R_3\div 10}\quad&amp;
+          {}\quad\xrightarrow{R_3 \to \frac{1}{10}R_3}\quad&amp;
           \amat{
           1  2  3  6 ;
           0 1 2 4 ;
@@ -289,7 +283,7 @@ the license is included in gfdl.xml.
           }
           \end{split}
         </me>
-        We swapped the second and third row just to keep things orderly.  Now we translate this augmented matrix back into a system of equations:
+        Now we translate this augmented matrix back into a system of equations:
         <me>
           \amat{
           1  2  3  6 ;
@@ -306,20 +300,22 @@ the license is included in gfdl.xml.
       </solution>
     </example>
 
-    <bluebox><p>The process of doing row operations to a matrix does not change the solution set of the corresponding linear equations!</p></bluebox>
+    <bluebox><p>The process of performing row operations on a matrix does not change the solution set of the corresponding system of linear equations.</p></bluebox>
 
-    <p>Indeed, the whole point of doing these operations is to solve the equations using the elimination method.</p>
+    <p>Indeed, the whole point of these operations is to solve the equations using the elimination method.</p>
 
     <definition>
       <idx><h>Row equivalence</h></idx>
       <statement>
-        <p>Two matrices are called <term>row equivalent</term> if one can be obtained from the other by doing some number of row operations.</p>
+        <p>Two (augmented) matrices are called <term>row equivalent</term> if one can be obtained from the other by doing some number of row operations.</p>
       </statement>
     </definition>
 
-    <p>So the linear equations of row-equivalent matrices have the <em>same solution set</em>.</p>
+    <p>So the systems of linear equations corresponding to row-equivalent matrices have the <em>same solution set</em>.</p>
 
-
+    <p>
+    Recall, a system of equations with no solutions is called an <em>inconsistent system</em>.
+    </p>
 
     <example>
       <title>An Inconsistent System</title>
@@ -349,23 +345,23 @@ the license is included in gfdl.xml.
           <me>\def\r{\color{red}}
             \begin{split}
             \amat{1 1 2; 3 4 5; 4 5 9}
-            \quad\xrightarrow{R_2=R_2-3R_1}\quad&amp;
+            \quad\xrightarrow{R_2\to R_2-3R_1}\quad&amp;
             \amat{1 1 2; \r0 1 -1; 4 5 9} \\
-            {}\quad\xrightarrow{R_3=R_3-4R_1}\quad&amp;
+            {}\quad\xrightarrow{R_3\to R_3-4R_1}\quad&amp;
             \amat{1 1 2; 0 1 -1; \r0 1 1}
             \end{split}
           </me>
           Now we clear the second entry from the last row.
           <me>\def\r{\color{red}}
             \amat{1 1 2; 0 1 -1; 0 1 1}
-            \quad\xrightarrow{R_3=R_3-R_2}\quad
+            \quad\xrightarrow{R_3\to R_3-R_2}\quad
             \amat{1 1 2; 0 1 -1; 0 \r0 2}
           </me>
           This translates back into the system of equations
           <me>
             \syseq{x + y = 2; \. \+ y = -1; \. \+ 0 = 2\rlap.}
           </me>
-          Our original system has the same solution set as this system.  But this system has no solutions: there are no values of <m>x,y</m> making the third equation true!  We conclude that our original equation was inconsistent.
+          Our original system has the same solution set as this system.  But this system has no solutions: there are no values of <m>x,y</m> making the third equation true!  Thus our original system was inconsistent.
         </p>
       </solution>
     </example>
@@ -377,12 +373,12 @@ the license is included in gfdl.xml.
   <subsection xml:id="row-reduction-echelon-forms">
     <title>Echelon Forms</title>
 
-    <p>In the previous <xref ref="row-reduction-elimination"/> we saw how to translate a system of linear equations into an augmented matrix.  We want to find an <em>algorithm</em> for <q>solving</q> such an augmented matrix.  First we must decide what it means for an augmented matrix to be <q>solved</q>.</p>
+    <p>In the previous <xref ref="row-reduction-elimination"/> we saw how to translate a system of linear equations into an augmented matrix and learned how to solve such systems by the elimination method. Here we give more precise descriptions of what <q>solved</q> matrices look like.</p>
 
     <definition>
       <idx><h>Row echelon form</h></idx>
       <statement>
-        <p>A matrix is in <term>row echelon form</term> if:
+        <p>A matrix is in <term>row echelon form</term> (REF) if:
         <ol>
           <li>All zero rows are at the bottom.</li>
           <li>The first nonzero entry of a row is to the <em>right</em> of the
@@ -395,7 +391,7 @@ the license is included in gfdl.xml.
 
     <p>Here is a picture of a matrix in row echelon form:
     <me>
-\mat{
+\amat{
 \color{red}\boxed\star,  \star,  \star,  \star,  \star ;
 0  \color{red}\boxed\star,  \star,  \star,  \star ;
 0  0  0  \color{red}\boxed\star, \star ;
@@ -415,7 +411,7 @@ the license is included in gfdl.xml.
     </definition>
 
     <p>
-      A matrix in row-echelon form is generally easy to solve using back-substitution.  For example,
+      A matrix in row echelon form is generally easy to solve using back-substitution.  For example,
         <me>
           \amat{
           1  2  3  6 ;
@@ -433,7 +429,7 @@ the license is included in gfdl.xml.
     <definition>
       <idx><h>Reduced row echelon form</h></idx>
       <statement>
-        <p>A matrix is in <term>reduced row echelon form</term> if it is in row echelon form, and in addition:
+        <p>A matrix is in <term>reduced row echelon form</term> (RREF) if it is in row echelon form, and in addition:
         <ol start="4">
           <li>Each pivot is equal to 1.</li>
           <li>Each pivot is the only nonzero entry in its column.</li>
@@ -458,7 +454,7 @@ the license is included in gfdl.xml.
     </p>
 
     <p>
-      A matrix in reduced row echelon form is in some sense completely solved.  For example,
+      A matrix in reduced row echelon form corresponds to a system of equations which is completely solved.  For example,
         <me>
           \amat{
           1  0 0 1 ;
@@ -520,9 +516,9 @@ the license is included in gfdl.xml.
           <me>\def\r{\color{red}}
             \begin{split}
             \amat{1 -1 0; 1 1 2}
-            \quad\xrightarrow{R_2=R_2-R_1}\quad&amp;
+            \quad\xrightarrow{R_2\to R_2-R_1}\quad&amp;
             \amat{1 -1 0; 0 2 2} \\
-            \quad\xrightarrow{R_2=\frac{1}{2}R_2}\quad&amp;
+            \quad\xrightarrow{R_2\to \frac{1}{2}R_2}\quad&amp;
             \amat{1 -1 0; 0 1 1}
             \end{split}
           </me>
@@ -541,7 +537,7 @@ the license is included in gfdl.xml.
 
 \end{tikzpicture}
           ]]></latex-code>
-	What has happened geometrically is that the original blue line has been replaced with the new blue line <m>y=1</m>.  We can think of the blue line as rotating, or pivoting, around the solution <m>(1,1)</m>.  We used the pivot position in the matrix in order to make the blue line pivot like this.  This is one possible explanation for the terminology <q>pivot</q>.
+	Geometrically, the original blue line has been replaced with the new blue line <m>y=1</m>.  We can think of the blue line as rotating, or pivoting, around the solution <m>(1,1)</m>.  We used the pivot position in the matrix in order to make the blue line pivot like this.  This is one possible explanation for the terminology <q>pivot</q>.
 </p>
     </remark>
 
@@ -558,15 +554,13 @@ the license is included in gfdl.xml.
       </statement>
     </theorem>
 
-    <p>We will give an algorithm, called <term>row reduction</term> or <term>Gaussian elimination</term>, which demonstrates that every matrix is row equivalent to <em>at least one</em> matrix in reduced row echelon form.</p>
+    <p>We give an algorithm, called <term>row reduction</term> or <term>Gaussian elimination</term>, which demonstrates that every matrix is row equivalent to <em>at least one</em> matrix in reduced row echelon form.</p>
 
     <bluebox>
       <p>The uniqueness statement is interesting<mdash/>it means that, no matter <em>how</em> you row reduce, you <em>always</em> get the same matrix in reduced row echelon form.</p>
     </bluebox>
 
-    <p>This assumes, of course, that you only do the three legal row operations, and you don<rsq/>t make any arithmetic errors.</p>
-
-    <p>We will not prove uniqueness, but maybe you can!</p>
+    <p>This assumes, of course, that you only do the three legal row operations, and you don<rsq/>t make any errors.</p>
 
     <algorithm xml:id="algo-row-reduction">
       <title>Row Reduction</title>
@@ -686,15 +680,15 @@ the license is included in gfdl.xml.
   }
 
   \rowop m2  $R_1 \longleftrightarrow R_2$;
-  \rowop m3  $R_1 = R_1 \div 2$;
-  \rowop m4  $R_3 = R_3 - 3R_1$;
+  \rowop m3  $R_1 \to \frac{1}{2}R_1$;
+  \rowop m4  $R_3 \to R_3 - 3R_1$;
   \rowop m5  $R_2 \longleftrightarrow R_3$;
-  \rowop m6  $R_2 = R_2 \div -5$;
-  \rowop m7  $R_3 = R_3 + 7R_2$;
-  \rowop m8  $R_3 = R_3 \div 10$;
-  \rowop m9  $R_2 = R_2 - 2R_3$;
-  \rowop m10 $R_1 = R_1 - 3R_3$;
-  \rowop m11 $R_1 = R_1 - 2R_2$;
+  \rowop m6  $R_2 \to -\frac{1}{5}R_2$;
+  \rowop m7  $R_3 \to R_3 + 7R_2$;
+  \rowop m8  $R_3 \to \frac{1}{10} R_3$;
+  \rowop m9  $R_2 \to R_2 - 2R_3$;
+  \rowop m10 $R_1 \to R_1 - 3R_3$;
+  \rowop m11 $R_1 \to R_1 - 2R_2$;
 
   \foreach \i in {1,...,11} {
     \draw ([xshift=0.5em]m\i-1-3.north east-|m\i-3-3.south east) -|
@@ -928,7 +922,7 @@ the license is included in gfdl.xml.
         </latex-code></p>
 
         <p>
-          It will be very important to know where are the pivots of a matrix after row reducing; this is the reason for the following piece of terminology.
+          It is important to know where the pivots of a matrix are after row reducing; this is the reason for the following piece of terminology.
         </p>
 
         <definition xml:id="defn-pivot-pos">
@@ -971,11 +965,10 @@ the license is included in gfdl.xml.
         <example xml:id="row-reduction-eg-inconsistent">
           <title>An Inconsistent System</title>
           <statement>
-            <p>Solve the linear system
+            <p>Solve the following linear system using row reduction.
             <me>
               \syseq{2x + 10y = -1; 3x + 15y = 2}
             </me>
-            using row reduction.
             </p>
           </statement>
           <solution>
@@ -983,22 +976,22 @@ the license is included in gfdl.xml.
               <md>
                 <mrow>
                   \amat{ 2 {10} {-1} ;3 {15} 2}
-                  \quad\xrightarrow{R_1=R_1\div 2}\quad
+                  \quad\xrightarrow{R_1\to \frac{1}{2}R_1}\quad
                   &amp;\amat{\color{red}1 5 {-\frac 12}; 3 {15} 2}
                   &amp;&amp;\color{blue}\text{(Step 1b)}
                 </mrow>
                 <mrow>
-                  {}\quad\xrightarrow{R_2=R_2-3R_1}\quad
+                  {}\quad\xrightarrow{R_2\to R_2-3R_1}\quad
                   &amp;\amat{1 5 {-\frac 12}; \color{red}0 0 \frac72}
                   &amp;&amp;\color{blue}\text{(Step 1c)}
                 </mrow>
                 <mrow>
-                  {}\quad\xrightarrow{R_2=R_2\times\frac 27}\quad
+                  {}\quad\xrightarrow{R_2\to \frac 27 R_2}\quad
                   &amp;\amat{1 5 {-\frac 12}; 0 0 \color{red}1}
                   &amp;&amp;\color{blue}\text{(Step 2b)}
                 </mrow>
                 <mrow>
-                  {}\quad\xrightarrow{R_1=R_1+\frac 12R_2}\quad
+                  {}\quad\xrightarrow{R_1\to R_1+\frac 12R_2}\quad
                   &amp;\amat{1 5 \color{red}0; 0 0 1}
                   &amp;&amp;\color{blue}\text{(Step 2c)}
                 </mrow>
@@ -1073,17 +1066,17 @@ the license is included in gfdl.xml.
               &amp;&amp;\color{blue}\text{(Optional)}
             </mrow>
             <mrow>
-              {}\quad\xrightarrow{R_2=R_2-2R_1}\quad
+              {}\quad\xrightarrow{R_2\to R_2-2R_1}\quad
               &amp;\amat{1 2 9 -1; \color{red}0 -3 -6 3}
               &amp;&amp;\color{blue}\text{(Step 1c)}
             </mrow>
             <mrow>
-              {}\quad\xrightarrow{R_2=R_2\div -3}\quad
+              {}\quad\xrightarrow{R_2\to -\frac{1}{3}R_2}\quad
               &amp;\amat{1 2 9 -1; 0 \color{red}1 2 -1}
               &amp;&amp;\color{blue}\text{(Step 2b)}
             </mrow>
             <mrow>
-              {}\quad\xrightarrow{R_1=R_1-2R_2}\quad
+              {}\quad\xrightarrow{R_1\to R_1-2R_2}\quad
               &amp;\amat{1 \color{red}0 5 1; 0 1 2 -1}
               &amp;&amp;\color{blue}\text{(Step 2c)}
             </mrow>
