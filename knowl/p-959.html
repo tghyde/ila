@@ -1,19 +1,81 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: YRCS7nG7UW7h_Lv5ViAm */
+
+@font-face {
+  font-family: "f4zcnIjDVC03Z0ajie-EP";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAT4AAoAAAAABygAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAVwAAAFqm4cP50ZGVE0AAATQAAAAGgAAAByjaNvVT1MvMgAAAVAAAABKAAAAYFbTgjRjbWFwAAADHAAAAEAAAAFKRAfiAWhlYWQAAAD0AAAAMQAAADYvjtlPaGhlYQAAASgAAAAgAAAAJAWTAzdobXR4AAAE7AAAAAwAAAAMB9wAtW1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAF+AAACtThhLVBwb3N0AAADXAAAABcAAAAg/5EANnicY2BkYGAAYmZxmb/x/DZfGbiZXwBFGJ7tPc0Hpy3+H2Daw9QH5HIwMIFEAUI0DBIAAAB4nGNgZGBg6vt/gCGKWYABCJj2MKT8f8uADJgBg00FzwAAUAAAAwAAeJxjYGb6wjiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWZAQaAfAYHGCcgzTUFSF1XSmVW+G/BEMXUB5ZjhKtWAEJGADEKDdQAAHicfZHNSsNAFIXPtLUi/ixFXN1lhbZMolRacNVSuhFKF66NcUwCIalpAr6Hj+BeX0AfwZ3ufQ5XnoyDgqiByXw3995zz2QA7OAeCp+PxoVjhW08OG5gHc+OmzhUJ45b2FN3jtewqV4ct7Gl3lmpWhuMzm1XzQr7uHXc4Nwnx01c4dVxC1pdO17Drnp03OasN3QQ4gACn041jkhzBKiQWkqYjW1cwNi9y+8VMlwyLsgl84Z7hKXtSW2PYUX97gOd8EB8rY9kHlSpzJMwDqrCBFVXquzSFFLGRqJlKmkSmiw07DjloFp2QoEV5SKK9TDGjKmgjCdmlURZb8xwwYrImg1oBgsTVWlAmCJnT2n3ghXGHrDPAwpGXL9NEDtBfmgKvK8uny6GXPWv8jHgmDwrp3kRGfH7Wkby7U7GM3FuxKtTfm/Y87U/+P10/83GX6rAmb2DWiS3Ip49Is5MsUryTLw+g6W9uZLrxt6wpvHj2vyyMKW50VoPjgf4AC8adr4AAHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBiuK6X+/w/kg+n/WnfnQtUDASMbA4IzdAATNQ0DAB6lCid4nGNgZmBg4GZg+N/MYMaABQAAKcEBxwB4nEWLPUvDUBSGz23Siu1t/cBIh1gu0kHxK4pUHMShFopFqIJDx9t4SQuh1Nigri6C2URFkIK6qDhKJglUOvRfCP4Jc0NSMNXB83BeHs7hRSCKgBBKNg3WYieKouTWcoAigEDhMuJTEZ4ReFq8wZFZLHxgsVvyyt50VIb3ERlgVIbOmAxzMtocB3HQSsIG7ENVMxhtMYMdmlSfUWfJiqKskjI1dVKuqzVqhm9znpiNA2aQVo0RrakTva6yhsoWd2irtsWO6lqD5Itkj2mmTg2yrPzfF/JFCOcZnYOAUHb31C9YDi84yHHcjiM4kzzLX4JszAmOJV5wO0FhKMXBvZDcil+xbb/i/kJDGxAadSt/btOH+2jqu9RDXf4l8Ve/GYRrbXtpt2299cOMPvWrEg96QRBLefqEty6dXXHz2i3exTJxdLuEhy9x3MIJO263Mf5M9B5x0sKpH+jRi6x4nGNgYGBkAIKrb113gOhne0/zwWgAVkgHuQAAAfQAAALYAH0DEAA4) format('woff');
+}
+
+@font-face {
+  font-family: "fpwgkXDvjHxSJ1rdG-5S_";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "fRTRiFRxQR5-1yZU1AU6t";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAXYAAoAAAAACEQAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADrAAAAfsAAAILLz/X9EZGVE0AAAWoAAAAGgAAAByjaNvVT1MvMgAAAVAAAABFAAAAYFZPXoljbWFwAAADTAAAAEoAAAFSAkMHLmhlYWQAAAD0AAAAMwAAADYuxdkDaGhlYQAAASgAAAAeAAAAJAUKAYhobXR4AAAFxAAAABIAAAASBqoAm21heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGyAAADIfNowDZwb3N0AAADmAAAABMAAAAg/3gAPXicY2BkYGBgYmB4H5c8I57f5isDN/MLoAjDs72n+eC0+v9wJmam1UAuB0gtAwMAZRcMEgB4nGNgZGBgWv0/nCGKSYcBCJiYGRgZUAELAEttApcAAAAAUAAABQAAeJxjYGZcyDiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKkdBgMmRX+WzBEMa1mWImiRgEIGQE9swqEAAAAeJydUsFqGzEUHG0cl0Io9a29PXrumvWCHZyekoWUQMmtoZRe1lnZXrKWjCQn8U/1VPpD/ZHOyiqhtL10l9UbvTdvNJIWwAt8hcLh+YzvCSuM1DThDEP1MeEjvFW/OAOMsmcJH+Nl9i7hIU6yJZlq8Jyzb7Grxwpv1CjhDCfqfcJH+KS+JDwg50fCx5DsdcJDvMo+oILFFns4tFhhjQDBBHO+BVENH0fDccdxy3GBjlxPrkbD/AMVHO6IFtQRXLAaWA/MavZumLti7y3GROfs7hif1vNxphk1431U7Zm9M4MleQ1zhsyWah1rqOx279rVOshkPi+k9lIb2ZntbtG1fq0bebDuThZ7uWiDD07XG7kyt2M57zqJfV6c9trd62YslTXLttEmtHVH7b/Zr2i05jxEi3hSrda1C5qp63gIm2gQ19ZtasbLuIMQo+NuNaVK+u9P9uwfJ/X7UgdeiZz3kTMW/GYUtiZcWrfSUo4LOZM/DDFX5vO8LMrZ/+7oJlY8e228/oPxnD/HYQO40c631vQW8gltgH9Hv0Av+UhK/85wiikLTgf9WBTF7HSKn8HiktwAAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhExAWodBj8Hw/38oy+D///9X/1/5fxmqCwwY2RiQuQQBI9BgZhYSNAwBAACihwtzAAB4nGNgZgCD/6UMtgxYAAAn6QG1AHicZY8/aBNRHMff6+Wf6TW1iXHxTB6kWYSkl4JKh1JMCKKDgyDYKOLFXJPT5C65S6xRSkR08QkWhQiKOEY7pChWpHKlo5BBJ8FFKB1CxCEu/l54AU1dHPyOX/h8+H4xcjgQxniibKpV9YYsy8eOH0V4DGE0yw4hJmF2eIyFBBZ2cCwKH0XHGz7PngwWnBLqTkoI7ZdQf0pCRyS840fOPc6DsshCd9H92bgcS8TllFGum1q+UCWJuTmZKBZRdFLTy7VsUbMKao4sG+Y1kq2TpFa1qqaqlMgp/UqcnCgWyV/OIqZqqeZ1NRcnKUNf0nKqXtWUYvwfkCooZlU1/yvOGGZJKaJRJtAkmkKjiRhHzlbe97aozdI2tm3YtgX7IJtmr4bTLnu4HGRp2B6m3T4+Dy38GcLC6HGw3/z0le54OqX1Rc2sXQ3R+upKs+Hp3HbR5NKl5IrHdwcC+AsEBAiDN1jQjXz+ZbndbrXa60arEPb9anxgPzbx2x68/i7A2mAhyCMx7ucVXunxAEQg0oMAVKASAz+PhC86unaUZ3hmMTozc74PGbiw9bM70tCNAX6B4eGuAJ09Sek0VSDRosN24yZ336OXYZfSDY5WG0/pADt9sHaAnQveesZqTTj5fPOxi+vUHfIKzehvcd8j0ftAHH/n/TZORd8fvrzWnQB4nGNgYGBkAIKrb113gOhne0/zwWgAVkgHuQAAAfQAAAEWACcBFgBLAiwAKQBeAAA=) format('woff');
+}
+
+@font-face {
+  font-family: "f7Qit6E9TpSnrgvSCrQc3";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATkAAoAAAAABxgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAT8AAAFDqOd19kZGVE0AAAS8AAAAGgAAAByjaNvVT1MvMgAAAVAAAABFAAAAYFaRXwBjbWFwAAADJAAAAEAAAAFKAHMDE2hlYWQAAAD0AAAAMQAAADYuL9lBaGhlYQAAASgAAAAeAAAAJAScANxobXR4AAAE2AAAAAoAAAAKA34AUW1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGJAAACza1tietwb3N0AAADZAAAABYAAAAg/4YAN3icY2BkYGAA4smZC/Pi+W2+MnAzvwCKMDzbe5oPTgf+d2F0YfoD5HIwMIFEAWJODHwAAAB4nGNgZGBg+vPfhSGKcSoDEDC6MDAyoAImAGH5A3sAAAAAUAAAAwAAeJxjYGacyjiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWDlZIABRgYkEJDmmgKkohlimRX+WzBEMf1h2IOiRgEIGQFNgAs9AAAAeJyNkc9Kw0AQxr+trSL+OXgQEQ9zVDBlE0pre20VL2Ip4tkYlzQQkpIm0ItP4Xvo0ZOP4E3fwgfw6Jd1URARA5v5TWbmm5ksgE3cQ+Hz0bh2rLCBB8cNrODZ8RJ66thxE3vq0XELa+rN8TLWG1vMVM1Vele2qmaFXdw5brDvk+MlZHh13MSRunXcwrZ6cbyMHfWOfUQ4gCDgpBod0hghKqSWEkan1i9grD3k94rqN/QLcsm4oY0xszWprTHMqN9tYD86kEDrjozDKpVxEk3DqjBhdShVdmMKKadG4lkqaRKZLDKsOGOjWnZEgTnlYop5GOKUobCcjsw8iTNvSHfCjNgOG3IYTExcpSHhBDlrSmsLZhi7YJsLCgY8v3UQ20F+aArOcQGf1v+qDjhNn6f+ZQG6bJdn5UlexEaCtpaBfE8pw1NxU8n5hS9+HQ68vhfooPv7pv+ZA391AC7t3dSCuRX07eq4NMU8yTPx23Rm9kZLnoW9ec1FelwLs8KUZqG17vb6+ACzLHo1AAAAeJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGKIZYv//B/LB9P9l/5dC1QMBIxsDgkN9ALJ90AMAYhsJgnicY2BmAIP/zQxmQIqRAQ0AACipAb0AAHicY2RgYWFgZGTkLShKLUmtMDAwMDO3ZGBkYmBkMPwhzfhDhumHLPMPCZYeHkZNHuaDPCx3fgd8v/FzAqsMwyZ+GQYGARmG7YIyDFoyjJJCDMxgbQy+DFEayZoKRgYGJgoBiaU5CgGZyRmJpUWpiaU6CqV5KalFCiUZqQrpBTkKOZnJqXnJqXq+iSUZLqnFmel5Cs4eCkGp6aU5iUUK/iGGCoYGCDldZw8GILBhsGNgZmRUsovp3vvDdS/j3r3fE/cy7xX7fvTHyt9H2fb+KRf94fo98Y8rO99v/yM/bxxhvH+c+c7PCaLfW/x/O/298t3J/3cLG0zu+8zjzCAfif7z+d1y/LvTzyu/nY6z8/3QFOkWbZryo3Tqd4/ZbHJcjDP0eTgn8XB183Bv5do6l4fnHvfxRTy83Tx8AI4UdqUAeJxjYGBgZACCq29dd4DoZ3tP88FoAFZIB7kAAAGVAAABlQBRAFQAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "f9obHd0LMwD7TLy9lIIr4";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATMAAoAAAAAB1AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAASYAAAExoGgdckZGVE0AAASoAAAAGgAAAByjaNvVT1MvMgAAAVAAAABFAAAAYFW3X9ljbWFwAAADLAAAADcAAAFCAA0D4mhlYWQAAAD0AAAAMQAAADYvptlBaGhlYQAAASgAAAAgAAAAJAVCA3ZobXR4AAAExAAAAAgAAAAIBiAAVG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGRAAADIWwSXexwb3N0AAADZAAAABkAAAAg/5AAN3icY2BkYGAAYgW+BX7x/DZfGbiZXwBFGJ7tPc0Hp0MYGJh2MjkAuRwMTCBRACJLCgcAAAB4nGNgZGBgcmBgYIhiFgCSDEw7GVL+v2NABkwARg4DvwAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtOf/C4YeEM0QzPiAwZCRCSjKwMrJAAOMDEggIM01BUjZMNgwK/y3YIhickBTowCEjACrzgs8AAAAeJylks1Kw0AUhU9iWxF/liKu7rKKKdNQinYltIqCQhFx7RjHNBCSkibQZ3DrQ7jTJ/ARXPo4gifjoChdCAYm893M/Tn3ZgBs4AkePh+FG8ce1vHs2McyXh0v4cjTjhvY9d4dN7HqHzpuYc2/o6fXWKF1baNq9rCNB8c+6744XsI93hw3cOk9Om5i0287bmHLP0MbEXYgCKlUoUcaQ6NCainh6cTaBYzd9/i9QoZb2gW55LnhHmNqY1IbY+hRvztAO9qRUKmejHWVyjiJJroqjK72pMpuTSHlxEg8TSVNIpNFhhHnLFSnHTHBjOliJgswxAmPdDkZmVkSZ8GQ5gU9YitWUwwuTFylmnCMnDGl3Qt6GNtghw0KBlyLKoitIL9yCk7pqV1b35E/v3a/ModUesBVjzNEn1LyrDzOi9hI2FEykO8OZHgiTrGclpr920OH3do5DA6CUIX9xTP5r2L8XQtwZf93XTq3pbt2nLgyxSzJM+l2aEztLSm55vY2KQ5gv/aaFqY0c6VUf1/hA486j2AAAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvs3//xDy/1GoSgZGNgYYkyxAid7BAgB4OQbvAHicY2BmYGDgYmD438xgBmQxMqABACm3AccAAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDCzMGBgZGJgZDD+Ic34Q4bphyzzDwmWHh7GqTxMmjzMB3lY7nf/9P1xhVWG4RC/DAODgAzDUUEZBi0ZRnYhBmaQRkOGaIYMjWRNBSMDAxOFgMTSHIWAzOSMxNKi1MRSHYXSvJTUIoWSjFSF9IIchZzM5NS85FQ938SSDJfU4sz0PAVnD4Wg1PTSnMQiBc+SRKACBZAklGlogFCp6+zBAASyDEyMjEq23Xt/uO5l3Lv3x529zHvFfjr8WPnXgW3vn3LRH64/7vxxZecDuVr0z8/fC7qTf4DIs38mfC/6AcSsfD+XiHSLNk35Udb/3Xc6mxwX4wx9Hs5JPFzdPNxbubbO5eF5wH18CQ9vNw8fAJmxakoAAHicY2BgYGQAgqtvXXeA6Gd7T/PBaABWSAe5AAADEAAAAxAAVA==) format('woff');
+}
+
+@font-face {
+  font-family: "fFf28x0qqwX0MKNTN_1fB";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUYAAoAAAAAB4AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXAAAAGOM5qGwEZGVE0AAATwAAAAGgAAAByjaNvVT1MvMgAAAVAAAABHAAAAYFrHXEJjbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYuTNJtaGhlYQAAASgAAAAeAAAAJAIR/OVobXR4AAAFDAAAAAoAAAAKA5wARm1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGNAAAC8aJ0QNNwb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAA4p4v2p/j+W2+MnAzvwCKMDzbe5oPTlv8NmCsYrABcjkYmECiAHLbDFIAAAB4nGNgZGBgsPltwBDFuAnIYmCsYgCJIAMmAE6UAvQAAAAAUAAAAwAAeJxjYGbcxDiBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWDlZIABRgYkEJDmmgKkHBmcmBX+WzBEMdiwXEBSY8OgAISMAEVYCrcAeJyVkstKw0AUhv+kVREvuBIRFwdXFWwZg9QquOqFboTahWtjHNJASEqaQPElXPge+gQ+gsu+i0v/mQ4qIoiByXwn5z+3mQDYxjM8LB+FO8cetvDi2Mca3hzXcOldO67j0Fs4XsGGv+N4FZt+m0qvvk7r1kYZ9rCPJ8c+6746ruEBC8d19LxHxyvY9d4dr2LPP0ADEY4gCNipwilphBAVUksJvRNrF9B2P+b3ChnuaRfkkn7NPcbUxqQ2RlNh3i2gER1JoNSpjMIqlVESTcKq0GF1LFV2rwspJ1riaSppEuks0oy4YiGTtscEM6aLmayJLoZ0heWkp2dJnDW7NMdUxLbZkM1grOMqDQkD5Iwp7V5Qoe2ALQ4ouOD6rYLYCvIjp6CPObVmIKPMrfLkM1PAzs65zPEFaLN0npWDvIi1BC0lF/LVsXSH4jqU/rzU2SzJMzkxoqB53gxU0P599v92hr9rAjf2/r4HmuPBjS6WkhaNqb11U2Ju/w7FAc/QoaPQpZ4rpdpnHXwAbb6EyQAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOT0sCQRjGZ9wtTUcryQzaYrBLG/3ZjajutiFCIHUKLy3roIJsorvkyUPX7RQFQXTQU34AocscooPnvoAHwc8wA7OHxi6+PIeHh98PXghUFUAIk80W8UjHMIzTs3MAIwACk29CrkX4lsI31CcEdaR8I/VHEwZPjRY08LWsAbCiAbqqgT0NVtJA+dfADbjbdXR8bBgnuGT7DVyqOzXbbxHb38e+WyEt7NUIrjYbuFF3iOuQwyvbq12Qdr3q4nwBX5Oq37Bb2Op4xG3X711sGnPiIF8A8nJgBygQ5uxeQLlFIaWsSxW6ziZ8ICaLNHzIcIt1Qyuaki9TTf2k8HeiMDMcZwKemLIyy/ZiNCqKnkgLNwh1GSYbK3qzOdszWVmCsbnOBtIfzPwwYYqyyPqx2ygr9lmauQHXZYRsotifzVl/KsoSjKX45VqQeXzh/isrvC9ux+HbEVp6RvEAJYbx4QdC48Soj5IBSv0BNtCVoXicY2BgYGQAgqtvXXeA6Gd7T/PBaABWSAe5AAABsgAAAbIARgA4AAA=) format('woff');
+}
+
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.a { font-size:11.47700024px;font-family:fRTRiFRxQR5-1yZU1AU6t }
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.b { font-size:11.47700024px;font-family:f4zcnIjDVC03Z0ajie-EP }
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.c { font-size:11.47700024px;font-family:fpwgkXDvjHxSJ1rdG-5S_ }
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.d { font-size:11.47700024px;font-family:fFf28x0qqwX0MKNTN_1fB }
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.e { font-size:11.47700024px;font-family:f7Qit6E9TpSnrgvSCrQc3 }
+.CYRCS7nG7UW7h_Lv5ViAm svg.pretex tspan.f { font-size:11.47700024px;font-family:f9obHd0LMwD7TLy9lIIr4 }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>The <a knowl="./knowl/det-is-volume.html?vers=3fc22f" knowl-id="xref-det-is-volume" alt="Theorem 4.3.6 Determinants and volumes" title="Theorem 4.3.6 Determinants and volumes">theorem</a> on determinants and volumes tells us that the <!--Style me with CSS--><em>absolute value</em> of the determinant is the volume of a paralellepiped.  This raises the question of whether the sign of the determinant has any geometric meaning.</p>
-<span class="incontext"><a href="determinants-volumes.html#p-959">in-context</a></span>
+<h5 class="heading CYRCS7nG7UW7h_Lv5ViAm"><span class="type">Paragraph</span></h5>
+<p class="CYRCS7nG7UW7h_Lv5ViAm">A <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">1</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="b">×</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="a">1</tspan></text>
+</svg></span></span> matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="c">A</tspan></text>
+</svg></span></span> is just a number <span class="pretex-inline" style="width:2.14349em"><span style="height:1.331em;vertical-align:-0.3765em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0 -10.266)"><tspan y="0" x="0" class="d">A</tspan></text>
+<text transform="translate(6.892 -0.527)"><tspan y="0" x="0" class="c">a</tspan></text>
+<text transform="translate(14.805 -10.266)"><tspan y="0" x="0" class="d">B</tspan></text>
+<text transform="translate(21.41)"><tspan y="0" x="0" class="a">.</tspan></text>
+</svg></span></span>  In this case, the parallelepiped <span class="pretex-inline" style="width:0.668em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="c">P</tspan></text>
+</svg></span></span> determined by its one row is just the interval <span class="pretex-inline" style="width:2.36249em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">[</tspan></text>
+<text transform="translate(4.671)"><tspan y="0" x="0 6.3812122" class="a">0,</tspan></text>
+<text transform="translate(16.131)"><tspan y="0" x="0" class="c">a</tspan></text>
+<text transform="translate(22.443)"><tspan y="0" x="0" class="e">]</tspan></text>
+</svg></span></span> if <span class="pretex-inline" style="width:2.66099em"><span style="height:0.8565em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">a</tspan></text>
+<text transform="translate(9.268)"><tspan y="0" x="0" class="b">≥</tspan></text>
+<text transform="translate(20.968)"><tspan y="0" x="0 6.3812122" class="a">0,</tspan></text>
+</svg></span></span> and it is <span class="pretex-inline" style="width:2.36249em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">[</tspan></text>
+<text transform="translate(4.958)"><tspan y="0" x="0" class="c">a</tspan></text>
+<text transform="translate(11.27)"><tspan y="0" x="0 4.7973862" class="a">,0</tspan></text>
+<text transform="translate(22.443)"><tspan y="0" x="0" class="e">]</tspan></text>
+</svg></span></span> if <span class="pretex-inline" style="width:2.66099em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="c">a</tspan></text>
+<text transform="translate(9.268)"><tspan y="0" x="0" class="f">&lt;</tspan></text>
+<text transform="translate(20.968)"><tspan y="0" x="0 6.3812122" class="a">0.</tspan></text>
+</svg></span></span>  In this case, the sign of the determinant determines whether the interval is to the left or the right of the origin.</p>
+<span class="incontext CYRCS7nG7UW7h_Lv5ViAm"><a href="determinants-volumes.html#p-959">in-context</a></span>
 </body>
 </html>

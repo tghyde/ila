@@ -1,19 +1,73 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: AO1aAOijCzb5H5hSpuS6 */
+
+@font-face {
+  font-family: "fZY-ePX06YUPeO_t8sKgh";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS8AAoAAAAABuQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAASkAAAEyaqDShUZGVE0AAASYAAAAGgAAAByjaNvFT1MvMgAAAVAAAABLAAAAYFYiYBFjbWFwAAADHAAAADMAAAFCAA0DfWhlYWQAAAD0AAAAMQAAADYvcdkxaGhlYQAAASgAAAAgAAAAJASyA29obXR4AAAEtAAAAAgAAAAIBbAAfW1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF9AAACtThfKkdwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4i9TF/jH89t8ZeBmfgEUYXi29zQbnK5lMGSKZuIHcjkYmECiAF2QCx4AAAB4nGNgZGBg4mcwZIhiusEABEzRDCn/3zIgAyYAUhEEJwAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTAQaYGJBAQJprCpC6znCdWeG/BUMUE///80A+I1yBAhAyAgA5mA7dAHicfZHPSsNAEMa/7R9F/HMU8TTHFtqyjaVowVNL6UUoPfRsTNc0EJKaJuB7+Aje9QX0Ebzp3efw5Jd1UZBqYLO/ycx8M5MBcIAHKHw9GleOFfbx6LiCbbw4ruJEnTuu4UjdO65jV7063sKe+mCkqu3QurRZJSsc485xhXWfHVdxjTfHNWh147iOQ/XkeIu13tFAgCYEHjvV6JGm8FEgthTRu7R2BmPvFr8XSLCgnZFz+g3vECubE9scw4jy3QEaQVM8rXsy9YtYplGw9IvM+EVLimRhMsmXRsJVLHEUmCQwzLhgoVJ2RIE15UKKtTHEhC4/X47MOgqT9pDmjBGhbdZnM5iZsIh9whgpc3J7Z4wwdsAOBxQMeDZVEFtBfmkKut9ZHrs44yl/lYc+y6RJPk6z0IjX0TKQn+5kOBHXjXRLl9c+a3va62+e7r/a+EsVmNsdlCKpFenaETE32TpKE+l2aKzs5nKeW7thjVNuuXRkJje3WuvTnsYnLp92sAAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCD+9f//IeR/LahKBkY2BhhzxAIAIt0HiQB4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAeJxjZGBhYWBkZOQtKEotSa0wMDCwMDFgYGRiYGQw+SHN+EOG6Ycs8w8Jlh4exmk8TJo8zAd5WL4L7vnx/sdiVhmGjfwyDAwCMgxbBGUYtGQYOYQYmEE6DRk8GcI0kjUVjAwMTBQCEktzFAIykzMSS4tSE0t1FErzUlKLFEoyUhXSC3IUcjKTU/OSU/V8E0syXFKLM9PzFJw9FIJS00tzEosUDA0Q4rrOHgxAsIKBiZFRyb977w/XvYx79/5Yspd5r9hPjh8r/3Kw7f1TLvrD9ceSP67sfD8YvneJfo/8Hbl16+/I72CYCGSBIJCV+D0Swt6auHABK9/PHJFu0aYpP0qnfveYzSbHxThDn4dzEg9XNw/3Vq6tc3l47nEfX8TD283DBwAeGGwWAAAAeJxjYGBgZACCq29dd4DoZ3tPs8FoAFX4B6kAAALYAAAC2AB9) format('woff');
+}
+
+@font-face {
+  font-family: "fOUtGLRh0iL7QGUVoMTVJ";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVIAAoAAAAAB7QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADpAAAAXsAAAGMJTkLdUZGVE0AAAUgAAAAGgAAAByjaNvFT1MvMgAAAVAAAABFAAAAYFZPW8xjbWFwAAADTAAAAEAAAAFKAkMD4mhlYWQAAAD0AAAAMwAAADYtkta+aGhlYQAAASgAAAAdAAAAJAGiAHBobXR4AAAFPAAAAAoAAAAKAncAJ21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGzAAADIfNwvDZwb3N0AAADjAAAABYAAAAg/3gAPnicY2BkYGBgYmAQ+SMlHs9v85WBm/kFUITh2d7TbHBa/X84wwWGMiCXA6SWgQEAPcoLjwB4nGNgZGBgKPsfzhDFKMYAAhcYGBlQARMAUY8DEgAAAAAAUAAAAwAAeJxjYGYUY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSOgx6zAr/LRiiGMoYVqKoUQBCRgAHxgnFAAAAeJydUk1r3DAUHDmbLYVQurf29si5XrwODXF6SgwJgZJbQym9eGPtrolXNpI2yf6pnEr/UP9Ix1qVUNpeamG90dO80egDwCs8QWH3fcH3iBUm6n3ECcbqU8R7eKd+cUaYJC8i3sfr5EPEYxwkCzLV6CVH30LVgBUO1STiBAfqMuI9fFZfIx6R8yPifUjyNuIx3iQfUaJDjy0sGiyxgodghoItI6rgQm/Yb9j37OdoyXXkatTMP1DB4o5oTh3BOWc95z2zmrVr5q5Ye4sp0RmrW8bn9VwYaUbNeB9UB+bgzGBBXs2cIbOhWss5lF2/tc1y5WVWFJlUTiojG9Nv5m3jVrqWh87eyXwr54133upqLVfmdipnbSuhzonVTtt7XU+l7MyiqbXxTdVS+2/2SxqtOPbBIp5Vy1VlvWbqOhzCOhjEdWfXFeNF2IEP0XK3mlI5/Q8ne/qPk/p9qR0vR8r7SBkz/scU7oy/6OxSSz7N5FT+MMRcnhZpnuXH/7ujmzDjWNuF698ZT/k4dhvAjbau6cxgIZ3RBvg6hgUGyUdShnaCIzpHb7XXj1mWnRwV+AnCBpLgAHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBh0GPT+/wfywfT/q/+vQNUDASMbA4JDBAAZN9wAAPdhCSR4nGNgZgCD/6UMtkCKkQENAAAn+gG2AAB4nGXPPywDYRzG8d/rquqc+lO1OO27GAwuh0h0MGhTYmG2SK766h3Xu+a9KxppiJicQUi6iLkY2sRgkNwu6cAk6SKxWtjeN6mEshg845N8hi+CQAAQQr0FSlyyq6rq7HQCUAcgmOEjwGXERzt4TODxwImEWkgSHqTAbWuOZZnYKcNbnwzQL8P7gAzjMlofhM4fGoIMOHAEx1OKOjGpqCm7UKJGTnfxZCKhYs3BmoWLVqGYMQ1HJ1m8Y9MtnCnhpOE6LiVaHi9Z6wqeN0386xxMiUPoNskqOGVbG0aWWK6hmcofSOkadQn9dyzbNK+Z0F4v9IGAEF6xPJ+nfeT7TV/wh9kCv24tBP3PnShPNz/TXeF2XhU9sbjQDo1+VB6b3muoka+vGrS4GfNKp+XKfqhxEPSSG2vJcih8yCLomUUEFmdiVLfsXO6qUKtVq7W6XdXjYXYz5EX3LnixwhYv78+DLcvriolCZexL6j6TxBOp50586fGk8DdZQ410AHicY2BgYGQAgqtvXXeA6Gd7T7PBaABV+AepAAABFgAAARYAJwBLAAA=) format('woff');
+}
+
+@font-face {
+  font-family: "fwdppHoElOeKoDf2BO_VL";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CAO1aAOijCzb5H5hSpuS6 svg.pretex tspan.a { font-size:11.47700024px;font-family:fwdppHoElOeKoDf2BO_VL }
+.CAO1aAOijCzb5H5hSpuS6 svg.pretex tspan.b { font-size:11.47700024px;font-family:fOUtGLRh0iL7QGUVoMTVJ }
+.CAO1aAOijCzb5H5hSpuS6 svg.pretex tspan.c { font-size:11.47700024px;font-family:fZY-ePX06YUPeO_t8sKgh }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>As suggested by its name, similarity is what is called an <!--Style me with CSS--><em>equivalence relation</em>.  This means that it satisfies the following properties.</p>
-<span class="incontext"><a href="similarity.html#p-1094">in-context</a></span>
+<h5 class="heading CAO1aAOijCzb5H5hSpuS6"><span class="type">Paragraph</span></h5>
+<p class="CAO1aAOijCzb5H5hSpuS6">Let <span class="pretex-inline" style="width:1.90449em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(11.46)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(18.667)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.722em"><span style="height:0.695em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+</svg></span></span> be <span class="pretex-inline" style="width:2.26499em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
+<text transform="translate(8.803)"><tspan y="0" x="0" class="c">×</tspan></text>
+<text transform="translate(19.614)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrices. </p>
+<ol style="list-style-type: decimal;" class="CAO1aAOijCzb5H5hSpuS6">
+<li>
+<b><i>Reflexivity:</i></b> <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is similar to itself.</li>
+<li>
+<b><i>Symmetry:</i></b> if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is similar to <span class="pretex-inline" style="width:0.931em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(7.494)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+</svg></span></span> is similar to <span class="pretex-inline" style="width:0.834em"><span style="height:0.688em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+<li>
+<b><i>Transitivity:</i></b> if <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is similar to <span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.653em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">B</tspan></text>
+</svg></span></span> is similar to <span class="pretex-inline" style="width:1em"><span style="height:0.8535em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> is similar to <span class="pretex-inline" style="width:1em"><span style="height:0.6975em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">C</tspan></text>
+<text transform="translate(8.286)"><tspan y="0" x="0" class="b">.</tspan></text>
+</svg></span></span>
+</li>
+</ol>
+<span class="incontext CAO1aAOijCzb5H5hSpuS6"><a href="similarity.html#p-1094">in-context</a></span>
 </body>
 </html>

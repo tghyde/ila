@@ -10,110 +10,484 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
 <style id="pretex-fonts">
-/* pretex cache: 3uws5IATLF37CL3WzAWF */
+/* pretex cache: wcKHciJu-uzoHlVB8JsZ */
 
 @font-face {
-  font-family: "f4pTe_cmyo4U2K5K3onzR";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATgAAoAAAAABwgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADcAAAAUcAAAFJk9AIbkZGVE0AAAS4AAAAGgAAAByjR0DNT1MvMgAAAVAAAABLAAAAYHcTgapjbWFwAAADHAAAADwAAAFKIqYjyWhlYWQAAAD0AAAAMgAAADYwSD45aGhlYQAAASgAAAAgAAAAJAXnBLBobXR4AAAE1AAAAAwAAAAMCLwAUG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZwAAAF+AAACuIynY/Nwb3N0AAADWAAAABcAAAAg/5EANnicY2BkYGAA4owly+bH89t8ZeBmfgEUYXi25m8XnJZgiGTewfgcyOVgYAKJAgB87w05AAB4nGNgZGBgfM4QyRDF/IEBCJh3MKT8f8uADJgBeg8FngAAUAAAAwAAeJxjYGZOYZzAwMrAwNTFtOf/M4YeEM0QzfiAwZCRCSjKwMrMgAwSYIyANNcUBgbFSUpCzAr/LRiiGJ//Xw4UZoSrVABCRgAXuA6qAHicfZHPSsNAEMa/tbUi/jmKeJpjC03ZhiptLx5axItQeujZmC5JICQlTcD38B086hOIT+BRfACfQ/DLuihINbDZ32RmvpnJADjEAxS+Ho0bxwoHeHS8hR28OG5goM4dN3Gs7h1vY0+9OW5hX30wUjV3aV3brJoVTnDneIt1nxw3EOPVcRNalY63caSeHbdY6x1thOhA4LNTjQFphgAVUksJvbG1Cxh7d/m9QoYl7YJc0m94R1jZnNTmGEbU7x7QDjviaz2QWVClMkvCOKgKE1RdqbKlKaSMjUSrVNIkNFlomHHFQrXslAJrykUU8zDBJV1BGU/NOokyb0JzzojINhuwGcxNVKUB4QI5c0p7F4wwdsAeBxSMeTZVEFtBfmkK+t9Z9S/yMOSpyccZC+VZeZEXkRG/p2UsP/3J5FJcP9KvXb72hp6v/bPNA/5XHn/JAgu7hloktyJ9OyUWplgneSb9Ho2VXV7Jc2uXXK/5FCM6ClOaW83lnI7wCY94dzEAAHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBQnKQn9/8/AAKHvFdx9D1UPBIxsDAjOCAUAlpIJrnicY2BmYGDgZmD438xgxoAFAAApwQHHAHicY2RgYWFgZGTkLShKLUmtMDAwMDG1ZGBkYmBkMPghw/hDlumHHPMPCZZpPEyaPMwHeVgWP/nl86OaVYZhJ78MA4OADMM+QRkGbRlGOSEGFpAubgZrhmCGhMSiovzyosz0jBKNZE0FI6CxCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQqGBghxXWcPBiBYxtjOwMzIqGIc9Ue1e+8P172Me/d+P7CXea/YD5UfK/+osO39Uy76w/X7gT+u7Hzfpx1nXPx9muhPm+N/bdj4voH4h0H8Od2/eX8LbU34Hv09pHvW7+jvwYkJ34Eif+d0s/L9zBH5JSnaNOVH6dTvHrPZ5LgYZ+jzcE7i4erm4d7KtXUuD8897uOLeHi7efgAxxR1ggB4nGNgYGBkAIKrb113gOhna/52wWgAXIoI8wAAAfQAAALYABgD8AA4) format('woff');
+  font-family: "fDBPB9TjgF0eC1spnHxoa";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWAAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADpAAAAbcAAAHA0eGlVUZGVE0AAAVcAAAAGgAAAByjaN6BT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADVAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvbtxFaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFeAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG7AAADOVaMO3hwb3N0AAADjAAAABYAAAAg/2kAW3icY2BkYGBgYmC4//+YbDy/zVcGbuYXQBGGZ3vPpMBp+f8/mbYwzQdyOUBqGRgAm/IOeAB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1r20AQfas4oYVSmkspOQ09V0YS1KDcYkNCjqXgQ29StLFFlJXZXSfxpT+pp9JDf1N/RN+ul6alKdRCM2/n480beQG8xBco7H+f8C1hhWP1PuEME/Uh4QOU6nvCE7zOThI+xKvsY8JHeJF9ZqWaPOfpa+wKWOGtOk44wzN1kfABWrVMeIJ36kfCh5CsTPgIb7IOC4zYYAeLHius4SEoUfMpiBq4aA3tlnZD22JgrWOtRsf4PRksboha8gjmzHrmPaOavbeMXbL3ClOiM3YP9I/zXDxpek1/F1lDZVBmcM26jjHDyp5sA3NYjJud7VdrL2VdF9I4aYxszWbbDr1b607uR3sj7U7mvXfe6uZWLs3VVM6GQWKfE6udtne6m8piNNd9p43vm4HcT8lfUGjDs48S8ci6WDfW6xCi2IFCMR8H2vOo3UdvuacmSUXl4Zue/uMb/TlEflHuOyrk/E9y+oLvjCNG489Hu9JSTQs5lb9ESZDCRJXXeVVUs/9ZTX5b5Ek+YBkLHanGeC32a+W8NPv1sNTW9aMJsvKS0sBbE+aFCQ8sCc+Mb82E1V4/FEUxK2r8BJOqmBgAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIH7Q//8Q8v96qEoGRjYGGJOKgPom0hIAAJB1BwV4nGNgZgCD/2kMUUCKkQENAAApAgHEAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAzsGRgZGJgZDD5Ic3wQ4bxhyzTDznmHyIsPTyMvxl5mJ/ysKxq+enx05hVhuEZvwwDg4AMw0tBGQYtGcZpQgwsIJ0cDEkMFQydRnoGuoZ6Bs75BZVFmekZJQqGlpYGConFCol5CqV5BaVJOZnFGakpCuX5RdkKSZUKTpklxSVFqYm5Cp55yXoKjjk5CmB9xQpFqcWpRWWpKXoKzvl5aZkpqXklmYk5eggNzhmJRSWpRQpO+TkpGKIMQGDMwMTIqLSie+8P172Me/f+yN7LvFfsx/kfK/+cZ9v7p1z0h+uP7D+u7Hzde753Hfk+6wjj1+9i38O+KzCv+mks2h11rG12bfefldXVAW3dUd/XdXfv8ZtQPbv7e+mcbtYP3UsTVunMjp4Stz95ccWG+m3dq7rX9q2bwLG7jt2jO3dW2aGKvc0Hc7aXrM6cFz3tO+uCY0e7n3N8Z7Y+/ltfTiNIdCfbm32xlvoRiQryDd313XU9HHw/jUW6Ratn/6ia+d1+9v5+tt/53exyXMzTVP/zcE7i4erh4T7A9Z2Pu5uHDwD3RK4pAHicY2BgYGQAgqtvXXeA6Gd7z6TAaABZsAhnAAACnwAAAp8AHw==) format('woff');
 }
 
 @font-face {
-  font-family: "f_12WxXc3WsA3dnvimX37";
-  src: url(data:application/font-woff;base64,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) format('woff');
+  font-family: "fx1G97ewSJrKR1sao0PAR";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAoIAAoAAAAADNgAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAD7AAABcEAAAZAw/SdN0ZGVE0AAAmwAAAAGgAAAByjaN6BT1MvMgAAAVAAAABLAAAAYFkrYSdjbWFwAAADUAAAAIUAAAGKFTMt6mhlYWQAAAD0AAAAMwAAADYu2duzaGhlYQAAASgAAAAeAAAAJAVjAW5obXR4AAAJzAAAADsAAAA8HAMCim1heHAAAAFIAAAABgAAAAYAD1AAbmFtZQAAAZwAAAGyAAADIfNquTFwb3N0AAAD2AAAABMAAAAg/3gAPXicY2BkYGBgYmDI21GhHs9v85WBm/kFUITh2d4zKXBa/L8akzrTAyCXA6SWgQEAXiwMVQB4nGNgZGBgevBfjSGKyYIBCJjUGRgZUAE/AFAuAtYAAAAAUAAADwAAeJxjYGa8wziBgZWBgamLaQ8DA0MPhGZ8wGDIyAQUZWBlZoABRgYkEJDmmgKkdBhKmBX+WzBEMT1guAVTw/iaaTWDAhAyAgBvvw0BAHicnVLBahsxFBxtHJdCKPWtvT1y7hp5oQ5OT8lCSqDk1lBKL+usbC9Za40kJ/FP5VT6Q/2RzMoqobS9dJfVG703bzSSFsArPEJh/3zFj4QVRup9whmG6nPCB3infnEGGGUvEj7E6+xDwkMcZQsy1eAlZ99jV48VjtUo4QxH6mPCB/iiviU8IOdnwoeQ7G3CQ7zJPqFEhw12cGiwxAoBgglmfDVRBR9Hy3HLccNxjpZcT65Bzfw9FRxuiebUEZyzGlgPzBr2rpm7ZO8NxkRn7G4Zn9fzcWYYDeNdVO2ZvTOLBXk1c5bMhmotayi7zc41y1WQyWympfJSWdnazXbeNn5larnv3K3Md3LeBB+cqdZyaW/Gcta2Evu8OOONuzP1WMrOLpra2NBULbX/Zr+k0YrzEC3iWbVcVS4Ypq7iIayjQVx1bl0xXsQdhBgdd2soVdB/f7Kn/zip35fa8wrkvI+cUfObUriz4aJzSyPFWMup/GGIuSKf5YUupv+7o+tY8ezt4vXvjef8OfYbwLVxvulsbyGf0Ab4d/QL9JIPpPTvlN8JC84E86C1nuoTPAHBc5LSAAB4nGNgYGBmgGAZBkYGEGgB8hjBfBaGDCAtxiAAFGFj0GHQYzBmsGYIZkhkSGXIYyhgKPn/HygPEjeAiqfAxP9f/X/l/+X/Z/5v/b/i/7L/8/7P/T8Laj4WwMjGgFsSm3oGJgZmFlY2KJcdhzIOFB4nAwMXN4zDw8ALJPlIsJPWAABHNR1JAAAAeJxjYGYAg/+lDLYMWAAAJ+kBtQB4nG2Ue1BUVRjAz2Uf94i4xF4vNUV7l8Ay47GQPUh6oaBUU5hi4JKBujyE3cV9RIC26qA5fUxuoGuBhqYjC+ouWiJBi1SahWb2hBxn03AketIf9l3m0OPKTNMfdf48c77f+b7v953DEbWacBw3o9phcVleMJlM95ruI1wE4Ui6fAuR4zj51gjZoJIlNeOiVB9Fqd9kNrlvwqWJI6PRcYTcEMepY+LInDhtrJ5orsdRspI4SQN5OT3FlJyWYppvr651VJSVu4xpGRkmY4nTWGIzum3V7pVVFc5yy2pjjd1RaVxZa8yqcDldDkuJ1ZhrW5VifLSqyjgV5zQ6LE6L43nL6hTjfLuttGK1xeaqKKlK+TdgfnmJw2Vx/GfjSbvDWlJFlDWDRJMYoicCmUniyFySRbJJDnmKLCb5JPp62olkKXGRXvIDl8OdjYiNeF0VpapXDakz1EfU40ghJGeHuFAIB0KqUKycKHdMJmpDkzWinI0Dk9m8Lp49iO3ceZRUR9mD4rjv02/gMj1jDRZWONxrDFDrXe/z0DMbtJBVuiJrPdXFb0KB+xoFFUoYKZbb7GVl/upAoL09ELS3l0s6T5/8Uy/39hge+UGFnRMPiywhmenZWrZ2jAmYgAljKOBaXJuMepYgFalHQ7PYcra8cFZqasE4Lkdz/2+jkg6OTXBtHG4bUeGZ6wzrY1CCae0wGfDUMX4zFOMIwDFGvJ4WmOA0Orggh/r1cuxPrh7hEsZfEJUrFuAM1ADqKWoyh5jIbrh7QXbFHnfA0Aot3td30N/5jl3+pg4IQ2gJJAG7kcUwjtlZDn2CF7zyKrx/hbb2Xo1uQ6/8vcKefjV3VCjGz/Ca+HN7/0kYpuMPnWNRLOaeRbmVe90HFexr23Zup2O8v61zewDocKgg84F88+1SAzQ0NgDN4994ZXdjK1DB++OJZzPTc3NMkhXszdWttOqSZsO2jY2bgFY63baCC3k4HVN+uYpqCa4+/jFTNVPdY9c9YaPS/DHFFd4tu8Vye3VZebstEPD7A0HbgXIp+Q+DYvDc/xk8+69Bz4B8JaQ//aH5e3xpNPOE4D/dJr5T87HnC8C58EsYMBKOr+uy+Z/tyW8t2EOFpalHzfvhHHzZ33cJAtDRsH89balrSToBgKmavDeWbF8K7DZIzwSmgTmnSlFlpoIfuaJTtXA/ZOcXzoEVYGm2tdAXd3mQzwONDqMb3isK4roAJh7XHxvB4rCwDr87Jb62GOMBgsu8ta2A3Zrx57pvY/qHn3nS2dzwpuH8t9oDvn3e/UC/aFuTKVXyrMicaoUEKhx65N1lFwx9MLB3sJseVhfaVtavgUKwHoJ34cvBAxh/lOowd9NgflA2HcfsztY2fXAEd4aFblmYSBNZHl/VZN1mB8qS4o1sLjN+m4yc9D70tfW/TYXlz+DsIG/21rXCxDwLMF0ZVGmE7uHJYbHUVeYpA5r21Oc4DWM+uzgu7YOOzYc3Ut3vm05i5TGM7+G6LuOGKyp56TXxaUthTSHcDouGAGdSHw7zjT7YATsoRi/4Shm9m+cksrvYHVdn402GQTjbdvotmo5NIqvXvnrp5AdnFAVdz8EDSilPQFAWOh2f6MfDWBEWejpi0R7UTmWII5ruvV2+g0C/OmDNkoDtrqs3b4EytCt9zZ86EdD8aj4x11AMBa5FpfR9Cy+cZ1Sp6XMA9mddff4Wxc88Zgviwh55Rqd7UD8WVh6icFH5QUX0BLWPT1Hmabo2d25VZODsn3/DdDRmjLEIqQiKapatmoL6/4FODk9BhYuYgg0iXuGP7D208zDQ7z7MYTyLXph5p+QEu3eNj+oKt/bL03ovt3EjYdWInCGyIX7BHmvYcBR6mnpbaBfv2uLa6gKa/eKhIQl3YVIvS7pWyhen5NoUJzp5YKY8U6xvld0+XLi7t1nLbMAbIlW+WX9FTWuKimyMmt4dGZ4OUbq/AcfT44IAAAB4nGNgYGBkAIKrb113gOhne8+kwGgAWbAIZwAAeJxj/MLAwCjGoA7E3kw6DJpAHAfEWiA2oz2DI5C2YfwN5JsyqDC+ZlBlsmCQY1JnEGf0Y5AEAOgPB6UA) format('woff');
 }
 
 @font-face {
-  font-family: "fzM6OifZAFDG7cR4Zq4pA";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVcAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAaoAAAHJYF595EZGVE0AAAUsAAAAGgAAAByjR0DNT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADIAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMgAAADYviT45aGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFSAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGGAAAC0In2QC5wb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAA4vBt7V/j+W2+MnAzvwCKMDxb87cLTlv8d2G6wfQHyOVgYAKJAgCZgw6wAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr+trSL+uSkiHuao0JRNkFK8tqgXsRTxbEyXNBCSkibg0XfwPfQu+AgexcfwAbz47booiIiBzfwmM/PNbAbAJu6h8PloXHtW2MCD5xZW8Ox5CQN14rmNPfXouYM19eZ5GeutLWaq9iq9K1dlWWEXd55b7PvkeQlzvHhuU//Wcwfb6tXzMnbUO/aR4ACCiJNqHJLGiNEgd5QxOnN+BeNsl98bFJjSr8g144Y2ZUdbk7sawwz77gH7yYFEWh/KOG5yGWfJLG4qEzddaYqpqaSeGUnnueRZYorEsOKMjazsiAILyqUUCzDEKUNxPRuZRZYWwZDuhBmpGzbmMJiYtMljwjFK1tTOVsww7oI9XlBwxPNbB3Ed5Iem4BwXCGnDr2r7qwIMeCxF6LNhWdTHZZUaiXpajuR7Thmeip9Lzi9CCW040sEgiHTU//2y/xkFf7UALt16rGDpBEN3e1yaapGVhYQ9OnO31Jrnxi3frr9vs+aVqc2N5tL6Gh8c1XqSAAB4nGNgYGBmgGAZBkYGEPAB8hjBfBYGAyDNAYRMQFqTQZvB9v9/IEsDwvp/8/+N/8ehusCAkY0BmYsXMDKBbUUFLERqHsQAAKuIC3sAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWMT2sTURTF78tMZ9L0ddTiiOCzPCEL+8c4kSCYLmsgm5IgrgQXQxySwBBKzDCu3c6iIm0piA64KHY2biyYxUhNFvMhCkX6CVx53/Ai+IKIl8PlcO75XQK6DoSQ5d2hN/JeOY5Te+gAKQCBirhFBCuI25q4qa9R7TvVp7Kd+/mbBQafrzCAqwy+XmOwwciHFdDmTBV24Nndzhp/oB7xthv4vN3v9Nxg6LnBJg8GL7whH/U83t31ud/veIOOV9lxR73H3st+d8C3m/yJ1w18d8hbT6u86vy/3dtugppFKAGFVVggpOzGkwvZiFLRSEma4lmqpTdEWZzMykY6C23RwLNZw7Rke5z/HJPpDw3v4Bc7wuNzZGjGxbEp66E0ZCWSEyVUDuvhPDbjLWSqWPwH456i9+a0PN6STJph8bmJ9RgNrEQ4UZLKyXo8j83wXDJVLFrf8DAjeJlpeImHtkwyTDDJpFotmcikdWJav3A9QycjU1Gw81r2u2bIT/pfYwl2PX9kv94XwQE23xmrJXJ0ny6+paWILp2WTt9TerGUfaTLEbX+AOiqv5YAAHicY2BgYGQAgqtvXXeA6Gdr/nbBaABcigjzAAAB9AAAAYgAOAGIADgC2AA4AxAAOA==) format('woff');
+  font-family: "f9dWYoraMoasPJImsl7gl";
+  src: url(data:application/font-woff;base64,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) format('woff');
 }
 
 @font-face {
-  font-family: "foBln1EA8aK5OfE8L1HJp";
-  src: url(data:application/font-woff;base64,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) format('woff');
+  font-family: "f3O4dc_lOAMtUC44bxRfp";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVcAAoAAAAAB7AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAaoAAAHJZl5/3kZGVE0AAAUsAAAAGgAAAByjaN6BT1MvMgAAAVAAAABFAAAAYFZeX4NjbWFwAAADIAAAAEsAAAFSAEQEOmhlYWQAAAD0AAAAMQAAADYvqtvtaGhlYQAAASgAAAAeAAAAJAYwAlpobXR4AAAFSAAAABQAAAAUCuwA4G1heHAAAAFIAAAABgAAAAYABVAAbmFtZQAAAZgAAAGIAAACza1qguFwb3N0AAADbAAAABMAAAAg/4YANnicY2BkYGAAYhb39nPx/DZfGbiZXwBFGJ7tPZMCpy3+uzDdYPoD5HIwMIFEAWPXDTsAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAJWAGBDA5AAAAAAUAAABQAAeJxjYGayY5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAjCAqOAAAAeJyNkc9Kw0AQxr/tH0X8c/AgIh7mqGDLJpRqe61KL9Ii0rMxLmkgJCVNoBefwvfQoycfwZu+hQ/g0S/roiBFDEzmN9mZb2ayALbwAIWvR+PGscImHh3XsIoXx3UcqzPHDeyrJ8dNrKt3xyvYqG0zUzXWGF3bqooV9nDvuMa+z47rSPHmuIETdee4iR316ngFu+oDBwhxCIHPSTU6pDEClEgsxTyd2jiHsf6I30uq3zLOyQXPDX2Ema1JbI1hRvVuAwfhofhad2QclImM43AalLkJyiMp01uTSzE1Es0SSeLQpKFhxQUbVbKnFJhTLqJYCwMMeRQU01Mzj6O0NWB4yYzIDhtwGFyaqEwCwjky1hTW58wwdsE2FxT0acs6iO0gvzQFI1zBo/e+q31O06NVv8xHl+2ytDjP8siI39bSl58pZTAUN5WMrjzxqmO/1Wv52u8u3/Q/c+CvDsDE3k0lmFlBz66OicnncZaK12Ywszda0Bb25jUXqQyz3BRmobXu6i4+AbJjeiF4nGNgYGBmgGAZBkYGEPAB8hjBfBYGAyDNAYRMQFqTQZvB9v9/IEsDwvp/8/+N/8ehusCAkY0BmYsXMDKBbUUFLERqHsQAAKuIC3sAeJxjYGYAg//NDGYMWAAAKJgBvAB4nEWLT2sTURTF38tMZ9L0dfyDI4LP8oQsrNo4kVAwXdZANiVBXAkuhvhIAkMoMcN07XYWlVKLIDrgotjZuLFgFiM1WcyHKBTpJ+iq9w03ghNEvBwuh3POjxJdJ5TS5e2hHMkdx3HWnXVCC4SSirpNFS+oO5q6pa8y7SfTp9jOvOztAidfr3BCrnLy/RonDzj9dJ1oc6ZKtsiLe51V8dhxaqLt+p5o9zs91x9K138o/MErORSjnhTdbU94/Y4cdGRlyx31nsrX/e5AbDbFM9n1PXcoWs+rour879Y2myS/RVIijKyQBUrLbjQ5w0aYqEZCkwROEi25qcrqaFY2kllgqwaczBqmhe1xdjGm018a3IVvdgiHp8DBjIpjE+sBGlgJcZILcgf1YB6b0QbwfFj8B8NuTu/OaTzcQI5mUHxpQj0CAyohTHJh7rAezWMzOEWeD4vWDzhIKZynGpzDgY1xCjHEKeavhTHGrSPTuoT7KTgpnaqCndXS3zUDv+h/jaX4jeyJ/WZf+e+g+cFYKdH3j9jiHiuFbOm4dPyRsbOl9DNbDpn1B+wSv5gAAHicY2BgYGQAgqtvXXeA6Gd7z6TAaABZsAhnAAAB9AAAAYgAOAGIADgC2AA4AxAAOA==) format('woff');
 }
 
 @font-face {
-  font-family: "fPTJczzzYUy78TaHUWGLa";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWEAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAbcAAAHAyeGjW0ZGVE0AAAVgAAAAGgAAAByjR0DNT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADWAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvTT6RaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFfAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG9AAADPGi5++Jwb3N0AAADkAAAABYAAAAg/2kAW3icY2BkYGBgYmA4o3WAK57f5isDN/MLoAjDszV/u+C0/P+fTFuY5gO5HCC1DAwAe5AOAwB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1vEzEUHG/TCiSE6AVxQXrizEa7qxA1vTUrFfXIJQdum66brLr1RrbTNkf+UE+IE/+Jv8DYsSiIIrHWPo/fx7x5lgG8xAMU9t9nfEtY4Vh9SDjDSH1K+ACV+p7wCK+ztwkf4lW2SPgIL7IvzFSj5zx9jVUBK7xTxwlneKY+JnyAVi0SHuG9+pHwISSbJHyEN9kKNQZssINFhxXW8BCUmHEVRA1ctIZ2S7uhXaJnrmOuRkv/HRksromW5BHMGfWMe3o1a2/ou2DtJcZEZ6zuuT/2c/GkuWvut5E1ZAZlBlfMa+kzzOzI1jOGetjsbLdaeylns0IaJ42Rrdlsl33n1rqVu8Fey3In8847b3VzIxfmcixnfS+xzonVTttb3Y6lHsxV12rju6Yn91PyawptePZRIh5Z63VjvQ4uiu0pFPOhpz2P2n3cLefUJKmoPNzp6T/u6M8m8otyX1GxNscJ/4AqTNlkMP58sCst1biQU/lLlgQxDFRFfpJXRTX9n+nkt1meJAQWMdGRaogvYz9ZzneznxALbV03mKArL6kNfDihX+hwz5SwJhyhZMBqr++LophMS/wEYCWYhQAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCB+0P//EPL/eqhKBkY2BhiTioD6JtISAACQdQcFeJxjYGYAg/9pDFFAipEBDQAAKQIBxAAAeJxjZGBhYWBkZOQtKEotSa0wMDAwMTNkYGRiYGQw+SHN8EOG8Ycs0w855h8iLD08jL8ZeZif8rCsavnp8dOYVYbhGb8MA4OADMNLQRkGLRnGaUIMLCCdHAxJDBUMnUZ6BrqGegbO+QWVRZnpGSUKhpaWBgqJxQqJeQqleQWlSTmZxRmpKQrl+UXZCkmVCk6ZJcUlRamJuQqeecl6Co45OQpgfcUKRanFqUVlqSl6Cs75eWmZKal5JZmJOXoIDc4ZiUUlqUUKTvk5KRiiDEBgzMDEyKi0onvvD9e9jHv3/sjey7xX7Mf5Hyv/nGfb+6dc9Ifrj+w/rux83Xu+dx35PusI49fvYt/Dviswr/ppLNoddaxtdm33n5XV1QFt3VHf13V37/GbUD27+3vpnG7WD91LE1bpzI6eErc/eXHFhvpt3au61/atm8Cxu47dozt3Vtmhir3NB3O2l6zOnBc97TvrgmNHu59zfGe2Pv5bX04jSHQn25t9sZb6EYkK8g3d9d11PRx8P41FukWrZ/+omvndfvb+frbf+d3sclzM01T/83BO4uHq4eE+wPWdj7ubhw8A8JauJQB4nGNgYGBkAIKrb113gOhna/52wWgAXIoI8wAAAp8AAAKfAB8=) format('woff');
+  font-family: "fbcU4m_CDqccsx24fZksG";
+  src: url(data:application/font-woff;base64,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) format('woff');
 }
 
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.a { font-size:11.47700024px;font-family:foBln1EA8aK5OfE8L1HJp }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.b { font-size:11.47700024px;font-family:f_12WxXc3WsA3dnvimX37 }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.c { font-size:11.47700024px;font-family:f4pTe_cmyo4U2K5K3onzR }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.d { font-size:7.65140009px;font-family:f_12WxXc3WsA3dnvimX37 }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.e { font-size:7.65140009px;font-family:foBln1EA8aK5OfE8L1HJp }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.f { font-size:7.65140009px;font-family:f4pTe_cmyo4U2K5K3onzR }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.g { font-size:7.65140009px;font-family:fzM6OifZAFDG7cR4Zq4pA }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.h { font-size:11.47700024px;font-family:fPTJczzzYUy78TaHUWGLa }
-.C3uws5IATLF37CL3WzAWF svg.pretex tspan.i { font-size:11.47700024px;font-family:fzM6OifZAFDG7cR4Zq4pA }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.a { font-size:11.47700024px;font-family:f9dWYoraMoasPJImsl7gl }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.b { font-size:11.47700024px;font-family:f3O4dc_lOAMtUC44bxRfp }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.c { font-size:11.47700024px;font-family:fx1G97ewSJrKR1sao0PAR }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.d { font-size:7.65140009px;font-family:fx1G97ewSJrKR1sao0PAR }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.e { font-size:7.65140009px;font-family:f9dWYoraMoasPJImsl7gl }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.f { font-size:11.47700024px;font-family:fbcU4m_CDqccsx24fZksG }
+.CwcKHciJu-uzoHlVB8JsZ svg.pretex tspan.g { font-size:11.47700024px;font-family:fDBPB9TjgF0eC1spnHxoa }
 </style>
 </head>
 <body>
-<h5 class="heading C3uws5IATLF37CL3WzAWF"><span class="type">Paragraph</span></h5>
-<p class="C3uws5IATLF37CL3WzAWF">Let <span class="pretex-inline" style="width:0.362em"><span style="height:0.71em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">i</tspan></text>
-</svg></span></span> be a whole number between <span class="pretex-inline" style="width:0.556em"><span style="height:0.6935em;vertical-align:-0.007em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">1</tspan></text>
-</svg></span></span> and <span class="pretex-inline" style="width:0.859em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
-<text transform="translate(6.668)"><tspan y="0" x="0" class="b">,</tspan></text>
-</svg></span></span> and fix <span class="pretex-inline" style="width:2.23999em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">n</tspan></text>
-<text transform="translate(8.803)"><tspan y="0" x="0" class="c">−</tspan></text>
-<text transform="translate(19.327)"><tspan y="0" x="0" class="b">1</tspan></text>
-</svg></span></span> vectors <span class="pretex-inline" style="width:10.9493em"><span style="height:0.724em;vertical-align:-0.239em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(5.498 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(10.25)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(15.615)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(20.539 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
-<text transform="translate(25.291)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="b">,...,</tspan></text>
-<text transform="translate(49.823)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(54.938 2.594)"><tspan y="0" x="0" class="e">i</tspan></text>
-<text transform="translate(57.517 2.594)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(63.11 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(67.862)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(73.228)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(78.342 2.594)"><tspan y="0" x="0" class="e">i</tspan></text>
-<text transform="translate(80.921 2.594)"><tspan y="0" x="0" class="g">+</tspan></text>
-<text transform="translate(86.514 2.594)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(91.266)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="b">,...,</tspan></text>
-<text transform="translate(115.798)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(120.913 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
-</svg></span></span> in <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="h">R</tspan></text>
-<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="e">n</tspan></text>
-<text transform="translate(12.645)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></span></span>  Then the transformation <span class="pretex-inline" style="width:4.67572em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
-<text transform="translate(9.503)"><tspan y="0" x="0" class="b">:</tspan></text>
-<text transform="translate(16.366)"><tspan y="0" x="0" class="h">R</tspan></text>
-<text transform="translate(24.259 -4.579)"><tspan y="0" x="0" class="e">n</tspan></text>
-<text transform="translate(31.679)"><tspan y="0" x="0" class="c">→</tspan></text>
-<text transform="translate(45.962)"><tspan y="0" x="0" class="h">R</tspan></text>
-</svg></span></span> defined by</p>
-<div class="pretex-display C3uws5IATLF37CL3WzAWF"><svg height="1.21983em" version="1.1" class="pretex" viewbox="151 4 202 14"><text transform="translate(151.554 13.948)"><tspan y="0" x="0" class="a">T</tspan></text>
-<text transform="translate(159.416 13.948)"><tspan y="0" x="0" class="i">(</tspan></text>
-<text transform="translate(164.787 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
-<text transform="translate(171.318 13.948)"><tspan y="0" x="0 7.1788635" class="i">)=</tspan></text>
-<text transform="translate(190.197 13.948)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(206.15 13.948)"><tspan y="0" x="0" class="i">(</tspan></text>
-<text transform="translate(211.235 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(216.158 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(220.911 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(226.276 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(231.2 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
-<text transform="translate(235.952 13.948)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="b">,...,</tspan></text>
-<text transform="translate(260.484 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(265.599 16.542)"><tspan y="0" x="0" class="e">i</tspan></text>
-<text transform="translate(268.177 16.542)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(273.771 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(278.523 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(284.175 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
-<text transform="translate(290.706 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
-<text transform="translate(296.071 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(301.186 16.542)"><tspan y="0" x="0" class="e">i</tspan></text>
-<text transform="translate(303.765 16.542)"><tspan y="0" x="0" class="g">+</tspan></text>
-<text transform="translate(309.358 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
-<text transform="translate(314.11 13.948)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="b">,...,</tspan></text>
-<text transform="translate(338.642 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
-<text transform="translate(343.757 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
-<text transform="translate(348.509 13.948)"><tspan y="0" x="0" class="i">)</tspan></text>
+<h5 class="heading CwcKHciJu-uzoHlVB8JsZ"><span class="type">Paragraph</span></h5>
+<p class="CwcKHciJu-uzoHlVB8JsZ">First assume that <span class="pretex-inline" style="width:2.44799em"><span style="height:0.8725em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">i</tspan></text>
+<text transform="translate(6.823)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(18.524)"><tspan y="0" x="0 6.3812122" class="c">1,</tspan></text>
+</svg></span></span> so</p>
+<div class="pretex-display CwcKHciJu-uzoHlVB8JsZ"><svg height="1.21983em" version="1.1" class="pretex" viewBox="190 4 124 14"><text transform="translate(190.467 13.948)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(198.329 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(203.7 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(210.231 13.948)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(229.11 13.948)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(245.063 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(250.435 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(256.965 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(262.33 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(267.254 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(272.006 13.948)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(296.538 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(301.653 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(306.406 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(310.916 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
 </svg></div>
-<p class="C3uws5IATLF37CL3WzAWF">is <em>linear</em>.</p>
-<span class="incontext C3uws5IATLF37CL3WzAWF"><a href="determinants-definitions-properties.html#p-865">in-context</a></span>
+<p class="CwcKHciJu-uzoHlVB8JsZ">We have to show that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> satisfies the <a knowl="./knowl/linear-trans-defn.html?vers=b58525" knowl-id="xref-linear-trans-defn" alt="Definition 3.3.1 " title="Definition 3.3.1 ">defining properties in Section 3.3</a>. </p>
+<ul style="list-style-type: disc;" class="CwcKHciJu-uzoHlVB8JsZ">
+<li>By the first <a knowl="./knowl/det-defn-the-defn.html?vers=b58525" knowl-id="xref-det-defn-the-defn" alt="Definition 4.1.1 " title="Definition 4.1.1 ">defining property</a>, scaling any row of a matrix by a number <span class="pretex-inline" style="width:0.469em"><span style="height:0.4965em;vertical-align:-0.0115em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
+</svg></span></span> scales the determinant by a factor of <span class="pretex-inline" style="width:0.747em"><span style="height:0.499em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(5.383)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  This implies that <span class="pretex-inline" style="width:0.735em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+</svg></span></span> satisfies the second property, i.e., that
+<div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewBox="111 4 283 14"><text transform="translate(111.205 13.948)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(119.067 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(123.864 13.948)"><tspan y="0" x="0 5.956563" class="a">cx</tspan></text>
+<text transform="translate(136.351 13.948)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(155.231 13.948)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(171.184 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(175.981 13.948)"><tspan y="0" x="0 5.956563" class="a">cx</tspan></text>
+<text transform="translate(188.468 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(193.834 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(198.758 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(203.51 13.948)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(228.042 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(233.157 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(237.909 13.948)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(257.076 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(263.773 13.948)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(279.726 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(285.097 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(291.627 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(296.993 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(301.916 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(306.669 13.948)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(331.201 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(336.316 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(341.068 13.948)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(360.234 13.948)"><tspan y="0" x="0 5.6696382" class="a">cT</tspan></text>
+<text transform="translate(373.766 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(379.137 13.948)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(385.668 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(390.178 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+</li>
+<li>
+<p>We claim that <span class="pretex-inline" style="width:10.88296em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(13.52)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(21.439)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(32.25)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(40.433)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(59.887)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(67.749)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(72.833)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(78.617)"><tspan y="0" x="0 6.6509213" class="b">)+</tspan></text>
+<text transform="translate(96.361)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(104.223)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(109.02)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(117.203)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(121.714)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span> If <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:8.17578em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(36.038)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(41.403)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(46.327 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(51.079)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(75.611)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(80.726 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(85.478)"><tspan y="0" x="0" class="f">}</tspan></text>
+<text transform="translate(90.643)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then</p>
+<div class="pretex-display"><svg height="1.04557em" version="1.1" class="pretex" viewBox="189 6 125 12"><text transform="translate(189.567 13.948)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(200.419 13.948)"><tspan y="0" x="0" class="b">=</tspan></text>
+<text transform="translate(212.407 13.948)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(225.995 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(236.807 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(241.329 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(246.655 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(251.578 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(258.465 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(268.99 13.948)"><tspan y="0" x="0 4.8203402 9.6521568" class="f">···</tspan></text>
+<text transform="translate(284.002 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(294.813 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(299.526 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(304.852 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(309.967 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></div>
+<p>for some scalars <span class="pretex-inline" style="width:4.93478em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(5.383)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(10.461)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(14.983 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(19.736)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(43.981)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(48.694 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(53.446)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be the matrix with rows <span class="pretex-inline" style="width:6.92478em"><span style="height:0.829em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(8.493)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(19.304)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(26.845)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(32.21)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(37.134 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(41.886)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(66.418)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(71.533 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(76.285)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> so <span class="pretex-inline" style="width:8.17797em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(13.52)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(21.439)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(32.25)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(40.433)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(59.313)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(75.266)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(79.777)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(86.158)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(90.668)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  By performing the row operations</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewBox="107 5 289 13"><text transform="translate(108.023 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(115.219 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(122.64 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(136.923 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(144.119 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(151.006 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(161.817 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(166.339 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(171.091 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(178.288 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(183.04 13.948)"><tspan y="0" x="0" class="c">;</tspan></text>
+<text transform="translate(199.779 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(206.975 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(214.396 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(228.679 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(235.875 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(242.762 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(253.573 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(258.095 16.542)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(262.848 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(270.044 16.542)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(274.796 13.948)"><tspan y="0" x="0 16.733465 21.530851 26.316761" class="c">;...</tspan></text>
+<text transform="translate(317.387 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(324.583 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(332.004 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(346.287 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(353.483 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(360.37 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(371.181 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(375.895 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(380.647 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(388.034 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(392.787 13.948)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></div>
+<p>the first row of the matrix <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> becomes</p>
+<div class="pretex-display"><svg height="1.21983em" version="1.1" class="pretex" viewBox="136 4 231 14"><text transform="translate(137.909 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(145.829 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(156.64 13.948)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(166.958 13.948)"><tspan y="0" x="0" class="f">−</tspan></text>
+<text transform="translate(177.482 13.948)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(182.279 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(186.801 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(192.128 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(197.051 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(203.938 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(214.463 13.948)"><tspan y="0" x="0 4.8203402 9.6521568" class="f">···</tspan></text>
+<text transform="translate(229.474 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(240.286 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(244.999 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(250.325 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(255.44 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(260.192 13.948)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(279.646 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(287.565 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(298.376 13.948)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(312.499 13.948)"><tspan y="0" x="0 11.705392" class="b">=(</tspan></text>
+<text transform="translate(328.71 13.948)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(337.226 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(348.037 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(353.133 13.948)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(358.217 13.948)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(363.474 13.948)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>Therefore,</p>
+<div class="pretex-display"><svg height="4.26939em" version="1.1" class="pretex" viewBox="125 5 254 49"><text transform="translate(125.604 14.681)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(133.466 14.681)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(138.55 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(146.469 14.681)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(157.28 14.681)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(165.463 14.681)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(184.343 14.681)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(200.296 14.681)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(204.807 14.681)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(211.188 14.681)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(230.067 14.681)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(246.02 14.681)"><tspan y="0" x="0 4.5161996" class="b">((</tspan></text>
+<text transform="translate(255.041 14.681)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(263.557 14.681)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(274.369 14.681)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(279.464 14.681)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(284.549 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(289.805 14.681)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(295.171 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(300.094 17.275)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(304.847 14.681)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(329.379 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(334.494 17.275)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(339.246 14.681)"><tspan y="0" x="0" class="b">)</tspan><tspan y="17.968" x="-120.879 -109.17361" class="b">=(</tspan></text>
+<text transform="translate(234.578 32.649)"><tspan y="0" x="0" class="c">1</tspan></text>
+<text transform="translate(243.094 32.649)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(253.905 32.649)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(259.001 32.649)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(265.112 32.649)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(281.065 32.649)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(286.15 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(291.406 32.649)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(296.772 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(301.695 35.243)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(306.448 32.649)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(330.98 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(336.095 35.243)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(340.847 32.649)"><tspan y="0" x="0" class="b">)</tspan><tspan y="17.969" x="-122.48" class="b">=</tspan></text>
+<text transform="translate(230.641 50.618)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(238.503 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(243.587 50.618)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(249.372 50.618)"><tspan y="0" x="0 6.6394444" class="b">)+</tspan></text>
+<text transform="translate(266.828 50.618)"><tspan y="0" x="0 5.6696382" class="a">cT</tspan></text>
+<text transform="translate(280.36 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(285.444 50.618)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(291.228 50.618)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(310.682 50.618)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(318.544 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(323.628 50.618)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(329.412 50.618)"><tspan y="0" x="0 6.6509213" class="b">)+</tspan></text>
+<text transform="translate(347.156 50.618)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(355.018 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(359.815 50.618)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(371.269 50.618)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(375.78 50.618)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></div>
+<p>Doing the opposite row operations</p>
+<div class="pretex-display"><svg height="1.1327em" version="1.1" class="pretex" viewBox="108 5 286 13"><text transform="translate(109.618 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(116.814 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(124.235 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(138.518 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(145.714 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(152.601 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(163.412 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(167.934 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(172.687 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(179.883 16.542)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(184.635 13.948)"><tspan y="0" x="0" class="c">;</tspan></text>
+<text transform="translate(201.374 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(208.57 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(215.991 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(230.274 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(237.47 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(244.357 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(255.169 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(259.69 16.542)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(264.443 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(271.639 16.542)"><tspan y="0" x="0" class="d">3</tspan></text>
+<text transform="translate(276.391 13.948)"><tspan y="0" x="0 16.744944 21.530851 26.328238" class="c">;...</tspan></text>
+<text transform="translate(318.982 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(326.178 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(333.599 13.948)"><tspan y="0" x="0" class="f">→</tspan></text>
+<text transform="translate(347.882 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(355.078 16.542)"><tspan y="0" x="0" class="d">1</tspan></text>
+<text transform="translate(361.965 13.948)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(372.777 13.948)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(377.49 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(382.242 13.948)"><tspan y="0" x="0" class="a">R</tspan></text>
+<text transform="translate(389.629 16.542)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></div>
+<p>to the matrix with rows <span class="pretex-inline" style="width:5.28478em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(11.213)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(16.579)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(21.502 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(26.254)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(50.786)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(55.901 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></span></span> shows that</p>
+<div class="pretex-display"><svg height="4.35652em" version="1.1" class="pretex" viewBox="142 5 220 50"><text transform="translate(142.283 14.681)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(150.145 14.681)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(154.942 14.681)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(166.396 14.681)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(185.276 14.681)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(201.229 14.681)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(206.026 14.681)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(216.953 14.681)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(222.318 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(227.242 17.275)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(231.994 14.681)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(256.526 14.681)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(261.641 17.275)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(266.393 14.681)"><tspan y="0" x="0" class="b">)</tspan><tspan y="17.968" x="-92.818001" class="b">=</tspan></text>
+<text transform="translate(185.276 32.649)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(201.229 32.649)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(206.026 32.649)"><tspan y="0" x="0 5.6696382" class="a">cv</tspan></text>
+<text transform="translate(219.615 32.649)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(230.427 32.649)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(234.948 35.243)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(240.275 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(245.198 35.243)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(252.085 32.649)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(262.61 32.649)"><tspan y="0" x="0 4.8203402 9.6521568" class="f">···</tspan></text>
+<text transform="translate(277.621 32.649)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(288.433 32.649)"><tspan y="0" x="0" class="a">c</tspan></text>
+<text transform="translate(293.146 35.243)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(298.472 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(303.587 35.243)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(308.339 32.649)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(313.705 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(318.629 35.243)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(323.381 32.649)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(347.913 32.649)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(353.028 35.243)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(357.78 32.649)"><tspan y="0" x="0" class="b">)</tspan><tspan y="17.969" x="-184.205" class="b">=</tspan></text>
+<text transform="translate(185.276 50.618)"><tspan y="0" x="0 6.4845052 12.119712" class="c">det</tspan></text>
+<text transform="translate(201.229 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(206.026 50.618)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(213.567 50.618)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(218.932 50.618)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(223.856 53.212)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(228.608 50.618)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(253.14 50.618)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(258.255 53.212)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(263.007 50.618)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(282.461 50.618)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(290.323 50.618)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(295.12 50.618)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(303.303 50.618)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(307.814 50.618)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></div>
+<p>which finishes the proof of the first property in this case.</p>
+<p>Now suppose that <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
+</svg></span></span> is not in <span class="pretex-inline" style="width:8.17578em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(36.038)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(41.403)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(46.327 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(51.079)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(75.611)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(80.726 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(85.478)"><tspan y="0" x="0" class="f">}</tspan></text>
+<text transform="translate(90.643)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>  This implies that <span class="pretex-inline" style="width:5.71578em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(10.995)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(16.36)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(21.284 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(26.036)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(50.568)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(55.683 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(60.436)"><tspan y="0" x="0" class="f">}</tspan></text>
+</svg></span></span> is linearly <em>dependent</em> (otherwise it would form a basis for <span class="pretex-bind"><span class="pretex-inline" style="width:1.10174em"><span style="height:0.73033em;vertical-align:-0.008em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="g">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></span></span>),</span> so <span class="pretex-inline" style="width:2.075em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(13.52)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(19.304)"><tspan y="0" x="0" class="b">)</tspan></text>
+</svg></span></span> = 0.  If <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> is not in <span class="pretex-inline" style="width:7.25028em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(64.989)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(70.104 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(74.856)"><tspan y="0" x="0" class="f">}</tspan></text>
+<text transform="translate(80.021)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> then <span class="pretex-inline" style="width:4.79029em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(5.739)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(10.662 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(15.414)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(39.946)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(45.061 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(49.814)"><tspan y="0" x="0" class="f">}</tspan></text>
+</svg></span></span> is linearly dependent by the <a knowl="./knowl/linindep-increasing-span.html?vers=b58525" knowl-id="xref-linindep-increasing-span" alt="Theorem 2.5.14 Increasing Span Criterion" title="Theorem 2.5.14 Increasing Span Criterion">increasing span criterion in Section 2.5</a>, so <span class="pretex-inline" style="width:3.97299em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(13.807)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(20.337)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(39.217)"><tspan y="0" x="0" class="c">0</tspan></text>
+</svg></span></span> for all <span class="pretex-inline" style="width:0.922em"><span style="height:0.655em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> as the matrix with rows <span class="pretex-inline" style="width:4.95179em"><span style="height:0.716em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+<text transform="translate(7.391)"><tspan y="0" x="0" class="c">,</tspan></text>
+<text transform="translate(12.757)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(17.68 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(22.433)"><tspan y="0" x="0 4.7859092 9.5832949 14.369204 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(46.965)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(52.08 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+</svg></span></span> is not invertible.  Hence we may assume <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> is in <span class="pretex-inline" style="width:7.25028em"><span style="height:0.998em;vertical-align:-0.231em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 6.3812122 12.705039 18.523878" class="c">Span</tspan></text>
+<text transform="translate(25.043)"><tspan y="0" x="0" class="f">{</tspan></text>
+<text transform="translate(30.781)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(35.705 2.594)"><tspan y="0" x="0" class="d">2</tspan></text>
+<text transform="translate(40.457)"><tspan y="0" x="0 4.7973862 9.5832949 14.380681 19.16659" class="c">,...,</tspan></text>
+<text transform="translate(64.989)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(70.104 2.594)"><tspan y="0" x="0" class="e">n</tspan></text>
+<text transform="translate(74.856)"><tspan y="0" x="0" class="f">}</tspan></text>
+<text transform="translate(80.021)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>   By the above argument with the roles of <span class="pretex-inline" style="width:0.554em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">v</tspan></text>
+</svg></span></span> and <span class="pretex-inline" style="width:0.738em"><span style="height:0.485em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">w</tspan></text>
+</svg></span></span> reversed, we have <span class="pretex-inline" style="width:10.88296em"><span style="height:0.956em;vertical-align:-0.189em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.574)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(8.436)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(13.52)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(21.439)"><tspan y="0" x="0" class="b">+</tspan></text>
+<text transform="translate(32.25)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(40.433)"><tspan y="0" x="0 7.1788635" class="b">)=</tspan></text>
+<text transform="translate(59.887)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(67.749)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(72.833)"><tspan y="0" x="0" class="a">v</tspan></text>
+<text transform="translate(78.617)"><tspan y="0" x="0 6.6509213" class="b">)+</tspan></text>
+<text transform="translate(96.361)"><tspan y="0" x="0" class="a">T</tspan></text>
+<text transform="translate(104.223)"><tspan y="0" x="0" class="b">(</tspan></text>
+<text transform="translate(109.02)"><tspan y="0" x="0" class="a">w</tspan></text>
+<text transform="translate(117.203)"><tspan y="0" x="0" class="b">)</tspan></text>
+<text transform="translate(121.714)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span></p>
+</li>
+</ul>
+<span class="incontext CwcKHciJu-uzoHlVB8JsZ"><a href="determinants-definitions-properties.html#p-865">in-context</a></span>
 </body>
 </html>

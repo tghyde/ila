@@ -1,148 +1,19 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en-US">
-
-
-
-
-
-
+<!--**************************************-->
+<!--*    Generated from PreTeXt source   *-->
+<!--*                                    *-->
+<!--*   http://mathbook.pugetsound.edu   *-->
+<!--*                                    *-->
+<!--**************************************-->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts">
-/* pretex cache: iFeH3cMlKy_13jE3C52m */
-
-@font-face {
-  font-family: "fk-Dj-rhaoRFroa9Svl42";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASkAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAARQAAAEUCOs0IUZGVE0AAASAAAAAGgAAAByjR0J5T1MvMgAAAVAAAABLAAAAYHbKgHtjbWFwAAADHAAAADQAAAFCAA0kuGhlYWQAAAD0AAAAMQAAADYvUD/laGhlYQAAASgAAAAgAAAAJARGBEBobXR4AAAEnAAAAAgAAAAIBbAAGG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF9AAACuI+mYfNwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4pMN/hrx/DZfGbiZXwBFGJ6t+ZcApyUYmZgOMNoBuRwMTCBRAFHKC14AAAB4nGNgZGBgtGNkYohiusEABEwHGFL+v2VABkwAWewEjAAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTARk4wBgBaa4pDAxKQkpCzAr/LRiiGO3+/QMKM8JVKgAhIwAmMA4xAHicfZHPSsNAEMa/1VoR/xxFPM3RQhM2IZTixUOLeBGKh56N6ZIEQlLSBHwP38GjPoH4BB7FB/A5BL+si4JUA5v9TWbmm5kMgAM8QOHr0bhxrLCPR8cb2MaL401E6sxxD0fq3vEWdtWb4z721AcjVW+H1rXN6ljhGHeON1j3yfEmMrw67kGrxvEWDtWz4z5rveMECQYQhOxUIyLNEKNFYSmnN7N2DWPvIb+3KLGgXZMb+g3vFEubU9gcw4ju7QMnyUBCrSOZxW0hszzJ4rY2cTuUtlyYWprMSLospMgTUyaGGZcs1MlOKbCiXEoxDxNc0BU32dSs8rT0JjSvGJHaZmM2gyuTtkVMOEfFnMbeNSOMHdDngIJTnnUVxFaQX5qC4Dur+0UexjwdhRixUFU251WdGgl9Lafy059MLsT1I0HnCrU39kIdjtYP+F95/CULzO0aOpHKigR2SsxNvcqrUgKfxtIur+G5tUvW7DziHFjWpjG3WutRNMYnj4F3MQAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEC+ktD//xDy7nuoSgZGNgYYc8QCAG6/BuZ4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAAQAEBAABAQENcHJldGV4MDAwNjQ4AAECAAEANPgbAfgcAvgdA/gYBIwMAZYMAikMA8EMBKP3lvlU99IFHACxDxwAABAcALQRHAAqHADqEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmAAIBASIxi734Rb0Bvb34pL0DvRb5CPip/QgGvfx3FfhF+KT8RQcO95bHAaP3lhX5PMf9PAYO+WwUixWClPh1lfdImwYeCgGYLwwJkgwKiwwLtQq1nQwM3gvHogwNiwwOeJxjYGBgZACCq29dd4DoZ2v+JcBoAFryCKEAAALYAAAC2AAY) format('woff');
-}
-
-@font-face {
-  font-family: "f6BhaJV__d3IH4Nn2vfvf";
-  src: url(data:application/font-woff;base64,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) format('woff');
-}
-
-@font-face {
-  font-family: "fd2noLcLETw0U1EdSw-DF";
-  src: url(data:application/font-woff;base64,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) format('woff');
-}
-
-@font-face {
-  font-family: "fFyGeGJJPRnITMhFmeX4n";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAU0AAoAAAAAB3wAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADfAAAAYoAAAGja7KVuUZGVE0AAAUIAAAAGgAAAByjR0J5T1MvMgAAAVAAAABFAAAAYFZeX09jbWFwAAADIAAAAEYAAAFKAGUD0mhlYWQAAAD0AAAAMQAAADYviT/laGhlYQAAASgAAAAeAAAAJAYwAllobXR4AAAFJAAAABAAAAAQCBQAqG1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGHAAAC0JP0RC5wb3N0AAADaAAAABMAAAAg/4YANnicY2BkYGAAYqMm7+fx/DZfGbiZXwBFGJ6t+ZcApy3+uzDdYPoD5HIwMIFEAXWzDbsAAAB4nGNgZGBg+vPfhSGKWYABCJhuMDAyoAIWAGBCA48AAAAAUAAABAAAeJxjYGbiYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSGgy2zAr/LRiimP4w7EFRowCEjAAQJApaAAAAeJyNkc9Kw0AQxr+tVRH/3BQRD3NUaMomlFK8VrQXaRHxbEyXNBCSkibg0XfwPfQu+AgexcfwAbz47booiIiBzfwmM/PNTBbAFu6h8PloXHtW2MSD5xZW8ex5CQN16rmNffXoeRnr6s3zCjZa28xU7TV6V67KssIe7jy32PfJ8xLmePHcpv6t52XsqFfPK9hV7zhAgkMIIk6q0SNNEKNB7ihjdOb8CsbZDr83KDClX5Frxg1tyo62Jnc1hhn23QUOkkOJtO7JJG5ymWTJLG4qEzcdaYqpqaSeGUnnueRZYorEsOKMjazsMQUWlEspFmCIEUNxPTs2iywtgiHdc2akbtiYw+DcpE0eE05QsqZ2tmKGcQt2uaDgiOe3DuI6yA9NwRgXCGnDr2r7qwIMeCxF6LNhWdQnZZUaibpajuR7ThmOxM8l44tQQhuOdDAIIh31f1/2P6PgrxbApbseK1g6wdBtj0tTLbKykLBLZ+4utea5cZevuUnPbjOvTG1utNb9Xh8fHUd6ngB4nGNgYGBmgGAZBkYGEHAB8hjBfBYGDSDNBqQZGZgYNBls//8H8jVA9P+b/49B1QMBIxsDgkMAMDJhEWQmUvMgBgAIbgk0AAB4nGNgZgCD/80MZgxYAAAomAG8AHicRYtNSxtRFIbPzYwzMV7jB6YUvMoVsjB+pBMJQuPSBrKRBumq4GKIlyQwBIkZxrXbWShFQRAZcCG6clMLoQxYs8iPEMSf4KrnDjcFJxTx8C4e3vM+BHQdCCHje23REQeWZa0X14EkgEBezhLJEnJOkx/1HNX+UL2nqpETHY8wuJ1gAJMMfk0xWGbkYBq0oVOALfi+WMvxNcsq8qrtOrzarDVsty1sd4W7rV3R5p2G4PU9hzvNmmjVRH7L7jS+iP1mvcU3K3xb1F3HbvOv3wq8YL3/VjcrEN8opGAedEKydvBblf1QlkMShngfauEHmZU3g6wRDryMLOP9oGymVbUbvXRJ71nDBfyZ8fHqERmaQbJrqpKnDJX31UMcjAlL3rA2gw1k8TD5JuNRbB8NbXW1oZgyveSOiaUADcz7+BBHxaRKwbA2vUfF4mEy/ReX+mj1SU8mMlGx/69oqGv9P6Qlm4k+Zw5PpHuKlXNjPkXOPtHRHzTl07G71N0FpU9j/Us67tP0KxwQpvAAAHicY2BgYGQAgqtvXXeA6Gdr/iXAaABa8gihAAAB9AAAAYgAOAGIADgDEAA4) format('woff');
-}
-
-@font-face {
-  font-family: "fuUS0Bjcz96ewm6To6MJa";
-  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUgAAoAAAAAB4QAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXcAAAGSoo1me0ZGVE0AAAT4AAAAGgAAAByjR0J5T1MvMgAAAVAAAABHAAAAYF7DXP9jbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYu6DUVaGhlYQAAASgAAAAeAAAAJALO+aZobXR4AAAFFAAAAAoAAAAKBRYAW21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGPAAAC9Dwqdr1wb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAA4jyPojvx/DZfGbiZXwBFGJ6t+ZcApy2+mzCZM9gAuRwMTCBRAGkvDF4AAAB4nGNgZGBgsPluwhDFlA9kMTCZM4BEkAETAEM6AnAAAAAAUAAAAwAAeJxjYGbKZ5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSjgxOzAr/LRiiGGw4ziCpsWFQAEJGAC1jCnUAeJyVkstKw0AUhv+krSJeNoKIGw+uWmjCNJS2duGmF7oRSoWujemQBEJS0gS68Cn0PfQJfASXgu/ixjPTQUUKYmAy38n5z20mAI7wBAubR+DOsIVDPBu2sYtXwxVcWTeGq7iw3g3XsG8fG97BgX3JSqu6x9atjlJs4QyPhm2u+2K4gnu8Ga5iaD0YruHE+jC8g1P7HHUEaIDgcacCbaYpfJRINMXsjbSdQ+q9yd9LpFiwnTMX7Je8h1jqmETHSFaotwvUgwZ5QrRp6pcJTeMg8stc+mWTynQhcyoiSeEyoSQOZBpIjrjmQirtkBOsOF3IyRwMMGGXX0RDuYrD1BmwOWNFqJv1uRnMZFgmPsMYGccUes9ZIfWALg9I6PPaVoF0BfqVkzDCmrVqIKXMtLL1lUkdm4MeL0UeOlw8S4txloeSPFdQn757psGETI80WhcyXcVZSi0l8oTTczzhdbaP/9/m8HdRYK6v8GegOiHMZb6RuGws9cWrEmv9gwiesI0uO3JZyLUQotPu4hPrWoU2AHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOz0sCQRzFZ1zTTUf7QUbQFoOBZPRjDamDRxUEC6TAc8s6uIJsoi7ruet2koIgQgg6dNmDIHTZQwR66F+IjuF/MCO7RmMXv7zD4/H5Ph4Efj+AEEYaTdImHVmWT9KnAPoABCm2CZnkY1sC2/DfIphEwjvyf0g0zT5HCxJ4W5IAWJaAsyKBPQlqq0D4fwOX4GpXTeJjWU7jkmLUcammaorRJIqxjw29Qpq4rRFcbdRxvaYSXSWH50pby5FWrarjbAFfkKpRV5o432kTvVW71nFKnhMH2QLgFwc7QIAwrr5YDss70HFYxhGcddZjr14v4HhmjOVZxssHo3zyUBK7Q/gzFujZ71fMmuSozALU7IvDoGtrbtlLWFOVi3JHbW0Wm32XMxwV5wWsOBZYcdYwzbmyF3DNilgKUtumZZawJiqXy51r27PYrFDOcFSMToQ1K3Zzx4x7WngMbIfgwxFa7KKQhcKD0OAJoe/w6BlFLBT9A2FMmpwAeJxjYGBgZACCq29dd4DoZ2v+JcBoAFryCKEAAAJvAAACbwBbADgAAA==) format('woff');
-}
-
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.a { font-size:11.47700024px;font-family:fd2noLcLETw0U1EdSw-DF }
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.b { font-size:11.47700024px;font-family:f6BhaJV__d3IH4Nn2vfvf }
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.c { font-size:7.65140009px;font-family:f6BhaJV__d3IH4Nn2vfvf }
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.d { font-size:11.47700024px;font-family:fFyGeGJJPRnITMhFmeX4n }
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.e { font-size:11.47700024px;font-family:fuUS0Bjcz96ewm6To6MJa }
-.CiFeH3cMlKy_13jE3C52m svg.pretex tspan.f { font-size:11.47700024px;font-family:fk-Dj-rhaoRFroa9Svl42 }
-.CiFeH3cMlKy_13jE3C52m svg.pretex path.a { stroke-width:0.68900001px }
-</style>
+<style id="pretex-fonts"></style>
 </head>
 <body>
-<h5 class="heading CiFeH3cMlKy_13jE3C52m"><span class="type">Paragraph</span></h5>
-<p class="CiFeH3cMlKy_13jE3C52m">First we compute the determinants of the matrices obtained by replacing the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
-</svg></span></span> with <span class="pretex-inline" style="width:0.926em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewbox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
-<text transform="translate(6.967)"><tspan y="0" x="0" class="b">:</tspan></text>
-</svg></span></span></p>
-<div class="pretex-display CiFeH3cMlKy_13jE3C52m"><svg height="5.22783em" version="1.1" class="pretex" viewbox="116 6 271 60"><text transform="translate(117.206 23.142)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(124.161 25.736)"><tspan y="0" x="0" class="c">1</tspan></text>
-<text transform="translate(131.582 23.142)"><tspan y="0" x="0" class="d">=</tspan></text>
-<text transform="translate(143.282 7.275)"><tspan y="0" x="0" class="e">A</tspan></text>
-<text transform="translate(152.057 15.641)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(169.353 15.641)"><tspan y="0" x="0" class="a">b</tspan></text>
-<text transform="translate(152.057 29.589)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(168.687 29.589)"><tspan y="0" x="0" class="a">d</tspan></text>
-<text transform="translate(177.152 7.275)"><tspan y="0" x="0" class="e">B</tspan></text>
-<text transform="translate(301.531 23.142)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(317.484 23.142)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(321.994 23.142)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(328.949 25.736)"><tspan y="0" x="0" class="c">1</tspan></text>
-<text transform="translate(333.702 23.142)"><tspan y="0" x="0 7.1788635" class="d">)=</tspan></text>
-<text transform="translate(352.868 23.142)"><tspan y="0" x="0" class="a">d</tspan></text>
-<text transform="translate(361.866 23.142)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(372.39 23.142)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(379.632 23.142)"><tspan y="0" x="0" class="a">b</tspan><tspan y="32.379002" x="-262.42599" class="a">A</tspan></text>
-<text transform="translate(124.161 58.115)"><tspan y="0" x="0" class="c">2</tspan></text>
-<text transform="translate(131.582 55.521)"><tspan y="0" x="0" class="d">=</tspan></text>
-<text transform="translate(143.282 39.654)"><tspan y="0" x="0" class="e">A</tspan></text>
-<text transform="translate(152.343 48.02)"><tspan y="0" x="0" class="a">a</tspan></text>
-<text transform="translate(168.618 48.02)"><tspan y="0" x="0" class="b">1</tspan></text>
-<text transform="translate(152.952 61.968)"><tspan y="0" x="0" class="a">c</tspan></text>
-<text transform="translate(168.619 61.968)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(176.601 39.654)"><tspan y="0" x="0" class="e">B</tspan></text>
-<text transform="translate(301.531 55.521)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(317.484 55.521)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(321.994 55.521)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(328.949 58.115)"><tspan y="0" x="0" class="c">2</tspan></text>
-<text transform="translate(333.702 55.521)"><tspan y="0" x="0 7.1788635" class="d">)=</tspan></text>
-<text transform="translate(352.581 55.521)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(359.249 55.521)"><tspan y="0" x="0" class="a">a</tspan></text>
-<text transform="translate(367.696 55.521)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(378.508 55.521)"><tspan y="0" x="0" class="a">c</tspan></text>
-<text transform="translate(383.604 55.521)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></div>
-<p class="CiFeH3cMlKy_13jE3C52m">Now we compute</p>
-<div class="pretex-display CiFeH3cMlKy_13jE3C52m"><svg height="2.61391em" version="1.1" class="pretex" viewbox="145 0 215 30"><text transform="translate(145.533 9.799)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(161.486 9.799)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(165.996 9.799)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(172.951 12.393)"><tspan y="0" x="0" class="c">1</tspan></text>
-<text transform="translate(177.704 9.799)"><tspan y="0" x="0" class="d">)</tspan></text>
-<g transform="matrix(1,0,0,-1,145.533,14.857)"><path d="M 0,0 H 36.681" class="a"></path></g><text transform="translate(148.196 26.667)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(164.149 26.667)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(168.659 26.667)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(175.041 26.667)"><tspan y="0" x="0" class="d">)</tspan><tspan y="-8.493" x="11.037" class="d">=</tspan></text>
-<text transform="translate(202.062 10.094)"><tspan y="0" x="0" class="a">d</tspan></text>
-<text transform="translate(211.06 10.094)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(221.584 10.094)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(228.826 10.094)"><tspan y="0" x="0" class="a">b</tspan></text>
-<g transform="matrix(1,0,0,-1,198.974,14.857)"><path d="M 0,0 H 38.758" class="a"></path></g><text transform="translate(199.261 26.667)"><tspan y="0" x="0 6.5992751" class="a">ad</tspan></text>
-<text transform="translate(214.858 26.667)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(226.244 26.667)"><tspan y="0" x="0 6.3926892" class="a">bc</tspan></text>
-<text transform="translate(263.077 9.853)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(279.03 9.853)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(283.541 9.853)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(290.496 12.447)"><tspan y="0" x="0" class="c">2</tspan></text>
-<text transform="translate(295.248 9.853)"><tspan y="0" x="0" class="d">)</tspan></text>
-<g transform="matrix(1,0,0,-1,263.077,14.857)"><path d="M 0,0 H 36.681" class="a"></path></g><text transform="translate(265.74 26.667)"><tspan y="0" x="0 6.4845052 12.119712" class="b">det</tspan></text>
-<text transform="translate(281.693 26.667)"><tspan y="0" x="0" class="d">(</tspan></text>
-<text transform="translate(286.204 26.667)"><tspan y="0" x="0" class="a">A</tspan></text>
-<text transform="translate(292.585 26.667)"><tspan y="0" x="0" class="d">)</tspan><tspan y="-8.493" x="11.037" class="d">=</tspan></text>
-<text transform="translate(320.387 10.094)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(327.055 10.094)"><tspan y="0" x="0" class="a">a</tspan></text>
-<text transform="translate(335.502 10.094)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(346.313 10.094)"><tspan y="0" x="0" class="a">c</tspan></text>
-<g transform="matrix(1,0,0,-1,316.519,14.857)"><path d="M 0,0 H 38.758" class="a"></path></g><text transform="translate(316.806 26.667)"><tspan y="0" x="0 6.5992751" class="a">ad</tspan></text>
-<text transform="translate(332.403 26.667)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(343.788 26.667)"><tspan y="0" x="0 6.3926892" class="a">bc</tspan></text>
-<text transform="translate(356.472 18.174)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></div>
-<p class="CiFeH3cMlKy_13jE3C52m">It follows that</p>
-<div class="pretex-display CiFeH3cMlKy_13jE3C52m"><svg height="2.43965em" version="1.1" class="pretex" viewbox="193 1 118 28"><text transform="translate(194.458 18.261)"><tspan y="0" x="0" class="a">x</tspan></text>
-<text transform="translate(203.657 18.261)"><tspan y="0" x="0" class="d">=</tspan></text>
-<text transform="translate(232.742 10.181)"><tspan y="0" x="0" class="b">1</tspan></text>
-<g transform="matrix(1,0,0,-1,216.553,14.944)"><path d="M 0,0 H 38.758" class="a"></path></g><text transform="translate(216.84 26.754)"><tspan y="0" x="0 6.5992751" class="a">ad</tspan></text>
-<text transform="translate(232.437 26.754)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(243.823 26.754)"><tspan y="0" x="0 6.3926892" class="a">bc</tspan></text>
-<text transform="translate(258.108 2.394)"><tspan y="0" x="0" class="e">A</tspan></text>
-<text transform="translate(265.568 10.76)"><tspan y="0" x="0" class="a">d</tspan></text>
-<text transform="translate(274.566 10.76)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(285.09 10.76)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(292.332 10.76)"><tspan y="0" x="0" class="a">b</tspan></text>
-<text transform="translate(266.348 24.707)"><tspan y="0" x="0" class="b">2</tspan></text>
-<text transform="translate(273.016 24.707)"><tspan y="0" x="0" class="a">a</tspan></text>
-<text transform="translate(281.463 24.707)"><tspan y="0" x="0" class="f">−</tspan></text>
-<text transform="translate(292.275 24.707)"><tspan y="0" x="0" class="a">c</tspan></text>
-<text transform="translate(298.438 2.394)"><tspan y="0" x="0" class="e">B</tspan></text>
-<text transform="translate(307.212 18.261)"><tspan y="0" x="0" class="b">.</tspan></text>
-</svg></div>
-<span class="incontext CiFeH3cMlKy_13jE3C52m"><a href="determinants-cofactors.html#p-933">in-context</a></span>
+<h5 class="heading"><span class="type">Paragraph</span></h5>
+<p>Now we use Cramer’s rule to prove the first <a knowl="./knowl/det-cofact-inv-cramer.html?vers=b58525" knowl-id="xref-det-cofact-inv-cramer" alt="Theorem 4.2.13 " title="Theorem 4.2.13 ">theorem</a> of this subsection.</p>
+<span class="incontext"><a href="determinants-cofactors.html#p-933">in-context</a></span>
 </body>
 </html>
