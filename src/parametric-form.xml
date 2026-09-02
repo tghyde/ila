@@ -60,23 +60,16 @@ the license is included in gfdl.xml.
       <me>
         \syseq{x + 5z = 1; y + 2z = -1\rlap.}
       </me>
-      In what sense is the system solved?  We rewrite as
+      In what sense is the system solved? Moving the <m>z</m> terms to the right side of the equation we get
       <me>
         \syseq{x = 1 - 5z; y = -1 - 2z\rlap.}
       </me>
-      For any value of <m>z</m>, there is exactly one value of <m>x</m> and <m>y</m> that make the equations true.  But we are free to choose <em>any</em> value of <m>z</m>.
-      </p>
-
-      <p>We have found all solutions: it is the set of all values <m>x,y,z</m>, where
+      For any value of <m>z</m>, there is exactly one value of <m>x</m> and <m>y</m> that make the equations true.  But we are free to choose <em>any</em> value of <m>z</m>. To emphasize the freedom we have in choosing the value of <m>z</m> we typically write <m>z = t</m> where <m>t</m> is thought of as a <em>parameter</em>.
       <me>
-        \syseq{x = 1 - 5z; y = -1 - 2z; z = \. \+ z} \qquad \text{$z$ any real number.}
+        \syseq{x = 1 - 5t; y = -1 - 2t; z = \. \+ t} \qquad \text{$t$ is any real number.}
       </me>
 	This is called the <em>parametric form</em> for the solution to the linear system.  The variable <m>z</m> is called a <em>free variable</em>.
       </p>
-
-
-
-
 
       <figure>
         <caption>A picture of the solution set (the yellow line) of the linear system in this <xref ref="row-reduction-eg-free"/>.  There is a unique solution for every value of <m>z</m>; move the slider to change <m>z</m>.</caption>
@@ -85,15 +78,14 @@ the license is included in gfdl.xml.
     </specialcase>
 
     <bluebox xml:id="finding-actual-soln">
-      <p>Given the parametric form for the solution to a linear system, we can obtain specific solutions by replacing the free variables with any specific real numbers.  For instance, setting <m>z=0</m> in the last example gives the solution <m>(x,y,z)=(1,-1,0)</m>, and setting <m>z=1</m> gives the solution <m>(x,y,z)=(-4,-3,1)</m>.</p>
+      <p>Given the parametric form for the solution to a linear system, we obtain every specific solution by choosing values for the parameters. For instance, setting <m>t=0</m> in the last example gives the solution <m>(x,y,z)=(1,-1,0)</m>, and setting <m>t=1</m> gives the solution <m>(x,y,z)=(-4,-3,1)</m>.</p>
     </bluebox>
 
 
     <definition>
       <idx><h>Free variable</h></idx>
       <statement>
-        <p>Consider a <em>consistent</em> system of equations in the variables <m>x_1,x_2,\ldots,x_n</m>.  Let <m>A</m> be a row echelon form of the augmented matrix for this system.</p>
-        <p>We say that <m>x_i</m> is a <term>free variable</term> if its corresponding column in <m>A</m> is <em>not</em> a <xref text="title" ref="defn-pivot-pos">pivot column</xref>.</p>
+        <p>Suppose we have a <em>consistent</em> system of equations in the variables <m>x_1,x_2,\ldots,x_n</m>.  Let <m>A</m> be a row echelon form (REF) of the augmented matrix for this system. We say that <m>x_i</m> is a <term>free variable</term> if the <m>i</m>th column of <m>A</m> is <em>not</em> a <xref text="title" ref="defn-pivot-pos">pivot column</xref>.</p>
       </statement>
     </definition>
 
@@ -101,13 +93,17 @@ the license is included in gfdl.xml.
     <me>\def\r{\color{red}}
       \amat{1 0 \r5 1; 0 1 \r2 -1}.
     </me>
+    Since the pivots belong to the first two columns, the third column has no pivot, hence <m>z</m> is a free variable, by definition.
+    </p>
+    <p>
     In the matrix
     <me>\amat{
     1  \color{seq-red}\star,  0  \color{seq-blue}\star,  \star ;
     0  \color{seq-red}0   1  \color{seq-blue}\star,  \star
     },
     </me>
-    the free variables are <m>\color{seq-red}x_2</m> and <m>\color{seq-blue}x_4</m>.  (The augmented column is not free because it does not correspond to a variable.)
+    the free variables are <m>\color{seq-red}x_2</m> and <m>\color{seq-blue}x_4</m>. 
+    Note that we never consider the augmented column to correspond to a free variable because the augmented column corresponds to constants, there are no variables on that side of the equation.
     </p>
 
     <bluebox>
@@ -119,9 +115,10 @@ the license is included in gfdl.xml.
         The <term>parametric form</term> of the solution set of a consistent system of linear equations is obtained as follows.
         <ol>
           <li>Write the system as an augmented matrix.</li>
-          <li>Row reduce to reduced row echelon form.</li>
+          <li>Row reduce to reduced row echelon form (RREF).</li>
           <li>Write the corresponding (solved) system of linear equations.</li>
           <li><em>Move all free variables to the right hand side of the equations.</em></li>
+          <li>Replace each free variable with a parameter.</li>
         </ol>
       </p>
     </bluebox>
@@ -147,9 +144,9 @@ the license is included in gfdl.xml.
       </me>
       can be written as follows:
       <me>
-        (x,\,y,\,z) = (1-5z,\,-1-2z,\,z) \qquad \text{$z$ any real number.}
+        (x,\,y,\,z) = (1-5t,\,-1-2t,\,t) \qquad \text{$t$ any real number.}
       </me>
-      This called a <term>parameterized equation</term> for the same line.  It is an expression that produces all points of the line in terms of one parameter, <m>z</m>.
+      This called a <term>parameterized equation</term> for the same line.  It is an expression that produces all points of the line in terms of one parameter, <m>t</m>.
       </p>
       <p>One should think of a system of equations as being an implicit equation for its solution set, and of the parametric form as being the parameterized equation for the same set.  The parameteric form is much more explicit: it gives a concrete recipe for producing <em>all</em> solutions.
       </p>
@@ -182,8 +179,8 @@ the license is included in gfdl.xml.
         \syseq{x_1 = 2 - 3x_4; x_3 = -1 - 4x_4\rlap.}
       </me>
       What happened to <m>x_2</m>?  It is a free variable, but no other variable depends on it.  The general solution to the system is
-      <me>(x_1,\,x_2,\,x_3,\,x_4) = (2-3x_4,\,x_2,\,-1-4x_4,\,x_4),</me>
-      for any values of <m>x_2</m> and <m>x_4</m>.  For instance, <m>(2,0,-1,0)</m> is a solution (with <m>x_2=x_4=0</m>), and <m>(5,1,3,-1)</m> is a solution (with <m>x_2=1, x_4=-1</m>).
+      <me>(x_1,\,x_2,\,x_3,\,x_4) = (2-3t,\,s,\,-1-4t,\,t),</me>
+      for any values of <m>s</m> and <m>t</m>.  For instance, <m>(2,0,-1,0)</m> is a solution (with <m>s=t=0</m>), and <m>(5,1,3,-1)</m> is a solution (with <m>s=1, t=-1</m>).
       </p>
     </example>
 
@@ -191,11 +188,11 @@ the license is included in gfdl.xml.
       <title>A Parameterized Plane</title>
       <p>The system of one linear equation
       <me>x + y + z = 1</me>
-      comes from the matrix
+      comes from the augmented matrix
       <me>\amat{1 1 1 1},</me>
       which is already in reduced row echelon form.  The free variables are <m>y</m> and <m>z</m>.  The parametric form for the general solution is
-      <me>(x,\,y,\,z) = (1 - y - z,\,y,\,z)</me>
-      for any values of <m>y</m> and <m>z</m>.  This is the parametric equation for a plane in <m>\R^3</m>.
+      <me>(x,\,y,\,z) = (1 - s - t,\,s,\,t)</me>
+      for any values of <m>s</m> and <m>t</m>.  This is a parametric equation for a plane in <m>\R^3</m>.
       </p>
       <figure>
         <caption>A plane described by two parameters <m>y</m> and <m>z</m>.  Any point on the plane is obtained by substituting suitable values for <m>y</m> and <m>z</m>.</caption>
@@ -210,15 +207,15 @@ the license is included in gfdl.xml.
     <idx><h>System of linear equations</h><h>number of solutions of</h></idx>
     <idx><h>Solution set</h><h>size of</h></idx>
 
-    <p>There are <em>three possibilities</em> for the reduced row echelon form of the augmented matrix of a linear system.
+    <p>There are essentially  <em>three cases</em> for how the reduced the RREF of an augmented matrix looks.
     <ol>
       <li><alert>The last column is a pivot column.</alert>
-      In this case, the system is <em>inconsistent</em>.  There are zero solutions, i.e., the solution set is empty.  For example, the matrix
+      In this case, the system is <em>inconsistent</em>.  There are no solutions, i.e., the solution set is empty.  For example, the matrix
       <me>
         \def\r{\color{red}}
         \amat{1 0 \r0; 0 1 \r0; 0 0 \r1}
       </me>
-      comes from a linear system with no solutions.
+      comes from a linear system with no solutions. This is because when you translate from the augmented matrix back to equations, the last equation becomes <m>0 = 1</m> which is a contradiction.
       </li>
       <li><alert>Every column except the last column is a pivot column.</alert>
       In this case, the system has a <em>unique</em> solution.  For example, the matrix
