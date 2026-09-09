@@ -1,19 +1,60 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: s1oxfHuiT8VXlz0ywPqJ */
+
+@font-face {
+  font-family: "fH26eA08b9R-W92TAExFB";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUMAAoAAAAAB1AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADeAAAAWsAAAGEciLbv0ZGVE0AAATkAAAAGgAAAByjfEKZT1MvMgAAAVAAAABFAAAAYFZeXr9jbWFwAAADIAAAAD0AAAFCAA0D0WhlYWQAAAD0AAAAMQAAADYuNkAFaGhlYQAAASgAAAAeAAAAJASoAM9obXR4AAAFAAAAAAoAAAAKA0gAOG1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGFAAACza1dluJwb3N0AAADYAAAABYAAAAg/4YAN3icY2BkYGAAYqZU+enx/DZfGbiZXwBFGJ4dryuA0xb/XRgDmP4AuRwMTCBRADwqC78AAAB4nGNgZGBg+vPfhSGKsYMBCBgDGBgZUAETAGGYA3oAAAAAUAAAAwAAeJxjYGbsYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSGgyazAr/LRiimP4w7EFRowCEjAA8tgrJAAAAeJyNkctKw0AUhv/pRREvCxci4uIsK5iShFKt22rpRlqkdG2MQxoISUkTcONT+B66dOUjuNO38AFc+mc6KEgRA5PznZzbfzIAdvAIheXj4saywjaeLNewjlfLdZyoC8sNHKpny01sqg/La9iq7TJTNTboXZuqihUO8GC5xrkvlutI8W65gVN1b7mJPfVmeQ376hMthDiCwKdSFx3SGAFKJIZiRmfGz6GNPeb3kt1v6efkgnFNG2FuahJTo5lRvdtAKzwS33U7Mg7KRMZxOAvKXAflsZTprc6lmGmJ5okkcajTULPikoOqtudssGC7iM0c9DFkKChm53oRR6nTp3vFjMiIDSgGVzoqk4AwQMaawticGdos2OaCgjOeVRPETJBfPQUjTODRet/VPaqpTvXLfHQ5LkuLQZZHWvy2K2fyo1L6Q7GqZDTxxKvCPafn+K7fXb3pf3TgrwnA1NxN1TAzDT2zOqY6X8RZKl6bztzcaMFzZ25+uYrHQK4Lfee6FOjhC71BeikAAAB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvub//0BS4////zehKhkY2RhgTIKAkYlIhUMMAABk9gbeAAAAeJxjYGYAg//NDGZAipEBDQAAKKkBvQAAeJxFi89LAkEcxWdac/0x2g8ygqaYOmWUrRId9GiCF0nCkxCx2KCCiJjLdu66gREFQYjQQegaSXrYQ3rojxCiQ39At+/IeGgNosc7PN57H4xcLoQxDtTqvMEvNE2LHUQRnkEYRcUqFnRGrClixXVFcJgob8Q1lFn4Gl/PUvQ8RxGap+h1gaJtivOLSPnFUAbltwphFtO0fZbVjQrLlgsl3ahz3dhhRvWM11mjxFmxVmGVcoFXCzyS0RulQ35eLlZZMs2OedGo6HV2lIuyqPa/7SbTyJEX+ZCC8eZpy7JFysa2DTlbsZehJ55kz21PzJBIQW6SUoMy2x9/9/HwU4ENeAlZ0BkBBbXt6asybkq3jFhy4BicBHFzWqvtBFDn6PmDoenQzSktOwlJpWp6TlSIt8ENEQsGjqWTZLw9rVVzJKlz9AQFXbJCl7fCuIP0g3vdh+/3iPeG+Czi7/q6LUI+/O+PJGCR4A8JWJa9AHicY2BgYGQAgqtvXXeA6GfH6wpgNABXDAf3AAABiAAAAYgAOAA4AAA=) format('woff');
+}
+
+@font-face {
+  font-family: "fPfVclQkjpj-mgfaVWdPT";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.Cs1oxfHuiT8VXlz0ywPqJ svg.pretex tspan.a { font-size:11.47700024px;font-family:fH26eA08b9R-W92TAExFB }
+.Cs1oxfHuiT8VXlz0ywPqJ svg.pretex tspan.b { font-size:11.47700024px;font-family:fPfVclQkjpj-mgfaVWdPT }
+.Cs1oxfHuiT8VXlz0ywPqJ svg.pretex path.a { stroke-width:0.19925px }
+.Cs1oxfHuiT8VXlz0ywPqJ svg.pretex path.b { stroke-width:0.3985px }
+.Cs1oxfHuiT8VXlz0ywPqJ svg.pretex path.c { stroke-width:1px }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>In this subsection we give an application of the method of least squares to data modeling.  We begin with a basic example.</p>
-<span class="incontext"><a href="least-squares.html#p-1608">in-context</a></span>
+<h5 class="heading Cs1oxfHuiT8VXlz0ywPqJ"><span class="type">Paragraph</span></h5>
+<p class="Cs1oxfHuiT8VXlz0ywPqJ">Suppose that we have measured three data points</p>
+<div class="pretex-display Cs1oxfHuiT8VXlz0ywPqJ"><svg height="1.1327em" version="1.1" class="pretex" viewBox="194 4 116 13"><text transform="translate(194.274 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="translate(198.784 13.948)"><tspan y="0" x="0 6.3812122 11.167121" class="b">0,6</tspan></text>
+<text transform="translate(216.338 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
+<text transform="translate(220.849 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(237.117 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="translate(241.628 13.948)"><tspan y="0" x="0 6.3812122 11.167121" class="b">1,0</tspan></text>
+<text transform="translate(259.182 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
+<text transform="translate(263.692 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(279.961 13.948)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="translate(284.471 13.948)"><tspan y="0" x="0 6.3812122 11.178598" class="b">2,0</tspan></text>
+<text transform="translate(302.025 13.948)"><tspan y="0" x="0" class="a">)</tspan></text>
+<text transform="translate(306.536 13.948)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></div>
+<p class="Cs1oxfHuiT8VXlz0ywPqJ">and that our model for these data asserts that the points should lie on a line.  Of course, these three points do not actually lie on a single line, but this could be due to errors in our measurement.  How do we predict which line they are supposed to lie on? </p>
+<div class="pretex-display Cs1oxfHuiT8VXlz0ywPqJ"><svg height="22.3054em" version="1.1" class="pretex" viewBox="0 0 171 256"><g transform="matrix(1,0,0,-1,56.892,198.624)"><g><g><g><path style="stroke:#b3b3b3" d="M -56.69362,-56.69362 H 113.38724 M -56.69362,-28.3468 H 113.38724 M -56.69362,0 H 113.38724 M -56.69362,28.3468 H 113.38724 M -56.69362,56.69362 h 170.08086 m -170.08086,28.3468 h 170.08086 m -170.08086,28.34682 h 170.08086 m -170.08086,28.3468 H 113.38724 M -56.69362,170.08086 H 113.38724 M -56.69362,198.41771 H 113.38724 M -56.69362,-56.69362 V 198.42766 M -28.3468,-56.69362 V 198.42766 M 0,-56.69362 V 198.42766 M 28.3468,-56.69362 V 198.42766 M 56.69362,-56.69362 v 255.12128 m 28.3468,-255.12128 v 255.12128 m 28.33685,-255.12128 v 255.12128" class="a"></path></g><path d="M -56.69362,0 H 112.98872" class="b"></path><g transform="translate(113.18797)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><path d="M 0,-56.69362 V 198.02916" class="b"></path><g transform="matrix(0,1,-1,0,0,198.22841)"><g><path style="stroke-linecap:round;stroke-linejoin:round" d="M -2.07224,2.39104 C -1.69365,0.95639 -0.84999,0.27895 0,0 -0.84999,-0.27895 -1.69365,-0.95639 -2.07224,-2.39104" class="b"></path></g></g><g><g><path style="fill:#000;stroke:none" d="m 2.12599,170.08086 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17418 0.95183,-2.12601 2.12599,-2.12601 1.17416,0 2.12599,0.95183 2.12599,2.12601 z" class="c"></path></g></g><g><g transform="translate(2.5 174.747)"><g><g transform="translate(-59.392 -768.123)"><text transform="matrix(1,0,0,-1,59.392,768.123)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="matrix(1,0,0,-1,63.902,768.123)"><tspan y="0" x="0 6.3812122 11.178598" class="b">0,6</tspan></text>
+<text transform="matrix(1,0,0,-1,81.456,768.123)"><tspan y="0" x="0" class="a">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 30.4728,0 c 0,1.17416 -0.95183,2.12599 -2.126,2.12599 -1.17416,0 -2.12599,-0.95183 -2.12599,-2.12599 0,-1.17416 0.95183,-2.12599 2.12599,-2.12599 1.17417,0 2.126,0.95183 2.126,2.12599 z" class="c"></path></g></g><g><g transform="translate(15.059 -11.925)"><g><g transform="translate(-71.951 -581.451)"><text transform="matrix(1,0,0,-1,71.951,581.451)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="matrix(1,0,0,-1,76.462,581.451)"><tspan y="0" x="0 6.3812122 11.167121" class="b">1,0</tspan></text>
+<text transform="matrix(1,0,0,-1,94.016,581.451)"><tspan y="0" x="0" class="a">)</tspan></text>
+</g></g></g></g><g><g><path style="fill:#000;stroke:none" d="m 58.81961,0 c 0,1.17416 -0.95183,2.12599 -2.12599,2.12599 -1.17418,0 -2.12601,-0.95183 -2.12601,-2.12599 0,-1.17416 0.95183,-2.12599 2.12601,-2.12599 1.17416,0 2.12599,0.95183 2.12599,2.12599 z" class="c"></path></g></g><g><g transform="translate(48.845 5.291)"><g><g transform="translate(-105.737 -598.667)"><text transform="matrix(1,0,0,-1,105.737,598.667)"><tspan y="0" x="0" class="a">(</tspan></text>
+<text transform="matrix(1,0,0,-1,110.248,598.667)"><tspan y="0" x="0 6.3812122 11.167121" class="b">2,0</tspan></text>
+<text transform="matrix(1,0,0,-1,127.802,598.667)"><tspan y="0" x="0" class="a">)</tspan></text>
+</g></g></g></g></g></g></g></svg></div><span class="incontext Cs1oxfHuiT8VXlz0ywPqJ"><a href="least-squares.html#p-1608">in-context</a></span>
 </body>
 </html>

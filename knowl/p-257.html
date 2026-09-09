@@ -1,19 +1,106 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: Sa_3HI2G05NQqj1HKvK_ */
+
+@font-face {
+  font-family: "f1HNgcVaJ8fOiBUwToa3W";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAATcAAoAAAAABwQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADeAAAATwAAAFGwrqsoEZGVE0AAAS0AAAAGgAAAByjfEHNT1MvMgAAAVQAAABMAAAAYFmGX5RjbWFwAAADHAAAAEEAAAFKAYECZGhlYWQAAAD0AAAAMQAAADYvhj85aGhlYQAAASgAAAAiAAAAJAXJAAFobXR4AAAE0AAAAAwAAAAMBM0A2m1heHAAAAFMAAAABgAAAAYAA1AAbmFtZQAAAaAAAAF8AAACtThfNUxwb3N0AAADYAAAABcAAAAg/5EANnicY2BkYGAAYssfbtfj+W2+MnAzvwCKMDw7XscFp2P/2zBVM7MAuRwMTCBRAFihC3YAAAB4nGNgZGBgZvlvwxDFdIOB4W8bUzVDyv+3DMiAGQCTGgbLAAAAAFAAAAMAAHicY2BmzGGcwMDKwMDUxbTn/zOGHhDNEM34gMGQkQkoysDKzAADCBYQBKS5pgApR4brzAr/LRiimFkYjgD5jFClLAwKQMgIAOkwDMh4nH2Rz0rDQBDGv9VWEf8cRTzNUcGWTSylFTy1lF6E4qFnY1zTQEhqmoDv4SN41xfQR/Cmd5/Dk9+ui4JUA5v9TWbmm5kMgB08QOHr0bj0rLCNR88rWMeL51Ucq1PPDeype89NbKpXz2vYUh+MVI0NWhcuy7LCPu48r7Dus+dVXOPNcwNa3XhuYlc9eV5jrXccIMYhBCE71eiQJohQI3OU0jtzdgnj7iN+r5HjinZJrug3vBPMXU7mcgwj7LsNHMSHEmrdkUlUZzJJ41lUlyaqj6TOr0wp1cxIMs8kS2OTx4YZZyxkZYcUWFAuoVgLA4zpiqrZ0CzSJG8NaJ4zInHNRmwG5yaps4gwQsGcyt0lI4wbsM0BBSc8yyqIqyC/NAXBd1afXdhjf1WILssUeTUqysRI2NZyIj/dyWAsvhsJrKvf6rdCHXaXT/dfbfylCkzdDqxI4UQCNyKmplykRS5Bm8bcba7iuXUbtjsO0KOjNJW51dxM0MMnOOZ2wHicY2BgYGaAYBkGRgYQcAHyGMF8FgYNIM0GpBkZmBgcGa7//w/kg+n/B/9rQdUDASMbA4JDLmCi1ICBBQDOnAnhAAAAeJxjYGZgYOBmYPjfzGDGgAUAACnBAccAeJxjZGBhYWBkZOQtKEotSa0wMDAwMbRgYGRiYGQw/CHN+EOG6Ycs8w8Jlmk8TJo8zAd5WF78jvjJ/3MGqwzDOn4ZBgYBGYbNgjIMWjKMMkIMzGBtDJ4MYRrJmgpGQLMUAhJLcxQCMpMzEkuLUhNLdRRK81JSixRKMlIV0gtyFHIyk1PzklP1fBNLMlxSizPT8xScPRSCUtNLcxKLFAwNEOK6zh4MQLCCQYmBmZFRJTD5R0f33h+uexn37v1+YC/zXrEfKj9W/lFh2/unXPSH6/cDf1zZ+X4wfO8S/R75O3Lr1t+R38EwEcgCQSAr8XskhL01ceECVr6eH2d+zhD9k/8v5lz3j/xfMax8P3NEukWbpvwonfrdYzabHBfjDH0ezkk8XN083Fu5ts7l4bnHfXwRD283Dx8AAkB4c3icY2BgYGQAgqtvXXeA6GfH67hgNABTEAcrAAAB9AAAAtgAfQABAF0=) format('woff');
+}
+
+@font-face {
+  font-family: "f2hU9y_nfdevKeUQxiPXU";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWAAAoAAAAAB/QAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADpAAAAbcAAAHAyeGjV0ZGVE0AAAVcAAAAGgAAAByjfEHNT1MvMgAAAVAAAABFAAAAYFmeYqJjbWFwAAADVAAAADgAAAFCAQ0C+GhlYWQAAAD0AAAAMwAAADYvgj+RaGhlYQAAASgAAAAgAAAAJAWwAoZobXR4AAAFeAAAAAgAAAAIBT4AH21heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAG6AAADOVaHPXlwb3N0AAADjAAAABYAAAAg/2kAW3icY2BkYGBgYmB4v8fieTy/zVcGbuYXQBGGZ8fruOC0/P+fTFuY5gO5HCC1DAwAf7kNRQB4nGNgZGBgmv//J0MU03wGhv+vmbYwAEVQABMAneAGOQAAUAAAAgAAeJxjYGaaz7SHgZWBgakLSDMw9EBoxgcMhoxMQFEGDk4GGGBkQAIBaa4pQCqIIYhZ4b8FQxTTfAZ2hBogTwEIGQFPPQrzAAAAeJyNUk1r3DAUHDmb0EIpzaWUnh4914tt0oBzyy4k5FgKe+jNjpVdE0deJG2SvfQn9VR66G/qj8hIK5qWplALP43ex7x5QgBe4isUdt9nfE9Y4VB9SDjDRH1MeA+l+pHwBK+ztwnv41X2KeEDvMi+MFNNnvP0LVYFrPBOHSac4Zk6T3gPrVokPMF79TPhfUhWJnyAN1mHOUassYVFjyVW8BCUqLkKogYuWkO7oV3TthiY65ir0dF/RwaLa6KWPIIZo55xT69m7Q19F6y9xJTolNUD98d+Lp40d839NrKGzKDM4Ip5HX2GmT3ZBsYwH9db2y9XXsq6LqRx0hjZmPWmHXq30p3cjfZa2q3Meu+81c2NXJjLqZwOg8Q6J1Y7bW91N5X5aK76ThvfNwO5n5I/p9CGZx8l4pF1vmqs18FFsQOFYjYOtGdRu4+75ZyaJBWVhzs9+ccd/dlEflHuKmrk8a/IUeGYLUbjz0a71FJNCzmRv0RJkMJAndd5VVTH/zOa/DbIk3zAIiY6Uo3xWezGyvloduNhoa3rRxNk5SWlga8m9Asd7pkS1hHLSgas9vq+KIqjqsQDndqYFgAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIH7Q//8Q8v96qEoGRjYGGJOKgPom0hIAAJB1BwV4nGNgZgCD/2kMUUCKkQENAAApAgHEAAB4nGNkYGFhYGRk5C0oSi1JrTAwMDAxMmRgZGJgZDD5Ic3wQ4bxhyzTDznmHyIsPTyMvxl5mJ/ysKxq+enx05hVhuEZvwwDg4AMw0tBGQYtGcZpQgwsIJ0cDEkMFQydRnoGuoZ6Bs75BZVFmekZJQqGlpYGConFCol5CqV5BaVJOZnFGakpCuX5RdkKSZUKTpklxSVFqYm5Cp55yXoKjjk5CmB9xQpFqcWpRWWpKXoKzvl5aZkpqXklmYk5eggNzhmJRSWpRQpO+TkpGKIMQGDMwMTIqLSie+8P172Me/f+yN7LvFfsx/kfK/+cZ9v7p1z0h+uP7D+u7Hzde753Hfk+6wjj1+9i38O+KzCv+mks2h11rG12bfefldXVAW3dUd/XdXfv8ZtQPbv7e+mcbtYP3UsTVunMjp4Stz95ccWG+m3dq7rX9q2bwLG7jt2jO3dW2aGKvc0Hc7aXrM6cFz3tO+uCY0e7n3N8Z7Y+/ltfTiNIdCfbm32xlvoRiQryDd313XU9HHw/jUW6Ratn/6ia+d1+9v5+tt/53exyXMzTVP/zcE7i4erh4T7A9Z2Pu5uHDwDp4q4hAHicY2BgYGQAgqtvXXeA6GfH67hgNABTEAcrAAACnwAAAp8AHw==) format('woff');
+}
+
+@font-face {
+  font-family: "f8jX05kpC0dabPHhZmfDo";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS0AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADcAAAAR4AAAEhzUEAPEZGVE0AAASQAAAAGgAAAByjfEHNT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADIAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMQAAADYvvT85aGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAErAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGHAAACza1gkt1wb3N0AAADWAAAABYAAAAg/4YAN3icY2BkYGAAYteye33x/DZfGbiZXwBFGJ4dr+OC0xYM05huMK4CcjkYmECiAFBwC4YAAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr9tqyL+OXgQEQ9zrGBLEkq1XqulF2mR4tkYlzQQkpIm0ItP4Xvo0ZOP4E3fwgfw6LfroiBFDGz2N5mZb2YyALbxAIWvx8ONY4UtPDquYQ0vjus4VueOGzhQT45XsKHeHa9is7bDSNVYp3Vtswwr7OPecY11nx3XkeHNcQMn6s7xCnbVq+NV7KkPNBHhEIKAnXrokMYIUSG1lNA7tXYBbe8jfq+ofku7IJf0a94xZjYntTmaEebdBprRoQSe15FxWKUyTqJpWBU6rI6kym51IeVUSzxLJU0inUWaGRcsZGTPKDCnXEyxFvoY0hWW0zM9T+Ks1ad5yYjYNhuyGVzquEpDwgA5c0p7F4zQdsA2BxSc8iyrILaC/NIUjDCBz9v/zu6xG3PMLwvQZbk8Kwd5EWsJ2p6cyk+X0h+K60pGE1984+61eq3AC7rLJ/1PH/irAnBld2MEcyvo29FxpYt5kmfit2nM7EZLnoXdvNm9GQizQpd64XFjgYdPvQt6IwB4nGNgYGBmgGAZBkYGELAB8hjBfBYGBSDNAoQgvu3//xDy/xGoSgZGNgYYkzxAkebBAQB5UwbwAHicY2BmAIP/zQxmQIqRAQ0AACipAb0AAHicY2RgYWFgZGTkLShKLUmtMDAwMDEyYGBkYmBkMPwhzfhDhumHLPMPCZYeHkZNHuaDPCyHv2v9zPlhxyrDsIlfhoFBQIZhq6AMg5YMw3chBmawNgZfhiiNZE0FI6BZCgGJpTkKAZnJGYmlRamJpToKpXkpqUUKJRmpCukFOQo5mcmpecmper6JJRkuqcWZ6XkKzh4KQanppTmJRQr+IYYKhgYIOV1nDwYgkGNgYmRUsu3e+8N1L+PevT/u7GXeK/bT4cfKvw5se/+Ui/5w/XHnjys733et498NjjMe/sEk+tPk+F8Ttt8rWCAMvp9LRLpFm6b8KJ363WM2mxwX4wx9Hs5JPFzdPNxbubbO5eG5x318EQ9vNw8fACPsYAQAAHicY2BgYGQAgqtvXXeA6GfH67hgNABTEAcrAAADEAAAAxAAOA==) format('woff');
+}
+
+@font-face {
+  font-family: "fV0X6bINzjvKAgEdbWiuU";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "feuiAA8Q5xfIPH5lmAYsN";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAWkAAoAAAAACAwAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADqAAAAc4AAAHX6O6OUUZGVE0AAAV4AAAAGgAAAByjfEHNT1MvMgAAAVAAAABFAAAAYFZPXlljbWFwAAADTAAAAEYAAAFSAkMHKWhlYWQAAAD0AAAAMwAAADYu2T77aGhlYQAAASgAAAAeAAAAJAUKAYhobXR4AAAFlAAAABAAAAAQBkwAm21heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZgAAAGxAAADIfpoujtwb3N0AAADlAAAABMAAAAg/3gAPXicY2BkYGBgYmDIK8z+E89v85WBm/kFUITh2fE6Ljit/j+ciZlpNZDLAVLLwAAAVjgLggB4nGNgZGBgWv0/nCGKSYcBCJiYGRgZUAELAEttApcAAAAAUAAABAAAeJxjYGYsYpzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrAyM8AAIwMSCEhzTQFSOgwGzAr/LRiimFYzrERRowCEjAAsgwpUAAAAeJydUsFq3DAUHDmbLYVQurf29ui5XrwmDTg9JYaUQMktIZRevLF218QrG0mbZH8qp9If6o90rFUJoe0lNn5v9DRvNJIF4A0eobB7vuFnxAoT9SniBGN1GfEePqo/nBEmyauI9/E2+RzxGAfJgkw1es3Rj9A1YIUPahJxggP1JeI9XKvvEY/I+RXxPiR5H/EY75KvKNGhxxYWDZZYwUMwQ8E3I6rgQjSMG8aecY6WXEeuRs36PRUsbonm1BGcctZz3rOq2btm7Zy9N5gSnbC7ZX5az4WRZtbMd0F1YA7ODBbk1awZMhuqtZxD2fVb2yxXXmZFkUnlpDKyMf1m3jZupWu57+ytzLdy2njnra7Wcm5upnLSthL6nFjttL3T9VTKziyaWhvfVC21/2W/pNGKYx8s4km1XFXWa5YuwiGsg0FcdHZdMZ+FHfiQLXerKZXT/3Cyx/85qedL7XgF0vDl7MxxROHO+LPOLrXk00yO5S9DrBVpkeZZfvTSHV2FGcfeLvz+nfGUl2O3AVxp65rODBbSGW2At2NYYJB8IGV4D8NdQm+11w9Zlh3OCvwGy02S4gAAAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhExAWodBj8Hg/38E6//V/1f+X4bqAgNGNgZkLkHACDSYmQT1QwEAAJ4oC24AAHicY2BmAIP/pQy2DFgAACfpAbUAeJxlz0Fo01AAxvH3lqyrXZa51ngxNg+yXoRm6fDSwxi2FPHiQRBcFSG1WROXJs1L6iwyJuLJeBCFehDP1YEdiohMMnYUdtCT4EXwVCoi8+J74xV08+LB7/iH3+GDgOcBhHCqhc3QvKnr+ulCEcAxAME8PQGoDOnJMZrlqMIzKHDvBf4VW6CP9xfHZTCYlgE4KoMfMzI4JcMXaTB+6JKgBgJwF9yb1/R8QdPLXquD7YYVokKxqCMjQIaL2m6rXXPswDLraNXDK6jWQSU7DEJsGk10zr2moTOOg/66AGEzMPENs66hsucu23XTDW3D0f6BsmXg0MT/hfMebhoOONgUmAYzgIdQveC/3Y5iWolhHJOdmIuP01n6fDSbiEerEq2QnVFlQmQLpAc/EoU7uCvtdT98jr4md5ubSzZuX89GnQdr3fXk7u1EVFq+WlpLindIBn4iGY4oJCVZrtdoPGv1+71ef9PrWYr4a/0d/b4FXw/Jy28c2dhflJiaZ2nmM3/IMkQl6pBkiE/8PEkzVbnCD+Icq7LqUm5u7tIeqZLL2z8Hikg2jtGL0q0ntN0lZ59uPUowN5rIprhu7rdw5KGQui9Mvkl9mYwE8Q/HAbouAAB4nGNgYGBkAIKrb113gOhnx+u4YDQAUxAHKwAAAfQAAAEWACcBFgBLAiwAKQ==) format('woff');
+}
+
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.a { font-size:11.47700024px;font-family:fV0X6bINzjvKAgEdbWiuU }
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.b { font-size:11.47700024px;font-family:f1HNgcVaJ8fOiBUwToa3W }
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.c { font-size:11.47700024px;font-family:feuiAA8Q5xfIPH5lmAYsN }
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.d { font-size:11.47700024px;font-family:f8jX05kpC0dabPHhZmfDo }
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.e { font-size:11.47700024px;font-family:f2hU9y_nfdevKeUQxiPXU }
+.CSa_3HI2G05NQqj1HKvK_ svg.pretex tspan.f { font-size:7.65140009px;font-family:fV0X6bINzjvKAgEdbWiuU }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Again compare with this <a knowl="./knowl/pivot-cols-dim.html?vers=b58525" knowl-id="xref-pivot-cols-dim" alt="Important Note 2.5.27 Pivot Columns and Dimension" title="Important Note 2.5.27 Pivot Columns and Dimension">important note in Section 2.5</a>.</p>
-<span class="incontext"><a href="solution-sets.html#p-257">in-context</a></span>
+<h5 class="heading CSa_3HI2G05NQqj1HKvK_"><span class="type">Paragraph</span></h5>
+<p class="CSa_3HI2G05NQqj1HKvK_">To every <span class="pretex-inline" style="width:2.52399em"><span style="height:0.609em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.287)"><tspan y="0" x="0" class="a">m</tspan></text>
+<text transform="translate(11.775)"><tspan y="0" x="0" class="b">×</tspan></text>
+<text transform="translate(22.587)"><tspan y="0" x="0" class="a">n</tspan></text>
+</svg></span></span> matrix <span class="pretex-inline" style="width:0.834em"><span style="height:0.844em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(6.381)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> we have now associated two completely different geometric objects, both described using spans. </p>
+<ul style="list-style-type: disc;" class="CSa_3HI2G05NQqj1HKvK_">
+<li>
+<p>The <em class="terminology">solution set</em>: for fixed <span class="pretex-inline" style="width:0.885em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(6.967)"><tspan y="0" x="0" class="c">,</tspan></text>
+</svg></span></span> this is the set of all <span class="pretex-inline" style="width:0.644em"><span style="height:0.4925em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">x</tspan></text>
+</svg></span></span> such that <span class="pretex-inline" style="width:3.33699em"><span style="height:0.748em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="d">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(35.108)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span> </p>
+<ul style="list-style-type: circle;">
+<li>This is a span if <span class="pretex-inline" style="width:2.69299em"><span style="height:0.904em;vertical-align:-0.17em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.635)"><tspan y="0" x="0" class="d">=</tspan></text>
+<text transform="translate(21.336)"><tspan y="0" x="0 6.3812122" class="c">0,</tspan></text>
+</svg></span></span> and it is a translate of a span if <span class="pretex-inline" style="width:2.41499em"><span style="height:0.9em;vertical-align:-0.161em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+<text transform="translate(9.635)"><tspan y="0" x="0" class="b">A</tspan></text>
+<text transform="translate(9.635)"><tspan y="0" x="0" class="d">=</tspan></text>
+<text transform="translate(21.336)"><tspan y="0" x="0" class="c">0</tspan></text>
+</svg></span></span> (and <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="d">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent).</li>
+<li>It is a subset of <span class="pretex-inline" style="width:1.37973em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">n</tspan></text>
+<text transform="translate(12.645)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+<li>It is computed by solving a system of equations: usually by row reducing and finding the parametric vector form.</li>
+</ul>
+</li>
+<li>
+<p>The <em class="terminology">span of the columns of <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span></em>: this is the set of all <span class="pretex-inline" style="width:0.607em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text transform="translate(0.861)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> such that <span class="pretex-inline" style="width:3.05899em"><span style="height:0.7415em;vertical-align:-0.0075em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0 7.2419872" class="a">Ax</tspan></text>
+<text transform="translate(16.441)"><tspan y="0" x="0" class="d">=</tspan></text>
+<text transform="translate(29.002)"><tspan y="0" x="0" class="a">b</tspan></text>
+</svg></span></span> is consistent. </p>
+<ul style="list-style-type: circle;">
+<li>This is always a span.</li>
+<li>It is a subset of <span class="pretex-inline" style="width:1.5524em"><span style="height:0.73633em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="e">R</tspan></text>
+<text transform="translate(7.892 -4.579)"><tspan y="0" x="0" class="f">m</tspan></text>
+<text transform="translate(14.626)"><tspan y="0" x="0" class="c">.</tspan></text>
+</svg></span></span>
+</li>
+<li>It is not computed by solving a system of equations: row reduction plays no role.</li>
+</ul>
+</li>
+</ul>
+<span class="incontext CSa_3HI2G05NQqj1HKvK_"><a href="solution-sets.html#p-257">in-context</a></span>
 </body>
 </html>

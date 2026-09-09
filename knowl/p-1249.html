@@ -1,19 +1,90 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: iP_0gM4ZSK_ckSy3mDyY */
+
+@font-face {
+  font-family: "fz35RydeFJtK1LSDUoxPC";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAS4AAoAAAAABuwAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAR8AAAEhz0D9P0ZGVE0AAASUAAAAGgAAAByjfENHT1MvMgAAAVAAAABFAAAAYFUhXwljbWFwAAADJAAAADcAAAFCAA0C5GhlYWQAAAD0AAAAMgAAADYvvUCzaGhlYQAAASgAAAAeAAAAJATdA6lobXR4AAAEsAAAAAgAAAAIBiAAOG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZgAAAGJAAACza1cleJwb3N0AAADXAAAABYAAAAg/4YAN3icY2BkYGAAYse6G9Pi+W2+MnAzvwCKMDw7XnccTlswTGO6wbgKyOVgYAKJAgBzZg0GAAB4nGNgZGBgXMUwjSGKWYABCJhuMDAyoAImAEGaAo0AAAAAUAAAAgAAeJxjYGYWYJzAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFStgy2zAr/LRiiGFf9z0JRowCEjAAdrwrWAAAAeJyNkc9Kw0AQxr+tbUX8c/AgIh7mqGDLJrRqe62KF2kpxbMxXdJASEqagBefwvfQoycfwZu+hQ/g0S/roiAiBjbzm8zMNzNZABu4h8Lno3HtWGEdD45rWMaz4yUcqVPHdeyqR8cNrKo3x02s1TaZqeor9K5sVcUKO7hzXGPfJ8dLSPHquI5jdeu4gS314riJbfWOPYTYh8DnpBod0ggBSiSWYkZn1s9hrD3g95LqU/o5uWDc0EaY25rE1hhmVO82sBfui691R0ZBmcgoDmdBmZugPJAynZpcipmRaJ5IEocmDQ0rLtiokj2hwIJyEcVaGOCcoaCYnZhFHKWtAd0xMyI7bMBhMDZRmQSEM2SsKazNmWHsgm0uKOjz/NZBbAf5oSkYYgKP1vuq7nGa6lS/zMch22VpcZblkRG/raUv31PK4FzcVDKceOJV4V6r1/K1f/j7pv+ZA391AC7t3VSCmRX07Oq4NPkizlLx2nTm9kYLnht785pZXa6DeW4Kc6O19ro+PgC9JnonAAAAeJxjYGBgZoBgGQZGBhCwAfIYwXwWBgUgzQKEIL7t//8Q8v8RqEoGRjYGGJM8QJHmwQEAeVMG8AB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nGNkYGFhYGRk5C0oSi1JrTAwMDA0NWJgZGJgZDD8Ic34Q4bphyzzDwmWHh5GTR7mgzwsh79r/cz5Yccqw7CJX4aBQUCGYaugDIOWDMN3IQZmsDYGX4YojWRNBSMDAxOFgMTSHIWAzOSMxNKi1MRSHYXSvJTUIoWSjFSF9IIchZzM5NS85FQ938SSDJfU4sz0PAVnD4Wg1PTSnMQiBf8QQwVDA4ScrrMHAxDIMTAxMirZdu/94bqXce/eH3f2Mu8V++nwY+VfB7a9f8pFf7j+uPPHlZ3vu9bx7wbHGQ//YBL9aXL8rwnb7xUsEAbfzyUi3aJNU36UTv3uMZtNjotxhj4P5yQerm4e7q1cW+fy8NzjPr6Ih7ebhw8AJgNgBgB4nGNgYGBkAIKrb113gOhnx+uOw2gAWnIIpQAAAxAAAAMQADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fJ-OB6sT8EzlpO2Ms82D8";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUkAAoAAAAAB1AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADdAAAAYIAAAGIhrkx9kZGVE0AAAT4AAAAGgAAAByjfENHT1MvMgAAAVAAAABMAAAAYFawgdFjbWFwAAADHAAAAD0AAAFSIeYlt2hlYWQAAAD0AAAAMQAAADYwfUCzaGhlYQAAASgAAAAgAAAAJAY9BFtobXR4AAAFFAAAABAAAAAQC5QAzW1heHAAAAFIAAAABgAAAAYABFAAbmFtZQAAAZwAAAF9AAACtThROUhwb3N0AAADXAAAABcAAAAg/5EANnicY2BkYGAA4rRJMxfH89t8ZeBmfgEUYXh2vO44nJZgYGbewWQL5HIwMIFEAWP5C88AAAB4nGNgZGBgsmVgZohi/sAABMw7GFL+v2VABiwAW9wEoAAAUAAABAAAeJxjYGY2ZZzAwMrAwNTFtOf/M4YeEM0QzfiAwZCRCSjKwMrMAANAPkMCjBOQ5poCpK4rCTEr/LdgiGKy/f8XyGeEq1YAQkYAA8wOTnicfZHNSsNAEMf/2y8RP44inubYQhM2sS204Kml9CKUHno2pmsSCElNE+h7+Aje9QX0Ebzp3efw5Oy6KEg1sNnfZGb+M5MBcIwHCHw9EteWBY7waLmGPbxYruNcXFhu4FTcW27iQLxabuFQfHCkaOyzdWWyNAuc4c5yjes+W67jBm+WG5Di1nITJ+LJcotrvaONEB0QfO5Uosc0R4AKqaGEvbGxCyhzd/l7hQwrtgvmkv2K7whrk5OaHMUR+u0C7bBDvpQ9mgdVSvMkjIOqUEHVpSpbqYLKWFG0TilNQpWFijMuuZCWnbDAhuUiFnMwxoxdQRlP1CaJMmfM5oIjItNswM1goaIqDRimyDmnNHfBEcoM6PKAhBGfXRXIVKBfmgTvO2vIXeijf5WPAZfJs3KaF5Ei35U0op/uaDwj2w152jV0ho4v/cHu6f6rjb9UgaXZgRbJjYhnRsRSFZskz8hz2VibzZV8tmbDkqP6OmpdqFJtpZReX+ITOGJ2sgAAAHicY2BgYGaAYBkGRgYQ8AHyGMF8FgYDIM0BhExA+rriJSWh//8RrP/a9wzvvofqAgNGNgZk7ogEAFBZDNwAAAB4nGNgZmBg4GZg+N/MYMaABQAAKcEBxwB4nEWLP0sjQRyGf5NsIsZxvTvcoLAXpoii3nmOnnZqo4EUHhELIcWC4zomgSXKmkXraw5csPA0iCL4B8TYXbGdCzmu2Pq+gJWFn8CZNQkYtfB9mocHXgSKAgih7k2bV/gOpXR8igKKAAIqdSQ/R2QqKvuUKo4M4+hfrFzuPS3I/zEdbnt0gA86/PuowxcdGZ9AeXmpMAvLYDLb3theW7XsUqFYGTKHyQSlk2SRORZZLJlF5ticOV+JU17jNqkUOSlsWsQqmbxs8m8/WKU4z7dKhTKZy5IlXnAsZpNx+t5H57LQ3hVco1+gIJT+vvK7OeD6MuMj3xd1P+onZVrWmum439zWZEbUm5kOVVQDdCmqWjgdtKbjqgSxq4l8I+95jbx4hbXthbYxkX9zj52fxdRHMRIIGqDwUKxrLSMXJuMNPPjHEPfixj1u3IsaNwQebCVdNxca7sNMTA2t3qd+7eeBdA5F9iSeSqCjMdy5jxMu7vIS3inGd13BBe52sfoMmR+Y9AAAeJxjYGBgZACCq29dd4DoZ8frjsNoAFpyCKUAAAH0AAAC2AAYAtgAfQPwADg=) format('woff');
+}
+
+@font-face {
+  font-family: "fyxP4p0FShaDanxPi7Ee-";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAUgAAoAAAAAB4QAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADgAAAAXYAAAGSno1hfEZGVE0AAAT4AAAAGgAAAByjfENHT1MvMgAAAVAAAABHAAAAYF7DXP9jbWFwAAADKAAAAD0AAAFCAg0C6WhlYWQAAAD0AAAAMQAAADYvHTXjaGhlYQAAASgAAAAeAAAAJALO+aZobXR4AAAFFAAAAAoAAAAKBRYAW21heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAZgAAAGNAAAC8allRcxwb3N0AAADaAAAABYAAAAg/4YAN3icY2BkYGAA4ln/brfH89t8ZeBmfgEUYXh2vO44nLb4bsJkzmAD5HIwMIFEAZSiDVgAAAB4nGNgZGBgsPluwhDFlA9kMTCZM4BEkAETAEM6AnAAAAAAUAAAAwAAeJxjYGbKZ5zAwMrAwNTFtIeBgaEHQjM+YDBkZAKKMrByMsAAIwMSCEhzTQFSjgxOzAr/LRiiGGw4ziCpsWFQAEJGAC1jCnUAeJyVkstKw0AUhv+kFxEvuBIRFwdXLbRlml6gBVe90I1Qu+jamA5JICQlTSD4Ei58D30CH8Fl38WlZ6aDihTEwGS+k/Of20wAnOIFFnaPwINhCyd4NWzjAO+GS7ix7gyXcW1tDVdwZJ8ZruLY7rPSKh+yda+jFFu4xLNhm+u+GS7hEVvDZYytJ8MVnFsfhqu4sK9Qg4c6CA53KtBlmsNFjkhTyN5A2ymk3hv8PUeMFdspc8Z+ybuPtY6JdIxkhXq3gJpXJ0eILs3dPKJ56AVunko3b1Aer2RKWSDJX0cUhZ6MPckRt1xIpR1zgg2n8zlZEyPM2OVmwVhuQj9ujthcsMLXzbrcDBbSzyOXYYqEYzK9p6yQesAWD0gY8tpXgXQF+pWTMEHBWjWQUiZa2f7KNODO1FLH56DPpZM4myapL8lpCRrSd8c0mpHpkCZFJuNNmMTUVqJBc9B0hNPfP/t/O8PfNYGlvr+fgep4sJTpTtJiY61vXZUo9N8hWNVDhx2pzGQhhGj3OvgEeQKEvwAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChCC+0///QNLx////B6AqGRjZGGBM8gEjE6UmDCgAAIBOBvcAAAB4nGNgZgCD/80MZkCKkQENAAAoqQG9AAB4nEWOz0sCQRzFZ1zTTUf7QUbQFoOBZPRjLTt5VEGwQAo8t6yDK8gm6rKeu24nKQgihKBDlz0IQpc9RKCH/oXoGP4HM7JrNHbxyzs8Hp/v40Hg9wMIYaTRJG3SkWU5dXoCoA9AkGKbkEk+tiWwDf8tgkkkvCP/h0TT7HO0IIG3JQmAZQk4KxLYk6C2CoT/N3AJrnbVJD6W5TQuKUYdl2qqphhNohj72NArpInbGsHVRh3XayrRVXJ4rrS1HGnVqjrOFvAFqRp1pYnznTbRW7VrHafkOXGQLQB+cbADBAjj6ovlsLwDHYdlHMFZZz326vUCjmfGWJ5lvHwwyicPJbE7hD9jgZ79fsWsSY7KLEDNvjgMurbmlr2ENVW5KHfU1max2Xc5w1FxXsCKY4EVZw3TnCt7AdesiKUgtW1aZglronK53Lm2PYvNCuUMR8XoRFizYjd3zLinhcfAdgg+HKHFLgpZKDwIDZ4Q+g6PnlHEQtE/VVOalAAAeJxjYGBgZACCq29dd4DoZ8frjsNoAFpyCKUAAAJvAAACbwBbADgAAA==) format('woff');
+}
+
+@font-face {
+  font-family: "fsJZTb9T-x1wGQMXRtmdP";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "ft_TtfAb0h2aSImb8xPBi";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAa0AAoAAAAACTAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAD3AAAAqcAAALFvVQ+ZUZGVE0AAAaEAAAAGgAAAByjfENHT1MvMgAAAVgAAABNAAAAYFhmYVNjbWFwAAADcAAAAFIAAAFaBOwDkWhlYWQAAAD0AAAANQAAADYvEEENaGhlYQAAASwAAAAjAAAAJAVQAxJobXR4AAAGoAAAABQAAAAUCg3/jG1heHAAAAFQAAAABgAAAAYABVAAbmFtZQAAAagAAAHGAAADS/ruxaRwb3N0AAADxAAAABcAAAAg/4MAPXicY2BkYGBgYmDY1PzKJZ7f5isDN/MLoAjDs+N1x2H0/43/vzJtYFoK5HKA1DIwAACrXQ/nAAAAeJxjYGRgYFr6/ytDFNPJ/xv/v2bawJDy/y0DMmAFAO4sCmMAAABQAAAFAAB4nGNgZmJlnMDAysDA1MW05/8zhh4QzRDN+IDBkJEJKMrAyswAA4wMSCAgzTUFSDkyVDEr/LdgiGJaysANU8P4iGk+gwIQMgIAxMkNZwAAAHicjVLLahsxFD2aOIZCKM2uS9FlYczMNA2Z7JKBFG+yaxalm7FHtkXGkpFkJ/6LfklXpV/Qj+qyZ2RBCGmhHqx7dO+55z4QgNf4DoHD7wt+JixwKj4mnGEsPid8hA/iV8IjvM3eJ3yMN5lKeIyT7BuZYvSKtx8xa8AC78RpwhlOxKeEj7AQXxMeoRC/Ez6GzJqEx6y1QwOLDfZw0FhihQCJEjW/gqiFj6fhueW54TlDT64nV6Gj/4EKDvdEM+pIXDMaGA/0Kuau6Zsyd44J0RWze9qnej7eFK2i3UXVgTl0ZrAgr6PPkKmp1jOGxm72Ti9XQZZ1XcjWy9bIrdlsZ732K9XJB+vu5Wwvr3Xwwal2LadmPpFXfS9jnpdOeeV2qpvIxpqF7pQJuu2p/bf2Gzba8h5ii3hSbVatC4qu27iEdWwQt9atW9qbOEGI1nFaRamK/Q+bvfzHpp6XGjYXoqjm/g5ZNfL4r6hT4ZxlrAk31i2VrCaFvJQv2pPT0PZ6zlCd13lVVOf/M+bz2i+HTqrAXaR70mx8KIcRcz6jw6i4U85ra4b28pItgu9oqDrUeSRl+Eqc4YIBp4J6LIqiPLvAHy83ndAAAHicY2BgYGaAYBkGRgYQCAHyGMF8FgYLIM3FwMHABISODJ4M5QxV//8DxeDs/wf+7/zf878LqhcKGNkYUAXIATADmEjSBfQJC6U2UwUAADz9DnoAAHicY2BmYGDgZmD4X8pgy4AFAAApEgHAAHicZY9vSBNhHMef2+3aTefS6OyFS4+wFxqNmb5wZC9qLpiFBYrEetPUM6/2r7vbnLP5PzWeqBl5OS3dGBb2xhYhhCxFDCIzQqp3vQgC32RlL3yecRc160Uv+r38wOfD90cArRYQBJHnFziJC1ksloqqakBoAAGqcBHAJgLv1+BiEpdoZYNGIQzkS4O2pjdTm7FSJvB9twmAfBPIFJhAuUkzuQdQOyYNmkEYQDB6xGw5XGG22Hz+ToG/2C6xFVarhXWJrMvLBrz+QLObF9u5VrbDJ1xmmzvZE7wkSgLn8rAOb4uZPe52s388kRU4kROCXKuZtfm8bXwr55V4l9v8T7C1uwSJE1iH5HLzLf/xep/gcblB9g6AcnAOnP+7tBT4QIIwEnfQUZjG9jSRTqOlNJkuxKV4Vi3dlVY7GGxHS6pdZ4Qp1DaPNdNETeYQiTYzVkalfuY1XoMcckKYqo8OxLZRAxqGj5SGwcjZoSz3ZTnljIbvs1ilHGXMM+WpwkHKGIQpvJEiJITJz5lKBnKrQ/JVVl3sipzayY1ktbrRntg2XpycWItmG0acDxO4LBmbImCmlkQ63MkoOh6K7/sfqOxA4DWktpDtFdLPrNBJZesFpJAVeTZQEfwA50LxSzAIw4PdXfS0oqcke0NltUJG0LF+tG94gz4zSDUp+XWK0aEU0AFcTBm3r79B39aJCG4ksR53MyEn1TvUN9KfrQTHroz7Y8K4B9InHXZ721TgYck0nJDvxummVWoinpBnYBzO9j0O0V8Tyhe1cNmTnKfk0bGbMlyAzy+sQPrd2vrbuWDSVxKG4Z6ISC/XU11isEeAIcjLzgRdLqBNzGRf/rEXfWLC93Awik6PL9zapXihrjiHlA/+MuhvG3JuGHKf5HzMhQbjb9vrLuEAeJxjYGBgZACCq29dd4DoZ8frjsNoAFpyCKUAAAH0AAACXv+xATj/6QLJAAABuP/y) format('woff');
+}
+
+@font-face {
+  font-family: "f_74npHLmusHaWQCKTf65";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAAVsAAoAAAAAB+AAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADjAAAAbgAAAG4A9ReeUZGVE0AAAVEAAAAGgAAAByjfENHT1MvMgAAAVAAAABNAAAAYFhHYyNjbWFwAAADMAAAAEEAAAFKB0j/gGhlYWQAAAD0AAAAMQAAADYvKEFLaGhlYQAAASgAAAAgAAAAJAWUAuZobXR4AAAFYAAAAAwAAAAMBnQAMW1heHAAAAFIAAAABgAAAAYAA1AAbmFtZQAAAaAAAAGQAAADIXMJYepwb3N0AAADdAAAABcAAAAg/5AANnicY2BkYGAAYnOLSs14fpuvDNzML4AiDM+O1x2H04L/vzNlMj0EcjkYmECiAFJ3DOwAAAB4nGNgZGBgevj/O0MUUwcDEDBlMqT8f8eADJgBmRkGfgAAUAAAAwAAeJxjYGZyYJzAwMrAwNTFtOf/C4YeEM0QzPiAwZCRCSjKwMrMAAONDEggIM01BUg5Mu9mVvhvwRDF9JCBE8hnhMgyMTEoACEjAPJIDRoAAAB4nKWSzUrDQBSFT9KqiD9LEVd32Yotk6BCXQmtpQWFItK1YxzTQEhKmoDP4NaHcKdP4CO49HEET8ZBUVwIBm7mu5n7c+5kAGziER4+HoUrxx428OTYxwpeHDdw4mnHTex6b46XsOYfO17Gun/DSK+5Su/SZtXsYQf3jn32fXbcwB1eHTdx4T04XsKW33K8jG3/FC1EaEMQUqnCPmkCjQqppYS7M+sXMHbd4/cKGa7pF+SS+4ZrjLnNSW2OYUT97gKtqC2hUvsy0VUqkySa6aowutqTKrs2hZQzI/E8lTSJTBYZZpyxUV12wAILlotZrIM+RtzS5WxgFkmcdfp0zxkRW7GaYnBu4irVhCFy5pR2LRhh7IBdDig4ov3WQWwH+VFTMGakdmN9ZX7/GnxW7lFpbfVxhjiklDwrh3kRGwm7So7kawLpj8QplnGpOb/ddBjUwb1OrxOq8PD3M/mvYvxdCzC1/7tundvWgT1OTE2xSPJMgi6dub0lJe3W3ibFqAMa5oUpza1SKjgI8A6cXY9geJxjYGBgZoBgGQZGBhBwAfIYwXwWBg0gzQakGRmYGByZd///D+SD6f8H/7hB1QMBIxsDgkMuYKLUgIEFALI0CcgAAAB4nGNgZmBg4GJg+N/MYMaABQAAKaYBxgABAAQEAAEBAQ1wcmV0ZXgwMDAxNTEAAQIAAQAw+BwB+B0C+B4D+BgElQwCKQwDwQwEnIL4/fl1BRwAxw8cAAAQHADMERwAKxwBjRIABAIAAQAHADcAYQBubGFtYmRhKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIEl0YWxpYyBNYXRoSXRhbGljIDEwTWF0aERlc2lnbi1DSAAAAAGHACIAAwEBI5a78ou9+EW9Ab2998C9A70W+CT4qfwkBr38dxX4RffA/EUHDot2l9f45dYS9ymv+CCvEzj3KfjsFa8GmamkpaqPkIyQi5CL1ougNpIyCBO4++n8e+yL94/3+gUTeJT7RKD7U9yLyou9zpjRCGcGfWxucWuHCIgGUIuB93uE9zuG9xV99yP7AYuFi4WLhIoISoJWTn5JCA7295D4lhVe+037Upr3NidD+0T3JfcP9yX7D0P3RPc27/tSfAUO+RwU+CEVgpT4do/3TZcGHgoBmC8MCZIMCosMC7UKtZ0MDOALx6QMDYsMDnicY2BgYGQAgqtvXXeA6GfH647DaABacgilAAAB9AAAAogAIAH4ABE=) format('woff');
+}
+
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.a { font-size:11.47700024px;font-family:ft_TtfAb0h2aSImb8xPBi }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.b { font-size:11.47700024px;font-family:fsJZTb9T-x1wGQMXRtmdP }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.c { font-size:11.47700024px;font-family:fJ-OB6sT8EzlpO2Ms82D8 }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.d { font-size:11.47700024px;font-family:f_74npHLmusHaWQCKTf65 }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.e { font-size:7.65140009px;font-family:fsJZTb9T-x1wGQMXRtmdP }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.f { font-size:11.47700024px;font-family:fz35RydeFJtK1LSDUoxPC }
+.CiP_0gM4ZSK_ckSy3mDyY svg.pretex tspan.g { font-size:11.47700024px;font-family:fyxP4p0FShaDanxPi7Ee- }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Since it can be tedious to divide by complex numbers while row reducing, it is useful to learn the following trick, which works equally well for matrices with real entries.</p>
-<span class="incontext"><a href="complex-eigenvalues.html#p-1249">in-context</a></span>
+<h5 class="heading CiP_0gM4ZSK_ckSy3mDyY"><span class="type">Paragraph</span></h5>
+<p class="CiP_0gM4ZSK_ckSy3mDyY">Let <span class="pretex-inline" style="width:0.556em"><span style="height:0.674em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+</svg></span></span> be a <span class="pretex-inline" style="width:2.21499em"><span style="height:0.7005em;vertical-align:-0.014em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="b">2</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="c">×</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="b">2</tspan></text>
+</svg></span></span> matrix, and let <span class="pretex-inline" style="width:0.651em"><span style="height:0.739em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="d">λ</tspan></text>
+</svg></span></span> be a (real or complex) eigenvalue.  Then</p>
+<div class="pretex-display CiP_0gM4ZSK_ckSy3mDyY"><svg height="2.43965em" version="1.1" class="pretex" viewBox="70 1 363 28"><text transform="translate(71.271 18.261)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(79.787 18.261)"><tspan y="0" x="0" class="c">−</tspan></text>
+<text transform="translate(90.311 18.261)"><tspan y="0" x="0" class="d">λ</tspan></text>
+<text transform="translate(98.356 18.261)"><tspan y="0" x="0" class="a">I</tspan></text>
+<text transform="translate(102.224 20.855)"><tspan y="0" x="0" class="e">2</tspan></text>
+<text transform="translate(109.645 18.261)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(121.346 2.394)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(130.212 10.76)"><tspan y="0" x="0 15.964507" class="a">zw</tspan></text>
+<text transform="translate(130.12 24.707)"><tspan y="0" x="0 17.099583" class="d">AA</tspan></text>
+<text transform="translate(155.961 2.394)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(179.948 18.261)"><tspan y="0" x="0" class="f">=</tspan></text>
+<text transform="translate(187.379 18.261)"><tspan y="0" x="0" class="c">⇒</tspan></text>
+<text transform="translate(215.808 2.394)"><tspan y="0" x="0" class="g">A</tspan></text>
+<text transform="translate(222.981 10.76)"><tspan y="0" x="0" class="c">−</tspan></text>
+<text transform="translate(231.658 10.76)"><tspan y="0" x="0" class="a">w</tspan><tspan y="13.947" x="-3.059" class="a">z</tspan></text>
+<text transform="translate(239.841 2.394)"><tspan y="0" x="0" class="g">B</tspan></text>
+<text transform="translate(251.817 18.261)"><tspan y="0" x="0 3.2135601 11.006443 16.825281 26.546301 32.181507 35.395069 41.397537 47.032745 53.551682 59.221321 64.856529 69.975266 73.808586 79.99469 87.580986 96.429756 99.643311 103.47663 113.15174 118.78695 122.00051 128.00298 133.63818 140.15712 145.82677 151.6456 154.88211 161.41252" class="b">isaneigenvectorwitheigenvalue</tspan></text>
+<text transform="translate(422.067 18.261)"><tspan y="0" x="0" class="d">λ</tspan></text>
+<text transform="translate(429.539 18.261)"><tspan y="0" x="0" class="b">,</tspan></text>
+</svg></div>
+<p class="CiP_0gM4ZSK_ckSy3mDyY">assuming the first row of <span class="pretex-inline" style="width:3.11106em"><span style="height:0.965em;vertical-align:-0.226em"></span><span><svg version="1.1" class="pretex" viewBox="0 -11.47704 11.47704 11.47704"><text><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(8.516)"><tspan y="0" x="0" class="c">−</tspan></text>
+<text transform="translate(19.04)"><tspan y="0" x="0" class="d">λ</tspan></text>
+<text transform="translate(27.086)"><tspan y="0" x="0" class="a">I</tspan></text>
+<text transform="translate(30.953 2.594)"><tspan y="0" x="0" class="e">2</tspan></text>
+</svg></span></span> is nonzero.</p>
+<span class="incontext CiP_0gM4ZSK_ckSy3mDyY"><a href="complex-eigenvalues.html#p-1249">in-context</a></span>
 </body>
 </html>

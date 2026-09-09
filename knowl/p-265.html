@@ -1,19 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-US">
-<!--**************************************-->
-<!--*    Generated from PreTeXt source   *-->
-<!--*                                    *-->
-<!--*   http://mathbook.pugetsound.edu   *-->
-<!--*                                    *-->
-<!--**************************************-->
+
+
+
+
+
+
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="robots" content="noindex, nofollow">
-<style id="pretex-fonts"></style>
+<style id="pretex-fonts">
+/* pretex cache: Wrv8-y7dehtrMNKEvdft */
+
+@font-face {
+  font-family: "fTMrLMHpdtIv5vqV7ZWl2";
+  src: url(data:application/font-woff;base64,d09GRk9UVE8AAASkAAoAAAAABsQAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAADbAAAARQAAAEUB+swJUZGVE0AAASAAAAAGgAAAByjfEC7T1MvMgAAAVAAAABLAAAAYHbKgHtjbWFwAAADHAAAADQAAAFCAA0kuGhlYWQAAAD0AAAAMQAAADYvhT4naGhlYQAAASgAAAAgAAAAJARGBEBobXR4AAAEnAAAAAgAAAAIBbAAGG1heHAAAAFIAAAABgAAAAYAAlAAbmFtZQAAAZwAAAF9AAACtThaPFJwb3N0AAADUAAAABkAAAAg/5EAN3icY2BkYGAA4kqXlbHx/DZfGbiZXwBFGJ4dr22E0xKMTEwHGO2AXA4GJpAoAERBCtcAAAB4nGNgZGBgtGNkYohiusEABEwHGFL+v2VABkwAWewEjAAAUAAAAgAAeJxjYGa6wTiBgZWBgamLac//Zww9IJohmvEBgyEjE1CUgZWTARk4wBgBaa4pDAxKQkpCzAr/LRiiGO3+/QMKM8JVKgAhIwAmMA4xAHicfZHNSsNAEMf/2y8RP44inubYQhs2sfQLPLWUXoTSQ8/GdE0CIalpAn0PH8G7voA+gje9+xyenF0XBakGNvubzMx/ZjIAjvEAga9H4tqywBEeLVewhxfLVZyLC8s1nIp7y3UciFfLDRyKD44UtX22rkyWZoEz3FmucN1ny1Xc4M1yDVLcWq7jRDxZbnCtdzQRoAWCx51KdJnm8FEiMRSzNzJ2DmXuNn8vkWLFds5csF/xHWJtchKTozhCvx2gGbTIk7JLc79MaB4HkV/myi/bVKYrlVMRKQrXCSVxoNJAccYlF9KyExbYsFzIYh2MMWOXX0QTtYnDtDNmc8ERoWnW52awUGGZ+AxTZJxTmDvnCGUGdHhAwojPrgpkKtAvTYL7nTXkLvTRv8pDj8tkaTHN8lCR50ga0U93NJ6R7YZc7Rp2hh1Per3d0/1XG3+pAkuzAy2SGRHXjIilyjdxlpLrsLE2myv4bM2GdesD9NmRq0JtpZTeoI9POTd2yAAAAHicY2BgYGaAYBkGRgYQsAHyGMF8FgYFIM0ChEC+ktD//xDy7nuoSgZGNgYYc8QCAG6/BuZ4nGNgZmBg4GZg+N/MYAZkMTKgAQAp0gHIAAAAAQAEBAABAQENcHJldGV4MDAwMjg3AAECAAEANPgbAfgcAvgdA/gYBIwMAZYMAikMA8EMBKP3lvlU99IFHACxDxwAABAcALQRHAAqHADqEgADAgABADEASQBWKGMpIDIwMDQgUGF1bCBQaWNoYXVyZWF1LCB1bmRlciB0aGUgZ3BsIGxpY2VuY2UuTWF0aERlc2lnbiBDSCBSZWd1bGFyIDEwTWF0aERlc2lnbi1DSAAAAACmAAIBASIxi734Rb0Bvb34pL0DvRb5CPip/QgGvfx3FfhF+KT8RQcO95bHAaP3lhX5PMf9PAYO+WwUixWClPh1lfdImwYeCgGYLwwJkgwKiwwLtQq1nQwM3gvHogwNiwwOeJxjYGBgZACCq29dd4DoZ8drG2E0AFeqCBcAAALYAAAC2AAY) format('woff');
+}
+
+@font-face {
+  font-family: "f7mUbZQAceOM_p68PTOqd";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+@font-face {
+  font-family: "ffeUvFDIaZ-bISHCRam0y";
+  src: url(data:application/font-woff;base64,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) format('woff');
+}
+
+.CWrv8-y7dehtrMNKEvdft svg.pretex tspan.a { font-size:11.47700024px;font-family:ffeUvFDIaZ-bISHCRam0y }
+.CWrv8-y7dehtrMNKEvdft svg.pretex tspan.b { font-size:11.47700024px;font-family:f7mUbZQAceOM_p68PTOqd }
+.CWrv8-y7dehtrMNKEvdft svg.pretex tspan.c { font-size:11.47700024px;font-family:fTMrLMHpdtIv5vqV7ZWl2 }
+</style>
 </head>
 <body>
-<h5 class="heading"><span class="type">Paragraph</span></h5>
-<p>Note that linear dependence and linear independence are notions that apply to a <!--Style me with CSS--><em>collection of vectors</em>.  It does not make sense to say things like “this vector is linearly dependent on these other vectors,” or “this matrix is linearly independent.”</p>
-<span class="incontext"><a href="linear-independence.html#p-265">in-context</a></span>
+<h5 class="heading CWrv8-y7dehtrMNKEvdft"><span class="type">Paragraph</span></h5>
+<p class="CWrv8-y7dehtrMNKEvdft">Is the set</p>
+<div class="pretex-display CWrv8-y7dehtrMNKEvdft"><svg height="3.48522em" version="1.1" class="pretex" viewBox="197 2 110 40"><text transform="translate(196.038 3.417)"><tspan y="0" x="0 9.031251" class="a">CA</tspan></text>
+<text transform="translate(213.46 10.76)"><tspan y="0" x="0" class="b">1</tspan><tspan y="13.947" x="0" class="b">1</tspan><tspan y="27.895" x="0" class="b">1</tspan></text>
+<text transform="translate(219.841 3.417)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(229.832 25.235)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(236.225 3.417)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(248.809 10.76)"><tspan y="0" x="0" class="b">1</tspan></text>
+<text transform="translate(244.615 24.707)"><tspan y="0" x="0" class="c">−</tspan></text>
+<text transform="translate(253.004 24.707)"><tspan y="0" x="0" class="b">1</tspan><tspan y="13.948" x="-4.1950002" class="b">2</tspan></text>
+<text transform="translate(259.385 3.417)"><tspan y="0" x="0" class="a">B</tspan></text>
+<text transform="translate(269.376 25.235)"><tspan y="0" x="0" class="b">,</tspan></text>
+<text transform="translate(275.769 3.417)"><tspan y="0" x="0" class="a">A</tspan></text>
+<text transform="translate(284.159 10.76)"><tspan y="0" x="0" class="b">3</tspan><tspan y="13.947" x="0" class="b">1</tspan><tspan y="27.895" x="0" class="b">4</tspan></text>
+<text transform="translate(290.54 3.417)"><tspan y="0" x="0 8.3862438" class="a">BD</tspan></text>
+</svg></div>
+<p class="CWrv8-y7dehtrMNKEvdft">linearly independent?</p>
+<span class="incontext CWrv8-y7dehtrMNKEvdft"><a href="linear-independence.html#p-265">in-context</a></span>
 </body>
 </html>
