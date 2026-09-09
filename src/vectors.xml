@@ -24,7 +24,10 @@ the license is included in gfdl.xml.
   <subsection>
     <title>Vectors in <m>\R^n</m></title>
 
-    <p>We have been drawing points in <m>\R^n</m> as dots in the line, plane, space, etc.  We can also draw them as <em>arrows</em>.  Since we have two geometric interpretations in mind, we now discuss the relationship between the two points of view.</p>
+    <p>Recall that an element <m>v \in \R^n</m> is called a <em>point</em>.
+    Geometrically we may think of a point as a little dot floating in space.
+    There is a useful alternative perspective given by thinking of an element of <m>\R^n</m> as an <em>arrow</em> extending from the origin to the point <m>v</m>.
+    With this in mind we call <m>v</m> a <em>vector</em>.</p>
 
     <definition hide-type="true">
       <title>Points and Vectors</title>
@@ -70,7 +73,8 @@ the license is included in gfdl.xml.
 
     <p>When we think of a point in <m>\R^n</m> as a vector, we will usually write it vertically, like a matrix with one column:
     <me>v = \vec{1 3}.</me>
-    We will also write <m>0</m> for the zero vector.
+    We will also write <m>0</m> for the zero vector,
+    <me>0 = \vec{0 0}.</me>
     <notation><usage>{1\choose 2}</usage><description>A vector</description></notation>
     <notation><usage>0</usage><description>The zero vector</description></notation>
     </p>
@@ -88,11 +92,11 @@ the license is included in gfdl.xml.
     </latex-code></p>
 
     <bluebox>
-      <p>Unless otherwise specified, we will assume that all vectors start at the origin.
+      <p>Unless otherwise specified, we assume that all vectors start at the origin.
       </p>
     </bluebox>
 
-    <p>Vectors makes sense in the real world: many physical quantities, such as velocity, are represented as vectors.  But it makes more sense to think of the velocity of a car as being located at the car.</p>
+    <p>Vectors makes sense in the real world: many physical quantities, such as velocity, are represented as vectors.  But it makes more sense to think of the velocity of the velocity vector of a car as emanating from the car.</p>
 
     <remark>
       <p>Some authors use boldface letters to represent vectors, as in <q><m>\mathbf v</m></q>, or use arrows, as in <q><m>\oldvec v</m></q>.  As it is usually clear from context if a letter represents a vector, we do not decorate vectors in this way.</p>
@@ -126,19 +130,20 @@ the license is included in gfdl.xml.
     <definition hide-type="true">
       <title>Vector addition and scalar multiplication</title>
       <statement>
-        <p><ul>
+        <p>There are two important operations one may perform with vectors:
+        <ul>
           <li>We can add two vectors together:
           <me>\vec{ a b c} + \vec{ x y z} = \vec{ a+x b+y c+z}.</me>
           <idx><h>Vector</h><h>addition</h></idx>
           </li>
-          <li>We can multiply, or <term>scale</term>, a vector by a real number <m>c</m>:
+          <li>We can <term>scale</term> a vector by a real number <m>c</m>:
           <idx><h>Vector</h><h>scalar multiplication</h></idx>
           <me>\def\r{\textcolor{red}}
 \r c\vec{ x y z} = \vec{ \r c\cdot x \r c\cdot y \r c\cdot z}.</me>
           We call <m>c</m> a <term>scalar</term> to distinguish it from a vector.  If <m>v</m> is a vector and <m>c</m> is a scalar, then <m>cv</m> is called a <term>scalar multiple</term> of <m>v</m>.
           </li>
         </ul>
-        Addition and scalar multiplication work in the same way for vectors of length <m>n</m>.</p>
+        Addition and scalar multiplication work in the same way for vectors of any length.</p>
       </statement>
     </definition>
 
@@ -233,7 +238,7 @@ the license is included in gfdl.xml.
     <paragraphs>
       <title>Scalar Multiplication</title>
 
-      <p>A scalar multiple of a vector <m>v</m> has the same (or opposite) direction, but a different length.  For instance, <m>2v</m> is the vector in the direction of <m>v</m> but twice as long, and <m>-\frac 12v</m> is the vector in the opposite direction of <m>v</m>, but half as long.  Note that the set of all scalar multiples of a (nonzero) vector <m>v</m> is a <em>line</em>.
+      <p>A scalar multiple of a vector <m>v</m> has the same (or opposite) direction, but its length is scaled.  For instance, <m>2v</m> is the vector pointing in the same direction as <m>v</m> but twice as long, and <m>-\frac 12v</m> is the vector in the opposite direction of <m>v</m>, and half as long.  Note that the set of all scalar multiples of a (nonzero) vector <m>v</m> is a <em>line</em>.
       <idx><h>Vector</h><h>scalar multiplication</h><h>picture of</h></idx>
       <latex-code>
             <![CDATA[
@@ -269,14 +274,14 @@ the license is included in gfdl.xml.
   <subsection>
     <title>Linear Combinations</title>
 
-    <p>We can add and scale vectors in the same equation.</p>
+    <p>Combining addition and scalar multiplication gives us <em>linear combinations</em>.</p>
 
     <definition>
       <idx><h>Linear combination</h><h>definition of</h></idx>
       <idx><h>Vector</h><h>linear combination of</h><see>Linear combination</see></idx>
       <statement>
-        <p>Let <m>c_1,c_2,\ldots,c_k</m> be scalars, and let <m>v_1,v_2,\ldots,v_k</m> be vectors in <m>\R^n</m>.  The vector in <m>\R^n</m>
-        <me>c_1v_1 + c_2v_2 + \cdots + c_kv_k
+        <p>Let <m>c_1,c_2,\ldots,c_k</m> be scalars, and let <m>v_1,v_2,\ldots,v_k</m> be vectors in <m>\R^n</m>.  The vector in <m>v \in \R^n</m> defined by
+        <me>v = c_1v_1 + c_2v_2 + \cdots + c_kv_k
         </me>
         is called a <term>linear combination</term> of the vectors <m>v_1,v_2,\ldots,v_k</m>, with <term>weights</term> or <term>coefficients</term> <m>c_1,c_2,\ldots,c_k</m>.
         </p>
@@ -346,7 +351,7 @@ the license is included in gfdl.xml.
       <p>A linear combination of a single vector <m>v = {1\choose 2}</m> is just a scalar multiple of <m>v</m>.  So some examples include
       <me>v=\vec{1 2},\quad \frac 32v=\vec{3/2 3},\quad -\frac12v = \vec{-1/2 -1},\quad\ldots
       </me>
-      The set of all linear combinations is the <em>line through <m>v</m></em>.  (Unless <m>v=0</m>, in which case any scalar multiple of <m>v</m> is again <m>0</m>.)
+      The set of all linear combinations of just <m>v</m> itself is the <em>line through <m>v</m></em>.  (Unless <m>v=0</m>, in which case any scalar multiple of <m>v</m> is again <m>0</m>.)
       <latex-code>
             <![CDATA[
   \begin{tikzpicture}
